@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit Commerce Setup Guide | Elisabeth's UGC Business</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #FDFCF9;
+            --forest: #2D5A3D;
+            --terra: #B85C38;
+            --cream: #F8F5EF;
+            --charcoal: #292524;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        /* Header & Progress Bar */
+        .header {
+            background: linear-gradient(135deg, var(--forest) 0%, var(--terra) 100%);
+            color: var(--cream);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--cream);
+            transition: width 0.3s ease;
+            border-radius: 10px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Sections */
+        .section {
+            background: var(--cream);
+            border: 2px solid var(--forest);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            box-shadow: 0 8px 24px rgba(45, 90, 61, 0.15);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .section-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            color: var(--terra);
+        }
+
+        .section.collapsed .section-toggle {
+            transform: rotate(-90deg);
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--forest);
+            margin: 0;
+        }
+
+        .section-content {
+            display: block;
+            transition: max-height 0.3s ease;
+        }
+
+        .section.collapsed .section-content {
+            display: none;
+        }
+
+        /* Subsections & Items */
+        .subsection {
+            margin-bottom: 2rem;
+        }
+
+        .subsection-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--terra);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--forest);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Checklist Items */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .checklist-item.completed {
+            background: rgba(45, 90, 61, 0.08);
+            border-left: 4px solid var(--forest);
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            accent-color: var(--forest);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: var(--forest);
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .item-subtitle {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        .item-details {
+            background: var(--cream);
+            border-left: 3px solid var(--terra);
+            padding: 1rem;
+            margin-top: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .code-label {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 0.25rem 0;
+        }
+
+        /* Product Cards */
+        .product-card {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--bg) 100%);
+            border: 2px solid var(--terra);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--forest);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--terra);
+            margin-bottom: 0.75rem;
+        }
+
+        .product-description {
+            color: var(--charcoal);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .product-details {
+            background: var(--bg);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+
+        .product-details strong {
+            color: var(--forest);
+        }
+
+        /* Automation Cards */
+        .automation-card {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--bg) 100%);
+            border: 2px solid var(--forest);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .automation-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--terra);
+            margin-bottom: 0.75rem;
+        }
+
+        .automation-detail {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .automation-detail strong {
+            color: var(--forest);
+            display: inline-block;
+            min-width: 100px;
+        }
+
+        /* Call-to-Action */
+        .cta-box {
+            background: linear-gradient(135deg, var(--forest) 0%, var(--terra) 100%);
+            color: var(--cream);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .cta-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-box p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .btn-print {
+            display: inline-block;
+            background: var(--cream);
+            color: var(--forest);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-print:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--charcoal);
+            opacity: 0.7;
+            margin-top: 2rem;
+            border-top: 2px solid var(--forest);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .header {
+                page-break-after: avoid;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .btn-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kit Commerce Setup Guide</h1>
+        <p>Complete setup checklist for your UGC creator funnel</p>
+        <div class="progress-container">
+            <div class="progress-label">
+                <span>Progress</span>
+                <span id="progressPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- SECTION 1: PRODUCTS -->
+        <div class="section" data-section="products">
+            <div class="section-header" onclick="toggleSection('products')">
+                <span class="section-toggle">▼</span>
+                <h2>Section 1: Products to Create in Kit Commerce</h2>
+            </div>
+            <div class="section-content">
+                <p style="margin-bottom: 1.5rem; color: var(--charcoal); opacity: 0.8;">Set up all three digital products with their URLs, descriptions, tags, and order bumps.</p>
+
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-title">The Authenticity Premium</div>
+                    <div class="product-price">$297</div>
+                    <div class="product-description">The data-backed playbook for UGC creators who know their human value just went up. 6 modules. Every script. Every framework. $932 value → $297.</div>
+                    <div class="product-details">
+                        <strong>URL:</strong> <span class="code-label">https://closermethod.kit.com/products/the-authenticity-premium</span><br><br>
+                        <strong>Type:</strong> Digital product (instant download)<br><br>
+                        <strong>Post-Purchase Tag:</strong> <span class="code-label">authenticity-premium-buyer</span><br><br>
+                        <strong>Redirect URL:</strong> <span class="code-label">thank-you-ap.html</span><br><br>
+                        <strong>Order Bump:</strong> First $1K Kit for $27
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" class="task-checkbox" data-id="product-ap">
+                        <div class="item-content">
+                            <div class="item-title">Create The Authenticity Premium product</div>
+                            <div class="item-subtitle">Set up digital product, configure thank-you redirect, add order bump</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-title">The First $1K Kit</div>
+                    <div class="product-price">$27</div>
+                    <div class="product-description">60 negotiation scripts + 100-brand outreach database. The tactical starting point for landing your first UGC brand deals.</div>
+                    <div class="product-details">
+                        <strong>URL:</strong> <span class="code-label">https://closermethod.kit.com/products/the-first-1k-kit</span><br><br>
+                        <strong>Type:</strong> Digital product (instant download)<br><br>
+                        <strong>Post-Purchase Tag:</strong> <span class="code-label">first-1k-kit-buyer</span><br><br>
+                        <strong>Redirect URL:</strong> <span class="code-label">thank-you-kit.html</span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" class="task-checkbox" data-id="product-kit">
+                        <div class="item-content">
+                            <div class="item-title">Create The First $1K Kit product</div>
+                            <div class="item-subtitle">Set up digital product, configure thank-you redirect</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-title">The UGC Closer Kit</div>
+                    <div class="product-price">$246</div>
+                    <div class="product-description">The system for turning one-off UGC deals into $1,500/month retainers. Closing scripts, retainer pricing, objection handling.</div>
+                    <div class="product-details">
+                        <strong>URL:</strong> <span class="code-label">https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=email&utm_medium=setup-guide&utm_campaign=closer_kit</span><br><br>
+                        <strong>Type:</strong> Digital product (instant download)<br><br>
+                        <strong>Post-Purchase Tag:</strong> <span class="code-label">ugc-closer-kit-buyer</span><br><br>
+                        <strong>Redirect URL:</strong> <span class="code-label">thank-you-closer.html</span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" class="task-checkbox" data-id="product-closer">
+                        <div class="item-content">
+                            <div class="item-title">Create The UGC Closer Kit product</div>
+                            <div class="item-subtitle">Set up digital product, configure thank-you redirect</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: TAGS -->
+        <div class="section" data-section="tags">
+            <div class="section-header" onclick="toggleSection('tags')">
+                <span class="section-toggle">▼</span>
+                <h2>Section 2: Tags to Create</h2>
+            </div>
+            <div class="section-content">
+                <p style="margin-bottom: 1.5rem; color: var(--charcoal); opacity: 0.8;">Create all tags in Kit Commerce. These will be used throughout your automations and product purchases.</p>
+
+                <div class="subsection-title">Entry Point Tags</div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="tag-rate-calc">
+                    <div class="item-content">
+                        <div class="item-title">rate-calculator-user</div>
+                        <div class="item-subtitle">Applied when someone fills out your rate calculator form</div>
+                    </div>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="tag-link-bio">
+                    <div class="item-content">
+                        <div class="item-title">link-in-bio-lead</div>
+                        <div class="item-subtitle">Applied when someone submits the form from your links page</div>
+                    </div>
+                </div>
+
+                <div class="subsection-title">Purchase Tags</div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="tag-ap-buyer">
+                    <div class="item-content">
+                        <div class="item-title">authenticity-premium-buyer</div>
+                        <div class="item-subtitle">Automatically applied after AP purchase (configured in product)</div>
+                    </div>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="tag-kit-buyer">
+                    <div class="item-content">
+                        <div class="item-title">first-1k-kit-buyer</div>
+                        <div class="item-subtitle">Automatically applied after Kit purchase (configured in product)</div>
+                    </div>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="tag-closer-buyer">
+                    <div class="item-content">
+                        <div class="item-title">ugc-closer-kit-buyer</div>
+                        <div class="item-subtitle">Automatically applied after Closer Kit purchase (configured in product)</div>
+                    </div>
+                </div>
+
+                <div class="subsection-title">Sequence & Nurture Tags</div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="tag-ap-seq">
+                    <div class="item-content">
+                        <div class="item-title">authenticity-premium-sequence</div>
+                        <div class="item-subtitle">Tag subscribers currently in the 5-email AP nurture sequence</div>
+                    </div>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="tag-welcome-nobuy">
+                    <div class="item-content">
+                        <div class="item-title">welcome-complete-no-buy</div>
+                        <div class="item-subtitle">Applied after initial welcome sequence if they didn't purchase</div>
+                    </div>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="tag-ap-nobuy">
+                    <div class="item-content">
+                        <div class="item-title">ap-sequence-complete-no-buy</div>
+                        <div class="item-subtitle">Applied after 5-email AP sequence completes with no purchase (triggers win-back)</div>
+                    </div>
+                </div>
+
+                <div class="subsection-title">Cart Abandonment Tags</div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="tag-ap-abandon">
+                    <div class="item-content">
+                        <div class="item-title">ap-cart-abandon</div>
+                        <div class="item-subtitle">Applied when AP checkout is abandoned</div>
+                    </div>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="tag-kit-abandon">
+                    <div class="item-content">
+                        <div class="item-title">kit-cart-abandon</div>
+                        <div class="item-subtitle">Applied when First $1K Kit checkout is abandoned</div>
+                    </div>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="tag-closer-abandon">
+                    <div class="item-content">
+                        <div class="item-title">closer-cart-abandon</div>
+                        <div class="item-subtitle">Applied when Closer Kit checkout is abandoned</div>
+                    </div>
+                </div>
+
+                <div class="subsection-title">Re-engagement Tags</div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="tag-winback">
+                    <div class="item-content">
+                        <div class="item-title">win-back-complete-inactive</div>
+                        <div class="item-subtitle">Applied to subscribers inactive for 30+ days, triggers win-back campaign</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: FORMS -->
+        <div class="section" data-section="forms">
+            <div class="section-header" onclick="toggleSection('forms')">
+                <span class="section-toggle">▼</span>
+                <h2>Section 3: Forms</h2>
+            </div>
+            <div class="section-content">
+                <p style="margin-bottom: 1.5rem; color: var(--charcoal); opacity: 0.8;">These forms are entry points for your audience. Configure them in Kit and embed them on your website.</p>
+
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="form-rate-calc">
+                    <div class="item-content">
+                        <div class="item-title">Rate Calculator Form</div>
+                        <div class="item-subtitle">
+                            <strong>Kit Form ID:</strong> <span class="code-label">9131179</span><br>
+                            <strong>Purpose:</strong> Entry point to lead sequence. When submitted, tag with "rate-calculator-user"<br>
+                            <strong>Embedded on:</strong> Tool pages across your website<br>
+                            <strong>Thank-you message:</strong> Include link to first email or lead magnet
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="form-link-bio">
+                    <div class="item-content">
+                        <div class="item-title">Link in Bio Form</div>
+                        <div class="item-subtitle">
+                            <strong>Purpose:</strong> Secondary form on your links page. Tag with "link-in-bio-lead"<br>
+                            <strong>Fields:</strong> Email, first name (at minimum)<br>
+                            <strong>Embedded on:</strong> links.html page<br>
+                            <strong>Post-submission:</strong> Sends welcome email, enters AP nurture sequence if not already in one
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-details" style="margin-top: 1.5rem;">
+                    <strong>Implementation notes:</strong><br>
+                    - Use Kit's embed code or Zapier integration for form submissions<br>
+                    - Both forms should be non-intrusive and mobile-optimized<br>
+                    - Include brief, benefit-driven copy (not generic)<br>
+                    - Test form submissions to ensure tags are applied correctly
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: AUTOMATIONS -->
+        <div class="section" data-section="automations">
+            <div class="section-header" onclick="toggleSection('automations')">
+                <span class="section-toggle">▼</span>
+                <h2>Section 4: Automations to Build</h2>
+            </div>
+            <div class="section-content">
+                <p style="margin-bottom: 1.5rem; color: var(--charcoal); opacity: 0.8;">Build these automation workflows in Kit Commerce. Each one has specific triggers, filters, and email sequences.</p>
+
+                <!-- Automation 1 -->
+                <div class="automation-card">
+                    <div class="automation-name">1. AP Primary Nurture</div>
+                    <div class="automation-detail"><strong>Trigger:</strong> Tag "rate-calculator-user" is applied</div>
+                    <div class="automation-detail"><strong>Filter:</strong> NOT authenticity-premium-buyer</div>
+                    <div class="automation-detail"><strong>Sequence:</strong> 5-email AP nurture sequence</div>
+                    <div class="automation-detail"><strong>Exit Condition:</strong> Apply tag "ap-sequence-complete-no-buy" after all 5 emails sent</div>
+                    <div class="automation-detail"><strong>Purpose:</strong> Introduce AP to rate calculator users who haven't bought yet</div>
+                    <div class="checklist-item" style="margin-top: 1rem;">
+                        <input type="checkbox" class="task-checkbox" data-id="auto-ap-nurture">
+                        <div class="item-content">
+                            <div class="item-title">Build AP Primary Nurture automation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation 2 -->
+                <div class="automation-card">
+                    <div class="automation-name">2. AP Post-Purchase</div>
+                    <div class="automation-detail"><strong>Trigger:</strong> Tag "authenticity-premium-buyer" is applied</div>
+                    <div class="automation-detail"><strong>Filter:</strong> None</div>
+                    <div class="automation-detail"><strong>Sequence:</strong> 4-email post-purchase sequence</div>
+                    <div class="automation-detail"><strong>Exit Condition:</strong> After all 4 emails sent</div>
+                    <div class="automation-detail"><strong>Purpose:</strong> Cross-sell Closer Kit to AP buyers. Provide implementation tips, success stories</div>
+                    <div class="checklist-item" style="margin-top: 1rem;">
+                        <input type="checkbox" class="task-checkbox" data-id="auto-ap-postpurchase">
+                        <div class="item-content">
+                            <div class="item-title">Build AP Post-Purchase automation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation 3 -->
+                <div class="automation-card">
+                    <div class="automation-name">3. Kit Post-Purchase</div>
+                    <div class="automation-detail"><strong>Trigger:</strong> Tag "first-1k-kit-buyer" is applied</div>
+                    <div class="automation-detail"><strong>Filter:</strong> None</div>
+                    <div class="automation-detail"><strong>Sequence:</strong> 4-email post-purchase sequence</div>
+                    <div class="automation-detail"><strong>Exit Condition:</strong> After all 4 emails sent</div>
+                    <div class="automation-detail"><strong>Purpose:</strong> Ascend Kit buyers to AP. Show how AP expands on Kit foundations</div>
+                    <div class="checklist-item" style="margin-top: 1rem;">
+                        <input type="checkbox" class="task-checkbox" data-id="auto-kit-postpurchase">
+                        <div class="item-content">
+                            <div class="item-title">Build Kit Post-Purchase automation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation 4 -->
+                <div class="automation-card">
+                    <div class="automation-name">4. Closer Post-Purchase</div>
+                    <div class="automation-detail"><strong>Trigger:</strong> Tag "ugc-closer-kit-buyer" is applied</div>
+                    <div class="automation-detail"><strong>Filter:</strong> None</div>
+                    <div class="automation-detail"><strong>Sequence:</strong> 3-email post-purchase sequence</div>
+                    <div class="automation-detail"><strong>Exit Condition:</strong> After all 3 emails sent</div>
+                    <div class="automation-detail"><strong>Purpose:</strong> Cross-sell AP if they don't already own it. Provide community access invite</div>
+                    <div class="checklist-item" style="margin-top: 1rem;">
+                        <input type="checkbox" class="task-checkbox" data-id="auto-closer-postpurchase">
+                        <div class="item-content">
+                            <div class="item-title">Build Closer Post-Purchase automation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation 5 -->
+                <div class="automation-card">
+                    <div class="automation-name">5. Cart Abandonment - AP</div>
+                    <div class="automation-detail"><strong>Trigger:</strong> Tag "ap-cart-abandon" is applied (manual or via pixel)</div>
+                    <div class="automation-detail"><strong>Filter:</strong> None</div>
+                    <div class="automation-detail"><strong>Sequence:</strong> 3-email cart recovery sequence</div>
+                    <div class="automation-detail"><strong>Exit Condition:</strong> After all 3 emails sent or purchase completed</div>
+                    <div class="automation-detail"><strong>Purpose:</strong> Recover abandoned AP sales. Include testimonials, limited-time incentive</div>
+                    <div class="checklist-item" style="margin-top: 1rem;">
+                        <input type="checkbox" class="task-checkbox" data-id="auto-ap-abandon">
+                        <div class="item-content">
+                            <div class="item-title">Build Cart Abandonment - AP automation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation 6 -->
+                <div class="automation-card">
+                    <div class="automation-name">6. Cart Abandonment - Kit</div>
+                    <div class="automation-detail"><strong>Trigger:</strong> Tag "kit-cart-abandon" is applied</div>
+                    <div class="automation-detail"><strong>Filter:</strong> None</div>
+                    <div class="automation-detail"><strong>Sequence:</strong> 2-email cart recovery sequence</div>
+                    <div class="automation-detail"><strong>Exit Condition:</strong> After all 2 emails sent or purchase completed</div>
+                    <div class="automation-detail"><strong>Purpose:</strong> Recover abandoned Kit sales. Lower price point = shorter sequence</div>
+                    <div class="checklist-item" style="margin-top: 1rem;">
+                        <input type="checkbox" class="task-checkbox" data-id="auto-kit-abandon">
+                        <div class="item-content">
+                            <div class="item-title">Build Cart Abandonment - Kit automation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation 7 -->
+                <div class="automation-card">
+                    <div class="automation-name">7. Cart Abandonment - Closer</div>
+                    <div class="automation-detail"><strong>Trigger:</strong> Tag "closer-cart-abandon" is applied</div>
+                    <div class="automation-detail"><strong>Filter:</strong> None</div>
+                    <div class="automation-detail"><strong>Sequence:</strong> 2-email cart recovery sequence</div>
+                    <div class="automation-detail"><strong>Exit Condition:</strong> After all 2 emails sent or purchase completed</div>
+                    <div class="automation-detail"><strong>Purpose:</strong> Recover abandoned Closer Kit sales</div>
+                    <div class="checklist-item" style="margin-top: 1rem;">
+                        <input type="checkbox" class="task-checkbox" data-id="auto-closer-abandon">
+                        <div class="item-content">
+                            <div class="item-title">Build Cart Abandonment - Closer automation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation 8 -->
+                <div class="automation-card">
+                    <div class="automation-name">8. Win-Back Campaign</div>
+                    <div class="automation-detail"><strong>Trigger:</strong> Tag "ap-sequence-complete-no-buy" is applied</div>
+                    <div class="automation-detail"><strong>Filter:</strong> No open/click activity in last 14 days</div>
+                    <div class="automation-detail"><strong>Delay:</strong> 14 days after sequence completes</div>
+                    <div class="automation-detail"><strong>Sequence:</strong> 4-email win-back sequence</div>
+                    <div class="automation-detail"><strong>Purpose:</strong> Re-engage inactive subscribers. Use scarcity, objection handling, new angles</div>
+                    <div class="checklist-item" style="margin-top: 1rem;">
+                        <input type="checkbox" class="task-checkbox" data-id="auto-winback">
+                        <div class="item-content">
+                            <div class="item-title">Build Win-Back Campaign automation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation 9 -->
+                <div class="automation-card">
+                    <div class="automation-name">9. Cash Spike Flash Sales</div>
+                    <div class="automation-detail"><strong>Type:</strong> Manual broadcast (not automated)</div>
+                    <div class="automation-detail"><strong>Audience:</strong> Non-buyer segments (rate-calculator-user NOT in any buyer tag)</div>
+                    <div class="automation-detail"><strong>Purpose:</strong> Time-limited promotions to drive quick conversions</div>
+                    <div class="automation-detail"><strong>Frequency:</strong> Use strategically (1-2 times per quarter recommended)</div>
+                    <div class="checklist-item" style="margin-top: 1rem;">
+                        <input type="checkbox" class="task-checkbox" data-id="auto-flash">
+                        <div class="item-content">
+                            <div class="item-title">Set up Flash Sales template in Kit</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: ORDER BUMPS -->
+        <div class="section" data-section="orderbumps">
+            <div class="section-header" onclick="toggleSection('orderbumps')">
+                <span class="section-toggle">▼</span>
+                <h2>Section 5: Order Bump Setup</h2>
+            </div>
+            <div class="section-content">
+                <p style="margin-bottom: 1.5rem; color: var(--charcoal); opacity: 0.8;">Configure order bumps to increase average order value. Start with AP → Kit bump.</p>
+
+                <div class="automation-card">
+                    <div class="automation-name">Order Bump: Kit Add-On to AP</div>
+                    <div class="automation-detail"><strong>Location:</strong> AP checkout page (final step, before payment)</div>
+                    <div class="automation-detail"><strong>Product:</strong> First $1K Kit</div>
+                    <div class="automation-detail"><strong>Price:</strong> $27 (normally $47)</div>
+                    <div class="automation-detail"><strong>Copy:</strong> "Add the First $1K Kit - 60 negotiation scripts + 100-brand database for just $27 (normally $47)"</div>
+                    <div class="automation-detail"><strong>Placement:</strong> Full-width card above "Complete Purchase" button</div>
+                    <div class="automation-detail"><strong>Success Tag:</strong> Automatically apply both "authenticity-premium-buyer" and "first-1k-kit-buyer" if accepted</div>
+                    <div class="checklist-item" style="margin-top: 1rem;">
+                        <input type="checkbox" class="task-checkbox" data-id="bump-ap-kit">
+                        <div class="item-content">
+                            <div class="item-title">Configure AP → Kit order bump</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-details" style="margin-top: 1.5rem;">
+                    <strong>Order Bump Best Practices:</strong><br>
+                    - Keep copy short and benefit-focused<br>
+                    - Use social proof (testimonials, # of users)<br>
+                    - Make it a clear visual element (don't hide)<br>
+                    - Ensure smooth checkout flow if they accept<br>
+                    - Test mobile experience carefully<br>
+                    - Monitor acceptance rate; refine copy if under 10%
+                </div>
+
+                <div class="checklist-item" style="margin-top: 1.5rem;">
+                    <input type="checkbox" class="task-checkbox" data-id="bump-future">
+                    <div class="item-content">
+                        <div class="item-title">Plan future order bumps</div>
+                        <div class="item-subtitle">Consider: Kit → AP upsell, Closer → AP bundle, limited-time addon products</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: THANK-YOU PAGES -->
+        <div class="section" data-section="thankyu">
+            <div class="section-header" onclick="toggleSection('thankyu')">
+                <span class="section-toggle">▼</span>
+                <h2>Section 6: Thank-You Page Redirects</h2>
+            </div>
+            <div class="section-content">
+                <p style="margin-bottom: 1.5rem; color: var(--charcoal); opacity: 0.8;">Configure post-purchase redirects to drive additional conversions and engagement.</p>
+
+                <div class="product-card">
+                    <div class="product-title">AP Thank-You Page</div>
+                    <div class="product-details">
+                        <strong>Redirect URL:</strong> <span class="code-label">thank-you-ap.html</span><br><br>
+                        <strong>Content to include:</strong><br>
+                        ✓ Congratulations message<br>
+                        ✓ Access instructions for downloadable product<br>
+                        ✓ Link to email for download<br>
+                        ✓ Community/bonus group invite link<br>
+                        ✓ Upsell: Closer Kit (limited-time offer)<br>
+                        ✓ FAQ section<br>
+                        ✓ Support contact info<br><br>
+                        <strong>Personalization:</strong> Include first name in greeting
+                    </div>
+                    <div class="checklist-item" style="margin-top: 1rem;">
+                        <input type="checkbox" class="task-checkbox" data-id="ty-ap">
+                        <div class="item-content">
+                            <div class="item-title">Create/update thank-you-ap.html</div>
+                            <div class="item-subtitle">Include Closer Kit upsell and community access</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-title">Kit Thank-You Page</div>
+                    <div class="product-details">
+                        <strong>Redirect URL:</strong> <span class="code-label">thank-you-kit.html</span><br><br>
+                        <strong>Content to include:</strong><br>
+                        ✓ Congratulations message<br>
+                        ✓ Access instructions & download link<br>
+                        ✓ Quick-start guide (first 3 scripts to use)<br>
+                        ✓ Upsell: Authenticity Premium<br>
+                        ✓ Email sequence schedule info<br>
+                        ✓ Support email<br><br>
+                        <strong>Personalization:</strong> Include first name
+                    </div>
+                    <div class="checklist-item" style="margin-top: 1rem;">
+                        <input type="checkbox" class="task-checkbox" data-id="ty-kit">
+                        <div class="item-content">
+                            <div class="item-title">Create/update thank-you-kit.html</div>
+                            <div class="item-subtitle">Include AP upsell and quick-start guide</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-title">Closer Kit Thank-You Page</div>
+                    <div class="product-details">
+                        <strong>Redirect URL:</strong> <span class="code-label">thank-you-closer.html</span><br><br>
+                        <strong>Content to include:</strong><br>
+                        ✓ Congratulations message<br>
+                        ✓ Access instructions & download<br>
+                        ✓ Video: How to use the closing scripts<br>
+                        ✓ Community invite (Slack/Discord)<br>
+                        ✓ Bonus resources (checklists, templates)<br>
+                        ✓ AP bundle offer (if they don't own it)<br>
+                        ✓ FAQ + troubleshooting<br><br>
+                        <strong>Personalization:</strong> Include first name, offer community based on purchase history
+                    </div>
+                    <div class="checklist-item" style="margin-top: 1rem;">
+                        <input type="checkbox" class="task-checkbox" data-id="ty-closer">
+                        <div class="item-content">
+                            <div class="item-title">Create/update thank-you-closer.html</div>
+                            <div class="item-subtitle">Include community access and bonus resources</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-details" style="margin-top: 1.5rem;">
+                    <strong>Thank-You Page Strategy:</strong><br>
+                    - Load time under 2 seconds (optimize images)<br>
+                    - Mobile-responsive design<br>
+                    - Minimal distractions (no header nav, limited footer links)<br>
+                    - Clear CTA for next step<br>
+                    - Include social proof on upsell sections<br>
+                    - Test on multiple devices before launch
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 7: TRACKING & ANALYTICS -->
+        <div class="section" data-section="tracking">
+            <div class="section-header" onclick="toggleSection('tracking')">
+                <span class="section-toggle">▼</span>
+                <h2>Section 7: Tracking & Analytics</h2>
+            </div>
+            <div class="section-content">
+                <p style="margin-bottom: 1.5rem; color: var(--charcoal); opacity: 0.8;">Set up comprehensive tracking to measure performance and optimize your funnel.</p>
+
+                <div class="subsection-title">Meta Pixel Setup</div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="pixel-install">
+                    <div class="item-content">
+                        <div class="item-title">Install Meta Pixel on all pages</div>
+                        <div class="item-subtitle">
+                            <strong>Pixel ID:</strong> [Add your pixel ID]<br>
+                            Add pixel base code to website header
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="pixel-events">
+                    <div class="item-content">
+                        <div class="item-title">Configure purchase events</div>
+                        <div class="item-subtitle">
+                            Track: ViewContent, AddToCart, Purchase<br>
+                            Use product IDs and values in event data<br>
+                            Test events with Meta's event debugger
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="pixel-conversion">
+                    <div class="item-content">
+                        <div class="item-title">Create conversion API connection</div>
+                        <div class="item-subtitle">
+                            Link Kit Commerce to Meta Conversion API<br>
+                            Sync purchase data from checkout<br>
+                            Reduces reliance on pixel-only tracking
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection-title">Google Analytics 4</div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="ga4-install">
+                    <div class="item-content">
+                        <div class="item-title">Install GA4 measurement ID</div>
+                        <div class="item-subtitle">
+                            <strong>Measurement ID:</strong> [Add your GA4 ID]<br>
+                            Add to all website pages
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="ga4-ecommerce">
+                    <div class="item-content">
+                        <div class="item-title">Enable ecommerce tracking</div>
+                        <div class="item-subtitle">
+                            Track purchase events with: item_id, item_name, value, currency<br>
+                            Create custom events for form submissions<br>
+                            Track goal completions (sequences, downloads)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="ga4-audiences">
+                    <div class="item-content">
+                        <div class="item-title">Create GA4 audiences</div>
+                        <div class="item-subtitle">
+                            Buyers (purchase event triggered)<br>
+                            Engaged users (2+ page views, 30+ sec duration)<br>
+                            Form submitters (by form type)<br>
+                            Export to Google Ads for retargeting
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection-title">UTM Parameters</div>
+                <div class="item-details">
+                    <strong>Use this format for all external links:</strong><br><br>
+                    <span class="code-label">?utm_source=email&utm_medium=newsletter&utm_campaign=apnurture</span><br><br>
+                    <strong>Example URLs:</strong><br>
+                    • <span class="code-label">https://closermethod.kit.com/products/the-authenticity-premium?utm_source=email&utm_medium=ap_nurture&utm_campaign=day3</span><br>
+                    • <span class="code-label">https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=apbuyer&utm_medium=post_purchase&utm_campaign=day1</span><br><br>
+                    <strong>UTM Parameters to use:</strong><br>
+                    • utm_source: email, social, affiliate, direct<br>
+                    • utm_medium: newsletter, nurture, post_purchase, cart_abandon, flash_sale<br>
+                    • utm_campaign: ap_nurture, apbuyer_sequence, kit_sequence, closer_sequence, winback, flash_sale_date
+                </div>
+
+                <div class="checklist-item" style="margin-top: 1.5rem;">
+                    <input type="checkbox" class="task-checkbox" data-id="utm-implement">
+                    <div class="item-content">
+                        <div class="item-title">Audit and update all marketing links with UTM parameters</div>
+                        <div class="item-subtitle">Email links, social posts, ads, landing pages</div>
+                    </div>
+                </div>
+
+                <div class="subsection-title">Kit Commerce Tracking</div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="kit-analytics">
+                    <div class="item-content">
+                        <div class="item-title">Configure Kit Commerce analytics dashboard</div>
+                        <div class="item-subtitle">
+                            Monitor: Revenue, conversion rate, average order value<br>
+                            Track by product and time period<br>
+                            Watch for cart abandonment rate<br>
+                            Export revenue reports monthly
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="kit-events">
+                    <div class="item-content">
+                        <div class="item-title">Verify Kit → GA4/Meta event sync</div>
+                        <div class="item-subtitle">
+                            Test purchase tracking end-to-end<br>
+                            Verify tags are applied correctly<br>
+                            Check for duplicate or missing events<br>
+                            Set up alerts for tracking issues
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection-title">Performance Monitoring</div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="dashboard-setup">
+                    <div class="item-content">
+                        <div class="item-title">Create marketing dashboard</div>
+                        <div class="item-subtitle">
+                            Combine: Kit revenue, GA4 conversions, email open rates, form submissions<br>
+                            Update weekly to track trends<br>
+                            Use Google Sheets + Data Studio for visualization
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK START CHECKLIST -->
+        <div class="section" data-section="quickstart">
+            <div class="section-header" onclick="toggleSection('quickstart')">
+                <span class="section-toggle">▼</span>
+                <h2>Quick Start: First 7 Days</h2>
+            </div>
+            <div class="section-content">
+                <p style="margin-bottom: 1.5rem; color: var(--charcoal); opacity: 0.8;">Prioritized tasks to get your funnel live quickly.</p>
+
+                <div class="subsection-title">Day 1-2: Core Products</div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="qs-ap-product">
+                    <div class="item-content">
+                        <div class="item-title">Create The Authenticity Premium product</div>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="qs-kit-product">
+                    <div class="item-content">
+                        <div class="item-title">Create The First $1K Kit product</div>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="qs-closer-product">
+                    <div class="item-content">
+                        <div class="item-title">Create The UGC Closer Kit product</div>
+                    </div>
+                </div>
+
+                <div class="subsection-title">Day 2-3: Tags & Forms</div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="qs-tags">
+                    <div class="item-content">
+                        <div class="item-title">Create all 12 tags in Kit</div>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="qs-forms">
+                    <div class="item-content">
+                        <div class="item-title">Set up Rate Calculator and Link in Bio forms</div>
+                    </div>
+                </div>
+
+                <div class="subsection-title">Day 3-4: Automations</div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="qs-primary-auto">
+                    <div class="item-content">
+                        <div class="item-title">Build AP Primary Nurture automation (5 emails)</div>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="qs-postpurchase-auto">
+                    <div class="item-content">
+                        <div class="item-title">Build post-purchase automations (AP, Kit, Closer)</div>
+                    </div>
+                </div>
+
+                <div class="subsection-title">Day 5-6: Pages & Pixels</div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="qs-thankyou">
+                    <div class="item-content">
+                        <div class="item-title">Create thank-you pages for all products</div>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="qs-pixels">
+                    <div class="item-content">
+                        <div class="item-title">Install Meta Pixel and GA4</div>
+                    </div>
+                </div>
+
+                <div class="subsection-title">Day 7: Testing & Launch</div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="qs-test">
+                    <div class="item-content">
+                        <div class="item-title">Test complete purchase flow (all 3 products)</div>
+                        <div class="item-subtitle">Verify email tags, redirects, analytics tracking</div>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="task-checkbox" data-id="qs-launch">
+                    <div class="item-content">
+                        <div class="item-title">Go live with email sequences</div>
+                        <div class="item-subtitle">Begin driving traffic from links page and marketing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-box">
+            <h3>Ready to Deploy?</h3>
+            <p>Use the checkboxes above to track your progress through setup. Save this page to your browser favorites for easy reference. Your progress is automatically saved locally.</p>
+            <button class="btn-print" onclick="window.print()">Print This Guide</button>
+            <button class="btn-print" onclick="resetProgress()" style="margin-left: 1rem; background: rgba(248, 245, 239, 0.3); border: 2px solid var(--cream);">Reset Progress</button>
+        </div>
+
+        <div class="footer">
+            <p>Kit Commerce Setup Guide for Elisabeth (@perolikebro)</p>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;">Last updated: March 2026 | Updated with latest Kit Commerce best practices</p>
+        </div>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'kit-commerce-checklist';
+
+        // Initialize checkboxes from localStorage
+        function initializeCheckboxes() {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+            document.querySelectorAll('.task-checkbox').forEach(checkbox => {
+                const id = checkbox.dataset.id;
+                checkbox.checked = saved[id] || false;
+            });
+            updateProgress();
+        }
+
+        // Save checkbox state to localStorage
+        document.addEventListener('change', function(e) {
+            if (e.target.classList.contains('task-checkbox')) {
+                const saved = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+                saved[e.target.dataset.id] = e.target.checked;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+                updateProgress();
+                
+                // Add visual feedback
+                const checklist = e.target.closest('.checklist-item');
+                if (e.target.checked) {
+                    checklist.classList.add('completed');
+                } else {
+                    checklist.classList.remove('completed');
+                }
+            }
+        });
+
+        // Update progress bar
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.task-checkbox');
+            const checked = document.querySelectorAll('.task-checkbox:checked');
+            const percent = Math.round((checked.length / checkboxes.length) * 100);
+            
+            document.getElementById('progressFill').style.width = percent + '%';
+            document.getElementById('progressPercent').textContent = percent + '%';
+        }
+
+        // Toggle section collapse
+        function toggleSection(sectionName) {
+            const section = document.querySelector(`[data-section="${sectionName}"]`);
+            section.classList.toggle('collapsed');
+        }
+
+        // Reset all progress
+        function resetProgress() {
+            if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+                localStorage.removeItem(STORAGE_KEY);
+                document.querySelectorAll('.task-checkbox').forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                document.querySelectorAll('.checklist-item').forEach(item => {
+                    item.classList.remove('completed');
+                });
+                updateProgress();
+            }
+        }
+
+        // Apply completed styling on load
+        function applyCompletedStyling() {
+            document.querySelectorAll('.task-checkbox:checked').forEach(checkbox => {
+                checkbox.closest('.checklist-item').classList.add('completed');
+            });
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            initializeCheckboxes();
+            applyCompletedStyling();
+        });
+    </script>
+</body>
+</html>

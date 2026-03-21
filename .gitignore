@@ -1,0 +1,11 @@
+# Netlify deploy artifacts
+deploy-*.zip
+.netlify/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp

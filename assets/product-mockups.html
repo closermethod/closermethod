@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Mockups — @perolikebro UGC Closer Suite</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--surface:#111;--border:#1e1e1e;--text:#f0f0f0;--text2:#888;--accent:#c8a44e;--accent2:#e8c95e;--green:#22c55e}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;padding:60px 20px}
+.page-title{text-align:center;font-size:12px;color:var(--text2);text-transform:uppercase;letter-spacing:2px;margin-bottom:60px}
+
+/* ═══════ 3D PRODUCT MOCKUP SYSTEM ═══════ */
+
+.mockup-section{max-width:800px;margin:0 auto 100px;text-align:center}
+.mockup-section h2{font-size:14px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:40px}
+
+/* ── iPad / Tablet Mockup ── */
+.ipad-mockup{
+  width:380px;height:520px;margin:0 auto;
+  background:linear-gradient(145deg,#1a1a1a,#0d0d0d);
+  border-radius:28px;
+  border:3px solid #2a2a2a;
+  padding:20px 16px;
+  box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.03),inset 0 1px 0 rgba(255,255,255,.05);
+  position:relative;
+  transform:perspective(1200px) rotateY(-8deg) rotateX(4deg);
+  transition:transform .6s cubic-bezier(.23,1,.32,1);
+}
+.ipad-mockup:hover{transform:perspective(1200px) rotateY(0deg) rotateX(0deg)}
+.ipad-mockup::before{content:'';position:absolute;top:8px;left:50%;transform:translateX(-50%);width:8px;height:8px;border-radius:50%;background:#1e1e1e;border:1px solid #333}
+.ipad-screen{
+  width:100%;height:100%;border-radius:12px;overflow:hidden;
+  background:linear-gradient(180deg,#0a0a0a 0%,#111 100%);
+  border:1px solid #222;
+}
+.ipad-screen-content{padding:20px;height:100%;display:flex;flex-direction:column}
+.screen-brand{font-size:10px;color:var(--accent);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;text-align:left}
+.screen-title{font-size:22px;font-weight:900;line-height:1.2;text-align:left;margin-bottom:6px}
+.screen-title span{color:var(--accent)}
+.screen-subtitle{font-size:11px;color:var(--text2);text-align:left;margin-bottom:20px;line-height:1.5}
+.screen-features{flex:1;display:flex;flex-direction:column;gap:8px}
+.screen-feat{display:flex;align-items:center;gap:8px;font-size:11px;text-align:left}
+.screen-feat .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.screen-price-bar{margin-top:auto;padding-top:16px;border-top:1px solid #222;display:flex;align-items:baseline;justify-content:space-between}
+.screen-price-bar .old{font-size:14px;color:var(--text2);text-decoration:line-through}
+.screen-price-bar .now{font-size:28px;font-weight:900;color:var(--accent);font-family:'JetBrains Mono',monospace}
+.screen-price-bar .badge{font-size:9px;background:var(--green);color:#000;padding:3px 8px;border-radius:4px;font-weight:700}
+
+/* ── Laptop Mockup ── */
+.laptop-mockup{
+  width:640px;margin:0 auto;position:relative;
+  transform:perspective(1400px) rotateX(8deg);
+  transition:transform .6s cubic-bezier(.23,1,.32,1);
+}
+.laptop-mockup:hover{transform:perspective(1400px) rotateX(2deg)}
+.laptop-screen-frame{
+  background:linear-gradient(145deg,#1a1a1a,#0d0d0d);
+  border-radius:12px 12px 0 0;border:3px solid #2a2a2a;border-bottom:none;
+  padding:12px 12px 0;
+  box-shadow:0 -10px 40px rgba(0,0,0,.3);
+}
+.laptop-screen-inner{
+  background:#0a0a0a;border-radius:6px 6px 0 0;overflow:hidden;height:360px;
+  border:1px solid #222;border-bottom:none;
+}
+.laptop-base{
+  width:110%;margin-left:-5%;height:18px;
+  background:linear-gradient(180deg,#222,#1a1a1a);
+  border-radius:0 0 8px 8px;
+  box-shadow:0 4px 20px rgba(0,0,0,.4);
+  position:relative;
+}
+.laptop-base::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:4px;background:#2a2a2a;border-radius:0 0 4px 4px}
+.laptop-content{padding:24px;height:100%;display:flex;flex-direction:column}
+.lp-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.lp-brand{font-size:10px;color:var(--accent);font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.lp-nav{display:flex;gap:12px}
+.lp-nav span{font-size:9px;color:var(--text2);padding:4px 10px;border:1px solid #222;border-radius:6px}
+.lp-hero{flex:1;display:flex;gap:24px;align-items:center}
+.lp-hero-text{flex:1}
+.lp-hero-text h2{font-size:18px;font-weight:900;line-height:1.2;margin-bottom:8px}
+.lp-hero-text h2 span{color:var(--accent)}
+.lp-hero-text p{font-size:10px;color:var(--text2);line-height:1.5;margin-bottom:12px}
+.lp-cta{display:inline-block;padding:8px 20px;background:var(--accent);color:#000;font-size:10px;font-weight:800;border-radius:8px}
+.lp-hero-stats{display:flex;flex-direction:column;gap:8px}
+.lp-stat{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 14px;text-align:center;min-width:100px}
+.lp-stat .num{font-size:18px;font-weight:900;color:var(--accent);font-family:'JetBrains Mono',monospace}
+.lp-stat .label{font-size:8px;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.lp-footer-bar{padding-top:12px;border-top:1px solid #1e1e1e;display:flex;gap:20px}
+.lp-foot-item{font-size:9px;color:var(--text2);display:flex;align-items:center;gap:4px}
+.lp-foot-item .g{color:var(--green)}
+
+/* ── Floating Cards Stack ── */
+.cards-stack{
+  position:relative;width:340px;height:400px;margin:0 auto;
+  transform:perspective(1000px) rotateY(5deg);
+  transition:transform .6s cubic-bezier(.23,1,.32,1);
+}
+.cards-stack:hover{transform:perspective(1000px) rotateY(-2deg)}
+.stack-card{
+  position:absolute;width:300px;
+  background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+  transition:transform .4s cubic-bezier(.23,1,.32,1);
+}
+.stack-card:nth-child(1){top:0;left:0;z-index:3;transform:rotate(-2deg)}
+.stack-card:nth-child(2){top:30px;left:20px;z-index:2;transform:rotate(1deg)}
+.stack-card:nth-child(3){top:60px;left:40px;z-index:1;transform:rotate(3deg)}
+.cards-stack:hover .stack-card:nth-child(1){transform:rotate(-2deg) translateY(-10px)}
+.cards-stack:hover .stack-card:nth-child(2){transform:rotate(1deg) translateX(10px)}
+.cards-stack:hover .stack-card:nth-child(3){transform:rotate(3deg) translateY(10px)}
+.sc-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px}
+.sc-icon.gold{background:rgba(200,164,78,.1)}
+.sc-icon.green{background:rgba(34,197,94,.1)}
+.sc-icon.blue{background:rgba(59,130,246,.1)}
+.stack-card h3{font-size:14px;font-weight:700;margin-bottom:4px}
+.stack-card p{font-size:11px;color:var(--text2);line-height:1.4}
+.stack-card .val{font-size:11px;color:var(--accent);font-weight:600;margin-top:8px}
+
+/* ── Phone Mockup ── */
+.phone-mockup{
+  width:260px;height:520px;margin:0 auto;
+  background:linear-gradient(145deg,#1a1a1a,#0d0d0d);
+  border-radius:36px;border:3px solid #2a2a2a;
+  padding:12px;
+  box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.03);
+  position:relative;
+  transform:perspective(1000px) rotateY(8deg) rotateX(2deg);
+  transition:transform .6s cubic-bezier(.23,1,.32,1);
+}
+.phone-mockup:hover{transform:perspective(1000px) rotateY(0deg) rotateX(0deg)}
+.phone-notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:80px;height:22px;background:#0d0d0d;border-radius:0 0 14px 14px;z-index:5;border:1px solid #222;border-top:none}
+.phone-screen{
+  width:100%;height:100%;border-radius:24px;overflow:hidden;
+  background:linear-gradient(180deg,#0a0a0a,#111);
+  border:1px solid #222;
+}
+.phone-content{padding:40px 16px 16px;height:100%;display:flex;flex-direction:column}
+.ph-brand{font-size:9px;color:var(--accent);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.ph-title{font-size:16px;font-weight:900;line-height:1.2;margin-bottom:4px}
+.ph-title span{color:var(--accent)}
+.ph-sub{font-size:10px;color:var(--text2);margin-bottom:16px;line-height:1.5}
+.ph-tools{flex:1;display:flex;flex-direction:column;gap:6px}
+.ph-tool{background:rgba(255,255,255,.03);border:1px solid #1e1e1e;border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:8px}
+.ph-tool-icon{font-size:14px}
+.ph-tool-text{font-size:10px;font-weight:600}
+.ph-tool-arrow{margin-left:auto;font-size:10px;color:var(--text2)}
+.ph-cta-bar{margin-top:auto;padding-top:12px}
+.ph-cta{display:block;width:100%;padding:12px;background:var(--accent);color:#000;font-size:11px;font-weight:800;border:none;border-radius:10px;text-align:center}
+
+/* ── Utility ── */
+.mockup-label{font-size:11px;color:var(--text2);margin-top:24px;font-style:italic}
+
+@media(max-width:700px){
+  .laptop-mockup{width:100%;transform:none}
+  .laptop-mockup:hover{transform:none}
+  .ipad-mockup{width:100%;max-width:340px;height:auto;aspect-ratio:380/520}
+}
+</style>
+</head>
+<body>
+
+<div class="page-title">Product Mockup System — @perolikebro UGC Closer Suite</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- MOCKUP 1: First $1K Kit — iPad View    -->
+<!-- ═══════════════════════════════════════ -->
+<div class="mockup-section">
+  <h2>The First $1K Kit — $27</h2>
+  <div class="ipad-mockup">
+    <div class="ipad-screen">
+      <div class="ipad-screen-content">
+        <div class="screen-brand">@perolikebro</div>
+        <div class="screen-title">The First <span>$1K</span> Kit</div>
+        <div class="screen-subtitle">Everything you need to close your first $1,000+ brand deal. 60 scripts. 100 brands. One system.</div>
+        <div class="screen-features">
+          <div class="screen-feat"><div class="dot"></div>100-Brand Outreach Database</div>
+          <div class="screen-feat"><div class="dot"></div>60 Negotiation Scripts</div>
+          <div class="screen-feat"><div class="dot"></div>Rate Calculator System</div>
+          <div class="screen-feat"><div class="dot"></div>AI Pricing Protection</div>
+          <div class="screen-feat"><div class="dot"></div>Follow-Up Framework</div>
+          <div class="screen-feat"><div class="dot"></div>Strategic Positioning Guide</div>
+        </div>
+        <div class="screen-price-bar">
+          <div><span class="old">$97</span></div>
+          <div class="now">$27</div>
+          <div class="badge">72% OFF</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mockup-label">iPad mockup — sales page hero</div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- MOCKUP 2: UGC Closer Kit — Laptop      -->
+<!-- ═══════════════════════════════════════ -->
+<div class="mockup-section">
+  <h2>The UGC Closer Kit — $246</h2>
+  <div class="laptop-mockup">
+    <div class="laptop-screen-frame">
+      <div class="laptop-screen-inner">
+        <div class="laptop-content">
+          <div class="lp-header">
+            <div class="lp-brand">UGC Closer Suite</div>
+            <div class="lp-nav">
+              <span>Retainers</span>
+              <span>Negotiation</span>
+              <span>Templates</span>
+            </div>
+          </div>
+          <div class="lp-hero">
+            <div class="lp-hero-text">
+              <h2>From <span>$1K deals</span> to <span>$3K+ retainers</span></h2>
+              <p>The advanced system that turns one-off brand deals into recurring revenue. Retainer conversion, strategic positioning, and enterprise negotiation plays.</p>
+              <div class="lp-cta">Upgrade to Closer Kit →</div>
+            </div>
+            <div class="lp-hero-stats">
+              <div class="lp-stat"><div class="num">$3K+</div><div class="label">Avg Retainer</div></div>
+              <div class="lp-stat"><div class="num">90</div><div class="label">Day Rate 3x Plan</div></div>
+              <div class="lp-stat"><div class="num">12</div><div class="label">Negotiation Plays</div></div>
+            </div>
+          </div>
+          <div class="lp-footer-bar">
+            <div class="lp-foot-item"><span class="g">✓</span> Retainer System</div>
+            <div class="lp-foot-item"><span class="g">✓</span> Positioning Guide</div>
+            <div class="lp-foot-item"><span class="g">✓</span> SOW + NDA Templates</div>
+            <div class="lp-foot-item"><span class="g">✓</span> Rate Escalation Calendar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="laptop-base"></div>
+  </div>
+  <div class="mockup-label">Laptop mockup — OTO upsell page</div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- MOCKUP 3: Value Stack — Floating Cards  -->
+<!-- ═══════════════════════════════════════ -->
+<div class="mockup-section">
+  <h2>Closer Kit Value Stack — Components</h2>
+  <div class="cards-stack">
+    <div class="stack-card">
+      <div class="sc-icon gold">📋</div>
+      <h3>Retainer Conversion System</h3>
+      <p>Convert any one-off brand deal into a $1,200–3,000/month retainer with 5 conversation templates.</p>
+      <div class="val">Value: $246</div>
+    </div>
+    <div class="stack-card">
+      <div class="sc-icon green">🎯</div>
+      <h3>Advanced Negotiation Playbook</h3>
+      <p>12 enterprise-grade scenarios: affiliate, exclusivity, usage rights, multi-video packaging.</p>
+      <div class="val">Value: $97</div>
+    </div>
+    <div class="stack-card">
+      <div class="sc-icon blue">📄</div>
+      <h3>Brand Partnership Templates</h3>
+      <p>SOW, retainer agreement, usage rights addendum, NDA, and invoice template. Legal-reviewed.</p>
+      <div class="val">Value: $97</div>
+    </div>
+  </div>
+  <div class="mockup-label" style="margin-top:80px">Floating card stack — value stack section</div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- MOCKUP 4: Free Tools — Phone View       -->
+<!-- ═══════════════════════════════════════ -->
+<div class="mockup-section">
+  <h2>Free Tools Suite — Link in Bio</h2>
+  <div class="phone-mockup">
+    <div class="phone-notch"></div>
+    <div class="phone-screen">
+      <div class="phone-content">
+        <div class="ph-brand">@perolikebro</div>
+        <div class="ph-title">Your <span>UGC</span> Toolkit</div>
+        <div class="ph-sub">Free tools built from 10 years in B2B. Enter your email to unlock.</div>
+        <div class="ph-tools">
+          <div class="ph-tool"><span class="ph-tool-icon">💰</span><span class="ph-tool-text">Rate Calculator</span><span class="ph-tool-arrow">→</span></div>
+          <div class="ph-tool"><span class="ph-tool-icon">🎯</span><span class="ph-tool-text">Brand Qualifier</span><span class="ph-tool-arrow">→</span></div>
+          <div class="ph-tool"><span class="ph-tool-icon">🤝</span><span class="ph-tool-text">Closer Coach</span><span class="ph-tool-arrow">→</span></div>
+          <div class="ph-tool"><span class="ph-tool-icon">♻️</span><span class="ph-tool-text">Repurposing Engine</span><span class="ph-tool-arrow">→</span></div>
+          <div class="ph-tool"><span class="ph-tool-icon">💬</span><span class="ph-tool-text">Negotiation Sim</span><span class="ph-tool-arrow">→</span></div>
+        </div>
+        <div class="ph-cta-bar">
+          <div class="ph-cta">Get the $1K Kit — $27 →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mockup-label">Phone mockup — link-in-bio tools page</div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- EMBED SNIPPETS FOR SALES PAGES          -->
+<!-- ═══════════════════════════════════════ -->
+<div class="mockup-section" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px;max-width:680px">
+  <h2 style="text-align:center;margin-bottom:24px">Embed Instructions</h2>
+  <p style="font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.6">
+    Copy each mockup's HTML+CSS block directly into the corresponding sales page.
+    The iPad mockup goes in the <code>first-1k-kit.html</code> hero section.
+    The laptop mockup goes in <code>closer-kit-oto.html</code>.
+    The phone mockup goes in <code>links.html</code>.
+    The floating cards go in the Closer Kit value stack section.
+  </p>
+  <p style="font-size:13px;color:var(--text2);line-height:1.6">
+    All mockups use the same design tokens (<code>--accent</code>, <code>--bg</code>, etc.) as the rest of the funnel — drop-in ready.
+  </p>
+</div>
+
+</body>
+</html>

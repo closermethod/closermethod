@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>175+ Brand Database - Pre-Researched Brands Ready to Pitch Today</title>
+<meta name="description" content="175+ pre-researched brands with budgets, decision-maker contacts, and niche filters. Stop cold-pitching random companies. Open it, filter, pitch. Get access inside the UGC Closer Kit.">
+<meta property="og:title" content="175+ Brand Database - Brands That Pay UGC Creators">
+<meta property="og:description" content="Pre-researched brands with budgets, contacts & niche filters. Stop guessing who to pitch.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ugc-closer-suite.netlify.app/brand-database.html">
+<link rel="canonical" href="https://ugc-closer-suite.netlify.app/brand-database.html">
+
+<!-- Meta Pixel Code -->
+<script>
+
+// EMAIL GATE LOGIC
+function handleGateSubmit(e) {
+  e.preventDefault();
+  var name = document.getElementById('gateName').value.trim();
+  var email = document.getElementById('gateEmail').value.trim();
+  if (!name || !email) return false;
+  localStorage.setItem('ugc_name', name);
+  localStorage.setItem('ugc_email', email);
+  fetch('https://app.kit.com/forms/9131179/subscriptions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email_address: email, first_name: name, tags: ['brand-database-lead', 'manychat-lead'] })
+  }).catch(function(){});
+  if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'brand-database-lead', value: 0, currency: 'USD' });
+  document.getElementById('emailGate').classList.add('hidden');
+  document.body.style.overflow = '';
+  return false;
+}
+document.addEventListener('DOMContentLoaded', function(){
+  var gate = document.getElementById('emailGate');
+  if (!gate) return;
+  if (localStorage.getItem('ugc_email')) {
+    gate.classList.add('hidden');
+  } else {
+    document.body.style.overflow = 'hidden';
+  }
+});
+
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '35298849146380570');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
+/></noscript>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0a;
+  --bg2: #111111;
+  --bg3: #1a1a1a;
+  --card: #141414;
+  --border: #222;
+  --border2: #333;
+  --text: #e8e8e8;
+  --text2: #999;
+  --text3: #666;
+  --accent: #c8ff00;
+  --accent2: #a8d900;
+  --green: #00c853;
+  --red: #ff4444;
+  --blue: #4488ff;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+
+/* NAV */
+.nav {
+  position: fixed; top:0; left:0; right:0; z-index: 100;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.nav-logo { font-family: 'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color: var(--text); text-decoration:none; }
+.nav-logo span { color: var(--accent); font-style: italic; }
+.nav-cta {
+  background: transparent; border: 1px solid var(--accent); color: var(--accent);
+  padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all .2s; text-decoration: none;
+}
+.nav-cta:hover { background: var(--accent); color: #000; }
+
+/* HERO */
+.hero {
+  padding: 100px 24px 40px;
+  max-width: 800px; margin: 0 auto;
+  text-align: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--bg3); border: 1px solid var(--border2);
+  padding: 6px 14px; border-radius: 100px;
+  font-size: 12px; font-weight: 600; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+.hero-badge .dot { width:6px; height:6px; background:var(--green); border-radius:50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
+
+.hero h1 {
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.hero h1 em { font-style: italic; color: var(--accent); }
+
+.hero-sub {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: var(--text2);
+  max-width: 560px; margin: 0 auto 16px;
+  line-height: 1.5;
+}
+
+/* DATABASE TABLE - THE HOOK */
+.db-section {
+  padding: 20px 24px 60px;
+  max-width: 900px; margin: 0 auto;
+}
+.db-table {
+  width: 100%; border-collapse: collapse;
+  background: var(--card); border-radius: 12px; overflow: hidden;
+  border: 1px solid var(--border);
+  margin-bottom: 0;
+}
+.db-table th {
+  text-align: left; padding: 14px 20px;
+  font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--text3);
+  background: var(--bg3); border-bottom: 1px solid var(--border);
+}
+.db-table td {
+  padding: 14px 20px; font-size: 14px; color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+.db-table tr:last-child td { border:none; }
+.db-table .budget { color: var(--accent); font-weight: 600; }
+.db-table .blurred { filter: blur(5px); user-select: none; color: var(--text3); }
+.db-table .niche-tag {
+  display: inline-block; padding: 2px 10px; border-radius: 100px;
+  font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px;
+}
+.niche-beauty { background: rgba(255,100,150,.12); color: #ff6496; }
+.niche-fitness { background: rgba(100,200,255,.12); color: #64c8ff; }
+.niche-health { background: rgba(100,255,150,.12); color: #64ff96; }
+.niche-fashion { background: rgba(200,100,255,.12); color: #c864ff; }
+.niche-food { background: rgba(255,180,100,.12); color: #ffb464; }
+.niche-tech { background: rgba(100,150,255,.12); color: #6496ff; }
+.niche-home { background: rgba(255,220,100,.12); color: #ffdc64; }
+.niche-pet { background: rgba(150,255,200,.12); color: #96ffc8; }
+
+.db-locked-row td {
+  background: rgba(200,255,0,.02);
+}
+
+.db-cta-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--bg3); padding: 16px 20px;
+  border: 1px solid var(--border); border-top: none;
+  border-radius: 0 0 12px 12px;
+}
+.db-cta-text { font-size: 14px; font-weight: 600; color: var(--text); }
+.db-cta-text span { color: var(--text3); font-weight: 400; }
+
+/* FILTER PREVIEW */
+.filter-bar {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.filter-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: 100px;
+  background: var(--bg3); border: 1px solid var(--border2);
+  font-size: 12px; font-weight: 500; color: var(--text2);
+  cursor: default;
+}
+.filter-chip.active {
+  border-color: var(--accent); color: var(--accent); background: rgba(200,255,0,.06);
+}
+
+/* BUT FIRST BRIDGE SECTION */
+.bridge {
+  padding: 80px 24px;
+  max-width: 700px; margin: 0 auto;
+  text-align: center;
+}
+.bridge-icon {
+  font-size: 48px; margin-bottom: 16px;
+}
+.bridge h2 {
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 700; line-height: 1.15;
+  margin-bottom: 20px; color: #fff;
+}
+.bridge h2 em { color: var(--accent); font-style: italic; }
+.bridge-sub {
+  font-size: 17px; color: var(--text2); line-height: 1.6;
+  max-width: 540px; margin: 0 auto 32px;
+}
+
+.bridge-steps {
+  display: flex; flex-direction: column; gap: 0;
+  max-width: 480px; margin: 0 auto 40px;
+  text-align: left;
+}
+.bridge-step {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px 0;
+  position: relative;
+}
+.bridge-step:not(:last-child)::after {
+  content: ''; position: absolute;
+  left: 19px; top: 56px; bottom: 0;
+  width: 2px; background: var(--border2);
+}
+.step-num {
+  width: 40px; height: 40px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; font-weight: 700; font-size: 14px;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative; z-index: 1;
+}
+.step-num.free { background: rgba(200,255,0,.15); color: var(--accent); border: 1px solid rgba(200,255,0,.3); }
+.step-num.paid { background: rgba(200,255,0,.9); color: #000; }
+.step-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text3); margin-bottom: 4px; }
+.step-label.free-label { color: var(--green); }
+.step-title { font-weight: 700; font-size: 16px; color: #fff; margin-bottom: 4px; }
+.step-desc { font-size: 14px; color: var(--text2); line-height: 1.5; }
+
+/* CTA BUTTON */
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 32px;
+  background: var(--accent); color: #000;
+  border: none; border-radius: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px; font-weight: 700;
+  cursor: pointer; transition: all .15s;
+  text-decoration: none;
+}
+.cta-btn:hover { background: var(--accent2); transform: translateY(-1px); }
+.cta-btn .arrow { font-size: 20px; transition: transform .2s; }
+.cta-btn:hover .arrow { transform: translateX(4px); }
+
+.cta-note {
+  font-size: 13px; color: var(--text3); margin-top: 12px;
+}
+.cta-note strong { color: var(--text2); }
+
+/* PROOF BAR */
+.proof-bar {
+  padding: 40px 24px;
+  max-width: 700px; margin: 0 auto;
+  text-align: center;
+}
+.proof-stats {
+  display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.proof-stat .num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px; font-weight: 700; color: var(--accent);
+}
+.proof-stat .label { font-size: 13px; color: var(--text3); }
+
+/* TESTIMONIALS */
+.testimonials {
+  padding: 40px 24px 60px;
+  max-width: 700px; margin: 0 auto;
+}
+.testimonials h3 {
+  text-align: center; font-size: 13px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--text3); margin-bottom: 24px;
+}
+.testimonial-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 24px;
+  margin-bottom: 16px;
+}
+.testimonial-quote {
+  font-size: 15px; color: var(--text); line-height: 1.6;
+  margin-bottom: 12px; font-style: italic;
+}
+.testimonial-name { font-size: 13px; font-weight: 600; color: var(--accent); }
+.testimonial-detail { font-size: 12px; color: var(--text3); }
+
+/* WHY RATE FIRST */
+.why-rate {
+  padding: 60px 24px;
+  max-width: 700px; margin: 0 auto;
+}
+.why-rate h2 {
+  text-align: center; font-size: clamp(24px, 4vw, 32px);
+  font-weight: 700; color: #fff; margin-bottom: 32px;
+}
+.why-cards {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.why-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 24px;
+}
+.why-card .icon { font-size: 28px; margin-bottom: 12px; }
+.why-card h4 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.why-card p { font-size: 13px; color: var(--text2); line-height: 1.5; }
+
+/* BOTTOM CTA */
+.bottom-cta {
+  padding: 60px 24px 80px;
+  max-width: 600px; margin: 0 auto;
+  text-align: center;
+}
+.bottom-cta h2 {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 700; color: #fff; margin-bottom: 12px;
+}
+.bottom-cta p {
+  font-size: 16px; color: var(--text2); margin-bottom: 28px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center; padding: 40px 24px;
+  border-top: 1px solid var(--border);
+  font-size: 12px; color: var(--text3);
+}
+footer a { color: var(--text3); }
+
+/* EMAIL CAPTURE MODAL */
+.modal-overlay {
+  display: none; position: fixed; top:0; left:0; right:0; bottom:0;
+  z-index: 9999; background: rgba(0,0,0,0.85);
+  align-items: center; justify-content: center; padding: 24px;
+}
+.modal-overlay.show { display: flex; }
+.modal-card {
+  max-width: 440px; width: 100%;
+  background: var(--card); border: 1px solid var(--border2);
+  border-radius: 16px; padding: 36px 28px; text-align: center;
+  position: relative;
+  animation: modalIn .3s ease;
+}
+@keyframes modalIn { from { opacity:0; transform:scale(.95) translateY(10px); } to { opacity:1; transform:scale(1) translateY(0); } }
+.modal-close {
+  position: absolute; top: 14px; right: 14px;
+  background: none; border: none; color: var(--text3);
+  font-size: 20px; cursor: pointer; padding: 4px 8px;
+}
+.modal-close:hover { color: var(--text); }
+.modal-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--bg3); border: 1px solid var(--border2);
+  padding: 5px 12px; border-radius: 100px;
+  font-size: 11px; font-weight: 600; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;
+}
+.modal-badge .dot { width:6px; height:6px; background:var(--green); border-radius:50%; animation: pulse 2s infinite; }
+.modal-card h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px; font-weight: 700; color: #fff;
+  margin-bottom: 10px; line-height: 1.2;
+}
+.modal-card h2 em { color: var(--accent); font-style: italic; }
+.modal-card .modal-sub { font-size: 14px; color: var(--text2); margin-bottom: 24px; line-height: 1.5; }
+.modal-form { display: flex; flex-direction: column; gap: 10px; }
+.modal-input {
+  width: 100%; padding: 13px 16px;
+  background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 10px; color: var(--text); font-size: 15px; font-family: inherit;
+}
+.modal-input:focus { outline: none; border-color: var(--accent); }
+.modal-input::placeholder { color: var(--text3); }
+.modal-submit {
+  width: 100%; padding: 15px;
+  background: var(--accent); color: #000;
+  border: none; border-radius: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px; font-weight: 700;
+  cursor: pointer; transition: all .15s;
+}
+.modal-submit:hover { background: var(--accent2); transform: translateY(-1px); }
+.modal-trust {
+  display: flex; justify-content: center; gap: 16px;
+  margin-top: 14px; font-size: 11px; color: var(--text3);
+}
+.modal-trust span { display: flex; align-items: center; gap: 4px; }
+.modal-trust .ck { color: var(--accent); }
+
+/* ANIMATIONS */
+.fade-up {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity .6s, transform .6s;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .db-table th, .db-table td { padding: 10px 12px; font-size: 12px; }
+  .db-cta-bar { flex-direction: column; gap: 12px; text-align: center; }
+  .why-cards { grid-template-columns: 1fr; }
+  .proof-stats { gap: 24px; }
+  .filter-bar { justify-content: center; }
+  .hero { padding: 90px 20px 30px; }
+  .modal-card { padding: 28px 20px; }
+  .modal-trust { flex-wrap: wrap; gap: 10px; }
+}
+
+/* EMAIL GATE OVERLAY */
+.email-gate {
+  position:fixed; top:0; left:0; right:0; bottom:0;
+  z-index:9999; background:#0a0a0a;
+  display:flex; align-items:center; justify-content:center;
+  padding:24px;
+}
+.email-gate.hidden { display:none; }
+.gate-card {
+  max-width:460px; width:100%; text-align:center;
+}
+.gate-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:#1a1a1a; border:1px solid #333;
+  padding:6px 14px; border-radius:100px;
+  font-size:12px; font-weight:600; color:#c8ff00;
+  text-transform:uppercase; letter-spacing:1px;
+  margin-bottom:24px;
+}
+.gate-badge .gdot { width:6px; height:6px; background:#00c853; border-radius:50%; animation:gpulse 2s infinite; }
+@keyframes gpulse { 0%,100%{opacity:1;} 50%{opacity:.4;} }
+.gate-card h2.gate-h {
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(26px,5vw,40px); font-weight:700;
+  line-height:1.1; color:#fff; margin-bottom:16px;
+}
+.gate-card h2.gate-h em { color:#c8ff00; font-style:italic; }
+.gate-card .gate-sub {
+  font-size:16px; color:#999;
+  margin-bottom:28px; line-height:1.5;
+}
+.gate-form { display:flex; flex-direction:column; gap:12px; }
+.gate-input {
+  width:100%; padding:14px 16px;
+  background:#111; border:1px solid #333;
+  border-radius:10px; color:#e8e8e8; font-size:15px;
+  font-family:inherit;
+}
+.gate-input:focus { outline:none; border-color:#c8ff00; }
+.gate-input::placeholder { color:#666; }
+.gate-submit {
+  width:100%; padding:16px;
+  background:#c8ff00; color:#000;
+  border:none; border-radius:10px;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:17px; font-weight:700;
+  cursor:pointer; transition:all .15s;
+}
+.gate-submit:hover { background:#a8d900; transform:translateY(-1px); }
+.gate-trust {
+  display:flex; justify-content:center; gap:20px;
+  margin-top:16px; font-size:12px; color:#666;
+}
+.gate-trust span { display:flex; align-items:center; gap:4px; }
+.gate-trust .gck { color:#c8ff00; }
+
+</style>
+</head>
+<body>
+<!-- EMAIL GATE OVERLAY -->
+<div class="email-gate" id="emailGate">
+  <div class="gate-card">
+    <div class="gate-badge"><span class="gdot"></span> free access</div>
+    <h2 class="gate-h">stop cold pitching.<br>these brands are <em>actively hiring.</em></h2>
+    <p class="gate-sub">enter your email. get verified contacts at 175+ brands with their actual budgets. start pitching warm instead of cold.</p>
+    <form class="gate-form" id="gateForm" onsubmit="return handleGateSubmit(event)">
+      <input type="text" class="gate-input" id="gateName" placeholder="first name" required>
+      <input type="email" class="gate-input" id="gateEmail" placeholder="your best email" required>
+      <button type="submit" class="gate-submit">Show Me the Brands</button>
+    </form>
+    <div class="gate-trust">
+      <span><span class="gck">&#10003;</span> no spam</span>
+      <span><span class="gck">&#10003;</span> unsubscribe anytime</span>
+      <span><span class="gck">&#10003;</span> free forever</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/" class="nav-logo">closer<span>method</span></a>
+  <a href="#" class="nav-cta" onclick="openEmailModal(); return false;">Unlock the Brands &rarr;</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"><span class="dot"></span> 175+ VERIFIED BRANDS</div>
+  <h1>You came for the <em>brand database.</em></h1>
+  <p class="hero-sub">175+ pre-researched brands with budgets, decision-maker contacts, and niche filters. No more cold-pitching random companies.</p>
+</section>
+
+<!-- DATABASE PREVIEW TABLE - THE HOOK -->
+<section class="db-section fade-up">
+  <div class="filter-bar">
+    <span class="filter-chip active">All Niches</span>
+    <span class="filter-chip">Beauty</span>
+    <span class="filter-chip">Fitness</span>
+    <span class="filter-chip">Health</span>
+    <span class="filter-chip">Fashion</span>
+    <span class="filter-chip">Food</span>
+    <span class="filter-chip">Tech</span>
+    <span class="filter-chip">Home</span>
+    <span class="filter-chip">Pet</span>
+  </div>
+
+  <table class="db-table">
+    <thead><tr><th>Brand</th><th>Niche</th><th>Budget / Video</th><th>Contact</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Glossier</strong></td>
+        <td><span class="niche-tag niche-beauty">Beauty</span></td>
+        <td class="budget">$500&ndash;1,200</td>
+        <td>s****@glossier.com</td>
+      </tr>
+      <tr>
+        <td><strong>Gymshark</strong></td>
+        <td><span class="niche-tag niche-fitness">Fitness</span></td>
+        <td class="budget">$600&ndash;1,500</td>
+        <td>j****@gymshark.com</td>
+      </tr>
+      <tr>
+        <td><strong>Liquid I.V.</strong></td>
+        <td><span class="niche-tag niche-health">Health</span></td>
+        <td class="budget">$400&ndash;1,000</td>
+        <td>a****@liquidiv.com</td>
+      </tr>
+      <tr>
+        <td><strong>SKIMS</strong></td>
+        <td><span class="niche-tag niche-fashion">Fashion</span></td>
+        <td class="budget">$500&ndash;1,400</td>
+        <td>m****@skims.com</td>
+      </tr>
+      <tr>
+        <td><strong>Athletic Greens</strong></td>
+        <td><span class="niche-tag niche-health">Health</span></td>
+        <td class="budget">$600&ndash;1,500</td>
+        <td>r****@athleticgreens.com</td>
+      </tr>
+      <tr>
+        <td><strong>HelloFresh</strong></td>
+        <td><span class="niche-tag niche-food">Food</span></td>
+        <td class="budget">$450&ndash;1,100</td>
+        <td>k****@hellofresh.com</td>
+      </tr>
+      <!-- BLURRED ROWS -->
+      <tr class="db-locked-row">
+        <td class="blurred">Brand Name</td>
+        <td class="blurred"><span class="niche-tag" style="background:rgba(255,255,255,.06);color:var(--text3)">Tech</span></td>
+        <td class="blurred budget">$700&ndash;1,800</td>
+        <td class="blurred">d****@brand.com</td>
+      </tr>
+      <tr class="db-locked-row">
+        <td class="blurred">Brand Name</td>
+        <td class="blurred"><span class="niche-tag" style="background:rgba(255,255,255,.06);color:var(--text3)">Pet</span></td>
+        <td class="blurred budget">$400&ndash;900</td>
+        <td class="blurred">l****@brand.com</td>
+      </tr>
+      <tr class="db-locked-row">
+        <td class="blurred">Brand Name</td>
+        <td class="blurred"><span class="niche-tag" style="background:rgba(255,255,255,.06);color:var(--text3)">Beauty</span></td>
+        <td class="blurred budget">$550&ndash;1,300</td>
+        <td class="blurred">t****@brand.com</td>
+      </tr>
+      <tr class="db-locked-row">
+        <td class="blurred">Brand Name</td>
+        <td class="blurred"><span class="niche-tag" style="background:rgba(255,255,255,.06);color:var(--text3)">Home</span></td>
+        <td class="blurred budget">$500&ndash;1,200</td>
+        <td class="blurred">n****@brand.com</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="db-cta-bar">
+    <div class="db-cta-text">+169 more brands locked. <span>All niches. All verified contacts.</span></div>
+  </div>
+</section>
+
+<!-- BUT FIRST... BRIDGE -->
+<section class="bridge fade-up" id="but-first">
+  <div class="bridge-icon">&#128274;</div>
+  <h2>But first - do you know <em>what to say</em> when they respond?</h2>
+  <p class="bridge-sub">175 brands mean nothing if you fumble the money conversation. The brand says "what's your rate?" - do you know what to say to close $800 instead of $200?</p>
+
+  <div class="bridge-steps">
+    <div class="bridge-step">
+      <div class="step-num free">1</div>
+      <div>
+        <div class="step-label free-label">FREE - 10 SECONDS</div>
+        <div class="step-title">Enter your email</div>
+        <div class="step-desc">Get instant access to the 4-minute breakdown of the system that took Candi from $650 packages to a $4,750 deal. Same content, different words.</div>
+      </div>
+    </div>
+    <div class="bridge-step">
+      <div class="step-num paid">2</div>
+      <div>
+        <div class="step-label">UNLOCK EVERYTHING - <s>$246</s> $197</div>
+        <div class="step-title">Open the 175+ brand database + full closing system</div>
+        <div class="step-desc">The brand database, 60+ negotiation scripts, deal tracker CRM, follow-up frameworks, and 5 AI tools. One purchase, lifetime access.</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" class="cta-btn" onclick="openEmailModal(); return false;">Show Me How to Close These Brands <span class="arrow">&rarr;</span></a>
+  <div class="cta-note"><strong>Free. No spam.</strong> Just the system that changes what you say when money is on the table.</div>
+  <div class="cta-note" style="margin-top:8px;color:var(--accent);font-weight:600;">&#128293; Tax Season Sale: $197 (reg. $246) — ends March 31</div>
+</section>
+
+<!-- WHY THIS WORKS -->
+<section class="why-rate fade-up">
+  <h2>Why the database alone isn't enough</h2>
+  <div class="why-cards">
+    <div class="why-card">
+      <div class="icon">&#128172;</div>
+      <h4>The brand responds. Then what?</h4>
+      <p>Most creators fumble the money conversation. You need scripts, not just contacts. The system gives you both.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">&#128176;</div>
+      <h4>Stop quoting $200 for $800 work</h4>
+      <p>Creators leave 40-60% on the table because they panic-quote. The Closer Kit tells you exactly what to say and when.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">&#128165;</div>
+      <h4>"We don't have budget" isn't a no</h4>
+      <p>There are 25+ objection scripts inside. "No budget," ghosting, lowballs - every scenario has a proven response.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">&#128200;</div>
+      <h4>One deal pays for the whole system</h4>
+      <p>Candi used the scripts and went from $650 to $4,750. The Kit is $197 (tax season price). That's 24x ROI on her first deal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials fade-up">
+  <h3>From creators who started exactly where you are</h3>
+
+  <div class="testimonial-card">
+    <div class="testimonial-quote">"I thought I was getting paid well at $650 for 5 videos until I ran the numbers. My rate should have been $950 per video - not per package. Then I used the Closer Kit scripts and landed a $4,750 deal. Same content, different words."</div>
+    <div class="testimonial-name">Candi · UGC Creator</div>
+    <div class="testimonial-detail">$650 &rarr; $4,750 per package</div>
+  </div>
+
+  <div class="testimonial-card">
+    <div class="testimonial-quote">"The scripts are BRILLIANT!! Finally someone who actually explains what brands pay for and how to ask for it. I immediately raised my rates."</div>
+    <div class="testimonial-name">Mel · UGC Creator</div>
+    <div class="testimonial-detail">Raised rates after first calculation</div>
+  </div>
+
+  <div class="testimonial-card">
+    <div class="testimonial-quote">"I'm now quoting brands at $800+ per video and they're saying yes. The brand database alone saved me weeks of research."</div>
+    <div class="testimonial-name">Your Interior Mentor</div>
+    <div class="testimonial-detail">Now charging $800+ per video</div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<section class="proof-bar fade-up">
+  <div class="proof-stats">
+    <div class="proof-stat">
+      <div class="num">175+</div>
+      <div class="label">Verified Brands</div>
+    </div>
+    <div class="proof-stat">
+      <div class="num">400+</div>
+      <div class="label">Creators Using This</div>
+    </div>
+    <div class="proof-stat">
+      <div class="num">60+</div>
+      <div class="label">Closing Scripts</div>
+    </div>
+    <div class="proof-stat">
+      <div class="num"><s style="font-size:0.6em;color:var(--text3)">$246</s> $197</div>
+      <div class="label">One-Time Payment</div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta fade-up">
+  <h2>The brands are right there. Get the system to close them.</h2>
+  <p>Every day you pitch without a closing system, you're leaving money on the table. One deal with the Closer Kit pays for it 3x over.</p>
+  <a href="#" class="cta-btn" onclick="openEmailModal(); return false;">Show Me the System <span class="arrow">&rarr;</span></a>
+  <div class="cta-note">Enter your email &rarr; watch the 4-min breakdown &rarr; unlock the full 175+ brand database</div>
+  <div class="cta-note" style="margin-top:8px;color:var(--accent);font-weight:600;">&#128293; Tax Season Sale: $197 (reg. $246) — ends March 31</div>
+</section>
+
+<!-- EMAIL CAPTURE MODAL -->
+<div class="modal-overlay" id="emailModal">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeEmailModal()">&times;</button>
+    <div class="modal-badge"><span class="dot"></span> Free access</div>
+    <h2>See how creators are closing <em>$800+ deals</em> with these brands</h2>
+    <p class="modal-sub">Enter your email for the 4-minute breakdown of the system Candi used to go from $650 to $4,750 per deal.</p>
+    <form class="modal-form" onsubmit="return handleEmailSubmit(event)">
+      <input type="text" class="modal-input" id="modalName" placeholder="First name" required>
+      <input type="email" class="modal-input" id="modalEmail" placeholder="Your best email" required>
+      <button type="submit" class="modal-submit">Show Me the System &rarr;</button>
+    </form>
+    <div class="modal-trust">
+      <span><span class="ck">&check;</span> Free</span>
+      <span><span class="ck">&check;</span> No spam</span>
+      <span><span class="ck">&check;</span> Unsubscribe anytime</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 closermethod - Built from 10 years of B2B sales at Deel, Criteo, HBO &amp; Bloomberg</p>
+  <p style="margin-top:8px"><a href="/">Home</a> &bull; <a href="brand-database.html">Brand Database</a> &bull; <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=brand_database&utm_campaign=closer_kit">Get the Closer Kit</a></p>
+</footer>
+
+<script>
+// Fade-up observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// EMAIL MODAL
+function openEmailModal() {
+  // Check if already submitted
+  if (localStorage.getItem('ugc_email')) {
+    window.location.href = 'vsl.html';
+    return;
+  }
+  document.getElementById('emailModal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeEmailModal() {
+  document.getElementById('emailModal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+// Close on overlay click
+document.getElementById('emailModal').addEventListener('click', function(e) {
+  if (e.target === this) closeEmailModal();
+});
+
+function handleEmailSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('modalName').value.trim();
+  const email = document.getElementById('modalEmail').value.trim();
+  if (!name || !email) return false;
+
+  // Save locally
+  localStorage.setItem('ugc_name', name);
+  localStorage.setItem('ugc_email', email);
+
+  // Send to Kit form 9131179
+  fetch('https://app.kit.com/forms/9131179/subscriptions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email_address: email,
+      first_name: name,
+      tags: ['brand-database-funnel', 'launch-lead']
+    })
+  }).catch(() => {});
+
+  // Track with Meta Pixel
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Lead', { content_name: 'brand-database-email-capture', value: 0, currency: 'USD' });
+  }
+
+  // Redirect to VSL
+  window.location.href = 'vsl.html';
+  return false;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Score Your Brand Pitch in 10 Seconds - UGC Pitch Checker</title>
+<meta name="description" content="Paste your DM or email pitch and get an instant score with real feedback on what's working and what's killing your response rate.">
+<meta property="og:title" content="Score Your Brand Pitch in 10 Seconds">
+<meta property="og:description" content="Get instant feedback on your UGC pitch. Paste your message, see your score, get specific improvements.">
+<link rel="canonical" href="https://ugc-closer-suite.netlify.app/tool9-pitch-scorer.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0a;
+  --bg2: #111111;
+  --bg3: #1a1a1a;
+  --card: #141414;
+  --border: #222;
+  --border2: #333;
+  --text: #e8e8e8;
+  --text2: #999;
+  --text3: #666;
+  --accent: #c8ff00;
+  --accent2: #a8d900;
+  --green: #00c853;
+  --red: #ff4444;
+  --yellow: #ffb800;
+  --blue: #4488ff;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+.nav {
+  position: fixed; top:0; left:0; right:0; z-index: 100;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.nav-logo { font-family: 'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color: var(--text); }
+.nav-logo span { color: var(--accent); font-style: italic; }
+.nav-cta {
+  background: transparent; border: 1px solid var(--accent); color: var(--accent);
+  padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all .2s;
+  text-decoration: none;
+}
+.nav-cta:hover { background: var(--accent); color: #000; }
+
+/* HERO */
+.hero {
+  padding: 100px 24px 60px;
+  max-width: 800px; margin: 0 auto;
+  text-align: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--bg3); border: 1px solid var(--border2);
+  padding: 6px 14px; border-radius: 100px;
+  font-size: 12px; font-weight: 600; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+.hero-badge .dot { width:6px; height:6px; background:var(--green); border-radius:50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
+
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: var(--text2);
+  max-width: 560px; margin: 0 auto 32px;
+  line-height: 1.5;
+}
+
+.hero-proof {
+  display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+  font-size: 13px; color: var(--text3);
+  margin-bottom: 40px;
+}
+.hero-proof span { display: flex; align-items: center; gap: 6px; }
+.hero-proof .check { color: var(--accent); }
+
+.hero-arrow {
+  font-size: 28px; color: var(--accent); animation: bounce 2s infinite;
+  cursor: pointer;
+}
+@keyframes bounce { 0%,20%,50%,80%,100% { transform:translateY(0); } 40% { transform:translateY(-10px); } 60% { transform:translateY(-5px); } }
+
+/* TOOL SECTION */
+.tool-section {
+  padding: 60px 24px;
+  max-width: 900px; margin: 0 auto;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700; color: #fff;
+  margin-bottom: 8px;
+}
+
+.section-sub { color: var(--text2); font-size: 16px; margin-bottom: 32px; }
+
+/* SCORER CONTAINER */
+.scorer-container {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 32px;
+}
+@media(max-width:700px) { .scorer-container { grid-template-columns: 1fr; } }
+
+.scorer-left { display:flex; flex-direction:column; gap:16px; }
+.scorer-right { position: relative; }
+
+.field label {
+  display: block; font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--text2); margin-bottom: 6px;
+}
+
+.field textarea {
+  width:100%; padding: 14px 16px; background: var(--bg2);
+  border: 1px solid var(--border2); border-radius: 8px;
+  color: var(--text); font-size: 14px; font-family: inherit;
+  resize: vertical; min-height: 180px;
+  transition: border-color .2s;
+}
+.field textarea:focus {
+  outline: none; border-color: var(--accent);
+}
+.field textarea::placeholder { color: var(--text3); }
+
+.char-count {
+  font-size: 12px; color: var(--text3); margin-top: 4px;
+}
+
+.scorer-btn {
+  width: 100%; padding: 14px;
+  background: var(--accent); color: #000;
+  border: none; border-radius: 8px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; font-family: inherit;
+  transition: all .15s;
+  margin-top: 8px;
+}
+.scorer-btn:hover { background: var(--accent2); transform: translateY(-1px); }
+
+/* SCORE DISPLAY */
+.score-placeholder {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  height: 100%; min-height: 400px;
+  text-align: center; color: var(--text3);
+  font-size: 14px;
+}
+.score-placeholder .emoji { font-size: 48px; margin-bottom: 12px; }
+
+.score-area { display: none; }
+
+.score-main {
+  display: flex; align-items: center; gap: 20px; margin-bottom: 28px;
+}
+
+.score-circle {
+  width: 120px; height: 120px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  background: var(--bg2);
+  border: 2px solid var(--border2);
+}
+
+.score-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 48px; font-weight: 700;
+}
+
+.score-circle.excellent { border-color: var(--green); }
+.score-circle.excellent .score-number { color: var(--green); }
+.score-circle.good { border-color: var(--accent); }
+.score-circle.good .score-number { color: var(--accent); }
+.score-circle.poor { border-color: var(--red); }
+.score-circle.poor .score-number { color: var(--red); }
+
+.score-rating {
+  flex: 1;
+}
+
+.score-rating-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px; font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.score-rating-desc {
+  font-size: 14px; color: var(--text2); margin-bottom: 12px;
+}
+
+.score-rating-bar {
+  width: 100%; height: 6px; background: var(--bg2);
+  border-radius: 3px; overflow: hidden;
+}
+
+.score-rating-fill {
+  height: 100%; background: var(--accent);
+  transition: width .4s ease;
+}
+
+.score-rating-bar.poor .score-rating-fill { background: var(--red); }
+.score-rating-bar.good .score-rating-fill { background: var(--accent); }
+.score-rating-bar.excellent .score-rating-fill { background: var(--green); }
+
+/* BREAKDOWN */
+.breakdown {
+  margin-bottom: 24px;
+}
+
+.breakdown-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 0; border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.breakdown-item:last-child { border: none; }
+
+.breakdown-label {
+  color: var(--text2);
+  flex: 1;
+}
+
+.breakdown-label strong { color: #fff; display: block; margin-bottom: 2px; }
+
+.breakdown-points {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 600;
+}
+
+.breakdown-badge {
+  width: 20px; height: 20px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; flex-shrink: 0;
+}
+
+.breakdown-badge.pass {
+  background: rgba(0,200,83,0.2); color: var(--green);
+}
+
+.breakdown-badge.fail {
+  background: rgba(255,68,68,0.2); color: var(--red);
+}
+
+.breakdown-points.positive { color: var(--green); }
+.breakdown-points.negative { color: var(--red); }
+
+/* FEEDBACK */
+.feedback {
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: 10px; padding: 20px;
+  margin-bottom: 20px;
+}
+
+.feedback-title {
+  font-size: 12px; font-weight: 700; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.feedback-items {
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+.feedback-item {
+  font-size: 13px; color: var(--text2); line-height: 1.5;
+  display: flex; gap: 10px;
+}
+
+.feedback-item strong { color: #fff; }
+
+.feedback-icon {
+  flex-shrink: 0; margin-top: 1px;
+  font-weight: 700;
+}
+
+.feedback-item.tip .feedback-icon { color: var(--accent); }
+.feedback-item.warning .feedback-icon { color: var(--yellow); }
+.feedback-item.critical .feedback-icon { color: var(--red); }
+
+/* CTA BRIDGE */
+.cta-bridge {
+  background: rgba(200,255,0,0.06);
+  border: 1px solid rgba(200,255,0,0.2);
+  border-radius: 12px; padding: 24px;
+  margin-top: 24px; text-align: center;
+  display: none;
+}
+
+.cta-bridge.show { display: block; animation: fadeUp .4s ease both; }
+
+.cta-bridge p {
+  font-size: 15px; color: var(--text2);
+  margin-bottom: 16px; line-height: 1.5;
+}
+
+.cta-bridge p strong { color: #fff; }
+
+.cta-bridge-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 28px;
+  background: var(--accent); color: #000;
+  border: none; border-radius: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px; font-weight: 700;
+  cursor: pointer; transition: all .15s;
+  text-decoration: none;
+}
+
+.cta-bridge-btn:hover { background: var(--accent2); transform: translateY(-1px); }
+
+/* RESET BUTTON */
+.reset-btn {
+  width: 100%; padding: 12px;
+  background: transparent; color: var(--text2);
+  border: 1px solid var(--border2);
+  border-radius: 8px; font-size: 13px; font-weight: 600;
+  cursor: pointer; font-family: inherit;
+  transition: all .2s; margin-top: 12px;
+}
+.reset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* EMAIL GATE */
+.email-gate {
+  position: fixed; top:0; left:0; right:0; bottom:0;
+  z-index: 9999;
+  background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.email-gate.hidden { display: none; }
+.gate-card {
+  max-width: 460px; width: 100%;
+  text-align: center;
+}
+.gate-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--bg3); border: 1px solid var(--border2);
+  padding: 6px 14px; border-radius: 100px;
+  font-size: 12px; font-weight: 600; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+.gate-badge .dot { width:6px; height:6px; background:var(--green); border-radius:50%; animation: pulse 2s infinite; }
+.gate-card h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700; line-height: 1.1;
+  color: #fff; margin-bottom: 16px;
+}
+.gate-card h1 em { color: var(--accent); font-style: italic; }
+.gate-card p {
+  font-size: 16px; color: var(--text2);
+  margin-bottom: 28px; line-height: 1.5;
+}
+.gate-form { display: flex; flex-direction: column; gap: 12px; }
+.gate-input {
+  width: 100%; padding: 14px 16px;
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: 10px; color: var(--text); font-size: 15px;
+  font-family: inherit;
+}
+.gate-input:focus { outline: none; border-color: var(--accent); }
+.gate-input::placeholder { color: var(--text3); }
+.gate-submit {
+  width: 100%; padding: 16px;
+  background: var(--accent); color: #000;
+  border: none; border-radius: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px; font-weight: 700;
+  cursor: pointer; transition: all .15s;
+}
+.gate-submit:hover { background: var(--accent2); transform: translateY(-1px); }
+.gate-skip {
+  margin-top: 16px;
+  background: transparent; border: none;
+  color: var(--text3); font-size: 13px;
+  cursor: pointer; transition: color .2s;
+}
+.gate-skip:hover { color: var(--text2); }
+.gate-trust {
+  display: flex; justify-content: center; gap: 20px;
+  margin-top: 16px; font-size: 12px; color: var(--text3);
+}
+.gate-trust span { display: flex; align-items: center; gap: 4px; }
+.gate-trust .ck { color: var(--accent); }
+
+/* EXIT INTENT MODAL */
+.exit-modal {
+  position: fixed; top:0; left:0; right:0; bottom:0;
+  z-index: 8888;
+  background: rgba(0,0,0,0.8);
+  display: none; align-items: center; justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(4px);
+}
+.exit-modal.show { display: flex; animation: fadeInModalBg .3s ease; }
+@keyframes fadeInModalBg { from { opacity:0; } to { opacity:1; } }
+
+.exit-modal-card {
+  max-width: 420px; width: 100%;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 32px;
+  text-align: center;
+  animation: slideUpModal .3s ease;
+}
+@keyframes slideUpModal { from { transform: translateY(40px); opacity:0; } to { transform: translateY(0); opacity:1; } }
+
+.exit-modal-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 32px; height: 32px;
+  background: transparent; border: none;
+  color: var(--text2); font-size: 24px;
+  cursor: pointer; transition: color .2s;
+}
+.exit-modal-close:hover { color: var(--text); }
+
+.exit-modal h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px; font-weight: 700;
+  color: #fff; margin-bottom: 12px;
+}
+
+.exit-modal p {
+  font-size: 15px; color: var(--text2);
+  margin-bottom: 24px; line-height: 1.5;
+}
+
+.exit-modal-form { display: flex; flex-direction: column; gap: 12px; }
+
+.exit-modal-btn {
+  width: 100%; padding: 14px;
+  background: var(--accent); color: #000;
+  border: none; border-radius: 10px;
+  font-family: inherit; font-size: 15px; font-weight: 700;
+  cursor: pointer; transition: all .15s;
+}
+.exit-modal-btn:hover { background: var(--accent2); transform: translateY(-1px); }
+
+.exit-modal-skip {
+  width: 100%; padding: 12px;
+  background: transparent; border: 1px solid var(--border2);
+  color: var(--text2); font-size: 13px; font-weight: 600;
+  border-radius: 8px; cursor: pointer;
+  font-family: inherit; transition: all .2s;
+}
+.exit-modal-skip:hover { border-color: var(--text2); color: var(--text); }
+
+/* FOOTER */
+footer {
+  padding: 32px 24px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  font-size: 13px; color: var(--text3);
+}
+footer a { color: var(--text2); text-decoration: none; }
+
+/* ANIMATIONS */
+.fade-up {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+</style>
+</head>
+<body>
+
+<!-- EMAIL GATE OVERLAY -->
+<div class="email-gate" id="emailGate">
+  <div class="gate-card">
+    <div class="gate-badge"><span class="dot"></span> Free - 60 seconds</div>
+    <h1>See your pitch score<br>with <em>real feedback.</em></h1>
+    <p>Enter your email to unlock your score and access the proven pitch templates that convert.</p>
+    <form class="gate-form" id="gateForm" onsubmit="return handleGateSubmit(event)">
+      <input type="email" class="gate-input" id="gateEmail" placeholder="Your best email" required>
+      <button type="submit" class="gate-submit">Get My Score &rarr;</button>
+    </form>
+    <button class="gate-skip" onclick="skipEmailGate()">Skip for now</button>
+    <div class="gate-trust">
+      <span><span class="ck">&check;</span> Your score instantly</span>
+      <span><span class="ck">&check;</span> Unsubscribe anytime</span>
+    </div>
+  </div>
+</div>
+
+<!-- EXIT INTENT MODAL -->
+<div class="exit-modal" id="exitModal">
+  <div style="position:relative;width:100%;max-width:420px;">
+    <button class="exit-modal-close" onclick="closeExitModal()">&times;</button>
+    <div class="exit-modal-card">
+      <h2>Wait - get your pitch score</h2>
+      <p>See exactly what's working in your pitch and what's killing your response rate.</p>
+      <form class="exit-modal-form" id="exitForm" onsubmit="return handleExitSubmit(event)">
+        <input type="email" class="gate-input" id="exitEmail" placeholder="Your best email" required>
+        <button type="submit" class="exit-modal-btn">Send Me My Score &rarr;</button>
+      </form>
+      <button class="exit-modal-skip" onclick="closeExitModal()">No thanks</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">UGC<span>Closer</span></div>
+  <a class="nav-cta" href="vsl.html">Get the Full System &rarr;</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"><span class="dot"></span> Free - 10 seconds</div>
+  <h1>Score Your Brand Pitch<br>in 10 seconds.<br><em>Instantly.</em></h1>
+  <p class="hero-sub">Paste your DM or email pitch and get an instant score with real feedback on what's working and what's killing your response rate.</p>
+  <div class="hero-proof">
+    <span><span class="check">&check;</span> Instant scoring</span>
+    <span><span class="check">&check;</span> Specific feedback</span>
+    <span><span class="check">&check;</span> Free forever</span>
+  </div>
+  <div class="hero-arrow" onclick="document.getElementById('scorer').scrollIntoView({behavior:'smooth'})">&darr;</div>
+</section>
+
+<!-- PITCH SCORER TOOL -->
+<section class="tool-section" id="scorer">
+  <div class="section-label">Tool 09 - Free</div>
+  <h2 class="section-title">UGC Pitch Score Checker</h2>
+  <p class="section-sub">Paste your brand pitch below. Get a score, breakdown, and specific improvements.</p>
+
+  <div class="scorer-container">
+    <div class="scorer-left">
+      <div class="field">
+        <label>Your Brand Pitch</label>
+        <textarea id="pitchText" placeholder="Paste your DM or email pitch here. Example: 'Hey! I'm a UGC creator with 2+ years of experience in skincare/wellness content. I've created 150+ videos for brands like... I'd love to create content for your brand and show what we can do together. My rate is $300-500 per video depending on usage rights. Let me know if you'd like to see my portfolio!'"></textarea>
+        <div class="char-count"><span id="charCount">0</span> characters</div>
+      </div>
+      <button class="scorer-btn" onclick="scorePitch()">Score My Pitch &rarr;</button>
+      <button class="reset-btn" onclick="resetScorer()" style="display:none;" id="resetBtn">Try Again</button>
+    </div>
+
+    <div class="scorer-right">
+      <div class="score-placeholder" id="placeholder">
+        <div class="emoji">⏱️</div>
+        <p>Paste your pitch above and<br>hit "Score My Pitch" to see your<br>instant score + real feedback.</p>
+      </div>
+
+      <div class="score-area" id="scoreArea">
+        <div class="score-main">
+          <div class="score-circle" id="scoreCircle">
+            <div class="score-number" id="scoreNumber">0</div>
+          </div>
+          <div class="score-rating">
+            <div class="score-rating-label" id="scoreLabel"></div>
+            <div class="score-rating-desc" id="scoreDesc"></div>
+            <div class="score-rating-bar" id="scoreBar">
+              <div class="score-rating-fill" id="scoreBarFill"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="breakdown" id="breakdown"></div>
+
+        <div class="feedback" id="feedback">
+          <div class="feedback-title">Specific Feedback</div>
+          <div class="feedback-items" id="feedbackItems"></div>
+        </div>
+
+        <div class="cta-bridge" id="ctaBridge">
+          <p><strong>Ready to score 90+?</strong> Get access to 12 proven pitch scripts that close deals, plus the exact follow-up sequences that work.</p>
+          <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=pitch_scorer" target="_blank" class="cta-bridge-btn">Get The UGC Closer Kit &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Elisabeth &middot; UGC Closer &middot; <a href="https://instagram.com/closermethod" target="_blank">@closermethod</a></p>
+  <p style="margin-top:8px">Built from 10 years at Criteo &middot; Deel &middot; Autodesk &middot; HBO</p>
+</footer>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '35298849146380570');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"/></noscript>
+
+<script>
+// ===== EMAIL GATE LOGIC =====
+let emailSubmitted = false;
+
+function handleGateSubmit(e) {
+  e.preventDefault();
+  const email = document.getElementById('gateEmail').value.trim();
+  if (!email) return false;
+
+  emailSubmitted = true;
+  localStorage.setItem('pitch_scorer_email', email);
+
+  // Send to Kit (ConvertKit) - Form ID 9131179
+  const KIT_FORM_ID = '9131179';
+  fetch(`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email_address: email,
+      tags: ['pitch-scorer-user']
+    })
+  }).catch(() => {});
+
+  // Track with Meta Pixel
+  fbq('track', 'Lead', { content_name: 'pitch-scorer-gate', value: 0, currency: 'USD' });
+
+  // Hide gate
+  document.getElementById('emailGate').classList.add('hidden');
+  document.body.style.overflow = '';
+  return false;
+}
+
+function skipEmailGate() {
+  emailSubmitted = true;
+  document.getElementById('emailGate').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+function closeExitModal() {
+  document.getElementById('exitModal').classList.remove('show');
+}
+
+function handleExitSubmit(e) {
+  e.preventDefault();
+  const email = document.getElementById('exitEmail').value.trim();
+  if (!email) return false;
+
+  emailSubmitted = true;
+  localStorage.setItem('pitch_scorer_email', email);
+
+  // Send to Kit
+  const KIT_FORM_ID = '9131179';
+  fetch(`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email_address: email,
+      tags: ['pitch-scorer-user', 'exit-intent']
+    })
+  }).catch(() => {});
+
+  fbq('track', 'Lead', { content_name: 'pitch-scorer-exit-modal', value: 0, currency: 'USD' });
+
+  closeExitModal();
+  return false;
+}
+
+// Check if already submitted
+if (localStorage.getItem('pitch_scorer_email')) {
+  emailSubmitted = true;
+  document.getElementById('emailGate').classList.add('hidden');
+} else {
+  document.body.style.overflow = 'hidden';
+}
+
+// Exit intent tracking
+let exitIntentTriggered = false;
+document.addEventListener('mouseleave', function(e) {
+  if (e.clientY <= 0 && !emailSubmitted && !exitIntentTriggered) {
+    exitIntentTriggered = true;
+    document.getElementById('exitModal').classList.add('show');
+  }
+});
+
+// ===== CHARACTER COUNTER =====
+document.getElementById('pitchText').addEventListener('input', function() {
+  document.getElementById('charCount').textContent = this.value.length;
+});
+
+// ===== PITCH SCORING ENGINE =====
+function scorePitch() {
+  const pitch = document.getElementById('pitchText').value.trim();
+
+  if (!pitch.length) {
+    alert('Please paste your pitch first.');
+    return;
+  }
+
+  // Initialize scores
+  const scores = {
+    personalization: 0,
+    specificity: 0,
+    value: 0,
+    cta: 0,
+    brevity: 0,
+    begging: 0
+  };
+
+  const feedback = [];
+  const lowerPitch = pitch.toLowerCase();
+  const wordCount = pitch.split(/\s+/).length;
+
+  // 1. PERSONALIZATION (20 pts) - mentions specific brand/product
+  const personalBrands = ['glossier', 'gymshark', 'liquid iv', 'skims', 'ugg', 'dyson', 'nespresso', 'casper', 'allbirds', 'david yurman', 'drunk elephant', 'nykaa', 'sephora', 'ulta', 'mac', 'nars', 'fenty', 'charlotte tilbury'];
+  const hasPersonalBrand = personalBrands.some(brand => lowerPitch.includes(brand));
+
+  if (hasPersonalBrand) {
+    scores.personalization = 20;
+    feedback.push({ type: 'tip', text: '<strong>Strong personalization:</strong> You mentioned specific brands you\'ve worked with. This shows research and credibility.' });
+  } else if (lowerPitch.includes('brand') || lowerPitch.includes('company')) {
+    scores.personalization = 10;
+    feedback.push({ type: 'warning', text: '<strong>Generic mention:</strong> You said "brand" but didn\'t name specific ones you\'ve worked with. Brands want proof, not promises.' });
+  } else {
+    scores.personalization = 0;
+    feedback.push({ type: 'critical', text: '<strong>Missing personalization:</strong> No specific brands mentioned. Brands want creators who\'ve proven they work, not generic pitches.' });
+  }
+
+  // 2. SPECIFICITY (20 pts) - mentions deliverables, quantity, types
+  let hasSpecificity = false;
+  let specificityScore = 0;
+
+  const specificTerms = ['video', 'videos', 'photos', 'photo', '15 second', '30 second', '60 second', 'reel', 'reels', 'unboxing', 'demo', 'testimonial', 'tutorial', 'edit', 'raw footage'];
+  const mentionsDeliverables = specificTerms.some(term => lowerPitch.includes(term));
+
+  const numberPattern = /\d+/;
+  const hasNumbers = numberPattern.test(pitch);
+
+  if (mentionsDeliverables && hasNumbers) {
+    specificityScore = 20;
+    feedback.push({ type: 'tip', text: '<strong>Great specificity:</strong> You mentioned specific deliverable types (videos, photos, reels) and quantities. This is what brands need to see.' });
+  } else if (mentionsDeliverables || hasNumbers) {
+    specificityScore = 10;
+    feedback.push({ type: 'warning', text: '<strong>Partial specificity:</strong> You mentioned deliverables but could be clearer on quantities, or vice versa. Be explicit: "3 short-form videos" not "content."' });
+  } else {
+    specificityScore = 0;
+    feedback.push({ type: 'critical', text: '<strong>No specificity:</strong> You didn\'t mention what you\'d actually create (videos? photos? format? quantity?). Brands can\'t say yes to vague.' });
+  }
+  scores.specificity = specificityScore;
+
+  // 3. VALUE PROPOSITION (20 pts) - explains benefit to brand
+  let valueScore = 0;
+  const valuePhrases = ['audience', 'niche', 'engagement', 'reach', 'followers', 'authentic', 'conversion', 'proven', 'track record', 'portfolio', 'results', 'experience'];
+  const mentionsValue = valuePhrases.some(phrase => lowerPitch.includes(phrase));
+
+  if (lowerPitch.includes('experience') && (lowerPitch.includes('years') || lowerPitch.includes('videos') || lowerPitch.includes('campaigns'))) {
+    valueScore = 20;
+    feedback.push({ type: 'tip', text: '<strong>Clear value prop:</strong> You explained your experience and track record. Brands understand why you\'re worth it.' });
+  } else if (mentionsValue) {
+    valueScore = 10;
+    feedback.push({ type: 'warning', text: '<strong>Weak value prop:</strong> You mentioned some credentials but didn\'t tie them to brand benefit. Say "I have 150+ videos that got 10%+ CTR" not just "I have experience."' });
+  } else {
+    valueScore = 0;
+    feedback.push({ type: 'critical', text: '<strong>No value prop:</strong> You didn\'t explain why a brand should pick you over 1,000 other creators. Show proof or results.' });
+  }
+  scores.value = valueScore;
+
+  // 4. CALL TO ACTION (15 pts) - clear next step
+  let ctaScore = 0;
+  const ctaTerms = ['let me know', 'interested', 'check out', 'portfolio', 'show', 'see', 'link', 'here', 'dm', 'email', 'reply', 'available', 'rates', 'start', 'book'];
+  const hasCTA = ctaTerms.some(term => lowerPitch.includes(term));
+
+  if (hasCTA && (lowerPitch.includes('rate') || lowerPitch.includes('price') || lowerPitch.includes('available'))) {
+    ctaScore = 15;
+    feedback.push({ type: 'tip', text: '<strong>Strong CTA:</strong> You have a clear next step and mentioned rates. Brands know exactly what to do.' });
+  } else if (hasCTA) {
+    ctaScore = 8;
+    feedback.push({ type: 'warning', text: '<strong>Weak CTA:</strong> You asked for something but it\'s unclear (vague "let me know what you think"). Be direct: "My rates start at $X. Are you interested?"' });
+  } else {
+    ctaScore = 0;
+    feedback.push({ type: 'critical', text: '<strong>No CTA:</strong> You didn\'t ask for anything or provide next steps. Brands won\'t assume-tell them what you want.' });
+  }
+  scores.cta = ctaScore;
+
+  // 5. BREVITY (15 pts) - under 100 words is ideal
+  let brevityScore = 0;
+  if (wordCount <= 75) {
+    brevityScore = 15;
+    feedback.push({ type: 'tip', text: `<strong>Excellent brevity:</strong> ${wordCount} words. Short pitches get read. Longer ones get deleted.` });
+  } else if (wordCount <= 120) {
+    brevityScore = 10;
+    feedback.push({ type: 'warning', text: `<strong>Getting long:</strong> ${wordCount} words. Consider cutting 20-30% to hit under 100. Every word must earn its place.` });
+  } else if (wordCount <= 200) {
+    brevityScore = 5;
+    feedback.push({ type: 'warning', text: `<strong>Too long:</strong> ${wordCount} words. This is a pitch, not a bio. Cut mercilessly-aim for 50-100 words max.` });
+  } else {
+    brevityScore = 0;
+    feedback.push({ type: 'critical', text: `<strong>Way too long:</strong> ${wordCount} words. Brands get 100+ pitches a week. If you haven't made your case by word 75, you've lost them.` });
+  }
+  scores.brevity = brevityScore;
+
+  // 6. BEGGING LANGUAGE (10 pts deduction each occurrence)
+  let beggingPenalty = 0;
+  const beggingPhrases = ['i\'d love to', 'i\'d be honored', 'huge fan', 'would be honored', 'dream to', 'obsessed with', 'can\'t wait', 'hope you', 'fingers crossed', 'dying to'];
+
+  beggingPhrases.forEach(phrase => {
+    if (lowerPitch.includes(phrase)) {
+      beggingPenalty += 10;
+    }
+  });
+
+  if (beggingPenalty > 0) {
+    scores.begging = -beggingPenalty;
+    feedback.push({ type: 'critical', text: `<strong>Begging language detected:</strong> -${beggingPenalty} points. "I'd love to collaborate," "huge fan," "dream come true"-these sound desperate. You're a professional. Talk like one: "I create content for brands in [niche]. My rates start at $X."` });
+  }
+
+  // Calculate total score
+  let totalScore = scores.personalization + scores.specificity + scores.value + scores.cta + scores.brevity + scores.begging;
+  totalScore = Math.max(0, Math.min(100, totalScore));
+
+  // Display score
+  displayScore(totalScore, scores, feedback);
+}
+
+function displayScore(score, breakdown, feedback) {
+  // Update score circle and label
+  const scoreCircle = document.getElementById('scoreCircle');
+  const scoreNumber = document.getElementById('scoreNumber');
+  const scoreLabel = document.getElementById('scoreLabel');
+  const scoreDesc = document.getElementById('scoreDesc');
+  const scoreBar = document.getElementById('scoreBar');
+  const scoreBarFill = document.getElementById('scoreBarFill');
+
+  scoreNumber.textContent = score;
+
+  let scoreClass, labelText, descText;
+  if (score >= 70) {
+    scoreClass = 'excellent';
+    labelText = 'Strong Pitch';
+    descText = 'Brands will respond. Send this.';
+  } else if (score >= 40) {
+    scoreClass = 'good';
+    labelText = 'Good Pitch';
+    descText = 'Getting there, but some gaps remain.';
+  } else {
+    scoreClass = 'poor';
+    labelText = 'Needs Work';
+    descText = 'Significant changes needed for response.';
+  }
+
+  scoreCircle.className = `score-circle ${scoreClass}`;
+  scoreLabel.textContent = labelText;
+  scoreDesc.textContent = descText;
+  scoreBar.className = `score-rating-bar ${scoreClass}`;
+  scoreBarFill.style.width = (score / 100) * 100 + '%';
+
+  // Build breakdown
+  const breakdownDiv = document.getElementById('breakdown');
+  const breakdownItems = [
+    { name: 'Personalization', value: breakdown.personalization, max: 20 },
+    { name: 'Specificity', value: breakdown.specificity, max: 20 },
+    { name: 'Value Proposition', value: breakdown.value, max: 20 },
+    { name: 'Call to Action', value: breakdown.cta, max: 15 },
+    { name: 'Brevity', value: breakdown.brevity, max: 15 },
+  ];
+
+  let breakdownHTML = '';
+  breakdownItems.forEach(item => {
+    const passed = item.value >= item.max * 0.75;
+    const badgeClass = passed ? 'pass' : 'fail';
+    const badgeText = passed ? '✓' : '✗';
+    const pointClass = item.value >= item.max * 0.75 ? 'positive' : 'negative';
+
+    breakdownHTML += `
+      <div class="breakdown-item">
+        <div class="breakdown-label">
+          <strong>${item.name}</strong>
+          <div style="font-size:12px;color:var(--text3)">
+            ${item.value < 0 ? 'Penalty' : 'Score'}: ${item.value >= 0 ? '+' : ''}${item.value}/${item.max}
+          </div>
+        </div>
+        <div class="breakdown-points ${pointClass}">
+          <span class="breakdown-badge ${badgeClass}">${badgeText}</span>
+        </div>
+      </div>
+    `;
+  });
+
+  if (breakdown.begging < 0) {
+    breakdownHTML += `
+      <div class="breakdown-item">
+        <div class="breakdown-label">
+          <strong>Begging Language</strong>
+          <div style="font-size:12px;color:var(--text3)">Penalty: ${breakdown.begging}</div>
+        </div>
+        <div class="breakdown-points negative">
+          <span class="breakdown-badge fail">✗</span>
+        </div>
+      </div>
+    `;
+  }
+
+  breakdownDiv.innerHTML = breakdownHTML;
+
+  // Build feedback
+  const feedbackDiv = document.getElementById('feedbackItems');
+  let feedbackHTML = '';
+  feedback.forEach(item => {
+    let icon = '→';
+    if (item.type === 'tip') icon = '✓';
+    if (item.type === 'warning') icon = '⚠';
+    if (item.type === 'critical') icon = '✕';
+
+    feedbackHTML += `
+      <div class="feedback-item ${item.type}">
+        <span class="feedback-icon">${icon}</span>
+        <span>${item.text}</span>
+      </div>
+    `;
+  });
+
+  feedbackDiv.innerHTML = feedbackHTML;
+
+  // Show results
+  document.getElementById('placeholder').style.display = 'none';
+  document.getElementById('scoreArea').style.display = 'block';
+  document.getElementById('resetBtn').style.display = 'block';
+
+  // Show CTA bridge
+  setTimeout(() => {
+    document.getElementById('ctaBridge').classList.add('show');
+  }, 2000);
+
+  // Track with Meta Pixel
+  fbq('track', 'ViewContent', { content_name: 'pitch-scored', value: score, currency: 'USD' });
+}
+
+function resetScorer() {
+  document.getElementById('pitchText').value = '';
+  document.getElementById('charCount').textContent = '0';
+  document.getElementById('placeholder').style.display = 'flex';
+  document.getElementById('scoreArea').style.display = 'none';
+  document.getElementById('resetBtn').style.display = 'none';
+  document.getElementById('ctaBridge').classList.remove('show');
+  document.getElementById('pitchText').focus();
+}
+
+// Allow Enter to score (Shift+Enter for new line)
+document.getElementById('pitchText').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    scorePitch();
+  }
+});
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

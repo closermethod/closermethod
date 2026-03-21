@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reel Scripts + Image Prompts - AI Era Content Kit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFCF9;
+            --forest: #2D5A3D;
+            --terra: #B85C38;
+            --cream: #F8F5EF;
+            --charcoal: #292524;
+            --sage: #8BA88F;
+            --light-cream: #FEFDFB;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--charcoal);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 2px solid var(--terra);
+            padding-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--forest);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--sage);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Strategy Card */
+        .strategy-card {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--light-cream) 100%);
+            border: 2px solid var(--terra);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strategy-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(184, 92, 56, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .strategy-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .strategy-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--forest);
+            margin-bottom: 20px;
+        }
+
+        .strategy-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--charcoal);
+        }
+
+        .strategy-card strong {
+            color: var(--terra);
+            font-weight: 600;
+        }
+
+        /* Reel Cards */
+        .reel-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .reel-card {
+            background: var(--light-cream);
+            border: 1px solid #E8E4DB;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .reel-card:hover {
+            box-shadow: 0 8px 24px rgba(45, 90, 61, 0.08);
+            border-color: var(--terra);
+        }
+
+        .reel-header {
+            background: linear-gradient(135deg, var(--forest) 0%, #3D6A4D 100%);
+            color: white;
+            padding: 24px 32px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background 0.3s ease;
+        }
+
+        .reel-header:hover {
+            background: linear-gradient(135deg, #234A2D 0%, #2D5A3D 100%);
+        }
+
+        .reel-header-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .reel-strategic-note {
+            font-size: 13px;
+            opacity: 0.9;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .toggle-icon {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .reel-card.open .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .reel-content {
+            display: none;
+            padding: 40px 32px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .reel-card.open .reel-content {
+            display: block;
+            max-height: none;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: var(--forest);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--terra);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title .copy-btn {
+            font-size: 12px;
+        }
+
+        /* Hooks */
+        .hooks-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .hook-item {
+            background: white;
+            border-left: 4px solid var(--terra);
+            padding: 16px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .hook-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--terra);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            min-width: 80px;
+        }
+
+        .hook-text {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--charcoal);
+        }
+
+        /* Script */
+        .script-block {
+            background: white;
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid #E8E4DB;
+            margin-bottom: 16px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .timestamp {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--terra);
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .on-screen {
+            font-style: italic;
+            color: var(--forest);
+            margin: 8px 0;
+            padding-left: 12px;
+            border-left: 3px solid var(--forest);
+        }
+
+        .vo {
+            margin: 8px 0;
+            padding-left: 12px;
+        }
+
+        /* Caption Blocks */
+        .caption-block {
+            background: white;
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid #E8E4DB;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--charcoal);
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .caption-block .copy-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+        }
+
+        /* Image Prompts */
+        .prompts-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .prompt-item {
+            background: white;
+            padding: 16px;
+            border-radius: 4px;
+            border: 1px solid #E8E4DB;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .prompt-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--terra);
+            font-weight: 600;
+            min-width: 35px;
+            text-transform: uppercase;
+        }
+
+        .prompt-text {
+            flex: 1;
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--charcoal);
+        }
+
+        /* Buttons */
+        .copy-btn {
+            background: var(--terra);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+
+        .copy-btn:hover {
+            background: var(--forest);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(184, 92, 56, 0.3);
+        }
+
+        .copy-btn.copied {
+            background: var(--forest);
+        }
+
+        /* Calendar Section */
+        .calendar-section {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--light-cream) 100%);
+            border: 2px solid var(--forest);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .calendar-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--forest);
+            margin-bottom: 32px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .calendar-week {
+            background: white;
+            padding: 24px;
+            border-radius: 6px;
+            border-left: 4px solid var(--terra);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .week-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--terra);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .week-content {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--charcoal);
+        }
+
+        .week-content strong {
+            color: var(--forest);
+            font-weight: 600;
+        }
+
+        .calendar-note {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid var(--forest);
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--charcoal);
+        }
+
+        .calendar-note strong {
+            color: var(--terra);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 2px solid var(--terra);
+            color: var(--sage);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 16px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .reel-header {
+                padding: 20px 16px;
+            }
+
+            .reel-content {
+                padding: 24px 16px;
+            }
+
+            .strategy-card {
+                padding: 24px 16px;
+            }
+
+            .calendar-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Utility */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #E8E4DB, transparent);
+            margin: 32px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="subtitle">Content Kit for the AI Era</div>
+            <h1>Reel Scripts + Image Prompts</h1>
+        </header>
+
+        <!-- Strategy Card -->
+        <div class="strategy-card">
+            <div class="strategy-card-content">
+                <h2>Your Authenticity Premium Playbook</h2>
+                <p>
+                    <strong>4 scripts × 3 hook variations = 12 unique reels.</strong> Plus 12 AI image prompts for visuals. This is 3+ months of strategic content - every reel drives traffic to your rate calculator and funnel.
+                </p>
+                <p style="margin-top: 16px; font-style: italic;">
+                    Every reel CTA drives to your link in bio → rate calculator → email capture → funnel. This is NOT content for content's sake - this is your traffic engine.
+                </p>
+            </div>
+        </div>
+
+        <!-- Reel Cards -->
+        <div class="reel-cards">
+            <!-- REEL 4 -->
+            <div class="reel-card open">
+                <div class="reel-header" onclick="toggleReel(this)">
+                    <div class="reel-header-content">
+                        <h3>The Counter</h3>
+                        <div class="reel-strategic-note">Highest comment rate. TikTok strongest. Most direct sales driver.</div>
+                    </div>
+                    <div class="toggle-icon">▼</div>
+                </div>
+                <div class="reel-content">
+                    <!-- Hooks -->
+                    <div class="content-section">
+                        <div class="section-title">
+                            Hook Variations
+                            <span style="font-size: 12px; color: var(--sage);">Click to copy each variation</span>
+                        </div>
+                        <div class="hooks-container">
+                            <div class="hook-item">
+                                <span class="hook-label">A (Conflict)</span>
+                                <span class="hook-text">a brand told me they were switching to AI ugc. here's the email i sent back.</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'a brand told me they were switching to AI ugc. here\'s the email i sent back.')">Copy</button>
+                            </div>
+                            <div class="hook-item">
+                                <span class="hook-label">B (Outcome)</span>
+                                <span class="hook-text">i countered a brand's AI threat with data. they booked me. full rate.</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'i countered a brand\'s AI threat with data. they booked me. full rate.')">Copy</button>
+                            </div>
+                            <div class="hook-item">
+                                <span class="hook-label">C (Open Loop)</span>
+                                <span class="hook-text">there are 4 words that end every "we'll use AI instead" conversation. want them?</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'there are 4 words that end every \"we\'ll use AI instead\" conversation. want them?')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Full Script -->
+                    <div class="content-section">
+                        <div class="section-title">
+                            Full Word-for-Word Script
+                            <button class="copy-btn" onclick="copyScriptToClipboard('reel4-script')">Copy Script</button>
+                        </div>
+                        <div id="reel4-script">
+                            <div class="script-block">
+                                <div class="timestamp">[0:00–0:02]</div>
+                                <div class="on-screen">Hook. Talking head. Calm, confident. Maybe slight smile.</div>
+                                <div class="on-screen">ON SCREEN: a brand told me they were switching to AI ugc. here's the email i sent back.</div>
+                            </div>
+
+                            <div class="script-block">
+                                <div class="timestamp">[0:02–0:06]</div>
+                                <div class="vo">VO: "They said they'd decided to explore AI-generated content because it was - quote - significantly more cost-effective for their budget."</div>
+                                <div class="vo">VO: "I didn't panic. I didn't lower my rate. I sent this."</div>
+                            </div>
+
+                            <div class="script-block">
+                                <div class="timestamp">[0:06–0:15]</div>
+                                <div>Screen record of typing the email, or text on screen.</div>
+                                <div class="vo" style="margin-top: 12px;">VO: "'That makes complete sense - AI UGC is definitely faster and cheaper to produce at volume. I'd just flag one data point for your team: consumer preference for AI-generated creator content dropped from 60% to 26% in the last two years. Brands using primarily AI UGC are watching engagement fall. I'm happy to move forward at my rate knowing real human content is converting at five times the rate of AI right now - but completely understand if the direction has shifted.'"</div>
+                            </div>
+
+                            <div class="script-block">
+                                <div class="timestamp">[0:15–0:20]</div>
+                                <div class="vo">VO: "They booked me. Full rate. The difference was data, not confidence. Data turns a negotiation from a feelings conversation into a business conversation."</div>
+                                <div class="vo">VO: "I have every version of this script - for every scenario, every objection - in my playbook. Link in bio."</div>
+                                <div class="on-screen">ON SCREEN (end): data > confidence in every negotiation.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Instagram Caption -->
+                    <div class="content-section">
+                        <div class="section-title">Instagram Caption</div>
+                        <div class="caption-block">
+                            A brand told me they were going with AI instead. So I sent them this. 👆<br><br>
+                            They booked me at full rate.<br><br>
+                            The counter isn't confidence - it's data. When you know that consumer trust in AI creator content dropped from 60% to 26% in two years, you're not guessing in a negotiation. You're quoting research.<br><br>
+                            Every objection script for the AI era is in my Authenticity Premium Playbook. $297, instant download, link in bio.<br><br>
+                            #ugccreator #ugcrates #brandnegotiation #ugc2026 #contentcreator #branddeals #creatortips #aivsugc
+                            <button class="copy-btn" onclick="copyToClipboard(this, 'A brand told me they were going with AI instead. So I sent them this. 👆\n\nThey booked me at full rate.\n\nThe counter isn\'t confidence - it\'s data. When you know that consumer trust in AI creator content dropped from 60% to 26% in two years, you\'re not guessing in a negotiation. You\'re quoting research.\n\nEvery objection script for the AI era is in my Authenticity Premium Playbook. $297, instant download, link in bio.\n\n#ugccreator #ugcrates #brandnegotiation #ugc2026 #contentcreator #branddeals #creatortips #aivsugc')">Copy Caption</button>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- TikTok Caption -->
+                    <div class="content-section">
+                        <div class="section-title">TikTok Caption</div>
+                        <div class="caption-block">
+                            brand: we're going with AI instead 💀<br>
+                            me: *sends this email*<br>
+                            brand: ok we want to book you<br><br>
+                            the counter isn't confidence. it's data. consumer preference for AI content dropped from 60% → 26% in 2 years. brands know this. most creators don't.<br><br>
+                            every version of this script is in the playbook. link in bio. #ugc #ugccreator #branddeals #ugcrates #creatorbusiness
+                            <button class="copy-btn" onclick="copyToClipboard(this, 'brand: we\'re going with AI instead 💀\nme: *sends this email*\nbrand: ok we want to book you\n\nthe counter isn\'t confidence. it\'s data. consumer preference for AI content dropped from 60% → 26% in 2 years. brands know this. most creators don\'t.\n\nevery version of this script is in the playbook. link in bio. #ugc #ugccreator #branddeals #ugcrates #creatorbusiness')">Copy Caption</button>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Image Prompts -->
+                    <div class="content-section">
+                        <div class="section-title">Grok Image Prompts</div>
+                        <div class="prompts-grid">
+                            <div class="prompt-item">
+                                <span class="prompt-number">Prompt 10</span>
+                                <span class="prompt-text">EMAIL/NEGOTIATION CONCEPT: Overhead flat lay: open laptop showing email compose window (no readable text), beside a notebook with "counter: full rate" written in confident handwriting, a coffee cup, warm morning light, editorial workspace aesthetic, cream and gold tones, film grain</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'EMAIL/NEGOTIATION CONCEPT: Overhead flat lay: open laptop showing email compose window (no readable text), beside a notebook with \"counter: full rate\" written in confident handwriting, a coffee cup, warm morning light, editorial workspace aesthetic, cream and gold tones, film grain')">Copy</button>
+                            </div>
+                            <div class="prompt-item">
+                                <span class="prompt-number">Prompt 11</span>
+                                <span class="prompt-text">DATA IN NEGOTIATION: Professional woman's hands confidently typing on laptop keyboard, background softly blurred showing a brand mood board or presentation, dramatic warm side lighting, empowered body language readable from hands alone, documentary style</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'DATA IN NEGOTIATION: Professional woman\'s hands confidently typing on laptop keyboard, background softly blurred showing a brand mood board or presentation, dramatic warm side lighting, empowered body language readable from hands alone, documentary style')">Copy</button>
+                            </div>
+                            <div class="prompt-item">
+                                <span class="prompt-number">Prompt 12</span>
+                                <span class="prompt-text">VICTORY/CONFIDENCE MOMENT: Woman reading phone with slight satisfied smile, sitting in Barcelona outdoor café, golden afternoon light, sun flare, candid moment not posed, shallow depth of field, palm trees and Mediterranean architecture softly visible in background, film grain aesthetic</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'VICTORY/CONFIDENCE MOMENT: Woman reading phone with slight satisfied smile, sitting in Barcelona outdoor café, golden afternoon light, sun flare, candid moment not posed, shallow depth of field, palm trees and Mediterranean architecture softly visible in background, film grain aesthetic')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REEL 1 -->
+            <div class="reel-card">
+                <div class="reel-header" onclick="toggleReel(this)">
+                    <div class="reel-header-content">
+                        <h3>AI Made You More Expensive</h3>
+                        <div class="reel-strategic-note">Flagship concept. Highest share potential.</div>
+                    </div>
+                    <div class="toggle-icon">▼</div>
+                </div>
+                <div class="reel-content">
+                    <!-- Hooks -->
+                    <div class="content-section">
+                        <div class="section-title">
+                            Hook Variations
+                            <span style="font-size: 12px; color: var(--sage);">Click to copy each variation</span>
+                        </div>
+                        <div class="hooks-container">
+                            <div class="hook-item">
+                                <span class="hook-label">A (Provocative)</span>
+                                <span class="hook-text">brands say AI is cheaper than you. they're right. that's why your rate goes up.</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'brands say AI is cheaper than you. they\'re right. that\'s why your rate goes up.')">Copy</button>
+                            </div>
+                            <div class="hook-item">
+                                <span class="hook-label">B (Data-Led)</span>
+                                <span class="hook-text">consumer trust in AI content dropped 60% → 26% in 2 years. you're welcome.</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'consumer trust in AI content dropped 60% → 26% in 2 years. you\'re welcome.')">Copy</button>
+                            </div>
+                            <div class="hook-item">
+                                <span class="hook-label">C (Empathy-Led)</span>
+                                <span class="hook-text">if a brand ever used "AI" to push your rate down, watch this.</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'if a brand ever used \"AI\" to push your rate down, watch this.')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Full Script -->
+                    <div class="content-section">
+                        <div class="section-title">
+                            Full Word-for-Word Script
+                            <button class="copy-btn" onclick="copyScriptToClipboard('reel1-script')">Copy Script</button>
+                        </div>
+                        <div id="reel1-script">
+                            <div class="script-block">
+                                <div class="timestamp">[0:00–0:02]</div>
+                                <div class="on-screen">Hook on screen. Talking head, direct camera. Confident, not aggressive.</div>
+                                <div class="on-screen">ON SCREEN: brands say AI is cheaper than you. they're right. that's why your rate goes up.</div>
+                            </div>
+
+                            <div class="script-block">
+                                <div class="timestamp">[0:02–0:07]</div>
+                                <div class="vo">VO: "Here's the economics that brands understand and creators don't."</div>
+                                <div class="vo">VO: "When AI floods the market with cheap synthetic content, the supply of authentic human content goes down. Supply goes down. Your value goes up. Basic economics."</div>
+                            </div>
+
+                            <div class="script-block">
+                                <div class="timestamp">[0:07–0:15]</div>
+                                <div class="vo">VO: "I have 10 years in Fortune 500 enterprise sales. I negotiated contracts with procurement teams who had every tool in the book to push rates down. AI is just the latest one."</div>
+                                <div class="vo">VO: "Consumer preference for AI creator content just collapsed from 60% to 26% in two years. Brands need you. They just don't want to pay what you're worth."</div>
+                            </div>
+
+                            <div class="script-block">
+                                <div class="timestamp">[0:15–0:20]</div>
+                                <div class="vo">VO: "I built a rate calculator and a full negotiation playbook so you never have to guess your number or fold on it. Link in bio."</div>
+                                <div class="on-screen">ON SCREEN (end): your rate just went up. don't negotiate down.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Instagram Caption -->
+                    <div class="content-section">
+                        <div class="section-title">Instagram Caption</div>
+                        <div class="caption-block">
+                            The brand said AI is cheaper. They're right. That's exactly why your rate goes up. 📈<br><br>
+                            When supply of something goes down, price goes up. AI is flooding the market with synthetic content - which makes real human UGC scarcer, more valuable, and worth MORE.<br><br>
+                            Consumer preference for AI creator content dropped from 60% to 26% in 2 years (Billion Dollar Boy, 6,000 person study). Brands know this. They're hoping you don't.<br><br>
+                            I built a free rate calculator + a full negotiation playbook for the AI era. Link in bio.<br><br>
+                            #ugccreator #ugcrates #branddeals #ugc2026 #contentcreator #creatorbusiness #ugctips #aivsugc
+                            <button class="copy-btn" onclick="copyToClipboard(this, 'The brand said AI is cheaper. They\'re right. That\'s exactly why your rate goes up. 📈\n\nWhen supply of something goes down, price goes up. AI is flooding the market with synthetic content - which makes real human UGC scarcer, more valuable, and worth MORE.\n\nConsumer preference for AI creator content dropped from 60% to 26% in 2 years (Billion Dollar Boy, 6,000 person study). Brands know this. They\'re hoping you don\'t.\n\nI built a free rate calculator + a full negotiation playbook for the AI era. Link in bio.\n\n#ugccreator #ugcrates #branddeals #ugc2026 #contentcreator #creatorbusiness #ugctips #aivsugc')">Copy Caption</button>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- TikTok Caption -->
+                    <div class="content-section">
+                        <div class="section-title">TikTok Caption</div>
+                        <div class="caption-block">
+                            brands use AI to push your rate down. here's the counter. 🧠 AI flooded feeds with cheap content = real human UGC just got scarce = YOUR rate goes up. free calculator + negotiation playbook in bio. #ugc #branddeals #ugccreator #ugcrates
+                            <button class="copy-btn" onclick="copyToClipboard(this, 'brands use AI to push your rate down. here\'s the counter. 🧠 AI flooded feeds with cheap content = real human UGC just got scarce = YOUR rate goes up. free calculator + negotiation playbook in bio. #ugc #branddeals #ugccreator #ugcrates')">Copy Caption</button>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Image Prompts -->
+                    <div class="content-section">
+                        <div class="section-title">Grok Image Prompts</div>
+                        <div class="prompts-grid">
+                            <div class="prompt-item">
+                                <span class="prompt-number">Prompt 1</span>
+                                <span class="prompt-text">HOOK VISUAL: Split composition: left side shows a blurry AI-generated avatar person in cold blue tones labeled "$0.03", right side shows a warm-lit real woman at a Barcelona café, golden hour light, confident expression, labeled "$800". Editorial magazine aesthetic, serif typography overlay, film grain texture, no faces recognizable on left side</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'HOOK VISUAL: Split composition: left side shows a blurry AI-generated avatar person in cold blue tones labeled \"$0.03\", right side shows a warm-lit real woman at a Barcelona café, golden hour light, confident expression, labeled \"$800\". Editorial magazine aesthetic, serif typography overlay, film grain texture, no faces recognizable on left side')">Copy</button>
+                            </div>
+                            <div class="prompt-item">
+                                <span class="prompt-number">Prompt 2</span>
+                                <span class="prompt-text">DATA VISUAL: Minimalist infographic poster: dark background (#1A1612), large serif number "60%" in warm gold fading with downward arrow to "26%", subtitle text "consumer preference for AI creator content, 2023→2025", source credit at bottom, grain overlay, editorial luxury aesthetic</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'DATA VISUAL: Minimalist infographic poster: dark background (#1A1612), large serif number \"60%\" in warm gold fading with downward arrow to \"26%\", subtitle text \"consumer preference for AI creator content, 2023→2025\", source credit at bottom, grain overlay, editorial luxury aesthetic')">Copy</button>
+                            </div>
+                            <div class="prompt-item">
+                                <span class="prompt-number">Prompt 3</span>
+                                <span class="prompt-text">CONFIDENCE VISUAL: Professional woman at sleek Barcelona desk, laptop open showing data charts, confident posture, warm afternoon light through floor-to-ceiling windows with city view, editorial documentary style, shallow depth of field, candid not posed, warm cream and gold tones</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'CONFIDENCE VISUAL: Professional woman at sleek Barcelona desk, laptop open showing data charts, confident posture, warm afternoon light through floor-to-ceiling windows with city view, editorial documentary style, shallow depth of field, candid not posed, warm cream and gold tones')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REEL 3 -->
+            <div class="reel-card">
+                <div class="reel-header" onclick="toggleReel(this)">
+                    <div class="reel-header-content">
+                        <h3>The Brain Scan</h3>
+                        <div class="reel-strategic-note">Most credibility. Best for warming up cold audiences.</div>
+                    </div>
+                    <div class="toggle-icon">▼</div>
+                </div>
+                <div class="reel-content">
+                    <!-- Hooks -->
+                    <div class="content-section">
+                        <div class="section-title">
+                            Hook Variations
+                            <span style="font-size: 12px; color: var(--sage);">Click to copy each variation</span>
+                        </div>
+                        <div class="hooks-container">
+                            <div class="hook-item">
+                                <span class="hook-label">A (Shock)</span>
+                                <span class="hook-text">NielsenIQ strapped brain scan equipment to 2,000 people watching AI ads. here's what happened.</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'NielsenIQ strapped brain scan equipment to 2,000 people watching AI ads. here\'s what happened.')">Copy</button>
+                            </div>
+                            <div class="hook-item">
+                                <span class="hook-label">B (Relatable)</span>
+                                <span class="hook-text">your audience's brain rejects AI content before their brain even knows why.</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'your audience\'s brain rejects AI content before their brain even knows why.')">Copy</button>
+                            </div>
+                            <div class="hook-item">
+                                <span class="hook-label">C (Direct)</span>
+                                <span class="hook-text">only 13% of consumers trust ads made entirely by AI. brands need to hear this.</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'only 13% of consumers trust ads made entirely by AI. brands need to hear this.')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Full Script -->
+                    <div class="content-section">
+                        <div class="section-title">
+                            Full Word-for-Word Script
+                            <button class="copy-btn" onclick="copyScriptToClipboard('reel3-script')">Copy Script</button>
+                        </div>
+                        <div id="reel3-script">
+                            <div class="script-block">
+                                <div class="timestamp">[0:00–0:02]</div>
+                                <div class="on-screen">Hook. Talking head or text-on-screen b-roll.</div>
+                                <div class="on-screen">ON SCREEN: NielsenIQ strapped brain scan equipment to 2,000 people watching AI ads. here's what happened.</div>
+                            </div>
+
+                            <div class="script-block">
+                                <div class="timestamp">[0:02–0:10]</div>
+                                <div class="vo">VO: "NielsenIQ researchers put EEG equipment on 2,000 people and showed them AI-generated ads next to human-made content."</div>
+                                <div class="vo">VO: "Result: human brains produce weak memory activation for AI content - even high quality AI content. Participants rated AI ads as more annoying, more boring, more confusing. The researchers said consumers are sensitive to authenticity at both the conscious AND subconscious level."</div>
+                            </div>
+
+                            <div class="script-block">
+                                <div class="timestamp">[0:10–0:18]</div>
+                                <div class="vo">VO: "Translation: your audience's brain knows the difference. Even when they can't say why."</div>
+                                <div class="vo">VO: "Only 13% of consumers trust ads made entirely by AI. 70% have abandoned a purchase because something didn't feel real. Human UGC drives 161% more conversions on product pages."</div>
+                            </div>
+
+                            <div class="script-block">
+                                <div class="timestamp">[0:18–0:24]</div>
+                                <div class="vo">VO: "You are not competing with AI on cost. You are competing on what AI cannot provide: genuine human taste and the trust that comes from being a real person who actually used the product."</div>
+                                <div class="vo">VO: "Know your value. Charge it. Free calculator in my bio."</div>
+                                <div class="on-screen">ON SCREEN (end): your authenticity is a performance metric. charge for it.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Instagram Caption -->
+                    <div class="content-section">
+                        <div class="section-title">Instagram Caption</div>
+                        <div class="caption-block">
+                            NielsenIQ put brain scan equipment on 2,000 people watching AI ads. 🧠<br><br>
+                            The finding: human brains produce WEAK memory activation for AI content - even polished, high-quality AI content. Consumers rate it as more annoying, more boring, more forgettable.<br><br>
+                            Your audience's brain rejects AI content before their conscious mind knows why.<br><br>
+                            Only 13% of consumers trust ads made entirely by AI. Human UGC drives 161% more conversions. Your authenticity isn't a soft value - it's a measurable performance advantage.<br><br>
+                            Charge accordingly. Free rate calculator → link in bio.<br><br>
+                            #ugccreator #ugcrates #branddeals #contentcreator #ugc2026 #creatorbusiness #aivsugc #ugctips
+                            <button class="copy-btn" onclick="copyToClipboard(this, 'NielsenIQ put brain scan equipment on 2,000 people watching AI ads. 🧠\n\nThe finding: human brains produce WEAK memory activation for AI content - even polished, high-quality AI content. Consumers rate it as more annoying, more boring, more forgettable.\n\nYour audience\'s brain rejects AI content before their conscious mind knows why.\n\nOnly 13% of consumers trust ads made entirely by AI. Human UGC drives 161% more conversions. Your authenticity isn\'t a soft value - it\'s a measurable performance advantage.\n\nCharge accordingly. Free rate calculator → link in bio.\n\n#ugccreator #ugcrates #branddeals #contentcreator #ugc2026 #creatorbusiness #aivsugc #ugctips')">Copy Caption</button>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- TikTok Caption -->
+                    <div class="content-section">
+                        <div class="section-title">TikTok Caption</div>
+                        <div class="caption-block">
+                            they scanned 2000 people's brains watching AI ads. result: weak memory activation. your brain rejects AI before you know why. only 13% trust AI ads. 161% more conversions with human UGC. you're not competing on price. you're competing on authenticity. charge it. #ugc #ugccreator #branddeals
+                            <button class="copy-btn" onclick="copyToClipboard(this, 'they scanned 2000 people\'s brains watching AI ads. result: weak memory activation. your brain rejects AI before you know why. only 13% trust AI ads. 161% more conversions with human UGC. you\'re not competing on price. you\'re competing on authenticity. charge it. #ugc #ugccreator #branddeals')">Copy Caption</button>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Image Prompts -->
+                    <div class="content-section">
+                        <div class="section-title">Grok Image Prompts</div>
+                        <div class="prompts-grid">
+                            <div class="prompt-item">
+                                <span class="prompt-number">Prompt 7</span>
+                                <span class="prompt-text">NEUROSCIENCE CONCEPT: Abstract editorial illustration of human brain silhouette filled with warm golden light particles on dark background, scattered data points and neural pathways in gold, one area glowing intensely to represent authentic emotional response, scientific but beautiful, no text</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'NEUROSCIENCE CONCEPT: Abstract editorial illustration of human brain silhouette filled with warm golden light particles on dark background, scattered data points and neural pathways in gold, one area glowing intensely to represent authentic emotional response, scientific but beautiful, no text')">Copy</button>
+                            </div>
+                            <div class="prompt-item">
+                                <span class="prompt-number">Prompt 8</span>
+                                <span class="prompt-text">TRUST METER VISUAL: Minimalist gauge/meter design on dark background: needle pointing to 13% in the red zone, labeled "consumer trust in AI-only ads", gold accents, editorial infographic aesthetic, luxury brand design language, grain overlay</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'TRUST METER VISUAL: Minimalist gauge/meter design on dark background: needle pointing to 13% in the red zone, labeled \"consumer trust in AI-only ads\", gold accents, editorial infographic aesthetic, luxury brand design language, grain overlay')">Copy</button>
+                            </div>
+                            <div class="prompt-item">
+                                <span class="prompt-number">Prompt 9</span>
+                                <span class="prompt-text">AUTHENTICITY CONCEPT: Close-up of real human hands holding a smartphone filming something authentic, slightly blurred background of warm café interior, golden hour light, candid moment, film grain, documentary photography style, warm tones</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'AUTHENTICITY CONCEPT: Close-up of real human hands holding a smartphone filming something authentic, slightly blurred background of warm café interior, golden hour light, candid moment, film grain, documentary photography style, warm tones')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REEL 2 -->
+            <div class="reel-card">
+                <div class="reel-header" onclick="toggleReel(this)">
+                    <div class="reel-header-content">
+                        <h3>The Vinyl Analogy</h3>
+                        <div class="reel-strategic-note">Highest save rate. Best for IG algorithm.</div>
+                    </div>
+                    <div class="toggle-icon">▼</div>
+                </div>
+                <div class="reel-content">
+                    <!-- Hooks -->
+                    <div class="content-section">
+                        <div class="section-title">
+                            Hook Variations
+                            <span style="font-size: 12px; color: var(--sage);">Click to copy each variation</span>
+                        </div>
+                        <div class="hooks-container">
+                            <div class="hook-item">
+                                <span class="hook-label">A (Curiosity)</span>
+                                <span class="hook-text">vinyl records are at a 40-year high. in the streaming era. here's what that means for your rate.</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'vinyl records are at a 40-year high. in the streaming era. here\'s what that means for your rate.')">Copy</button>
+                            </div>
+                            <div class="hook-item">
+                                <span class="hook-label">B (Provocative)</span>
+                                <span class="hook-text">AI is doing to ugc what spotify did to music. and you're about to go vinyl.</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'AI is doing to ugc what spotify did to music. and you\'re about to go vinyl.')">Copy</button>
+                            </div>
+                            <div class="hook-item">
+                                <span class="hook-label">C (Relatable)</span>
+                                <span class="hook-text">when machines make something cheap, the human version becomes luxury. always.</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'when machines make something cheap, the human version becomes luxury. always.')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Full Script -->
+                    <div class="content-section">
+                        <div class="section-title">
+                            Full Word-for-Word Script
+                            <button class="copy-btn" onclick="copyScriptToClipboard('reel2-script')">Copy Script</button>
+                        </div>
+                        <div id="reel2-script">
+                            <div class="script-block">
+                                <div class="timestamp">[0:00–0:02]</div>
+                                <div class="on-screen">Hook. Lifestyle B-roll: café, Barcelona, or desk. Text over.</div>
+                                <div class="on-screen">ON SCREEN: AI is doing to ugc what spotify did to music. and you're about to go vinyl.</div>
+                            </div>
+
+                            <div class="script-block">
+                                <div class="timestamp">[0:02–0:10]</div>
+                                <div class="vo">VO: "In 2006 vinyl record sales were under 1 million units. Music was basically free. Streaming had won."</div>
+                                <div class="vo">VO: "In 2024 - the peak of the streaming era - vinyl hit 43.6 million units. A 40-year high. Because when digital made music abundant and cheap, the physical human-made record became precious."</div>
+                            </div>
+
+                            <div class="script-block">
+                                <div class="timestamp">[0:10–0:18]</div>
+                                <div class="vo">VO: "This is the pattern. Every time. Handmade goods - $907 billion market, growing 8.8% annually, commanding 20-30% premiums over mass-produced alternatives."</div>
+                                <div class="vo">VO: "Film photography up 18% year over year despite smartphone cameras. Live music at $33 billion - 29% growth - because when recorded music became free, being in the room became priceless."</div>
+                            </div>
+
+                            <div class="script-block">
+                                <div class="timestamp">[0:18–0:25]</div>
+                                <div class="vo">VO: "AI is making a certain kind of UGC cheap. Which means real human UGC - made by someone with actual taste and genuine reactions - is about to go vinyl."</div>
+                                <div class="vo">VO: "Stop competing on price. Start competing on what you actually are: rare. Link in bio - free rate calculator and the playbook for the AI era."</div>
+                                <div class="on-screen">ON SCREEN (end): stop racing AI to the bottom. you can't win that race.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Instagram Caption -->
+                    <div class="content-section">
+                        <div class="section-title">Instagram Caption</div>
+                        <div class="caption-block">
+                            Vinyl records hit a 40-year sales high in 2024. In the streaming era. 🎵<br><br>
+                            Because when digital made music cheap and abundant, the physical human-made record became precious.<br><br>
+                            This is the pattern. Every industry. Every time automation makes a category cheap, the human version becomes the luxury. Handmade goods. Film photography. Live music. All thriving alongside their automated alternatives - not despite them.<br><br>
+                            AI UGC just made your content go vinyl. Know your rate. Link in bio.<br><br>
+                            #ugccreator #contentcreator #branddeals #ugcrates #ugc2026 #creatortips #aivsugc #creatorbusiness
+                            <button class="copy-btn" onclick="copyToClipboard(this, 'Vinyl records hit a 40-year sales high in 2024. In the streaming era. 🎵\n\nBecause when digital made music cheap and abundant, the physical human-made record became precious.\n\nThis is the pattern. Every industry. Every time automation makes a category cheap, the human version becomes the luxury. Handmade goods. Film photography. Live music. All thriving alongside their automated alternatives - not despite them.\n\nAI UGC just made your content go vinyl. Know your rate. Link in bio.\n\n#ugccreator #contentcreator #branddeals #ugcrates #ugc2026 #creatortips #aivsugc #creatorbusiness')">Copy Caption</button>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- TikTok Caption -->
+                    <div class="content-section">
+                        <div class="section-title">TikTok Caption</div>
+                        <div class="caption-block">
+                            vinyl hit 40-year high during streaming era. handmade goods $907B market growing 8.8% annually. film photography up 18%. live music $33B, 29% growth. pattern: when machines make it cheap, human version becomes luxury. AI UGC just made you vinyl. stop racing to the bottom. #ugc #ugccreator
+                            <button class="copy-btn" onclick="copyToClipboard(this, 'vinyl hit 40-year high during streaming era. handmade goods $907B market growing 8.8% annually. film photography up 18%. live music $33B, 29% growth. pattern: when machines make it cheap, human version becomes luxury. AI UGC just made you vinyl. stop racing to the bottom. #ugc #ugccreator')">Copy Caption</button>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Image Prompts -->
+                    <div class="content-section">
+                        <div class="section-title">Grok Image Prompts</div>
+                        <div class="prompts-grid">
+                            <div class="prompt-item">
+                                <span class="prompt-number">Prompt 4</span>
+                                <span class="prompt-text">VINYL RECORD CLOSE-UP: Extreme close-up of vinyl record grooves, warm amber lighting, dramatic shadows, dust particles visible, analog texture, editorial product photography style, black background, film grain, luxury aesthetic. No text.</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'VINYL RECORD CLOSE-UP: Extreme close-up of vinyl record grooves, warm amber lighting, dramatic shadows, dust particles visible, analog texture, editorial product photography style, black background, film grain, luxury aesthetic. No text.')">Copy</button>
+                            </div>
+                            <div class="prompt-item">
+                                <span class="prompt-number">Prompt 5</span>
+                                <span class="prompt-text">HANDMADE VS MACHINE COMPARISON: Diptych: left side shows sterile factory conveyor belt producing identical generic products in cold lighting; right side shows artisan hands crafting something unique in warm golden workshop light. Conceptual editorial style, no faces visible, warm vs cold color temperature contrast</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'HANDMADE VS MACHINE COMPARISON: Diptych: left side shows sterile factory conveyor belt producing identical generic products in cold lighting; right side shows artisan hands crafting something unique in warm golden workshop light. Conceptual editorial style, no faces visible, warm vs cold color temperature contrast')">Copy</button>
+                            </div>
+                            <div class="prompt-item">
+                                <span class="prompt-number">Prompt 6</span>
+                                <span class="prompt-text">SCARCITY CONCEPT: One beautiful handmade ceramic cup on empty marble counter, dramatic side lighting, soft shadow, extreme minimalism, vast negative space, luxury editorial photography, cream and warm gold palette, grain texture overlay</span>
+                                <button class="copy-btn" onclick="copyToClipboard(this, 'SCARCITY CONCEPT: One beautiful handmade ceramic cup on empty marble counter, dramatic side lighting, soft shadow, extreme minimalism, vast negative space, luxury editorial photography, cream and warm gold palette, grain texture overlay')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Calendar Section -->
+        <div class="calendar-section">
+            <h2>Content Calendar Strategy</h2>
+            <p style="margin-bottom: 32px; color: var(--charcoal); line-height: 1.8;">
+                This 4-week rotation repeats for 3+ months of strategic content. Each reel is positioned to maximize its particular strength. Then rotate hook variations to keep content fresh and test what resonates with your specific audience.
+            </p>
+            
+            <div class="calendar-grid">
+                <div class="calendar-week">
+                    <div class="week-title">Week 1</div>
+                    <div class="week-content">
+                        <strong>The Counter</strong><br>
+                        Highest comment rate. TikTok strongest. Most direct sales driver.<br><br>
+                        <span style="color: var(--terra); font-size: 13px;">Best for: Building momentum, driving first engagement</span>
+                    </div>
+                </div>
+
+                <div class="calendar-week">
+                    <div class="week-title">Week 2</div>
+                    <div class="week-content">
+                        <strong>AI Made You More Expensive</strong><br>
+                        Flagship concept. Highest share potential.<br><br>
+                        <span style="color: var(--terra); font-size: 13px;">Best for: Viral reach, extending audience</span>
+                    </div>
+                </div>
+
+                <div class="calendar-week">
+                    <div class="week-title">Week 3</div>
+                    <div class="week-content">
+                        <strong>The Brain Scan</strong><br>
+                        Most credibility. Best for warming cold audiences.<br><br>
+                        <span style="color: var(--terra); font-size: 13px;">Best for: Building authority, converting skeptics</span>
+                    </div>
+                </div>
+
+                <div class="calendar-week">
+                    <div class="week-title">Week 4</div>
+                    <div class="week-content">
+                        <strong>The Vinyl Analogy</strong><br>
+                        Highest save rate. Best for IG algorithm.<br><br>
+                        <span style="color: var(--terra); font-size: 13px;">Best for: Algorithm favor, evergreen reach</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calendar-note">
+                <strong>Then repeat with different hook variations.</strong> Each reel has 3 unique hooks. Rotate them monthly to test performance, prevent audience fatigue, and optimize for each platform's unique preference patterns. Track which hook variation gets the best comment rate (TikTok/Reels) and save rate (IG) - that's your winner for that reel.
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Created for Elisabeth | @perolikebro | AI Era Content Kit</p>
+            <p style="margin-top: 12px;">Every link in bio drives to your rate calculator → email capture → funnel. This is your traffic engine.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleReel(headerElement) {
+            const card = headerElement.closest('.reel-card');
+            const isOpen = card.classList.contains('open');
+            
+            // Close all other cards
+            document.querySelectorAll('.reel-card.open').forEach(openCard => {
+                if (openCard !== card) {
+                    openCard.classList.remove('open');
+                }
+            });
+            
+            // Toggle current card
+            card.classList.toggle('open');
+        }
+
+        function copyToClipboard(button, text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+
+        function copyScriptToClipboard(scriptId) {
+            const scriptElement = document.getElementById(scriptId);
+            let text = '';
+            
+            scriptElement.querySelectorAll('.script-block').forEach(block => {
+                const timestamp = block.querySelector('.timestamp')?.textContent || '';
+                const content = block.innerText.replace(timestamp, '').trim();
+                text += timestamp + '\n' + content + '\n\n';
+            });
+            
+            const button = event.target;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+    </script>
+</body>
+</html>

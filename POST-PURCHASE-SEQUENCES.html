@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-Purchase Email Sequences - Elisabeth's UGC Funnel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:#FDFCF9;
+            --forest:#2D5A3D;
+            --terra:#B85C38;
+            --cream:#F8F5EF;
+            --charcoal:#292524;
+            --light-border: #E8E4DB;
+            --success: #4A7C59;
+            --warning: #D4A574;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            margin-bottom: 50px;
+            border-bottom: 2px solid var(--forest);
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: var(--forest);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: var(--terra);
+            font-weight: 500;
+        }
+
+        .section-header {
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            color: var(--forest);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .section-subtext {
+            color: var(--terra);
+            font-weight: 500;
+            font-size: 1em;
+        }
+
+        /* Setup Section */
+        .kit-setup-section {
+            background: var(--cream);
+            border: 2px solid var(--forest);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .kit-setup-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            color: var(--forest);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--terra);
+            padding-bottom: 15px;
+        }
+
+        .setup-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .setup-card {
+            background: var(--bg);
+            border: 1px solid var(--light-border);
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .setup-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            color: var(--terra);
+            margin-bottom: 12px;
+        }
+
+        .setup-card ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .setup-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--light-border);
+            font-size: 0.95em;
+        }
+
+        .setup-card li:last-child {
+            border-bottom: none;
+        }
+
+        .code-snippet {
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 12px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+            margin: 10px 0;
+            overflow-x: auto;
+            word-break: break-all;
+        }
+
+        /* Strategy Matrix */
+        .strategy-matrix {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--bg) 100%);
+            border: 2px solid var(--forest);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .strategy-matrix h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            color: var(--forest);
+            margin-bottom: 20px;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .matrix-item {
+            background: var(--bg);
+            border-left: 4px solid var(--terra);
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .matrix-item strong {
+            color: var(--forest);
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .matrix-item p {
+            color: var(--charcoal);
+            font-size: 0.95em;
+        }
+
+        /* Sequence Container */
+        .sequence-container {
+            margin-bottom: 50px;
+        }
+
+        .sequence-button {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--forest) 0%, #3D7A54 100%);
+            color: var(--bg);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(45, 90, 61, 0.15);
+        }
+
+        .sequence-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(45, 90, 61, 0.25);
+        }
+
+        .sequence-button.active {
+            background: linear-gradient(135deg, var(--terra) 0%, #C47B51 100%);
+        }
+
+        .toggle-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .sequence-button.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .sequence-content {
+            display: none;
+            background: var(--cream);
+            padding: 30px;
+            border: 1px solid var(--light-border);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .sequence-content.active {
+            display: block;
+        }
+
+        .sequence-info {
+            background: var(--bg);
+            border-left: 4px solid var(--terra);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .sequence-info strong {
+            color: var(--terra);
+        }
+
+        /* Email Cards */
+        .email-card {
+            background: var(--bg);
+            border: 1px solid var(--light-border);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(45, 90, 61, 0.08);
+        }
+
+        .email-header {
+            background: linear-gradient(90deg, var(--forest) 0%, #3D7A54 100%);
+            color: var(--bg);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .email-header:hover {
+            background: linear-gradient(90deg, var(--terra) 0%, #C47B51 100%);
+        }
+
+        .email-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-right: 15px;
+        }
+
+        .email-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .email-timing {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-left: 10px;
+        }
+
+        .email-toggle {
+            font-size: 1.3em;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .email-card.active .email-toggle {
+            transform: rotate(180deg);
+        }
+
+        .email-body {
+            display: none;
+            padding: 30px;
+            background: var(--bg);
+        }
+
+        .email-body.active {
+            display: block;
+        }
+
+        .email-field {
+            margin-bottom: 20px;
+        }
+
+        .email-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+            color: var(--terra);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .email-content {
+            background: var(--cream);
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 3px solid var(--terra);
+            font-size: 0.95em;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        .email-content p {
+            margin-bottom: 15px;
+        }
+
+        .email-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .copy-button {
+            background: var(--terra);
+            color: var(--bg);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .copy-button:hover {
+            background: var(--forest);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(45, 90, 61, 0.15);
+        }
+
+        .copy-button.copied {
+            background: var(--success);
+        }
+
+        /* Subject Lines */
+        .subject-lines {
+            background: var(--cream);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .subject-line {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--light-border);
+        }
+
+        .subject-line:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .subject-option {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: var(--terra);
+            margin-right: 10px;
+            min-width: 30px;
+        }
+
+        .subject-text {
+            flex: 1;
+            color: var(--charcoal);
+            font-size: 0.95em;
+        }
+
+        /* Kit Notes */
+        .kit-notes {
+            background: linear-gradient(135deg, rgba(184, 92, 56, 0.08) 0%, rgba(45, 90, 61, 0.08) 100%);
+            border: 1px solid var(--light-border);
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        .kit-notes strong {
+            color: var(--terra);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .kit-notes ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .kit-notes li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .kit-notes li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--terra);
+            font-weight: 600;
+        }
+
+        .cta-highlight {
+            background: var(--terra);
+            color: var(--bg);
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 10px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .sequence-button {
+                font-size: 1.1em;
+            }
+
+            .setup-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .matrix-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Utility */
+        .text-success {
+            color: var(--success);
+        }
+
+        .text-terra {
+            color: var(--terra);
+        }
+
+        .text-forest {
+            color: var(--forest);
+        }
+
+        .mt-30 {
+            margin-top: 30px;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Post-Purchase Email Sequences</h1>
+            <p class="subtitle">Kit Commerce automation for The Authenticity Premium, The First $1K Kit & The UGC Closer Kit</p>
+        </header>
+
+        <!-- Kit Automation Setup -->
+        <section class="kit-setup-section">
+            <h3>Kit Automation Setup</h3>
+            <p style="margin-bottom: 20px; color: var(--charcoal);">Configure these tag-based triggers and filters in Kit Commerce to automate your post-purchase sequences. Each sequence is independent and can run simultaneously.</p>
+            
+            <div class="setup-grid">
+                <!-- Sequence 1 Setup -->
+                <div class="setup-card">
+                    <h4>Sequence 1: Authenticity Premium</h4>
+                    <ul>
+                        <li><strong>Trigger Tag:</strong> authenticity-premium-buyer</li>
+                        <li><strong>Email Count:</strong> 4 emails</li>
+                        <li><strong>Timing:</strong> Immediate, Day 3, Day 7, Day 14</li>
+                        <li><strong>Cross-sell Trigger:</strong> Tag subscriber with <code>ugc-closer-kit-buyer</code> after Email 3 CTA click</li>
+                    </ul>
+                    <div class="code-snippet">Tag: authenticity-premium-buyer</div>
+                </div>
+
+                <!-- Sequence 2 Setup -->
+                <div class="setup-card">
+                    <h4>Sequence 2: First $1K Kit</h4>
+                    <ul>
+                        <li><strong>Trigger Tag:</strong> first-1k-kit-buyer</li>
+                        <li><strong>Email Count:</strong> 4 emails</li>
+                        <li><strong>Timing:</strong> Immediate, Day 3, Day 7, Day 14</li>
+                        <li><strong>Filter:</strong> Don't send ascension email to subscribers already tagged <code>authenticity-premium-buyer</code></li>
+                    </ul>
+                    <div class="code-snippet">Tag: first-1k-kit-buyer</div>
+                </div>
+
+                <!-- Sequence 3 Setup -->
+                <div class="setup-card">
+                    <h4>Sequence 3: UGC Closer Kit</h4>
+                    <ul>
+                        <li><strong>Trigger Tag:</strong> ugc-closer-kit-buyer</li>
+                        <li><strong>Email Count:</strong> 3 emails</li>
+                        <li><strong>Timing:</strong> Immediate, Day 5, Day 10</li>
+                        <li><strong>Filter:</strong> Only send Email 3 (AP cross-sell) if NOT tagged <code>authenticity-premium-buyer</code></li>
+                    </ul>
+                    <div class="code-snippet">Tag: ugc-closer-kit-buyer</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--light-border);">
+                <h4 style="color: var(--terra); margin-bottom: 15px;">Key Setup Notes</h4>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 10px;"><strong style="color: var(--terra);">→ Auto-tagging:</strong> Use Kit's workflow automation to automatically apply these tags when a customer purchases each product.</li>
+                    <li style="margin-bottom: 10px;"><strong style="color: var(--terra);">→ Filter Rules:</strong> Create conditional rules in each sequence to prevent duplicate upsells (e.g., don't offer AP if they already own it).</li>
+                    <li style="margin-bottom: 10px;"><strong style="color: var(--terra);">→ Unsubscribe Handling:</strong> Respect unsubscribe requests. Set all sequences to exit if subscriber removes themselves from the tag.</li>
+                    <li style="margin-bottom: 0;"><strong style="color: var(--terra);">→ Personalization:</strong> Use <code>{{ subscriber.first_name | default: "there" }}</code> for all subject lines and opening lines.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Strategy Matrix -->
+        <section class="strategy-matrix">
+            <h3>Cross-Sell Strategy Matrix</h3>
+            <div class="matrix-grid">
+                <div class="matrix-item">
+                    <strong>AP ($297) Buyer</strong>
+                    <p>↓ Cross-sell</p>
+                    <p><strong style="color: var(--terra);">The UGC Closer Kit ($246)</strong><br>Position: "Teach you to CLOSE after positioning"</p>
+                </div>
+                <div class="matrix-item">
+                    <strong>First $1K Kit ($27) Buyer</strong>
+                    <p>↓ Ascend</p>
+                    <p><strong style="color: var(--terra);">The Authenticity Premium ($297)</strong><br>Position: "Upgrade from tactics to SYSTEM"</p>
+                </div>
+                <div class="matrix-item">
+                    <strong>UGC Closer Kit ($246) Buyer</strong>
+                    <p>↓ Cross-sell (if missing)</p>
+                    <p><strong style="color: var(--terra);">The Authenticity Premium ($297)</strong><br>Position: "Complete your toolkit for retainers"</p>
+                </div>
+                <div class="matrix-item">
+                    <strong>All Buyers</strong>
+                    <p>↓ Future Opportunity</p>
+                    <p><strong style="color: var(--terra);">High-ticket digital course (coming soon)</strong><br>Build list of qualified high-intent buyers</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEQUENCE 1: Authenticity Premium -->
+        <div class="sequence-container">
+            <button class="sequence-button" onclick="toggleSequence(this)">
+                <span>
+                    <span style="color: var(--terra); margin-right: 15px; font-size: 0.8em; font-family: 'JetBrains Mono', monospace;">SEQ 1</span>
+                    The Authenticity Premium ($297) Buyer
+                </span>
+                <span class="toggle-icon">▼</span>
+            </button>
+            <div class="sequence-content">
+                <div class="sequence-info">
+                    <strong>Goal:</strong> Onboard → Quick Win → Cross-sell Closer Kit. Reduce buyer's remorse, drive action within 48 hours, then introduce complementary product by Day 7.
+                </div>
+
+                <!-- Email 1 -->
+                <div class="email-card">
+                    <div class="email-header" onclick="toggleEmail(this)">
+                        <div>
+                            <span class="email-number">1</span>
+                            <span class="email-title">You're in. Here's where to start.</span>
+                            <span class="email-timing">Send: Immediate (within 1 hour)</span>
+                        </div>
+                        <span class="email-toggle">▼</span>
+                    </div>
+                    <div class="email-body">
+                        <div class="email-field">
+                            <span class="email-label">Subject Line Options (A/B/C Testing)</span>
+                            <div class="subject-lines">
+                                <div class="subject-line">
+                                    <span class="subject-option">A:</span>
+                                    <span class="subject-text">You're in, {{ subscriber.first_name | default: "there" }} - here's your next step</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">B:</span>
+                                    <span class="subject-text">Welcome to the Premium. Watch this first.</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">C:</span>
+                                    <span class="subject-text">{{ subscriber.first_name | default: "there" }}, your investment just paid off</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Preview Text</span>
+                            <div class="email-content">Your access is live. Module 3 is where the magic happens.</div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Email Body</span>
+                            <div class="email-content">
+                                <p>Hey {{ subscriber.first_name | default: "there" }},</p>
+
+                                <p>You just made a decision that's going to change how you pitch yourself to brands.</p>
+
+                                <p>Your access is live right now. Here's what happens next:</p>
+
+                                <p><strong>Watch Module 1 first</strong> (5 min) - This is the positioning framework. It shows you how to position yourself so brands see you as a pro, not another creator asking for $100/brand.</p>
+
+                                <p><strong>Then go straight to Module 3</strong> (10 min) - This is the actual pitch template. It's the one I use. It's the one that closes deals at $500+ per brand.</p>
+
+                                <p><strong>The goal for the next 48 hours:</strong> Fill in your specifics (your niche, your rate, your hook) and send at least one pitch. Don't wait to watch everything. The creators who get results don't sit in the course for two weeks - they watch, they apply, they send.</p>
+
+                                <p>You invested in the system. Now let's get your first deal closed at a higher rate.</p>
+
+                                <p>Send that pitch today.</p>
+
+                                <p>- Elisabeth<br>@perolikebro</p>
+                            </div>
+                        </div>
+
+                        <button class="copy-button" onclick="copyToClipboard(this)">Copy Email Body</button>
+
+                        <div class="kit-notes">
+                            <strong>Kit Setup Notes:</strong>
+                            <ul>
+                                <li>Trigger: Apply <code>authenticity-premium-buyer</code> tag to subscriber</li>
+                                <li>Send immediately upon purchase confirmation</li>
+                                <li>Include direct link to Module 1 and Module 3 in your platform</li>
+                                <li>Set next email to trigger automatically on Day 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email 2 -->
+                <div class="email-card">
+                    <div class="email-header" onclick="toggleEmail(this)">
+                        <div>
+                            <span class="email-number">2</span>
+                            <span class="email-title">Your first pitch should be sent by now.</span>
+                            <span class="email-timing">Send: Day 3</span>
+                        </div>
+                        <span class="email-toggle">▼</span>
+                    </div>
+                    <div class="email-body">
+                        <div class="email-field">
+                            <span class="email-label">Subject Line Options (A/B/C Testing)</span>
+                            <div class="subject-lines">
+                                <div class="subject-line">
+                                    <span class="subject-option">A:</span>
+                                    <span class="subject-text">Did you send it?</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">B:</span>
+                                    <span class="subject-text">The one thing the winners do differently</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">C:</span>
+                                    <span class="subject-text">{{ subscriber.first_name | default: "there" }}, here's the pattern I see</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Preview Text</span>
+                            <div class="email-content">Waiting to watch everything first? That's the trap.</div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Email Body</span>
+                            <div class="email-content">
+                                <p>{{ subscriber.first_name | default: "there" }},</p>
+
+                                <p>Three days ago you got access to the Premium.</p>
+
+                                <p>Here's what I'm seeing from my high-earners:</p>
+
+                                <p>The creators making $5K, $10K, $20K+ per month in UGC revenue aren't the ones who watch everything first. They're the ones who watch Module 3, fill in their specifics, and send.</p>
+
+                                <p>They move fast. They test. They iterate based on real feedback from brands.</p>
+
+                                <p>The creators who wait to watch everything? They're still planning.</p>
+
+                                <p>So here's the check-in: <strong>Have you sent your first pitch yet?</strong></p>
+
+                                <p>If not - watch Module 3 today. It's 10 minutes. Fill in your brand, your rate, your angle. Send before tonight.</p>
+
+                                <p>If you have - awesome. Notice what landed. Notice what didn't. That's how we iterate.</p>
+
+                                <p>Move fast.</p>
+
+                                <p>- Elisabeth</p>
+                            </div>
+                        </div>
+
+                        <button class="copy-button" onclick="copyToClipboard(this)">Copy Email Body</button>
+
+                        <div class="kit-notes">
+                            <strong>Kit Setup Notes:</strong>
+                            <ul>
+                                <li>Trigger: Automatically send to <code>authenticity-premium-buyer</code> tag on Day 3</li>
+                                <li>This is a checkpoint email - gentle accountability push</li>
+                                <li>Consider tracking opens to see engagement level</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email 3 -->
+                <div class="email-card">
+                    <div class="email-header" onclick="toggleEmail(this)">
+                        <div>
+                            <span class="email-number">3</span>
+                            <span class="email-title">The Closer Kit - your next move</span>
+                            <span class="email-timing">Send: Day 7</span>
+                        </div>
+                        <span class="email-toggle">▼</span>
+                    </div>
+                    <div class="email-body">
+                        <div class="email-field">
+                            <span class="email-label">Subject Line Options (A/B/C Testing)</span>
+                            <div class="subject-lines">
+                                <div class="subject-line">
+                                    <span class="subject-option">A:</span>
+                                    <span class="subject-text">From $500 deals to $1,500/month retainers</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">B:</span>
+                                    <span class="subject-text">{{ subscriber.first_name | default: "there" }}, the Premium is half the equation</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">C:</span>
+                                    <span class="subject-text">You positioned. Now let's close.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Preview Text</span>
+                            <div class="email-content">The Closer Kit teaches you to turn deals into retainers. Here's the math.</div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Email Body</span>
+                            <div class="email-content">
+                                <p>{{ subscriber.first_name | default: "there" }},</p>
+
+                                <p>You've got the Authenticity Premium. You know how to position yourself.</p>
+
+                                <p>Here's the reality: positioning gets you the meeting. But closing is what turns a $500 one-off deal into a $1,500/month retainer.</p>
+
+                                <p>The Premium teaches you <strong>HOW to position yourself</strong>. The Closer Kit teaches you <strong>HOW TO CLOSE</strong> - and how to price retainers so brands feel like they're getting a steal and you're building actual recurring revenue.</p>
+
+                                <p>Here's what's inside the Closer Kit:</p>
+
+                                <p><strong>→ Retainer Conversation Scripts</strong> (the exact language to use when transitioning from project work to ongoing retainer work)<br>
+                                <strong>→ Closing Framework</strong> (the 4-step close that handles objections before they come up)<br>
+                                <strong>→ Objection Handling</strong> (what to say when they say "that's too expensive" or "we don't have budget")<br>
+                                <strong>→ Retainer Pricing Guide</strong> (how to price retainers so you're not leaving money on the table)</p>
+
+                                <p><strong>Value stack: $605 worth of frameworks + scripts = $246</strong></p>
+
+                                <p>The creators who have both the Premium and the Closer Kit are the ones consistently hitting $5K+/month in UGC revenue.</p>
+
+                                <p>They position. They close. They retain.</p>
+
+                                <p><span class="cta-highlight">→ Get The Closer Kit: https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=email&utm_medium=post-purchase&utm_campaign=closer_kit</span></p>
+
+                                <p>- Elisabeth</p>
+                            </div>
+                        </div>
+
+                        <button class="copy-button" onclick="copyToClipboard(this)">Copy Email Body</button>
+
+                        <div class="kit-notes">
+                            <strong>Kit Setup Notes:</strong>
+                            <ul>
+                                <li>Trigger: Send to <code>authenticity-premium-buyer</code> tag on Day 7</li>
+                                <li>This is your first cross-sell email - make the value stack clear</li>
+                                <li>Track clicks to the Closer Kit product page</li>
+                                <li>If subscriber purchases, add tag <code>ugc-closer-kit-buyer</code></li>
+                                <li>Set up conditional to skip Email 4 if they've already purchased Closer Kit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email 4 -->
+                <div class="email-card">
+                    <div class="email-header" onclick="toggleEmail(this)">
+                        <div>
+                            <span class="email-number">4</span>
+                            <span class="email-title">Social proof + final Closer Kit push</span>
+                            <span class="email-timing">Send: Day 14</span>
+                        </div>
+                        <span class="email-toggle">▼</span>
+                    </div>
+                    <div class="email-body">
+                        <div class="email-field">
+                            <span class="email-label">Subject Line Options (A/B/C Testing)</span>
+                            <div class="subject-lines">
+                                <div class="subject-line">
+                                    <span class="subject-option">A:</span>
+                                    <span class="subject-text">Most high-earners have both</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">B:</span>
+                                    <span class="subject-text">Last chance - the Closer Kit closes Friday</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">C:</span>
+                                    <span class="subject-text">{{ subscriber.first_name | default: "there" }}, $5K/month is closer than you think</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Preview Text</span>
+                            <div class="email-content">The pattern I see in six-figure UGC creators is pretty clear.</div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Email Body</span>
+                            <div class="email-content">
+                                <p>{{ subscriber.first_name | default: "there" }},</p>
+
+                                <p>I've been tracking the creators who go from "I made my first $500 deal" to "I'm consistently closing $1,500+ retainers."</p>
+
+                                <p>The pattern is consistent: <strong>they all have both the Premium and the Closer Kit.</strong></p>
+
+                                <p>Here's why:</p>
+
+                                <p>The Premium teaches you the positioning that makes brands take you seriously. The Closer Kit teaches you to actually close - at retainer prices that build real monthly revenue.</p>
+
+                                <p>That combination is what separates $2K/month creators from $5K/month creators.</p>
+
+                                <p>You already have the Premium. You have the positioning locked.</p>
+
+                                <p>The Closer Kit is the missing piece. And it's still $246.</p>
+
+                                <p><span class="cta-highlight">→ Grab it here: https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=email&utm_medium=post-purchase&utm_campaign=closer_kit</span></p>
+
+                                <p>- Elisabeth</p>
+                            </div>
+                        </div>
+
+                        <button class="copy-button" onclick="copyToClipboard(this)">Copy Email Body</button>
+
+                        <div class="kit-notes">
+                            <strong>Kit Setup Notes:</strong>
+                            <ul>
+                                <li>Trigger: Send to <code>authenticity-premium-buyer</code> tag on Day 14</li>
+                                <li>This is the final push before the sequence ends</li>
+                                <li>Conditional: Skip this email if subscriber already has <code>ugc-closer-kit-buyer</code> tag</li>
+                                <li>After this email, mark the sequence as complete</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEQUENCE 2: First $1K Kit -->
+        <div class="sequence-container">
+            <button class="sequence-button" onclick="toggleSequence(this)">
+                <span>
+                    <span style="color: var(--terra); margin-right: 15px; font-size: 0.8em; font-family: 'JetBrains Mono', monospace;">SEQ 2</span>
+                    The First $1K Kit ($27) Buyer
+                </span>
+                <span class="toggle-icon">▼</span>
+            </button>
+            <div class="sequence-content">
+                <div class="sequence-info">
+                    <strong>Goal:</strong> Deliver quick value → Build momentum → Ascend to Authenticity Premium. Show them the Kit gives tactics, but Premium gives the system that generates $5K+/month.
+                </div>
+
+                <!-- Email 1 -->
+                <div class="email-card">
+                    <div class="email-header" onclick="toggleEmail(this)">
+                        <div>
+                            <span class="email-number">1</span>
+                            <span class="email-title">Your Kit is ready - here's what to do first</span>
+                            <span class="email-timing">Send: Immediate (within 1 hour)</span>
+                        </div>
+                        <span class="email-toggle">▼</span>
+                    </div>
+                    <div class="email-body">
+                        <div class="email-field">
+                            <span class="email-label">Subject Line Options (A/B/C Testing)</span>
+                            <div class="subject-lines">
+                                <div class="subject-line">
+                                    <span class="subject-option">A:</span>
+                                    <span class="subject-text">Your $1K Kit is ready, {{ subscriber.first_name | default: "there" }}</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">B:</span>
+                                    <span class="subject-text">60 scripts + 100 brands. Start here.</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">C:</span>
+                                    <span class="subject-text">{{ subscriber.first_name | default: "there" }}, your quick-start is inside</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Preview Text</span>
+                            <div class="email-content">Pick one brand from the database. Use Script #1. Send it today. That's your first $1K.</div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Email Body</span>
+                            <div class="email-content">
+                                <p>Hey {{ subscriber.first_name | default: "there" }},</p>
+
+                                <p>Your First $1K Kit is ready. You now have access to:</p>
+
+                                <p><strong>→ 60 Ready-to-Use Scripts</strong> (pitch scripts, objection handlers, follow-ups)<br>
+                                <strong>→ 100-Brand Database</strong> (brands actively looking for UGC creators right now)</p>
+
+                                <p>Here's your first move:</p>
+
+                                <p>1. Open the brand database<br>
+                                2. Pick ONE brand that matches your niche<br>
+                                3. Go to Script #1 (the main pitch)<br>
+                                4. Fill in your specifics (your hook, your rate, your angle)<br>
+                                5. Send it by tonight</p>
+
+                                <p>That's it. No overthinking. No waiting for the "perfect" pitch. Pick a brand, use a script, send.</p>
+
+                                <p>Send that pitch today.</p>
+
+                                <p>- Elisabeth<br>@perolikebro</p>
+                            </div>
+                        </div>
+
+                        <button class="copy-button" onclick="copyToClipboard(this)">Copy Email Body</button>
+
+                        <div class="kit-notes">
+                            <strong>Kit Setup Notes:</strong>
+                            <ul>
+                                <li>Trigger: Apply <code>first-1k-kit-buyer</code> tag to subscriber</li>
+                                <li>Send immediately upon purchase confirmation</li>
+                                <li>Include direct link to the scripts and brand database</li>
+                                <li>Set next email to trigger automatically on Day 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email 2 -->
+                <div class="email-card">
+                    <div class="email-header" onclick="toggleEmail(this)">
+                        <div>
+                            <span class="email-number">2</span>
+                            <span class="email-title">The script that changed everything for me</span>
+                            <span class="email-timing">Send: Day 3</span>
+                        </div>
+                        <span class="email-toggle">▼</span>
+                    </div>
+                    <div class="email-body">
+                        <div class="email-field">
+                            <span class="email-label">Subject Line Options (A/B/C Testing)</span>
+                            <div class="subject-lines">
+                                <div class="subject-line">
+                                    <span class="subject-option">A:</span>
+                                    <span class="subject-text">This one script made me $500+ per brand</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">B:</span>
+                                    <span class="subject-text">The script that's in the Premium (not the Kit)</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">C:</span>
+                                    <span class="subject-text">{{ subscriber.first_name | default: "there" }}, this is why I charge premium rates</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Preview Text</span>
+                            <div class="email-content">It's in the Premium, not the Kit. But here's how it works.</div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Email Body</span>
+                            <div class="email-content">
+                                <p>{{ subscriber.first_name | default: "there" }},</p>
+
+                                <p>You've got 60 scripts in your Kit. They're all solid. But there's ONE script that changed how I pitch myself to brands - and it's not in your Kit.</p>
+
+                                <p>Here's the difference:</p>
+
+                                <p>Most UGC creators pitch: "Hey, I'm a creator. I can make UGC for you. Here's my rate: $X."</p>
+
+                                <p>That script gets $100-200 per brand. Maybe $300 if you're lucky.</p>
+
+                                <p>The script I'm talking about positions you completely differently. It's anchored at premium rates. It makes the brand feel like they'd be lucky to work with you, not like they're doing you a favor.</p>
+
+                                <p>That script? The one that closes at $500+? It's in the Authenticity Premium.</p>
+
+                                <p>The Kit gives you the tactics to get started. The Premium gives you the positioning that makes you charge - and close - at 3-5x the rate.</p>
+
+                                <p>Something to think about once you've sent some pitches with Script #1.</p>
+
+                                <p>- Elisabeth</p>
+                            </div>
+                        </div>
+
+                        <button class="copy-button" onclick="copyToClipboard(this)">Copy Email Body</button>
+
+                        <div class="kit-notes">
+                            <strong>Kit Setup Notes:</strong>
+                            <ul>
+                                <li>Trigger: Send to <code>first-1k-kit-buyer</code> tag on Day 3</li>
+                                <li>This is a story-driven email that seeds doubt about the Kit being "enough"</li>
+                                <li>Goal: Plant the seed that Premium is the next logical step</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email 3 -->
+                <div class="email-card">
+                    <div class="email-header" onclick="toggleEmail(this)">
+                        <div>
+                            <span class="email-number">3</span>
+                            <span class="email-title">You've outgrown the Kit (that's a good thing)</span>
+                            <span class="email-timing">Send: Day 7</span>
+                        </div>
+                        <span class="email-toggle">▼</span>
+                    </div>
+                    <div class="email-body">
+                        <div class="email-field">
+                            <span class="email-label">Subject Line Options (A/B/C Testing)</span>
+                            <div class="subject-lines">
+                                <div class="subject-line">
+                                    <span class="subject-option">A:</span>
+                                    <span class="subject-text">From $100 scripts to $500+ positioning</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">B:</span>
+                                    <span class="subject-text">{{ subscriber.first_name | default: "there" }}, you've outgrown the Kit</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">C:</span>
+                                    <span class="subject-text">$500/month or $5,000/month. It's just positioning.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Preview Text</span>
+                            <div class="email-content">The Kit taught you tactics. The Premium teaches you the system that generates $5K+/month.</div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Email Body</span>
+                            <div class="email-content">
+                                <p>{{ subscriber.first_name | default: "there" }},</p>
+
+                                <p>Here's what happens with the First $1K Kit:</p>
+
+                                <p>You send some pitches. You land a deal. Maybe $100-300. It feels good. You send more pitches. You land more deals. Now you're making $500-800/month in UGC revenue.</p>
+
+                                <p>And then you hit a ceiling.</p>
+
+                                <p>The limiting factor isn't more pitches. It's not more scripts. <strong>It's positioning.</strong></p>
+
+                                <p>Here's the difference:</p>
+
+                                <p><strong>Kit buyers:</strong> Get tactics. Scripts. Database access. They scale to $500-$1K/month, then plateau.<br>
+                                <strong>Premium buyers:</strong> Get the SYSTEM. Positioning. Rate anchoring. Positioning frameworks. They scale to $5K+/month because they're not competing on price - they're commanding premium rates.</p>
+
+                                <p>The difference between a creator making $500/month and a creator making $5,000/month isn't more brands. It's not more outreach. <strong>It's positioning.</strong></p>
+
+                                <p>The Kit gave you the foundation. The Premium gives you the system to scale beyond $1K/month.</p>
+
+                                <p><strong>What's inside the Authenticity Premium:</strong></p>
+
+                                <p>→ Module 1: The Positioning Framework (how to position yourself so brands see you as an expert, not just another creator)<br>
+                                → Module 2: Rate Anchoring (the psychology of pricing that makes brands think you're worth $500+ per brand)<br>
+                                → Module 3: The Premium Pitch Script (the one that closes at 3-5x the Kit prices)<br>
+                                → Module 4: The Retainer Blueprint (turning $500 one-off deals into $1,500/month retainers)<br>
+                                → Module 5: Objection Handling (what to say when brands balk at premium rates)<br>
+                                → Module 6: Case Studies & Income Proof (real creator examples hitting $5K+/month)</p>
+
+                                <p><strong>Value Stack: $932 in frameworks and scripts = $297</strong></p>
+
+                                <p>You're not outgrowing UGC. You're just outgrowing the tactics-only approach.</p>
+
+                                <p><span class="cta-highlight">→ Upgrade to the Premium: https://closermethod.kit.com/products/the-authenticity-premium</span></p>
+
+                                <p>- Elisabeth</p>
+                            </div>
+                        </div>
+
+                        <button class="copy-button" onclick="copyToClipboard(this)">Copy Email Body</button>
+
+                        <div class="kit-notes">
+                            <strong>Kit Setup Notes:</strong>
+                            <ul>
+                                <li>Trigger: Send to <code>first-1k-kit-buyer</code> tag on Day 7</li>
+                                <li>Conditional: Skip this email if subscriber already has <code>authenticity-premium-buyer</code> tag</li>
+                                <li>This is the main ascension email - position Premium as the next step</li>
+                                <li>Track clicks to Premium product page</li>
+                                <li>If subscriber purchases, add tag <code>authenticity-premium-buyer</code></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email 4 -->
+                <div class="email-card">
+                    <div class="email-header" onclick="toggleEmail(this)">
+                        <div>
+                            <span class="email-number">4</span>
+                            <span class="email-title">Last call - the Premium at $297</span>
+                            <span class="email-timing">Send: Day 14</span>
+                        </div>
+                        <span class="email-toggle">▼</span>
+                    </div>
+                    <div class="email-body">
+                        <div class="email-field">
+                            <span class="email-label">Subject Line Options (A/B/C Testing)</span>
+                            <div class="subject-lines">
+                                <div class="subject-line">
+                                    <span class="subject-option">A:</span>
+                                    <span class="subject-text">Last chance - Premium pricing closes Friday</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">B:</span>
+                                    <span class="subject-text">{{ subscriber.first_name | default: "there" }}, the system that works is waiting</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">C:</span>
+                                    <span class="subject-text">$500 deals or $5K months. The choice is yours.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Preview Text</span>
+                            <div class="email-content">The gap between where you are and where you want to be is one system.</div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Email Body</span>
+                            <div class="email-content">
+                                <p>{{ subscriber.first_name | default: "there" }},</p>
+
+                                <p>You've got the scripts. You've got the database. You're sending pitches.</p>
+
+                                <p>But the gap between $500/month and $5,000/month isn't more tactics.</p>
+
+                                <p>It's the system. It's positioning. It's the frameworks that make brands see you as a premium creator who commands premium rates.</p>
+
+                                <p>The Authenticity Premium is that system.</p>
+
+                                <p>And it's still $297.</p>
+
+                                <p>The creators who are scaling to $5K+/month all have it. The ones stuck at $500-800/month are usually just using scripts and hoping.</p>
+
+                                <p>Don't hope. Build the system.</p>
+
+                                <p><span class="cta-highlight">→ Get the Premium: https://closermethod.kit.com/products/the-authenticity-premium</span></p>
+
+                                <p>- Elisabeth</p>
+                            </div>
+                        </div>
+
+                        <button class="copy-button" onclick="copyToClipboard(this)">Copy Email Body</button>
+
+                        <div class="kit-notes">
+                            <strong>Kit Setup Notes:</strong>
+                            <ul>
+                                <li>Trigger: Send to <code>first-1k-kit-buyer</code> tag on Day 14</li>
+                                <li>Conditional: Skip if subscriber already has <code>authenticity-premium-buyer</code> tag</li>
+                                <li>Final push before sequence completes</li>
+                                <li>After this email, mark sequence as complete</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEQUENCE 3: UGC Closer Kit -->
+        <div class="sequence-container">
+            <button class="sequence-button" onclick="toggleSequence(this)">
+                <span>
+                    <span style="color: var(--terra); margin-right: 15px; font-size: 0.8em; font-family: 'JetBrains Mono', monospace;">SEQ 3</span>
+                    The UGC Closer Kit ($246) Buyer
+                </span>
+                <span class="toggle-icon">▼</span>
+            </button>
+            <div class="sequence-content">
+                <div class="sequence-info">
+                    <strong>Goal:</strong> Onboard → Get them closing retainers → Cross-sell AP if they don't have it. Position Closer Kit as the bridge from one-off deals to recurring $1,500+/month retainers.
+                </div>
+
+                <!-- Email 1 -->
+                <div class="email-card">
+                    <div class="email-header" onclick="toggleEmail(this)">
+                        <div>
+                            <span class="email-number">1</span>
+                            <span class="email-title">The Closer Kit is yours - let's get your first retainer</span>
+                            <span class="email-timing">Send: Immediate (within 1 hour)</span>
+                        </div>
+                        <span class="email-toggle">▼</span>
+                    </div>
+                    <div class="email-body">
+                        <div class="email-field">
+                            <span class="email-label">Subject Line Options (A/B/C Testing)</span>
+                            <div class="subject-lines">
+                                <div class="subject-line">
+                                    <span class="subject-option">A:</span>
+                                    <span class="subject-text">You're in. Here's your first $1,500/month retainer</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">B:</span>
+                                    <span class="subject-text">The Closer Kit is live - start here</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">C:</span>
+                                    <span class="subject-text">{{ subscriber.first_name | default: "there" }}, from deals to retainers</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Preview Text</span>
+                            <div class="email-content">Your access is live. The retainer conversation scripts are inside. Use one today.</div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Email Body</span>
+                            <div class="email-content">
+                                <p>Hey {{ subscriber.first_name | default: "there" }},</p>
+
+                                <p>Your Closer Kit access is live. You now have the exact frameworks, scripts, and pricing guides to turn your best deals into $1,500+ monthly retainers.</p>
+
+                                <p>Here's what's inside:</p>
+
+                                <p><strong>→ Retainer Conversation Scripts</strong> (the exact language for transitioning from project work to ongoing work)<br>
+                                <strong>→ The Closing Framework</strong> (4-step close that handles objections before they happen)<br>
+                                <strong>→ Objection Handlers</strong> (what to say when they say "that's expensive" or "we don't have budget")<br>
+                                <strong>→ Retainer Pricing Guide</strong> (how to price retainers at $1,500+/month without leaving money on the table)</p>
+
+                                <p><strong>Your first move:</strong> Go to the Retainer Conversation Scripts section. Pick the script that matches your situation. Reach out to your best current brand contact. Use the retainer pitch template. Ask for $1,500/month.</p>
+
+                                <p>The goal: Land one retainer by the end of this week. $1,500/month = $18,000/year from one brand.</p>
+
+                                <p>Let's go.</p>
+
+                                <p>- Elisabeth<br>@perolikebro</p>
+                            </div>
+                        </div>
+
+                        <button class="copy-button" onclick="copyToClipboard(this)">Copy Email Body</button>
+
+                        <div class="kit-notes">
+                            <strong>Kit Setup Notes:</strong>
+                            <ul>
+                                <li>Trigger: Apply <code>ugc-closer-kit-buyer</code> tag to subscriber</li>
+                                <li>Send immediately upon purchase confirmation</li>
+                                <li>Include direct link to retainer scripts and pricing guide</li>
+                                <li>Set next email to trigger automatically on Day 5</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email 2 -->
+                <div class="email-card">
+                    <div class="email-header" onclick="toggleEmail(this)">
+                        <div>
+                            <span class="email-number">2</span>
+                            <span class="email-title">How to price retainers (without guessing)</span>
+                            <span class="email-timing">Send: Day 5</span>
+                        </div>
+                        <span class="email-toggle">▼</span>
+                    </div>
+                    <div class="email-body">
+                        <div class="email-field">
+                            <span class="email-label">Subject Line Options (A/B/C Testing)</span>
+                            <div class="subject-lines">
+                                <div class="subject-line">
+                                    <span class="subject-option">A:</span>
+                                    <span class="subject-text">The retainer pricing formula that works</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">B:</span>
+                                    <span class="subject-text">{{ subscriber.first_name | default: "there" }}, stop underpricing retainers</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">C:</span>
+                                    <span class="subject-text">$1,500/month is the baseline. Here's how to get there.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Preview Text</span>
+                            <div class="email-content">The right price makes the brand feel like they're getting a steal. Here's the formula.</div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Email Body</span>
+                            <div class="email-content">
+                                <p>{{ subscriber.first_name | default: "there" }},</p>
+
+                                <p>Most creators underprice retainers because they guess.</p>
+
+                                <p>They think: "A brand paid me $500 for one video. So for a retainer... maybe $800/month?"</p>
+
+                                <p>Wrong.</p>
+
+                                <p>Here's the real formula:</p>
+
+                                <p><strong>Your Retainer Price = (Your Monthly Video Rate) × (3-4 videos/month) + 20% convenience premium</strong></p>
+
+                                <p>Example:</p>
+
+                                <p>If a brand pays you $500 per video, and you'll do 3 videos/month on retainer:<br>
+                                → $500 × 3 = $1,500<br>
+                                → Add 20% for convenience/predictability = $1,800/month</p>
+
+                                <p>Start at $1,500. Land it. Then raise to $1,800 with your next retainer.</p>
+
+                                <p>Most creators are charging $600-800 for retainers because they don't have the framework. The creators making $5K+/month all charge $1,500+.</p>
+
+                                <p>The difference? They know the formula. You do now too.</p>
+
+                                <p>- Elisabeth</p>
+                            </div>
+                        </div>
+
+                        <button class="copy-button" onclick="copyToClipboard(this)">Copy Email Body</button>
+
+                        <div class="kit-notes">
+                            <strong>Kit Setup Notes:</strong>
+                            <ul>
+                                <li>Trigger: Send to <code>ugc-closer-kit-buyer</code> tag on Day 5</li>
+                                <li>This is an educational/value-add email that reinforces the pricing framework</li>
+                                <li>Goal: Empower them to price correctly when they pitch retainers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email 3 -->
+                <div class="email-card">
+                    <div class="email-header" onclick="toggleEmail(this)">
+                        <div>
+                            <span class="email-number">3</span>
+                            <span class="email-title">Complete your toolkit - the Authenticity Premium</span>
+                            <span class="email-timing">Send: Day 10</span>
+                        </div>
+                        <span class="email-toggle">▼</span>
+                    </div>
+                    <div class="email-body">
+                        <div class="email-field">
+                            <span class="email-label">Subject Line Options (A/B/C Testing)</span>
+                            <div class="subject-lines">
+                                <div class="subject-line">
+                                    <span class="subject-option">A:</span>
+                                    <span class="subject-text">The Closer Kit works better with this</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">B:</span>
+                                    <span class="subject-text">{{ subscriber.first_name | default: "there" }}, you're halfway there</span>
+                                </div>
+                                <div class="subject-line">
+                                    <span class="subject-option">C:</span>
+                                    <span class="subject-text">Closer Kit closes retainers. Premium positions you at premium rates.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Preview Text</span>
+                            <div class="email-content">You have the close. Now you need the positioning that makes them WANT to pay premium rates.</div>
+                        </div>
+
+                        <div class="email-field">
+                            <span class="email-label">Email Body</span>
+                            <div class="email-content">
+                                <p>{{ subscriber.first_name | default: "there" }},</p>
+
+                                <p>You've got the Closer Kit. You know how to close retainers at $1,500+/month.</p>
+
+                                <p>But here's the gap: The Closer Kit teaches you HOW TO CLOSE. The Authenticity Premium teaches you HOW TO POSITION - so when you walk into the close, you're already the obvious choice.</p>
+
+                                <p>Think about it:</p>
+
+                                <p>Without positioning, you're walking into a pitch as "just another UGC creator." You have to fight for $1,500/month.<br>
+                                WITH positioning, you're walking in as "the expert they'd be lucky to work with." They're offering you $1,500/month.</p>
+
+                                <p>The Closer Kit closes the deal. The Premium makes the deal close easy.</p>
+
+                                <p><strong>What the Premium gives you:</strong><br>
+                                → Module 1: Positioning Framework (how to position yourself as premium)<br>
+                                → Module 2: Rate Anchoring (psychology of pricing at $1,500+)<br>
+                                → Module 3: The Premium Pitch Script (the one that commands top rates)<br>
+                                → Module 4: The Retainer Blueprint (how to structure retainers for maximum value)<br>
+                                → Module 5: Objection Handling (what to say when they push back)<br>
+                                → Module 6: Real Case Studies (creators hitting $5K+/month)</p>
+
+                                <p><strong>Value Stack: $932 = $297</strong></p>
+
+                                <p>You're not just closing retainers. You're building a 6-figure UGC business. The Premium is the system that gets you there.</p>
+
+                                <p><span class="cta-highlight">→ Complete your toolkit: https://closermethod.kit.com/products/the-authenticity-premium</span></p>
+
+                                <p>- Elisabeth</p>
+                            </div>
+                        </div>
+
+                        <button class="copy-button" onclick="copyToClipboard(this)">Copy Email Body</button>
+
+                        <div class="kit-notes">
+                            <strong>Kit Setup Notes:</strong>
+                            <ul>
+                                <li>Trigger: Send to <code>ugc-closer-kit-buyer</code> tag on Day 10</li>
+                                <li>Conditional: Only send this email if subscriber does NOT have <code>authenticity-premium-buyer</code> tag</li>
+                                <li>This prevents duplicate upsells if they already own the Premium</li>
+                                <li>Track clicks to Premium product page</li>
+                                <li>If subscriber purchases, add tag <code>authenticity-premium-buyer</code></li>
+                                <li>After this email, mark the sequence as complete</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <section style="margin-top: 60px; padding: 30px; background: var(--cream); border-radius: 8px; border: 2px solid var(--light-border);">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.4em; color: var(--forest); margin-bottom: 15px;">Implementation Checklist</h3>
+            <ul style="list-style: none; columns: 2; gap: 30px;">
+                <li style="margin-bottom: 15px;"><strong style="color: var(--terra);">□</strong> Create the three tags in Kit Commerce (<code>authenticity-premium-buyer</code>, <code>first-1k-kit-buyer</code>, <code>ugc-closer-kit-buyer</code>)</li>
+                <li style="margin-bottom: 15px;"><strong style="color: var(--terra);">□</strong> Set up auto-tagging when customers purchase each product</li>
+                <li style="margin-bottom: 15px;"><strong style="color: var(--terra);">□</strong> Create Sequence 1 (4 emails, days 0/3/7/14)</li>
+                <li style="margin-bottom: 15px;"><strong style="color: var(--terra);">□</strong> Create Sequence 2 (4 emails, days 0/3/7/14)</li>
+                <li style="margin-bottom: 15px;"><strong style="color: var(--terra);">□</strong> Create Sequence 3 (3 emails, days 0/5/10)</li>
+                <li style="margin-bottom: 15px;"><strong style="color: var(--terra);">□</strong> Set up conditional rules for cross-sells (don't upsell AP if they already have it)</li>
+                <li style="margin-bottom: 15px;"><strong style="color: var(--terra);">□</strong> Test all sequences with a test email address</li>
+                <li style="margin-bottom: 15px;"><strong style="color: var(--terra);">□</strong> Set up tracking for link clicks (product pages, UTM params)</li>
+                <li style="margin-bottom: 0;"><strong style="color: var(--terra);">□</strong> Monitor open rates and click rates to optimize subject lines (A/B test)</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        function toggleSequence(button) {
+            const content = button.nextElementSibling;
+            button.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+
+        function toggleEmail(header) {
+            const body = header.nextElementSibling;
+            const card = header.parentElement;
+            card.classList.toggle('active');
+            body.classList.toggle('active');
+        }
+
+        function copyToClipboard(button) {
+            const emailContent = button.previousElementSibling;
+            const text = emailContent.innerText;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.innerText;
+                button.innerText = 'Copied!';
+                button.classList.add('copied');
+                
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

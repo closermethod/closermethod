@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '35298849146380570');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're In | UGC Closer Kit</title>
+<meta name="description" content="Your UGC Rate Calculator is ready. Get the complete UGC Closer Kit to close deals at the rate you deserve.">
+<meta property="og:title" content="You're In | UGC Closer Kit">
+<meta property="og:description" content="Your rate is calculated. Now get the 10-system kit to actually close at that rate.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ugc-closer-suite.netlify.app/thank-you-rate-system.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="You're In | @closermethod">
+<link rel="canonical" href="https://ugc-closer-suite.netlify.app/thank-you-rate-system.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0a;--surface:#111;--surface2:#161616;--border:#1e1e1e;
+  --text:#f0f0f0;--text2:#999;--text3:#666;
+  --accent:#22c55e;--accent2:#4ADE80;--accent-glow:rgba(34,197,94,.12);
+  --green:#22c55e;--green-dark:#16a34a;--green-glow:rgba(34,197,94,.1);
+  --red:#ef4444;
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.7}
+.wrap{max-width:620px;margin:0 auto;padding:0 20px}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;justify-content:space-between;align-items:center}
+.nav-brand{font-size:16px;font-weight:800;color:var(--text)}
+.nav-brand span{color:var(--accent)}
+.nav-cta{padding:8px 20px;background:var(--accent);color:#000;font-weight:700;font-size:13px;border-radius:8px;text-decoration:none;transition:all .2s}
+.nav-cta:hover{background:var(--accent2)}
+
+/* Hero */
+.hero{text-align:center;padding:56px 0 36px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--green-glow);border:1px solid rgba(34,197,94,.2);border-radius:99px;padding:8px 20px;font-size:13px;font-weight:600;color:var(--green);margin-bottom:24px}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero h1{font-size:clamp(28px,6vw,44px);font-weight:900;margin-bottom:16px;line-height:1.1;letter-spacing:-.02em}
+.hero h1 .gold{color:var(--accent)}
+.hero .sub{font-size:17px;color:var(--text2);max-width:480px;margin:0 auto 24px;line-height:1.65}
+.calc-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--surface);border:1px solid var(--border);color:#fff;font-weight:700;font-size:15px;border-radius:12px;text-decoration:none;transition:all .2s;cursor:pointer}
+.calc-btn:hover{border-color:var(--accent);transform:translateY(-2px)}
+
+/* Hero testimonial (Ty Murphy) */
+.hero-proof{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 24px;max-width:480px;margin:28px auto 0;text-align:left}
+.hero-proof .result{display:inline-block;background:var(--green-glow);color:var(--green);font-size:13px;font-weight:700;padding:4px 14px;border-radius:8px;margin-bottom:10px;font-family:'JetBrains Mono',monospace}
+.hero-proof .quote{font-size:14px;line-height:1.7;color:var(--text2);margin-bottom:8px}
+.hero-proof .who{font-size:13px;font-weight:600}
+
+/* Gap section */
+.gap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 0;margin:48px 0}
+.gap-grid{display:grid;grid-template-columns:1fr 40px 1fr;align-items:center;gap:0;max-width:500px;margin:0 auto}
+.gap-card{background:var(--surface);border-radius:16px;padding:28px 20px;text-align:center}
+.gap-card.without{border:1px solid var(--border)}
+.gap-card.with{border:2px solid var(--accent);box-shadow:0 0 32px rgba(34,197,94,.12)}
+.gap-icon{font-size:28px;margin-bottom:12px}
+.gap-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.gap-card.without .gap-label{color:var(--red)}
+.gap-card.with .gap-label{color:var(--accent)}
+.gap-stat{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;margin-bottom:4px}
+.gap-card.without .gap-stat{color:var(--text3);text-decoration:line-through}
+.gap-card.with .gap-stat{color:var(--accent)}
+.gap-detail{font-size:12px;color:var(--text3);line-height:1.5}
+.gap-arrow{text-align:center;font-size:20px;color:var(--text3)}
+@media(max-width:520px){
+  .gap-grid{grid-template-columns:1fr;gap:12px}
+  .gap-arrow{transform:rotate(90deg)}
+}
+
+/* Urgency */
+.urgency{background:linear-gradient(135deg,rgba(34,197,94,.06),rgba(34,197,94,.02));border:1px solid rgba(34,197,94,.15);border-radius:12px;padding:14px 20px;text-align:center;margin-bottom:32px}
+.urgency p{font-size:14px;color:#22c55e;font-weight:700;line-height:1.5}
+.urgency .note{font-size:12px;color:var(--text3);font-weight:400;margin-top:4px}
+
+/* Offer card */
+.offer{background:linear-gradient(135deg,#0a1407,var(--surface));border:2px solid var(--accent);border-radius:24px;padding:0;position:relative;margin-bottom:40px;overflow:hidden;box-shadow:0 0 48px rgba(34,197,94,.12)}
+.offer::before{content:'MOST POPULAR';position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--accent);color:#000;font-size:10px;font-weight:700;padding:5px 20px;border-radius:0 0 10px 10px;letter-spacing:.5px;z-index:1}
+.offer-header{padding:36px 28px 20px;text-align:center}
+.offer-header h2{font-size:26px;font-weight:900;margin-bottom:4px}
+.offer-header .tagline{font-size:14px;color:var(--text2)}
+.offer-body{padding:0 28px 32px}
+
+.value-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+.value-item:last-child{border-bottom:none}
+.value-check{color:var(--green);font-weight:700;flex-shrink:0;font-size:14px}
+.value-name{flex:1;font-size:14px;font-weight:600}
+.value-price{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text3);flex-shrink:0}
+
+.stack-total{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+.stack-total .label{font-size:14px;color:var(--text2)}
+.stack-total .amount{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--text3);text-decoration:line-through}
+
+.price-block{text-align:center;margin:28px 0 24px}
+.price-block .was{font-size:16px;color:var(--text3);text-decoration:line-through;margin-bottom:4px}
+.price-block .now{font-family:'JetBrains Mono',monospace;font-size:56px;font-weight:900;color:var(--accent);line-height:1;letter-spacing:-2px}
+.price-block .save-tag{display:inline-block;background:rgba(34,197,94,.08);color:var(--green);font-size:12px;font-weight:700;padding:4px 14px;border-radius:99px;margin-top:8px;border:1px solid rgba(34,197,94,.15)}
+
+.main-cta{display:block;width:100%;padding:20px;background:var(--accent);color:#000;font-weight:800;font-size:18px;border:none;border-radius:14px;cursor:pointer;transition:all .25s;font-family:'Inter',sans-serif;text-decoration:none;text-align:center;letter-spacing:.3px}
+.main-cta:hover{background:var(--accent2);transform:translateY(-3px);box-shadow:0 12px 36px rgba(34,197,94,.2)}
+
+.trust-row{display:flex;justify-content:center;gap:20px;margin-top:16px;font-size:12px;color:var(--text3);flex-wrap:wrap}
+.guarantee-box{background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.12);border-radius:12px;padding:16px 20px;margin-top:20px;text-align:center}
+.guarantee-box .title{font-weight:700;font-size:14px;color:var(--green);margin-bottom:4px}
+.guarantee-box .desc{font-size:13px;color:var(--text2);line-height:1.6}
+
+/* Social proof */
+.proof{margin-bottom:40px}
+.proof-label{font-size:11px;color:#22c55e;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.proof-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.proof-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:12px}
+.proof-stars{color:#22c55e;font-size:14px;letter-spacing:2px;margin-bottom:10px}
+.proof-result{display:inline-block;background:var(--green-glow);color:var(--green);font-size:13px;font-weight:700;padding:4px 14px;border-radius:8px;margin-bottom:12px;font-family:'JetBrains Mono',monospace}
+.proof-quote{font-size:14px;line-height:1.7;color:var(--text2);margin-bottom:12px}
+.proof-who{font-size:13px;font-weight:600}
+.proof-detail{font-size:12px;color:var(--text3);margin-top:2px}
+
+/* Final CTA */
+.final{text-align:center;padding:40px 0 48px;border-top:1px solid var(--border)}
+.final p{font-size:14px;color:var(--text3);margin-top:12px}
+
+/* Footer */
+footer{text-align:center;padding:32px 20px;border-top:1px solid var(--border)}
+footer p{font-size:11px;color:#444}
+
+@media(max-width:600px){
+  .hero{padding:44px 0 24px}
+  .offer-body{padding:0 20px 24px}
+  .offer-header{padding:36px 20px 16px}
+  .price-block .now{font-size:44px}
+  .trust-row{flex-direction:column;align-items:center;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">UGC<span>Closer</span></div>
+  <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=thank_you_upsell&utm_campaign=closer_kit&utm_content=rate_system" class="nav-cta">Get The Kit</a>
+</nav>
+
+<div class="wrap">
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-badge"><span class="dot"></span> Rate Calculator Unlocked</div>
+  <h1>You know your number.<br>Now learn how to <span class="gold">close it.</span></h1>
+  <p class="sub">Your rate calculator is ready. But knowing your rate and actually getting brands to pay it are two completely different skills.</p>
+  <a href="tool1-rate-calculator.html?unlocked=1" class="calc-btn">Open Your Rate Calculator →</a>
+
+  <!-- Ty Murphy proof -->
+  <div class="hero-proof">
+    <div class="result">$150 → $800/video · 433% increase</div>
+    <div class="quote">"Same brand. Same content type. I just changed how I communicated the value. Added usage rights as a separate line item, scoped the deliverables more clearly, and used the positioning framework. $150 to $800."</div>
+    <div class="who">@Ty_Murph · UGC Creator</div>
+  </div>
+</div>
+
+</div>
+
+<!-- Gap Section -->
+<div class="gap">
+  <div class="wrap">
+    <div class="gap-grid">
+      <div class="gap-card without">
+        <div class="gap-icon">😬</div>
+        <div class="gap-label">Without the system</div>
+        <div class="gap-stat">$150/video</div>
+        <div class="gap-detail">You know your rate should be higher.<br>But when the brand says "$150" you freeze.</div>
+      </div>
+      <div class="gap-arrow">→</div>
+      <div class="gap-card with">
+        <div class="gap-icon">🔥</div>
+        <div class="gap-label">With the Closer Kit</div>
+        <div class="gap-stat">$500-$800+</div>
+        <div class="gap-detail">Scripts, systems, and the confidence to name your price and hold it.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- Urgency -->
+<div class="urgency">
+  <p>✦ <s>$246</s> $197 today — tax season sale</p>
+  <div class="note">Sale ends March 31 · One brand deal pays for this 2x over.</div>
+</div>
+
+<!-- Offer Card -->
+<div class="offer">
+  <div class="offer-header">
+    <h2>The UGC Closer Kit</h2>
+    <div class="tagline">10 Notion-based systems. Built from $1.2M in enterprise sales.</div>
+  </div>
+  <div class="offer-body">
+    <div class="value-item"><span class="value-check">✓</span><span class="value-name">The Closing System</span><span class="value-price">$500</span></div>
+    <div class="value-item"><span class="value-check">✓</span><span class="value-name">The Money System</span><span class="value-price">$500</span></div>
+    <div class="value-item"><span class="value-check">✓</span><span class="value-name">175+ Brand Database</span><span class="value-price">$500</span></div>
+    <div class="value-item"><span class="value-check">✓</span><span class="value-name">60+ Copy-Paste Scripts</span><span class="value-price">$300</span></div>
+    <div class="value-item"><span class="value-check">✓</span><span class="value-name">12 Outbound Pitch Scripts</span><span class="value-price">$300</span></div>
+    <div class="value-item"><span class="value-check">✓</span><span class="value-name">Deal Tracker CRM</span><span class="value-price">$300</span></div>
+    <div class="value-item"><span class="value-check">✓</span><span class="value-name">The Scale System</span><span class="value-price">$300</span></div>
+    <div class="value-item"><span class="value-check">✓</span><span class="value-name">Negotiation War Room</span><span class="value-price">$300</span></div>
+    <div class="value-item"><span class="value-check">✓</span><span class="value-name">Contract & Invoice Templates</span><span class="value-price">$300</span></div>
+    <div class="value-item"><span class="value-check">✓</span><span class="value-name">The Beginner System</span><span class="value-price">$200</span></div>
+
+    <div class="stack-total">
+      <span class="label">Total value</span>
+      <span class="amount">$4,891+</span>
+    </div>
+
+    <div class="price-block">
+      <div class="was"><s>$246</s></div>
+      <div class="now">$197</div>
+      <div class="save-tag">Tax season sale — save $49</div>
+    </div>
+
+    <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=thank_you_upsell&utm_campaign=closer_kit&utm_content=rate_system" class="main-cta" id="mainCta">Get The UGC Closer Kit → $197</a>
+    <div style="text-align:center;color:#22c55e;font-size:13px;font-weight:700;margin-top:8px">Tax season sale — ends March 31</div>
+
+    <div class="trust-row">
+      <span>🔒 Secure checkout</span>
+      <span>⚡ Instant delivery</span>
+      <span>📱 Works on any device</span>
+    </div>
+
+    <div class="guarantee-box">
+      <div class="title">🛡️ 30-Day Money-Back Guarantee</div>
+      <div class="desc">Try it for 30 days. Use the scripts on real brands. If you don't feel like it was worth every penny, email me for a full refund. No questions, no hoops.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Social Proof -->
+<div class="proof">
+  <div class="proof-label">Real Results from Real Creators</div>
+
+  <div class="proof-card">
+    <div class="proof-stars">★★★★★</div>
+    <div class="proof-result">$150 → $800/video</div>
+    <div class="proof-quote">"Same brand. Same content type. I changed how I communicated the value. Added usage rights as a separate line item, scoped deliverables more clearly, used the positioning framework. $150 to $800. 433% increase."</div>
+    <div class="proof-who">@Ty_Murph</div>
+    <div class="proof-detail">Used the rate calculator + negotiation scripts</div>
+  </div>
+
+  <div class="proof-card">
+    <div class="proof-stars">★★★★★</div>
+    <div class="proof-result">$650 → $4,750 per deal</div>
+    <div class="proof-quote">"Wow! I thought I was getting paid at $650 for 5 videos until I did the work. This calculator is legit. I was leaving $4,100 on the table every deal."</div>
+    <div class="proof-who">Candi · @CandiandHerGoldens</div>
+    <div class="proof-detail">Pet &amp; Lifestyle UGC</div>
+  </div>
+
+  <div class="proof-card">
+    <div class="proof-stars">★★★★★</div>
+    <div class="proof-result">"It's BRILLIANT!!"</div>
+    <div class="proof-quote">"I used your rate calculator - it's BRILLIANT!! I finally have a real number to anchor to instead of guessing."</div>
+    <div class="proof-who">Mel Van Niekerk</div>
+    <div class="proof-detail">UGC Creator</div>
+  </div>
+</div>
+
+<!-- Final CTA -->
+<div class="final">
+  <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=thank_you_upsell&utm_campaign=closer_kit&utm_content=rate_system" class="main-cta" style="max-width:480px;margin:0 auto;display:block">Get The UGC Closer Kit → $197</a>
+  <p><s>$246</s> $197 today · Instant access · 30-day guarantee</p>
+  <p style="color:#22c55e;font-size:13px;font-weight:700;margin-top:4px">Tax season sale — ends March 31</p>
+</div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Elisabeth · @closermethod · Built from 10 years at Deel, Criteo, Autodesk, HBO & Bloomberg</p>
+</footer>
+
+<script>
+// Track InitiateCheckout on all CTA clicks
+document.querySelectorAll('.main-cta, .nav-cta').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-thank-you-rate',value:197,currency:'USD'});
+  });
+});
+</script>
+</body>
+</html>

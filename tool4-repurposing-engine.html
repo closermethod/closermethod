@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '35298849146380570');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Turn one UGC video into 12+ pieces of content. Free repurposing engine for UGC creators.">
+<meta property="og:title" content="Content Repurposing Engine | The Closer Method">
+<meta property="og:description" content="Turn one UGC video into 12+ pieces of content. Free repurposing engine for UGC creators.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Content Repurposing Engine | @closermethod">
+<meta name="twitter:description" content="Turn one UGC video into 12+ pieces of content. Free repurposing engine.">
+<link rel="canonical" href="https://ugc-closer-suite.netlify.app/tool4-repurposing-engine.html">
+<title>Content Repurposing Engine | @closermethod</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--surface:#111;--surface2:#161616;--border:#1e1e1e;--text:#f0f0f0;--text2:#888;--accent:#c8a44e;--accent2:#e8c95e;--green:#22c55e}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;max-width:720px;margin:0 auto}
+.nav-brand{font-size:14px;font-weight:800;color:var(--accent);text-decoration:none}
+.nav-cta{font-size:12px;color:var(--accent);text-decoration:none;font-weight:600;border:1px solid rgba(200,164,78,.3);padding:6px 14px;border-radius:8px}
+.container{max-width:640px;margin:0 auto;padding:40px 20px}
+.email-gate{text-align:center;padding:60px 20px}
+.gate-icon{font-size:48px;margin-bottom:16px}
+.gate-title{font-size:clamp(24px,5vw,36px);font-weight:900;line-height:1.15;margin-bottom:12px}
+.gate-title span{color:var(--accent)}
+.gate-sub{font-size:15px;color:var(--text2);line-height:1.6;max-width:460px;margin:0 auto 24px}
+.gate-form{display:flex;gap:8px;max-width:400px;margin:0 auto 16px}
+.gate-form input{flex:1;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;font-family:'Inter',sans-serif}
+.gate-form input::placeholder{color:#555}
+.gate-form input:focus{outline:none;border-color:var(--accent)}
+.gate-form button{padding:14px 24px;background:var(--accent);color:#000;font-weight:700;font-size:14px;border:none;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap}
+.gate-trust{font-size:11px;color:#555;text-align:center}
+.tool-area{display:none}.tool-area.active{display:block}
+.tool-header{text-align:center;margin-bottom:32px}
+.tool-header h1{font-size:24px;font-weight:800;margin-bottom:6px}
+.tool-header p{font-size:14px;color:var(--text2)}
+
+.input-section{margin-bottom:24px}
+.input-section label{display:block;font-size:13px;font-weight:600;margin-bottom:8px}
+.input-section textarea{width:100%;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;color:var(--text);font-size:14px;font-family:'Inter',sans-serif;min-height:120px;resize:vertical}
+.input-section textarea:focus{outline:none;border-color:var(--accent)}
+.input-section select{width:100%;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;font-family:'Inter',sans-serif;-webkit-appearance:none}
+.input-section select:focus{outline:none;border-color:var(--accent)}
+
+.gen-btn{display:block;width:100%;padding:16px;background:var(--accent);color:#000;font-weight:800;font-size:16px;border:none;border-radius:12px;cursor:pointer;font-family:'Inter',sans-serif}
+
+.output-area{display:none;margin-top:32px}
+.output-area.active{display:block}
+.output-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:16px}
+.oc-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.oc-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.oc-icon.tiktok{background:rgba(255,255,255,.05)}
+.oc-icon.ig{background:rgba(34,197,94,.1)}
+.oc-icon.tweet{background:rgba(59,130,246,.1)}
+.oc-icon.li{background:rgba(59,130,246,.08)}
+.oc-icon.email{background:rgba(34,197,94,.1)}
+.oc-title{font-size:13px;font-weight:700}
+.oc-platform{font-size:10px;color:var(--text2)}
+.oc-content{font-size:13px;color:var(--text);line-height:1.6;white-space:pre-wrap;background:var(--surface2);padding:16px;border-radius:10px;border:1px solid var(--border)}
+.oc-copy{display:inline-block;margin-top:10px;padding:6px 14px;background:transparent;border:1px solid var(--border);border-radius:8px;color:var(--text2);font-size:11px;cursor:pointer;font-family:'Inter',sans-serif}
+.oc-copy:hover{border-color:var(--accent);color:var(--accent)}
+
+.post-tool-cta{display:none;margin-top:40px;background:linear-gradient(135deg,rgba(34,197,94,.08),rgba(34,197,94,.02));border:1px solid rgba(34,197,94,.2);border-radius:20px;padding:32px 24px;text-align:center}
+.post-tool-cta.active{display:block}
+.ptc-tag{font-size:11px;color:var(--green);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.ptc-title{font-size:20px;font-weight:800;margin-bottom:8px;line-height:1.3}
+.ptc-title span{color:var(--accent)}
+.ptc-sub{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:20px}
+.ptc-btn{display:inline-block;padding:16px 40px;background:var(--accent);color:#000;font-weight:800;font-size:15px;border:none;border-radius:12px;text-decoration:none;font-family:'Inter',sans-serif}
+footer{text-align:center;padding:40px 20px;font-size:11px;color:#444}
+</style>
+</head>
+<body>
+<nav class="nav"><a href="links.html" class="nav-brand">@closermethod</a><a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=repurposing_engine" class="nav-cta">Get The Kit</a></nav>
+<div class="container">
+<div class="email-gate" id="emailGate">
+  <div class="gate-icon">♻️</div>
+  <div class="gate-title">Turn 1 Video Into <span>5 Posts</span></div>
+  <p class="gate-sub">Paste your UGC script or video description. Get platform-optimized content for TikTok, Instagram, X, LinkedIn, and email - in seconds.</p>
+  <div class="gate-form"><input type="email" id="gateEmail" placeholder="Your best email" required><button onclick="unlockTool()">Unlock →</button></div>
+  <div class="gate-trust">🔒 No spam. Used by 400+ creators.</div>
+</div>
+
+<div class="tool-area" id="toolArea">
+  <div class="tool-header"><h1>Content Repurposing Engine</h1><p>Paste your content. Get 5 platform-optimized versions.</p></div>
+
+  <div class="input-section">
+    <label>Your UGC script, video description, or key message</label>
+    <textarea id="contentInput" placeholder="Example: Just finished a 60-second testimonial for GlowBean serum. Key points: cleared my acne in 2 weeks, lightweight formula, dermatologist-approved, $29 price point. The brand was amazing to work with - fast communication, clear brief, paid on time."></textarea>
+  </div>
+  <div class="input-section">
+    <label>Content angle</label>
+    <select id="contentAngle">
+      <option value="educational">Educational (teach something)</option>
+      <option value="story">Storytelling (personal experience)</option>
+      <option value="authority">Authority (position as expert)</option>
+      <option value="behind-scenes">Behind the scenes</option>
+      <option value="results">Results / case study</option>
+    </select>
+  </div>
+  <button class="gen-btn" onclick="generateContent()">Repurpose My Content →</button>
+
+  <div class="output-area" id="outputArea">
+    <div class="output-card">
+      <div class="oc-header"><div class="oc-icon tiktok">📱</div><div><div class="oc-title">TikTok / Reels</div><div class="oc-platform">Short-form video script</div></div></div>
+      <div class="oc-content" id="outTiktok"></div>
+      <button class="oc-copy" onclick="copyText('outTiktok')">Copy</button>
+    </div>
+    <div class="output-card">
+      <div class="oc-header"><div class="oc-icon ig">📸</div><div><div class="oc-title">Instagram Caption</div><div class="oc-platform">Carousel or static post</div></div></div>
+      <div class="oc-content" id="outIg"></div>
+      <button class="oc-copy" onclick="copyText('outIg')">Copy</button>
+    </div>
+    <div class="output-card">
+      <div class="oc-header"><div class="oc-icon tweet">🐦</div><div><div class="oc-title">X / Twitter Thread</div><div class="oc-platform">3-5 tweets</div></div></div>
+      <div class="oc-content" id="outTweet"></div>
+      <button class="oc-copy" onclick="copyText('outTweet')">Copy</button>
+    </div>
+    <div class="output-card">
+      <div class="oc-header"><div class="oc-icon li">💼</div><div><div class="oc-title">LinkedIn Post</div><div class="oc-platform">Professional authority</div></div></div>
+      <div class="oc-content" id="outLinkedin"></div>
+      <button class="oc-copy" onclick="copyText('outLinkedin')">Copy</button>
+    </div>
+    <div class="output-card">
+      <div class="oc-header"><div class="oc-icon email">✉️</div><div><div class="oc-title">Email Snippet</div><div class="oc-platform">Newsletter or nurture</div></div></div>
+      <div class="oc-content" id="outEmail"></div>
+      <button class="oc-copy" onclick="copyText('outEmail')">Copy</button>
+    </div>
+  </div>
+
+  <div class="post-tool-cta" id="postToolCta">
+    <div class="ptc-tag">✓ Content repurposed - now monetize it</div>
+    <div class="ptc-title">Get the <span>complete closing system</span> to land paid brand deals</div>
+    <p class="ptc-sub">Stop creating for free. The UGC Closer Kit has 10 Notion-based systems - 60+ scripts, 175+ Brand Database, Deal Tracker CRM, and more to turn content into revenue.</p>
+    <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=repurposing_engine" class="ptc-btn">Get The Kit</a>
+    <p style="text-align:center;color:#888;font-size:11px;margin-top:6px">Join 200+ creators already closing with this system</p>
+  </div>
+</div>
+</div>
+<footer><p>© 2026 Elisabeth · @closermethod</p></footer>
+
+<script>
+const KIT_FORM_ID='9131179';
+function unlockTool(){const email=document.getElementById('gateEmail').value.trim();if(!email||!email.includes('@'))return;fetch(`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,tags:['repurposing-engine-user','link-in-bio-lead']})}).catch(()=>{});localStorage.setItem('ugc_optin',JSON.stringify({email,ts:Date.now()}));document.getElementById('emailGate').style.display='none';document.getElementById('toolArea').classList.add('active')}
+const urlParams=new URLSearchParams(window.location.search);if(localStorage.getItem('ugc_optin')||urlParams.get('unlocked')==='1'){document.getElementById('emailGate').style.display='none';document.getElementById('toolArea').classList.add('active');if(!localStorage.getItem('ugc_optin')){localStorage.setItem('ugc_optin',JSON.stringify({email:'homepage-lead',ts:Date.now()}))}}
+
+function generateContent(){
+  const input=document.getElementById('contentInput').value.trim();
+  if(!input){alert('Paste your content first!');return}
+  const angle=document.getElementById('contentAngle').value;
+
+  // Extract key elements
+  const words=input.split(' ');
+  const shortInput=words.slice(0,20).join(' ');
+  const topic=words.slice(0,8).join(' ');
+
+  const hooks={
+    educational:['Most UGC creators get this wrong:','The #1 mistake I see creators make:','Here\'s what brands actually want (not what they say):'],
+    story:['This deal almost didn\'t happen.','3 months ago I was charging $150. Here\'s what changed:','The DM that changed my UGC career:'],
+    authority:['After 400+ brand deals, here\'s what I know:','10 years in B2B taught me this about UGC:','The pricing framework every creator needs:'],
+    'behind-scenes':['POV: You just landed a $800 brand deal','What a $1,000 UGC deal actually looks like:','Behind the scenes of my brand deal process:'],
+    results:['$150 → $800. Same creator. Same content. Different approach.','How I 5x\'d my rates in 90 days:','The exact system that got me $1,200/month retainers:']
+  };
+  const hook=hooks[angle][Math.floor(Math.random()*3)];
+
+  document.getElementById('outTiktok').textContent=`${hook}\n\n[Hook - 0-3s]\n"${hook}"\n\n[Build - 3-15s]\nBreak down the key insight from: ${shortInput}...\n\n[Payoff - 15-30s]\nThe specific takeaway or result.\n\n[CTA - last 3s]\n"Follow for more UGC tips. Link in bio for free rate calculator."\n\n#ugccreator #ugctips #branddeals #contentcreator`;
+
+  document.getElementById('outIg').textContent=`${hook}\n\nHere's what I learned:\n\n1️⃣ [First key point from your content]\n2️⃣ [Second key point]\n3️⃣ [Third key point - the surprising one]\n\nThe takeaway? [One-sentence summary]\n\nSave this for your next brand negotiation. 📌\n\n-\nFree rate calculator in bio → know your real number before you pitch.\n\n#ugccreator #branddeals #ugctips #creatortips #contentcreator`;
+
+  document.getElementById('outTweet').textContent=`🧵 ${hook}\n\n(Thread)\n\n1/ ${shortInput}...\n\nHere's what most creators miss:\n\n2/ [Key insight #1 - the counterintuitive truth]\n\nThis alone changed how I approach every deal.\n\n3/ [Key insight #2 - the tactical move]\n\nThe exact framework:\n→ Step 1\n→ Step 2  \n→ Step 3\n\n4/ [The result + proof]\n\nThis approach has worked for 400+ creators.\n\n5/ TL;DR:\n• [Bullet 1]\n• [Bullet 2]\n• [Bullet 3]\n\nFree rate calculator → [link]\nRetweet if this helped. 🔄`;
+
+  document.getElementById('outLinkedin').textContent=`${hook}\n\nAfter 10 years in B2B (Criteo, Deel, Autodesk, HBO), I've seen both sides of creator partnerships.\n\nHere's what I've learned about ${topic}:\n\n→ [Professional insight #1]\n→ [Professional insight #2]\n→ [Professional insight #3]\n\nThe brands winning at UGC understand this isn't about "cheap content." It's about strategic creative that converts.\n\nFor creators: Know your value. Price accordingly. Deliver results.\n\nFor brands: Pay fairly. Brief clearly. Build partnerships, not transactions.\n\n-\nI built a free rate calculator for UGC creators based on real market data from 400+ deals. Link in comments.`;
+
+  document.getElementById('outEmail').textContent=`Subject: ${hook}\n\nHey [first_name],\n\n${hook.replace(':','.')}\n\nHere's the short version:\n\n${shortInput}...\n\nThe lesson? [One-sentence takeaway]\n\nI built this into a simple system that any creator can use:\n\n→ Calculate your real rate (free tool)\n→ Find brands that pay it (175+ brand database)\n→ Close the deal (60 proven scripts)\n\n[Try the free rate calculator →]\n\nTalk soon,\nElisabeth\n@closermethod`;
+
+  document.getElementById('outputArea').classList.add('active');
+  document.getElementById('postToolCta').classList.add('active');
+  document.getElementById('outputArea').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function copyText(id){
+  const text=document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(()=>{
+    event.target.textContent='Copied ✓';
+    setTimeout(()=>event.target.textContent='Copy',2000);
+  });
+}
+</script>
+</body>
+</html>

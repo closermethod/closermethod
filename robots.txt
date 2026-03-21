@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ugc-closer-suite.netlify.app/sitemap.xml
+
+# Block funnel pages from indexing
+Disallow: /oto.html
+Disallow: /vsl.html
+Disallow: /thank-you.html
+Disallow: /thank-you-rate-system.html
+Disallow: /bundle-access.html
+Disallow: /closer-kit-oto.html
+
+# Block legacy/dead pages
+Disallow: /first-1k-kit.html
+Disallow: /the-authenticity-premium.html
+
+# Block email sequence pages
+Disallow: /AUTHENTICITY-PREMIUM-EMAIL-SEQUENCE.html
+Disallow: /CASH-SPIKE-EMAIL-SEQUENCES.html

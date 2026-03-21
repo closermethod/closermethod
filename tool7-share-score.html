@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '35298849146380570');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your UGC Closer Score | @closermethod</title>
+    <meta name="description" content="Share your UGC Closer Score with friends and challenge them to beat it. Earn referral rewards when friends buy The Closer Kit.">
+    <meta property="og:title" content="Share Your UGC Closer Score | The Closer Method">
+    <meta property="og:description" content="Share your UGC Closer Score with friends and challenge them to beat it.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Share Your UGC Closer Score | @closermethod">
+    <meta name="twitter:description" content="Share your UGC Closer Score and challenge friends to beat it.">
+    <link rel="canonical" href="https://ugc-closer-suite.netlify.app/tool7-share-score.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #111;
+            --surface2: #161616;
+            --border: #1e1e1e;
+            --text: #f0f0f0;
+            --text2: #888;
+            --accent: #c8a44e;
+            --accent2: #e8c95e;
+            --green: #22c55e;
+            --red: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 1rem;
+            border-bottom: 1px solid var(--border);
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        /* Container */
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .score-label {
+            color: var(--text2);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .score-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .tier-badge {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--surface2);
+            border: 1px solid var(--accent);
+            border-radius: 20px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .subtitle {
+            color: var(--text2);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Shareable Card */
+        .card-container {
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .shareable-card {
+            background-color: var(--surface);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(34, 197, 94, 0.02) 100%);
+        }
+
+        .card-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-score {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .card-tier {
+            color: var(--text);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-cta {
+            color: var(--text2);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-url {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            word-break: break-all;
+        }
+
+        .card-branding {
+            font-size: 0.8rem;
+            color: var(--text2);
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+
+        .card-instruction {
+            font-size: 0.8rem;
+            color: var(--text2);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* Share Buttons */
+        .share-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .share-buttons.full {
+            grid-template-columns: 1fr;
+        }
+
+        .share-btn {
+            padding: 1rem;
+            border: 1px solid var(--border);
+            background-color: var(--surface2);
+            color: var(--text);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .share-btn:hover {
+            background-color: var(--surface);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .share-btn.secondary {
+            grid-column: span 2;
+        }
+
+        .share-buttons.full .share-btn.secondary {
+            grid-column: span 1;
+        }
+
+        .share-btn-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Referral Section */
+        .referral-section {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .referral-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .referral-code-box {
+            background-color: var(--surface2);
+            border: 1px dashed var(--accent);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .referral-code-label {
+            color: var(--text2);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .referral-code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            word-break: break-all;
+        }
+
+        .copy-code-btn {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent);
+            color: var(--bg);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .copy-code-btn:hover {
+            background-color: var(--accent2);
+        }
+
+        .copy-code-btn.copied {
+            background-color: var(--green);
+        }
+
+        .referral-text {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .referral-note {
+            font-size: 0.85rem;
+            color: var(--text2);
+            background-color: rgba(34, 197, 94, 0.1);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .cta-link {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background-color: var(--accent);
+            color: var(--bg);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .cta-link:hover {
+            background-color: var(--accent2);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text2);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--accent2);
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--green);
+            color: var(--bg);
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            z-index: 1000;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(1rem);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        /* Modal for instructions */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .modal-text {
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .modal-close {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent);
+            color: var(--bg);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            background-color: var(--accent2);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            .score-number {
+                font-size: 3.5rem;
+            }
+
+            .share-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .share-btn.secondary {
+                grid-column: span 1;
+            }
+
+            .share-btn-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">@closermethod</div>
+        <a href="/quiz" class="nav-link">Take the Quiz</a>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="score-label">Your UGC Closer Score</div>
+            <div class="score-number" id="scoreDisplay">0</div>
+            <div class="tier-badge" id="tierBadge">Not Set</div>
+            <div class="subtitle">Challenge your creator friends - can they beat your score?</div>
+        </div>
+
+        <!-- Shareable Card -->
+        <div class="card-container">
+            <div class="shareable-card" id="shareableCard">
+                <div class="card-emoji">🎯</div>
+                <div class="card-score">My UGC Closer Score: <span id="cardScore">0</span>/28</div>
+                <div class="card-tier" id="cardTier">Not Set</div>
+                <div class="card-cta">Think you can beat me?</div>
+                <div class="card-cta">Take the free quiz →</div>
+                <div class="card-url">ugc-closer-suite.netlify.app/quiz</div>
+                <div class="card-branding">by @closermethod</div>
+            </div>
+            <div class="card-instruction">💡 Screenshot this card and share it on social media</div>
+        </div>
+
+        <!-- Share Buttons -->
+        <div class="share-buttons">
+            <button class="share-btn" onclick="shareOnX()">Share on X →</button>
+            <button class="share-btn" onclick="shareInstagramModal()">📱 Instagram Stories</button>
+            <button class="share-btn secondary" onclick="copyLink()">📋 Copy Quiz Link</button>
+            <button class="share-btn secondary" onclick="shareTikTokModal()">🎵 Share on TikTok</button>
+        </div>
+
+        <!-- Referral Section -->
+        <div class="referral-section">
+            <div class="referral-title">💰 Earn $10 Off for Referrals</div>
+            <div class="referral-code-box">
+                <div class="referral-code-label">Your Referral Code</div>
+                <div class="referral-code" id="referralCode">CLOSER-XXXXX</div>
+                <button class="copy-code-btn" id="copyCodeBtn" onclick="copyReferralCode()">Copy Code</button>
+            </div>
+            <div class="referral-text">
+                Share this code with friends. When they use it at checkout, <strong>you both save $10</strong> on The Closer Kit!
+            </div>
+            <div class="referral-note">
+                📬 DM <strong>@closermethod</strong> on Instagram with proof of referral to claim your discount!
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section" id="ctaSection">
+            <!-- Dynamically populated based on score -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    
+<!-- SOCIAL PROOF - Real Creator Results -->
+<div style="max-width:700px;margin:40px auto;padding:0 20px">
+  <div style="text-align:center;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3,#666);margin-bottom:20px">What creators are saying</div>
+  
+  <div style="background:var(--card,#141414);border:1px solid var(--accent,#c8ff00);border-radius:12px;padding:20px;margin-bottom:12px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <span style="font-size:10px;font-weight:700;color:var(--accent,#c8ff00);background:rgba(200,255,0,0.1);padding:3px 8px;border-radius:6px;">VERIFIED</span>
+      <span style="font-size:11px;color:var(--text3,#666)">@Ty__Murph on X</span>
+    </div>
+    <div style="font-size:14px;color:var(--text,#e8e8e8);line-height:1.6;margin-bottom:8px">"Using her rate calculator and advice, <strong style="color:var(--accent,#c8ff00)">I negotiated from $150 to $800 for 2 videos.</strong>"</div>
+    <div style="font-size:12px;font-weight:600;color:var(--accent,#c8ff00)">Ty Murph &middot; 5.3x income increase</div>
+  </div>
+  
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div style="background:var(--card,#141414);border:1px solid var(--border,#222);border-radius:12px;padding:16px">
+      <div style="font-size:12px;color:var(--accent,#c8ff00);margin-bottom:6px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:13px;color:var(--text,#e8e8e8);line-height:1.5;margin-bottom:6px">"The calculator is BRILLIANT!! I finally know what to charge."</div>
+      <div style="font-size:11px;color:var(--green,#00c853);font-weight:600">Mel &middot; $300 &rarr; $800/video</div>
+    </div>
+    <div style="background:var(--card,#141414);border:1px solid var(--border,#222);border-radius:12px;padding:16px">
+      <div style="font-size:12px;color:var(--accent,#c8ff00);margin-bottom:6px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:13px;color:var(--text,#e8e8e8);line-height:1.5;margin-bottom:6px">"I sent pitches to 10 brands and got 2 responses in ONE DAY."</div>
+      <div style="font-size:11px;color:var(--green,#00c853);font-weight:600">Milena V &middot; 10 pitches, 2 replies</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:16px;font-size:12px;color:var(--text3,#666)">400+ creators already using these tools &middot; <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=tool_page&utm_campaign=closer_kit" style="color:var(--accent,#c8ff00);text-decoration:none;font-weight:600">Get the full system &rarr;</a></div>
+</div>
+
+<footer>
+        Built by <a href="https://elisabethugc.com" target="_blank">@closermethod</a> · Free AI Tools
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal" id="instagramModal">
+        <div class="modal-content">
+            <div class="modal-title">📱 Share on Instagram Stories</div>
+            <div class="modal-text">
+                Take a screenshot of the blue card above and share it to your Stories. Don't forget to tag <strong>@closermethod</strong> so we can see your score! 🎯
+            </div>
+            <button class="modal-close" onclick="closeModal('instagramModal')">Got It</button>
+        </div>
+    </div>
+
+    <div class="modal" id="tiktokModal">
+        <div class="modal-content">
+            <div class="modal-title">🎵 Share on TikTok</div>
+            <div class="modal-text">
+                Mention your score in your next TikTok video and share your tier! Use the hashtag <strong>#UGCCloserScore</strong> so others can find the quiz. Make it entertaining - show your reaction to your score! 🎬
+            </div>
+            <button class="modal-close" onclick="closeModal('tiktokModal')">Got It</button>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const score = parseInt(params.get('score')) || 0;
+        const tier = params.get('tier') || 'Not Set';
+
+        // Tier information
+        const tierNames = {
+            'closer': 'The Closer',
+            'almost-closer': 'Almost-Closer',
+            'undercharger': 'The Undercharger',
+            'free-worker': 'Free Worker'
+        };
+
+        const tierDisplay = tierNames[tier] || tier || 'Not Set';
+
+        // Update page with score and tier
+        function initializePage() {
+            document.getElementById('scoreDisplay').textContent = score;
+            document.getElementById('tierBadge').textContent = tierDisplay;
+            document.getElementById('cardScore').textContent = score;
+            document.getElementById('cardTier').textContent = tierDisplay;
+
+            // Generate referral code
+            const codeHash = Math.abs(hashCode(score + Date.now() + Math.random())).toString(36).substring(0, 5).toUpperCase();
+            document.getElementById('referralCode').textContent = `CLOSER-${codeHash}`;
+
+            // Set CTA section
+            setCTA();
+        }
+
+        // Hash function for generating unique codes
+        function hashCode(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return hash;
+        }
+
+        // Set CTA based on score
+        function setCTA() {
+            const ctaSection = document.getElementById('ctaSection');
+            let ctaHTML = '';
+
+            if (score >= 24) {
+                ctaHTML = `
+                    <div class="cta-text">You're already crushing it! 🚀</div>
+                    <div class="cta-text">Help others level up by sharing the quiz.</div>
+                    <a href="https://elisabethugc.com" target="_blank" class="cta-link">Explore More Tools →</a>
+                `;
+            } else if (score >= 18) {
+                ctaHTML = `
+                    <div class="cta-text">You're almost there. 💪</div>
+                    <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=share_score" target="_blank" class="cta-link">Get The Kit</a>
+                `;
+            } else {
+                ctaHTML = `
+                    <div class="cta-text">Ready to level up?</div>
+                    <a href="https://elisabethugc.com" target="_blank" class="cta-link">Get Your Pitch Scripts →</a>
+                `;
+            }
+
+            ctaSection.innerHTML = ctaHTML;
+        }
+
+        // Share on X (Twitter)
+        function shareOnX() {
+            const text = `I scored ${score}/28 on the UGC Closer Score quiz 🎯 I'm "${tierDisplay}" - think you can beat me?\n\nTake the free quiz: https://ugc-closer-suite.netlify.app/quiz\n\nby @closermethod`;
+            const url = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank', 'width=550,height=420');
+        }
+
+        // Share Instagram modal
+        function shareInstagramModal() {
+            document.getElementById('instagramModal').classList.add('show');
+        }
+
+        // Share TikTok modal
+        function shareTikTokModal() {
+            document.getElementById('tiktokModal').classList.add('show');
+        }
+
+        // Close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('show');
+        }
+
+        // Copy quiz link
+        function copyLink() {
+            const link = 'https://ugc-closer-suite.netlify.app/quiz';
+            navigator.clipboard.writeText(link).then(() => {
+                showToast('Quiz link copied! 🎯');
+            }).catch(() => {
+                showToast('Failed to copy link');
+            });
+        }
+
+        // Copy referral code
+        function copyReferralCode() {
+            const code = document.getElementById('referralCode').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                const btn = document.getElementById('copyCodeBtn');
+                btn.textContent = 'Copied! ✓';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy Code';
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(() => {
+                showToast('Failed to copy code');
+            });
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        // Close modals when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('show');
+                }
+            });
+        });
+
+        // Initialize on page load
+        initializePage();
+    </script>
+</body>
+</html>

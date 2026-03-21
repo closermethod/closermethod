@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking & Analytics Setup Guide | Digital Product Funnel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFCF9;
+            --forest: #2D5A3D;
+            --terra: #B85C38;
+            --cream: #F8F5EF;
+            --charcoal: #292524;
+            --light-cream: #FAF8F5;
+            --accent-light: #E8D4C4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--bg);
+            line-height: 1.7;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--forest);
+            color: var(--bg);
+            padding: 2rem;
+            border-bottom: 4px solid var(--terra);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background-color: var(--light-cream);
+            border-left: 4px solid var(--terra);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .toc h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--forest);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .toc ol {
+            margin-left: 1.5rem;
+        }
+
+        .toc li {
+            margin: 0.5rem 0;
+        }
+
+        .toc a {
+            color: var(--terra);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: var(--forest);
+        }
+
+        /* Section Styling */
+        section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background-color: var(--cream);
+            border-radius: 6px;
+        }
+
+        section:nth-child(odd) {
+            background-color: var(--light-cream);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--forest);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--terra);
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--terra);
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            color: var(--forest);
+            font-size: 1.1rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Code Snippets */
+        .code-block {
+            background-color: var(--charcoal);
+            color: #E8E8E8;
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            border-left: 4px solid var(--terra);
+            position: relative;
+        }
+
+        .code-block.html {
+            background-color: #1E1E1E;
+        }
+
+        .code-label {
+            display: inline-block;
+            background-color: var(--terra);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background-color: var(--bg);
+        }
+
+        thead {
+            background-color: var(--forest);
+            color: var(--bg);
+        }
+
+        th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            border: none;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--accent-light);
+        }
+
+        tr:hover {
+            background-color: var(--light-cream);
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+            line-height: 1.8;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background-color: rgba(45, 90, 61, 0.08);
+            border-left: 4px solid var(--forest);
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background-color: rgba(184, 92, 56, 0.08);
+            border-left: 4px solid var(--terra);
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .info-box strong, .warning-box strong {
+            color: var(--forest);
+        }
+
+        .warning-box strong {
+            color: var(--terra);
+        }
+
+        /* Links */
+        a {
+            color: var(--terra);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--forest);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            padding: 2rem;
+            background-color: var(--forest);
+            color: var(--bg);
+            text-align: center;
+            border-top: 4px solid var(--terra);
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Funnel Pages Reference */
+        .funnel-reference {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .funnel-item {
+            background-color: var(--bg);
+            padding: 1rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--terra);
+        }
+
+        .funnel-item strong {
+            color: var(--forest);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .funnel-item em {
+            color: var(--charcoal);
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .funnel-reference {
+                grid-template-columns: 1fr;
+            }
+
+            .code-block {
+                font-size: 0.85rem;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tracking & Analytics Setup Guide</h1>
+        <p>Complete reference for implementing Meta Pixel, Google Analytics 4, UTM tracking, and conversion events across your digital funnel</p>
+    </header>
+
+    <div class="container">
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2>Quick Navigation</h2>
+            <ol>
+                <li><a href="#meta-pixel">Meta Pixel Setup</a></li>
+                <li><a href="#ga4">Google Analytics 4 Setup</a></li>
+                <li><a href="#utm">UTM Parameter Strategy</a></li>
+                <li><a href="#conversion-code">Conversion Tracking Code Snippets</a></li>
+                <li><a href="#gtm">Google Tag Manager Setup</a></li>
+                <li><a href="#audiences">Retargeting Audiences</a></li>
+                <li><a href="#kpi">KPI Dashboard Metrics</a></li>
+            </ol>
+        </div>
+
+        <!-- Funnel Overview -->
+        <section>
+            <h2>Your Digital Funnel Overview</h2>
+            <p>Before implementing tracking, understand your funnel structure:</p>
+            <div class="funnel-reference">
+                <div class="funnel-item">
+                    <strong>Homepage</strong>
+                    <em>index.html</em>
+                </div>
+                <div class="funnel-item">
+                    <strong>Free Tools (5)</strong>
+                    <em>tool1.html - tool5.html</em>
+                </div>
+                <div class="funnel-item">
+                    <strong>Links Page</strong>
+                    <em>links.html</em>
+                </div>
+                <div class="funnel-item">
+                    <strong>Resources Page</strong>
+                    <em>resources.html (optional)</em>
+                </div>
+                <div class="funnel-item">
+                    <strong>Product 1: Authenticity Premium</strong>
+                    <em>the-authenticity-premium.html</em>
+                </div>
+                <div class="funnel-item">
+                    <strong>Product 2: First 1K Kit</strong>
+                    <em>first-1k-kit.html</em>
+                </div>
+                <div class="funnel-item">
+                    <strong>Product 3: Closer Kit OTO</strong>
+                    <em>closer-kit-oto.html</em>
+                </div>
+                <div class="funnel-item">
+                    <strong>Thank You: Authenticity Premium</strong>
+                    <em>thank-you-ap.html</em>
+                </div>
+                <div class="funnel-item">
+                    <strong>Thank You: Kits</strong>
+                    <em>thank-you-kit.html</em>
+                </div>
+                <div class="funnel-item">
+                    <strong>Thank You: Closer Kit</strong>
+                    <em>thank-you-closer.html</em>
+                </div>
+                <div class="funnel-item">
+                    <strong>Kit Commerce Checkout</strong>
+                    <em>stan.store/perolikebro/p/*</em>
+                </div>
+                <div class="funnel-item">
+                    <strong>Email Sequences</strong>
+                    <em>ConvertKit (Kit) Platform</em>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meta Pixel Section -->
+        <section id="meta-pixel">
+            <h2>1. Meta Pixel Setup</h2>
+
+            <h3>Step 1: Create Your Meta Pixel</h3>
+            <ol>
+                <li>Go to <a href="https://www.facebook.com/events_manager" target="_blank">Meta Events Manager</a></li>
+                <li>Click "Data Sources" → "Web"</li>
+                <li>Click "Add" and select "Meta Pixel"</li>
+                <li>Name your pixel (e.g., "Product Funnel Tracking")</li>
+                <li>Add your website URL</li>
+                <li>Copy your Pixel ID (you'll need this)</li>
+            </ol>
+
+            <h3>Step 2: Install Base Pixel Code on ALL Pages</h3>
+            <p>Add this code immediately after the opening <code>&lt;head&gt;</code> tag on every page of your funnel:</p>
+
+            <div class="code-label">Meta Pixel - Base Installation (ALL PAGES)</div>
+            <div class="code-block html">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+// Replace PIXEL_ID with your actual Meta Pixel ID
+fbq('init', 'PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+
+<!-- Meta Pixel Image Tag (for users with JavaScript disabled) -->
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1" />
+</noscript>
+            </div>
+
+            <h3>Step 3: Standard Events - Code Implementation</h3>
+            <p>Implement these events across your funnel pages. Place each code snippet at the relevant location:</p>
+
+            <h4>A. PageView Event (Automatic)</h4>
+            <p>The base code above automatically fires PageView. No additional code needed.</p>
+
+            <h4>B. ViewContent - Product Pages</h4>
+            <p>Add this to: <code>the-authenticity-premium.html</code>, <code>first-1k-kit.html</code>, <code>closer-kit-oto.html</code></p>
+
+            <div class="code-label">Meta Pixel - ViewContent Event</div>
+            <div class="code-block html">
+<!-- Add this where your product content loads -->
+<script>
+fbq('track', 'ViewContent', {
+  content_ids: ['authenticity-premium'], // Change per product
+  content_name: 'The Authenticity Premium',
+  content_type: 'product',
+  currency: 'USD',
+  value: 97.00 // Product price
+});
+</script>
+
+<!-- For First 1K Kit product page -->
+<script>
+fbq('track', 'ViewContent', {
+  content_ids: ['first-1k-kit'],
+  content_name: 'First 1K Kit',
+  content_type: 'product',
+  currency: 'USD',
+  value: 197.00
+});
+</script>
+
+<!-- For Closer Kit OTO product page -->
+<script>
+fbq('track', 'ViewContent', {
+  content_ids: ['closer-kit-oto'],
+  content_name: 'Closer Kit OTO',
+  content_type: 'product',
+  currency: 'USD',
+  value: 297.00
+});
+</script>
+            </div>
+
+            <h4>C. InitiateCheckout - Checkout Button Click</h4>
+            <p>Add this code to your checkout button element on product pages:</p>
+
+            <div class="code-label">Meta Pixel - InitiateCheckout Event</div>
+            <div class="code-block html">
+<!-- On your product page checkout button -->
+<button onclick="trackCheckoutInitiate('the-authenticity-premium', 'The Authenticity Premium', 97.00)">
+  Checkout
+</button>
+
+<script>
+function trackCheckoutInitiate(contentId, contentName, value) {
+  fbq('track', 'InitiateCheckout', {
+    content_ids: [contentId],
+    content_name: contentName,
+    content_type: 'product',
+    currency: 'USD',
+    value: value,
+    num_items: 1
+  });
+  
+  // Then redirect to checkout
+  window.location.href = 'https://stan.store/perolikebro?utm_source=email&utm_medium=pixel-guide&utm_campaign=closer_kit' + contentId;
+}
+</script>
+            </div>
+
+            <h4>D. Purchase Event - Thank You Pages</h4>
+            <p>Add this to each thank you page: <code>thank-you-ap.html</code>, <code>thank-you-kit.html</code>, <code>thank-you-closer.html</code></p>
+
+            <div class="code-label">Meta Pixel - Purchase Event (thank-you-ap.html)</div>
+            <div class="code-block html">
+<script>
+fbq('track', 'Purchase', {
+  content_ids: ['authenticity-premium'],
+  content_name: 'The Authenticity Premium',
+  content_type: 'product',
+  currency: 'USD',
+  value: 97.00,
+  num_items: 1
+});
+</script>
+            </div>
+
+            <div class="code-label">Meta Pixel - Purchase Event (thank-you-kit.html)</div>
+            <div class="code-block html">
+<script>
+fbq('track', 'Purchase', {
+  content_ids: ['first-1k-kit'],
+  content_name: 'First 1K Kit',
+  content_type: 'product',
+  currency: 'USD',
+  value: 197.00,
+  num_items: 1
+});
+</script>
+            </div>
+
+            <div class="code-label">Meta Pixel - Purchase Event (thank-you-closer.html)</div>
+            <div class="code-block html">
+<script>
+fbq('track', 'Purchase', {
+  content_ids: ['closer-kit-oto'],
+  content_name: 'Closer Kit OTO',
+  content_type: 'product',
+  currency: 'USD',
+  value: 297.00,
+  num_items: 1
+});
+</script>
+            </div>
+
+            <h4>E. Lead Event - Email Signup on Tool Pages</h4>
+            <p>Add this to tool pages (tool1.html through tool5.html) where users submit their email:</p>
+
+            <div class="code-label">Meta Pixel - Lead Event</div>
+            <div class="code-block html">
+<!-- On your email signup form -->
+<form onsubmit="handleEmailSignup(event)">
+  <input type="email" id="email" placeholder="Enter your email" required>
+  <button type="submit">Get Free Tool</button>
+</form>
+
+<script>
+function handleEmailSignup(event) {
+  event.preventDefault();
+  
+  const email = document.getElementById('email').value;
+  
+  // Track the lead event
+  fbq('track', 'Lead', {
+    content_name: 'Free Tool Download',
+    currency: 'USD',
+    value: 0.00
+  });
+  
+  // Continue with your email signup process
+  // (send to email service, display thank you message, etc.)
+  console.log('Lead tracked for: ' + email);
+}
+</script>
+            </div>
+
+            <h4>F. Custom Events - ToolUsed & EmailSequenceStarted</h4>
+            <p>Track custom events for deeper insights:</p>
+
+            <div class="code-label">Meta Pixel - Custom Event: Tool Used</div>
+            <div class="code-block html">
+<!-- When user completes a tool calculation/action -->
+<script>
+fbq('trackCustom', 'ToolUsed', {
+  tool_name: 'Authenticity Score Calculator', // Change per tool
+  user_segment: 'free_user',
+  value: 0,
+  currency: 'USD'
+});
+</script>
+            </div>
+
+            <div class="code-label">Meta Pixel - Custom Event: Email Sequence Started</div>
+            <div class="code-block html">
+<!-- After user confirms email signup -->
+<script>
+fbq('trackCustom', 'EmailSequenceStarted', {
+  sequence_name: 'First-Time Buyer Sequence',
+  sequence_step: 1,
+  value: 0,
+  currency: 'USD'
+});
+</script>
+            </div>
+
+            <h3>Step 4: Add Meta Pixel to Kit Commerce Checkout</h3>
+            <p>For the external Kit Commerce checkout pages:</p>
+            <ol>
+                <li>Log into your Kit (ConvertKit) account</li>
+                <li>Go to Settings → Integrations</li>
+                <li>Find "Meta Pixel" or "Facebook Pixel"</li>
+                <li>Paste your Pixel ID in the integration field</li>
+                <li>Enable the integration and save</li>
+            </ol>
+
+            <div class="info-box">
+                <strong>Note:</strong> Kit Commerce will automatically fire Purchase events when customers complete checkout. You can also add custom code in Kit's template settings if you need to track additional parameters.
+            </div>
+
+            <h3>Step 5: Verify Installation</h3>
+            <p>Test your pixel installation:</p>
+            <ol>
+                <li>Install the <a href="https://www.facebook.com/business/tools/meta-pixel-helper" target="_blank">Meta Pixel Helper Chrome Extension</a></li>
+                <li>Visit your website and look for the pixel indicator (green or blue)</li>
+                <li>Navigate through your funnel and verify events appear in the extension</li>
+                <li>In Events Manager, go to "Test Events" to see real-time data</li>
+            </ol>
+        </section>
+
+        <!-- GA4 Section -->
+        <section id="ga4">
+            <h2>2. Google Analytics 4 (GA4) Setup</h2>
+
+            <h3>Step 1: Create a GA4 Property</h3>
+            <ol>
+                <li>Go to <a href="https://analytics.google.com" target="_blank">Google Analytics</a></li>
+                <li>Click "Admin" (bottom left)</li>
+                <li>In the Property column, click "Create Property"</li>
+                <li>Name: "Product Funnel"</li>
+                <li>Reporting timezone: Your local timezone</li>
+                <li>Currency: USD</li>
+                <li>Click "Create"</li>
+                <li>Select "Web" as your platform</li>
+                <li>Add your domain and website name</li>
+                <li>Copy your Measurement ID (format: G-XXXXXXXXXX)</li>
+            </ol>
+
+            <h3>Step 2: Install GA4 Code on ALL Pages</h3>
+            <p>Add this code to the <code>&lt;head&gt;</code> section of every page (right after the Meta Pixel code):</p>
+
+            <div class="code-label">GA4 Installation Code (ALL PAGES)</div>
+            <div class="code-block html">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // Replace G-XXXXXXXXXX with your Measurement ID
+  gtag('config', 'G-XXXXXXXXXX', {
+    'anonymize_ip': true,
+    'allow_google_signals': true,
+    'allow_ad_personalization_signals': true
+  });
+</script>
+            </div>
+
+            <h3>Step 3: Configure Key GA4 Events</h3>
+
+            <h4>A. Page View (Automatic)</h4>
+            <p>GA4 automatically tracks page views. No additional code needed.</p>
+
+            <h4>B. Generate Lead - Email Capture on Tools</h4>
+            <p>Add to tool pages (tool1.html - tool5.html):</p>
+
+            <div class="code-label">GA4 - Generate Lead Event</div>
+            <div class="code-block html">
+<script>
+function handleEmailSignup(event) {
+  event.preventDefault();
+  
+  const email = document.getElementById('email').value;
+  
+  // GA4 Lead event
+  gtag('event', 'generate_lead', {
+    'currency': 'USD',
+    'value': 0,
+    'email': email // Optional: Hash this for privacy if desired
+  });
+  
+  // Your email signup logic here
+  console.log('Lead tracked');
+}
+</script>
+            </div>
+
+            <h4>C. Begin Checkout - Product Page Checkout Button</h4>
+            <p>Add to product pages when checkout button is clicked:</p>
+
+            <div class="code-label">GA4 - Begin Checkout Event</div>
+            <div class="code-block html">
+<script>
+function trackCheckoutInitiate(productId, productName, value) {
+  gtag('event', 'begin_checkout', {
+    'currency': 'USD',
+    'value': value,
+    'items': [
+      {
+        'item_id': productId,
+        'item_name': productName,
+        'currency': 'USD',
+        'price': value,
+        'quantity': 1
+      }
+    ]
+  });
+  
+  // Redirect to checkout
+  window.location.href = 'https://stan.store/perolikebro?utm_source=email&utm_medium=pixel-guide&utm_campaign=closer_kit' + productId;
+}
+</script>
+            </div>
+
+            <h4>D. Purchase Event - Thank You Pages</h4>
+            <p>Add to thank-you pages. This can accept dynamic values from URL parameters:</p>
+
+            <div class="code-label">GA4 - Purchase Event</div>
+            <div class="code-block html">
+<script>
+// Get URL parameters for dynamic tracking
+const urlParams = new URLSearchParams(window.location.search);
+const transactionId = urlParams.get('transaction_id') || 'direct_' + Date.now();
+const productId = urlParams.get('product_id') || 'authenticity-premium';
+const productName = urlParams.get('product_name') || 'The Authenticity Premium';
+const value = parseFloat(urlParams.get('value')) || 97.00;
+
+gtag('event', 'purchase', {
+  'currency': 'USD',
+  'transaction_id': transactionId,
+  'value': value,
+  'tax': 0,
+  'shipping': 0,
+  'items': [
+    {
+      'item_id': productId,
+      'item_name': productName,
+      'currency': 'USD',
+      'price': value,
+      'quantity': 1
+    }
+  ]
+});
+</script>
+            </div>
+
+            <h4>E. Custom Events - Tool Used & Email Sequence Started</h4>
+            <p>Track custom events for advanced analytics:</p>
+
+            <div class="code-label">GA4 - Custom Event: Tool Used</div>
+            <div class="code-block html">
+<script>
+// Fire when user completes a tool interaction
+gtag('event', 'tool_used', {
+  'tool_name': 'Authenticity Score Calculator',
+  'tool_category': 'assessment',
+  'user_segment': 'free_user'
+});
+</script>
+            </div>
+
+            <div class="code-label">GA4 - Custom Event: Email Sequence Started</div>
+            <div class="code-block html">
+<script>
+gtag('event', 'email_sequence_started', {
+  'sequence_name': 'First-Time Buyer Sequence',
+  'sequence_step': 1,
+  'user_type': 'new_lead'
+});
+</script>
+            </div>
+
+            <h3>Step 4: Configure Enhanced E-Commerce in GA4</h3>
+            <p>Set up enhanced e-commerce to track all product interactions:</p>
+            <ol>
+                <li>Go to Admin → Data Streams → Select your web stream</li>
+                <li>Under "Enhanced measurement," toggle ON:
+                    <ul>
+                        <li>Page views and scrolls</li>
+                        <li>Outbound clicks</li>
+                        <li>Site search</li>
+                        <li>Video engagement</li>
+                        <li>File downloads</li>
+                    </ul>
+                </li>
+                <li>Create custom events for:
+                    <ul>
+                        <li>tool_used</li>
+                        <li>email_sequence_started</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Step 5: Create GA4 Conversion Goals</h3>
+            <p>Define what counts as a conversion:</p>
+            <ol>
+                <li>Go to Admin → Conversions</li>
+                <li>Click "New conversion event"</li>
+                <li>Create conversions for:
+                    <ul>
+                        <li><strong>purchase</strong> - Purchase event</li>
+                        <li><strong>generate_lead</strong> - Email signup</li>
+                        <li><strong>begin_checkout</strong> - Checkout initiated</li>
+                        <li><strong>tool_used</strong> - Tool completion</li>
+                    </ul>
+                </li>
+                <li>Save each conversion</li>
+            </ol>
+
+            <div class="info-box">
+                <strong>Pro Tip:</strong> GA4 automatically recognizes purchase, lead, and checkout events. Custom events need to be marked as conversions in the admin panel to show in conversion reports.
+            </div>
+
+            <h3>Step 6: Set Up GA4 User ID Tracking (Optional but Recommended)</h3>
+            <p>Track users across devices and sessions by setting a User ID from your email list:</p>
+
+            <div class="code-label">GA4 - User ID Setup</div>
+            <div class="code-block html">
+<script>
+// When user logs in or provides email, set user ID
+function setUserID(userEmail) {
+  // Generate a hash or use your internal user ID
+  const userId = btoa(userEmail); // Simple base64, or use your CRM ID
+  
+  gtag('config', 'G-XXXXXXXXXX', {
+    'user_id': userId
+  });
+  
+  gtag('set', {
+    'user_id': userId,
+    'user_properties': {
+      'email': userEmail
+    }
+  });
+}
+</script>
+            </div>
+        </section>
+
+        <!-- UTM Strategy Section -->
+        <section id="utm">
+            <h2>3. UTM Parameter Strategy</h2>
+
+            <p>Use UTM parameters to track traffic sources, mediums, campaigns, and content. This helps you understand which channels drive the most valuable traffic.</p>
+
+            <h3>UTM Parameter Format: </h3>
+            <p>
+                <code>?utm_source=[source]&utm_medium=[medium]&utm_campaign=[campaign]&utm_content=[content]&utm_term=[term]</code>
+            </p>
+
+            <h3>Complete UTM Templates for All Traffic Sources</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Traffic Source</th>
+                        <th>UTM Template</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Instagram Bio Link</strong></td>
+                        <td><code>?utm_source=instagram&utm_medium=bio&utm_campaign=link-in-bio</code></td>
+                        <td><code>yourdomain.com/?utm_source=instagram&utm_medium=bio&utm_campaign=link-in-bio</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Instagram Stories</strong></td>
+                        <td><code>?utm_source=instagram&utm_medium=stories&utm_campaign=CAMPAIGN_NAME</code></td>
+                        <td><code>yourdomain.com/?utm_source=instagram&utm_medium=stories&utm_campaign=authenticity-challenge</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Instagram Reels</strong></td>
+                        <td><code>?utm_source=instagram&utm_medium=organic&utm_campaign=reels&utm_content=REEL_ID</code></td>
+                        <td><code>yourdomain.com/?utm_source=instagram&utm_medium=organic&utm_campaign=reels&utm_content=reel123</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TikTok Bio</strong></td>
+                        <td><code>?utm_source=tiktok&utm_medium=bio&utm_campaign=link-in-bio</code></td>
+                        <td><code>yourdomain.com/?utm_source=tiktok&utm_medium=bio&utm_campaign=link-in-bio</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TikTok Video</strong></td>
+                        <td><code>?utm_source=tiktok&utm_medium=organic&utm_campaign=video&utm_content=VIDEO_ID</code></td>
+                        <td><code>yourdomain.com/?utm_source=tiktok&utm_medium=organic&utm_campaign=video&utm_content=tiktok456</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email Sequence</strong></td>
+                        <td><code>?utm_source=kit&utm_medium=email&utm_campaign=SEQUENCE_NAME&utm_content=EMAIL_NUMBER</code></td>
+                        <td><code>yourdomain.com/?utm_source=kit&utm_medium=email&utm_campaign=first-time-buyer&utm_content=email-2</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Meta Paid Ads</strong></td>
+                        <td><code>?utm_source=facebook&utm_medium=paid&utm_campaign=CAMPAIGN_NAME&utm_content=AD_NAME</code></td>
+                        <td><code>yourdomain.com/?utm_source=facebook&utm_medium=paid&utm_campaign=spring-launch&utm_content=carousel-ad-v2</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Paid Ads</strong></td>
+                        <td>Auto-tagged with GCLID - No manual UTM needed</td>
+                        <td>Google Ads automatically appends <code>&gclid=...</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Organic Social (Any Platform)</strong></td>
+                        <td><code>?utm_source=PLATFORM&utm_medium=organic&utm_campaign=POST_TOPIC</code></td>
+                        <td><code>yourdomain.com/?utm_source=linkedin&utm_medium=organic&utm_campaign=authenticity-tips</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>LinkedIn Organic</strong></td>
+                        <td><code>?utm_source=linkedin&utm_medium=organic&utm_campaign=thought-leadership</code></td>
+                        <td><code>yourdomain.com/?utm_source=linkedin&utm_medium=organic&utm_campaign=thought-leadership</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>YouTube Video Description</strong></td>
+                        <td><code>?utm_source=youtube&utm_medium=organic&utm_campaign=VIDEO_TITLE</code></td>
+                        <td><code>yourdomain.com/?utm_source=youtube&utm_medium=organic&utm_campaign=authenticity-guide</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Podcast Sponsorship</strong></td>
+                        <td><code>?utm_source=podcast&utm_medium=sponsored&utm_campaign=PODCAST_NAME</code></td>
+                        <td><code>yourdomain.com/?utm_source=podcast&utm_medium=sponsored&utm_campaign=daily-business-show</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Referral/Affiliate Link</strong></td>
+                        <td><code>?utm_source=affiliate&utm_medium=referral&utm_campaign=AFFILIATE_NAME</code></td>
+                        <td><code>yourdomain.com/?utm_source=affiliate&utm_medium=referral&utm_campaign=john-partner</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Partner Website</strong></td>
+                        <td><code>?utm_source=PARTNER_NAME&utm_medium=partnership&utm_campaign=collaboration</code></td>
+                        <td><code>yourdomain.com/?utm_source=brandx&utm_medium=partnership&utm_campaign=collaboration</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Direct/Type-In</strong></td>
+                        <td>No UTM needed - GA4 recognizes as direct</td>
+                        <td>yourdomain.com</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>UTM Naming Conventions (Best Practices)</h3>
+            <ul>
+                <li><strong>Lowercase:</strong> Always use lowercase for consistency (utm_source=instagram, not utm_source=Instagram)</li>
+                <li><strong>Hyphens for Spaces:</strong> Use hyphens instead of spaces (utm_campaign=spring-launch, not spring launch)</li>
+                <li><strong>Be Descriptive:</strong> Use clear names that describe the specific campaign (utm_campaign=authenticity-challenge, not utm_campaign=promo)</li>
+                <li><strong>Consistency:</strong> Use the same utm_source, utm_medium values across all campaigns for proper grouping</li>
+                <li><strong>Avoid Duplicates:</strong> Different URLs with same UTMs = same campaign in analytics</li>
+            </ul>
+
+            <h3>Using a UTM Builder</h3>
+            <p>To simplify UTM creation, use <a href="https://ga-dev-tools.web.app/campaign-url-builder/" target="_blank">Google's Campaign URL Builder</a>:</p>
+            <ol>
+                <li>Enter your website URL</li>
+                <li>Fill in Campaign Source, Medium, Name, Content, Term</li>
+                <li>Copy the generated URL</li>
+                <li>Use in your social posts, emails, ads</li>
+            </ol>
+
+            <h3>How GA4 Tracks UTM Parameters</h3>
+            <p>GA4 automatically captures UTM parameters from your URLs and organizes them in reports under:</p>
+            <ul>
+                <li><strong>Acquisition:</strong> Reports → User Acquisition (utm_source, utm_medium, utm_campaign)</li>
+                <li><strong>Traffic Source:</strong> Source/Medium breakdown</li>
+                <li><strong>Campaign:</strong> Campaign performance metrics</li>
+                <li><strong>Custom Reports:</strong> Create detailed UTM analysis</li>
+            </ul>
+        </section>
+
+        <!-- Conversion Tracking Code Section -->
+        <section id="conversion-code">
+            <h2>4. Conversion Tracking Code Snippets</h2>
+
+            <p>Ready-to-use code blocks for tracking conversions across your funnel. Use these on the pages specified.</p>
+
+            <h3>Complete Implementation Template</h3>
+            <p>Here's the complete tracking setup for one of your thank-you pages to show how all systems work together:</p>
+
+            <div class="code-label">Complete Tracking Setup - thank-you-ap.html</div>
+            <div class="code-block html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Thank You - The Authenticity Premium&lt;/title&gt;
+
+    &lt;!-- META PIXEL BASE CODE --&gt;
+    &lt;script&gt;
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+    &lt;/script&gt;
+
+    &lt;!-- GA4 BASE CODE --&gt;
+    &lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"&gt;&lt;/script&gt;
+    &lt;script&gt;
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Thank You for Your Purchase!&lt;/h1&gt;
+    &lt;p&gt;Your order for The Authenticity Premium has been confirmed.&lt;/p&gt;
+
+    &lt;!-- META PIXEL PURCHASE EVENT --&gt;
+    &lt;script&gt;
+    fbq('track', 'Purchase', {
+      content_ids: ['authenticity-premium'],
+      content_name: 'The Authenticity Premium',
+      content_type: 'product',
+      currency: 'USD',
+      value: 97.00,
+      num_items: 1
+    });
+    &lt;/script&gt;
+
+    &lt;!-- GA4 PURCHASE EVENT --&gt;
+    &lt;script&gt;
+    gtag('event', 'purchase', {
+      'currency': 'USD',
+      'transaction_id': 'txn_' + Date.now(),
+      'value': 97.00,
+      'items': [
+        {
+          'item_id': 'authenticity-premium',
+          'item_name': 'The Authenticity Premium',
+          'currency': 'USD',
+          'price': 97.00,
+          'quantity': 1
+        }
+      ]
+    });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </div>
+
+            <h3>Meta Pixel Purchase Events by Product</h3>
+
+            <div class="code-label">Meta Pixel - Authenticity Premium Purchase</div>
+            <div class="code-block html">
+<script>
+fbq('track', 'Purchase', {
+  content_ids: ['authenticity-premium'],
+  content_name: 'The Authenticity Premium',
+  content_type: 'product',
+  currency: 'USD',
+  value: 97.00,
+  num_items: 1
+});
+</script>
+            </div>
+
+            <div class="code-label">Meta Pixel - First 1K Kit Purchase</div>
+            <div class="code-block html">
+<script>
+fbq('track', 'Purchase', {
+  content_ids: ['first-1k-kit'],
+  content_name: 'First 1K Kit',
+  content_type: 'product',
+  currency: 'USD',
+  value: 197.00,
+  num_items: 1
+});
+</script>
+            </div>
+
+            <div class="code-label">Meta Pixel - Closer Kit OTO Purchase</div>
+            <div class="code-block html">
+<script>
+fbq('track', 'Purchase', {
+  content_ids: ['closer-kit-oto'],
+  content_name: 'Closer Kit OTO',
+  content_type: 'product',
+  currency: 'USD',
+  value: 297.00,
+  num_items: 1
+});
+</script>
+            </div>
+
+            <h3>GA4 Purchase Events by Product</h3>
+
+            <div class="code-label">GA4 - Authenticity Premium Purchase</div>
+            <div class="code-block html">
+<script>
+gtag('event', 'purchase', {
+  'currency': 'USD',
+  'transaction_id': 'ap_' + Date.now(),
+  'value': 97.00,
+  'items': [
+    {
+      'item_id': 'authenticity-premium',
+      'item_name': 'The Authenticity Premium',
+      'currency': 'USD',
+      'price': 97.00,
+      'quantity': 1
+    }
+  ]
+});
+</script>
+            </div>
+
+            <div class="code-label">GA4 - First 1K Kit Purchase</div>
+            <div class="code-block html">
+<script>
+gtag('event', 'purchase', {
+  'currency': 'USD',
+  'transaction_id': 'kit_' + Date.now(),
+  'value': 197.00,
+  'items': [
+    {
+      'item_id': 'first-1k-kit',
+      'item_name': 'First 1K Kit',
+      'currency': 'USD',
+      'price': 197.00,
+      'quantity': 1
+    }
+  ]
+});
+</script>
+            </div>
+
+            <div class="code-label">GA4 - Closer Kit OTO Purchase</div>
+            <div class="code-block html">
+<script>
+gtag('event', 'purchase', {
+  'currency': 'USD',
+  'transaction_id': 'closer_' + Date.now(),
+  'value': 297.00,
+  'items': [
+    {
+      'item_id': 'closer-kit-oto',
+      'item_name': 'Closer Kit OTO',
+      'currency': 'USD',
+      'price': 297.00,
+      'quantity': 1
+    }
+  ]
+});
+</script>
+            </div>
+
+            <h3>Kit Commerce Webhook for Server-Side Tracking</h3>
+            <p>Track purchases directly from Kit Commerce to ensure accuracy. Configure a webhook in Kit's settings:</p>
+
+            <div class="code-label">Kit Commerce Webhook Configuration</div>
+            <div class="code-block html">
+{
+  "webhook_url": "https://yourdomain.com/api/track-purchase",
+  "events": ["purchase.completed"],
+  "payload": {
+    "product_id": "product_id",
+    "customer_email": "email",
+    "amount": "total_price",
+    "transaction_id": "order_id"
+  }
+}
+            </div>
+
+            <p>Then create an endpoint on your server to handle this webhook and send data to Meta Pixel and GA4:</p>
+
+            <div class="code-label">Server-Side Webhook Handler (Node.js Example)</div>
+            <div class="code-block html">
+// Node.js / Express endpoint to handle Kit Commerce webhook
+app.post('/api/track-purchase', async (req, res) => {
+  const { product_id, customer_email, amount, transaction_id } = req.body;
+  
+  // Send to Meta Pixel (server-side)
+  const pixelPayload = {
+    data: [{
+      event_name: 'Purchase',
+      event_id: transaction_id,
+      event_time: Math.floor(Date.now() / 1000),
+      user_data: {
+        em: customer_email // Email hash
+      },
+      custom_data: {
+        value: amount,
+        currency: 'USD',
+        content_type: 'product',
+        content_ids: [product_id]
+      }
+    }]
+  };
+  
+  // POST to Meta Conversions API
+  // (requires API token from Meta)
+  
+  // Send to GA4 (via Measurement Protocol)
+  const ga4Payload = {
+    api_secret: 'YOUR_GA4_API_SECRET',
+    measurement_id: 'G-XXXXXXXXXX',
+    client_id: transaction_id,
+    events: [{
+      name: 'purchase',
+      params: {
+        currency: 'USD',
+        value: amount,
+        transaction_id: transaction_id,
+        items: [{
+          item_id: product_id,
+          price: amount,
+          quantity: 1
+        }]
+      }
+    }]
+  };
+  
+  res.json({ success: true });
+});
+            </div>
+
+            <h3>Passing Purchase Data via URL Parameters to Thank-You Pages</h3>
+            <p>When Kit Commerce redirects to your thank-you page, append purchase details as URL parameters:</p>
+
+            <div class="code-label">Kit Commerce Redirect with Parameters</div>
+            <div class="code-block html">
+// After successful purchase, redirect to:
+// https://yourdomain.com/thank-you-kit.html?
+//   product_id=first-1k-kit&
+//   product_name=First+1K+Kit&
+//   value=197.00&
+//   transaction_id=KIT_123456&
+//   email=customer@example.com
+
+// Then on your thank-you page, capture these parameters:
+&lt;script&gt;
+const urlParams = new URLSearchParams(window.location.search);
+const transactionId = urlParams.get('transaction_id');
+const productId = urlParams.get('product_id');
+const productName = urlParams.get('product_name');
+const value = parseFloat(urlParams.get('value'));
+
+// Use these in Meta Pixel and GA4 events
+fbq('track', 'Purchase', {
+  content_ids: [productId],
+  content_name: productName,
+  currency: 'USD',
+  value: value
+});
+
+gtag('event', 'purchase', {
+  currency: 'USD',
+  transaction_id: transactionId,
+  value: value,
+  items: [{
+    item_id: productId,
+    item_name: productName,
+    price: value
+  }]
+});
+&lt;/script&gt;
+            </div>
+
+            <h3>Email Sequence Tracking in Kit (ConvertKit)</h3>
+            <p>Track when users click links in your email sequences:</p>
+
+            <div class="code-label">Track Email Sequence Engagement</div>
+            <div class="code-block html">
+<!-- In your email links in Kit, add UTM parameters: -->
+<!-- Regular link -->
+yoursite.com/?utm_source=kit&utm_medium=email&utm_campaign=first-time-buyer&utm_content=email-1
+
+<!-- Product link -->
+yoursite.com/the-authenticity-premium.html?utm_source=kit&utm_medium=email&utm_campaign=first-time-buyer&utm_content=email-2
+
+<!-- Checkout link -->
+https://closermethod.kit.com/products/the-authenticity-premium?utm_source=kit&utm_medium=email&utm_campaign=first-time-buyer&utm_content=cta-button
+            </div>
+        </section>
+
+        <!-- Google Tag Manager Section -->
+        <section id="gtm">
+            <h2>5. Google Tag Manager Setup (Optional)</h2>
+
+            <p>GTM centralizes all your tracking codes in one place, making them easier to manage and update without editing HTML.</p>
+
+            <h3>Step 1: Create a GTM Container</h3>
+            <ol>
+                <li>Go to <a href="https://tagmanager.google.com" target="_blank">Google Tag Manager</a></li>
+                <li>Click "Create account"</li>
+                <li>Account name: "Product Funnel"</li>
+                <li>Container name: "Website"</li>
+                <li>Select "Web" as the target platform</li>
+                <li>Accept terms and create</li>
+                <li>Copy the GTM container ID (format: GTM-XXXXXXX)</li>
+            </ol>
+
+            <h3>Step 2: Install GTM Code on ALL Pages</h3>
+            <p>Add this immediately after the opening <code>&lt;head&gt;</code> tag:</p>
+
+            <div class="code-label">GTM Installation (in &lt;head&gt;)</div>
+            <div class="code-block html">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+<!-- End Google Tag Manager -->
+            </div>
+
+            <h3>Step 3: Set Up Tags in GTM</h3>
+
+            <h4>A. Configure Meta Pixel Tag</h4>
+            <ol>
+                <li>In GTM, go to "Tags" → "New"</li>
+                <li>Choose "Custom HTML"</li>
+                <li>Add your Meta Pixel base code</li>
+                <li>Create a trigger "All Pages"</li>
+                <li>Name: "Meta Pixel - All Pages"</li>
+                <li>Save</li>
+            </ol>
+
+            <h4>B. Configure GA4 Tag</h4>
+            <ol>
+                <li>Go to "Tags" → "New"</li>
+                <li>Choose "Google Analytics: GA4 Configuration"</li>
+                <li>Measurement ID: G-XXXXXXXXXX</li>
+                <li>Create a trigger "All Pages"</li>
+                <li>Name: "GA4 Configuration"</li>
+                <li>Save</li>
+            </ol>
+
+            <h4>C. Create Event Tags</h4>
+            <p>For each event (ViewContent, InitiateCheckout, Purchase, etc.), create separate tags:</p>
+
+            <div class="code-label">GTM: Event Tag Example (ViewContent)</div>
+            <div class="code-block html">
+Tag Name: Meta Pixel - ViewContent (Product Pages)
+Tag Type: Custom HTML
+Code:
+<script>
+fbq('track', 'ViewContent', {
+  content_ids: ['{{ product_id }}'],
+  content_name: '{{ product_name }}',
+  content_type: 'product',
+  currency: 'USD',
+  value: {{ product_value }}
+});
+</script>
+Trigger: Pages that match: {{ page_path }} contains /the-authenticity-premium
+            </div>
+
+            <h3>Step 4: Set Up Triggers for Events</h3>
+            <p>Create triggers that fire tags based on user actions:</p>
+            <ul>
+                <li><strong>All Pages trigger:</strong> Fires on every page view</li>
+                <li><strong>Product page trigger:</strong> Page path contains product URL</li>
+                <li><strong>Click trigger:</strong> When user clicks checkout button</li>
+                <li><strong>Custom event trigger:</strong> When custom event fires</li>
+                <li><strong>Scroll trigger:</strong> When user scrolls 25%, 50%, 75% down page</li>
+            </ul>
+
+            <h3>Step 5: Test GTM Setup</h3>
+            <ol>
+                <li>In GTM, click "Preview"</li>
+                <li>Enter your website URL</li>
+                <li>Visit your site - GTM preview shows which tags fired</li>
+                <li>Navigate through your funnel and verify events</li>
+                <li>When satisfied, click "Submit" to publish</li>
+            </ol>
+
+            <h3>Why Use GTM?</h3>
+            <ul>
+                <li><strong>Centralized Management:</strong> All tracking code in one place</li>
+                <li><strong>No Code Editing:</strong> Update tags without touching HTML</li>
+                <li><strong>Version Control:</strong> Revert to previous versions if needed</li>
+                <li><strong>Faster Implementation:</strong> Deploy new tracking in minutes</li>
+                <li><strong>Built-in QA:</strong> Preview mode for testing before publishing</li>
+                <li><strong>Team Collaboration:</strong> Non-developers can manage tags</li>
+            </ul>
+
+            <div class="info-box">
+                <strong>Decision:</strong> Use GTM if you plan frequent tracking updates. For simpler implementations, direct code installation is fine.
+            </div>
+        </section>
+
+        <!-- Retargeting Audiences Section -->
+        <section id="audiences">
+            <h2>6. Retargeting Audiences to Create</h2>
+
+            <p>Build retargeting audiences to serve ads to users based on their behavior in your funnel. These audiences help you re-engage interested prospects.</p>
+
+            <h3>In Meta Ads Manager</h3>
+
+            <h4>A. All Website Visitors (180 Days)</h4>
+            <p><strong>Purpose:</strong> Retarget anyone who visited any page on your site</p>
+            <ol>
+                <li>Go to Ads Manager → Audiences</li>
+                <li>Create New → Custom Audience → Website Traffic</li>
+                <li>Pixel: Select your Meta Pixel</li>
+                <li>Include: All website visitors</li>
+                <li>Time period: Last 180 days</li>
+                <li>Name: "Website Visitors - 180 Days"</li>
+                <li>Create audience</li>
+            </ol>
+
+            <h4>B. Tool Users (Non-Buyers)</h4>
+            <p><strong>Purpose:</strong> Users who tried a free tool but didn't purchase</p>
+            <ol>
+                <li>Create New Custom Audience → Website Traffic</li>
+                <li>Include: People who triggered "ToolUsed" event</li>
+                <li>Exclude: People who triggered "Purchase" event</li>
+                <li>Time period: Last 90 days</li>
+                <li>Name: "Tool Users - No Purchase"</li>
+                <li>Create audience</li>
+            </ol>
+
+            <h4>C. Product Page Visitors (Non-Buyers)</h4>
+            <p><strong>Purpose:</strong> Users who viewed a product page but didn't buy</p>
+            <ol>
+                <li>Create New Custom Audience → Website Traffic</li>
+                <li>Include: People who triggered "ViewContent" event</li>
+                <li>Exclude: People who triggered "Purchase" event</li>
+                <li>Time period: Last 60 days</li>
+                <li>Name: "Product Viewers - No Purchase"</li>
+                <li>Create audience</li>
+            </ol>
+
+            <h4>D. Cart Abandoners</h4>
+            <p><strong>Purpose:</strong> Users who started checkout but didn't purchase</p>
+            <ol>
+                <li>Create New Custom Audience → Website Traffic</li>
+                <li>Include: People who triggered "InitiateCheckout" event</li>
+                <li>Exclude: People who triggered "Purchase" event</li>
+                <li>Time period: Last 30 days</li>
+                <li>Name: "Cart Abandoners"</li>
+                <li>Create audience</li>
+            </ol>
+
+            <h4>E. Buyers (For Lookalikes)</h4>
+            <p><strong>Purpose:</strong> Users who purchased - use to find similar people</p>
+            <ol>
+                <li>Create New Custom Audience → Website Traffic</li>
+                <li>Include: People who triggered "Purchase" event</li>
+                <li>Time period: Last 180 days (all buyers)</li>
+                <li>Name: "All Buyers"</li>
+                <li>Create audience</li>
+            </ol>
+            <p>Then create a Lookalike Audience:</p>
+            <ol>
+                <li>Create New Audience → Lookalike Audience</li>
+                <li>Source: "All Buyers"</li>
+                <li>Location: United States (or your target country)</li>
+                <li>Audience size: 1% (most similar to buyers)</li>
+                <li>Name: "Lookalike - Buyers (1%)"</li>
+                <li>Create audience</li>
+            </ol>
+
+            <h3>In Google Analytics 4</h3>
+
+            <h4>A. Create Audiences for Remarketing</h4>
+            <ol>
+                <li>Go to Admin → Audiences</li>
+                <li>Click "New audience"</li>
+                <li>Choose "Create audience"</li>
+            </ol>
+
+            <h4>B. All Visitors</h4>
+            <div class="code-label">GA4 Audience: All Visitors</div>
+            <div class="code-block html">
+Audience name: All Website Visitors
+Conditions:
+- Event: page_view (on/after) 0 minutes ago
+
+Membership duration: 540 days
+            </div>
+
+            <h4>C. Engaged Users (Tool Users)</h4>
+            <div class="code-label">GA4 Audience: Engaged Users</div>
+            <div class="code-block html">
+Audience name: Tool Users - Engaged
+Conditions:
+- Event: tool_used (on/after) 0 minutes ago
+- Event: purchase is not true
+
+Membership duration: 90 days
+            </div>
+
+            <h4>D. Product Viewers</h4>
+            <div class="code-label">GA4 Audience: Product Viewers</div>
+            <div class="code-block html">
+Audience name: Product Page Visitors
+Conditions:
+- Event: page_view
+- Where page_title contains: Premium OR Kit OR OTO
+- Event: purchase is not true
+
+Membership duration: 60 days
+            </div>
+
+            <h4>E. Buyers</h4>
+            <div class="code-label">GA4 Audience: Buyers</div>
+            <div class="code-block html">
+Audience name: All Buyers
+Conditions:
+- Event: purchase (in the last) 180 days
+
+Membership duration: 180 days
+            </div>
+
+            <h3>Custom Email List Upload (Manual Audience)</h3>
+            <p>For subscribers from your email list:</p>
+
+            <h4>Meta Audiences from Email List</h4>
+            <ol>
+                <li>Go to Ads Manager → Audiences</li>
+                <li>Create New → Custom Audience → Customer List</li>
+                <li>Choose "Add people from a file"</li>
+                <li>Upload CSV with customer emails, phone numbers</li>
+                <li>Meta will match and create audience</li>
+                <li>Name: "Email Subscribers"</li>
+            </ol>
+
+            <h4>GA4 Upload Customer List</h4>
+            <ol>
+                <li>Go to Admin → Data Import</li>
+                <li>Create new data source</li>
+                <li>Type: "Customer Data"</li>
+                <li>Upload file with user identifiers</li>
+                <li>Map fields to GA4 dimensions</li>
+                <li>Save for matching</li>
+            </ol>
+
+            <h3>Audience Segmentation Strategy</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Audience</th>
+                        <th>Funnel Stage</th>
+                        <th>Ad Strategy</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>All Visitors</strong></td>
+                        <td>Awareness</td>
+                        <td>Broad retargeting</td>
+                        <td>Brand awareness, benefits, social proof</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tool Users</strong></td>
+                        <td>Consideration</td>
+                        <td>Product education</td>
+                        <td>How tool users get more with products</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Product Viewers</strong></td>
+                        <td>Consideration</td>
+                        <td>Feature highlights</td>
+                        <td>What they were looking at, case studies</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cart Abandoners</strong></td>
+                        <td>Decision</td>
+                        <td>Urgency, incentive</td>
+                        <td>Discount, testimonials, urgency</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Buyers</strong></td>
+                        <td>Retention</td>
+                        <td>Upsell/cross-sell</td>
+                        <td>Next products, exclusive offers</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- KPI Dashboard Section -->
+        <section id="kpi">
+            <h2>7. KPI Dashboard Metrics to Track</h2>
+
+            <p>These are the essential metrics you should monitor in your analytics dashboards to understand funnel performance.</p>
+
+            <h3>Traffic Metrics</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Definition</th>
+                        <th>Where to Find</th>
+                        <th>Target</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sessions</strong></td>
+                        <td>Total visits to your site</td>
+                        <td>GA4 → Engagement → Overview</td>
+                        <td>Increase 10-20% MoM</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Unique Users</strong></td>
+                        <td>Individual people visiting</td>
+                        <td>GA4 → Engagement → Overview</td>
+                        <td>Track growth</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sessions by Source</strong></td>
+                        <td>Traffic from each channel</td>
+                        <td>GA4 → Acquisition → All Traffic</td>
+                        <td>Identify best sources</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sessions by Medium</strong></td>
+                        <td>Organic, paid, direct, social</td>
+                        <td>GA4 → Acquisition → All Traffic</td>
+                        <td>Compare channel performance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sessions by Campaign</strong></td>
+                        <td>Performance per UTM campaign</td>
+                        <td>GA4 → Acquisition → Campaigns</td>
+                        <td>Allocate budget to winners</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Engagement Metrics</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Definition</th>
+                        <th>Where to Find</th>
+                        <th>Target</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tool Completions</strong></td>
+                        <td>Count of tool_used events</td>
+                        <td>GA4 → Engagement → Events</td>
+                        <td>Increase usage</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email Signups</strong></td>
+                        <td>Count of generate_lead events</td>
+                        <td>GA4 → Engagement → Conversions</td>
+                        <td>10-15% of visitors</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pages per Session</strong></td>
+                        <td>Avg pages viewed per visit</td>
+                        <td>GA4 → Engagement → Overview</td>
+                        <td>Increase to 3-4 pages</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Avg Session Duration</strong></td>
+                        <td>Time spent on site</td>
+                        <td>GA4 → Engagement → Overview</td>
+                        <td>Increase to 3+ minutes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bounce Rate</strong></td>
+                        <td>% of people leaving without action</td>
+                        <td>GA4 → Engagement → Overview</td>
+                        <td>Lower to 40% or less</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Conversion Metrics</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Definition</th>
+                        <th>Where to Find</th>
+                        <th>Target</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Checkout Initiation Rate</strong></td>
+                        <td>% of visitors who click checkout</td>
+                        <td>Conversions / Sessions</td>
+                        <td>3-5% of traffic</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Purchase Conversion Rate</strong></td>
+                        <td>% of visitors who buy</td>
+                        <td>GA4 → Conversions → Purchase</td>
+                        <td>1-3% depending on funnel</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Average Order Value (AOV)</strong></td>
+                        <td>Average purchase amount</td>
+                        <td>GA4 → Monetization → Overview</td>
+                        <td>Increase through OTOs</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Revenue</strong></td>
+                        <td>All sales from conversions</td>
+                        <td>GA4 → Monetization → Overview</td>
+                        <td>Grow 20%+ quarterly</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Revenue by Product</strong></td>
+                        <td>Sales per product</td>
+                        <td>GA4 → Monetization → Items</td>
+                        <td>Identify bestsellers</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cost Per Acquisition</strong></td>
+                        <td>Ad spend / customers</td>
+                        <td>Ad platform / GA4</td>
+                        <td>Varies by product</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Email Marketing Metrics</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Definition</th>
+                        <th>Where to Find</th>
+                        <th>Target</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Open Rate</strong></td>
+                        <td>% of emails opened</td>
+                        <td>Kit (ConvertKit) Analytics</td>
+                        <td>25-35% for list</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Click Rate</strong></td>
+                        <td>% of opens with link clicks</td>
+                        <td>Kit Analytics</td>
+                        <td>3-8% of opens</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conversion Rate per Sequence</strong></td>
+                        <td>Purchases from email sequence</td>
+                        <td>GA4 with utm_campaign filter</td>
+                        <td>0.5-2% depending on sequence</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Unsubscribe Rate</strong></td>
+                        <td>% of people unsubscribing</td>
+                        <td>Kit Analytics</td>
+                        <td>Keep below 0.5% per email</td>
+                    </tr>
+                    <tr>
+                        <td><strong>List Growth Rate</strong></td>
+                        <td>New subscribers per week/month</td>
+                        <td>Kit Analytics</td>
+                        <td>Grow 5-10% monthly</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Paid Advertising Metrics</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Definition</th>
+                        <th>Where to Find</th>
+                        <th>Target</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cost Per Mille (CPM)</strong></td>
+                        <td>Cost per 1,000 impressions</td>
+                        <td>Meta Ads Manager / Google Ads</td>
+                        <td>Lower is better</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Click-Through Rate (CTR)</strong></td>
+                        <td>% of impressions that click</td>
+                        <td>Ad platforms</td>
+                        <td>1-3% is good</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cost Per Click (CPC)</strong></td>
+                        <td>How much each click costs</td>
+                        <td>Ad platforms</td>
+                        <td>Lower is better</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cost Per Acquisition (CPA)</strong></td>
+                        <td>Total ad spend / purchases</td>
+                        <td>Ad platform / GA4</td>
+                        <td>Below AOV for profitability</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Return on Ad Spend (ROAS)</strong></td>
+                        <td>Revenue / ad spend</td>
+                        <td>Ad platforms</td>
+                        <td>3:1 or higher</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Frequency</strong></td>
+                        <td>Avg times user sees ad</td>
+                        <td>Meta Ads Manager</td>
+                        <td>2-5 optimal for products</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Creating Your KPI Dashboard in GA4</h3>
+            <ol>
+                <li>Go to GA4 → Home → Create a custom dashboard</li>
+                <li>Name it "Funnel Performance KPIs"</li>
+                <li>Add cards for:
+                    <ul>
+                        <li>Sessions (scorecard)</li>
+                        <li>Users (scorecard)</li>
+                        <li>Conversion rate (metric)</li>
+                        <li>Total revenue (metric)</li>
+                        <li>Sessions by source (table)</li>
+                        <li>Conversions by campaign (table)</li>
+                        <li>Revenue trend (line chart)</li>
+                    </ul>
+                </li>
+                <li>Set date range to "Last 30 days"</li>
+                <li>Save dashboard</li>
+                <li>Check weekly</li>
+            </ol>
+
+            <h3>Creating Your KPI Dashboard in Meta Ads Manager</h3>
+            <ol>
+                <li>Go to Ads Manager → Campaigns</li>
+                <li>Create custom columns:
+                    <ul>
+                        <li>Impressions</li>
+                        <li>Clicks</li>
+                        <li>CTR</li>
+                        <li>Cost per result</li>
+                        <li>ROAS</li>
+                        <li>Conversion value</li>
+                    </ul>
+                </li>
+                <li>Filter by date range (Last 30 days)</li>
+                <li>Sort by ROAS (highest to lowest)</li>
+                <li>Check daily/weekly for optimization</li>
+            </ol>
+
+            <h3>Monthly KPI Review Checklist</h3>
+            <ul>
+                <li>Compare month-over-month growth in sessions and users</li>
+                <li>Analyze top traffic sources and double down on winners</li>
+                <li>Review conversion rates and identify funnel drop-offs</li>
+                <li>Calculate customer acquisition cost (CAC) and lifetime value (LTV)</li>
+                <li>Assess email sequence performance and adjust messaging</li>
+                <li>Review paid ad performance and pause low-ROAS campaigns</li>
+                <li>Identify product performance leaders and laggards</li>
+                <li>Set goals for next month based on trends</li>
+            </ul>
+        </section>
+
+        <!-- Implementation Checklist -->
+        <section>
+            <h2>Implementation Checklist</h2>
+            <p>Use this checklist to track your tracking implementation:</p>
+            <ol>
+                <li>☐ Create Meta Pixel and save Pixel ID</li>
+                <li>☐ Create GA4 property and save Measurement ID</li>
+                <li>☐ Install Meta Pixel base code on all pages</li>
+                <li>☐ Install GA4 base code on all pages</li>
+                <li>☐ Add ViewContent events to product pages</li>
+                <li>☐ Add InitiateCheckout events to product pages</li>
+                <li>☐ Add Purchase events to thank-you pages</li>
+                <li>☐ Add Lead events to tool pages</li>
+                <li>☐ Add custom ToolUsed events to tool pages</li>
+                <li>☐ Configure GA4 conversion events</li>
+                <li>☐ Set up UTM parameters for all traffic sources</li>
+                <li>☐ Create retargeting audiences in Meta</li>
+                <li>☐ Create GA4 audiences for remarketing</li>
+                <li>☐ Test all tracking with browser extensions</li>
+                <li>☐ Verify purchase events fire on thank-you pages</li>
+                <li>☐ Set up GA4 KPI dashboard</li>
+                <li>☐ Set up Meta KPI columns</li>
+                <li>☐ (Optional) Create GTM container and migrate tags</li>
+                <li>☐ Schedule weekly KPI review</li>
+            </ol>
+        </section>
+
+        <!-- Support and Resources -->
+        <section>
+            <h2>Resources & Support</h2>
+            <p>Need help? Here are key resources:</p>
+            <ul>
+                <li><a href="https://www.facebook.com/business/help/342099518841920" target="_blank">Meta Pixel Implementation Guide</a></li>
+                <li><a href="https://support.google.com/analytics/answer/9323408" target="_blank">Google Analytics 4 Setup Guide</a></li>
+                <li><a href="https://support.google.com/analytics/answer/1008015" target="_blank">GA4 Events Documentation</a></li>
+                <li><a href="https://support.google.com/tagmanager/answer/6103657" target="_blank">Google Tag Manager Guide</a></li>
+                <li><a href="https://ga-dev-tools.web.app/campaign-url-builder/" target="_blank">Google Campaign URL Builder</a></li>
+                <li><a href="https://www.facebook.com/business/tools/meta-pixel-helper" target="_blank">Meta Pixel Helper Chrome Extension</a></li>
+                <li><a href="https://support.google.com/analytics/answer/11583923" target="_blank">GA4 DebugView</a></li>
+                <li><a href="https://convertkit.com/help" target="_blank">ConvertKit (Kit) Support</a></li>
+            </ul>
+
+            <h3>Testing Your Setup</h3>
+            <ol>
+                <li><strong>Meta Pixel Helper:</strong> Shows pixel data and event firing in real-time</li>
+                <li><strong>GA4 DebugView:</strong> Real-time event stream in GA4 admin</li>
+                <li><strong>Meta Events Manager:</strong> Test Events tab shows last 48 hours of events</li>
+                <li><strong>Browser Console:</strong> Check for JavaScript errors (F12 → Console tab)</li>
+            </ol>
+        </section>
+    </div>
+
+    <footer>
+        <p><strong>Tracking & Analytics Setup Guide</strong></p>
+        <p>Your complete reference for Meta Pixel, Google Analytics 4, UTM tracking, and conversion measurement</p>
+        <p>Last Updated: March 2026 | Remember to test all implementations before going live</p>
+    </footer>
+</body>
+</html>

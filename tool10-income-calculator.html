@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UGC Income Calculator - Calculate Your Yearly Earnings Potential</title>
+<meta name="description" content="Calculate how much you could make from UGC this year. Enter your pitching habits and see projected monthly and yearly income with proven systems.">
+<meta property="og:title" content="UGC Income Calculator - See Your Potential">
+<meta property="og:description" content="How much could you make pitching brands consistently? Calculate your income potential based on your pitch volume and close rates.">
+<link rel="canonical" href="https://ugc-closer-suite.netlify.app/tool10-income-calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0a;
+  --bg2: #111111;
+  --bg3: #1a1a1a;
+  --card: #141414;
+  --border: #222;
+  --border2: #333;
+  --text: #e8e8e8;
+  --text2: #999;
+  --text3: #666;
+  --accent: #c8ff00;
+  --accent2: #a8d900;
+  --green: #00c853;
+  --red: #ff4444;
+  --blue: #4488ff;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+.nav {
+  position: fixed; top:0; left:0; right:0; z-index: 100;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.nav-logo { font-family: 'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color: var(--text); }
+.nav-logo span { color: var(--accent); font-style: italic; }
+.nav-cta {
+  background: transparent; border: 1px solid var(--accent); color: var(--accent);
+  padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all .2s;
+  text-decoration: none;
+}
+.nav-cta:hover { background: var(--accent); color: #000; }
+
+/* HERO */
+.hero {
+  padding: 100px 24px 60px;
+  max-width: 800px; margin: 0 auto;
+  text-align: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--bg3); border: 1px solid var(--border2);
+  padding: 6px 14px; border-radius: 100px;
+  font-size: 12px; font-weight: 600; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+.hero-badge .dot { width:6px; height:6px; background:var(--green); border-radius:50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
+
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: var(--text2);
+  max-width: 560px; margin: 0 auto 32px;
+  line-height: 1.5;
+}
+
+.hero-arrow {
+  font-size: 28px; color: var(--accent); animation: bounce 2s infinite;
+  cursor: pointer;
+}
+@keyframes bounce { 0%,20%,50%,80%,100% { transform:translateY(0); } 40% { transform:translateY(-10px); } 60% { transform:translateY(-5px); } }
+
+/* CALCULATOR SECTION */
+.calc-section {
+  padding: 60px 24px;
+  max-width: 900px; margin: 0 auto;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700; color: #fff;
+  margin-bottom: 8px;
+}
+
+.section-sub { color: var(--text2); font-size: 16px; margin-bottom: 32px; }
+
+/* MAIN CALCULATOR */
+.calc-wrapper {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 32px;
+}
+@media(max-width:700px) { .calc-wrapper { grid-template-columns: 1fr; } }
+
+.calc-inputs { display:flex; flex-direction:column; gap:28px; }
+
+.slider-group {
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+.slider-label {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 13px; font-weight: 600; color: var(--text);
+}
+
+.slider-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--accent);
+}
+
+.slider-hint {
+  font-size: 11px; color: var(--text3); margin-top: 2px;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(to right, var(--accent) 0%, var(--accent) var(--value), var(--border2) var(--value), var(--border2) 100%);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  transition: all .2s;
+  box-shadow: 0 0 0 0 rgba(200,255,0,0.1);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 8px rgba(200,255,0,0.15);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: none;
+  transition: all .2s;
+  box-shadow: 0 0 0 0 rgba(200,255,0,0.1);
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 8px rgba(200,255,0,0.15);
+}
+
+/* RESULT AREA */
+.calc-result {
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative;
+  min-height: 380px;
+}
+
+.result-empty {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  height: 100%; text-align: center; color: var(--text3);
+  font-size: 14px;
+}
+
+.result-empty .emoji { font-size: 40px; margin-bottom: 12px; }
+
+.result-content {
+  display: none;
+}
+
+.result-content.active {
+  display: block;
+  animation: slideUp .5s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.big-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 64px; font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+  text-shadow: 0 0 30px rgba(200,255,0,0.1);
+}
+
+.result-label {
+  font-size: 14px; color: var(--text2);
+  margin-bottom: 4px;
+}
+
+.result-breakdown {
+  font-size: 13px; color: var(--text2);
+  margin-bottom: 20px;
+  padding: 16px;
+  background: var(--bg2);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+}
+
+.breakdown-item {
+  display: flex; justify-content: space-between;
+  padding: 6px 0; font-size: 13px; color: var(--text2);
+}
+
+.breakdown-item strong { color: var(--accent); }
+
+/* SCENARIOS */
+.scenarios-section {
+  padding: 60px 24px;
+  max-width: 900px; margin: 0 auto;
+}
+
+.scenarios-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+@media(max-width:700px) { .scenarios-grid { grid-template-columns: 1fr; } }
+
+.scenario-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 24px;
+  transition: all .3s;
+}
+
+.scenario-card.active {
+  border-color: var(--accent);
+  background: rgba(200,255,0,0.04);
+}
+
+.scenario-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-2px);
+}
+
+.scenario-label {
+  font-size: 11px; font-weight: 700; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.scenario-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px; font-weight: 700;
+  color: #fff; margin-bottom: 8px;
+}
+
+.scenario-sub {
+  font-size: 12px; color: var(--text3); margin-bottom: 16px; line-height: 1.4;
+}
+
+.scenario-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 36px; font-weight: 700;
+  color: var(--accent); margin-bottom: 4px;
+}
+
+.scenario-period {
+  font-size: 12px; color: var(--text2); margin-bottom: 16px;
+}
+
+.scenario-diff {
+  padding: 12px; background: var(--bg2); border-radius: 8px;
+  font-size: 12px; color: var(--text2);
+  border-left: 3px solid var(--accent);
+}
+
+.scenario-diff strong { color: #fff; }
+
+/* CTA SECTION */
+.cta-section {
+  padding: 60px 24px;
+  max-width: 900px; margin: 0 auto;
+  text-align: center;
+}
+
+.cta-box {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 40px 32px;
+}
+
+.cta-headline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 700; color: #fff;
+  margin-bottom: 16px;
+}
+
+.cta-sub {
+  font-size: 15px; color: var(--text2);
+  margin-bottom: 28px; line-height: 1.6;
+  max-width: 600px; margin-left: auto; margin-right: auto;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 16px 40px;
+  background: var(--accent); color: #000;
+  border-radius: 10px; font-weight: 700; font-size: 16px;
+  text-decoration: none; transition: all .15s;
+  font-family: inherit;
+  border: none; cursor: pointer;
+}
+
+.cta-btn:hover { background: var(--accent2); transform: translateY(-1px); }
+
+/* SHARE SECTION */
+.share-section {
+  padding: 40px 24px;
+  max-width: 900px; margin: 0 auto;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.share-title {
+  font-size: 14px; font-weight: 600; color: var(--text);
+  margin-bottom: 16px;
+}
+
+.share-buttons {
+  display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
+}
+
+.share-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: 8px; color: var(--text2); font-size: 13px; font-weight: 600;
+  text-decoration: none; cursor: pointer;
+  transition: all .2s;
+  font-family: inherit;
+}
+
+.share-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* EMAIL GATE OVERLAY */
+.email-gate {
+  position: fixed; top:0; left:0; right:0; bottom:0;
+  z-index: 9999;
+  background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.email-gate.hidden { display: none; }
+.gate-card {
+  max-width: 460px; width: 100%;
+  text-align: center;
+}
+.gate-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--bg3); border: 1px solid var(--border2);
+  padding: 6px 14px; border-radius: 100px;
+  font-size: 12px; font-weight: 600; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+.gate-badge .dot { width:6px; height:6px; background:var(--green); border-radius:50%; animation: pulse 2s infinite; }
+.gate-card h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700; line-height: 1.1;
+  color: #fff; margin-bottom: 16px;
+}
+.gate-card h1 em { color: var(--accent); font-style: italic; }
+.gate-card p {
+  font-size: 16px; color: var(--text2);
+  margin-bottom: 28px; line-height: 1.5;
+}
+.gate-form { display: flex; flex-direction: column; gap: 12px; }
+.gate-input {
+  width: 100%; padding: 14px 16px;
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: 10px; color: var(--text); font-size: 15px;
+  font-family: inherit;
+}
+.gate-input:focus { outline: none; border-color: var(--accent); }
+.gate-input::placeholder { color: var(--text3); }
+.gate-submit {
+  width: 100%; padding: 16px;
+  background: var(--accent); color: #000;
+  border: none; border-radius: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px; font-weight: 700;
+  cursor: pointer; transition: all .15s;
+}
+.gate-submit:hover { background: var(--accent2); transform: translateY(-1px); }
+.gate-trust {
+  display: flex; justify-content: center; gap: 20px;
+  margin-top: 16px; font-size: 12px; color: var(--text3);
+}
+.gate-trust span { display: flex; align-items: center; gap: 4px; }
+.gate-trust .ck { color: var(--accent); }
+
+/* FOOTER */
+footer {
+  padding: 32px 24px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  font-size: 13px; color: var(--text3);
+}
+footer a { color: var(--text2); text-decoration: none; }
+
+/* FADE UP ANIMATIONS */
+.fade-up {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- EMAIL GATE OVERLAY -->
+<div class="email-gate" id="emailGate">
+  <div class="gate-card">
+    <div class="gate-badge"><span class="dot"></span> Free - 2 minutes</div>
+    <h1>See how much you<br>could make<br><em>this year.</em></h1>
+    <p>Enter your email to see your income potential + get the systems to hit it.</p>
+    <form class="gate-form" id="gateForm" onsubmit="return handleGateSubmit(event)">
+      <input type="text" class="gate-input" id="gateName" placeholder="First name" required>
+      <input type="email" class="gate-input" id="gateEmail" placeholder="Your best email" required>
+      <button type="submit" class="gate-submit">Calculate My Income &rarr;</button>
+    </form>
+    <div class="gate-trust">
+      <span><span class="ck">&check;</span> Free forever</span>
+      <span><span class="ck">&check;</span> No spam</span>
+      <span><span class="ck">&check;</span> Unsubscribe anytime</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">UGC<span>Closer</span></div>
+  <a class="nav-cta" href="vsl.html">Get the Full System &rarr;</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"><span class="dot"></span> Free - No credit card</div>
+  <h1>How much could you make<br>from UGC <em>this year?</em></h1>
+  <p class="hero-sub">Plug in your numbers and see what's possible when you pitch consistently. See how the Closer Kit system multiplies your income.</p>
+  <div class="hero-arrow" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">&#8595;</div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc-section" id="calculator">
+  <div class="section-label">Tool 10 - Free</div>
+  <h2 class="section-title">UGC Income <em>Calculator</em></h2>
+  <p class="section-sub">Adjust the sliders to see how pitching frequency, response rate, and close rate change your yearly income.</p>
+
+  <div class="calc-wrapper">
+    <div class="calc-inputs">
+      <!-- Pitches per week -->
+      <div class="slider-group">
+        <div class="slider-label">
+          <span>How many brands per week?</span>
+          <span class="slider-value" id="pitchesDisplay">5</span>
+        </div>
+        <input type="range" id="pitchesPerWeek" min="0" max="50" value="5" step="1" oninput="updateCalculation()">
+        <div class="slider-hint">Brands you pitch per week</div>
+      </div>
+
+      <!-- Response rate -->
+      <div class="slider-group">
+        <div class="slider-label">
+          <span>Your response rate</span>
+          <span class="slider-value" id="responseDisplay">10%</span>
+        </div>
+        <input type="range" id="responseRate" min="0" max="50" value="10" step="1" oninput="updateCalculation()">
+        <div class="slider-hint">% of pitches that get replies</div>
+      </div>
+
+      <!-- Close rate -->
+      <div class="slider-group">
+        <div class="slider-label">
+          <span>Your close rate</span>
+          <span class="slider-value" id="closeDisplay">30%</span>
+        </div>
+        <input type="range" id="closeRate" min="0" max="100" value="30" step="1" oninput="updateCalculation()">
+        <div class="slider-hint">% of replies that become paid deals</div>
+      </div>
+
+      <!-- Deal value -->
+      <div class="slider-group">
+        <div class="slider-label">
+          <span>Average deal value</span>
+          <span class="slider-value" id="dealDisplay">$350</span>
+        </div>
+        <input type="range" id="dealValue" min="100" max="2000" value="350" step="50" oninput="updateCalculation()">
+        <div class="slider-hint">Your average brand deal (USD)</div>
+      </div>
+    </div>
+
+    <!-- Result area -->
+    <div class="calc-result">
+      <div class="result-empty" id="resultEmpty">
+        <div class="emoji">📈</div>
+        <p>Adjust the sliders to see<br>your income potential</p>
+      </div>
+      <div class="result-content" id="resultContent">
+        <div class="big-number" id="yearlyIncome">$0</div>
+        <div class="result-label">Projected yearly income</div>
+        <div class="result-breakdown" id="resultBreakdown">
+          <div class="breakdown-item"><span>Monthly deals:</span> <strong id="monthlyDeals">0</strong></div>
+          <div class="breakdown-item"><span>Monthly income:</span> <strong id="monthlyIncome">$0</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCENARIOS SECTION -->
+<section class="scenarios-section fade-up" id="scenarios">
+  <div class="section-label">The Path Forward</div>
+  <h2 class="section-title" style="margin-bottom:32px">Your income at different <em>maturity levels</em></h2>
+
+  <div class="scenarios-grid" id="scenariosGrid">
+    <!-- Populated by JavaScript -->
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section fade-up">
+  <div class="cta-box">
+    <h3 class="cta-headline">Ready to hit those <em>numbers?</em></h3>
+    <p class="cta-sub">The UGC Closer Kit gives you the exact scripts and systems to increase your response rate, close rate, and deal frequency. One brand deal pays for it 3x over.</p>
+    <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=income_calculator" target="_blank" class="cta-btn">Get the Closer Kit &rarr; $197 <s style="opacity:0.5">$246</s></a>
+  </div>
+</section>
+
+<!-- SHARE SECTION -->
+<section class="share-section fade-up">
+  <div class="share-title">Share your UGC income potential</div>
+  <div class="share-buttons">
+    <a href="https://twitter.com/intent/tweet" class="share-btn" id="shareTwitter" onclick="shareOnTwitter(event)">
+      <span>Share on X</span>
+      <span>→</span>
+    </a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/" class="share-btn" id="shareLinkedin" target="_blank">
+      <span>Share on LinkedIn</span>
+      <span>→</span>
+    </a>
+    <button onclick="copyLink()" class="share-btn">
+      <span>Copy link</span>
+      <span>→</span>
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<!-- SOCIAL PROOF - Real Creator Results -->
+<div style="max-width:700px;margin:40px auto;padding:0 20px">
+  <div style="text-align:center;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3,#666);margin-bottom:20px">What creators are saying</div>
+  
+  <div style="background:var(--card,#141414);border:1px solid var(--accent,#c8ff00);border-radius:12px;padding:20px;margin-bottom:12px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <span style="font-size:10px;font-weight:700;color:var(--accent,#c8ff00);background:rgba(200,255,0,0.1);padding:3px 8px;border-radius:6px;">VERIFIED</span>
+      <span style="font-size:11px;color:var(--text3,#666)">@Ty__Murph on X</span>
+    </div>
+    <div style="font-size:14px;color:var(--text,#e8e8e8);line-height:1.6;margin-bottom:8px">"Using her rate calculator and advice, <strong style="color:var(--accent,#c8ff00)">I negotiated from $150 to $800 for 2 videos.</strong>"</div>
+    <div style="font-size:12px;font-weight:600;color:var(--accent,#c8ff00)">Ty Murph &middot; 5.3x income increase</div>
+  </div>
+  
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div style="background:var(--card,#141414);border:1px solid var(--border,#222);border-radius:12px;padding:16px">
+      <div style="font-size:12px;color:var(--accent,#c8ff00);margin-bottom:6px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:13px;color:var(--text,#e8e8e8);line-height:1.5;margin-bottom:6px">"The calculator is BRILLIANT!! I finally know what to charge."</div>
+      <div style="font-size:11px;color:var(--green,#00c853);font-weight:600">Mel &middot; $300 &rarr; $800/video</div>
+    </div>
+    <div style="background:var(--card,#141414);border:1px solid var(--border,#222);border-radius:12px;padding:16px">
+      <div style="font-size:12px;color:var(--accent,#c8ff00);margin-bottom:6px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:13px;color:var(--text,#e8e8e8);line-height:1.5;margin-bottom:6px">"I sent pitches to 10 brands and got 2 responses in ONE DAY."</div>
+      <div style="font-size:11px;color:var(--green,#00c853);font-weight:600">Milena V &middot; 10 pitches, 2 replies</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:16px;font-size:12px;color:var(--text3,#666)">400+ creators already using these tools &middot; <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=tool_page&utm_campaign=closer_kit" style="color:var(--accent,#c8ff00);text-decoration:none;font-weight:600">Get the full system &rarr;</a></div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Elisabeth &middot; UGC Closer &middot; <a href="https://instagram.com/closermethod" target="_blank">@closermethod</a></p>
+  <p style="margin-top:8px">Built from 10 years at Criteo &middot; Deel &middot; Autodesk &middot; HBO</p>
+</footer>
+
+<script>
+// EMAIL GATE LOGIC
+function handleGateSubmit(e) {\n  e.preventDefault();\n  const name = document.getElementById('gateName').value.trim();\n  const email = document.getElementById('gateEmail').value.trim();\n  if (!name || !email) return false;\n\n  // Store locally\n  localStorage.setItem('ugc_name', name);\n  localStorage.setItem('ugc_email', email);\n\n  // Send to Kit (ConvertKit) - Form ID 9131179\n  const KIT_FORM_ID = '9131179';\n  fetch(`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`, {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json' },\n    body: JSON.stringify({\n      email_address: email,\n      first_name: name,\n      tags: ['income-calculator-user', 'brand-database-funnel']\n    })\n  }).catch(() => {}); // Fire and forget\n\n  // Track with Meta Pixel\n  if (typeof fbq !== 'undefined') {\n    fbq('track', 'Lead', { content_name: 'income-calculator-gate', value: 0, currency: 'USD' });\n  }\n\n  // Hide gate, show calculator\n  document.getElementById('emailGate').classList.add('hidden');\n  document.body.style.overflow = '';\n  return false;\n}\n\n// Check if already submitted\nif (localStorage.getItem('ugc_email')) {\n  document.getElementById('emailGate').classList.add('hidden');\n} else {\n  document.body.style.overflow = 'hidden';\n}\n\n// UPDATE SLIDER BACKGROUNDS\nfunction updateSliderBackground(slider) {\n  const value = (slider.value - slider.min) / (slider.max - slider.min) * 100;\n  slider.style.setProperty('--value', value + '%');\n}\n\ndocument.getElementById('pitchesPerWeek').addEventListener('input', function() {\n  updateSliderBackground(this);\n});\ndocument.getElementById('responseRate').addEventListener('input', function() {\n  updateSliderBackground(this);\n});\ndocument.getElementById('closeRate').addEventListener('input', function() {\n  updateSliderBackground(this);\n});\ndocument.getElementById('dealValue').addEventListener('input', function() {\n  updateSliderBackground(this);\n});\n\n// Initialize slider backgrounds\ndocument.querySelectorAll('input[type=\"range\"]').forEach(slider => {\n  updateSliderBackground(slider);\n});\n\n// MAIN CALCULATION\nfunction updateCalculation() {\n  const pitches = parseInt(document.getElementById('pitchesPerWeek').value);\n  const response = parseInt(document.getElementById('responseRate').value);\n  const close = parseInt(document.getElementById('closeRate').value);\n  const dealValue = parseInt(document.getElementById('dealValue').value);\n\n  // Update display values\n  document.getElementById('pitchesDisplay').textContent = pitches;\n  document.getElementById('responseDisplay').textContent = response + '%';\n  document.getElementById('closeDisplay').textContent = close + '%';\n  document.getElementById('dealDisplay').textContent = '$' + dealValue.toLocaleString();\n\n  // CALCULATION:\n  // Monthly deals = (pitches per week × 4 weeks) × (response rate ÷ 100) × (close rate ÷ 100)\n  const pitchesPerMonth = pitches * 4;\n  const monthlyDeals = Math.round(pitchesPerMonth * (response / 100) * (close / 100) * 100) / 100;\n  const monthlyIncome = monthlyDeals * dealValue;\n  const yearlyIncome = monthlyIncome * 12;\n\n  // Update result display\n  document.getElementById('yearlyIncome').textContent = '$' + Math.round(yearlyIncome).toLocaleString();\n  document.getElementById('monthlyDeals').textContent = Math.round(monthlyDeals * 10) / 10;\n  document.getElementById('monthlyIncome').textContent = '$' + Math.round(monthlyIncome).toLocaleString();\n\n  // Show result, hide empty state\n  document.getElementById('resultEmpty').style.display = 'none';\n  document.getElementById('resultContent').classList.add('active');\n\n  // Update scenarios\n  updateScenarios(pitches, response, close, dealValue);\n\n  // Track with Meta Pixel\n  if (typeof fbq !== 'undefined') {\n    fbq('track', 'ViewContent', { content_name: 'income-calculated', value: yearlyIncome / 100, currency: 'USD' });\n  }\n}\n\n// SCENARIO CALCULATIONS\nfunction updateScenarios(pitches, response, close, dealValue) {\n  // Current pace\n  const current = calcIncome(pitches, response, close, dealValue);\n\n  // With better pitches (double response rate)\n  const betterPitches = calcIncome(pitches, Math.min(response * 2, 50), close, dealValue);\n\n  // With The Closer Kit system (response × 2.5, close × 1.5)\n  const withKit = calcIncome(pitches, Math.min(response * 2.5, 50), Math.min(close * 1.5, 100), dealValue);\n\n  const scenarios = [\n    {\n      title: 'Current Pace',\n      sub: 'Your current numbers',\n      yearly: current,\n      monthly: current / 12,\n      diff: 0,\n      active: true\n    },\n    {\n      title: 'With Better Pitches',\n      sub: 'Double your response rate',\n      yearly: betterPitches,\n      monthly: betterPitches / 12,\n      diff: betterPitches - current,\n      active: false\n    },\n    {\n      title: 'With The Closer Kit',\n      sub: 'Proven pitch + close scripts',\n      yearly: withKit,\n      monthly: withKit / 12,\n      diff: withKit - current,\n      active: false\n    }\n  ];\n\n  const grid = document.getElementById('scenariosGrid');\n  grid.innerHTML = '';\n\n  scenarios.forEach(s => {\n    const card = document.createElement('div');\n    card.className = 'scenario-card' + (s.active ? ' active' : '');\n    card.innerHTML = `\n      <div class=\"scenario-label\">${s.title.toUpperCase()}</div>\n      <div class=\"scenario-title\">${s.title}</div>\n      <div class=\"scenario-sub\">${s.sub}</div>\n      <div class=\"scenario-number\">$${Math.round(s.yearly).toLocaleString()}</div>\n      <div class=\"scenario-period\">per year ($${Math.round(s.monthly).toLocaleString()}/mo)</div>\n      ${s.diff > 0 ? `<div class=\"scenario-diff\"><strong>+$${Math.round(s.diff).toLocaleString()}/year</strong> vs current pace</div>` : ''}\n    `;\n    grid.appendChild(card);\n  });\n}\n\nfunction calcIncome(pitches, response, close, dealValue) {\n  const pitchesPerMonth = pitches * 4;\n  const monthlyDeals = (pitchesPerMonth * response / 100 * close / 100);\n  const monthlyIncome = monthlyDeals * dealValue;\n  return monthlyIncome * 12;\n}\n\n// SHARE FUNCTIONS\nfunction shareOnTwitter(e) {\n  e.preventDefault();\n  const yearly = document.getElementById('yearlyIncome').textContent;\n  const text = `I could make ${yearly}/year from UGC with consistent pitching. How much are YOU leaving on the table? Calculate your income potential here → `;\n  const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}&via=closermethod`;\n  window.open(url, '_blank', 'width=550,height=420');\n}\n\nfunction copyLink() {\n  navigator.clipboard.writeText(window.location.href).then(() => {\n    const btn = event.target.closest('button');\n    const originalText = btn.innerHTML;\n    btn.innerHTML = '<span>✓ Copied</span><span>→</span>';\n    setTimeout(() => { btn.innerHTML = originalText; }, 2000);\n  });\n}\n\n// SCROLL ANIMATIONS\nconst observer = new IntersectionObserver((entries) => {\n  entries.forEach(entry => {\n    if (entry.isIntersecting) entry.target.classList.add('visible');\n  });\n}, { threshold: 0.1 });\n\ndocument.querySelectorAll('.fade-up').forEach(el => observer.observe(el));\n\n// Initialize\nwindow.addEventListener('load', () => {\n  updateCalculation();\n});\n</script>\n\n<!-- Meta Pixel -->\n<script>\n!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?\nn.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;\nn.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;\nt.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',\n'https://connect.facebook.net/en_US/fbevents.js');\nfbq('init', '35298849146380570');\nfbq('track', 'PageView');\n</script>\n<noscript><img height=\"1\" width=\"1\" style=\"display:none\" src=\"https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1\"/></noscript>\n</body>\n</html>

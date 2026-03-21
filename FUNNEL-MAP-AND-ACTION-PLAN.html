@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closer Method - Complete Funnel Map & Action Plan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #FDFCF9;
+            --forest: #2D5A3D;
+            --terra: #B85C38;
+            --cream: #F8F5EF;
+            --charcoal: #292524;
+            --gold: #D4A574;
+        }
+        body {
+            background: var(--bg);
+            color: var(--charcoal);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--charcoal) 0%, #1a1917 100%);
+            color: var(--cream);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 6px solid var(--terra);
+        }
+        header h1 { font-size: clamp(2rem, 6vw, 3rem); margin-bottom: 0.5rem; }
+        header p { opacity: 0.9; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+
+        /* Nav tabs */
+        .tab-nav {
+            display: flex;
+            gap: 0;
+            margin: 2rem 0 0;
+            border-bottom: 3px solid var(--cream);
+            overflow-x: auto;
+        }
+        .tab-btn {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            opacity: 0.5;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -3px;
+            white-space: nowrap;
+            transition: all 0.3s;
+        }
+        .tab-btn.active {
+            opacity: 1;
+            border-bottom-color: var(--terra);
+            color: var(--terra);
+        }
+        .tab-btn:hover { opacity: 0.8; }
+        .tab-content { display: none; padding: 2rem 0; }
+        .tab-content.active { display: block; }
+
+        /* Funnel Visual */
+        .funnel-stage {
+            position: relative;
+            margin-bottom: 0;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--forest);
+        }
+        .funnel-stage.lead { border-left-color: #4A90D9; background: #f0f6ff; }
+        .funnel-stage.nurture { border-left-color: var(--gold); background: #fdf8f0; }
+        .funnel-stage.convert { border-left-color: var(--terra); background: #fdf0ea; }
+        .funnel-stage.ascend { border-left-color: var(--forest); background: #f0f7f2; }
+        .funnel-stage.retain { border-left-color: var(--charcoal); background: var(--cream); }
+
+        .stage-label {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+        }
+        .funnel-stage.lead .stage-label { background: #4A90D9; color: white; }
+        .funnel-stage.nurture .stage-label { background: var(--gold); color: white; }
+        .funnel-stage.convert .stage-label { background: var(--terra); color: white; }
+        .funnel-stage.ascend .stage-label { background: var(--forest); color: white; }
+        .funnel-stage.retain .stage-label { background: var(--charcoal); color: white; }
+
+        .funnel-stage h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .funnel-stage p { font-size: 0.95rem; margin-bottom: 0.5rem; }
+
+        .arrow-down {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--charcoal);
+            opacity: 0.3;
+            padding: 0.5rem 0;
+        }
+
+        .detail-box {
+            background: white;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-top: 1rem;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+        .detail-box h4 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--terra);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .detail-box ul { margin-left: 1.25rem; font-size: 0.9rem; }
+        .detail-box li { margin-bottom: 0.35rem; }
+        .detail-box code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            background: var(--cream);
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+        }
+
+        /* Action Items */
+        .action-section { margin-bottom: 3rem; }
+        .action-section h2 { color: var(--forest); margin-bottom: 1rem; border-bottom: 2px solid var(--cream); padding-bottom: 0.5rem; }
+
+        .action-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            position: relative;
+        }
+        .action-card.priority-high { border-left: 5px solid #dc3545; }
+        .action-card.priority-med { border-left: 5px solid var(--terra); }
+        .action-card.priority-low { border-left: 5px solid var(--forest); }
+        .action-card.done { opacity: 0.5; }
+        .action-card.done h4 { text-decoration: line-through; }
+
+        .priority-badge {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            margin-bottom: 0.5rem;
+        }
+        .priority-badge.high { background: #dc3545; color: white; }
+        .priority-badge.med { background: var(--terra); color: white; }
+        .priority-badge.low { background: var(--forest); color: white; }
+        .priority-badge.done-badge { background: #28a745; color: white; }
+
+        .action-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .action-card p { font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            accent-color: var(--forest);
+            flex-shrink: 0;
+        }
+
+        /* Kit Commerce Guide */
+        .kit-step {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-left: 5px solid var(--forest);
+        }
+        .kit-step .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--terra);
+            color: white;
+            border-radius: 50%;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+        .kit-step h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+
+        .copy-block {
+            background: var(--cream);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            position: relative;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: var(--terra);
+            color: white;
+            border: none;
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .copy-btn:hover { background: #A14E2D; }
+        .copy-btn.copied { background: var(--forest); }
+
+        /* What's Built Grid */
+        .built-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .built-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1.25rem;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+        .built-item.status-ready { border-left: 4px solid #28a745; }
+        .built-item.status-needs-upload { border-left: 4px solid var(--terra); }
+        .built-item.status-pending { border-left: 4px solid #6c757d; }
+        .built-item h4 { font-size: 0.95rem; margin-bottom: 0.25rem; }
+        .built-item .status-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+        }
+        .status-tag.ready { background: #d4edda; color: #155724; }
+        .status-tag.needs-upload { background: #fff3cd; color: #856404; }
+        .status-tag.pending { background: #e2e3e5; color: #383d41; }
+
+        /* Revenue model */
+        .revenue-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .revenue-table th {
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        .revenue-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--cream);
+        }
+        .revenue-table tr:nth-child(even) { background: var(--cream); }
+        .revenue-table .total-row { font-weight: 700; background: #f0f7f2; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .tab-btn { padding: 0.75rem 1rem; font-size: 0.85rem; }
+            .funnel-stage { padding: 1.5rem; }
+            .built-grid { grid-template-columns: 1fr; }
+        }
+
+        .highlight { color: var(--terra); font-weight: 600; }
+        .highlight-forest { color: var(--forest); font-weight: 600; }
+
+        .answer-box {
+            background: linear-gradient(135deg, #f0f7f2 0%, var(--cream) 100%);
+            border: 2px solid var(--forest);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .answer-box h3 { color: var(--forest); margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Closer Method - Complete System</h1>
+        <p>Your full funnel map, what's built, what needs to happen, and exactly how to launch.</p>
+    </header>
+
+    <div class="container">
+        <!-- Tab Navigation -->
+        <div class="tab-nav">
+            <button class="tab-btn active" onclick="showTab('answers')">Your Questions</button>
+            <button class="tab-btn" onclick="showTab('funnel')">Full Funnel Map</button>
+            <button class="tab-btn" onclick="showTab('kit')">Kit Commerce Setup</button>
+            <button class="tab-btn" onclick="showTab('status')">What's Built</button>
+            <button class="tab-btn" onclick="showTab('actions')">Action Plan</button>
+        </div>
+
+        <!-- TAB 1: ANSWERS TO ELI'S QUESTIONS -->
+        <div id="tab-answers" class="tab-content active">
+
+            <div class="answer-box">
+                <h3>"What's the lead magnet?"</h3>
+                <p>Your lead magnet is the <span class="highlight">UGC Rate Calculator</span> - it's already built as an interactive tool (tool1-rate-calculator.html). When someone fills it in, they enter their email to get their results. That email goes into Kit with the tag <code>rate-calculator-user</code>, which triggers your 5-email nurture sequence automatically.</p>
+                <p style="margin-top: 1rem;"><strong>Why it works:</strong> It gives creators immediate, personalized value (their actual rate), positions you as the expert, and creates a natural bridge to The Authenticity Premium ("you now know your rate - here's the system to actually command it").</p>
+            </div>
+
+            <div class="answer-box">
+                <h3>"What does it lead to?"</h3>
+                <p>The Rate Calculator feeds into a <span class="highlight">5-email nurture sequence</span> (already written, Kit-ready) that warms them up over 10 days and drives them to buy <strong>The Authenticity Premium ($297)</strong>.</p>
+                <p style="margin-top: 1rem;">Full path:<br>
+                <strong>Reel on IG/TikTok</strong> → <strong>Link in Bio page</strong> → <strong>Rate Calculator</strong> (email capture) → <strong>5-email sequence</strong> → <strong>Authenticity Premium sales page</strong> → <strong>Checkout on Kit</strong> (with $27 order bump) → <strong>Thank-you page</strong> (with $246 Closer Kit upsell)</p>
+            </div>
+
+            <div class="answer-box">
+                <h3>"The products are not populated on Kit"</h3>
+                <p>You're right - the Kit Commerce product pages currently have placeholder text. I've built all the copy, descriptions, and setup instructions. Here's what needs to happen:</p>
+                <div class="detail-box" style="margin-top: 1rem;">
+                    <h4>For each of the 3 products on Kit, you need to:</h4>
+                    <ul>
+                        <li><strong>Paste the product description</strong> - all 3 are written and ready (see "Kit Commerce Setup" tab)</li>
+                        <li><strong>Upload a product image/cover</strong> - I can generate these for you</li>
+                        <li><strong>Set the correct price</strong> - AP: $297, Kit: $27, Closer: $246</li>
+                        <li><strong>Add a post-purchase tag</strong> - so automations trigger correctly</li>
+                        <li><strong>Set the thank-you redirect URL</strong> - to your thank-you/upsell pages</li>
+                        <li><strong>Upload the actual digital product files</strong> - this is the key question below</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="answer-box" style="border-color: var(--terra);">
+                <h3>"Where is the actual Authenticity Premium product?"</h3>
+                <p>This is the critical question. Everything I've built is the <span class="highlight">marketing and sales system</span> - the funnel that gets people to buy. But the actual product that gets delivered after purchase (the 6 modules, the scripts, the templates) needs to come from you.</p>
+
+                <p style="margin-top: 1rem;"><strong>Two scenarios:</strong></p>
+
+                <div class="detail-box" style="margin-top: 1rem; border-left-color: #28a745;">
+                    <h4>If you already have product files:</h4>
+                    <ul>
+                        <li>Upload them to Kit Commerce as the digital download for each product</li>
+                        <li>Could be: PDFs, video links (Loom/private YouTube), Google Drive folder link, Notion workspace link, or a zip file</li>
+                        <li>Many creators use a simple PDF with links to their content hosted on Loom or a course platform</li>
+                    </ul>
+                </div>
+
+                <div class="detail-box" style="margin-top: 1rem; border-left-color: var(--terra);">
+                    <h4>If you need to create the product:</h4>
+                    <ul>
+                        <li>I can build you a <strong>product delivery hub</strong> - a beautiful HTML page (like the other pages I've built) that serves as the "product" itself</li>
+                        <li>It would contain: your positioning framework, the scripts, the templates, the brand database, and the negotiation vault - all organized in a clean, professional interface</li>
+                        <li>You record the video modules on Loom (free), embed the links in the hub, and that hub URL becomes what buyers access</li>
+                        <li>This is exactly how Maria Wendt and many $100K+/month digital product creators deliver - <strong>no course platform needed</strong></li>
+                    </ul>
+                </div>
+
+                <p style="margin-top: 1.5rem; padding: 1rem; background: #fff3cd; border-radius: 8px; font-weight: 500;">Tell me which scenario you're in and I'll build accordingly. If you want, I can create the full product delivery hub right now - it'll look incredible and be ready to sell tonight.</p>
+            </div>
+        </div>
+
+        <!-- TAB 2: FULL FUNNEL MAP -->
+        <div id="tab-funnel" class="tab-content">
+            <h2 style="margin-bottom: 0.5rem;">Your Complete Funnel - Top to Bottom</h2>
+            <p style="margin-bottom: 2rem; opacity: 0.7;">Every step from first impression to repeat buyer. This is the Wendt + Hormozi + Moran framework in action.</p>
+
+            <!-- Stage 1: Traffic -->
+            <div class="funnel-stage lead">
+                <div class="stage-label">Stage 1 - Traffic</div>
+                <h3>Instagram & TikTok Reels</h3>
+                <p>Short-form content that positions you as the authority on UGC pricing and the AI authenticity shift. Each reel has a call-to-action: "Link in bio to find out your real rate."</p>
+                <div class="detail-box">
+                    <h4>What's Built</h4>
+                    <ul>
+                        <li><strong>4 Reel Scripts</strong> with 3 hook variations each = 12 unique reels (REEL-SCRIPTS-AND-PROMPTS.html)</li>
+                        <li><strong>12 AI Image Prompts</strong> for Grok-generated visuals</li>
+                        <li><strong>IG + TikTok Captions</strong> with hashtags for each reel</li>
+                        <li><strong>Content Calendar</strong> - which reel to post when</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="arrow-down">↓</div>
+
+            <!-- Stage 2: Capture -->
+            <div class="funnel-stage lead">
+                <div class="stage-label">Stage 2 - Capture</div>
+                <h3>Link in Bio → Rate Calculator (Lead Magnet)</h3>
+                <p>Your link-in-bio page (links.html) drives traffic to the Rate Calculator - an interactive tool where creators enter their niche, experience, and content type to get their personalized rate.</p>
+                <p><strong>Email capture happens here.</strong> They enter email to get their results → tagged <code>rate-calculator-user</code> in Kit.</p>
+                <div class="detail-box">
+                    <h4>Kit Setup Required</h4>
+                    <ul>
+                        <li>Kit Form ID: <code>9131179</code> (already created)</li>
+                        <li>Tag on subscribe: <code>rate-calculator-user</code></li>
+                        <li>This tag triggers the 5-email nurture sequence automatically</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="arrow-down">↓</div>
+
+            <!-- Stage 3: Nurture -->
+            <div class="funnel-stage nurture">
+                <div class="stage-label">Stage 3 - Nurture</div>
+                <h3>5-Email Automation Sequence (10 days)</h3>
+                <p>Triggered by the <code>rate-calculator-user</code> tag. Uses Wendt-style storytelling to build trust and position The Authenticity Premium as the obvious next step.</p>
+                <div class="detail-box">
+                    <h4>The 5 Emails</h4>
+                    <ul>
+                        <li><strong>Day 0:</strong> "Your Rate - And the Data Behind It" (welcome + rate context)</li>
+                        <li><strong>Day 2:</strong> "The Counter-Script" (story of handling objections)</li>
+                        <li><strong>Day 4:</strong> "Why Vinyl Outsells MP3s" (authenticity analogy)</li>
+                        <li><strong>Day 7:</strong> "The Brain Scan That Changed Everything" (NielsenIQ data)</li>
+                        <li><strong>Day 10:</strong> "Two Types of Creators" (closing email)</li>
+                    </ul>
+                    <p style="margin-top: 0.5rem;"><strong>Filter:</strong> NOT <code>authenticity-premium-buyer</code> (stops if they buy)</p>
+                    <p><strong>Exit:</strong> Purchase of any product</p>
+                </div>
+            </div>
+
+            <div class="arrow-down">↓</div>
+
+            <!-- Stage 4: Convert -->
+            <div class="funnel-stage convert">
+                <div class="stage-label">Stage 4 - Convert</div>
+                <h3>The Authenticity Premium - $297</h3>
+                <p>The main product. Landing page (the-authenticity-premium.html) uses Hormozi's value equation: the complete positioning system that makes $297 feel like stealing when the value stack is $932.</p>
+                <div class="detail-box">
+                    <h4>Checkout on Kit Commerce</h4>
+                    <ul>
+                        <li><strong>Product URL:</strong> closermethod.kit.com/products/the-authenticity-premium</li>
+                        <li><strong>Price:</strong> $297</li>
+                        <li><strong>Order Bump:</strong> The First $1K Kit for $27 (shown on checkout page)</li>
+                        <li><strong>Post-purchase tag:</strong> <code>authenticity-premium-buyer</code></li>
+                        <li><strong>Redirect after purchase:</strong> thank-you-ap.html (which has the Closer Kit upsell)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="arrow-down">↓</div>
+
+            <!-- Stage 5: Ascend -->
+            <div class="funnel-stage ascend">
+                <div class="stage-label">Stage 5 - Ascend</div>
+                <h3>Post-Purchase Upsells & Cross-Sells</h3>
+                <p>After buying AP, the thank-you page presents The UGC Closer Kit ($246) as a one-time offer. Plus, post-purchase email sequences cross-sell between all 3 products.</p>
+                <div class="detail-box">
+                    <h4>Upsell Flow</h4>
+                    <ul>
+                        <li><strong>AP buyers</strong> → Thank-you page upsells Closer Kit ($246)</li>
+                        <li><strong>Kit buyers</strong> → Post-purchase emails ascend to AP ($297)</li>
+                        <li><strong>Closer buyers</strong> → Post-purchase emails cross-sell AP if they don't have it</li>
+                    </ul>
+                </div>
+                <div class="detail-box">
+                    <h4>The 3 Products</h4>
+                    <ul>
+                        <li><strong>The Authenticity Premium</strong> - $297 (main offer)</li>
+                        <li><strong>The First $1K Kit</strong> - $27 (starter/order bump)</li>
+                        <li><strong>The UGC Closer Kit</strong> - $246 (advanced/retainers)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="arrow-down">↓</div>
+
+            <!-- Stage 6: Retain -->
+            <div class="funnel-stage retain">
+                <div class="stage-label">Stage 6 - Retain & Re-Engage</div>
+                <h3>Win-Back, Cart Abandonment & Flash Sales</h3>
+                <p>Automated sequences keep working even when you're not. Cart abandonment catches people who almost bought. Win-back re-engages cold subscribers. Flash sales create revenue spikes on demand.</p>
+                <div class="detail-box">
+                    <h4>Automated Sequences (All Built)</h4>
+                    <ul>
+                        <li><strong>Cart Abandonment</strong> - 3-email sequence per product (CART-ABANDONMENT-SEQUENCE.html)</li>
+                        <li><strong>Win-Back</strong> - Re-engagement for cold subscribers (WIN-BACK-SEQUENCE.html)</li>
+                        <li><strong>Cash Spike</strong> - Flash sale templates for revenue surges (CASH-SPIKE-EMAIL-SEQUENCES.html)</li>
+                        <li><strong>Post-Purchase</strong> - Cross-sell sequences for each product (POST-PURCHASE-SEQUENCES.html)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: KIT COMMERCE SETUP -->
+        <div id="tab-kit" class="tab-content">
+            <h2 style="margin-bottom: 0.5rem;">Populate Your Kit Commerce Products</h2>
+            <p style="margin-bottom: 2rem; opacity: 0.7;">Copy-paste these descriptions into each product page. I'll walk you through it step by step.</p>
+
+            <!-- Product 1 -->
+            <div class="kit-step">
+                <div class="step-num">1</div>
+                <h3>The Authenticity Premium - $297</h3>
+                <p>Go to: <code>app.kit.com</code> → Earn → Products → The Authenticity Premium → Edit</p>
+
+                <h4 style="margin-top: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--terra); text-transform: uppercase;">Product Name</h4>
+                <div class="copy-block">
+                    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                    The Authenticity Premium
+                </div>
+
+                <h4 style="margin-top: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--terra); text-transform: uppercase;">Tagline / Short Description</h4>
+                <div class="copy-block">
+                    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                    The complete system for commanding premium rates in the AI era - data, scripts, positioning, and 100 brands ready to pitch.
+                </div>
+
+                <h4 style="margin-top: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--terra); text-transform: uppercase;">Full Description (paste into product description field)</h4>
+                <div class="copy-block" style="white-space: pre-line;">
+                    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+Consumer trust in AI content collapsed from 60% to 26% in two years. Brands need authentic human creators more than ever - they just don't want to pay what you're worth. Unless you have the data to prove them wrong.
+
+The Authenticity Premium is the complete system for turning the AI shift into your biggest rate increase.
+
+What's inside:
+
+✓ Market Shift Research - The data from Billion Dollar Boy, NielsenIQ, Smartly.io, and Checkr that makes brands stop arguing and start paying. Formatted as copy-paste slides for your next pitch.
+
+✓ AI Objection Scripts - Word-for-word responses for "we're exploring AI content," "our budget is tighter," and every other lowball tactic. 60 scripts across 12 categories.
+
+✓ Rate Anchoring Methodology - The framework for pricing so your "discount" is still above where you used to start. One rate increase pays for this entire system 2× over.
+
+✓ Premium Positioning System - Position yourself as the premium choice brands seek out - not one of 50 creators they're comparing on price.
+
+✓ Cold Outreach Swipe File - 100-brand database with decision-maker contacts + outreach templates with 40%+ response rates.
+
+✓ The Negotiation Vault - Advanced frameworks for procurement teams, scope creep, budget constraints, and the "that's too much" counter.
+
+Total value: $932 → You pay: $297 (68% off)
+
+Instant digital download. One-time payment. 30-day money-back guarantee.
+                </div>
+
+                <h4 style="margin-top: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--terra); text-transform: uppercase;">Kit Settings</h4>
+                <div class="detail-box">
+                    <ul>
+                        <li><strong>Price:</strong> $297.00</li>
+                        <li><strong>Post-purchase tag:</strong> <code>authenticity-premium-buyer</code></li>
+                        <li><strong>Redirect URL:</strong> Your hosted thank-you-ap.html URL</li>
+                        <li><strong>Order bump:</strong> The First $1K Kit ($27)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="kit-step">
+                <div class="step-num">2</div>
+                <h3>The First $1K Kit - $27</h3>
+                <p>Go to: <code>app.kit.com</code> → Earn → Products → The First $1K Kit → Edit</p>
+
+                <h4 style="margin-top: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--terra); text-transform: uppercase;">Tagline / Short Description</h4>
+                <div class="copy-block">
+                    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                    60 negotiation scripts, 100-brand outreach database, and the rate system to land your first $1,000 brand deal.
+                </div>
+
+                <h4 style="margin-top: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--terra); text-transform: uppercase;">Full Description</h4>
+                <div class="copy-block" style="white-space: pre-line;">
+                    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+You have the content skills. You just don't have the business system.
+
+The First $1K Kit is the starter toolkit for creators who want to stop guessing on rates, stop cold-DMing brands with no response, and start closing real paid deals.
+
+What's inside:
+
+✓ 60 Word-for-Word Negotiation Scripts - Covers low budgets, rights grabs, scope creep, rush timelines, no-contract DMs, retainer pitches, and "we don't have budget" responses.
+
+✓ 100-Brand Outreach Database - Pre-researched brands actively working with UGC creators, including decision-maker contacts and outreach angles.
+
+✓ Rate Calculator Pro + Rate OS - The same pricing system from the free Rate Calculator, upgraded with niche multipliers, usage rights pricing, and the complete rate card framework.
+
+✓ UGC Portfolio Templates - Clean, professional templates that make your work look like it's worth what you're charging. Customizable in Canva.
+
+✓ Pricing Psychology Playbook - The anchoring, framing, and packaging techniques that make $500 feel like a steal.
+
+✓ Private Community Access - Connect with other creators, share wins, get feedback on pitches, and access live rate reviews.
+
+Total value: $652 → You pay: $27 (96% off)
+
+Instant digital download. One-time payment. 30-day money-back guarantee.
+                </div>
+
+                <h4 style="margin-top: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--terra); text-transform: uppercase;">Kit Settings</h4>
+                <div class="detail-box">
+                    <ul>
+                        <li><strong>Price:</strong> $27.00</li>
+                        <li><strong>Post-purchase tag:</strong> <code>first-1k-kit-buyer</code></li>
+                        <li><strong>Redirect URL:</strong> closer-kit-oto.html (upsells them to Closer Kit)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="kit-step">
+                <div class="step-num">3</div>
+                <h3>The UGC Closer Kit - $246</h3>
+                <p>Go to: <code>app.kit.com</code> → Earn → Products → The UGC Closer Kit → Edit</p>
+
+                <h4 style="margin-top: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--terra); text-transform: uppercase;">Tagline / Short Description</h4>
+                <div class="copy-block">
+                    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                    Turn one-off brand deals into $1,500+/month retainers - the advanced system for scaling past your first $1K.
+                </div>
+
+                <h4 style="margin-top: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--terra); text-transform: uppercase;">Full Description</h4>
+                <div class="copy-block" style="white-space: pre-line;">
+                    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+You closed the deal. Now what?
+
+Most creators deliver the project, send an invoice, and never hear from that brand again. The Closer Kit is the system for turning that single project into an ongoing retainer worth $1,500–$3,000/month.
+
+What's inside:
+
+✓ Retainer Conversion System - The exact framework for pitching ongoing work at the highest-leverage moment: right after you deliver your first project. Includes the 3-email sequence and the "results recap" deck.
+
+✓ Strategic Positioning Guide - How to move from "vendor" to "creative partner" in the brand's eyes. Positioning shifts that justify 3× your current rate.
+
+✓ Advanced Negotiation Playbook - Enterprise-level tactics for procurement teams, multi-month contracts, exclusivity premiums, and package deals.
+
+✓ Rate Escalation Calendar - The 90-day plan to raise your rates 3× without losing a single client. Week-by-week: when to raise, how much, and exact scripts.
+
+✓ Brand Partnership Legal Templates - SOW template, retainer agreement, usage rights addendum, NDA, and invoice template. All customizable.
+
+Total value: $605 → You pay: $246 (67% off)
+
+Instant digital download. One-time payment. 30-day money-back guarantee.
+                </div>
+
+                <h4 style="margin-top: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--terra); text-transform: uppercase;">Kit Settings</h4>
+                <div class="detail-box">
+                    <ul>
+                        <li><strong>Price:</strong> $246.00</li>
+                        <li><strong>Post-purchase tag:</strong> <code>ugc-closer-kit-buyer</code></li>
+                        <li><strong>Redirect URL:</strong> thank-you-closer.html</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tags Setup -->
+            <div class="kit-step">
+                <div class="step-num">4</div>
+                <h3>Create These Tags in Kit</h3>
+                <p>Go to: <code>app.kit.com</code> → Subscribers → Tags → Create Tag</p>
+                <div class="detail-box">
+                    <h4>Required Tags</h4>
+                    <ul>
+                        <li><code>rate-calculator-user</code> - triggers nurture sequence</li>
+                        <li><code>authenticity-premium-buyer</code> - stops nurture, triggers AP post-purchase</li>
+                        <li><code>first-1k-kit-buyer</code> - triggers Kit post-purchase</li>
+                        <li><code>ugc-closer-kit-buyer</code> - triggers Closer post-purchase</li>
+                        <li><code>ap-cart-abandon</code> - triggers cart abandonment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Automation Setup -->
+            <div class="kit-step">
+                <div class="step-num">5</div>
+                <h3>Set Up Automations in Kit</h3>
+                <p>Go to: <code>app.kit.com</code> → Automate → Visual Automations → New Automation</p>
+                <div class="detail-box">
+                    <h4>Automation 1: Nurture Sequence</h4>
+                    <ul>
+                        <li><strong>Trigger:</strong> Tag added → <code>rate-calculator-user</code></li>
+                        <li><strong>Filter:</strong> Does NOT have tag <code>authenticity-premium-buyer</code></li>
+                        <li><strong>Emails:</strong> 5 emails over 10 days (copy from AUTHENTICITY-PREMIUM-EMAIL-SEQUENCE.html)</li>
+                        <li><strong>Exit:</strong> If subscriber gets tag <code>authenticity-premium-buyer</code>, exit sequence</li>
+                    </ul>
+                </div>
+                <div class="detail-box" style="margin-top: 1rem;">
+                    <h4>Automation 2: AP Post-Purchase</h4>
+                    <ul>
+                        <li><strong>Trigger:</strong> Tag added → <code>authenticity-premium-buyer</code></li>
+                        <li><strong>Emails:</strong> 4 emails cross-selling Closer Kit (copy from POST-PURCHASE-SEQUENCES.html)</li>
+                    </ul>
+                </div>
+                <div class="detail-box" style="margin-top: 1rem;">
+                    <h4>Automation 3: Kit Post-Purchase</h4>
+                    <ul>
+                        <li><strong>Trigger:</strong> Tag added → <code>first-1k-kit-buyer</code></li>
+                        <li><strong>Emails:</strong> 4 emails ascending to Authenticity Premium (copy from POST-PURCHASE-SEQUENCES.html)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: WHAT'S BUILT -->
+        <div id="tab-status" class="tab-content">
+            <h2 style="margin-bottom: 0.5rem;">System Status - Everything That's Built</h2>
+            <p style="margin-bottom: 2rem; opacity: 0.7;">Green = ready to deploy. Yellow = needs your input to finish. Gray = coming next.</p>
+
+            <h3 style="color: var(--forest); margin-bottom: 1rem;">Landing Pages & Sales Pages</h3>
+            <div class="built-grid">
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Homepage (index.html)</h4>
+                    <p style="font-size: 0.85rem;">Brand hub with all product links</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Authenticity Premium Page</h4>
+                    <p style="font-size: 0.85rem;">Full sales page - Wendt narrative + Hormozi value stack</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>First $1K Kit Page</h4>
+                    <p style="font-size: 0.85rem;">Downsell / standalone offer page</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Closer Kit OTO Page</h4>
+                    <p style="font-size: 0.85rem;">Post-purchase upsell page</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Link in Bio Page</h4>
+                    <p style="font-size: 0.85rem;">Instagram/TikTok link tree</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--forest); margin: 2rem 0 1rem;">Free Tools (Lead Magnets)</h3>
+            <div class="built-grid">
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Rate Calculator</h4>
+                    <p style="font-size: 0.85rem;">Primary lead magnet with email capture</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Brand Qualifier</h4>
+                    <p style="font-size: 0.85rem;">Tool to evaluate brand deal quality</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Closer Coach</h4>
+                    <p style="font-size: 0.85rem;">AI-powered negotiation practice</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Repurposing Engine</h4>
+                    <p style="font-size: 0.85rem;">Turn one piece into multi-platform content</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Negotiation Simulator</h4>
+                    <p style="font-size: 0.85rem;">Practice brand negotiations with AI</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--forest); margin: 2rem 0 1rem;">Email Sequences (Kit-Ready Copy)</h3>
+            <div class="built-grid">
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>5-Email Nurture Sequence</h4>
+                    <p style="font-size: 0.85rem;">10-day automation for rate calc leads</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Post-Purchase Sequences</h4>
+                    <p style="font-size: 0.85rem;">3 sequences for all buyer types</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Cart Abandonment</h4>
+                    <p style="font-size: 0.85rem;">3-email recovery per product</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Cash Spike / Flash Sales</h4>
+                    <p style="font-size: 0.85rem;">On-demand revenue surge templates</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Win-Back Sequence</h4>
+                    <p style="font-size: 0.85rem;">Re-engage cold subscribers</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--forest); margin: 2rem 0 1rem;">Thank-You / Post-Purchase Pages</h3>
+            <div class="built-grid">
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>AP Thank-You + Closer Upsell</h4>
+                    <p style="font-size: 0.85rem;">Confetti + 3-step quickstart + upsell</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Kit Thank-You</h4>
+                    <p style="font-size: 0.85rem;">Post-purchase for $27 Kit buyers</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Closer Thank-You</h4>
+                    <p style="font-size: 0.85rem;">Post-purchase for Closer Kit buyers</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--forest); margin: 2rem 0 1rem;">Content & Resources</h3>
+            <div class="built-grid">
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Reel Scripts + Image Prompts</h4>
+                    <p style="font-size: 0.85rem;">12 reels + 12 AI image prompts + captions</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Kit Commerce Product Descriptions</h4>
+                    <p style="font-size: 0.85rem;">Copy-paste for all 3 products</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Kit Commerce Setup Guide</h4>
+                    <p style="font-size: 0.85rem;">Step-by-step with checklists</p>
+                </div>
+                <div class="built-item status-ready">
+                    <span class="status-tag ready">Ready</span>
+                    <h4>Tracking Pixel Setup Guide</h4>
+                    <p style="font-size: 0.85rem;">Meta + analytics implementation</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--terra); margin: 2rem 0 1rem;">Needs Your Input</h3>
+            <div class="built-grid">
+                <div class="built-item status-needs-upload">
+                    <span class="status-tag needs-upload">Needs You</span>
+                    <h4>Kit Commerce Product Pages</h4>
+                    <p style="font-size: 0.85rem;">Copy is written - needs to be pasted into Kit + product files uploaded</p>
+                </div>
+                <div class="built-item status-needs-upload">
+                    <span class="status-tag needs-upload">Needs You</span>
+                    <h4>Actual Product Deliverables</h4>
+                    <p style="font-size: 0.85rem;">The files/content buyers receive after purchase</p>
+                </div>
+                <div class="built-item status-needs-upload">
+                    <span class="status-tag needs-upload">Needs You</span>
+                    <h4>Product Cover Images</h4>
+                    <p style="font-size: 0.85rem;">For Kit Commerce product pages</p>
+                </div>
+                <div class="built-item status-needs-upload">
+                    <span class="status-tag needs-upload">Needs You</span>
+                    <h4>Page Hosting</h4>
+                    <p style="font-size: 0.85rem;">HTML files need to be hosted (Netlify, Vercel, or similar)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: ACTION PLAN -->
+        <div id="tab-actions" class="tab-content">
+            <h2 style="margin-bottom: 0.5rem;">Your Launch Action Plan</h2>
+            <p style="margin-bottom: 2rem; opacity: 0.7;">Prioritized from most critical to nice-to-have. Follow this order.</p>
+
+            <div class="action-section">
+                <h2>Phase 1: Product Infrastructure (Today)</h2>
+
+                <div class="action-card priority-high">
+                    <span class="priority-badge high">Critical</span>
+                    <h4>1. Decide on product delivery format</h4>
+                    <p>Do you have the Authenticity Premium content as files (PDFs, videos, Notion, etc.)? Or do you need me to build a product delivery hub? This determines everything else.</p>
+                    <div class="checkbox-item"><input type="checkbox" id="a1"><label for="a1">Decide: existing files OR I build a delivery hub</label></div>
+                </div>
+
+                <div class="action-card priority-high">
+                    <span class="priority-badge high">Critical</span>
+                    <h4>2. Populate Kit Commerce product pages</h4>
+                    <p>All 3 products currently have placeholder text. Copy from the "Kit Commerce Setup" tab in this doc.</p>
+                    <div class="checkbox-item"><input type="checkbox" id="a2a"><label for="a2a">Paste AP description into Kit product page</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a2b"><label for="a2b">Paste First $1K Kit description into Kit</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a2c"><label for="a2c">Paste Closer Kit description into Kit</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a2d"><label for="a2d">Upload product cover images</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a2e"><label for="a2e">Upload digital product files</label></div>
+                </div>
+
+                <div class="action-card priority-high">
+                    <span class="priority-badge high">Critical</span>
+                    <h4>3. Set up Kit tags & automations</h4>
+                    <p>Create the tags and wire up the email automations so purchases trigger the right sequences.</p>
+                    <div class="checkbox-item"><input type="checkbox" id="a3a"><label for="a3a">Create all tags (see Kit Commerce Setup tab)</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a3b"><label for="a3b">Set up 5-email nurture automation</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a3c"><label for="a3c">Set up post-purchase automations (3 sequences)</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a3d"><label for="a3d">Configure order bump ($27 Kit on AP checkout)</label></div>
+                </div>
+            </div>
+
+            <div class="action-section">
+                <h2>Phase 2: Host & Connect (Today/Tomorrow)</h2>
+
+                <div class="action-card priority-med">
+                    <span class="priority-badge med">Important</span>
+                    <h4>4. Host the HTML pages</h4>
+                    <p>Your landing pages, tools, and thank-you pages need a home. Easiest option: drag the whole REBUILT-FUNNEL-DEPLOY folder into Netlify (free).</p>
+                    <div class="checkbox-item"><input type="checkbox" id="a4a"><label for="a4a">Create free Netlify account (netlify.com)</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a4b"><label for="a4b">Drag REBUILT-FUNNEL-DEPLOY folder to Netlify</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a4c"><label for="a4c">Note your site URL (e.g., closermethod.netlify.app)</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a4d"><label for="a4d">Update Kit product redirect URLs with hosted page URLs</label></div>
+                </div>
+
+                <div class="action-card priority-med">
+                    <span class="priority-badge med">Important</span>
+                    <h4>5. Connect Rate Calculator form to Kit</h4>
+                    <p>The Rate Calculator needs to send email captures to Kit. Form ID 9131179 is already created.</p>
+                    <div class="checkbox-item"><input type="checkbox" id="a5a"><label for="a5a">Verify Kit form 9131179 exists and is active</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a5b"><label for="a5b">Test: submit an email through Rate Calculator</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a5c"><label for="a5c">Verify the email appears in Kit with correct tag</label></div>
+                </div>
+
+                <div class="action-card priority-med">
+                    <span class="priority-badge med">Important</span>
+                    <h4>6. Update Link in Bio</h4>
+                    <p>Your Instagram/TikTok bio link should point to the hosted links.html page.</p>
+                    <div class="checkbox-item"><input type="checkbox" id="a6a"><label for="a6a">Update IG bio link to hosted links.html URL</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a6b"><label for="a6b">Update TikTok bio link</label></div>
+                </div>
+            </div>
+
+            <div class="action-section">
+                <h2>Phase 3: Content & Launch (This Week)</h2>
+
+                <div class="action-card priority-low">
+                    <span class="priority-badge low">Launch</span>
+                    <h4>7. Post your first reel</h4>
+                    <p>Use the scripts from REEL-SCRIPTS-AND-PROMPTS.html. Start with Reel 1 ("The AI Truth Bomb") - it's the most scroll-stopping hook.</p>
+                    <div class="checkbox-item"><input type="checkbox" id="a7a"><label for="a7a">Generate AI images using the Grok prompts</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a7b"><label for="a7b">Record Reel 1 using the script</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a7c"><label for="a7c">Post to IG + TikTok with provided captions</label></div>
+                </div>
+
+                <div class="action-card priority-low">
+                    <span class="priority-badge low">Launch</span>
+                    <h4>8. Test the full funnel end-to-end</h4>
+                    <p>Before going live, walk through the entire flow yourself.</p>
+                    <div class="checkbox-item"><input type="checkbox" id="a8a"><label for="a8a">Click link in bio → rate calculator → enter email</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a8b"><label for="a8b">Verify email arrives in Kit with correct tag</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a8c"><label for="a8c">Check that nurture email 1 gets queued</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a8d"><label for="a8d">Test purchase flow (use Kit test mode)</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a8e"><label for="a8e">Verify thank-you page loads with upsell</label></div>
+                    <div class="checkbox-item"><input type="checkbox" id="a8f"><label for="a8f">Verify post-purchase tag is applied</label></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: var(--charcoal); color: var(--cream); text-align: center; padding: 2rem; border-top: 6px solid var(--terra); margin-top: 3rem;">
+        <p style="font-size: 0.9rem; opacity: 0.7;">Closer Method - Built for @perolikebro</p>
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('tab-' + tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function copyText(btn) {
+            const block = btn.parentElement;
+            const text = block.textContent.replace('Copy', '').replace('Copied!', '').trim();
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

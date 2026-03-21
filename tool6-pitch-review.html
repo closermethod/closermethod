@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '35298849146380570');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Pitch Review | Get Instant Feedback | @closermethod</title>
+  <meta name="description" content="Paste your UGC pitch email and get instant AI-powered feedback. Score your hook, social proof, value prop, and CTA. Free tool by The Closer Method.">
+  <meta property="og:title" content="AI Pitch Review - Get Instant Feedback | The Closer Method">
+  <meta property="og:description" content="Paste your UGC pitch email and get instant AI-powered feedback. Score your hook, social proof, value prop, and CTA.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI Pitch Review | @closermethod">
+  <meta name="twitter:description" content="Paste your UGC pitch and get instant AI feedback on hook, social proof, value prop, and CTA.">
+  <link rel="canonical" href="https://ugc-closer-suite.netlify.app/tool6-pitch-review.html">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --surface2: #161616;
+      --border: #1e1e1e;
+      --text: #f0f0f0;
+      --text2: #888;
+      --accent: #c8a44e;
+      --accent2: #e8c95e;
+      --green: #22c55e;
+      --red: #ef4444;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAV BAR */
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      background-color: var(--bg);
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--accent);
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-link {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* EMAIL GATE */
+    .email-gate {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .gate-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .email-gate h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .email-gate .subtitle {
+      font-size: 14px;
+      color: var(--text2);
+      margin-bottom: 24px;
+    }
+
+    .email-input-group {
+      margin-bottom: 16px;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 12px 16px;
+      background-color: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    input[type="email"]:focus {
+      outline: none;
+      border-color: var(--accent);
+      background-color: var(--surface);
+    }
+
+    .unlock-btn {
+      width: 100%;
+      padding: 12px 16px;
+      background-color: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .unlock-btn:hover {
+      background-color: var(--accent2);
+      transform: translateY(-1px);
+    }
+
+    .unlock-btn:active {
+      transform: translateY(0);
+    }
+
+    .trust-line {
+      font-size: 12px;
+      color: var(--text2);
+      margin-top: 12px;
+      margin-bottom: 24px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text2);
+      margin-top: 4px;
+    }
+
+    /* TOOL CONTENT (hidden until email) */
+    .tool-content {
+      display: none;
+    }
+
+    .tool-content.active {
+      display: block;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text2);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      margin-top: 24px;
+    }
+
+    .section-title:first-child {
+      margin-top: 0;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 200px;
+      padding: 16px;
+      background-color: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      line-height: 1.5;
+      resize: vertical;
+      transition: all 0.3s ease;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background-color: var(--surface);
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    select, input[type="number"] {
+      width: 100%;
+      padding: 10px 12px;
+      background-color: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    select:focus, input[type="number"]:focus {
+      outline: none;
+      border-color: var(--accent);
+      background-color: var(--surface);
+    }
+
+    select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2322c55e' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+    }
+
+    .review-btn {
+      width: 100%;
+      padding: 14px 16px;
+      background-color: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+      margin-top: 8px;
+    }
+
+    .review-btn:hover:not(:disabled) {
+      background-color: var(--accent2);
+      transform: translateY(-1px);
+    }
+
+    .review-btn:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .review-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* RESULTS */
+    .results {
+      display: none;
+      margin-top: 32px;
+    }
+
+    .results.active {
+      display: block;
+    }
+
+    .overall-score {
+      background-color: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .score-value {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .score-label {
+      font-size: 14px;
+      color: var(--text2);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .score-green {
+      color: var(--green);
+    }
+
+    .score-gold {
+      color: var(--accent);
+    }
+
+    .score-red {
+      color: var(--red);
+    }
+
+    .category-breakdown {
+      margin-bottom: 24px;
+    }
+
+    .category-item {
+      background-color: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .category-name {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .category-score {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .score-bar {
+      width: 100%;
+      height: 6px;
+      background-color: var(--surface);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .score-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.5s ease;
+    }
+
+    .suggestions {
+      background-color: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .suggestions h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .suggestion-list {
+      list-style: none;
+    }
+
+    .suggestion-item {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .suggestion-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .suggestion-number {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .rewrite-section {
+      background-color: var(--surface2);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .rewrite-section h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    .rewrite-before {
+      background-color: var(--surface);
+      padding: 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--text2);
+    }
+
+    .rewrite-label {
+      font-size: 12px;
+      color: var(--text2);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .rewrite-after {
+      background-color: rgba(34, 197, 94, 0.05);
+      border-left: 3px solid var(--green);
+      padding: 12px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .cta-section h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .cta-section p {
+      font-size: 13px;
+      color: var(--text2);
+      margin-bottom: 12px;
+    }
+
+    .price-display {
+      margin-bottom: 16px;
+    }
+
+    .price-current {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .price-original {
+      font-size: 13px;
+      color: var(--text2);
+      text-decoration: line-through;
+      display: inline-block;
+      margin-left: 8px;
+    }
+
+    .price-payment-plan {
+      font-size: 12px;
+      color: var(--text2);
+      margin-top: 6px;
+    }
+
+    .cta-btn {
+      width: 100%;
+      padding: 12px 16px;
+      background-color: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cta-btn:hover {
+      background-color: var(--accent2);
+      transform: translateY(-1px);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text2);
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--accent2);
+    }
+
+    .error-message {
+      background-color: rgba(239, 68, 68, 0.1);
+      border: 1px solid var(--red);
+      border-radius: 6px;
+      padding: 12px;
+      color: var(--red);
+      font-size: 13px;
+      margin-bottom: 16px;
+      display: none;
+    }
+
+    .error-message.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="nav-brand">@closermethod</div>
+      <a href="https://ugc-closer-suite.netlify.app/" class="nav-link">Free AI Tools</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- EMAIL GATE -->
+    <div class="email-gate" id="emailGate">
+      <div class="gate-icon">📧</div>
+      <h1>AI Pitch Review</h1>
+      <p class="subtitle">Get instant AI-powered feedback on your UGC pitch emails</p>
+      
+      <div class="email-input-group">
+        <input 
+          type="email" 
+          id="emailInput" 
+          placeholder="your@email.com" 
+          required
+        >
+      </div>
+      
+      <button class="unlock-btn" id="unlockBtn">Unlock Tool</button>
+      
+      <div class="trust-line">No spam. Unsubscribe anytime.</div>
+      
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-number">400+</span>
+          <span class="stat-label">Creators Using</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Free Forever</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOOL CONTENT -->
+    <div class="tool-content" id="toolContent">
+      <div class="error-message" id="errorMessage"></div>
+
+      <div class="input-group">
+        <label>Your Pitch Email</label>
+        <textarea 
+          id="pitchText" 
+          placeholder="Paste your entire pitch email here..."
+        ></textarea>
+      </div>
+
+      <div class="input-group">
+        <label>Brand Type</label>
+        <select id="brandType">
+          <option value="">Select a brand type...</option>
+          <option value="skincare">Skincare/Beauty</option>
+          <option value="tech">Tech/SaaS</option>
+          <option value="food">Food & Beverage</option>
+          <option value="fashion">Fashion/Apparel</option>
+          <option value="health">Health & Fitness</option>
+          <option value="finance">Finance</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Your Rate ($)</label>
+        <input 
+          type="number" 
+          id="rate" 
+          placeholder="e.g., 500" 
+          min="0"
+        >
+      </div>
+
+      <button class="review-btn" id="reviewBtn">Review My Pitch</button>
+
+      <!-- RESULTS -->
+      <div class="results" id="results">
+        <div class="overall-score">
+          <div class="score-value" id="scoreValue">0</div>
+          <div class="score-label" id="scoreLabel">Overall Score</div>
+        </div>
+
+        <div class="category-breakdown" id="categoryBreakdown"></div>
+
+        <div class="suggestions">
+          <h3>Top 3 Improvements</h3>
+          <ul class="suggestion-list" id="suggestionList"></ul>
+        </div>
+
+        <div class="rewrite-section" id="rewriteSection">
+          <h3>Rewrite Suggestion</h3>
+          <div>
+            <span class="rewrite-label">Current Approach:</span>
+            <div class="rewrite-before" id="rewriteBefore"></div>
+          </div>
+          <div style="margin-top: 16px;">
+            <span class="rewrite-label">✓ Stronger Version:</span>
+            <div class="rewrite-after" id="rewriteAfter"></div>
+          </div>
+        </div>
+
+        <div class="cta-section">
+          <h3>Want the Full System?</h3>
+          <p>Master the art of pitching with The UGC Closer Kit</p>
+          <div class="price-display">
+            <span class="price-current">$197</span>
+            <span class="price-original" style="text-decoration:line-through">$246</span>
+            <div class="price-payment-plan">🔥 Tax season sale — ends March 31</div>
+          </div>
+          <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=pitch_review" class="cta-btn" target="_blank">Get The Kit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+<!-- SOCIAL PROOF - Real Creator Results -->
+<div style="max-width:700px;margin:40px auto;padding:0 20px">
+  <div style="text-align:center;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3,#666);margin-bottom:20px">What creators are saying</div>
+  
+  <div style="background:var(--card,#141414);border:1px solid var(--accent,#c8ff00);border-radius:12px;padding:20px;margin-bottom:12px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <span style="font-size:10px;font-weight:700;color:var(--accent,#c8ff00);background:rgba(200,255,0,0.1);padding:3px 8px;border-radius:6px;">VERIFIED</span>
+      <span style="font-size:11px;color:var(--text3,#666)">@Ty__Murph on X</span>
+    </div>
+    <div style="font-size:14px;color:var(--text,#e8e8e8);line-height:1.6;margin-bottom:8px">"Using her rate calculator and advice, <strong style="color:var(--accent,#c8ff00)">I negotiated from $150 to $800 for 2 videos.</strong>"</div>
+    <div style="font-size:12px;font-weight:600;color:var(--accent,#c8ff00)">Ty Murph &middot; 5.3x income increase</div>
+  </div>
+  
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div style="background:var(--card,#141414);border:1px solid var(--border,#222);border-radius:12px;padding:16px">
+      <div style="font-size:12px;color:var(--accent,#c8ff00);margin-bottom:6px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:13px;color:var(--text,#e8e8e8);line-height:1.5;margin-bottom:6px">"The calculator is BRILLIANT!! I finally know what to charge."</div>
+      <div style="font-size:11px;color:var(--green,#00c853);font-weight:600">Mel &middot; $300 &rarr; $800/video</div>
+    </div>
+    <div style="background:var(--card,#141414);border:1px solid var(--border,#222);border-radius:12px;padding:16px">
+      <div style="font-size:12px;color:var(--accent,#c8ff00);margin-bottom:6px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:13px;color:var(--text,#e8e8e8);line-height:1.5;margin-bottom:6px">"I sent pitches to 10 brands and got 2 responses in ONE DAY."</div>
+      <div style="font-size:11px;color:var(--green,#00c853);font-weight:600">Milena V &middot; 10 pitches, 2 replies</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:16px;font-size:12px;color:var(--text3,#666)">400+ creators already using these tools &middot; <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=tool_page&utm_campaign=closer_kit" style="color:var(--accent,#c8ff00);text-decoration:none;font-weight:600">Get the full system &rarr;</a></div>
+</div>
+
+<footer>
+    Built by <a href="https://instagram.com/closermethod" target="_blank">@closermethod</a> ·
+    <a href="https://ugc-closer-suite.netlify.app/">Free AI Tools</a>
+  </footer>
+
+  <script>
+    const KIT_FORM_ID = '9131179';
+    const emailGate = document.getElementById('emailGate');
+    const toolContent = document.getElementById('toolContent');
+    const emailInput = document.getElementById('emailInput');
+    const unlockBtn = document.getElementById('unlockBtn');
+    const reviewBtn = document.getElementById('reviewBtn');
+    const pitchText = document.getElementById('pitchText');
+    const brandType = document.getElementById('brandType');
+    const rate = document.getElementById('rate');
+    const results = document.getElementById('results');
+    const errorMessage = document.getElementById('errorMessage');
+
+    // Check if already unlocked
+    function initializeState() {
+      if (localStorage.getItem('closerToolsUnlocked') === 'true') {
+        showTool();
+      }
+    }
+
+    // Submit email and unlock
+    unlockBtn.addEventListener('click', async () => {
+      const email = emailInput.value.trim();
+      
+      if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address');
+        return;
+      }
+
+      unlockBtn.disabled = true;
+      unlockBtn.textContent = 'Unlocking...';
+
+      try {
+        const res = await fetch(`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email_address: email,
+            tags: ['pitch-review-user', 'ai-tool-user']
+          })
+        });
+        
+        localStorage.setItem('closerToolsUnlocked', 'true');
+        showTool();
+      } catch (e) {
+        // Fallback: unlock anyway on error
+        localStorage.setItem('closerToolsUnlocked', 'true');
+        showTool();
+      }
+    });
+
+    function showTool() {
+      emailGate.style.display = 'none';
+      toolContent.classList.add('active');
+    }
+
+    // Pitch Review Analysis
+    reviewBtn.addEventListener('click', () => {
+      const pitch = pitchText.value.trim();
+      
+      if (!pitch) {
+        showError('Please paste your pitch email');
+        return;
+      }
+
+      if (pitch.length < 50) {
+        showError('Your pitch seems too short. Please paste the full email.');
+        return;
+      }
+
+      if (!brandType.value) {
+        showError('Please select a brand type');
+        return;
+      }
+
+      clearError();
+      const analysis = analyzePitch(pitch, brandType.value, rate.value);
+      displayResults(analysis, pitch);
+    });
+
+    function showError(msg) {
+      errorMessage.textContent = msg;
+      errorMessage.classList.add('active');
+      results.classList.remove('active');
+    }
+
+    function clearError() {
+      errorMessage.classList.remove('active');
+    }
+
+    function analyzePitch(pitch, brand, rateValue) {
+      const lower = pitch.toLowerCase();
+      const scores = {};
+
+      // Hook/Subject Line (0-15)
+      scores.hook = 0;
+      if (lower.includes('portfolio') || lower.includes('previous')) scores.hook += 3;
+      if (/[!?]/.test(pitch.split('\n')[0])) scores.hook += 2;
+      if (lower.includes('brand') && lower.includes('love')) scores.hook += 4;
+      if (lower.includes('collab') || lower.includes('partnership')) scores.hook += 3;
+      if (lower.includes('exclusive') || lower.includes('unique')) scores.hook += 2;
+      if (lower.match(/hi|hey|hello/i) && lower.includes('@')) scores.hook += 1;
+      scores.hook = Math.min(scores.hook, 15);
+
+      // Social Proof (0-15)
+      scores.proof = 0;
+      const numberMatches = pitch.match(/\d+[kK%]|\d+,\d{3}|\b\d{4,}\b/g) || [];
+      scores.proof += Math.min(numberMatches.length * 2, 6);
+      if (lower.includes('followers') || lower.includes('engagement')) scores.proof += 3;
+      if (lower.includes('worked with') || lower.includes('collaborated')) scores.proof += 3;
+      if (lower.includes('results') || lower.includes('roi') || lower.includes('conversions')) scores.proof += 3;
+      if (lower.includes('average') || lower.includes('reach')) scores.proof += 2;
+      scores.proof = Math.min(scores.proof, 15);
+
+      // Value Proposition (0-15)
+      scores.value = 0;
+      if (lower.includes('benefit') || lower.includes('increase') || lower.includes('boost')) scores.value += 3;
+      if (lower.includes('audience') || lower.includes('reach') || lower.includes('exposure')) scores.value += 3;
+      if (lower.includes('authentic') || lower.includes('genuine') || lower.includes('authentic review')) scores.value += 2;
+      if (lower.includes('target') || lower.includes('demographic')) scores.value += 2;
+      if (/\b(quality|creative|professional|high-end)\b/i.test(pitch)) scores.value += 3;
+      if (!lower.includes("i'd love to work with you")) scores.value += 2;
+      scores.value = Math.min(scores.value, 15);
+
+      // Rate Positioning (0-15)
+      scores.rate = 0;
+      if (rateValue && parseInt(rateValue) > 0) scores.rate += 4;
+      if (lower.includes('rate') || lower.includes('invest') || lower.includes('package')) scores.rate += 3;
+      if (!lower.includes("what's your budget") && !lower.includes("do you have a budget")) scores.rate += 2;
+      if (lower.includes('anchoring') || lower.includes('based on')) scores.rate += 2;
+      if (lower.includes('flexible') || lower.includes('negotiable')) scores.rate += 1;
+      if (lower.includes('value') && lower.includes('invest')) scores.rate += 3;
+      scores.rate = Math.min(scores.rate, 15);
+
+      // Call to Action (0-15)
+      scores.cta = 0;
+      if (lower.includes('next step') || lower.includes('next') && lower.includes('discuss')) scores.cta += 3;
+      if (lower.includes('schedule') || lower.includes('calendar') || lower.includes('availability')) scores.cta += 3;
+      if (lower.includes('reply') || lower.includes('get back')) scores.cta += 2;
+      if (lower.includes('look forward') || lower.includes('excited')) scores.cta += 2;
+      if (lower.includes('asap') || lower.includes('limited') || lower.includes('soon')) scores.cta += 2;
+      if (lower.includes('thank') || lower.includes('regards') || lower.includes('best')) scores.cta += 3;
+      scores.cta = Math.min(scores.cta, 15);
+
+      // Professionalism (0-10)
+      scores.prof = 0;
+      const typoScore = checkTypos(pitch);
+      scores.prof += Math.max(0, 3 - typoScore);
+      scores.prof += (pitch.length > 100 && pitch.length < 1500) ? 3 : 1;
+      if (/^dear|hello|hi/i.test(pitch)) scores.prof += 2;
+      if (/regards|sincerely|best|cheers/i.test(pitch)) scores.prof += 2;
+      scores.prof = Math.min(scores.prof, 10);
+
+      // Personalization (0-15)
+      scores.personal = 0;
+      if (lower.includes('product') || lower.includes('line') || lower.includes('collection')) scores.personal += 3;
+      if (lower.includes('campaign') || lower.includes('initiative') || lower.includes('project')) scores.personal += 3;
+      if (lower.includes('values') || lower.includes('mission') || lower.includes('vision')) scores.personal += 3;
+      if (lower.includes('recent') || lower.includes('latest') || lower.includes('new')) scores.personal += 3;
+      if (lower.includes('instagram') || lower.includes('tiktok') || lower.includes('channel')) scores.personal += 2;
+      const brandMentions = (pitch.match(/brand|company|brand name/gi) || []).length;
+      if (brandMentions > 1) scores.personal += 1;
+      scores.personal = Math.min(scores.personal, 15);
+
+      const total = Math.round((scores.hook + scores.proof + scores.value + scores.rate + scores.cta + scores.prof + scores.personal) / 7);
+
+      return {
+        total,
+        scores,
+        pitch
+      };
+    }
+
+    function checkTypos(text) {
+      let typos = 0;
+      const commonTypos = /\byour\b.*\byou\b|\btheir\b.*\bthey\b|\bits\b.*\bit\b/i;
+      if (commonTypos.test(text)) typos++;
+      if (/\s{2,}/.test(text)) typos++;
+      if (/[a-z][A-Z]/g.test(text)) typos++;
+      return typos;
+    }
+
+    function displayResults(analysis, pitch) {
+      const { total, scores } = analysis;
+
+      // Overall score
+      const scoreValue = document.getElementById('scoreValue');
+      const scoreLabel = document.getElementById('scoreLabel');
+      scoreValue.textContent = total;
+      
+      if (total >= 80) {
+        scoreValue.className = 'score-value score-green';
+        scoreLabel.textContent = 'Excellent Pitch! Ready to Send';
+      } else if (total >= 60) {
+        scoreValue.className = 'score-value score-gold';
+        scoreLabel.textContent = 'Good Foundation. Polish These Areas';
+      } else {
+        scoreValue.className = 'score-value score-red';
+        scoreLabel.textContent = 'Needs Work. Follow Suggestions Below';
+      }
+
+      // Category breakdown
+      const categories = [
+        { name: 'Hook/Subject Line', key: 'hook', max: 15 },
+        { name: 'Social Proof', key: 'proof', max: 15 },
+        { name: 'Value Proposition', key: 'value', max: 15 },
+        { name: 'Rate Positioning', key: 'rate', max: 15 },
+        { name: 'Call to Action', key: 'cta', max: 15 },
+        { name: 'Professionalism', key: 'prof', max: 10 },
+        { name: 'Personalization', key: 'personal', max: 15 }
+      ];
+
+      const breakdown = document.getElementById('categoryBreakdown');
+      breakdown.innerHTML = '';
+
+      categories.forEach(cat => {
+        const score = scores[cat.key];
+        const percent = (score / cat.max) * 100;
+        let color;
+        if (percent >= 80) color = 'var(--green)';
+        else if (percent >= 60) color = 'var(--accent)';
+        else color = 'var(--red)';
+
+        const html = `
+          <div class="category-item">
+            <div class="category-header">
+              <div class="category-name">${cat.name}</div>
+              <div class="category-score" style="color: ${color}">${score}/${cat.max}</div>
+            </div>
+            <div class="score-bar">
+              <div class="score-fill" style="width: ${percent}%; background-color: ${color};"></div>
+            </div>
+          </div>
+        `;
+        breakdown.innerHTML += html;
+      });
+
+      // Suggestions
+      const weakAreas = categories
+        .map(cat => ({ name: cat.name, key: cat.key, score: scores[cat.key], max: cat.max }))
+        .sort((a, b) => (a.score / a.max) - (b.score / b.max))
+        .slice(0, 3);
+
+      const suggestionList = document.getElementById('suggestionList');
+      suggestionList.innerHTML = '';
+
+      const suggestions = {
+        'hook': 'Start with a specific metric or achievement, not a generic greeting. Example: "Hi [Name] - I delivered 2.3M impressions in Q4 and my audience is 89% your target demographic"',
+        'proof': 'Include concrete numbers: follower count, engagement rate, avg reach, or past results. Format: "300K followers, 8% avg engagement" works better than vague claims',
+        'value': 'Lead with what the brand gains, not what you want. Instead of "I\'d love to work with you," try "I can introduce your product to 300K engaged wellness enthusiasts"',
+        'rate': 'State your rate confidently with anchoring. Example: "My standard rate is $800 per deliverable, which is below market for this engagement level"',
+        'cta': 'Create urgency and next steps: "I\'m booking Q2 slots now - my schedule fills 2-3 weeks out. Available this week for a quick call?"',
+        'prof': 'Proofread for grammar and format consistently. Use short paragraphs, proper spacing, and a professional sign-off',
+        'personal': 'Mention specific products, campaigns, or brand values you admire. Example: "Your sustainable packaging aligns with my audience\'s values"'
+      };
+
+      weakAreas.forEach((area, i) => {
+        const sugg = suggestions[area.key] || 'Strengthen this section with more specific details';
+        const li = document.createElement('li');
+        li.className = 'suggestion-item';
+        li.innerHTML = `<span class="suggestion-number">${i + 1}.</span> <strong>${area.name}:</strong> ${sugg}`;
+        suggestionList.appendChild(li);
+      });
+
+      // Rewrite suggestion for weakest area
+      const weakest = weakAreas[0];
+      const rewriteMap = {
+        'hook': {
+          before: 'Hi! I would love to work with your brand.',
+          after: 'Hi [Name] - I have 285K engaged followers in your target demographic and delivered 3.2M impressions for similar brands last quarter.'
+        },
+        'proof': {
+          before: 'I have a pretty good following and my audience really loves products like yours.',
+          after: 'I have 165K followers with 7.5% average engagement and my audience is 78% female, ages 25-34, interested in wellness.'
+        },
+        'value': {
+          before: 'I would really love to collaborate with your company and hopefully we could work together.',
+          after: 'I can introduce your product to 165K engaged consumers who match your target demographic. Past brand partnerships averaged 4.2% CTR and $2.80 CAC.'
+        },
+        'rate': {
+          before: 'What's your budget for UGC creators? I can work with whatever you're thinking.',
+          after: 'My rate is $600 per deliverable for this package. I\'ve found this reflects industry standards for accounts my size, and I offer 2 rounds of revisions.'
+        },
+        'cta': {
+          before: 'Let me know what you think. Thanks!',
+          after: 'I have 3 open slots this month for shoots - let me know your deadlines and I can send over available dates. Available for a quick call Tuesday or Wednesday?'
+        },
+        'prof': {
+          before: 'Hi, I am inerested in working with you're company bc I think ur products are great for my audiance.',
+          after: 'Hi [Brand Name], I\'m interested in creating content for your product line. My audience demographics align perfectly with your target market.'
+        },
+        'personal': {
+          before: 'I love your brand and I think my followers would like your products.',
+          after: 'I\'ve been following your sustainable fashion initiative and it resonates strongly with my audience. Your Q1 capsule collection specifically aligns with the ethical consumption values my followers prioritize.'
+        }
+      };
+
+      const rewrite = rewriteMap[weakest.key] || { before: 'Current approach', after: 'Improved version' };
+      document.getElementById('rewriteBefore').textContent = rewrite.before;
+      document.getElementById('rewriteAfter').textContent = rewrite.after;
+
+      results.classList.add('active');
+      results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Initialize
+    initializeState();
+  </script>
+</body>
+</html>

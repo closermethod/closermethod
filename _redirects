@@ -1,0 +1,31 @@
+# Tool shortcut URLs
+/quiz        /closer-score-quiz.html        200
+/rate        /tool1-rate-calculator.html    200
+/qualify     /tool2-brand-qualifier.html    200
+/coach       /tool3-closer-coach.html       200
+/repurpose   /tool4-repurposing-engine.html 200
+/free        /tool5-negotiation-sim.html    200
+/negotiate   /tool5-negotiation-sim.html    200
+/pitch-review /tool6-pitch-review.html      200
+/share       /tool7-share-score.html        200
+/community   /tool8-closer-community.html   200
+
+# Legacy URL compatibility (! forces redirect over existing files)
+/tool5-landing-page   /tool5-negotiation-sim.html   200!
+/ai-script-dataset    /                             301!
+
+# Legacy product pages → Stan Store checkout
+/first-1k-kit.html                https://stan.store/perolikebro/p/the-ugc-closer-kit    301
+/the-authenticity-premium.html    https://stan.store/perolikebro/p/the-ugc-closer-kit    301
+
+# Rate calculator funnel
+/rate-calc       /rate-calculator-landing.html    200
+/calculate       /rate-calculator-landing.html    200
+
+# Brand database funnel
+/brands          /brand-database.html             200
+/database        /brand-database.html             200
+
+# OTO funnel pages
+/oto             /oto.html              200
+/bundle-access   /bundle-access.html    200

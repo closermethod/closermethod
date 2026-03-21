@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Time Offer - UGC Closer Method</title>
+<meta name="robots" content="noindex, nofollow">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '35298849146380570');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {content_name:'pitch-protect-bundle-oto',content_type:'product',value:47,currency:'USD'});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0a0a0a; --bg2:#111111; --bg3:#1a1a1a; --card:#141414;
+  --border:#222; --border2:#333;
+  --text:#e8e8e8; --text2:#999; --text3:#666;
+  --accent:#c8ff00; --accent2:#a8d900;
+  --red:#ff4444; --green:#00c853;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'DM Sans',-apple-system,sans-serif;
+  background:var(--bg); color:var(--text);
+  line-height:1.6; -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+h1,h2,h3,h4 { font-family:'Space Grotesk',sans-serif; }
+
+.urgency-bar {
+  background:var(--accent); color:#000;
+  text-align:center; padding:10px 16px;
+  font-size:13px; font-weight:700;
+  letter-spacing:0.02em;
+  position:sticky; top:0; z-index:100;
+}
+.urgency-bar span { font-family:'Space Grotesk',sans-serif; }
+
+.container { max-width:620px; margin:0 auto; padding:0 20px 80px; }
+
+.timer-block { text-align:center; padding:40px 0 32px; animation:fadeUp .6s ease both; }
+.timer-label { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:2px; color:var(--red); margin-bottom:12px; }
+.timer { font-family:'Space Grotesk',sans-serif; font-size:clamp(48px,10vw,64px); font-weight:700; color:#fff; letter-spacing:.02em; font-variant-numeric:tabular-nums; }
+.timer-sub { font-size:12px; color:var(--text3); margin-top:8px; }
+
+.headline { text-align:center; margin-bottom:40px; animation:fadeUp .6s .1s ease both; }
+.headline h1 { font-size:clamp(28px,6vw,42px); font-weight:700; line-height:1.15; color:#fff; margin-bottom:16px; letter-spacing:-.02em; }
+.headline h1 .accent { color:var(--accent); font-style:italic; }
+.headline p { font-size:clamp(15px,2.5vw,17px); color:var(--text2); max-width:500px; margin:0 auto; line-height:1.6; }
+
+.offer-card { background:var(--card); border:1px solid var(--border2); border-radius:12px; overflow:hidden; animation:fadeUp .6s .2s ease both; }
+.offer-header { background:linear-gradient(135deg, rgba(200,255,0,0.08), rgba(200,255,0,0.02)); border-bottom:1px solid var(--border); padding:28px 28px 24px; text-align:center; }
+.offer-tag { display:inline-block; background:rgba(200,255,0,0.12); border:1px solid rgba(200,255,0,0.25); color:var(--accent); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; padding:5px 14px; border-radius:99px; margin-bottom:16px; }
+.offer-title { font-size:clamp(22px,5vw,28px); font-weight:700; color:#fff; margin-bottom:4px; }
+.offer-subtitle { font-size:14px; color:var(--text2); }
+.offer-body { padding:28px; }
+
+.includes-label { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:2px; color:var(--accent); margin-bottom:20px; }
+.include-item { display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.04); }
+.include-item:last-child { border-bottom:none; }
+.include-icon { flex-shrink:0; width:36px; height:36px; border-radius:8px; background:rgba(200,255,0,0.08); display:flex; align-items:center; justify-content:center; font-size:16px; }
+.include-text h4 { font-size:15px; font-weight:700; color:#fff; margin-bottom:2px; }
+.include-text p { font-size:13px; color:var(--text2); line-height:1.5; }
+
+.pricing-section { text-align:center; padding:28px 28px 8px; border-top:1px solid var(--border); }
+.price-row { display:flex; align-items:baseline; justify-content:center; gap:12px; margin-bottom:6px; }
+.price-old { font-family:'Space Grotesk',sans-serif; font-size:22px; color:var(--text3); text-decoration:line-through; font-weight:500; }
+.price-new { font-family:'Space Grotesk',sans-serif; font-size:clamp(40px,9vw,52px); font-weight:700; color:#fff; }
+.price-save { display:inline-block; background:rgba(0,200,83,0.1); color:var(--green); font-size:13px; font-weight:700; padding:4px 12px; border-radius:8px; margin-bottom:20px; }
+
+.cta-section { padding:0 28px 28px; }
+.cta-btn { display:block; width:100%; padding:18px 24px; background:var(--accent); color:#000; font-family:'DM Sans',sans-serif; font-size:17px; font-weight:800; text-align:center; text-decoration:none; border:none; border-radius:10px; cursor:pointer; transition:.15s; letter-spacing:-.01em; }
+.cta-btn:hover { background:var(--accent2); transform:translateY(-2px); box-shadow:0 8px 24px rgba(200,255,0,0.15); }
+.cta-trust { display:flex; justify-content:center; gap:16px; margin-top:12px; font-size:11px; color:var(--text3); }
+.guarantee { text-align:center; margin-top:16px; font-size:13px; color:var(--text2); }
+
+.proof { margin-top:32px; animation:fadeUp .6s .3s ease both; }
+.proof-card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:24px; margin-bottom:12px; }
+.proof-stars { color:var(--accent); font-size:14px; margin-bottom:8px; }
+.proof-quote { font-size:14px; color:var(--text2); line-height:1.6; font-style:italic; margin-bottom:12px; }
+.proof-author { font-size:12px; font-weight:700; color:#fff; }
+.proof-detail { font-size:11px; color:var(--text3); margin-top:2px; }
+
+.decline { text-align:center; margin-top:28px; animation:fadeUp .6s .4s ease both; }
+.decline a { color:var(--text3); font-size:13px; text-decoration:none; border-bottom:1px solid transparent; transition:color .2s, border-color .2s; }
+.decline a:hover { color:var(--text2); border-bottom-color:var(--text3); }
+
+.oto-footer { text-align:center; margin-top:48px; padding-top:24px; border-top:1px solid var(--border); }
+.oto-footer p { font-size:11px; color:var(--text3); }
+.oto-footer a { color:var(--accent); text-decoration:none; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+.expired-overlay { display:none; position:fixed; inset:0; z-index:200; background:rgba(0,0,0,0.92); flex-direction:column; align-items:center; justify-content:center; padding:40px; text-align:center; }
+.expired-overlay.show { display:flex; }
+.expired-overlay h2 { font-size:28px; color:#fff; margin-bottom:12px; }
+.expired-overlay p { font-size:15px; color:var(--text2); margin-bottom:28px; max-width:400px; }
+.expired-overlay a { padding:16px 32px; background:var(--accent); color:#000; font-weight:700; border-radius:10px; text-decoration:none; font-size:16px; }
+</style>
+</head>
+<body>
+
+<div class="urgency-bar">
+  <span>⚡ ONE TIME OFFER</span> - This page disappears when you close it
+</div>
+
+<div class="container">
+
+  <div class="timer-block">
+    <div class="timer-label">This offer expires in</div>
+    <div class="timer" id="timer">10:00</div>
+    <div class="timer-sub">After this, you'll only be able to buy these separately for $97</div>
+  </div>
+
+  <div class="headline">
+    <h1>You know your rate.<br>Now get the scripts to <span class="accent">close at it.</span></h1>
+    <p>The rate calculator told you what to charge. This bundle gives you the exact words to pitch brands and handle every pushback - so you actually get paid that number.</p>
+  </div>
+
+  <div class="offer-card">
+    <div class="offer-header">
+      <div class="offer-tag">Only available right now</div>
+      <div class="offer-title">The Pitch + Protect Bundle</div>
+      <div class="offer-subtitle">UGC Pitch Vault + Objection Handler Playbook</div>
+    </div>
+
+    <div class="offer-body">
+      <div class="includes-label">What's inside</div>
+
+      <div class="include-item">
+        <div class="include-icon">📨</div>
+        <div class="include-text">
+          <h4>9 Plug-and-Play Pitch Templates</h4>
+          <p>Cold DM, cold email, and follow-up scripts - tested on real brands. Copy, paste, send.</p>
+        </div>
+      </div>
+
+      <div class="include-item">
+        <div class="include-icon">🎯</div>
+        <div class="include-text">
+          <h4>3 DM Scripts That Get Replies</h4>
+          <p>The exact openers that turned 9/10 ghosted pitches into brand conversations.</p>
+        </div>
+      </div>
+
+      <div class="include-item">
+        <div class="include-icon">📋</div>
+        <div class="include-text">
+          <h4>Complete Follow-Up System</h4>
+          <p>7-day follow-up sequence so no deal falls through the cracks. Most creators quit after one message.</p>
+        </div>
+      </div>
+
+      <div class="include-item">
+        <div class="include-icon">🛡️</div>
+        <div class="include-text">
+          <h4>30 Objection Handler Scripts</h4>
+          <p>"Your rate is too high." "We'll just use AI." "We only pay in product." - Every pushback, handled.</p>
+        </div>
+      </div>
+
+      <div class="include-item">
+        <div class="include-icon">🧠</div>
+        <div class="include-text">
+          <h4>The Psychology Behind Each Script</h4>
+          <p>Know WHY each script works - so you can adapt it to any brand, any scenario, any curveball.</p>
+        </div>
+      </div>
+
+      <div class="include-item">
+        <div class="include-icon">📐</div>
+        <div class="include-text">
+          <h4>The 3-Option Pricing Menu</h4>
+          <p>Present your rate so brands choose between your prices - not between you and someone cheaper.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-section">
+      <div class="price-row">
+        <span class="price-old">$97</span>
+        <span class="price-new">$47</span>
+      </div>
+      <div class="price-save">You save $50 - only on this page</div>
+    </div>
+
+    <div class="cta-section">
+      <a href="https://stan.store/perolikebro/p/the-pitch--protect-bundle?utm_source=website&utm_medium=oto&utm_campaign=pitch-protect-bundle" class="cta-btn" id="ctaBtn">
+        Add the Scripts That Close Deals → $47
+      </a>
+      <div class="cta-trust">
+        <span>⚡ Instant delivery</span>
+        <span>🛡️ 30-day guarantee</span>
+        <span>♾️ Yours forever</span>
+      </div>
+      <div style="display:flex;justify-content:center;gap:20px;margin-top:12px;margin-bottom:12px;flex-wrap:wrap">
+        <div style="text-align:center"><div style="font-size:18px;font-weight:700;color:var(--accent)">400+</div><div style="font-size:10px;color:var(--text3)">creators inside</div></div>
+        <div style="text-align:center"><div style="font-size:18px;font-weight:700;color:var(--accent)">+$500</div><div style="font-size:10px;color:var(--text3)">avg rate increase</div></div>
+        <div style="text-align:center"><div style="font-size:18px;font-weight:700;color:var(--accent)">5.3x</div><div style="font-size:10px;color:var(--text3)">Ty's income jump</div></div>
+      </div>
+      <div class="guarantee">
+        Use these scripts on one real brand. If you don't land a reply, email me for a full refund. Zero questions, zero hoops.
+      </div>
+    </div>
+  </div>
+
+  <div class="proof">
+    <!-- TY MURPH - Pitch scripts are what the OTO sells! -->
+    <div class="proof-card" style="border:1px solid var(--accent);background:linear-gradient(135deg,rgba(200,255,0,0.03),var(--card))">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+        <span style="font-size:10px;font-weight:700;color:var(--accent);background:rgba(200,255,0,0.1);padding:3px 8px;border-radius:6px;">VERIFIED PUBLIC POST</span>
+      </div>
+      <div class="proof-quote" style="font-style:normal;font-size:15px">"I was in the middle of a negotiation for 2 UGC videos for $150. Using her rate calculator and <strong style="color:var(--accent)">scripts, I negotiated to $800 for 2 videos.</strong>"</div>
+      <div class="proof-author">Ty Murph - @Ty__Murph <span style="color:var(--blue)">&#10003;</span></div>
+      <div class="proof-detail" style="color:var(--green)">$150 → $800 with the exact scripts in this bundle</div>
+    </div>
+    <div class="proof-card">
+      <div class="proof-stars">★★★★★</div>
+      <div class="proof-quote">"I used one of the pitch templates to a really big baseball brand. I got a good conversion going! The templates work."</div>
+      <div class="proof-author">Abbie C. - UGC Creator</div>
+      <div class="proof-detail" style="color:var(--green)">Pitch template → big brand conversation</div>
+    </div>
+    <div class="proof-card">
+      <div class="proof-stars">★★★★★</div>
+      <div class="proof-quote">"Modified the outreach templates, sent them to 10 brands, got 2 responses in ONE DAY. Both asked for concepts, not prices."</div>
+      <div class="proof-author">Milena V - Millennial UGC Creator <span style="color:var(--blue)">&#10003;</span></div>
+      <div class="proof-detail" style="color:var(--green)">10 pitches → 2 responses in 24 hours using these scripts</div>
+    </div>
+    <div class="proof-card">
+      <div class="proof-stars">★★★★★</div>
+      <div class="proof-quote">"The rate card scripts are BRILLIANT!! I finally know exactly what to charge and the scripts give me the confidence to actually hold the line."</div>
+      <div class="proof-author">Mel Van Niekerk - UGC Creator</div>
+      <div class="proof-detail" style="color:var(--green)">Went from guessing → confident rate defense</div>
+    </div>
+
+    <!-- URGENCY REINFORCEMENT -->
+    <div style="text-align:center;margin-top:20px;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+      <div style="font-size:13px;color:var(--text2);line-height:1.6">These creators used the <strong style="color:var(--accent)">exact scripts</strong> in this bundle to close higher deals. At $47, one successful pitch pays for it <strong style="color:var(--accent)">17x over.</strong></div>
+    </div>
+  </div>
+
+  <div class="decline">
+    <a href="vsl.html?from=oto" id="declineLink">No thanks, I'll pass on this bundle →</a>
+  </div>
+
+  <div class="oto-footer">
+    <p>© 2026 Elisabeth · <a href="https://instagram.com/closermethod" target="_blank">@closermethod</a> · Built from 10 years at Criteo · Deel · Autodesk · HBO</p>
+  </div>
+
+</div>
+
+<div class="expired-overlay" id="expiredOverlay">
+  <h2>This offer has expired.</h2>
+  <p>The bundle deal is no longer available at this price. You can still get the Pitch Vault and Objection Handler separately on the store.</p>
+  <a href="vsl.html?from=oto">Continue →</a>
+</div>
+
+<script>
+const TIMER_KEY = 'oto_timer_end';
+let endTime;
+
+const stored = sessionStorage.getItem(TIMER_KEY);
+if (stored && parseInt(stored) > Date.now()) {
+  endTime = parseInt(stored);
+} else {
+  endTime = Date.now() + 10 * 60 * 1000;
+  sessionStorage.setItem(TIMER_KEY, endTime);
+}
+
+const timerEl = document.getElementById('timer');
+
+function updateTimer() {
+  const remaining = endTime - Date.now();
+  if (remaining <= 0) {
+    timerEl.textContent = '0:00';
+    document.getElementById('expiredOverlay').classList.add('show');
+    return;
+  }
+  const mins = Math.floor(remaining / 60000);
+  const secs = Math.floor((remaining % 60000) / 1000);
+  timerEl.textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+
+  if (remaining < 120000) {
+    timerEl.style.color = 'var(--red)';
+  }
+
+  requestAnimationFrame(updateTimer);
+}
+updateTimer();
+
+const OTO_SEEN = 'oto_seen';
+if (localStorage.getItem(OTO_SEEN) === 'true') {
+  window.location.href = 'vsl.html?from=oto';
+}
+
+document.getElementById('declineLink').addEventListener('click', function() {
+  localStorage.setItem(OTO_SEEN, 'true');
+});
+
+document.getElementById('ctaBtn').addEventListener('click', function() {
+  localStorage.setItem(OTO_SEEN, 'true');
+  if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'pitch-protect-bundle',value:47,currency:'USD'});
+});
+</script>
+
+</body>
+</html>

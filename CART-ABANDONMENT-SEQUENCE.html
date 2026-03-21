@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cart Abandonment Sequences - Kit-Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FDFCF9;
+  --surface:#fff;
+  --cream:#F8F5EF;
+  --border:#E5E0D8;
+  --text:#1C1917;
+  --text2:#57534E;
+  --text3:#A8A29E;
+  --forest:#2D5A3D;
+  --forest-light:#EBF3EE;
+  --forest-dark:#1B3926;
+  --terra:#B85C38;
+  --terra-light:#FFF6F0;
+  --charcoal:#292524;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.wrap{max-width:760px;margin:0 auto;padding:48px 24px}
+
+/* Header */
+.page-header{margin-bottom:48px}
+.page-header h1{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--text);margin-bottom:8px}
+.page-header .sub{color:var(--text2);font-size:15px;line-height:1.7;margin-bottom:12px}
+.page-header .sub code{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--forest);background:var(--forest-light);padding:2px 8px;border-radius:4px}
+
+/* Strategy Card */
+.strategy-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:48px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.strategy-label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--forest);margin-bottom:12px}
+.strategy-card p{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:12px}
+.strategy-card strong{color:var(--text)}
+.strategy-intro{background:var(--forest-light);border:1px solid rgba(45,90,61,.12);border-radius:12px;padding:20px;margin:20px 0;font-size:14px;color:var(--text2);line-height:1.7}
+.strategy-intro strong{color:var(--forest-dark)}
+
+/* Sequence Section */
+.sequence-section{margin-bottom:56px;border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--surface);box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.sequence-header{background:var(--charcoal);padding:28px;color:#fff}
+.sequence-header h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:4px}
+.sequence-header .meta{font-size:13px;color:rgba(255,255,255,.7);margin:8px 0}
+.sequence-header .tag-badge{display:inline-block;background:rgba(45,90,61,.3);color:#88C99D;font-size:11px;font-weight:600;padding:4px 12px;border-radius:6px;margin-top:12px;letter-spacing:.5px;font-family:'JetBrains Mono',monospace}
+
+/* Email Blocks */
+.email-block{padding:24px;border-bottom:1px solid var(--border)}
+.email-block:last-of-type{border-bottom:none}
+.email-meta{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.email-num{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--forest)}
+.email-timing{text-align:right}
+.email-timing .when{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--forest);font-weight:600;text-transform:uppercase;letter-spacing:1.5px;background:var(--forest-light);padding:3px 10px;border-radius:6px;display:inline-block}
+.email-timing .purpose{font-size:12px;color:var(--text3);font-style:italic;margin-top:6px;display:block}
+
+/* Field */
+.field{margin-bottom:16px}
+.field-label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--forest);margin-bottom:8px}
+.field-option{font-size:14px;color:var(--text2);padding:10px 14px;background:var(--cream);border-radius:8px;border:1px solid var(--border);margin-bottom:6px}
+.field-option code{font-family:'JetBrains Mono',monospace;color:var(--forest);font-size:11px;font-weight:600}
+
+/* Body Text */
+.body-text{font-size:14px;color:var(--text);line-height:1.85;white-space:pre-wrap;background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:20px;margin:16px 0}
+.body-text .highlight{background:var(--forest-light);padding:2px 8px;border-radius:4px;color:var(--forest-dark);font-weight:600}
+.body-text .highlight-terra{background:var(--terra-light);padding:2px 8px;border-radius:4px;color:var(--terra);font-weight:600}
+
+/* PS */
+.ps{margin-top:16px;padding-top:12px;border-top:1px solid var(--border);font-size:13px;color:var(--text2);line-height:1.7}
+.ps a{color:var(--forest);font-weight:600;text-decoration:none}
+.ps a:hover{text-decoration:underline}
+
+/* Copy button */
+.copy-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:var(--forest-light);border:1px solid rgba(45,90,61,.15);border-radius:8px;color:var(--forest);font-size:12px;font-weight:600;cursor:pointer;margin-top:12px;transition:all .2s;font-family:'DM Sans',sans-serif}
+.copy-btn:hover{background:var(--forest);color:#fff}
+
+/* Setup Notes */
+.setup-notes{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin-top:48px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.setup-notes h3{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--forest);margin-bottom:16px}
+.setup-notes h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 12px 0}
+.setup-notes ul{list-style:none;padding:0;margin-bottom:24px}
+.setup-notes li{padding:10px 0;font-size:14px;color:var(--text2);border-bottom:1px solid var(--border);padding-left:24px;position:relative;line-height:1.65}
+.setup-notes li:last-of-type{border:none}
+.setup-notes li::before{content:'→';position:absolute;left:0;color:var(--forest);font-weight:700}
+.setup-notes li strong{color:var(--text)}
+.setup-notes code{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--forest);background:var(--forest-light);padding:1px 6px;border-radius:3px}
+.setup-notes ol{padding-left:20px;margin-bottom:24px}
+.setup-notes ol li{list-style:decimal;padding-left:6px;border:none;font-size:14px;color:var(--text2);margin-bottom:8px;line-height:1.65}
+.setup-notes ol li::before{content:none}
+
+/* Note */
+.note-box{background:var(--terra-light);border:1px solid rgba(184,92,56,.12);border-radius:12px;padding:20px;margin-top:16px}
+.note-box h4{font-size:13px;font-weight:700;color:var(--terra);margin-bottom:8px}
+.note-box p{font-size:13px;color:var(--text2);line-height:1.65}
+
+@media(max-width:600px){
+  .wrap{padding:24px 16px}
+  .page-header h1{font-size:26px}
+  .sequence-header{padding:20px}
+  .email-block{padding:16px}
+  .email-meta{flex-direction:column;gap:8px;align-items:flex-start}
+  .email-timing{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="page-header">
+  <h1>Cart Abandonment Sequences</h1>
+  <p class="sub">Three independent sequences for three products. Trigger when someone visits checkout but doesn't complete the purchase. Run automatically in Kit using the cart abandon tag.</p>
+</div>
+
+<div class="strategy-card">
+  <div class="strategy-label">Funnel Strategy - March 2026</div>
+  <p><strong>Purpose:</strong> Recover revenue from incomplete purchases. Each product has its own sequence with custom messaging that speaks to the objection (price, value, promise) that made them abandon.</p>
+  
+  <div class="strategy-intro">
+    <strong>How it works:</strong> When someone visits the checkout page for a specific product but bounces without paying, Kit applies a corresponding cart abandon tag. The automation then runs a short, focused sequence (2-3 emails) designed to remove the final objection and drive the conversion. Each sequence has its own voice and timeline - urgency increases with each email. The goal is to convert the same person who was already committed enough to reach checkout.
+  </div>
+  
+  <p><strong>Three sequences, three different products:</strong></p>
+  <p>1. Authenticity Premium ($297) - 3 emails. Tag: <code>ap-cart-abandon</code></p>
+  <p>2. First $1K Kit ($27) - 2 emails. Tag: <code>kit-cart-abandon</code></p>
+  <p>3. Closer Kit ($246) - 2 emails. Tag: <code>closer-cart-abandon</code></p>
+</div>
+
+<!-- ============================================================
+     SEQUENCE A: AUTHENTICITY PREMIUM ($297) CART ABANDONMENT
+     ============================================================ -->
+
+<div class="sequence-section" id="seq-a">
+  <div class="sequence-header">
+    <h2>Sequence A: Authenticity Premium ($297)</h2>
+    <p class="meta">Cart Abandonment • 3 Emails • 2 Days Total</p>
+    <span class="tag-badge">Kit Tag: ap-cart-abandon</span>
+  </div>
+
+  <!-- Email 1 -->
+  <div class="email-block">
+    <div class="email-meta">
+      <div class="email-num">1</div>
+      <div class="email-timing">
+        <span class="when">1 Hour</span>
+        <span class="purpose">Soft reminder + restate the core promise</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Subject Line Options (A/B Test)</div>
+      <div class="field-option"><code>A:</code> Your playbook is waiting</div>
+      <div class="field-option"><code>B:</code> The AI response script you need - still here</div>
+      <div class="field-option"><code>C:</code> 60 seconds to claim your rate increase</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">From Line</div>
+      <div class="field-option">Elisabeth &lt;elisabeth@closermethod.com&gt;</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Body</div>
+      <div class="body-text">Hey {{ subscriber.first_name | default: "there" }},
+
+You were just on the checkout page for the Authenticity Premium. I'm guessing something made you pause.
+
+Price? Timing? Or you just wanted to sleep on it?
+
+All valid. But I wanted to remind you what you're about to lock in:
+
+<span class="highlight">The Authenticity Premium turns the AI argument into your biggest rate increase.</span>
+
+Every stat, every script, every framework - designed so that when a brand says "we're thinking AI," you don't lower your rate. You anchor it $500 higher.
+
+One deal at a higher rate pays for this 2x over.
+
+The system is ready. Your rate conversation is waiting.
+
+→ https://closermethod.kit.com/products/the-authenticity-premium
+
+Back soon,
+Elisabeth
+@perolikebro</div>
+      <div class="ps">P.S. - If the $297 price point is the pause, the <a href="https://closermethod.kit.com/products/the-first-1k-kit">First $1K Kit ($27)</a> has 60 scripts and the brand database to start today. You can always upgrade to the Premium later.</div>
+    </div>
+
+    <button class="copy-btn" onclick="copyEmail('seq-a-email1')">📋 Copy Email 1</button>
+  </div>
+
+  <!-- Email 2 -->
+  <div class="email-block">
+    <div class="email-meta">
+      <div class="email-num">2</div>
+      <div class="email-timing">
+        <span class="when">24 Hours</span>
+        <span class="purpose">Hormozi-style ROI calculation + social proof</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Subject Line Options</div>
+      <div class="field-option"><code>A:</code> The math on one rate increase</div>
+      <div class="field-option"><code>B:</code> One $500 anchor = system pays for itself 2x</div>
+      <div class="field-option"><code>C:</code> How every creator got their rates up (the data)</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Body</div>
+      <div class="body-text">Hey {{ subscriber.first_name | default: "there" }},
+
+I want to show you the math that makes the Authenticity Premium non-negotiable.
+
+You're charging $500 per UGC video (baseline).
+
+With the Premium, you anchor $500 higher using the AI objection scripts. New rate: $1000.
+
+Run 4 deals a month.
+
+<span class="highlight\">Current: $2000/month.
+After Premium: $4000/month.
+Monthly delta: +$2000.</span>
+
+$297 ÷ $2000 = you break even in your first month. On just one deal.
+
+That's not an expense. That's a system that prints money.
+
+And here's the thing: you're not going to get one $500-higher deal. You're going to get three. Four. Because once you know the research and have the scripts, it becomes muscle memory.
+
+Every creator who's used the Premium reports the same thing: "This paid for itself 10x over by month two."
+
+You were already on the checkout page. That means you know the value is real. The only question left is whether you're going to grab it today - or keep leaving $2000 on the table every month.
+
+→ https://closermethod.kit.com/products/the-authenticity-premium
+
+This matters.
+Elisabeth</div>
+    </div>
+
+    <button class="copy-btn" onclick="copyEmail('seq-a-email2')">📋 Copy Email 2</button>
+  </div>
+
+  <!-- Email 3 -->
+  <div class="email-block">
+    <div class="email-meta">
+      <div class="email-num">3</div>
+      <div class="email-timing">
+        <span class="when">48 Hours</span>
+        <span class="purpose">Last call + downsell</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Subject Line Options</div>
+      <div class="field-option"><code>A:</code> Last call - and a $27 alternative</div>
+      <div class="field-option"><code>B:</code> Still here if you want the full system</div>
+      <div class="field-option"><code>C:</code> Last chance: $297 Premium or $27 Kit?</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Body</div>
+      <div class="body-text">Hey {{ subscriber.first_name | default: "there" }},
+
+This is the last email from me on this.
+
+The Authenticity Premium is still here if you want the full system: every data point, every script, every framework designed to turn AI into your rate increase.
+
+But I also know $297 doesn't land for everyone right now. Life happens. Budget gets tight. Timing shifts.
+
+So here's what I want you to know:
+
+You don't have to choose between no investment and $297.
+
+The <span class="highlight\">First $1K Kit is $27</span> and it has 60 negotiation scripts + a 100-brand database. It's the tactical starting point. The Foundation.
+
+The Authenticity Premium is the strategic advantage - the research, the AI-specific frameworks, the advanced negotiation vault.
+
+You can start with the Kit today. Use it for three months. Then grab the Premium when you've validated that the scripts work.
+
+Or commit to the full Premium now and start with everything.
+
+Either way, the goal is the same: <span class="highlight\">get you from $500 deals to $1000+ deals within 60 days.</span>
+
+Choose your entry point:
+
+Full system: https://closermethod.kit.com/products/the-authenticity-premium ($297)
+Starting point: https://closermethod.kit.com/products/the-first-1k-kit ($27)
+
+I'm rooting for you.
+Elisabeth</div>
+    </div>
+
+    <button class="copy-btn" onclick="copyEmail('seq-a-email3')">📋 Copy Email 3</button>
+  </div>
+</div>
+
+<!-- ============================================================
+     SEQUENCE B: FIRST $1K KIT ($27) CART ABANDONMENT
+     ============================================================ -->
+
+<div class="sequence-section" id="seq-b">
+  <div class="sequence-header">
+    <h2>Sequence B: First $1K Kit ($27)</h2>
+    <p class="meta">Cart Abandonment • 2 Emails • 1 Day Total</p>
+    <span class="tag-badge">Kit Tag: kit-cart-abandon</span>
+  </div>
+
+  <!-- Email 1 -->
+  <div class="email-block">
+    <div class="email-meta">
+      <div class="email-num">1</div>
+      <div class="email-timing">
+        <span class="when">1 Hour</span>
+        <span class="purpose">Restate value + low commitment messaging</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Subject Line Options (A/B Test)</div>
+      <div class="field-option"><code>A:</code> $27 is less than one coffee run</div>
+      <div class="field-option"><code>B:</code> Kit is waiting (and it's cheaper than lunch)</div>
+      <div class="field-option"><code>C:</code> 60 scripts for the price of coffee</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">From Line</div>
+      <div class="field-option">Elisabeth &lt;elisabeth@closermethod.com&gt;</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Body</div>
+      <div class="body-text">Hey {{ subscriber.first_name | default: "there" }},
+
+You were about to grab the First $1K Kit and then stopped.
+
+I get it - you want to make sure it's worth it.
+
+Here's what's inside:
+
+<span class="highlight\">✓ 60 negotiation scripts (email, DM, phone)</span>
+<span class="highlight\">✓ 100-brand database (pre-screened for UGC spend)</span>
+<span class="highlight\">✓ Rate anchoring methodology (proven with enterprise deals)</span>
+<span class="highlight\">✓ Counter-scripts for budget objections</span>
+
+All of it designed so that when a brand says "we can only pay $200," you have the exact script to move them to $500+.
+
+$27. Instant access. The tactical foundation every creator needs before going after bigger deals.
+
+Most people spend more on a Starbucks habit in a week than this costs.
+
+→ https://closermethod.kit.com/products/the-first-1k-kit
+
+Get it done today.
+Elisabeth</div>
+      <div class="ps">P.S. - This kit is the first step. Once you've run the scripts and built your confidence, the <a href="https://closermethod.kit.com/products/the-authenticity-premium">Authenticity Premium ($297)</a> gives you the strategic advantage - the research and frameworks for AI-era positioning.</div>
+    </div>
+
+    <button class="copy-btn" onclick="copyEmail('seq-b-email1')">📋 Copy Email 1</button>
+  </div>
+
+  <!-- Email 2 -->
+  <div class="email-block">
+    <div class="email-meta">
+      <div class="email-num">2</div>
+      <div class="email-timing">
+        <span class="when">24 Hours</span>
+        <span class="purpose">Paint the picture of day 1 usage</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Subject Line Options</div>
+      <div class="field-option"><code>A:</code> Here's what happens after you grab it</div>
+      <div class="field-option"><code>B:</code> Your first 24 hours with the Kit (here's what to do)</div>
+      <div class="field-option"><code>C:</code> Today at 3pm, this changes everything</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Body</div>
+      <div class="body-text">Hey {{ subscriber.first_name | default: "there" }},
+
+Picture this: It's tomorrow. You bought the Kit 24 hours ago.
+
+You wake up. Open email. There's a brand outreach in your inbox asking about UGC rates.
+
+Normally you'd quote $500. They'd ask for a discount. You'd feel the pressure and drop to $350. Deal done. You feel like you just negotiated away money.
+
+This time is different.
+
+You open the Kit. You find the "budget pushback" script. You read it. It takes 90 seconds.
+
+You copy it. Personalize it. Send it.
+
+Their response comes in 2 hours: "Actually, $500 works for us. We love your vibe."
+
+That email just made you $150 more on a single deal. Using a script that's been tested on procurement professionals at Criteo, Deel, Autodesk, Red Points, HBO.
+
+Now multiply that across 4 deals a month.
+
+<span class="highlight\">$600 more per month. $7200 per year. From $27.</span>
+
+That's the First $1K Kit. You get the scripts. You use them. Your rates go up immediately.
+
+No confusion. No wondering what to say. No leaving money on the table.
+
+→ https://closermethod.kit.com/products/the-first-1k-kit
+
+Elisabeth</div>
+    </div>
+
+    <button class="copy-btn" onclick="copyEmail('seq-b-email2')">📋 Copy Email 2</button>
+  </div>
+</div>
+
+<!-- ============================================================
+     SEQUENCE C: CLOSER KIT ($246) CART ABANDONMENT
+     ============================================================ -->
+
+<div class="sequence-section" id="seq-c">
+  <div class="sequence-header">
+    <h2>Sequence C: Closer Kit ($246)</h2>
+    <p class="meta">Cart Abandonment • 2 Emails • 1 Day Total</p>
+    <span class="tag-badge">Kit Tag: closer-cart-abandon</span>
+  </div>
+
+  <!-- Email 1 -->
+  <div class="email-block">
+    <div class="email-meta">
+      <div class="email-num">1</div>
+      <div class="email-timing">
+        <span class="when">1 Hour</span>
+        <span class="purpose">Remind of existing ownership + next level positioning</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Subject Line Options (A/B Test)</div>
+      <div class="field-option"><code>A:</code> Your upgrade is still here</div>
+      <div class="field-option"><code>B:</code> You have the Kit. Now here's the next level.</div>
+      <div class="field-option"><code>C:</code> From negotiation to retainer - the upgrade</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">From Line</div>
+      <div class="field-option">Elisabeth &lt;elisabeth@closermethod.com&gt;</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Body</div>
+      <div class="body-text">Hey {{ subscriber.first_name | default: "there" }},
+
+You already own the First $1K Kit or the Authenticity Premium. Which means you know the system works.
+
+You've run the scripts. You've seen the objection counters land. Your rates are up.
+
+But here's what happens next:
+
+You realize that one-off $500 deals are good, but <span class="highlight\">$1500/month retainers from a single brand</span> are life-changing.
+
+That's what the Closer Kit is for.
+
+It's the bridge from project-based gigs to recurring revenue. The framework for converting brands into ongoing relationships:
+
+<span class="highlight\">✓ The retainer proposal system (exact template + fill-in-the-blank)</span>
+<span class="highlight\">✓ The 4-week onboarding sequence (what to deliver day 1-28)</span>
+<span class="highlight\">✓ The monthly scaling framework (how to manage 3-5 concurrent retainers)</span>
+<span class="highlight\">✓ The scope creep vault (12 scripts to protect your time)</span>
+
+You already know how to win the deal. The Closer Kit teaches you how to keep the deal - and scale it to 5 figures/month.
+
+→ https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=email&utm_medium=cart-abandonment&utm_campaign=closer_kit
+
+Time to level up.
+Elisabeth</div>
+      <div class="ps">P.S. - If you don't already own the Kit or Premium, grab the <a href="https://closermethod.kit.com/products/the-first-1k-kit">First $1K Kit ($27)</a> first. Start there. Then add the Closer Kit once you've built your baseline rates.</p>
+    </div>
+
+    <button class="copy-btn" onclick="copyEmail('seq-c-email1')">📋 Copy Email 1</button>
+  </div>
+
+  <!-- Email 2 -->
+  <div class="email-block">
+    <div class="email-meta">
+      <div class="email-num">2</div>
+      <div class="email-timing">
+        <span class="when">24 Hours</span>
+        <span class="purpose">ROI math + final urgency</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Subject Line Options</div>
+      <div class="field-option"><code>A:</code> One retainer pays for this 10x</div>
+      <div class="field-option"><code>B:</code> $1500/month retainer = Closer Kit paid for in 5 days</div>
+      <div class="field-option"><code>C:</code> The math on recurring revenue</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Body</div>
+      <div class="body-text">Hey {{ subscriber.first_name | default: "there" }},
+
+Let me show you the financial logic that makes the Closer Kit essential.
+
+You land one retainer: <span class="highlight\">$1500/month from a single brand.</span>
+
+That's $18,000 per year from one client.
+
+The Closer Kit costs $246.
+
+$246 ÷ $18,000 = <span class="highlight\">the kit pays for itself in 4 days of work.</span>
+
+And that's assuming you only land one retainer this year. Most people who use the system land 2-3 within their first 90 days.
+
+Project-based work is volatile. One client flakes. You lose $500-1000 deals.
+
+Retainers are stable. One client at $1500/month becomes $18,000/year. Predictable. Recurring. Scalable.
+
+You already know how to close the deal. The Closer Kit teaches you how to structure it so the client keeps saying yes every month.
+
+→ https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=email&utm_medium=cart-abandonment&utm_campaign=closer_kit
+
+$246. One retainer pays for it 10x.
+
+Get it locked in.
+Elisabeth</div>
+    </div>
+
+    <button class="copy-btn" onclick="copyEmail('seq-c-email2')">📋 Copy Email 2</button>
+  </div>
+</div>
+
+<!-- ============================================================
+     KIT SETUP INSTRUCTIONS
+     ============================================================ -->
+
+<div class="setup-notes">
+  <h3>Kit Setup Instructions</h3>
+
+  <h4>How Cart Abandonment Tags Work</h4>
+  <ol>
+    <li><strong>Method 1: Kit Commerce Webhook</strong> - If the cart abandonment pixel is already installed on your checkout pages, the webhook automatically fires when someone leaves without completing the purchase. This applies the tag in real-time.</li>
+    <li><strong>Method 2: Manual Tag via Form</strong> - If you don't have the pixel installed, you can manually tag subscribers by adding a "cart abandonment" form or using Kit's manual tag functionality when you identify abandonment through your analytics.</li>
+    <li><strong>Method 3: Segment Import</strong> - Export your abandoned cart data from your e-commerce platform (Stripe, Gumroad, Kit Commerce) and import as a segment into Kit, then apply tags in bulk.</li>
+  </ol>
+
+  <h4>Creating the Three Automation Sequences in Kit</h4>
+  <ol>
+    <li><strong>Create Sequence 1: "AP Cart Abandonment"</strong>
+      <ul style="list-style:none;padding:0;margin-left:0">
+        <li><strong>Trigger:</strong> Subscriber tagged with <code>ap-cart-abandon</code></li>
+        <li><strong>Wait:</strong> 1 hour</li>
+        <li><strong>Send Email 1:</strong> "Your playbook is waiting"</li>
+        <li><strong>Wait:</strong> 24 hours</li>
+        <li><strong>Send Email 2:</strong> "The math on one rate increase"</li>
+        <li><strong>Wait:</strong> 24 hours</li>
+        <li><strong>Send Email 3:</strong> "Last call + the downsell"</li>
+        <li><strong>Exit condition:</strong> Remove if subscriber gets tagged <code>ap-buyer</code>, <code>kit-buyer</code>, or <code>closer-buyer</code></li>
+      </ul>
+    </li>
+    <li><strong>Create Sequence 2: "Kit Cart Abandonment"</strong>
+      <ul style="list-style:none;padding:0;margin-left:0">
+        <li><strong>Trigger:</strong> Subscriber tagged with <code>kit-cart-abandon</code></li>
+        <li><strong>Wait:</strong> 1 hour</li>
+        <li><strong>Send Email 1:</strong> "$27 is less than one coffee run"</li>
+        <li><strong>Wait:</strong> 24 hours</li>
+        <li><strong>Send Email 2:</strong> "Here's what happens after you grab it"</li>
+        <li><strong>Exit condition:</strong> Remove if subscriber gets tagged <code>kit-buyer</code>, <code>ap-buyer</code>, or <code>closer-buyer</code></li>
+      </ul>
+    </li>
+    <li><strong>Create Sequence 3: "Closer Kit Cart Abandonment"</strong>
+      <ul style="list-style:none;padding:0;margin-left:0">
+        <li><strong>Trigger:</strong> Subscriber tagged with <code>closer-cart-abandon</code></li>
+        <li><strong>Wait:</strong> 1 hour</li>
+        <li><strong>Send Email 1:</strong> "Your upgrade is still here"</li>
+        <li><strong>Wait:</strong> 24 hours</li>
+        <li><strong>Send Email 2:</strong> "One retainer pays for this 10x"</li>
+        <li><strong>Exit condition:</strong> Remove if subscriber gets tagged <code>closer-buyer</code></li>
+      </ul>
+    </li>
+  </ol>
+
+  <h4>Setting Up the Cart Abandonment Tag Triggers</h4>
+  <ol>
+    <li><strong>If using Kit Commerce (all purchases go through Kit.com):</strong> Kit automatically fires the cart abandonment webhook when someone lands on checkout. Configure which tag to apply for each product:
+      <ul style="list-style:none;padding:0;margin-left:0">
+        <li>→ Authenticity Premium checkout → apply tag <code>ap-cart-abandon</code></li>
+        <li>→ First $1K Kit checkout → apply tag <code>kit-cart-abandon</code></li>
+        <li>→ Closer Kit checkout → apply tag <code>closer-cart-abandon</code></li>
+      </ul>
+    </li>
+    <li><strong>If abandonment pixel is not yet installed:</strong> Go to Kit → Integrations → Commerce Webhooks. Install the pixel on your checkout pages (copy/paste the snippet into your checkout flow). The webhook will fire automatically when someone bounces.</li>
+    <li><strong>Test the tag trigger:</strong> Visit checkout yourself, leave without buying, and confirm the tag was applied to your subscriber record within 1-2 minutes.</li>
+    <li><strong>Once tags are working:</strong> The automations will fire automatically. The subscriber receives Email 1 (1 hour after abandon), Email 2 (24 hours later), Email 3 (24 hours later for AP sequence).</li>
+  </ol>
+
+  <h4>Post-Conversion Rules</h4>
+  <ol>
+    <li><strong>When a subscriber buys from the sequence:</strong> Kit automatically applies the purchase tag (e.g., <code>ap-buyer</code>). The cart abandonment sequence exits immediately - no more emails sent.</li>
+    <li><strong>If subscriber purchases a different product:</strong> For example, they abandoned the AP but bought the Kit instead. Remove them from the AP sequence, but let them keep the Kit sequence. Don't bombard with multiple sequences simultaneously.</li>
+    <li><strong>Post-purchase automation:</strong> After any purchase, wait 3-7 days, then enroll in the next upsell sequence (AP buyers → Closer Kit sequence; Kit buyers → AP upsell sequence)</li>
+  </ol>
+
+  <h4>Measuring Performance</h4>
+  <ul>
+    <li>Track <strong>cart recovery rate</strong>: % of abandoned carts that convert within 48 hours. Target: 8-12%.</li>
+    <li>Track <strong>email open rate</strong>: Abandon sequences typically see 40-50% open rate (higher urgency = higher opens). If below 30%, revise subject lines.</li>
+    <li>Track <strong>revenue recovered</strong>: Dollar value of purchases made after receiving abandon email. Set a goal to recover $500+ per week.</li>
+    <li>Track <strong>tag accuracy</strong>: Confirm that only the right subscribers receive the right sequence (AP abandoners get AP email, not Kit email). Audit tags monthly.</li>
+  </ul>
+</div>
+
+<div class="note-box">
+  <h4>Pro Tip: Tag Overlap and Sequence Isolation</h4>
+  <p>If someone abandons the AP checkout, do NOT tag them with both <code>ap-cart-abandon</code> AND <code>kit-cart-abandon</code>. One tag per abandonment. This prevents them from receiving multiple sequences at once (which is confusing and lowers conversion). If they abandon AP, then abandon Kit in the same session, update the tag to <code>kit-cart-abandon</code> and remove <code>ap-cart-abandon</code>. Last abandonment wins.</p>
+</div>
+
+<div class="note-box">
+  <h4>Why Cart Abandonment Works</h4>
+  <p>People who reach checkout are pre-qualified buyers. They've decided to purchase - something just made them pause. A cart abandonment sequence addresses that specific pause (price, timing, final objection) rather than trying to convince someone from scratch. These sequences have 5-10x higher conversion rate than cold email sequences because the audience is already warm and committed.</p>
+</div>
+
+</div>
+
+<script>
+function copyEmail(id){
+  const section=document.getElementById('seq-'+id.split('-')[1]);
+  const emailBlock=section.querySelector('[id="'+id+'"]');
+  if(emailBlock){
+    const bodyText=emailBlock.querySelector('.body-text');
+    if(bodyText){
+      const text=bodyText.textContent.trim();
+      navigator.clipboard.writeText(text).then(()=>{
+        const btn=emailBlock.querySelector('.copy-btn');
+        const orig=btn.innerHTML;
+        btn.textContent='✓ Copied!';
+        btn.style.background='var(--forest)';
+        btn.style.color='#fff';
+        setTimeout(()=>{btn.innerHTML=orig;btn.style.background='';btn.style.color='';},2000);
+      }).catch(err=>console.error('Copy failed:',err));
+    }
+  }
+}
+</script>
+</body>
+</html>

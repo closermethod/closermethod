@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '35298849146380570');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Closer Circle | Private UGC Community | @closermethod</title>
+    <meta name="description" content="Join the private community for UGC creators who close deals. Weekly pitch reviews, brand intel, and deal wins. Free with Closer Kit purchase.">
+    <meta property="og:title" content="The Closer Circle - Private UGC Community">
+    <meta property="og:description" content="Join the private community for UGC creators who close deals. Weekly pitch reviews, brand intel, and deal wins.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The Closer Circle | @closermethod">
+    <meta name="twitter:description" content="Private community for UGC creators who close deals. Weekly pitch reviews and brand intel.">
+    <link rel="canonical" href="https://ugc-closer-suite.netlify.app/tool8-closer-community.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #111;
+            --surface2: #161616;
+            --border: #1e1e1e;
+            --text: #f0f0f0;
+            --text2: #888;
+            --accent: #c8a44e;
+            --accent2: #e8c95e;
+            --green: #22c55e;
+            --red: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Nav Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.5px;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            color: var(--text2);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .exclusive-badge {
+            display: inline-block;
+            background-color: var(--surface2);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* What You Get Grid */
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            background-color: var(--surface2);
+        }
+
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--text2);
+            line-height: 1.6;
+        }
+
+        /* How to Join Steps */
+        .steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .step {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            padding-left: 60px;
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 24px;
+            top: 24px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            color: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .step h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .step p {
+            font-size: 14px;
+            color: var(--text2);
+            margin-bottom: 12px;
+        }
+
+        .step a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .step a:hover {
+            color: var(--accent2);
+        }
+
+        /* Member Benefits */
+        .benefits-card {
+            background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .benefits-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--accent);
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            text-align: left;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .benefit-item:last-child {
+            border-bottom: none;
+        }
+
+        .benefit-check {
+            color: var(--green);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .benefit-item p {
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        /* Social Proof */
+        .social-proof-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .proof-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .proof-text {
+            font-size: 16px;
+            color: var(--text2);
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .testimonial {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .testimonial p {
+            font-size: 14px;
+            color: var(--text);
+            margin-bottom: 12px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--text);
+            transition: all 0.3s;
+            user-select: none;
+        }
+
+        .faq-item.active .faq-question {
+            background-color: var(--surface2);
+            color: var(--accent);
+        }
+
+        .faq-question:hover {
+            background-color: var(--surface2);
+        }
+
+        .faq-toggle {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 20px 20px 20px;
+        }
+
+        .faq-answer p {
+            font-size: 14px;
+            color: var(--text2);
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--bg);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent2);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--surface);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .pricing-info {
+            margin-bottom: 20px;
+        }
+
+        .price-main {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .price-original {
+            font-size: 14px;
+            color: var(--text2);
+            text-decoration: line-through;
+            margin-right: 8px;
+        }
+
+        .price-installments {
+            font-size: 12px;
+            color: var(--text2);
+            margin-top: 8px;
+        }
+
+        .cta-subtext {
+            font-size: 13px;
+            color: var(--text2);
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .cta-subtext a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .cta-subtext a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text2);
+            font-size: 12px;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero .subtitle {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            nav {
+                padding: 16px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Nav -->
+        <nav>
+            <div class="logo">@closermethod</div>
+            <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=closer_community" target="_blank">Free AI Tools</a>
+        </nav>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-icon">🏆</div>
+            <h1>Welcome to The Closer Circle</h1>
+            <p class="subtitle">The private community for UGC creators who close deals, not just create content.</p>
+            <div class="exclusive-badge">Exclusive to Closer Kit Owners</div>
+        </section>
+
+        <!-- What You Get -->
+        <section class="section">
+            <h2 class="section-title">What You Get</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Weekly Pitch Reviews</h3>
+                    <p>Submit your pitch emails and get community + Elisabeth feedback every week</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💰</div>
+                    <h3>Deal Wins Channel</h3>
+                    <p>Celebrate your closes, share screenshots (redacted), and inspire others</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔥</div>
+                    <h3>Brand Intel</h3>
+                    <p>Members share which brands are actively hiring UGC creators and what they're paying</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Join -->
+        <section class="section">
+            <h2 class="section-title">How to Join</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Purchase The UGC Closer Kit</h3>
+                    <p>Get access to templates, pitch frameworks, and deal playbooks.</p>
+                    <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=closer_community" target="_blank">Get the Kit →</a>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Forward Your Receipt</h3>
+                    <p>Send proof of purchase to <a href="mailto:elisabeth@closermethod.com">elisabeth@closermethod.com</a></p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Your Invite Link</h3>
+                    <p>Receive your community access within 24 hours. Start connecting with creators.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Member Benefits -->
+        <section class="section">
+            <div class="benefits-card">
+                <h3>Member Benefits</h3>
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <span class="benefit-check">✓</span>
+                        <p>First access to new templates and tools</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">✓</span>
+                        <p>Monthly live Q&A with Elisabeth</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">✓</span>
+                        <p>Accountability partners matched by niche</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">✓</span>
+                        <p>Private brand deal board - members only</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof -->
+        <section class="section">
+            <div class="social-proof-header">
+                <div class="proof-number">50+</div>
+                <p class="proof-text">Creators Already Inside The Circle</p>
+            </div>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"Since joining, I've closed 3 deals in my first month. The accountability and pitch reviews made all the difference."</p>
+                    <div class="testimonial-author">- [Creator Name]</div>
+                </div>
+                <div class="testimonial">
+                    <p>"The pitch reviews alone are worth it. Elisabeth breaks down exactly what brands want to see in your email copy."</p>
+                    <div class="testimonial-author">- [Creator Name]</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Finally a community that talks about the BUSINESS side of UGC, not just aesthetics. Game-changer."</p>
+                    <div class="testimonial-author">- [Creator Name]</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <h2 class="section-title">FAQ</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is this free with my Closer Kit purchase?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Community access is included with every Closer Kit purchase. No additional fees.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What platform is the community on?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We use a private Instagram Broadcast Channel + email thread for now. A dedicated platform is coming in Q2 2026.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I join without buying the Closer Kit?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>The Closer Circle is exclusive to Kit owners. Take the free quiz first to see where you stand, then grab the Kit when you're ready.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How active is the community?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Elisabeth posts weekly pitch reviews and brand intel. Members share wins daily. It's quality over quantity, no spam, no fluff.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2 class="section-title" style="margin-bottom: 24px;">Ready to Join?</h2>
+            <div class="pricing-info">
+                <div class="price-main">
+                    Get The UGC Closer Kit
+                </div>
+                <div>
+                    <span class="price-original" style="text-decoration:line-through">$246</span>
+                    <span style="font-size: 24px; font-weight: 700; color: var(--accent);">$197</span>
+                </div>
+                <p class="price-installments">🔥 Tax season sale — ends March 31</p>
+            </div>
+            <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=closer_community" target="_blank" class="btn btn-primary">Get The Kit</a>
+            <p class="cta-subtext">
+                Already have the Kit? Email your receipt to<br>
+                <a href="mailto:elisabeth@closermethod.com">elisabeth@closermethod.com</a>
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            Built by <a href="https://instagram.com/closermethod" target="_blank">@closermethod</a> · <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=closer_community" target="_blank">Free AI Tools</a>
+        </footer>
+    </div>
+
+    <script>
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

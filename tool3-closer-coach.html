@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '35298849146380570');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Practice brand deal negotiations with our AI Closer Coach. Role-play real scenarios and master objection handling.">
+<meta property="og:title" content="Closer Coach: AI Negotiation Practice | The Closer Method">
+<meta property="og:description" content="Practice brand deal negotiations with our AI Closer Coach. Role-play real scenarios and master objection handling.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Closer Coach | @closermethod">
+<meta name="twitter:description" content="Practice brand deal negotiations with AI. Role-play real scenarios and master objection handling.">
+<link rel="canonical" href="https://ugc-closer-suite.netlify.app/tool3-closer-coach.html">
+<title>Closer Coach: AI Negotiation Practice | @closermethod</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--surface:#111;--surface2:#161616;--border:#1e1e1e;--text:#f0f0f0;--text2:#888;--accent:#c8a44e;--accent2:#e8c95e;--green:#22c55e;--red:#ef4444}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;max-width:720px;margin:0 auto}
+.nav-brand{font-size:14px;font-weight:800;color:var(--accent);text-decoration:none}
+.nav-cta{font-size:12px;color:var(--accent);text-decoration:none;font-weight:600;border:1px solid rgba(200,164,78,.3);padding:6px 14px;border-radius:8px}
+.container{max-width:640px;margin:0 auto;padding:40px 20px}
+
+/* EMAIL GATE */
+.email-gate{text-align:center;padding:60px 20px}
+.gate-icon{font-size:48px;margin-bottom:16px}
+.gate-title{font-size:clamp(24px,5vw,36px);font-weight:900;line-height:1.15;margin-bottom:12px}
+.gate-title span{color:var(--accent)}
+.gate-sub{font-size:15px;color:var(--text2);line-height:1.6;max-width:460px;margin:0 auto 24px}
+.gate-form{display:flex;gap:8px;max-width:400px;margin:0 auto 16px}
+.gate-form input{flex:1;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;font-family:'Inter',sans-serif}
+.gate-form input::placeholder{color:#555}
+.gate-form input:focus{outline:none;border-color:var(--accent)}
+.gate-form button{padding:14px 24px;background:var(--accent);color:#000;font-weight:700;font-size:14px;border:none;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap}
+.gate-trust{font-size:11px;color:#555;text-align:center}
+
+/* TOOL */
+.tool-area{display:none}
+.tool-area.active{display:block}
+
+.scenario-select{text-align:center;margin-bottom:32px}
+.scenario-select h1{font-size:24px;font-weight:800;margin-bottom:6px}
+.scenario-select p{font-size:14px;color:var(--text2);margin-bottom:24px}
+.scenarios{display:grid;gap:12px}
+.scenario-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;cursor:pointer;transition:all .2s;text-align:left}
+.scenario-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.sc-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.sc-brand{font-size:15px;font-weight:700}
+.sc-diff{font-size:10px;font-weight:600;padding:3px 10px;border-radius:6px}
+.sc-diff.easy{background:rgba(34,197,94,.1);color:var(--green)}
+.sc-diff.med{background:rgba(234,179,8,.1);color:#eab308}
+.sc-diff.hard{background:rgba(239,68,68,.1);color:var(--red)}
+.sc-desc{font-size:12px;color:var(--text2);line-height:1.5}
+
+/* Chat Interface */
+.chat-area{display:none}
+.chat-area.active{display:block}
+.chat-header{display:flex;align-items:center;gap:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:14px 14px 0 0;margin-bottom:0}
+.chat-avatar{width:40px;height:40px;border-radius:10px;background:rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;font-size:18px}
+.chat-info h3{font-size:14px;font-weight:700}
+.chat-info p{font-size:11px;color:var(--text2)}
+.chat-round{margin-left:auto;font-size:11px;color:var(--accent);font-weight:600;font-family:'JetBrains Mono',monospace}
+.chat-messages{background:var(--surface);border:1px solid var(--border);border-top:none;padding:20px;min-height:300px;max-height:500px;overflow-y:auto}
+.msg{margin-bottom:16px;display:flex;gap:10px;align-items:flex-start}
+.msg.brand .msg-avatar{width:28px;height:28px;border-radius:8px;background:rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.msg.you .msg-avatar{width:28px;height:28px;border-radius:8px;background:rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.msg-bubble{max-width:80%;padding:12px 16px;border-radius:14px;font-size:13px;line-height:1.5}
+.msg.brand .msg-bubble{background:var(--surface2);border:1px solid var(--border)}
+.msg.you .msg-bubble{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2)}
+.chat-options{background:var(--surface);border:1px solid var(--border);border-top:none;border-radius:0 0 14px 14px;padding:16px}
+.chat-options p{font-size:11px;color:var(--text2);margin-bottom:10px;font-weight:600}
+.option-btn{display:block;width:100%;text-align:left;padding:12px 16px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:13px;cursor:pointer;transition:all .2s;margin-bottom:6px;font-family:'Inter',sans-serif;line-height:1.4}
+.option-btn:hover{border-color:var(--accent);background:rgba(34,197,94,.05)}
+
+/* Score */
+.final-score{display:none;text-align:center;padding:32px;background:var(--surface);border:2px solid var(--accent);border-radius:20px;margin-top:24px}
+.final-score.active{display:block}
+.fs-label{font-size:11px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.fs-number{font-size:56px;font-weight:900;font-family:'JetBrains Mono',monospace;color:var(--accent);margin-bottom:4px}
+.fs-sub{font-size:14px;color:var(--text2);margin-bottom:16px}
+.fs-breakdown{text-align:left;border-top:1px solid var(--border);padding-top:16px;margin-top:16px}
+.fb-item{display:flex;justify-content:space-between;padding:6px 0;font-size:12px}
+.fb-item .label{color:var(--text2)}
+.fb-item .value{font-weight:600}
+.fb-item .value.good{color:var(--green)}
+.fb-item .value.mid{color:#eab308}
+.fb-item .value.bad{color:var(--red)}
+
+/* POST-TOOL CTA */
+.post-tool-cta{display:none;margin-top:40px;background:linear-gradient(135deg,rgba(34,197,94,.08),rgba(34,197,94,.02));border:1px solid rgba(34,197,94,.2);border-radius:20px;padding:32px 24px;text-align:center}
+.post-tool-cta.active{display:block}
+.ptc-tag{font-size:11px;color:var(--green);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.ptc-title{font-size:20px;font-weight:800;margin-bottom:8px;line-height:1.3}
+.ptc-title span{color:var(--accent)}
+.ptc-sub{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:20px}
+.ptc-btn{display:inline-block;padding:16px 40px;background:var(--accent);color:#000;font-weight:800;font-size:15px;border:none;border-radius:12px;text-decoration:none;font-family:'Inter',sans-serif}
+
+footer{text-align:center;padding:40px 20px;font-size:11px;color:#444}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="links.html" class="nav-brand">@closermethod</a>
+  <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=closer_coach" class="nav-cta">Get The Kit</a>
+</nav>
+
+<div class="container">
+<div class="email-gate" id="emailGate">
+  <div class="gate-icon">🤝</div>
+  <div class="gate-title">Practice <span>Closing</span> Deals</div>
+  <p class="gate-sub">Negotiate with AI brand reps in 3 realistic scenarios. Build the muscle before real money is on the line.</p>
+  <div class="gate-form">
+    <input type="email" id="gateEmail" placeholder="Your best email" required>
+    <button onclick="unlockTool()">Unlock →</button>
+  </div>
+  <div class="gate-trust">🔒 No spam. Used by 400+ creators.</div>
+</div>
+
+<div class="tool-area" id="toolArea">
+  <div class="scenario-select" id="scenarioSelect">
+    <h1>Closer Coach</h1>
+    <p>Pick a scenario. Negotiate your way through 5 rounds.</p>
+    <div class="scenarios">
+      <div class="scenario-card" onclick="startScenario(0)">
+        <div class="sc-header"><span class="sc-brand">🧴 GlowBean Skincare</span><span class="sc-diff easy">Easy</span></div>
+        <div class="sc-desc">DTC skincare brand. They offered $150 for a 60s testimonial. You need to get to $400+.</div>
+      </div>
+      <div class="scenario-card" onclick="startScenario(1)">
+        <div class="sc-header"><span class="sc-brand">💄 VelvetSkin Beauty</span><span class="sc-diff med">Medium</span></div>
+        <div class="sc-desc">Mid-size beauty brand. Wants 3 videos + paid ad rights for $500. Counter to $1,200+.</div>
+      </div>
+      <div class="scenario-card" onclick="startScenario(2)">
+        <div class="sc-header"><span class="sc-brand">💪 IronPulse Fitness</span><span class="sc-diff hard">Hard</span></div>
+        <div class="sc-desc">Enterprise fitness brand. $200 for perpetual rights on 5 videos. Need to restructure the entire deal.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-area" id="chatArea">
+    <div class="chat-header">
+      <div class="chat-avatar" id="chatAvatar">🧴</div>
+      <div class="chat-info">
+        <h3 id="chatBrand">GlowBean Skincare</h3>
+        <p id="chatRole">Brand Partnership Manager</p>
+      </div>
+      <div class="chat-round" id="chatRound">Round 1/5</div>
+    </div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-options" id="chatOptions">
+      <p>Choose your response:</p>
+    </div>
+  </div>
+
+  <div class="final-score" id="finalScore"></div>
+  <div class="post-tool-cta" id="postToolCta">
+    <div class="ptc-tag">✓ Practice done - get the full system</div>
+    <div class="ptc-title">Want <span>60+ proven scripts</span> + the complete closing system?</div>
+    <p class="ptc-sub">The UGC Closer Kit has the exact words top creators use to close $500-$2,000 deals. 10 Notion-based systems including 60+ scripts, 175+ Brand Database, Deal Tracker CRM, and more.</p>
+    <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=closer_coach" class="ptc-btn">Get The Kit</a>
+    <p style="text-align:center;color:#888;font-size:11px;margin-top:6px">Join 200+ creators already closing with this system</p>
+  </div>
+</div>
+</div>
+
+<footer><p>© 2026 Elisabeth · @closermethod</p></footer>
+
+<script>
+const KIT_FORM_ID='9131179';
+function unlockTool(){
+  const email=document.getElementById('gateEmail').value.trim();
+  if(!email||!email.includes('@'))return;
+  fetch(`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,tags:['closer-coach-user','link-in-bio-lead']})}).catch(()=>{});
+  localStorage.setItem('ugc_optin',JSON.stringify({email,ts:Date.now()}));
+  document.getElementById('emailGate').style.display='none';
+  document.getElementById('toolArea').classList.add('active');
+}
+const urlParams=new URLSearchParams(window.location.search);if(localStorage.getItem('ugc_optin')||urlParams.get('unlocked')==='1'){document.getElementById('emailGate').style.display='none';document.getElementById('toolArea').classList.add('active');if(!localStorage.getItem('ugc_optin')){localStorage.setItem('ugc_optin',JSON.stringify({email:'homepage-lead',ts:Date.now()}))}}
+
+// --- SCENARIOS ---
+const scenarios=[
+  {
+    brand:'GlowBean Skincare',avatar:'🧴',role:'Brand Partnership Manager',
+    rounds:[
+      {msg:"Hey! Love your content. We'd like a 60-second testimonial video for our new serum. We can offer $150. Interested?",
+        opts:[
+          {text:"Thanks for reaching out! I'd love to work together. My rate for a 60s testimonial is $450 - that includes 1 round of revisions and organic usage rights. Happy to discuss!",score:5,reply:"Hmm, $450 is above our usual range. We typically pay $150-200 for testimonials. Could you do $250?"},
+          {text:"$150 works for me! When do you need it?",score:1,reply:"Great! We'll send the brief over. Can you have it done by Friday?"},
+          {text:"I appreciate the offer but $150 is below my minimum. I charge $300+ for testimonials.",score:3,reply:"I understand. Could we meet in the middle at $225?"}
+        ]},
+      {msg:"",opts:[
+          {text:"I appreciate the counter! For a quality testimonial that converts, $400 is my best price. I can include a hook variation as a bonus.",score:5,reply:"A hook variation would actually be really useful. Let me check with our marketing team - $350 with the hook variation?"},
+          {text:"$250 is too low for the quality I deliver. Can you do $350?",score:3,reply:"$350 might work. What about usage rights though? We'd want to use it in ads for 30 days."},
+          {text:"Sure, $250 works.",score:1,reply:"Perfect, I'll send the brief today."}
+        ]},
+      {msg:"",opts:[
+          {text:"$350 + hook variation works! For paid ad usage, that's a separate license - I'll add $100 for 30-day ad rights, so $450 total. Still well below industry standard for paid usage.",score:5,reply:"That's fair for ad rights. $450 total for the testimonial + hook + 30 days paid. Deal?"},
+          {text:"$350 sounds good. You can use it wherever you want.",score:1,reply:"Amazing, thanks for being flexible! We'll send the contract."},
+          {text:"I can do $350 but ad usage would need to be negotiated separately.",score:3,reply:"How much extra for 30-day paid ad rights?"}
+        ]},
+      {msg:"",opts:[
+          {text:"Deal! I'll send over my SOW today. One question - would you be open to a 3-video package? I could offer a better per-video rate for the series.",score:5,reply:"Actually, we were thinking about doing a series! What would 3 videos look like?"},
+          {text:"Yes, $450 total. Let's do it!",score:3,reply:"Great! I'll have our team send the contract."},
+          {text:"Could we push to $500 if I also include a 15s cutdown?",score:4,reply:"$500 with a cutdown would work for us. Let's go with that."}
+        ]},
+      {msg:"",opts:[
+          {text:"For a 3-video series: $1,100 total ($367/video vs my usual $450). That includes 1 revision each, organic usage, and I'll throw in 3 hook variations. Paid ads would be a separate conversation.",score:5,reply:"$1,100 for 3 videos is solid. Let me get approval - I think we can do this!"},
+          {text:"3 videos would be $1,350 - same rate per video.",score:3,reply:"That's a bit high for a package. We were hoping for a volume discount."},
+          {text:"I could do 3 for $900 if you commit today.",score:2,reply:"$900 for 3? That works for us!"}
+        ]}
+    ]
+  },
+  {
+    brand:'VelvetSkin Beauty',avatar:'💄',role:'Influencer Marketing Lead',
+    rounds:[
+      {msg:"Hi! We're launching a new line and looking for UGC creators. We need 3 videos (unboxing, tutorial, review) for $500 total, plus we'd want paid ad rights for 60 days. Thoughts?",
+        opts:[
+          {text:"Thanks for considering me! For 3 videos with 60-day paid ad rights, my package rate would be $1,400. That breaks down to $300/video base + $200 per video for ad rights. I can include 1 revision round per video.",score:5,reply:"$1,400 is more than we budgeted. Our max is around $800. Can we negotiate the scope?"},
+          {text:"I'd love to work on this! $500 for 3 videos is a bit low - could you do $750?",score:2,reply:"$750 could work, but we still need the paid ad rights included."},
+          {text:"$500 for 3 videos plus paid rights isn't possible for me. My minimum per video is $400.",score:3,reply:"Understood. What if we reduced to 2 videos?"}
+        ]},
+      {msg:"",opts:[
+          {text:"I hear you on budget. Here's a win-win: let's start with 2 videos for $900, organic rights only. If the content performs, we add the third video + ad rights as a Phase 2 at pre-agreed pricing.",score:5,reply:"I like the phased approach. What would Phase 2 pricing look like?"},
+          {text:"For $800 I could do 2 videos with ad rights. How about that?",score:3,reply:"2 videos for $800 with ad rights - that's getting closer. Can you include revisions?"},
+          {text:"The lowest I can go is $1,000 for all 3.",score:2,reply:"We really can't stretch past $800. Is that a dealbreaker?"}
+        ]},
+      {msg:"",opts:[
+          {text:"Phase 2: third video + 60-day ad rights on all 3 videos for $600. So total if you go all-in: $1,500 for 3 videos + ad rights, paid in 2 installments. Much easier on your cash flow.",score:5,reply:"$1,500 split into two payments actually works better for our budget cycle. You'd deliver the first 2 within 2 weeks?"},
+          {text:"Phase 2 would be $500 for the extra video + ad rights.",score:3,reply:"So $1,400 total? That's still at the top of our range."},
+          {text:"I'd charge $400 for the third video and $200 for ad rights - $600 total for Phase 2.",score:4,reply:"$1,500 total with split payments could work. Let me run it by finance."}
+        ]},
+      {msg:"",opts:[
+          {text:"Absolutely - first 2 videos in 2 weeks, Phase 2 two weeks later. I'll send a SOW with kill fee clause and clear deliverable milestones. One more thing - if the ads exceed 500K impressions, I'd want to discuss a performance bonus.",score:5,reply:"A performance bonus if we hit 500K impressions? What would that look like?"},
+          {text:"Yes, 2 weeks for the first batch. I'll draft the contract today.",score:3,reply:"Perfect. Can you send it by EOD tomorrow?"},
+          {text:"I can deliver in 10 days. Want me to start on the unboxing first?",score:3,reply:"10 days would be great. Yes, start with unboxing."}
+        ]},
+      {msg:"",opts:[
+          {text:"Simple: $200 bonus per video that exceeds 500K paid impressions. It's standard in the industry and keeps us both motivated for the content to perform. I'll include it as an addendum to the SOW.",score:5,reply:"That's a reasonable structure, performance-aligned. Let's do it. Send the SOW and we'll get started!"},
+          {text:"$500 flat bonus if any video hits 1M impressions.",score:3,reply:"1M is a high bar. Let's table the bonus for now and revisit after Phase 1 results."},
+          {text:"10% of ad spend above $5,000.",score:2,reply:"We can't share ad spend data. Let's keep it simple and skip the bonus clause."}
+        ]}
+    ]
+  },
+  {
+    brand:'IronPulse Fitness',avatar:'💪',role:'VP of Marketing',
+    rounds:[
+      {msg:"We need 5 workout integration videos - showing our equipment in use. Budget is $200 total. We'd own all rights to the content perpetually. Standard for our creator program.",
+        opts:[
+          {text:"Thanks for reaching out. I want to be transparent: $200 for 5 videos with perpetual rights is significantly below market rate. Per industry standards, that's roughly $40/video with full ownership - my rate is $350-500/video. Let me suggest an alternative structure that works for both of us.",score:5,reply:"We work with a lot of creators at this rate. What alternative are you suggesting?"},
+          {text:"$200 for 5 videos isn't realistic. I'd need at least $1,500.",score:3,reply:"$1,500 is way outside our creator program budget. We have plenty of creators happy with $200."},
+          {text:"That's really low. Could you do $500?",score:1,reply:"We might be able to stretch to $300 for the right creator."}
+        ]},
+      {msg:"",opts:[
+          {text:"I respect that you have a program, but top-performing UGC converts better than volume UGC. Here's my proposal: 2 videos at $400 each ($800 total), organic rights for 6 months. If they outperform your other content, we expand. This way you test quality vs. quantity with measurable ROI.",score:5,reply:"Interesting framing. We are looking to improve our ad conversion rates. But $800 for just 2 videos is still a jump from $200."},
+          {text:"What if I did 3 videos for $600? That's a fair middle ground.",score:2,reply:"$600 for 3 is better. But we still need ownership rights for ads."},
+          {text:"I understand volume pricing. My minimum package is 5 videos for $1,000 with 90-day usage.",score:3,reply:"$1,000 is too high. We're running a large program with 50+ creators."}
+        ]},
+      {msg:"",opts:[
+          {text:"Think of it as an investment comparison: you're paying $200 across 5 generic videos = $40/video with unknown conversion. I'm offering 2 strategically crafted videos at $400/video that I'll optimize for your specific ad funnel. If my 2 videos outperform your 5, the ROI math speaks for itself. I'll even include performance metrics consultation.",score:5,reply:"You make a fair point about ROI. Okay, let's try the 2-video test. But I need paid ad rights, not just organic."},
+          {text:"How about $700 for 2 videos with organic + 30 days paid?",score:3,reply:"$700 for 2 with 30-day paid... we need longer paid usage though."},
+          {text:"I could do $500 for 2 premium videos, organic only.",score:2,reply:"That's more reasonable but we really need ad rights."}
+        ]},
+      {msg:"",opts:[
+          {text:"For the test: $900 for 2 videos with 90-day paid ad rights. After 90 days, we discuss renewal pricing or an ongoing retainer if performance is strong. I'll structure the content specifically for your paid funnel - hooks optimized for Facebook/Instagram ad specs. This is a strategic partnership, not just content creation.",score:5,reply:"90-day paid rights with a performance review makes sense. $900 for 2 strategic ad-optimized videos... I can get that approved. What about the retainer structure?"},
+          {text:"Paid ad rights would be an additional $150 per video - so $1,100 for 2 videos with 90-day paid.",score:3,reply:"$1,100 is stretching it. Can you do $1,000 flat?"},
+          {text:"I'll add 60-day ad rights for $100 more - $900 total for 2 videos.",score:4,reply:"$900 for 2 videos with 60-day rights works. Let's do it."}
+        ]},
+      {msg:"",opts:[
+          {text:"Retainer proposal: $1,500/month for 4 videos, all with 90-day paid rights rolling. Includes monthly strategy call to optimize creative based on ad performance data. 3-month minimum commitment. That's $375/video with strategic guidance - well below my standard $500 rate. I'll draft a full proposal deck.",score:5,reply:"A retainer at $1,500/month for 4 videos plus strategy... that's actually competitive. Send the proposal - I'll present it to our CEO this week."},
+          {text:"For a retainer, I'd do 4 videos/month at $2,000 with full ad rights.",score:3,reply:"$2,000/month might be a stretch. Can you come down to $1,500?"},
+          {text:"Let's start with the 2-video test first and revisit the retainer after.",score:2,reply:"Fair enough. Let's see how the test goes."}
+        ]}
+    ]
+  }
+];
+
+let currentScenario=null,currentRound=0,totalScore=0,roundScores=[];
+
+function startScenario(idx){
+  currentScenario=idx;currentRound=0;totalScore=0;roundScores=[];
+  const s=scenarios[idx];
+  document.getElementById('scenarioSelect').style.display='none';
+  document.getElementById('chatArea').classList.add('active');
+  document.getElementById('chatAvatar').textContent=s.avatar;
+  document.getElementById('chatBrand').textContent=s.brand;
+  document.getElementById('chatRole').textContent=s.role;
+  showRound();
+}
+
+function showRound(){
+  const s=scenarios[currentScenario];
+  const r=s.rounds[currentRound];
+  document.getElementById('chatRound').textContent=`Round ${currentRound+1}/5`;
+  const msgs=document.getElementById('chatMessages');
+  if(currentRound===0||r.msg){
+    const msgToShow=currentRound===0?r.msg:r.msg;
+    if(msgToShow){
+      msgs.innerHTML+=`<div class="msg brand"><div class="msg-avatar">${s.avatar}</div><div class="msg-bubble">${msgToShow}</div></div>`;
+    }
+  }
+  const opts=document.getElementById('chatOptions');
+  opts.innerHTML='<p>Choose your response:</p>';
+  r.opts.forEach((o,i)=>{
+    const btn=document.createElement('button');
+    btn.className='option-btn';
+    btn.textContent=o.text;
+    btn.onclick=()=>selectResponse(i);
+    opts.appendChild(btn);
+  });
+  msgs.scrollTop=msgs.scrollHeight;
+}
+
+function selectResponse(idx){
+  const s=scenarios[currentScenario];
+  const r=s.rounds[currentRound];
+  const chosen=r.opts[idx];
+  totalScore+=chosen.score;
+  roundScores.push(chosen.score);
+
+  const msgs=document.getElementById('chatMessages');
+  msgs.innerHTML+=`<div class="msg you"><div class="msg-avatar">😎</div><div class="msg-bubble">${chosen.text}</div></div>`;
+
+  currentRound++;
+  if(currentRound>=5){
+    document.getElementById('chatOptions').innerHTML='';
+    setTimeout(showFinalScore,500);
+    return;
+  }
+
+  // Show brand reply then next round options
+  setTimeout(()=>{
+    msgs.innerHTML+=`<div class="msg brand"><div class="msg-avatar">${s.avatar}</div><div class="msg-bubble">${chosen.reply}</div></div>`;
+    msgs.scrollTop=msgs.scrollHeight;
+    const nr=s.rounds[currentRound];
+    document.getElementById('chatRound').textContent=`Round ${currentRound+1}/5`;
+    const opts=document.getElementById('chatOptions');
+    opts.innerHTML='<p>Choose your response:</p>';
+    nr.opts.forEach((o,i)=>{
+      const btn=document.createElement('button');
+      btn.className='option-btn';
+      btn.textContent=o.text;
+      btn.onclick=()=>selectResponse(i);
+      opts.appendChild(btn);
+    });
+  },800);
+}
+
+function showFinalScore(){
+  const pct=Math.round((totalScore/25)*100);
+  const labels=['Opening','Counter','Value Frame','Close','Upsell'];
+  const fs=document.getElementById('finalScore');
+  fs.innerHTML=`
+    <div class="fs-label">Negotiation Score</div>
+    <div class="fs-number">${pct}/100</div>
+    <div class="fs-sub">${pct>=80?'Expert closer! You extracted maximum value.':pct>=60?'Solid negotiator. A few missed opportunities to push higher.':'Room to improve. You left money on the table.'}</div>
+    <div class="fs-breakdown">${roundScores.map((s,i)=>`<div class="fb-item"><span class="label">${labels[i]}</span><span class="value ${s>=4?'good':s>=3?'mid':'bad'}\">${s}/5</span></div>`).join('')}</div>
+  `;
+  fs.classList.add('active');
+  document.getElementById('postToolCta').classList.add('active');
+  fs.scrollIntoView({behavior:'smooth',block:'center'});
+}
+</script>
+</body>
+</html>

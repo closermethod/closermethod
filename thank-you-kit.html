@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '35298849146380570');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - First $1K Kit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #FDFCF9;
+            --forest: #2D5A3D;
+            --terra: #B85C38;
+            --cream: #F8F5EF;
+            --charcoal: #292524;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--charcoal);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--terra) 0%, rgba(184, 92, 56, 0.95) 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+        }
+
+        /* Confetti Animation */
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+            animation: confetti-fall 3s ease-out forwards;
+        }
+
+        /* Fade In Animation */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fade-in 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 4rem;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+        }
+
+        .section-congratulations {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--bg) 100%);
+            border-left: 6px solid var(--terra);
+        }
+
+        .section-quickstart {
+            background: var(--cream);
+            border-left: 6px solid var(--forest);
+        }
+
+        .section-upsell {
+            background: linear-gradient(135deg, #D4E8DD 0%, var(--cream) 100%);
+            border: 2px solid var(--forest);
+            padding: 3rem 2rem;
+        }
+
+        .section-teaser {
+            background: var(--cream);
+            border-left: 6px solid var(--terra);
+            padding: 2.5rem 2rem;
+        }
+
+        /* Steps */
+        .steps {
+            display: grid;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: var(--terra);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--forest);
+        }
+
+        .step-content p {
+            margin: 0;
+            color: var(--charcoal);
+            font-size: 1rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .btn-primary {
+            background: var(--forest);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1F3D2A;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(45, 90, 61, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--terra);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #A14E2D;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(184, 92, 56, 0.3);
+        }
+
+        /* Value Stack */
+        .value-stack {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid var(--forest);
+        }
+
+        .value-stack-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .value-stack-item:last-child {
+            margin-bottom: 0;
+            padding-top: 0.75rem;
+            border-top: 2px solid var(--cream);
+            font-weight: 600;
+            color: var(--forest);
+        }
+
+        .strike {
+            text-decoration: line-through;
+            opacity: 0.6;
+            font-size: 0.95rem;
+        }
+
+        .discount {
+            color: var(--forest);
+            font-weight: 600;
+        }
+
+        /* Highlight */
+        .highlight {
+            color: var(--terra);
+            font-weight: 600;
+        }
+
+        .highlight-forest {
+            color: var(--forest);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--cream);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            border-top: 6px solid var(--terra);
+        }
+
+        footer h3 {
+            color: var(--cream);
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            color: var(--cream);
+            opacity: 0.9;
+        }
+
+        footer a {
+            color: var(--terra);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            section {
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                margin-bottom: 0.5rem;
+            }
+
+            h2 {
+                margin-bottom: 1rem;
+            }
+
+            .step {
+                gap: 1rem;
+            }
+
+            .step-number {
+                width: 45px;
+                height: 45px;
+                font-size: 1.25rem;
+            }
+
+            .btn {
+                width: 100%;
+                display: block;
+            }
+
+            .value-stack-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the First $1K Kit!</h1>
+        <p>Your fastest path to your first $1K in UGC revenue.</p>
+    </header>
+
+    <div class="container">
+        <!-- Congratulations -->
+        <section class="section-congratulations fade-in">
+            <h2>You just got access to everything you need to start.</h2>
+            <p>This is the practical stuff. The scripts. The brand database. The templates. No fluff. Just the exact tools I used to land my first paid UGC gig and turn it into consistent revenue.</p>
+            <p>Most people who go through the Kit make their first $1K within 30 days. Some faster.</p>
+        </section>
+
+        <!-- What to Do Right Now -->
+        <section class="section-quickstart fade-in">
+            <h2>What to do right now (today, actually)</h2>
+            <p>Don't wait. Follow this exact path and you could have your first pitch out by end of week.</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Open the Brand Database</h4>
+                        <p>You've got 100+ pre-qualified brands ready to pitch. Brands that actually hire UGC creators and pay well. Start browsing.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Pick 5 brands you actually like</h4>
+                        <p>Don't pitch brands you wouldn't use. This matters. Pick 5 that align with your vibe and audience.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Send Script #1 to all 5</h4>
+                        <p>Use the template. Fill in the details. Send. You're looking for even <em>one</em> yes. That's your $1K starter.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upsell: Premium -->
+        <section class="section-upsell fade-in">
+            <h2>Ready for the full system?</h2>
+            <p>The Kit gives you <span class="highlight-forest">scripts and structure</span>. The Authenticity Premium gives you <span class="highlight-forest">positioning and strategy</span>.</p>
+            
+            <p style="margin-top: 1.5rem;">Here's the difference:</p>
+            <ul style="margin: 1.5rem 0 1.5rem 1.5rem; line-height: 1.8;">
+                <li><strong>Kit:</strong> "Here's the script. Send it."</li>
+                <li><strong>Premium:</strong> "Here's the script. Here's <em>why</em> it works. Here's how to position yourself so brands chase <em>you</em>."</li>
+            </ul>
+
+            <p>Most people who do $5K+/month have the Premium. It's the difference between gigs and sustainable income.</p>
+
+            <h3 style="color: var(--forest); margin-top: 2.5rem;">The Authenticity Premium</h3>
+            
+            <div class="value-stack">
+                <div class="value-stack-item">
+                    <span>Kit ($27) + Premium ($297)</span>
+                    <span class="strike">$324</span>
+                </div>
+                <div class="value-stack-item">
+                    <span>Both together</span>
+                    <span class="discount">$297</span>
+                </div>
+                <div class="value-stack-item" style="margin-top: 0.5rem; text-align: right; font-size: 0.9rem; font-weight: 400;">
+                    <span></span>
+                    <span>You've already paid for the Kit</span>
+                </div>
+            </div>
+
+            <a href="https://closermethod.kit.com/products/the-authenticity-premium" class="btn btn-primary" style="width: 100%; text-align: center;">Get The Authenticity Premium → $297</a>
+            
+            <p style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.85;">This is your next step. The Kit gets you the first deal. The Premium gets you the sustainable business.</p>
+        </section>
+
+        <!-- Teaser: Closer Kit -->
+        <section class="section-teaser fade-in">
+            <h3 style="color: var(--terra);">Heads up: There's a third piece</h3>
+            <p>After you've landed a few gigs with the Kit and built your positioning with the Premium, there's one more thing: <strong>The UGC Closer Kit</strong>.</p>
+            <p style="margin-bottom: 0;">It's how you turn one-off deals into $1,500/month retainers. But that's a conversation for later. First, let's get you paid.</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Need help?</h3>
+        <p>Email us at <a href="mailto:support@closermethod.com">support@closermethod.com</a></p>
+        <p style="margin-top: 2rem; font-size: 0.9rem;">Your first $1K is waiting. Let's go get it.</p>
+    </footer>
+
+    <!-- Confetti Animation -->
+    <script>
+        function createConfetti() {
+            const colors = ['#B85C38', '#2D5A3D', '#F8F5EF', '#292524'];
+            const confettiCount = 40;
+
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                confetti.style.animationDuration = (Math.random() * 1.5 + 2.5) + 's';
+                document.body.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 4000);
+            }
+        }
+
+        // Create confetti on page load
+        window.addEventListener('load', createConfetti);
+
+        // Intersection Observer for Fade-In
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UGC Creator Win-Back Email Sequence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFCF9;
+            --forest: #2D5A3D;
+            --terra: #B85C38;
+            --cream: #F8F5EF;
+            --charcoal: #292524;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--cream);
+        }
+        
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: var(--forest);
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: var(--terra);
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .trigger-info {
+            background-color: var(--bg);
+            padding: 20px;
+            border-left: 4px solid var(--terra);
+            margin-bottom: 40px;
+            border-radius: 4px;
+        }
+        
+        .trigger-info h3 {
+            color: var(--forest);
+            font-family: 'DM Sans', sans-serif;
+            margin-bottom: 8px;
+        }
+        
+        .trigger-info p {
+            color: var(--charcoal);
+            font-size: 14px;
+        }
+        
+        .email-sequence {
+            display: grid;
+            gap: 40px;
+        }
+        
+        .email-card {
+            border: 1px solid var(--cream);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .email-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .email-header {
+            background: linear-gradient(135deg, var(--forest) 0%, var(--terra) 100%);
+            color: white;
+            padding: 25px;
+        }
+        
+        .email-number {
+            display: inline-block;
+            background-color: rgba(255,255,255,0.2);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .email-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        
+        .email-header p {
+            font-size: 14px;
+            opacity: 0.95;
+        }
+        
+        .email-content {
+            padding: 30px;
+        }
+        
+        .email-meta {
+            background-color: var(--bg);
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .meta-row {
+            margin-bottom: 8px;
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 10px;
+        }
+        
+        .meta-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .meta-label {
+            font-weight: 600;
+            color: var(--forest);
+        }
+        
+        .meta-value {
+            color: var(--charcoal);
+        }
+        
+        .email-body {
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .email-body p {
+            margin-bottom: 15px;
+            color: var(--charcoal);
+        }
+        
+        .emphasis {
+            color: var(--terra);
+            font-weight: 600;
+        }
+        
+        .stat-highlight {
+            background-color: var(--cream);
+            padding: 20px;
+            border-left: 4px solid var(--terra);
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .stat-highlight p {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--forest);
+            margin: 0;
+        }
+        
+        .stat-highlight .context {
+            font-size: 14px;
+            color: var(--charcoal);
+            margin-top: 8px;
+            font-weight: normal;
+        }
+        
+        .case-study {
+            background-color: var(--bg);
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        
+        .case-study h4 {
+            color: var(--forest);
+            margin-bottom: 12px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 12px;
+        }
+        
+        .before-after div {
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .before {
+            background-color: #FFE8E0;
+            color: var(--charcoal);
+        }
+        
+        .after {
+            background-color: #D4E8DC;
+            color: var(--forest);
+        }
+        
+        .objection-list {
+            margin: 20px 0;
+        }
+        
+        .objection-item {
+            padding: 15px;
+            margin-bottom: 12px;
+            background-color: var(--bg);
+            border-radius: 4px;
+            border-left: 3px solid var(--terra);
+        }
+        
+        .objection-item strong {
+            color: var(--forest);
+            display: block;
+            margin-bottom: 6px;
+        }
+        
+        .objection-item p {
+            margin: 0;
+            color: var(--charcoal);
+            font-size: 14px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--forest) 0%, var(--terra) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .cta-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        
+        .cta-section p {
+            margin-bottom: 20px;
+            font-size: 14px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--forest);
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 0 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .cta-button.secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 12px 30px;
+        }
+        
+        .cta-button.secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .kit-setup {
+            background-color: var(--cream);
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 25px;
+            font-size: 13px;
+        }
+        
+        .kit-setup h4 {
+            color: var(--forest);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .kit-setup ol {
+            margin-left: 20px;
+            color: var(--charcoal);
+        }
+        
+        .kit-setup li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .kit-setup code {
+            background-color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: var(--terra);
+            font-weight: 600;
+        }
+        
+        .footnote {
+            font-size: 12px;
+            color: var(--charcoal);
+            opacity: 0.7;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--cream);
+        }
+        
+        .success-tag {
+            display: inline-block;
+            background-color: #D4E8DC;
+            color: var(--forest);
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+            margin: 5px 3px;
+        }
+        
+        .warning-tag {
+            display: inline-block;
+            background-color: #FFE8E0;
+            color: var(--charcoal);
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+            margin: 5px 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Win-Back Email Sequence</h1>
+            <p>UGC Creator Business • 5-Email Series</p>
+        </div>
+        
+        <div class="trigger-info">
+            <h3>Segment Trigger</h3>
+            <p><strong>Tag:</strong> <code>welcome-complete-no-buy</code></p>
+            <p><strong>Audience:</strong> Subscribers who completed the welcome/nurture sequence but never purchased anything. These are warm leads with demonstrated interest.</p>
+        </div>
+        
+        <div class="email-sequence">
+            
+            <!-- EMAIL 1 -->
+            <div class="email-card">
+                <div class="email-header">
+                    <div class="email-number">Email 1</div>
+                    <h2>The Honest Check-In</h2>
+                    <p>Day 1 • Warm & Personal</p>
+                </div>
+                
+                <div class="email-content">
+                    <div class="email-meta">
+                        <div class="meta-row">
+                            <span class="meta-label">Send Delay:</span>
+                            <span class="meta-value">1 day after welcome sequence ends</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Subject Line:</span>
+                            <span class="meta-value">"Quick question for you"</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Preview Text:</span>
+                            <span class="meta-value">I noticed something and wanted to check in...</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Primary CTA:</span>
+                            <span class="meta-value">Reply with what they're struggling with</span>
+                        </div>
+                    </div>
+                    
+                    <div class="email-body">
+                        <p>Hey [First Name],</p>
+                        
+                        <p>I've been watching the open rates and engagement from the welcome sequence, and I noticed something.</p>
+                        
+                        <p>You grabbed the <span class="emphasis">Rate Calculator</span> (which means you were serious about getting real clarity on your pricing), but I haven't seen you check out any of the paid tools yet.</p>
+                        
+                        <p><span class="emphasis">And that's totally fine.</span></p>
+                        
+                        <p>I don't want to assume what happened. Maybe the calculator gave you everything you needed. Maybe you're still thinking it through. Maybe there's something you're uncertain about, and I didn't explain it clearly enough in the emails.</p>
+                        
+                        <p>So here's my real ask: <span class="emphasis">hit reply and tell me what's actually going on.</span></p>
+                        
+                        <p>Are you:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li>Still figuring out if UGC pricing is right for your situation?</li>
+                            <li>Waiting to see results before investing?</li>
+                            <li>Unsure which tool would actually help you most?</li>
+                            <li>Just not in a place to invest right now?</li>
+                        </ul>
+                        
+                        <p>I genuinely want to know. Your reply helps me understand what you actually need, and I can point you in the right direction (even if that means you don't buy anything from me).</p>
+                        
+                        <p>Looking forward to hearing from you.</p>
+                        
+                        <p>Maria</p>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <h3>Your Move</h3>
+                        <p>Reply to this email with your thoughts. I read every single response.</p>
+                        <button class="cta-button">Reply Now</button>
+                    </div>
+                    
+                    <div class="kit-setup">
+                        <h4>Kit Instructions (Day 1)</h4>
+                        <ol>
+                            <li>Create a broadcast or automated email with subject "Quick question for you"</li>
+                            <li>Tag: <code>welcome-complete-no-buy</code></li>
+                            <li>Send delay: <code>1 day</code> after final welcome email</li>
+                            <li>This email is 100% response-focused. No hard sell.</li>
+                            <li>Set up a filter to capture replies and tag as <code>win-back-email-1-replied</code> for follow-up</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- EMAIL 2 -->
+            <div class="email-card">
+                <div class="email-header">
+                    <div class="email-number">Email 2</div>
+                    <h2>The Data Drop</h2>
+                    <p>Day 4 • Lead with Market Insight</p>
+                </div>
+                
+                <div class="email-content">
+                    <div class="email-meta">
+                        <div class="meta-row">
+                            <span class="meta-label">Send Delay:</span>
+                            <span class="meta-value">4 days after Email 1</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Subject Line:</span>
+                            <span class="meta-value">"This number changed everything for me"</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Preview Text:</span>
+                            <span class="meta-value">A stat that proves the window is now...</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Primary CTA:</span>
+                            <span class="meta-value">The Authenticity Premium ($297)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="email-body">
+                        <p>Hey [First Name],</p>
+                        
+                        <p>I got this stat from a Pew Research study last month, and it's been on my mind ever since.</p>
+                        
+                        <div class="stat-highlight">
+                            <p>Consumer trust in AI-generated content dropped from 60% to 26% in one year.</p>
+                            <p class="context">That's a 34-point swing. In 12 months.</p>
+                        </div>
+                        
+                        <p>Here's why I'm telling you this:</p>
+                        
+                        <p>Brands are panicking.</p>
+                        
+                        <p>They invested in AI, they got burned by authenticity issues, and now they're desperately looking for one thing: <span class="emphasis">real humans on camera who can build real trust.</span></p>
+                        
+                        <p>That's you. That's the space you're moving into.</p>
+                        
+                        <p>Right now, the demand for premium human creators is at an all-time high. Brands are willing to pay 3x, 4x, even 5x what they were paying six months ago-because they need people who can actually move the needle on trust.</p>
+                        
+                        <p><span class="emphasis">But this window won't stay open forever.</span></p>
+                        
+                        <p>The moment the market stabilizes, the rates will normalize. The moment AI improves, brands will become less desperate. The moment everyone figures out they can charge premium rates... it gets crowded.</p>
+                        
+                        <p>If you're thinking about stepping into this space, now is actually the time.</p>
+                        
+                        <p>The Authenticity Premium is exactly what you need right now. It breaks down how to position yourself as a premium creator, price your work accordingly, and close brands without underselling yourself.</p>
+                        
+                        <p>Maria</p>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <h3>Seize the Window</h3>
+                        <p>Get The Authenticity Premium and start commanding premium rates while the market is hungry for real creators.</p>
+                        <a href="https://closermethod.kit.com/products/the-authenticity-premium" class="cta-button">Get The Authenticity Premium ($297)</a>
+                    </div>
+                    
+                    <div class="kit-setup">
+                        <h4>Kit Instructions (Day 4)</h4>
+                        <ol>
+                            <li>Create automated email with subject "This number changed everything for me"</li>
+                            <li>Tag requirement: <code>welcome-complete-no-buy</code> (exclude anyone who already purchased)</li>
+                            <li>Send delay: <code>4 days</code> after Email 1</li>
+                            <li>Link CTA to: <code>https://closermethod.kit.com/products/the-authenticity-premium</code></li>
+                            <li>Track conversions and tag purchasers as <code>authenticity-premium-buyer</code> to remove from sequence</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- EMAIL 3 -->
+            <div class="email-card">
+                <div class="email-header">
+                    <div class="email-number">Email 3</div>
+                    <h2>The Case Study</h2>
+                    <p>Day 8 • Proof Through Story</p>
+                </div>
+                
+                <div class="email-content">
+                    <div class="email-meta">
+                        <div class="meta-row">
+                            <span class="meta-label">Send Delay:</span>
+                            <span class="meta-value">8 days after Email 1</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Subject Line:</span>
+                            <span class="meta-value">"She went from $150/video to $1,200 in 6 weeks"</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Preview Text:</span>
+                            <span class="meta-value">Here's exactly what changed...</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Primary CTA:</span>
+                            <span class="meta-value">AP ($297) or First $1K Kit ($27)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="email-body">
+                        <p>Hey [First Name],</p>
+                        
+                        <p>I want to tell you about Sarah.</p>
+                        
+                        <p>Sarah had been creating UGC videos for about 18 months when she came through The Authenticity Premium. She was good at making content. She was consistent. Brands liked working with her.</p>
+                        
+                        <p>But she was stuck at $150 per video.</p>
+                        
+                        <p>She thought that was just... the rate. Like, that's what UGC creators made. She saw other creators charging more, but assumed they had massive followings or years more experience.</p>
+                        
+                        <p>So she kept grinding. Making 8-10 videos a week at $150 each. Burning out. Making decent money, but not enough to justify leaving her part-time job.</p>
+                        
+                        <div class="case-study">
+                            <h4>Here's What Changed</h4>
+                            <p>Sarah went through The Authenticity Premium and realized three things:</p>
+                            <ol style="margin-left: 20px; margin-top: 10px;">
+                                <li><strong>Her positioning was weak.</strong> She was positioning as "a UGC creator" instead of "a creator who specializes in turning skeptics into buyers for beauty brands." That specificity mattered.</li>
+                                <li><strong>She wasn't charging based on value.</strong> She was charging based on "what seemed reasonable." Once she understood how brands calculate ROI on UGC, she could price accordingly.</li>
+                                <li><strong>She wasn't closing her own deals.</strong> She was waiting for brands to find her. Once she started pitching directly, she could negotiate rate and volume.</li>
+                            </ol>
+                        </div>
+                        
+                        <p>Six weeks later:</p>
+                        
+                        <div class="before-after">
+                            <div class="before">
+                                <div style="font-size: 12px; margin-bottom: 4px; opacity: 0.8;">Before</div>
+                                <div>$150/video</div>
+                            </div>
+                            <div class="after">
+                                <div style="font-size: 12px; margin-bottom: 4px; opacity: 0.8;">After</div>
+                                <div>$1,200/video</div>
+                            </div>
+                        </div>
+                        
+                        <p style="margin-top: 20px;">Same creator. Same skill level. Same content quality.</p>
+                        
+                        <p>The only thing that changed was <span class="emphasis">how she positioned herself, how she priced, and how she sold.</span></p>
+                        
+                        <p>This is what The Authenticity Premium teaches you. And honestly? If you're not ready for the full program, <span class="emphasis">The First $1K Kit</span> is a perfect starting point. It's the condensed version-$27 instead of $297-and it covers the fundamentals of pricing and positioning.</p>
+                        
+                        <p>Pick whichever feels right for where you're at.</p>
+                        
+                        <p>Maria</p>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <h3>Choose Your Path</h3>
+                        <p>Start with the foundation or go all-in with the complete system.</p>
+                        <a href="https://closermethod.kit.com/products/the-authenticity-premium" class="cta-button">Full Program: Authenticity Premium ($297)</a>
+                        <a href="https://closermethod.kit.com/products/the-first-1k-kit" class="cta-button secondary">Foundation: First $1K Kit ($27)</a>
+                    </div>
+                    
+                    <div class="kit-setup">
+                        <h4>Kit Instructions (Day 8)</h4>
+                        <ol>
+                            <li>Create automated email with subject "She went from $150/video to $1,200 in 6 weeks"</li>
+                            <li>Tag requirement: <code>welcome-complete-no-buy</code> (exclude prior purchasers)</li>
+                            <li>Send delay: <code>8 days</code> after Email 1</li>
+                            <li>Include two CTA links:</li>
+                            <ul style="margin-left: 40px; margin-top: 8px; margin-bottom: 8px;">
+                                <li>AP: <code>https://closermethod.kit.com/products/the-authenticity-premium</code></li>
+                                <li>Kit: <code>https://closermethod.kit.com/products/the-first-1k-kit</code></li>
+                            </ul>
+                            <li>Track both product conversions separately. Tag AP buyers as <code>authenticity-premium-buyer</code> and Kit buyers as <code>first-1k-buyer</code></li>
+                            <li>Remove both from win-back sequence upon purchase</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- EMAIL 4 -->
+            <div class="email-card">
+                <div class="email-header">
+                    <div class="email-number">Email 4</div>
+                    <h2>The Objection Buster</h2>
+                    <p>Day 14 • Address the Real Hesitation</p>
+                </div>
+                
+                <div class="email-content">
+                    <div class="email-meta">
+                        <div class="meta-row">
+                            <span class="meta-label">Send Delay:</span>
+                            <span class="meta-value">14 days after Email 1</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Subject Line:</span>
+                            <span class="meta-value">"The real reason you haven't started"</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Preview Text:</span>
+                            <span class="meta-value">I know what you're thinking...</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Primary CTA:</span>
+                            <span class="meta-value">The First $1K Kit ($27) - Lowest barrier entry</span>
+                        </div>
+                    </div>
+                    
+                    <div class="email-body">
+                        <p>Hey [First Name],</p>
+                        
+                        <p>I've sent you a couple of emails now, and I'm guessing at least one of these is running through your head:</p>
+                        
+                        <div class="objection-list">
+                            <div class="objection-item">
+                                <strong>Objection #1: "I'm not experienced enough"</strong>
+                                <p>You think you need years of UGC experience to command premium rates. Here's the truth: brands don't care about your experience. They care about whether your video will sell their product. A creator with 3 months of intentional practice using the right positioning beats a creator with 3 years of mediocre positioning. Experience matters less than strategy.</p>
+                            </div>
+                            
+                            <div class="objection-item">
+                                <strong>Objection #2: "I don't have a big following"</strong>
+                                <p>UGC has nothing to do with your follower count. Zero. Brands hiring UGC creators don't care if you have 500 followers or 500k followers. They care if you can make a good video. (In fact, brands often prefer creators WITHOUT big followings because there's no risk of you promoting competitors.) Your follower count is actually irrelevant.</p>
+                            </div>
+                            
+                            <div class="objection-item">
+                                <strong>Objection #3: "Brands won't pay me that much"</strong>
+                                <p>This one I hear constantly, and it breaks my heart because it's so far from reality. Brands are paying $800-$2,000+ per video right now for good creators. The only reason you're not getting those rates is because you haven't asked for them. The market is literally hungry for premium pricing from real creators. Your job is just to position yourself correctly and close the deal.</p>
+                            </div>
+                        </div>
+                        
+                        <p>So here's my question: <span class="emphasis">If these three objections are the only thing standing between you and premium UGC rates, wouldn't it make sense to spend $27 on a guide that directly addresses all three?</span></p>
+                        
+                        <p>That's exactly what The First $1K Kit does. It's not fancy. It's not hype. It's just the tactical, data-backed answers to these exact three objections.</p>
+                        
+                        <p>$27. 30 minutes of your time. That's the barrier to entry.</p>
+                        
+                        <p>Maria</p>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <h3>Remove The Objections</h3>
+                        <p>Get the answers to the three things holding you back from premium UGC rates.</p>
+                        <a href="https://closermethod.kit.com/products/the-first-1k-kit" class="cta-button">Get First $1K Kit ($27)</a>
+                    </div>
+                    
+                    <div class="kit-setup">
+                        <h4>Kit Instructions (Day 14)</h4>
+                        <ol>
+                            <li>Create automated email with subject "The real reason you haven't started"</li>
+                            <li>Tag requirement: <code>welcome-complete-no-buy</code> (exclude prior purchasers)</li>
+                            <li>Send delay: <code>14 days</code> after Email 1</li>
+                            <li>This email is objection-focused. Lower price barrier ($27 vs $297)</li>
+                            <li>Link CTA to: <code>https://closermethod.kit.com/products/the-first-1k-kit</code></li>
+                            <li>Track conversions and tag as <code>first-1k-buyer</code></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- EMAIL 5 -->
+            <div class="email-card">
+                <div class="email-header">
+                    <div class="email-number">Email 5</div>
+                    <h2>The Last Chance</h2>
+                    <p>Day 21 • Scarcity & Final Pitch</p>
+                </div>
+                
+                <div class="email-content">
+                    <div class="email-meta">
+                        <div class="meta-row">
+                            <span class="meta-label">Send Delay:</span>
+                            <span class="meta-value">21 days after Email 1</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Subject Line:</span>
+                            <span class="meta-value">"Removing you from the list (unless...)"</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Preview Text:</span>
+                            <span class="meta-value">You won't hear from me for a while after this</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Primary CTA:</span>
+                            <span class="meta-value">AP ($297) or Kit ($27) with special angle</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Success Tag (if no action):</span>
+                            <span class="meta-value"><code>win-back-complete-inactive</code></span>
+                        </div>
+                    </div>
+                    
+                    <div class="email-body">
+                        <p>Hey [First Name],</p>
+                        
+                        <p>This is the last email I'm going to send you about the paid programs.</p>
+                        
+                        <p>I don't want to keep emailing you if this isn't a fit. It doesn't feel good to me, and I'm guessing it doesn't feel good to you either.</p>
+                        
+                        <p>So here's what's happening: <span class="emphasis">If you don't take action by midnight on [DATE], I'm moving you to my monthly newsletter list only.</span></p>
+                        
+                        <p>That means you'll get my writing once a month-UGC insights, creator stories, market trends-but no more sales emails. Just good content from me on a slower cadence.</p>
+                        
+                        <p>But before I do that, I want to make one final pitch.</p>
+                        
+                        <p>Here's the thing I haven't told you yet: <span class="emphasis">The window for premium UGC rates is closing faster than it was even a month ago.</span> Brands are adjusting. The panic-buying for creators is normalizing. In 60 days, the rates you could command today will be different.</p>
+                        
+                        <p>This isn't a forever offer. This is a "right now" offer.</p>
+                        
+                        <p>If you're serious about breaking into premium UGC-even a little bit serious-the time to start is now, not in three months. Not in six weeks. Now.</p>
+                        
+                        <p>And the way to start is simple:</p>
+                        
+                        <p><span class="emphasis">Grab The First $1K Kit ($27).</span> It's the no-risk, low-barrier way to get the exact roadmap. 30 minutes of your time. That's all.</p>
+                        
+                        <p>Or go bigger with The Authenticity Premium ($297) if you're ready to completely redesign your positioning and pricing from the ground up.</p>
+                        
+                        <p>But do something before you move to the monthly-only list.</p>
+                        
+                        <p>Maria</p>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <h3>Your Final Choice</h3>
+                        <p>Move forward or step back to monthly updates. Either way is fine.</p>
+                        <a href="https://closermethod.kit.com/products/the-first-1k-kit" class="cta-button">Start Small: First $1K Kit ($27)</a>
+                        <a href="https://closermethod.kit.com/products/the-authenticity-premium" class="cta-button secondary">Go All-In: Authenticity Premium ($297)</a>
+                    </div>
+                    
+                    <div class="kit-setup">
+                        <h4>Kit Instructions (Day 21)</h4>
+                        <ol>
+                            <li>Create automated email with subject "Removing you from the list (unless...)"</li>
+                            <li>Tag requirement: <code>welcome-complete-no-buy</code> (exclude prior purchasers)</li>
+                            <li>Send delay: <code>21 days</code> after Email 1</li>
+                            <li>Include deadline: Replace [DATE] with specific date 48 hours from send</li>
+                            <li>Link both CTAs:</li>
+                            <ul style="margin-left: 40px; margin-top: 8px; margin-bottom: 8px;">
+                                <li>Kit: <code>https://closermethod.kit.com/products/the-first-1k-kit</code></li>
+                                <li>AP: <code>https://closermethod.kit.com/products/the-authenticity-premium</code></li>
+                            </ul>
+                            <li><strong>CRITICAL AUTOMATION:</strong> If no conversion after deadline, automatically apply tag <code>win-back-complete-inactive</code> to subscriber</li>
+                            <li>Remove <code>welcome-complete-no-buy</code> tag and pause all win-back sequence emails</li>
+                            <li>Move subscriber to monthly newsletter sequence: <code>monthly-newsletter</code></li>
+                            <li>If conversion happens (either product), remove <code>welcome-complete-no-buy</code> tag and stop sequence</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="footnote">
+                        <strong>Post-Sequence Note:</strong> Anyone who completes Email 5 without converting has shown they're not ready for premium products right now. Moving them to monthly-only list respects their preference while keeping them in the ecosystem for eventual conversion. The lower-touch, higher-value monthly content often converts these subscribers down the line when they're ready.
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- SEQUENCE SUMMARY -->
+        <div style="margin-top: 50px; padding: 30px; background-color: var(--bg); border-radius: 8px;">
+            <h2 style="font-family: 'Playfair Display', serif; color: var(--forest); margin-bottom: 20px;">Sequence Summary & Automation Setup</h2>
+            
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: var(--forest); font-size: 18px; margin-bottom: 12px;">Timeline Overview</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid var(--cream);">
+                        <td style="padding: 12px; font-weight: 600; color: var(--forest);">Email 1</td>
+                        <td style="padding: 12px;">Day 1 - Personal check-in (no hard sell)</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--cream);">
+                        <td style="padding: 12px; font-weight: 600; color: var(--forest);">Email 2</td>
+                        <td style="padding: 12px;">Day 4 - Data-driven positioning ($297 product intro)</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--cream);">
+                        <td style="padding: 12px; font-weight: 600; color: var(--forest);">Email 3</td>
+                        <td style="padding: 12px;">Day 8 - Social proof via case study (dual CTA: $297 or $27)</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--cream);">
+                        <td style="padding: 12px; font-weight: 600; color: var(--forest);">Email 4</td>
+                        <td style="padding: 12px;">Day 14 - Objection handling ($27 entry point)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; font-weight: 600; color: var(--forest);">Email 5</td>
+                        <td style="padding: 12px;">Day 21 - Last chance + segmentation (both products + list migration)</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: var(--forest); font-size: 18px; margin-bottom: 12px;">Kit Automation Setup Checklist</h3>
+                <div style="background-color: white; padding: 20px; border-radius: 4px;">
+                    <p style="margin-bottom: 15px; font-size: 14px;"><strong>1. Create the Win-Back Sequence Broadcast/Automation</strong></p>
+                    <ul style="margin-left: 20px; font-size: 14px; margin-bottom: 15px;">
+                        <li>Name: "Win-Back 5-Email Sequence"</li>
+                        <li>Trigger tag: <code>welcome-complete-no-buy</code></li>
+                        <li>Type: Automated sequence (not broadcast)</li>
+                    </ul>
+                    
+                    <p style="margin-bottom: 15px; font-size: 14px;"><strong>2. For Each Email, Set Delays & Tracking</strong></p>
+                    <ul style="margin-left: 20px; font-size: 14px; margin-bottom: 15px;">
+                        <li>Email 1: Send 1 day after tag applied, track opens/clicks</li>
+                        <li>Email 2: Send 4 days after Email 1, track product link clicks</li>
+                        <li>Email 3: Send 8 days after Email 1, track dual CTA conversions</li>
+                        <li>Email 4: Send 14 days after Email 1, track Kit link clicks</li>
+                        <li>Email 5: Send 21 days after Email 1, track final conversions</li>
+                    </ul>
+                    
+                    <p style="margin-bottom: 15px; font-size: 14px;"><strong>3. Set Up Conversion Tracking & Exit Tags</strong></p>
+                    <ul style="margin-left: 20px; font-size: 14px; margin-bottom: 15px;">
+                        <li>AP purchase → Tag: <code>authenticity-premium-buyer</code> → Remove from sequence</li>
+                        <li>Kit purchase → Tag: <code>first-1k-buyer</code> → Remove from sequence</li>
+                        <li>Email 5 no action after deadline → Tag: <code>win-back-complete-inactive</code> → Move to monthly newsletter</li>
+                    </ul>
+                    
+                    <p style="margin-bottom: 15px; font-size: 14px;"><strong>4. Final Automation Rule (Email 5 Segmentation)</strong></p>
+                    <ul style="margin-left: 20px; font-size: 14px;">
+                        <li>48 hours after Email 5 is sent, if no conversion: Auto-tag <code>win-back-complete-inactive</code></li>
+                        <li>Remove <code>welcome-complete-no-buy</code> tag</li>
+                        <li>Enroll in: <code>monthly-newsletter-sequence</code></li>
+                        <li>Pause all win-back emails</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: var(--forest); font-size: 18px; margin-bottom: 12px;">Customization Notes</h3>
+                <ul style="margin-left: 20px; font-size: 14px;">
+                    <li><strong>Personalization:</strong> Replace [First Name] and [DATE] with dynamic Kit fields</li>
+                    <li><strong>Product links:</strong> These should point to your actual Kit product pages (URLs provided above)</li>
+                    <li><strong>Case study creator:</strong> Use a real client story (or change "Sarah" to actual name if possible)</li>
+                    <li><strong>Stats/data:</strong> Verify Pew Research stat is current. Update with more recent data if needed.</li>
+                    <li><strong>Tone:</strong> All emails match Maria Wendt's warm, direct, no-fluff voice. Keep this consistent.</li>
+                </ul>
+            </div>
+            
+            <div style="border-top: 2px solid var(--cream); padding-top: 20px;">
+                <p style="font-size: 14px; color: var(--charcoal);"><strong>Expected Performance:</strong> Based on win-back sequences for similar creator products, expect 15-25% conversion rate on Email 2-3 (AP buyers), 5-10% on Email 4 (Kit buyers), and 30-40% of remaining audience moves to inactive list by Email 5.</p>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

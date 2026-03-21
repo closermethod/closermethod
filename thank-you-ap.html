@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '35298849146380570');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're In - Authenticity Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #FDFCF9;
+            --forest: #2D5A3D;
+            --terra: #B85C38;
+            --cream: #F8F5EF;
+            --charcoal: #292524;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--charcoal);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Navigation/Header */
+        header {
+            background: linear-gradient(135deg, var(--forest) 0%, rgba(45, 90, 61, 0.95) 100%);
+            color: var(--cream);
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--cream);
+            opacity: 0.95;
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+        }
+
+        /* Confetti Animation */
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes confetti-spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+            animation: confetti-fall 3s ease-out forwards;
+        }
+
+        /* Fade In Animation */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fade-in 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 4rem;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+        }
+
+        .section-congratulations {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--bg) 100%);
+            border-left: 6px solid var(--terra);
+        }
+
+        .section-quickstart {
+            background: var(--cream);
+            border-left: 6px solid var(--forest);
+        }
+
+        .section-access {
+            background: var(--cream);
+            border-left: 6px solid var(--charcoal);
+        }
+
+        .section-upsell {
+            background: linear-gradient(135deg, #FFE5CC 0%, var(--cream) 100%);
+            border: 2px solid var(--terra);
+            padding: 3rem 2rem;
+        }
+
+        .section-bump {
+            background: var(--bg);
+            border-left: 6px solid var(--forest);
+            padding: 2.5rem 2rem;
+        }
+
+        /* Steps */
+        .steps {
+            display: grid;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: var(--terra);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--forest);
+        }
+
+        .step-content p {
+            margin: 0;
+            color: var(--charcoal);
+            font-size: 1rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .btn-primary {
+            background: var(--terra);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #A14E2D;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(184, 92, 56, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--forest);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #1F3D2A;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(45, 90, 61, 0.3);
+        }
+
+        /* Value Stack */
+        .value-stack {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid var(--terra);
+        }
+
+        .value-stack-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .value-stack-item:last-child {
+            margin-bottom: 0;
+            padding-top: 0.75rem;
+            border-top: 2px solid var(--cream);
+            font-weight: 600;
+            color: var(--forest);
+        }
+
+        .strike {
+            text-decoration: line-through;
+            opacity: 0.6;
+            font-size: 0.95rem;
+        }
+
+        .discount {
+            color: var(--terra);
+            font-weight: 600;
+        }
+
+        /* Email section */
+        .access-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--forest);
+        }
+
+        .access-item h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--forest);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--cream);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            border-top: 6px solid var(--terra);
+        }
+
+        footer h3 {
+            color: var(--cream);
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            color: var(--cream);
+            opacity: 0.9;
+        }
+
+        footer a {
+            color: var(--terra);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            section {
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                margin-bottom: 0.5rem;
+            }
+
+            h2 {
+                margin-bottom: 1rem;
+            }
+
+            .step {
+                gap: 1rem;
+            }
+
+            .step-number {
+                width: 45px;
+                height: 45px;
+                font-size: 1.25rem;
+            }
+
+            .btn {
+                width: 100%;
+                display: block;
+            }
+
+            .value-stack-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Celebration */
+        .emoji {
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+        }
+
+        .highlight {
+            color: var(--terra);
+            font-weight: 600;
+        }
+
+        .highlight-forest {
+            color: var(--forest);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>You're In!</h1>
+        <p>Welcome to Authenticity Premium. Let's build something real.</p>
+    </header>
+
+    <div class="container">
+        <!-- Congratulations -->
+        <section class="section-congratulations fade-in">
+            <h2>You just made the best decision for your UGC business.</h2>
+            <p>Seriously. You're not buying a course. You're buying the <span class="highlight">system that works</span> - the one I use to land high-ticket clients, position myself as premium, and turn scripts into $1,500/month retainers.</p>
+            <p>This is the exact framework I teach my coaching clients. The one that gets results.</p>
+        </section>
+
+        <!-- What to Do Right Now -->
+        <section class="section-quickstart fade-in">
+            <h2>What to do right now (just 3 steps)</h2>
+            <p>Don't overwhelm yourself. Follow this path and you'll have your first pitch ready within 48 hours.</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Open Module 1: Your UGC Positioning</h4>
+                        <p>Watch the first video. This is where everything clicks. You'll understand exactly how to talk about your UGC in a way that makes brands <em>want</em> to pay you $500+/month.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Jump to Module 3: The Pitch Framework</h4>
+                        <p>Don't wait to watch everything in order. Module 3 gives you the actual template. Fill in your specifics, and you have a pitch.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Send your first pitch</h4>
+                        <p>Pick one brand you want to work with. Use the script. Hit send. This is how momentum starts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Access Section -->
+        <section class="section-access fade-in">
+            <h2>Your materials are ready</h2>
+            <p>Check your email inbox (and spam folder, just in case). You'll find:</p>
+            
+            <div class="access-item">
+                <h4>Email</h4>
+                <p>Your login link and a quick-start guide.</p>
+            </div>
+
+            <div class="access-item">
+                <h4>Access to All Modules</h4>
+                <p>Watch them in order or jump around. The system works either way.</p>
+            </div>
+
+            <div class="access-item">
+                <h4>Scripts & Templates</h4>
+                <p>Every pitch template, email script, and positioning statement in one place.</p>
+            </div>
+
+            <p style="margin-top: 2rem; color: var(--terra); font-weight: 500;">If you don't see the email within 5 minutes, email us at <strong>support@closermethod.com</strong></p>
+        </section>
+
+        <!-- Upsell: Closer Kit -->
+        <section class="section-upsell fade-in">
+            <h2>Most Premium buyers add this next</h2>
+            <p>You've got the positioning system. Now let's talk about closing deals and turning them into <span class="highlight">$1,500/month retainers</span>.</p>
+            
+            <h3 style="color: var(--terra); margin-top: 2rem;">The UGC Closer Kit</h3>
+            <p>The Premium teaches you <em>how</em> to position yourself. The Closer Kit teaches you <em>how to close</em> - and more importantly, how to turn one-off deals into recurring revenue.</p>
+
+            <p>Most of my students who do $5K+/month in UGC revenue have both. Here's why:</p>
+            <ul style="margin: 1.5rem 0 1.5rem 1.5rem; line-height: 1.8;">
+                <li>How to have "the conversation" that leads to retainers (not one-off gigs)</li>
+                <li>Closing scripts that feel natural, not salesy</li>
+                <li>How to price retainers so you actually make $1,500+/month per client</li>
+                <li>How to handle objections without dropping your rate</li>
+            </ul>
+
+            <div class="value-stack">
+                <div class="value-stack-item">
+                    <span>Premium ($297) + Closer Kit (<s>$246</s> $197)</span>
+                    <span class="strike">$543</span>
+                </div>
+                <div class="value-stack-item">
+                    <span>Your Price (together)</span>
+                    <span class="discount">$197</span>
+                </div>
+            </div>
+
+            <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=thank_you_upsell&utm_campaign=closer_kit&utm_content=auth_premium" class="btn btn-primary" style="width: 100%; text-align: center;">Add the Closer Kit → $197</a>
+            <p style="margin-top: 0.75rem; text-align: center; color: var(--terra); font-size: 0.9rem; font-weight: 600;">Tax season sale — ends March 31</p>
+
+            <p style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.85;">You've already got the Premium. This is just the next logical step.</p>
+        </section>
+
+        <!-- Order Bump Reminder -->
+        <section class="section-bump fade-in">
+            <h3 style="color: var(--forest); margin-bottom: 0.5rem;">Already grabbed the First $1K Kit?</h3>
+            <p>It's on the way too. You'll get both the Premium <em>and</em> the Kit with everything inside.</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Questions?</h3>
+        <p>Email us anytime at <a href="mailto:support@closermethod.com">support@closermethod.com</a></p>
+        <p style="margin-top: 2rem; font-size: 0.9rem;">You're part of the Closer Method community now. Let's get to work.</p>
+    </footer>
+
+    <!-- Confetti Animation -->
+    <script>
+        function createConfetti() {
+            const colors = ['#B85C38', '#2D5A3D', '#F8F5EF', '#292524'];
+            const confettiCount = 50;
+
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                confetti.style.animationDuration = (Math.random() * 1.5 + 2.5) + 's';
+                document.body.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 4000);
+            }
+        }
+
+        // Create confetti on page load
+        window.addEventListener('load', createConfetti);
+
+        // Intersection Observer for Fade-In
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Track InitiateCheckout on Closer Kit CTA
+        document.querySelectorAll('.btn-primary[href*="stan.store"]').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-thank-you-ap',value:197,currency:'USD'});
+          });
+        });
+    </script>
+</body>
+</html>
