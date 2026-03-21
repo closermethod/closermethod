@@ -160,8 +160,8 @@ footer{text-align:center;padding:40px 20px;font-size:11px;color:#444}
 
 <script>
 const KIT_FORM_ID='9131179';
-function unlockTool(){const email=document.getElementById('gateEmail').value.trim();if(!email||!email.includes('@'))return;fetch(`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,tags:['repurposing-engine-user','link-in-bio-lead']})}).catch(()=>{});localStorage.setItem('ugc_optin',JSON.stringify({email,ts:Date.now()}));document.getElementById('emailGate').style.display='none';document.getElementById('toolArea').classList.add('active')}
-const urlParams=new URLSearchParams(window.location.search);if(localStorage.getItem('ugc_optin')||urlParams.get('unlocked')==='1'){document.getElementById('emailGate').style.display='none';document.getElementById('toolArea').classList.add('active');if(!localStorage.getItem('ugc_optin')){localStorage.setItem('ugc_optin',JSON.stringify({email:'homepage-lead',ts:Date.now()}))}}
+function unlockTool(){const email=document.getElementById('gateEmail').value.trim();if(!email||!email.includes('@'))return;fetch(`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,tags:['repurposing-engine-user','link-in-bio-lead']})}).catch(()=>{});localStorage.setItem('ugc_email',JSON.stringify({email,ts:Date.now()}));document.getElementById('emailGate').style.display='none';document.getElementById('toolArea').classList.add('active')}
+const urlParams=new URLSearchParams(window.location.search);if(localStorage.getItem('ugc_email')||urlParams.get('unlocked')==='1'){document.getElementById('emailGate').style.display='none';document.getElementById('toolArea').classList.add('active');if(!localStorage.getItem('ugc_email')){localStorage.setItem('ugc_email',JSON.stringify({email:'homepage-lead',ts:Date.now()}))}}
 
 function generateContent(){
   const input=document.getElementById('contentInput').value.trim();
