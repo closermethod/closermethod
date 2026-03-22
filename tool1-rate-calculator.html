@@ -357,7 +357,8 @@ body {
 .result-placeholder .emoji { font-size: 48px; margin-bottom: 16px; opacity: 0.7; }
 .result-placeholder p { max-width: 200px; line-height: 1.6; }
 
-.result-area { display: none; }
+.result-area { display: none; opacity: 0; transition: opacity 0.4s ease; }
+.result-area.visible { opacity: 1; }
 
 /* Hero rate number */
 .result-rate-label {
@@ -703,13 +704,8 @@ footer a { color: var(--text2); text-decoration: none; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
 
-/* Count-up animation shimmer */
-@keyframes shimmer {
-  0% { opacity: 0.4; }
-  50% { opacity: 1; }
-  100% { opacity: 0.4; }
-}
-.counting { animation: shimmer 0.15s ease-in-out infinite; }
+/* Count-up animation */
+.counting { opacity: 0.9; }
 
 /* STICKY MOBILE CTA */
 .sticky-cta {
@@ -1344,9 +1340,11 @@ function calculateRate() {
   var unitLabel = contentType === 'photo' ? 'photo' : contentType === 'bundle' ? 'package' : 'video';
   var usageLabel = usageRights >= 999 ? 'Perpetual' : usageRights + '-day';
 
-  // Show result area
-  document.getElementById('resultArea').style.display = 'block';
+  // Show result area with smooth fade-in
+  var resultArea = document.getElementById('resultArea');
+  resultArea.style.display = 'block';
   document.getElementById('placeholder').style.display = 'none';
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ resultArea.classList.add('visible'); }); });
 
   // ANIMATE the rate number counting up (slot machine effect)
   var rateEl = document.getElementById('totalRate');
