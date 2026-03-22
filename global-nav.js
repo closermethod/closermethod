@@ -10,8 +10,9 @@ var s=document.createElement('style');
 s.textContent=`
 .cm-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,10,10,0.72);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(34,34,34,0.6);transition:background .3s ease}
 .cm-nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:56px}
-.cm-nav-logo{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#e8e8e8;text-decoration:none;letter-spacing:-.02em;transition:color .2s}
+.cm-nav-logo{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#e8e8e8;text-decoration:none;letter-spacing:-.02em;transition:color .2s;display:flex;align-items:center;gap:10px}
 .cm-nav-logo:hover{color:#c8ff00}
+.cm-nav-headshot{width:28px;height:28px;border-radius:50%;object-fit:cover;border:1.5px solid rgba(200,255,0,0.4);flex-shrink:0}
 .cm-nav-links{display:flex;align-items:center;gap:4px;list-style:none}
 .cm-nav-links a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#999;text-decoration:none;padding:7px 12px;border-radius:8px;transition:color .2s,background .2s;white-space:nowrap}
 .cm-nav-links a:hover{color:#e8e8e8;background:rgba(255,255,255,0.04)}
@@ -51,7 +52,7 @@ var nav=document.createElement('div');
 nav.innerHTML=`
 <nav class="cm-nav" id="cmNav">
 <div class="cm-nav-inner">
-<a href="/" class="cm-nav-logo">closer<em style="color:#c8ff00;font-style:italic">method</em></a>
+<a href="/" class="cm-nav-logo">closer<em style="color:#c8ff00;font-style:italic">method</em><img src="/assets/elisabeth-headshot.jpg" alt="Elisabeth" class="cm-nav-headshot"></a>
 <ul class="cm-nav-links">
 <li class="cm-nav-dropdown" id="cmDropdown">
 <button class="cm-nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Free Tools <svg class="cm-nav-dropdown-arrow" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
