@@ -790,19 +790,21 @@ function handleSubmit(e) {
   return false;
 }
 
-// Exit-intent modal
+// Exit-intent modal (desktop only - mouseleave fires randomly on mobile)
 let exitShown = false;
 
-document.addEventListener('mouseleave', function (e) {
-  if (
-    e.clientY < 0 &&
-    !exitShown &&
-    !localStorage.getItem('ugc_email')
-  ) {
-    exitShown = true;
-    showExitModal();
-  }
-});
+if (!('ontouchstart' in window) && !navigator.maxTouchPoints) {
+  document.addEventListener('mouseleave', function (e) {
+    if (
+      e.clientY < 0 &&
+      !exitShown &&
+      !localStorage.getItem('ugc_email')
+    ) {
+      exitShown = true;
+      showExitModal();
+    }
+  });
+}
 
 function showExitModal() {
   document.getElementById('exitModal').classList.add('show');

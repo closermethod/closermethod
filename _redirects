@@ -19,8 +19,10 @@
 /the-authenticity-premium.html    https://stan.store/perolikebro/p/the-ugc-closer-kit    301
 
 # Rate calculator funnel
-/rate-calc       /rate-calculator-landing.html    200
-/calculate       /rate-calculator-landing.html    200
+/rate-calc            /rate-calculator-landing.html    200
+/calculate            /rate-calculator-landing.html    200
+/rate-calculator      /rate-calculator-landing.html    301
+/rate-calculator.html /rate-calculator-landing.html    301
 
 # Brand database funnel
 /brands          /brand-database.html             200

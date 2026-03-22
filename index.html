@@ -928,14 +928,16 @@ function handleEmailSubmit(e) {
   return false;
 }
 
-// EXIT-INTENT POPUP - last chance to capture bouncing visitors
+// EXIT-INTENT POPUP - last chance to capture bouncing visitors (desktop only)
 var exitShown = false;
-document.addEventListener('mouseleave', function(e) {
-  if (e.clientY < 0 && !exitShown && !localStorage.getItem('ugc_email') && !document.getElementById('emailModal').classList.contains('show')) {
-    exitShown = true;
-    openEmailModal();
-  }
-});
+if (!('ontouchstart' in window) && !navigator.maxTouchPoints) {
+  document.addEventListener('mouseleave', function(e) {
+    if (e.clientY < 0 && !exitShown && !localStorage.getItem('ugc_email') && !document.getElementById('emailModal').classList.contains('show')) {
+      exitShown = true;
+      openEmailModal();
+    }
+  });
+}
 </script>
 
 </body>

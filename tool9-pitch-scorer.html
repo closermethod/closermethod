@@ -703,14 +703,16 @@ if (localStorage.getItem('pitch_scorer_email')) {
   document.body.style.overflow = 'hidden';
 }
 
-// Exit intent tracking
+// Exit intent tracking (desktop only - mouseleave fires randomly on mobile)
 let exitIntentTriggered = false;
-document.addEventListener('mouseleave', function(e) {
-  if (e.clientY <= 0 && !emailSubmitted && !exitIntentTriggered) {
-    exitIntentTriggered = true;
-    document.getElementById('exitModal').classList.add('show');
-  }
-});
+if (!('ontouchstart' in window) && !navigator.maxTouchPoints) {
+  document.addEventListener('mouseleave', function(e) {
+    if (e.clientY <= 0 && !emailSubmitted && !exitIntentTriggered) {
+      exitIntentTriggered = true;
+      document.getElementById('exitModal').classList.add('show');
+    }
+  });
+}
 
 // ===== CHARACTER COUNTER =====
 document.getElementById('pitchText').addEventListener('input', function() {
