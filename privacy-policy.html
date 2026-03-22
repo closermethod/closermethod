@@ -38,37 +38,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1.5rem 1.5rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-logo {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--accent);
-  text-decoration: none;
-  letter-spacing: -0.5px;
-}
-
-.nav-back {
-  color: var(--text2);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.nav-back:hover {
-  color: var(--accent);
-}
-
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -170,10 +139,7 @@ footer p {
 </head>
 <body>
 
-<nav>
-  <a href="/" class="nav-logo">@closermethod</a>
-  <a href="/" class="nav-back">Back to Home</a>
-</nav>
+<!-- NAV handled by global-nav.js -->
 
 <div class="container">
 
@@ -214,10 +180,10 @@ footer p {
   <div class="section-card">
     <p>We use the following third-party services to operate the Site and deliver our products:</p>
     <ul>
-      <li><strong>Kit.com (formerly ConvertKit)</strong> -- Email marketing platform. Your name and email are stored and processed by Kit.com to send you email communications. <a href="https://kit.com/privacy" target="_blank">Kit.com Privacy Policy</a></li>
-      <li><strong>Stan Store</strong> -- Payment processing and digital product delivery. When you purchase a product, Stan Store processes your payment information. <a href="https://www.stan.store/privacy" target="_blank">Stan Store Privacy Policy</a></li>
-      <li><strong>Meta Pixel (Facebook)</strong> -- Analytics and advertising tracking. Used to measure ad performance and build audiences for advertising. <a href="https://www.facebook.com/privacy/policy/" target="_blank">Meta Privacy Policy</a></li>
-      <li><strong>Netlify</strong> -- Website hosting. Netlify may collect server logs including IP addresses. <a href="https://www.netlify.com/privacy/" target="_blank">Netlify Privacy Policy</a></li>
+      <li><strong>Kit.com (formerly ConvertKit)</strong> - Email marketing platform. Your name and email are stored and processed by Kit.com to send you email communications. <a href="https://kit.com/privacy" target="_blank">Kit.com Privacy Policy</a></li>
+      <li><strong>Stan Store</strong> - Payment processing and digital product delivery. When you purchase a product, Stan Store processes your payment information. <a href="https://www.stan.store/privacy" target="_blank">Stan Store Privacy Policy</a></li>
+      <li><strong>Meta Pixel (Facebook)</strong> - Analytics and advertising tracking. Used to measure ad performance and build audiences for advertising. <a href="https://www.facebook.com/privacy/policy/" target="_blank">Meta Privacy Policy</a></li>
+      <li><strong>Netlify</strong> - Website hosting. Netlify may collect server logs including IP addresses. <a href="https://www.netlify.com/privacy/" target="_blank">Netlify Privacy Policy</a></li>
     </ul>
     <p>Each of these services has its own privacy policy governing how they handle your data.</p>
   </div>
@@ -230,8 +196,8 @@ footer p {
   <div class="section-card">
     <p>The Site uses cookies and similar tracking technologies, including:</p>
     <ul>
-      <li><strong>Meta Pixel cookies</strong> -- Used to track page views, conversions, and user actions for Facebook and Instagram advertising purposes</li>
-      <li><strong>localStorage</strong> -- Used to remember your preferences and form submissions so you do not need to re-enter information</li>
+      <li><strong>Meta Pixel cookies</strong> - Used to track page views, conversions, and user actions for Facebook and Instagram advertising purposes</li>
+      <li><strong>localStorage</strong> - Used to remember your preferences and form submissions so you do not need to re-enter information</li>
     </ul>
     <p>You can control cookies through your browser settings. Disabling cookies may affect certain features of the Site.</p>
   </div>
@@ -243,12 +209,12 @@ footer p {
   <div class="section-card">
     <p>Depending on your location, you may have the following rights regarding your personal data:</p>
     <ul>
-      <li><strong>Access</strong> -- You can request a copy of the personal data we hold about you</li>
-      <li><strong>Correction</strong> -- You can request corrections to inaccurate information</li>
-      <li><strong>Deletion</strong> -- You can request that we delete your personal data</li>
-      <li><strong>Portability</strong> -- You can request your data in a portable format</li>
-      <li><strong>Opt-out of marketing</strong> -- You can unsubscribe from emails at any time</li>
-      <li><strong>Withdraw consent</strong> -- Where processing is based on consent, you may withdraw it at any time</li>
+      <li><strong>Access</strong> - You can request a copy of the personal data we hold about you</li>
+      <li><strong>Correction</strong> - You can request corrections to inaccurate information</li>
+      <li><strong>Deletion</strong> - You can request that we delete your personal data</li>
+      <li><strong>Portability</strong> - You can request your data in a portable format</li>
+      <li><strong>Opt-out of marketing</strong> - You can unsubscribe from emails at any time</li>
+      <li><strong>Withdraw consent</strong> - Where processing is based on consent, you may withdraw it at any time</li>
     </ul>
     <p>To exercise any of these rights, contact us using the information below. We will respond within 30 days.</p>
   </div>
@@ -280,5 +246,6 @@ footer p {
   <p>&copy; 2026 The Closer Method. All rights reserved.</p>
 </footer>
 
+<script src="/global-nav.js" defer></script>
 </body>
 </html>

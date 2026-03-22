@@ -68,13 +68,7 @@
 :root{--bg:#0a0a0a;--surface:#111111;--surface2:#1a1a1a;--border:#222;--text:#e8e8e8;--text2:#999;--accent:#c8ff00;--accent2:#a8d900;--green:#00c853;--red:#ff4444}
 body{font-family:'DM Sans',-apple-system,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
 
-/* Nav */
-.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;max-width:520px;width:100%;position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:100;background:rgba(10,10,10,.9);backdrop-filter:blur(8px)}
-.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:800;color:var(--accent)}
-.nav-cta{font-size:12px;color:var(--accent);text-decoration:none;font-weight:600;border:1px solid rgba(200,255,0,.3);padding:6px 14px;border-radius:8px}
-.nav-cta:hover{background:rgba(200,255,0,.08)}
-
-.quiz-container{width:100%;max-width:520px;min-height:480px;display:flex;flex-direction:column;margin-top:60px}
+.quiz-container{width:100%;max-width:520px;min-height:480px;display:flex;flex-direction:column;margin-top:16px}
 
 .card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:36px 28px;box-shadow:0 1px 3px rgba(0,0,0,.2),0 8px 24px rgba(0,0,0,.15)}
 
@@ -262,10 +256,7 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
 </div>
 
 
-<nav class="nav">
-  <span class="nav-brand">@closermethod</span>
-  <a class="nav-cta" href="https://ugc-closer-suite.netlify.app/" target="_blank">Free AI Tools</a>
-</nav>
+<!-- NAV handled by global-nav.js -->
 
 <div class="quiz-container" id="quiz">
 
@@ -349,7 +340,7 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
 
 </div>
 
-<p class="footer">Built by <a href="https://instagram.com/closermethod" target="_blank">@closermethod</a> &middot; <a href="https://ugc-closer-suite.netlify.app/">Free AI Tools</a></p>
+<p class="footer">Built by <a href="https://instagram.com/closermethod" target="_blank">@closermethod</a> &middot; <a href="https://ugc-closer-suite.netlify.app/">Free AI Tools</a> &middot; <a href="/privacy-policy.html">Privacy</a></p>
 
 <script>
 
@@ -476,7 +467,7 @@ const tiers = [
     ctaLink: "https://ugc-closer-suite.netlify.app/",
     ctaBtn: "Get Your Pitch Scripts",
     ctaLink2: "https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=quiz&utm_campaign=closer_kit",
-    ctaBtn2: "See the Closer Kit ($197  - tax season sale)"
+    ctaBtn2: "See the Closer Kit ($197 - tax season sale)"
   },
   {
     min: 18, max: 23,

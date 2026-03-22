@@ -538,11 +538,7 @@ footer a { color: var(--text2); text-decoration: none; }
   </div>
 </div>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="nav-logo">UGC<span>Closer</span></div>
-  <a class="nav-cta" href="vsl.html">Get the Full System &rarr;</a>
-</nav>
+<!-- Page nav removed: global-nav.js handles site navigation -->
 
 <!-- HERO -->
 <section class="hero">
@@ -614,6 +610,7 @@ footer a { color: var(--text2); text-decoration: none; }
 <footer>
   <p>&copy; 2026 Elisabeth &middot; UGC Closer &middot; <a href="https://instagram.com/closermethod" target="_blank">@closermethod</a></p>
   <p style="margin-top:8px">Built from 10 years at Criteo &middot; Deel &middot; Autodesk &middot; HBO</p>
+  <p style="margin-top:8px"><a href="/privacy-policy.html">Privacy Policy</a></p>
 </footer>
 
 <!-- Meta Pixel -->
@@ -638,7 +635,7 @@ function handleGateSubmit(e) {
   if (!email) return false;
 
   emailSubmitted = true;
-  localStorage.setItem('pitch_scorer_email', email);
+  localStorage.setItem('ugc_email', JSON.stringify({email, ts: Date.now()}));
 
   // Send to Kit (ConvertKit) - Form ID 9131179
   const KIT_FORM_ID = '9131179';
@@ -676,7 +673,7 @@ function handleExitSubmit(e) {
   if (!email) return false;
 
   emailSubmitted = true;
-  localStorage.setItem('pitch_scorer_email', email);
+  localStorage.setItem('ugc_email', JSON.stringify({email, ts: Date.now()}));
 
   // Send to Kit
   const KIT_FORM_ID = '9131179';
@@ -696,7 +693,7 @@ function handleExitSubmit(e) {
 }
 
 // Check if already submitted
-if (localStorage.getItem('pitch_scorer_email')) {
+if (localStorage.getItem('ugc_email')) {
   emailSubmitted = true;
   document.getElementById('emailGate').classList.add('hidden');
 } else {

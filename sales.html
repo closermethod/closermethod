@@ -12,7 +12,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@closermethod">
 <meta name="twitter:title" content="The UGC Closer Kit - $150 to $800 in One Conversation">
-<meta name="twitter:description" content="60+ negotiation scripts. 175+ brand database. 9 AI tools. The closing system built from $1.2M in enterprise sales.">
+<meta name="twitter:description" content="60+ negotiation scripts. 175+ brand database. AI-powered tools. The closing system built from $1.2M in enterprise sales.">
 <meta name="twitter:image" content="https://ugc-closer-suite.netlify.app/assets/og-closer-kit.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,9 +46,9 @@ a { color:var(--accent); }
 
 .page { max-width:680px; margin:0 auto; padding:0 20px; }
 
-/* STICKY TOP BAR */
+/* STICKY TOP BAR - sits below global nav (56px) */
 .top-bar {
-  position:fixed; top:0; left:0; right:0; z-index:1000;
+  position:fixed; top:56px; left:0; right:0; z-index:999;
   background:linear-gradient(90deg, #1a1a1a 0%, #111 100%);
   border-bottom:2px solid var(--accent);
   padding:10px 16px;
@@ -63,14 +63,14 @@ a { color:var(--accent); }
 }
 .top-bar-btn {
   background:var(--accent); color:#0a0a0a; text-decoration:none;
-  padding:6px 14px; border-radius:6px; font-weight:800; font-size:12px;
-  white-space:nowrap;
+  padding:8px 14px; border-radius:6px; font-weight:800; font-size:12px;
+  white-space:nowrap; min-height:36px; display:inline-flex; align-items:center;
 }
 .top-bar-btn:hover { background:var(--accent2); }
 
-/* HERO */
+/* HERO - accounts for top-bar height (~42px) below global nav */
 .hero {
-  padding:80px 0 40px; text-align:center;
+  padding:100px 0 40px; text-align:center;
 }
 .hero-badge {
   display:inline-block; font-size:11px; font-weight:700;
@@ -281,7 +281,7 @@ a { color:var(--accent); }
 }
 .who-list .icon { font-size:16px; flex-shrink:0; margin-top:2px; }
 
-/* FAQ  - ACCORDION */
+/* FAQ ACCORDION */
 .faq { padding:40px 0; }
 .faq-title { font-size:18px; font-weight:800; margin-bottom:20px; text-align:center; }
 .faq-item {
@@ -349,14 +349,22 @@ a { color:var(--accent); }
 .sticky-bar-timer { font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent); }
 .sticky-bar-btn {
   background:var(--accent); color:#0a0a0a; text-decoration:none;
-  padding:10px 20px; border-radius:8px; font-weight:800; font-size:14px;
-  white-space:nowrap;
+  padding:14px 20px; border-radius:8px; font-weight:800; font-size:14px;
+  white-space:nowrap; min-height:48px; display:flex; align-items:center;
+}
+
+/* Avatar placeholder - used on linked proof cards */
+.proof-avatar-placeholder {
+  width:40px; height:40px; border-radius:50%;
+  background:linear-gradient(135deg, var(--accent), #8aae00);
+  display:flex; align-items:center; justify-content:center;
+  font-size:16px; font-weight:800; color:#1a1a1a; flex-shrink:0;
 }
 
 @media(max-width:600px) {
   .top-bar { font-size:11px; gap:6px; padding:8px 10px; }
   .top-bar-btn { padding:5px 10px; font-size:11px; }
-  .hero { padding:70px 0 30px; }
+  .hero { padding:90px 0 30px; }
   .hero h1 { font-size:28px; letter-spacing:-1px; }
   .hero-sub { font-size:15px; }
   .mini-proof { gap:12px; font-size:12px; }
@@ -647,7 +655,7 @@ a { color:var(--accent); }
           </div>
           <div class="proof-badge">Rate: $800</div>
         </div>
-        <div class="proof-quote">"I'm relatively new to UGC  - I've been a content creator for 6 years via my IG but the skills are pretty transferable. <strong>My rates using your calculator came up at 800</strong>"</div>
+        <div class="proof-quote">"I'm relatively new to UGC. I've been a content creator for 6 years via my IG but the skills are pretty transferable. <strong>My rates using your calculator came up at 800</strong>"</div>
         <div class="proof-foot">
           <span>&#10003; Verified &middot; IG DM</span>
           <span>Calculator user</span>
@@ -695,7 +703,7 @@ a { color:var(--accent); }
           </div>
           <div class="proof-badge proof-badge-accent">Bought the Kit</div>
         </div>
-        <div class="proof-quote">"I just bought your UGC closer kit 2 days ago and just opened your website  - are there more features to it now?? Lmk if you end up doing affiliate, <strong>I'm down to help spread the word about your products. I think they're great</strong>"</div>
+        <div class="proof-quote">"I just bought your UGC closer kit 2 days ago and just opened your website - are there more features to it now?? Lmk if you end up doing affiliate, <strong>I'm down to help spread the word about your products. I think they're great</strong>"</div>
         <div class="proof-foot">
           <span>&#10003; Verified buyer &middot; IG DM</span>
           <span>Wants to be affiliate</span>
@@ -708,7 +716,7 @@ a { color:var(--accent); }
   <!-- REFRAME -->
   <div class="reframe">
     <div class="reframe-text">
-      You gave a brand your face, your voice, your content  - for <span class="hl">$200 flat.</span><br><br>
+      You gave a brand your face, your voice, your content - for <span class="hl">$200 flat.</span><br><br>
       No usage rights fee. No exclusivity fee. No revision clause.<br><br>
       That brand turned your video into a <span class="hl">$50,000 ad campaign.</span><br><br>
       You got $200. They got your face on billboards.<br><br>
@@ -800,16 +808,16 @@ a { color:var(--accent); }
     </ul>
   </div>
 
-  <!-- FAQ  - ACCORDION -->
+  <!-- FAQ ACCORDION -->
   <div class="faq">
     <div class="faq-title">Common Questions</div>
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Will this work if I'm brand new to UGC?</div>
-      <div class="faq-a">Yes. The 30-Day Beginner Action Plan walks you through everything step by step. Jamie J. said it was "incredibly helpful, especially as a newer creator." You don't need experience  - you need the right words.</div>
+      <div class="faq-a">Yes. The 30-Day Beginner Action Plan walks you through everything step by step. Jamie J. said it was "incredibly helpful, especially as a newer creator." You don't need experience. You need the right words.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if the scripts don't work for my niche?</div>
-      <div class="faq-a">The scripts are niche-agnostic  - they work for beauty, tech, food, fitness, lifestyle, and every other UGC vertical. The psychology of negotiation doesn't change by niche. Plus, 30-day guarantee. If they don't work, full refund.</div>
+      <div class="faq-a">The scripts are niche-agnostic. They work for beauty, tech, food, fitness, lifestyle, and every other UGC vertical. The psychology of negotiation doesn't change by niche. Plus, 30-day guarantee. If they don't work, full refund.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">I already have scripts I found for free online. How is this different?</div>
@@ -817,7 +825,7 @@ a { color:var(--accent); }
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I really make back $197 on my first deal?</div>
-      <div class="faq-a">Ty went from $150 to $800 on his first conversation using the system. That's a $650 increase  - 3x the cost. Candi's first repriced deal was worth $4,100 more. One conversation is all it takes.</div>
+      <div class="faq-a">Ty went from $150 to $800 on his first conversation using the system. That's a $650 increase, 3x the cost. Candi's first repriced deal was worth $4,100 more. One conversation is all it takes.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What's the refund policy?</div>
@@ -825,7 +833,7 @@ a { color:var(--accent); }
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is $197 the lowest price?</div>
-      <div class="faq-a">Yes. This is a tax season sale  - normally $246. The price goes back up March 31 at midnight. It's also 100% tax deductible as a business expense.</div>
+      <div class="faq-a">Yes. This is a tax season sale. Normally $246. The price goes back up March 31 at midnight. It's also 100% tax deductible as a business expense.</div>
     </div>
   </div>
 
@@ -835,9 +843,9 @@ a { color:var(--accent); }
     <div class="guarantee-title">30-Day Money-Back Guarantee</div>
     <div class="guarantee-text">Use the scripts. Try them on real brand conversations. If the UGC Closer Kit doesn't help you close bigger deals within 30 days, email me and I'll refund every penny. The risk is mine, not yours.</div>
     <div class="guarantee-bullets">
-      <div class="guarantee-bullet"><span class="gbcheck">&#10003;</span> Full refund  - every penny back</div>
-      <div class="guarantee-bullet"><span class="gbcheck">&#10003;</span> No questions asked  - no hoops to jump through</div>
-      <div class="guarantee-bullet"><span class="gbcheck">&#10003;</span> Keep the rate calculator  - it's yours either way</div>
+      <div class="guarantee-bullet"><span class="gbcheck">&#10003;</span> Full refund, every penny back</div>
+      <div class="guarantee-bullet"><span class="gbcheck">&#10003;</span> No questions asked, no hoops to jump through</div>
+      <div class="guarantee-bullet"><span class="gbcheck">&#10003;</span> Keep the rate calculator. It's yours either way</div>
     </div>
   </div>
 
@@ -848,7 +856,7 @@ a { color:var(--accent); }
       Not $5. Not $50. <strong style="color:var(--text)">Thousands.</strong><br><br>
       <span style="color:var(--accent);font-weight:700">Fix it today.</span>
     </p>
-    <a class="cta-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-cta4',value:197,currency:'USD'})">I Want to Close Like a Pro  - $197 &rarr;</a>
+    <a class="cta-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-cta4',value:197,currency:'USD'})">I Want to Close Like a Pro - $197 &rarr;</a>
     <div class="cta-price"><s>$246</s> &rarr; <strong>$197</strong> <span style="color:var(--text3)">or 2x $109</span> &middot; Ends March 31</div>
     <div class="cta-guarantee">&#x1F6E1;&#xFE0F; 30-day guarantee &middot; Lifetime access &middot; 100% tax deductible</div>
   </div>
@@ -856,7 +864,7 @@ a { color:var(--accent); }
   <!-- P.S. SECTION -->
   <div class="ps-section" style="padding:48px 0 20px; border-top:1px solid var(--border); margin-top:20px;">
     <p style="font-size:16px; color:var(--text2); line-height:1.7;">
-      <strong style="color:var(--accent); font-size:18px;">P.S.</strong>  - The UGC Closer Kit includes 60+ negotiation scripts, 175+ brand database, 5 AI tools, rate calculator, outreach templates, retainer playbook, and a 30-day beginner action plan. All for <strong style="color:var(--text);">$197</strong> <span style="color:var(--text3)">(or 2x $109)</span> instead of $246. Tax season price ends March 31 at midnight. 30-day money-back guarantee.
+      <strong style="color:var(--accent); font-size:18px;">P.S.</strong> The UGC Closer Kit includes 60+ negotiation scripts, 175+ brand database, 5 AI tools, rate calculator, outreach templates, retainer playbook, and a 30-day beginner action plan. All for <strong style="color:var(--text);">$197</strong> <span style="color:var(--text3)">(or 2x $109)</span> instead of $246. Tax season price ends March 31 at midnight. 30-day money-back guarantee.
     </p>
     <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px; margin:24px 0;">
       <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
@@ -870,7 +878,7 @@ a { color:var(--accent); }
       <p style="font-size:14px; color:var(--text2); line-height:1.6;">"Using her rate calculator and scripts, <strong style="color:var(--text);">I negotiated to $800 for 2 videos.</strong> She knows ball!!"</p>
     </div>
     <div class="cta-block" id="cta5" style="padding:24px 0;">
-      <a class="cta-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-cta5',value:197,currency:'USD'})">I Want to Close Like a Pro  - $197 &rarr;</a>
+      <a class="cta-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-cta5',value:197,currency:'USD'})">I Want to Close Like a Pro - $197 &rarr;</a>
       <div class="cta-price"><s>$246</s> &rarr; <strong>$197</strong> <span style="color:var(--text3)">or 2x $109</span> &middot; Ends March 31</div>
       <div class="cta-guarantee">&#x1F6E1;&#xFE0F; 30-day guarantee &middot; Lifetime access &middot; 100% tax deductible</div>
     </div>

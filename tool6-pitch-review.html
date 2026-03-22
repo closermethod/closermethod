@@ -46,8 +46,8 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
       --border: #1e1e1e;
       --text: #f0f0f0;
       --text2: #888;
-      --accent: #c8a44e;
-      --accent2: #e8c95e;
+      --accent: #c8ff00;
+      --accent2: #a8d900;
       --green: #22c55e;
       --red: #ef4444;
     }
@@ -285,7 +285,7 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
     select {
       cursor: pointer;
       appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2322c55e' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23c8ff00' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 12px center;
       padding-right: 36px;
@@ -598,12 +598,7 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-container">
-      <div class="nav-brand">@closermethod</div>
-      <a href="https://ugc-closer-suite.netlify.app/" class="nav-link">Free AI Tools</a>
-    </div>
-  </nav>
+  <!-- Page nav removed: global-nav.js handles site navigation -->
 
   <div class="container">
     <!-- EMAIL GATE -->
@@ -707,7 +702,7 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
           <div class="price-display">
             <span class="price-current">$197</span>
             <span class="price-original" style="text-decoration:line-through">$246</span>
-            <div class="price-payment-plan">🔥 Tax season sale  - ends March 31</div>
+            <div class="price-payment-plan">🔥 Tax season sale - ends March 31</div>
           </div>
           <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=pitch_review" class="cta-btn" target="_blank">Get The Kit</a>
         </div>
@@ -747,7 +742,8 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
 
 <footer>
     Built by <a href="https://instagram.com/closermethod" target="_blank">@closermethod</a> ·
-    <a href="https://ugc-closer-suite.netlify.app/">Free AI Tools</a>
+    <a href="https://ugc-closer-suite.netlify.app/">Free AI Tools</a> ·
+    <a href="/privacy-policy.html">Privacy Policy</a>
   </footer>
 
   <script>
@@ -763,9 +759,9 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
     const results = document.getElementById('results');
     const errorMessage = document.getElementById('errorMessage');
 
-    // Check if already unlocked
+    // Check if already unlocked (shared ugc_email key)
     function initializeState() {
-      if (localStorage.getItem('closerToolsUnlocked') === 'true') {
+      if (localStorage.getItem('ugc_email')) {
         showTool();
       }
     }
@@ -773,7 +769,7 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
     // Submit email and unlock
     unlockBtn.addEventListener('click', async () => {
       const email = emailInput.value.trim();
-      
+
       if (!email || !email.includes('@')) {
         alert('Please enter a valid email address');
         return;
@@ -791,12 +787,12 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
             tags: ['pitch-review-user', 'ai-tool-user']
           })
         });
-        
-        localStorage.setItem('closerToolsUnlocked', 'true');
+
+        localStorage.setItem('ugc_email', JSON.stringify({email, ts: Date.now()}));
         showTool();
       } catch (e) {
         // Fallback: unlock anyway on error
-        localStorage.setItem('closerToolsUnlocked', 'true');
+        localStorage.setItem('ugc_email', JSON.stringify({email, ts: Date.now()}));
         showTool();
       }
     });

@@ -91,24 +91,6 @@ body {
 
 h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
 
-/* NAV */
-.nav {
-  position: fixed; top:0; left:0; right:0; z-index: 100;
-  background: rgba(10,10,10,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  padding: 12px 24px;
-  display: flex; justify-content: space-between; align-items: center;
-}
-.nav-logo { font-family: 'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color: var(--text); text-decoration:none; }
-.nav-logo span { color: var(--accent); font-style: italic; }
-.nav-cta {
-  background: transparent; border: 1px solid var(--accent); color: var(--accent);
-  padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600;
-  cursor: pointer; transition: all .2s; text-decoration: none;
-}
-.nav-cta:hover { background: var(--accent); color: #000; }
-
 /* HERO */
 .hero {
   padding: 100px 24px 40px;
@@ -499,7 +481,7 @@ footer a { color: var(--text3); }
 <div class="email-gate" id="emailGate">
   <div class="gate-card">
     <div class="gate-badge"><span class="gdot"></span> free access</div>
-    <h2 class="gate-h">stop cold pitching.<br>these brands are <em>actively hiring.</em></h2>
+    <h2 class="gate-h">stop cold pitching.<br>these brands <em>pay UGC creators.</em></h2>
     <p class="gate-sub">enter your email. get verified contacts at 175+ brands with their actual budgets. start pitching warm instead of cold.</p>
     <form class="gate-form" id="gateForm" onsubmit="return handleGateSubmit(event)">
       <input type="text" class="gate-input" id="gateName" placeholder="first name" required>
@@ -515,11 +497,7 @@ footer a { color: var(--text3); }
 </div>
 
 
-<!-- NAV -->
-<nav class="nav">
-  <a href="/" class="nav-logo">closer<span>method</span></a>
-  <a href="#" class="nav-cta" onclick="openEmailModal(); return false;">Unlock the Brands &rarr;</a>
-</nav>
+<!-- NAV handled by global-nav.js -->
 
 <!-- HERO -->
 <section class="hero">
@@ -640,7 +618,7 @@ footer a { color: var(--text3); }
 
   <a href="#" class="cta-btn" onclick="openEmailModal(); return false;">Show Me How to Close These Brands <span class="arrow">&rarr;</span></a>
   <div class="cta-note"><strong>Free. No spam.</strong> Just the system that changes what you say when money is on the table.</div>
-  <div class="cta-note" style="margin-top:8px;color:var(--accent);font-weight:600;">&#128293; Tax Season Sale: $197 (reg. $246)  - ends March 31</div>
+  <div class="cta-note" style="margin-top:8px;color:var(--accent);font-weight:600;">&#128293; Tax Season Sale: $197 (reg. $246) - ends March 31</div>
 </section>
 
 <!-- WHY THIS WORKS -->
@@ -721,7 +699,7 @@ footer a { color: var(--text3); }
   <p>Every day you pitch without a closing system, you're leaving money on the table. One deal with the Closer Kit pays for it 3x over.</p>
   <a href="#" class="cta-btn" onclick="openEmailModal(); return false;">Show Me the System <span class="arrow">&rarr;</span></a>
   <div class="cta-note">Enter your email &rarr; watch the 4-min breakdown &rarr; unlock the full 175+ brand database</div>
-  <div class="cta-note" style="margin-top:8px;color:var(--accent);font-weight:600;">&#128293; Tax Season Sale: $197 (reg. $246)  - ends March 31</div>
+  <div class="cta-note" style="margin-top:8px;color:var(--accent);font-weight:600;">&#128293; Tax Season Sale: $197 (reg. $246) - ends March 31</div>
 </section>
 
 <!-- EMAIL CAPTURE MODAL -->
@@ -758,7 +736,7 @@ footer a { color: var(--text3); }
 <footer>
   <p>&copy; 2026 closermethod - Built from 10 years of B2B sales at Deel, Criteo, HBO &amp; Bloomberg</p>
   <p style="margin-top:8px"><a href="/">Home</a> &bull; <a href="brand-database.html">Brand Database</a> &bull; <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=brand_database&utm_campaign=closer_kit">Get the Closer Kit</a></p>
-  <p style="margin-top:8px;font-size:12px"><a href="/privacy-policy.html" style="color:#666">Privacy Policy</a></p>
+  <p style="margin-top:8px;font-size:11px"><a href="/privacy-policy.html" style="color:#444">Privacy Policy</a></p>
 </footer>
 
 <script>

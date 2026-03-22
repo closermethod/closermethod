@@ -322,6 +322,7 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
 }
 .testimonial-name { font-size: 13px; font-weight: 600; color: var(--accent); }
 .testimonial-detail { font-size: 12px; color: var(--text3); }
+.testimonial-stars { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: 1px; margin-bottom: 12px; }
 
 /* WHY RATE FIRST */
 .why-rate {
@@ -420,7 +421,7 @@ footer a { color: var(--text3); }
 .modal-submit:hover { background: var(--accent2); transform: translateY(-1px); }
 .modal-trust {
   display: flex; justify-content: center; gap: 16px;
-  margin-top: 14px; font-size: 11px; color: var(--text3);
+  margin-top: 14px; font-size: 12px; color: var(--text3);
 }
 .modal-trust span { display: flex; align-items: center; gap: 4px; }
 .modal-trust .ck { color: var(--accent); }
@@ -434,7 +435,7 @@ footer a { color: var(--text3); }
 
 /* MOBILE */
 @media (max-width: 640px) {
-  .db-table th, .db-table td { padding: 10px 12px; font-size: 12px; }
+  .db-table th, .db-table td { padding: 10px 12px; font-size: 13px; }
   .db-cta-bar { flex-direction: column; gap: 12px; text-align: center; }
   .why-cards { grid-template-columns: 1fr; }
   .proof-stats { gap: 24px; }
@@ -442,6 +443,14 @@ footer a { color: var(--text3); }
   .hero { padding: 130px 20px 30px; }
   .modal-card { padding: 28px 20px; }
   .modal-trust { flex-wrap: wrap; gap: 10px; }
+  .cta-note { font-size: 14px; }
+  .testimonial-detail { font-size: 13px; }
+  .nav-cta { padding: 10px 16px; font-size: 14px; min-height: 44px; display: inline-flex; align-items: center; }
+  .cta-btn { padding: 18px 32px; min-height: 48px; }
+  .gate-submit { min-height: 48px; }
+  .gate-input { min-height: 48px; }
+  .modal-submit { min-height: 48px; }
+  .modal-input { min-height: 48px; }
 }
 
 /* EMAIL GATE OVERLAY */
@@ -732,7 +741,7 @@ footer a { color: var(--text3); }
       <div style="font-size:12px;font-weight:800;color:var(--green);background:rgba(0,200,83,0.08);border:1px solid rgba(0,200,83,0.2);padding:4px 12px;border-radius:6px;">Rates: $800/video</div>
     </div>
     <div class="testimonial-quote">"The rate card scripts are BRILLIANT!! I finally have real numbers to anchor to instead of guessing. I was quoting brands $300&ndash;$400. Now I quote $800 and they say yes."</div>
-    <div class="testimonial-name">Mel Van Niekerk &middot; UGC Creator</div>
+    <div class="testimonial-name">Mel &middot; UGC Creator</div>
     <div class="testimonial-detail">Was $300&ndash;$400/video &rarr; Now $800/video</div>
   </div>
 
@@ -743,7 +752,7 @@ footer a { color: var(--text3); }
       <div style="font-size:12px;font-weight:800;color:var(--green);background:rgba(0,200,83,0.08);border:1px solid rgba(0,200,83,0.2);padding:4px 12px;border-radius:6px;">Big brand landed</div>
     </div>
     <div class="testimonial-quote">"I used one of the pitch templates to a really big baseball brand. I got a good conversion going! The templates work - you just have to use them."</div>
-    <div class="testimonial-name">Abbie C. &middot; UGC Creator</div>
+    <div class="testimonial-name">Abbie &middot; UGC Creator</div>
     <div class="testimonial-detail">Used pitch template &rarr; landed big brand conversation</div>
   </div>
 
@@ -754,7 +763,7 @@ footer a { color: var(--text3); }
       <div style="font-size:12px;font-weight:800;color:var(--green);background:rgba(0,200,83,0.08);border:1px solid rgba(0,200,83,0.2);padding:4px 12px;border-radius:6px;">Results in 1 day</div>
     </div>
     <div class="testimonial-quote">"Modified the outreach templates slightly, sent them to 10 brands, and got 2 responses in ONE DAY. Both asked for concepts, not prices."</div>
-    <div class="testimonial-name">Milena V &middot; Millennial UGC Creator <span style="color:var(--blue)">&check;</span></div>
+    <div class="testimonial-name">Milena &middot; UGC Creator <span style="color:var(--blue)">&check;</span></div>
     <div class="testimonial-detail">10 pitches &rarr; 2 brand responses in 24 hours</div>
   </div>
 
@@ -764,7 +773,7 @@ footer a { color: var(--text3); }
       <div style="font-size:13px;font-weight:700;color:var(--accent);letter-spacing:1px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
     </div>
     <div class="testimonial-quote">"Holy cow! I don't even know where to begin. This is SO KIND of you!!!! This is all so incredibly helpful, especially as a newer creator. I cannot wait to dive into all of these resources!"</div>
-    <div class="testimonial-name">Jamie Johnson &middot; UGC Creator</div>
+    <div class="testimonial-name">Jamie &middot; @jamiejohnsonugc</div>
     <div class="testimonial-detail">New creator &rarr; fully equipped with the closing system</div>
   </div>
 
@@ -772,7 +781,7 @@ footer a { color: var(--text3); }
     <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
     <div class="testimonial-quote">"What Elisabeth has built here is an incredible tool, and on top of that it's helping to build confidence in pricing and negotiating. 10/10"</div>
     <div class="testimonial-name">Jene &middot; @explorewithjene</div>
-    <div class="testimonial-detail">Purchased the Closer Kit &rarr; 10/10 rating &rarr; wants to be an affiliate</div>
+    <div class="testimonial-detail">Purchased the Closer Kit &rarr; 10/10 rating</div>
   </div>
 
   <div class="testimonial-card">
@@ -848,35 +857,35 @@ footer a { color: var(--text3); }
   </div>
   <div style="border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--card)">
     <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--border)">
-      <span style="font-size:15px;color:var(--text)">175+ Brand Database with Contact Info</span>
-      <span style="font-size:14px;color:var(--text3);text-decoration:line-through">$97</span>
+      <span style="font-size:15px;color:var(--text)">175+ Brand Database with Contacts</span>
+      <span style="font-size:14px;color:var(--text3);text-decoration:line-through">$297</span>
     </div>
     <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--border)">
       <span style="font-size:15px;color:var(--text)">60+ Negotiation &amp; Closing Scripts</span>
+      <span style="font-size:14px;color:var(--text3);text-decoration:line-through">$497</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--border)">
+      <span style="font-size:15px;color:var(--text)">12 Cold Pitch Templates</span>
+      <span style="font-size:14px;color:var(--text3);text-decoration:line-through">$197</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--border)">
+      <span style="font-size:15px;color:var(--text)">Rate Calculator + Defense Scripts</span>
       <span style="font-size:14px;color:var(--text3);text-decoration:line-through">$97</span>
     </div>
     <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--border)">
-      <span style="font-size:15px;color:var(--text)">9 Enterprise-Grade Pitch Templates</span>
-      <span style="font-size:14px;color:var(--text3);text-decoration:line-through">$47</span>
+      <span style="font-size:15px;color:var(--text)">Deal Tracker CRM</span>
+      <span style="font-size:14px;color:var(--text3);text-decoration:line-through">$97</span>
     </div>
     <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--border)">
-      <span style="font-size:15px;color:var(--text)">AI Rate Calculator + Defense Scripts</span>
-      <span style="font-size:14px;color:var(--text3);text-decoration:line-through">$47</span>
-    </div>
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--border)">
-      <span style="font-size:15px;color:var(--text)">Lowball Defense Framework</span>
-      <span style="font-size:14px;color:var(--text3);text-decoration:line-through">$37</span>
-    </div>
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--border)">
-      <span style="font-size:15px;color:var(--text)">9 Interactive AI Tools (Coach, Sim, Scorer...)</span>
+      <span style="font-size:15px;color:var(--text)">6 Contract Templates</span>
       <span style="font-size:14px;color:var(--text3);text-decoration:line-through">$197</span>
     </div>
     <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--border)">
       <span style="font-size:15px;color:var(--text)">30-Day Action Plan (Zero to First Deal)</span>
-      <span style="font-size:14px;color:var(--text3);text-decoration:line-through">$47</span>
+      <span style="font-size:14px;color:var(--text3);text-decoration:line-through">$197</span>
     </div>
     <div style="padding:24px;background:rgba(200,255,0,0.03);text-align:center">
-      <div style="font-size:14px;color:var(--text3);text-decoration:line-through;margin-bottom:4px">Total Value: $569</div>
+      <div style="font-size:14px;color:var(--text3);text-decoration:line-through;margin-bottom:4px">Total Value: $1,626+</div>
       <div style="font-size:clamp(32px,7vw,48px);font-weight:700;color:var(--accent);font-family:'Space Grotesk',sans-serif;margin-bottom:4px">$197</div>
       <div style="font-size:13px;color:var(--text2)">One payment. Lifetime access. Or <strong style="color:var(--text)">2x $109</strong> payment plan.</div>
       <div style="font-size:12px;color:var(--text3);margin-top:4px">One deal pays for it 4x over.</div>
@@ -890,7 +899,7 @@ footer a { color: var(--text3); }
     <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--text3);margin-bottom:12px;font-family:'Space Grotesk',sans-serif">Real talk</div>
     <h2 style="font-size:clamp(24px,4vw,32px);font-weight:700;color:#fff;font-family:'Space Grotesk',sans-serif">Is this actually for you?</h2>
   </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+  <div class="is-this-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
     <div style="background:var(--card);border:1px solid rgba(0,200,83,0.3);border-radius:16px;padding:32px 28px">
       <div style="font-size:17px;font-weight:700;color:var(--green);margin-bottom:20px;font-family:'Space Grotesk',sans-serif">This is for you if:</div>
       <div style="display:flex;flex-direction:column;gap:14px;font-size:15px;color:var(--text2);line-height:1.6">
@@ -910,7 +919,7 @@ footer a { color: var(--text3); }
       </div>
     </div>
   </div>
-  <style>@media(max-width:700px){.fade-up [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}}</style>
+  <style>@media(max-width:700px){.is-this-grid{grid-template-columns:1fr !important}}</style>
 </section>
 
 <!-- BOTTOM CTA -->
@@ -934,7 +943,7 @@ footer a { color: var(--text3); }
     </div>
     <div style="padding:20px 24px;border-bottom:1px solid var(--border)">
       <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px">"I already have some scripts. Why do I need more?"</div>
-      <div style="font-size:14px;color:var(--text2);line-height:1.6">This isn't a random collection of templates. It's a closing <em>system</em> built from 10 years of enterprise sales methodology. Rate anchoring, objection handling, follow-up sequences, retainer conversion  - every scenario has a proven response.</div>
+      <div style="font-size:14px;color:var(--text2);line-height:1.6">This isn't a random collection of templates. It's a closing <em>system</em> built from 10 years of enterprise sales methodology. Rate anchoring, objection handling, follow-up sequences, retainer conversion. Every scenario has a proven response.</div>
     </div>
     <div style="padding:20px 24px;border-bottom:1px solid var(--border)">
       <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px">"Is it a course? I don't have time for videos."</div>
@@ -942,7 +951,7 @@ footer a { color: var(--text3); }
     </div>
     <div style="padding:20px 24px">
       <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px">"What if it doesn't work for me?"</div>
-      <div style="font-size:14px;color:var(--text2);line-height:1.6">30-day money-back guarantee. Try the scripts on real brands. If you don't see results, full refund. But Ty went from $150 to $800 and Candi closed a $4,750 deal  - same scripts you'll get.</div>
+      <div style="font-size:14px;color:var(--text2);line-height:1.6">30-day money-back guarantee. Try the scripts on real brands. If you don't see results, full refund. Ty went from $150 to $800 and Candi closed a $4,750 deal. Same scripts you'll get.</div>
     </div>
   </div>
 </section>
@@ -987,21 +996,21 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// RETURNING VISITOR  - show direct checkout button
+// RETURNING VISITOR - show direct checkout button
 (function() {
   if (localStorage.getItem('ugc_email')) {
     // Swap nav CTA to direct checkout
     var navCta = document.querySelector('.nav-cta');
     if (navCta) {
       navCta.href = 'https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=brand-database-nav&utm_campaign=closer-kit-returning';
-      navCta.textContent = 'Get the Kit  - $197 \u2192';
+      navCta.textContent = 'Get the Kit - $197 \u2192';
       navCta.target = '_blank';
       navCta.onclick = function() { if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'brand-database-nav-returning',value:197,currency:'USD'}); };
     }
     // Add floating buy bar at bottom for returning visitors
     var buyBar = document.createElement('div');
     buyBar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:300;background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-top:2px solid #c8ff00;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:14px;';
-    buyBar.innerHTML = '<span style="color:#999;font-weight:600">Welcome back! \u2192</span><a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=brand-database-sticky&utm_campaign=closer-kit-returning" target="_blank" style="background:#c8ff00;color:#0a0a0a;padding:10px 24px;border-radius:8px;font-weight:800;font-size:14px;text-decoration:none" onclick="if(typeof fbq===\'function\')fbq(\'track\',\'InitiateCheckout\',{content_name:\'brand-database-sticky-returning\',value:197,currency:\'USD\'})">Get the Closer Kit  - $197</a><span style="color:#666;font-size:12px">30-day guarantee</span>';
+    buyBar.innerHTML = '<span style="color:#999;font-weight:600">Welcome back! \u2192</span><a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=brand-database-sticky&utm_campaign=closer-kit-returning" target="_blank" style="background:#c8ff00;color:#0a0a0a;padding:10px 24px;border-radius:8px;font-weight:800;font-size:14px;text-decoration:none" onclick="if(typeof fbq===\'function\')fbq(\'track\',\'InitiateCheckout\',{content_name:\'brand-database-sticky-returning\',value:197,currency:\'USD\'})">Get the Closer Kit - $197</a><span style="color:#666;font-size:12px">30-day guarantee</span>';
     document.body.appendChild(buyBar);
     document.body.style.paddingBottom = '60px';
   }
@@ -1009,7 +1018,7 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
 // EMAIL MODAL
 function openEmailModal() {
-  // Check if already submitted  - send to checkout
+  // Check if already submitted - send to checkout
   if (localStorage.getItem('ugc_email')) {
     window.open('https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=brand-database-cta&utm_campaign=closer-kit-returning', '_blank');
     if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'brand-database-cta-returning',value:197,currency:'USD'});
@@ -1072,6 +1081,6 @@ if (!('ontouchstart' in window) && !navigator.maxTouchPoints) {
 }
 </script>
 
-<script src="/global-nav.js" defer></script>
+<!-- global-nav.js omitted: this page has its own nav + tax season banner -->
 </body>
 </html><!-- deploy-cache-bust: 1773804966 -->

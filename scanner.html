@@ -733,7 +733,7 @@ body::before {
 @media (min-width:701px) { .sticky-cta { display:none !important; } }
 @media (max-width:700px) { body { padding-bottom:65px; } }
 
-/* Proof strip  - openclaw-inspired verified testimonials */
+/* Proof strip - openclaw-inspired verified testimonials */
 .proof-strip-title {
   text-align:center; font-size:13px; font-weight:700;
   letter-spacing:2px; text-transform:uppercase;
@@ -904,13 +904,13 @@ body::before {
       <button class="action-btn share" onclick="shareResults()">Share Results</button>
     </div>
 
-    <!-- PROOF  - OPENCLAW-STYLE VERIFIED TESTIMONIALS -->
+    <!-- PROOF - OPENCLAW-STYLE VERIFIED TESTIMONIALS -->
     <div style="margin-top:24px;">
       <div class="proof-strip-title">Creators who caught red flags</div>
       <div class="proof-strip-sub">Verified results from scanner users</div>
       <div class="proof-cards">
 
-        <!-- CANDI  - UGC CREATOR -->
+        <!-- CANDI - UGC CREATOR -->
         <div class="proof-card">
           <div class="proof-card-header">
             <div class="proof-avatar-placeholder">C</div>
@@ -930,7 +930,7 @@ body::before {
           </div>
         </div>
 
-        <!-- MEL  - UGC CREATOR -->
+        <!-- MEL - UGC CREATOR -->
         <div class="proof-card">
           <div class="proof-card-header">
             <div class="proof-avatar-placeholder">M</div>
@@ -976,6 +976,7 @@ body::before {
 
   <footer class="scanner-footer">
     Part of the <a href="vsl.html">UGC Closer Suite</a>. Built for creators who know their worth.
+    <br><a href="/privacy-policy.html" style="margin-top:8px;display:inline-block">Privacy Policy</a>
   </footer>
 </div>
 
@@ -988,13 +989,13 @@ const RED_FLAGS = [
   { patterns: ['no budget', 'limited budget'], translation: "They have budget. They're testing if you'll work for less.", script: "I appreciate your interest! My rate for [deliverable] is $[X]. This includes [scope]. Would that work for your campaign?" },
   { patterns: ['great exposure', 'exposure for you', 'good exposure'], translation: "Exposure doesn't pay rent. If their audience was valuable, they'd pay for content.", script: "Thanks for reaching out! I do charge for content creation. My rate for this type of content is $[X]. Happy to discuss scope if that works for your budget." },
   { patterns: ["let's start small", 'start with a test', 'trial run', 'test project'], translation: "They plan to keep you at this rate forever. 73% of 'test projects' never scale up.", script: "I'd love to work together! For a trial project, my rate is $[X] which includes [scope]. If we move forward long-term, I offer retainer packages. Want me to send details?" },
-  { patterns: ['we work with lots of creators', 'work with many creators', 'tons of creators'], translation: "They're commoditizing you. They want you to feel replaceable so you don't negotiate.", script: "That's great to hear! I bring [unique value prop] to my partnerships. My rate for [deliverable] is $[X]  - happy to walk you through what that includes." },
+  { patterns: ['we work with lots of creators', 'work with many creators', 'tons of creators'], translation: "They're commoditizing you. They want you to feel replaceable so you don't negotiate.", script: "That's great to hear! I bring [unique value prop] to my partnerships. My rate for [deliverable] is $[X] - happy to walk you through what that includes." },
   { patterns: ["what's your rate", 'what are your rates', 'how much do you charge', 'what do you charge'], translation: "They're anchoring you before you know the scope. Always get deliverables first.", script: "I'd love to share my rates! Could you first walk me through the deliverables, timeline, and usage rights you're looking for? That way I can give you an accurate quote.", onlyIfFirst: true },
-  { patterns: ["we can't pay that", "that's too high", 'too expensive', "that's over our budget", "can't afford"], translation: "Their first objection is rarely their last. This is where 90% of creators cave.", script: "I understand budget considerations. I can adjust the scope to fit  - for example, [reduced deliverable] at $[lower rate]. Which works better for your campaign goals?" },
-  { patterns: ['send us content', "send samples", 'spec work', 'send examples of what you would create'], translation: "They want free content. Professional brands don't ask for spec work.", script: "I appreciate the interest! I don't do spec work, but I'm happy to share my portfolio and case studies. My rate for [deliverable] is $[X]  - want me to send a proposal?" },
+  { patterns: ["we can't pay that", "that's too high", 'too expensive', "that's over our budget", "can't afford"], translation: "Their first objection is rarely their last. This is where 90% of creators cave.", script: "I understand budget considerations. I can adjust the scope to fit - for example, [reduced deliverable] at $[lower rate]. Which works better for your campaign goals?" },
+  { patterns: ['send us content', "send samples", 'spec work', 'send examples of what you would create'], translation: "They want free content. Professional brands don't ask for spec work.", script: "I appreciate the interest! I don't do spec work, but I'm happy to share my portfolio and case studies. My rate for [deliverable] is $[X] - want me to send a proposal?" },
   { patterns: ["we'll pay after it performs", 'performance based', 'performance-based', 'revenue share only', 'pay per conversion', 'commission only'], translation: "They're shifting all the risk to you. Your time has value regardless of their marketing results.", script: "I appreciate the offer! I do a flat rate + performance bonus structure. My base rate is $[X] for [deliverable], and I'm open to adding a performance bonus on top. Would that work?" },
   { patterns: ['quick turnaround', 'need it asap', 'need this asap', 'urgent', 'need it tomorrow', 'rush', 'tight deadline', 'tight timeline'], translation: "Rush jobs deserve rush pricing. Add 25-50% for tight timelines.", script: "I can definitely accommodate a rush timeline! My expedited rate is $[X] (25% above standard). I'll prioritize your project and deliver by [date]. Does that work?" },
-  { patterns: ['can you do it for \\$?\\d', 'do it for \\$?\\d', 'pay you \\$?\\d', 'offer you \\$?\\d', 'budget is \\$?\\d{1,2}[^\\d,]', 'we can pay \\$?\\d{1,2}[^\\d,]'], translation: "They're setting the anchor. Counter with your rate, not theirs.", script: "Thanks for sharing your budget! Based on the scope, my rate would be $[X]. This includes [deliverables] with [usage terms]. I'd love to make this work  - want to discuss?" }
+  { patterns: ['can you do it for \\$?\\d', 'do it for \\$?\\d', 'pay you \\$?\\d', 'offer you \\$?\\d', 'budget is \\$?\\d{1,2}[^\\d,]', 'we can pay \\$?\\d{1,2}[^\\d,]'], translation: "They're setting the anchor. Counter with your rate, not theirs.", script: "Thanks for sharing your budget! Based on the scope, my rate would be $[X]. This includes [deliverables] with [usage terms]. I'd love to make this work - want to discuss?" }
 ];
 
 const YELLOW_FLAGS = [
@@ -1287,15 +1288,15 @@ function shareResults() {
   summary += `Power Position Score: ${r.powerScore}/10\n\n`;
   if (r.red.length) {
     summary += 'Red Flags Found:\n';
-    r.red.forEach(f => { summary += `  - "${f.phrase}"  - ${f.translation}\n`; });
+    r.red.forEach(f => { summary += ` - "${f.phrase}" - ${f.translation}\n`; });
   }
   if (r.yellow.length) {
     summary += 'Yellow Flags Found:\n';
-    r.yellow.forEach(f => { summary += `  - "${f.phrase}"  - ${f.translation}\n`; });
+    r.yellow.forEach(f => { summary += ` - "${f.phrase}" - ${f.translation}\n`; });
   }
   if (r.green.length) {
     summary += 'Green Flags Found:\n';
-    r.green.forEach(f => { summary += `  - "${f.phrase}"  - ${f.translation}\n`; });
+    r.green.forEach(f => { summary += ` - "${f.phrase}" - ${f.translation}\n`; });
   }
   summary += `\nScan your deals free: ugcclosersuite.com/scanner`;
   navigator.clipboard.writeText(summary).then(() => showToast('Results copied to clipboard!'));
@@ -1325,5 +1326,6 @@ dealInput.addEventListener('keydown', (e) => {
   <div class="sticky-cta-text">Get scripts for every flag</div>
   <a href="vsl.html" class="sticky-cta-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-scanner-sticky',value:197,currency:'USD'})">Start Closing $800+ Deals →</a>
 </div>
+<script src="/global-nav.js" defer></script>
 </body>
 </html>

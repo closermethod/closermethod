@@ -32,11 +32,11 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0a0a0a;--surface:#111;--surface2:#161616;--border:#1e1e1e;--text:#f0f0f0;--text2:#888;--accent:#c8a44e;--accent2:#e8c95e;--green:#22c55e;--red:#ef4444}
+:root{--bg:#0a0a0a;--surface:#111;--surface2:#161616;--border:#1e1e1e;--text:#f0f0f0;--text2:#888;--accent:#c8ff00;--accent2:#a8d900;--green:#22c55e;--red:#ef4444}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 .nav{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;max-width:720px;margin:0 auto}
 .nav-brand{font-size:14px;font-weight:800;color:var(--accent);text-decoration:none}
-.nav-cta{font-size:12px;color:var(--accent);text-decoration:none;font-weight:600;border:1px solid rgba(200,164,78,.3);padding:6px 14px;border-radius:8px}
+.nav-cta{font-size:12px;color:var(--accent);text-decoration:none;font-weight:600;border:1px solid rgba(200,255,0,.3);padding:6px 14px;border-radius:8px}
 .container{max-width:640px;margin:0 auto;padding:40px 20px}
 
 /* EMAIL GATE */
@@ -87,7 +87,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webk
 .msg.you .msg-bubble{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2)}
 .chat-options{background:var(--surface);border:1px solid var(--border);border-top:none;border-radius:0 0 14px 14px;padding:16px}
 .chat-options p{font-size:11px;color:var(--text2);margin-bottom:10px;font-weight:600}
-.option-btn{display:block;width:100%;text-align:left;padding:12px 16px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:13px;cursor:pointer;transition:all .2s;margin-bottom:6px;font-family:'Inter',sans-serif;line-height:1.4}
+.option-btn{display:block;width:100%;text-align:left;padding:14px 16px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:13px;cursor:pointer;transition:all .2s;margin-bottom:6px;font-family:'Inter',sans-serif;line-height:1.4}
 .option-btn:hover{border-color:var(--accent);background:rgba(34,197,94,.05)}
 
 /* Score */
@@ -117,10 +117,7 @@ footer{text-align:center;padding:40px 20px;font-size:11px;color:#444}
 </style>
 </head>
 <body>
-<nav class="nav">
-  <a href="links.html" class="nav-brand">@closermethod</a>
-  <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=closer_coach" class="nav-cta">Get The Kit</a>
-</nav>
+<!-- Page nav removed: global-nav.js handles site navigation -->
 
 <div class="container">
 <div class="email-gate" id="emailGate">
@@ -180,7 +177,7 @@ footer{text-align:center;padding:40px 20px;font-size:11px;color:#444}
 </div>
 </div>
 
-<footer><p>© 2026 Elisabeth · @closermethod</p></footer>
+<footer><p>© 2026 Elisabeth · @closermethod</p><p style="margin-top:8px;font-size:11px"><a href="/privacy-policy.html" style="color:#444;text-decoration:none">Privacy Policy</a></p></footer>
 
 <script>
 const KIT_FORM_ID='9131179';

@@ -640,7 +640,7 @@ body {
       <div class="gate-feat"><span class="check">&#10003;</span> Factors in usage rights &amp; exclusivity</div>
       <div class="gate-feat"><span class="check">&#10003;</span> Based on 500+ real creator deals</div>
     </div>
-    <form class="email-form" id="gateForm">
+    <form class="email-form" id="inlineGateForm">
       <input type="email" class="email-input" id="emailInput" placeholder="your@email.com" required autocomplete="email">
       <button type="submit" class="btn-primary" id="gateBtn">Start the Quiz &rarr;</button>
     </form>
@@ -886,6 +886,10 @@ body {
 
 </div>
 
+<div style="text-align:center;padding:20px;font-size:12px;color:#555;">
+  <a href="/" style="color:#555;text-decoration:none;">Home</a> &middot; <a href="/privacy-policy.html" style="color:#555;text-decoration:none;">Privacy Policy</a>
+</div>
+
 <script>
 
 // EMAIL GATE LOGIC
@@ -917,11 +921,11 @@ const answers = {};
 let currentScreen = 'gate';
 
 // === EMAIL GATE ===
-const gateForm = document.getElementById('gateForm');
+const inlineGateForm = document.getElementById('inlineGateForm');
 const emailInput = document.getElementById('emailInput');
 const gateBtn = document.getElementById('gateBtn');
 
-gateForm.addEventListener('submit', async (e) => {
+inlineGateForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const email = emailInput.value.trim();
   if (!email) return;
@@ -1028,7 +1032,7 @@ function showResults() {
   const high = Math.round(calculated * 1.2 / 25) * 25;
 
   // Update display
-  document.getElementById('rateRange').textContent = '
+  document.getElementById('rateRange').textContent = '$' + low.toLocaleString() + ' - $' + high.toLocaleString();
 
   // Breakdown
   document.getElementById('bd-base').textContent = '$' + base;
@@ -1106,165 +1110,6 @@ function retakeQuiz() {
 }
 </script>
 
-</body>
-</html>
- + low.toLocaleString() + ' - 
-
-  // Breakdown
-  document.getElementById('bd-base').textContent = '$' + base;
-  document.getElementById('bd-niche').textContent = nicheMult + 'x';
-  document.getElementById('bd-exp').textContent = expMult + 'x';
-
-  if (usageMult > 1) {
-    document.getElementById('bd-usage').textContent = '+' + Math.round((usageMult - 1) * 100) + '%';
-  } else {
-    document.getElementById('bd-usage').textContent = '-';
-    document.getElementById('bd-usage').classList.remove('boost');
-  }
-
-  if (exclMult > 1) {
-    document.getElementById('bd-excl').textContent = '+' + Math.round((exclMult - 1) * 100) + '%';
-  } else {
-    document.getElementById('bd-excl').textContent = '-';
-    document.getElementById('bd-excl').classList.remove('boost');
-  }
-
-  document.getElementById('bd-follow').textContent = followMult + 'x';
-
-  // Personalized insight
-  const insights = generateInsight(answers, low, high);
-  document.getElementById('insightText').innerHTML = insights;
-
-  // Show results screen
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById('screen-results').classList.add('active');
-  document.getElementById('progressWrap').style.display = 'none';
-  window.scrollTo(0, 0);
-}
-
-function generateInsight(ans, low, high) {
-  const exp = ans.experience?.value || 'growing';
-  const usage = ans.usage?.value || 'none';
-  const content = ans.content?.value || 'short-video';
-
-  if (exp === 'new') {
-    return "You're early in your UGC journey, but that doesn't mean you should work for free. <strong>Even new creators should be charging $" + low + "+</strong> for deliverables with usage rights. The UGC Closer Kit includes scripts specifically designed for negotiating your first paid deals.";
-  }
-
-  if (usage === 'none' || usage === 'limited') {
-    return "<strong>Usage rights are where the real money is.</strong> Brands will pay 35-100% more when they can run your content as ads. Most creators give this away for free because they don't know how to price it. You're leaving $" + Math.round((high - low) * 0.6) + "+ on the table per deal.";
-  }
-
-  if (exp === 'expert') {
-    return "At your level, you should be packaging deals, not selling one-offs. <strong>Creators with your experience close $" + high + "+ retainers</strong> by bundling deliverables, usage rights, and exclusivity into monthly packages. The Closer Kit's retainer scripts are built for exactly this.";
-  }
-
-  return "Most creators at your level are <strong>undercharging by 40-60%</strong>. The difference between a $" + low + " deal and a $" + high + " deal usually isn't talent - it's knowing how to frame, negotiate, and close.";
-}
-
-// === SHARE ===
-function shareTwitter() {
-  const range = document.getElementById('rateRange').textContent;
-  const text = "I just found out I should be charging " + range + " per UGC deliverable 🤯\n\nFree brand deal calculator →";
-  const url = window.location.href;
-  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url), '_blank');
-}
-
-function copyLink() {
-  navigator.clipboard.writeText(window.location.href).then(() => {
-    const btn = event.target;
-    btn.textContent = 'Copied!';
-    setTimeout(() => btn.textContent = 'Copy Link', 2000);
-  });
-}
-
-function retakeQuiz() {
-  Object.keys(answers).forEach(k => delete answers[k]);
-  document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
-  document.querySelectorAll('.btn-next').forEach(b => b.disabled = true);
-  goTo(1);
-}
-</script>
-
-</body>
-</html>
- + high.toLocaleString();
-
-  // Breakdown
-  document.getElementById('bd-base').textContent = '$' + base;
-  document.getElementById('bd-niche').textContent = nicheMult + 'x';
-  document.getElementById('bd-exp').textContent = expMult + 'x';
-
-  if (usageMult > 1) {
-    document.getElementById('bd-usage').textContent = '+' + Math.round((usageMult - 1) * 100) + '%';
-  } else {
-    document.getElementById('bd-usage').textContent = '-';
-    document.getElementById('bd-usage').classList.remove('boost');
-  }
-
-  if (exclMult > 1) {
-    document.getElementById('bd-excl').textContent = '+' + Math.round((exclMult - 1) * 100) + '%';
-  } else {
-    document.getElementById('bd-excl').textContent = '-';
-    document.getElementById('bd-excl').classList.remove('boost');
-  }
-
-  document.getElementById('bd-follow').textContent = followMult + 'x';
-
-  // Personalized insight
-  const insights = generateInsight(answers, low, high);
-  document.getElementById('insightText').innerHTML = insights;
-
-  // Show results screen
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById('screen-results').classList.add('active');
-  document.getElementById('progressWrap').style.display = 'none';
-  window.scrollTo(0, 0);
-}
-
-function generateInsight(ans, low, high) {
-  const exp = ans.experience?.value || 'growing';
-  const usage = ans.usage?.value || 'none';
-  const content = ans.content?.value || 'short-video';
-
-  if (exp === 'new') {
-    return "You're early in your UGC journey, but that doesn't mean you should work for free. <strong>Even new creators should be charging $" + low + "+</strong> for deliverables with usage rights. The UGC Closer Kit includes scripts specifically designed for negotiating your first paid deals.";
-  }
-
-  if (usage === 'none' || usage === 'limited') {
-    return "<strong>Usage rights are where the real money is.</strong> Brands will pay 35-100% more when they can run your content as ads. Most creators give this away for free because they don't know how to price it. You're leaving $" + Math.round((high - low) * 0.6) + "+ on the table per deal.";
-  }
-
-  if (exp === 'expert') {
-    return "At your level, you should be packaging deals, not selling one-offs. <strong>Creators with your experience close $" + high + "+ retainers</strong> by bundling deliverables, usage rights, and exclusivity into monthly packages. The Closer Kit's retainer scripts are built for exactly this.";
-  }
-
-  return "Most creators at your level are <strong>undercharging by 40-60%</strong>. The difference between a $" + low + " deal and a $" + high + " deal usually isn't talent - it's knowing how to frame, negotiate, and close.";
-}
-
-// === SHARE ===
-function shareTwitter() {
-  const range = document.getElementById('rateRange').textContent;
-  const text = "I just found out I should be charging " + range + " per UGC deliverable 🤯\n\nFree brand deal calculator →";
-  const url = window.location.href;
-  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url), '_blank');
-}
-
-function copyLink() {
-  navigator.clipboard.writeText(window.location.href).then(() => {
-    const btn = event.target;
-    btn.textContent = 'Copied!';
-    setTimeout(() => btn.textContent = 'Copy Link', 2000);
-  });
-}
-
-function retakeQuiz() {
-  Object.keys(answers).forEach(k => delete answers[k]);
-  document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
-  document.querySelectorAll('.btn-next').forEach(b => b.disabled = true);
-  goTo(1);
-}
-</script>
-
+<script src="/global-nav.js" defer></script>
 </body>
 </html>
