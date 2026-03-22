@@ -519,6 +519,7 @@ footer a { color: var(--text3); }
     <div class="gate-badge"><span class="gdot"></span> free access</div>
     <h2 class="gate-h">See the 175+ brands that pay<br>UGC creators <em>$500-$1,500/video.</em></h2>
     <p class="gate-sub">Enter your email to unlock the brand database, rate calculator, and the exact scripts creators use to turn $150 offers into $800 deals.</p>
+    <div style="font-size:14px;color:#999;font-style:italic;margin-bottom:20px">"I negotiated to $800 for 2 videos. She knows ball!!" <span style="color:#c8ff00;font-style:normal">- Ty</span></div>
     <form class="gate-form" id="gateForm" onsubmit="return handleGateSubmit(event)">
       <input type="text" class="gate-input" id="gateName" placeholder="first name" required>
       <input type="email" class="gate-input" id="gateEmail" placeholder="your best email" required>
@@ -536,15 +537,16 @@ footer a { color: var(--text3); }
 <!-- NAV -->
 <!-- TAX SEASON LAUNCH BANNER -->
 <div id="taxBanner" style="background:linear-gradient(90deg,rgba(200,255,0,0.08),rgba(200,255,0,0.15),rgba(200,255,0,0.08));border-bottom:1px solid rgba(200,255,0,0.3);text-align:center;padding:10px 16px;font-size:13px;color:var(--text);position:fixed;top:0;left:0;right:0;z-index:1100">
-  <strong style="color:var(--accent)">TAX SEASON SALE &middot; Ends March 31:</strong> UGC Closer Kit drops to <strong style="color:#fff">$197</strong> <span style="text-decoration:line-through;color:var(--text3)">$497</span> &middot; <span style="color:var(--accent)">Write it off. Make it back on one deal.</span>
+  <strong style="color:var(--accent)">TAX SEASON SALE - <span id="taxDaysLeft"></span> days left:</strong> UGC Closer Kit drops to <strong style="color:#fff">$197</strong> <span style="text-decoration:line-through;color:var(--text3)">$497</span> &middot; <span style="color:var(--accent)">Write it off. Make it back on one deal.</span>
 </div>
+<script>(function(){var end=new Date(2026,2,31,23,59,59);var now=new Date();var days=Math.max(0,Math.ceil((end-now)/(1000*60*60*24)));document.getElementById('taxDaysLeft').textContent=days;})()</script>
 <!-- Page nav removed: global-nav.js handles full navigation -->
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-badge"><span class="dot"></span> 175+ pre-researched brands</div>
   <h1>Stop pitching blind. Start closing <em>$800+ deals.</em></h1>
-  <p class="hero-sub">175+ brands with real budgets, decision-maker contacts, and niche filters. Plus 60+ word-for-word scripts so you know exactly what to say when they respond. Open it, filter, close.</p>
+  <p class="hero-sub">175+ brands with real budgets, decision-maker contacts, and niche filters. Plus 60+ word-for-word scripts so you know exactly what to say when they respond.</p>
   <p style="font-size:13px;color:var(--text3);margin-top:12px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
     <span>Built from <strong style="color:var(--accent);">$1.2M+</strong> in B2B deals</span>
     <span><strong style="color:var(--accent);">268%</strong> quota at Criteo</span>
@@ -633,7 +635,7 @@ footer a { color: var(--text3); }
     </tbody>
   </table>
   <div class="db-cta-bar">
-    <div class="db-cta-text">+169 more brands locked. <span>All niches. All pre-researched contacts.</span></div>
+    <div class="db-cta-text">+169 more brands locked. <span>All niches. All pre-researched contacts.</span><br><a href="#" onclick="openEmailModal();return false;" style="display:inline-block;margin-top:8px;padding:8px 20px;background:#c8ff00;color:#0a0a0a;font-size:13px;font-weight:700;border-radius:8px;text-decoration:none;font-family:'DM Sans',sans-serif">Unlock All 175+ Brands</a></div>
   </div>
 </section>
 
@@ -681,23 +683,23 @@ footer a { color: var(--text3); }
   <div class="why-cards">
     <div class="why-card">
       <div class="icon">&#128172;</div>
-      <h4>The brand responds. Then what?</h4>
-      <p>Most creators fumble the money conversation. You need scripts, not just contacts. The system gives you both.</p>
+      <h4>"What's your rate?"</h4>
+      <p>A brand asks what you charge. You send $950 with a usage rights breakdown. They say yes in 14 minutes.</p>
     </div>
     <div class="why-card">
       <div class="icon">&#128176;</div>
-      <h4>Stop quoting $200 for $800 work</h4>
-      <p>Creators leave 40-60% on the table because they panic-quote. The Closer Kit tells you exactly what to say and when.</p>
+      <h4>"We can do $200 flat."</h4>
+      <p>A brand offers $200 flat. You counter with a 3-tier pricing structure. They pick the $800 option.</p>
     </div>
     <div class="why-card">
       <div class="icon">&#128165;</div>
-      <h4>"We don't have budget" isn't a no</h4>
-      <p>There are 25+ objection scripts inside. "No budget," ghosting, lowballs - every scenario has a battle-tested response.</p>
+      <h4>"We don't have budget."</h4>
+      <p>A brand says they can't afford it. You use the reframe script. They find $1,200.</p>
     </div>
     <div class="why-card">
       <div class="icon">&#128200;</div>
-      <h4>One deal pays for the whole system</h4>
-      <p>Candi used the scripts and went from $650 to $4,750. The Kit is $197 <span style="text-decoration:line-through;opacity:.6">(normally $497)</span>. That's 24x ROI on her first deal.</p>
+      <h4>"Is it worth $197?"</h4>
+      <p>You spend $197 on the kit. You close one $800 deal. That's a 4x return in your first week.</p>
     </div>
   </div>
 </section>
@@ -775,27 +777,6 @@ footer a { color: var(--text3); }
     <div class="testimonial-detail">Brand new creator &rarr; Full closing system in hand</div>
   </div>
 
-  <div class="testimonial-card">
-    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-    <div class="testimonial-quote">"What Elisabeth has built here is an incredible tool, and on top of that it's helping to build confidence in pricing and negotiating. 10/10"</div>
-    <div class="testimonial-name">Jene &middot; @explorewithjene</div>
-    <div class="testimonial-detail">Unsure about pricing &rarr; Confident in every negotiation</div>
-  </div>
-
-  <div class="testimonial-card">
-    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-    <div class="testimonial-quote">"You're doing insane work for the UGC community. This calculator is a phenomenal tool. I've had a lot of pushback when trying to charge my rates on my own, hoping with your script templates I can change that."</div>
-    <div class="testimonial-name">Yuli &middot; UGC Creator</div>
-    <div class="testimonial-detail">Folding on rates &rarr; Holding firm with script-backed confidence</div>
-  </div>
-
-  <div class="testimonial-card">
-    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-    <div class="testimonial-quote">"Your content has been really helpful to me! When I first got into UGC, I had a bad experience with a brand trying to take advantage of me. I was looking for creators that would teach me how to advocate for myself professionally and I found your page!"</div>
-    <div class="testimonial-name">Sierra &middot; UGC Creator</div>
-    <div class="testimonial-detail">Brands taking advantage &rarr; Advocating for herself professionally</div>
-  </div>
-
   <!-- SCREENSHOT PROOF GALLERY -->
   <div id="results" style="margin-top:24px;border-top:1px solid var(--border);padding-top:24px">
     <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;text-align:center">REAL SCREENSHOTS. REAL RESULTS.</div>
@@ -866,8 +847,8 @@ footer a { color: var(--text3); }
       <div class="label">Ty's Rate Increase</div>
     </div>
     <div class="proof-stat">
-      <div class="num">60+</div>
-      <div class="label">Closing Scripts</div>
+      <div class="num">$4,750</div>
+      <div class="label">Candi's Best Deal</div>
     </div>
     <div class="proof-stat">
       <div class="num">$197</div>
@@ -988,7 +969,7 @@ footer a { color: var(--text3); }
 .cm-compare-cta-outline:hover{border-color:#555;background:rgba(255,255,255,0.03)}
 .cm-compare-cta-primary{color:#0a0a0a;background:#c8ff00;border:1px solid #c8ff00}
 .cm-compare-cta-primary:hover{background:#a8d900;border-color:#a8d900;transform:translateY(-1px)}
-@media(max-width:768px){.cm-compare-grid{grid-template-columns:280px 280px 280px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:12px;padding-bottom:8px}.cm-compare-col{scroll-snap-align:center;min-width:280px}.cm-compare-grid::-webkit-scrollbar{height:4px}.cm-compare-grid::-webkit-scrollbar-track{background:#141414;border-radius:4px}.cm-compare-grid::-webkit-scrollbar-thumb{background:#333;border-radius:4px}.cm-compare{padding:0 16px}}
+@media(max-width:768px){.cm-compare-grid{grid-template-columns:280px 280px 280px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:12px;padding-bottom:8px}.cm-compare-col{scroll-snap-align:center;min-width:280px}.cm-compare-col.cm-compare-featured{order:-1}.cm-compare-grid::-webkit-scrollbar{height:4px}.cm-compare-grid::-webkit-scrollbar-track{background:#141414;border-radius:4px}.cm-compare-grid::-webkit-scrollbar-thumb{background:#333;border-radius:4px}.cm-compare{padding:0 16px}}
 </style>
 <section class="cm-compare fade-up" style="padding:60px 0;margin:0 auto">
     <h2 class="cm-compare-heading">Choose your level</h2>
@@ -1099,6 +1080,7 @@ footer a { color: var(--text3); }
   <h2>Your next brand deal is sitting in your inbox. Do you know what to say?</h2>
   <p>Every day you negotiate without a system, you leave thousands on the table. One deal with the Closer Kit pays for itself 4x over.</p>
   <a href="#" class="cta-btn" onclick="openEmailModal(); return false;">Start Closing $800+ Deals <span class="arrow">&rarr;</span></a>
+  <div style="font-size:13px;color:var(--text3);margin-top:8px">Tax season sale ends March 31. $497 after that.</div>
   <div class="cta-note">Enter your email &rarr; watch the free breakdown &rarr; unlock 175+ brands and 60+ closing scripts</div>
 </section>
 
@@ -1131,6 +1113,7 @@ footer a { color: var(--text3); }
 <footer>
   <p>&copy; 2026 closermethod - Built from 15 years of B2B sales at Criteo, Deel, Autodesk, HBO &amp; Bloomberg</p>
   <p style="margin-top:8px"><a href="/">Home</a> &bull; <a href="brand-database.html">Brand Database</a> &bull; <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=sales_page&utm_campaign=closer_kit_vsl">Get the Closer Kit</a></p>
+  <p style="margin-top:8px"><a href="/privacy-policy.html">Privacy Policy</a> &bull; <a href="/privacy-policy.html">Terms</a></p>
 </footer>
 
 <script>
