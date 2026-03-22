@@ -534,13 +534,10 @@ footer a { color: var(--text3); }
 
 <!-- NAV -->
 <!-- TAX SEASON LAUNCH BANNER -->
-<div style="background:linear-gradient(90deg,rgba(200,255,0,0.08),rgba(200,255,0,0.15),rgba(200,255,0,0.08));border-bottom:1px solid rgba(200,255,0,0.3);text-align:center;padding:10px 16px;font-size:13px;color:var(--text);position:fixed;top:0;left:0;right:0;z-index:200">
+<div id="taxBanner" style="background:linear-gradient(90deg,rgba(200,255,0,0.08),rgba(200,255,0,0.15),rgba(200,255,0,0.08));border-bottom:1px solid rgba(200,255,0,0.3);text-align:center;padding:10px 16px;font-size:13px;color:var(--text);position:fixed;top:0;left:0;right:0;z-index:1100">
   <strong style="color:var(--accent)">TAX SEASON SALE &middot; Ends March 31:</strong> UGC Closer Kit drops to <strong style="color:#fff">$197</strong> <span style="text-decoration:line-through;color:var(--text3)">$497</span> &middot; <span style="color:var(--accent)">Write it off. Make it back on one deal.</span>
 </div>
-<nav class="nav" style="top:38px;">
-  <a href="/" class="nav-logo">closer<span>method</span></a>
-  <a href="#" class="nav-cta" onclick="openEmailModal(); return false;">Start Closing Deals &rarr;</a>
-</nav>
+<!-- Page nav removed: global-nav.js handles full navigation -->
 
 <!-- HERO -->
 <section class="hero">
@@ -1198,6 +1195,14 @@ if (!('ontouchstart' in window) && !navigator.maxTouchPoints) {
 }
 </script>
 
-<!-- global-nav.js omitted: this page has its own nav + tax season banner -->
+<script src="/global-nav.js" defer></script>
+<script>
+// Push global nav below tax banner on homepage
+document.addEventListener('DOMContentLoaded',function(){
+  var nav=document.getElementById('cmNav');
+  if(nav){nav.style.top='38px';}
+  document.body.style.paddingTop='94px';
+});
+</script>
 </body>
 </html><!-- deploy-cache-bust: 1773804966 -->
