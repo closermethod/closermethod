@@ -601,8 +601,13 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
     <script>
         // Get URL parameters
         const params = new URLSearchParams(window.location.search);
-        const score = parseInt(params.get('score')) || 0;
-        const tier = params.get('tier') || 'Not Set';
+        const scoreParam = params.get('score');
+        const tierParam = params.get('tier');
+        const score = parseInt(scoreParam) || 0;
+        const tier = tierParam || 'Not Set';
+
+        // Check if user arrived without score parameters (empty state)
+        const hasScoreData = scoreParam !== null && scoreParam !== '';
 
         // Tier information
         const tierNames = {
@@ -614,8 +619,25 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
 
         const tierDisplay = tierNames[tier] || tier || 'Not Set';
 
+        // Show empty state if no score data
+        function showEmptyState() {
+            const container = document.querySelector('.container');
+            container.innerHTML = `
+                <div style="text-align:center;padding:4rem 1rem;">
+                    <div style="font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:1rem;font-family:'Inter',sans-serif;">Take the Closer Score Quiz first to see your results.</div>
+                    <p style="color:var(--text2);font-size:1rem;margin-bottom:2rem;line-height:1.6;">Find out where you stand as a UGC creator and get personalized tips to start closing higher-paying brand deals.</p>
+                    <a href="/closer-score-quiz.html" style="display:inline-block;padding:1rem 2.5rem;background-color:var(--accent);color:var(--bg);text-decoration:none;border-radius:8px;font-weight:700;font-size:1.05rem;transition:all 0.2s;">Take the Quiz</a>
+                </div>
+            `;
+        }
+
         // Update page with score and tier
         function initializePage() {
+            if (!hasScoreData) {
+                showEmptyState();
+                return;
+            }
+
             document.getElementById('scoreDisplay').textContent = score;
             document.getElementById('tierBadge').textContent = tierDisplay;
             document.getElementById('cardScore').textContent = score;
@@ -738,5 +760,6 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
         // Initialize on page load
         initializePage();
     </script>
+<script src="/global-nav.js" defer></script>
 </body>
 </html>
