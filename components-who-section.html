@@ -1,0 +1,176 @@
+<!-- WHO THIS IS FOR / NOT FOR SECTION -->
+<!-- Drop this section into any page between existing sections -->
+<style>
+.who-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.who-section-label {
+  text-align: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text3, #666);
+  margin-bottom: 12px;
+}
+
+.who-section-heading {
+  text-align: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: var(--text, #e8e8e8);
+  letter-spacing: -0.5px;
+  margin-bottom: 48px;
+  line-height: 1.2;
+}
+
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 700px) {
+  .who-grid {
+    grid-template-columns: 1fr;
+  }
+  .who-section {
+    padding: 60px 16px;
+  }
+}
+
+.who-card {
+  background: var(--card, #141414);
+  border: 1px solid var(--border, #222);
+  border-radius: 16px;
+  padding: 32px 28px;
+}
+
+.who-card--for {
+  border-color: rgba(0, 200, 83, 0.3);
+}
+
+.who-card--not {
+  border-color: rgba(255, 68, 68, 0.2);
+}
+
+.who-card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: -0.3px;
+}
+
+.who-card--for .who-card-title {
+  color: var(--green, #00c853);
+}
+
+.who-card--not .who-card-title {
+  color: var(--red, #ff4444);
+}
+
+.who-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.who-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text2, #999);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.who-list li:last-child {
+  margin-bottom: 0;
+}
+
+.who-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.who-card--for .who-icon {
+  background: rgba(0, 200, 83, 0.15);
+  color: var(--green, #00c853);
+}
+
+.who-card--not .who-icon {
+  background: rgba(255, 68, 68, 0.12);
+  color: var(--red, #ff4444);
+}
+</style>
+
+<section class="who-section">
+  <div class="who-section-label">Real talk</div>
+  <h2 class="who-section-heading">Is this actually for you?</h2>
+
+  <div class="who-grid">
+
+    <!-- FOR Card -->
+    <div class="who-card who-card--for">
+      <div class="who-card-title">This is for you if:</div>
+      <ul class="who-list">
+        <li>
+          <span class="who-icon">&#10003;</span>
+          <span>You create content and want to get paid what it's worth</span>
+        </li>
+        <li>
+          <span class="who-icon">&#10003;</span>
+          <span>You freeze when a brand asks "what's your rate?"</span>
+        </li>
+        <li>
+          <span class="who-icon">&#10003;</span>
+          <span>You've never had a paid deal and want your first one</span>
+        </li>
+        <li>
+          <span class="who-icon">&#10003;</span>
+          <span>You're getting $150-$300 per video and want to break $800</span>
+        </li>
+        <li>
+          <span class="who-icon">&#10003;</span>
+          <span>You want a system, not another course with 47 video modules</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- NOT FOR Card -->
+    <div class="who-card who-card--not">
+      <div class="who-card-title">This is not for you if:</div>
+      <ul class="who-list">
+        <li>
+          <span class="who-icon">&#10005;</span>
+          <span>You want overnight results without sending a single pitch</span>
+        </li>
+        <li>
+          <span class="who-icon">&#10005;</span>
+          <span>You're already charging $1,000+ and managing retainer clients</span>
+        </li>
+        <li>
+          <span class="who-icon">&#10005;</span>
+          <span>You want theory and motivation instead of copy-paste scripts</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
