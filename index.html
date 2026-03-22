@@ -451,6 +451,7 @@ footer a { color: var(--text3); }
   .gate-input { min-height: 48px; }
   .modal-submit { min-height: 48px; }
   .modal-input { min-height: 48px; }
+  .proof-grid { grid-template-columns: 1fr !important; }
 }
 
 /* EMAIL GATE OVERLAY */
@@ -798,7 +799,7 @@ footer a { color: var(--text3); }
   <!-- SCREENSHOT PROOF GALLERY -->
   <div id="results" style="margin-top:24px;border-top:1px solid var(--border);padding-top:24px">
     <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;text-align:center">REAL SCREENSHOTS. REAL RESULTS.</div>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px">
+    <div class="proof-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px">
       <div style="border-radius:12px;border:1px solid var(--border);overflow:hidden;background:#111"><img src="/assets/testimonial-final-2.png" alt="Ty - $150 to $800 on X" style="width:100%;height:100%;object-fit:contain;display:block"></div>
       <div style="border-radius:12px;border:1px solid var(--border);overflow:hidden;background:#111"><img src="/assets/testimonial-candi.png" alt="Candi - $650 to $4,750" style="width:100%;height:100%;object-fit:contain;display:block"></div>
       <div style="border-radius:12px;border:1px solid var(--border);overflow:hidden;background:#111"><img src="/assets/testimonial-milena-dm.jpeg" alt="Milena - 2 responses in 1 day" style="width:100%;height:100%;object-fit:contain;display:block"></div>
@@ -862,7 +863,7 @@ footer a { color: var(--text3); }
     </div>
     <div class="proof-stat">
       <div class="num">5.3x</div>
-      <div class="label">Avg Rate Increase</div>
+      <div class="label">Ty's Rate Increase</div>
     </div>
     <div class="proof-stat">
       <div class="num">60+</div>
@@ -921,6 +922,13 @@ footer a { color: var(--text3); }
       <div style="font-size:12px;color:var(--text3);margin-top:4px">One deal pays for it 4x over.</div>
     </div>
   </div>
+</section>
+
+<!-- PRODUCT WALKTHROUGH (Wendt: AFTER price reveal, for "convince me this is real" segment) -->
+<section class="fade-up" style="max-width:700px;margin:0 auto;padding:48px 20px;text-align:center">
+  <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px">SEE INSIDE THE KIT</div>
+  <p style="font-size:15px;color:var(--text2);margin-bottom:24px;line-height:1.6">2-minute walkthrough. The Notion workspace, the scripts, the brand database, the AI tools. Everything you get the moment you buy.</p>
+  <div style="position:relative;padding-bottom:51.58%;height:0;border-radius:14px;overflow:hidden;border:1px solid var(--border)"><iframe src="https://www.loom.com/embed/d905c4eeb8414110b51cdea2baca611f?autoplay=0&hide_owner=true&hide_share=true&hide_title=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div>
 </section>
 
 <!-- WHO THIS IS FOR / NOT FOR -->
@@ -1090,7 +1098,7 @@ footer a { color: var(--text3); }
 <section class="bottom-cta fade-up">
   <h2>Your next brand deal is sitting in your inbox. Do you know what to say?</h2>
   <p>Every day you negotiate without a system, you leave thousands on the table. One deal with the Closer Kit pays for itself 4x over.</p>
-  <a href="#" class="cta-btn" onclick="openEmailModal(); return false;">Show Me How They Close $800+ <span class="arrow">&rarr;</span></a>
+  <a href="#" class="cta-btn" onclick="openEmailModal(); return false;">Start Closing $800+ Deals <span class="arrow">&rarr;</span></a>
   <div class="cta-note">Enter your email &rarr; watch the free breakdown &rarr; unlock 175+ brands and 60+ closing scripts</div>
 </section>
 
