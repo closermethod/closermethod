@@ -987,21 +987,21 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// RETURNING VISITOR — show direct checkout button
+// RETURNING VISITOR  - show direct checkout button
 (function() {
   if (localStorage.getItem('ugc_email')) {
     // Swap nav CTA to direct checkout
     var navCta = document.querySelector('.nav-cta');
     if (navCta) {
       navCta.href = 'https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=brand-database-nav&utm_campaign=closer-kit-returning';
-      navCta.textContent = 'Get the Kit — $197 \u2192';
+      navCta.textContent = 'Get the Kit  - $197 \u2192';
       navCta.target = '_blank';
       navCta.onclick = function() { if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'brand-database-nav-returning',value:197,currency:'USD'}); };
     }
     // Add floating buy bar at bottom for returning visitors
     var buyBar = document.createElement('div');
     buyBar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:300;background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-top:2px solid #c8ff00;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:14px;';
-    buyBar.innerHTML = '<span style="color:#999;font-weight:600">Welcome back! \u2192</span><a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=brand-database-sticky&utm_campaign=closer-kit-returning" target="_blank" style="background:#c8ff00;color:#0a0a0a;padding:10px 24px;border-radius:8px;font-weight:800;font-size:14px;text-decoration:none" onclick="if(typeof fbq===\'function\')fbq(\'track\',\'InitiateCheckout\',{content_name:\'brand-database-sticky-returning\',value:197,currency:\'USD\'})">Get the Closer Kit — $197</a><span style="color:#666;font-size:12px">30-day guarantee</span>';
+    buyBar.innerHTML = '<span style="color:#999;font-weight:600">Welcome back! \u2192</span><a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=brand-database-sticky&utm_campaign=closer-kit-returning" target="_blank" style="background:#c8ff00;color:#0a0a0a;padding:10px 24px;border-radius:8px;font-weight:800;font-size:14px;text-decoration:none" onclick="if(typeof fbq===\'function\')fbq(\'track\',\'InitiateCheckout\',{content_name:\'brand-database-sticky-returning\',value:197,currency:\'USD\'})">Get the Closer Kit  - $197</a><span style="color:#666;font-size:12px">30-day guarantee</span>';
     document.body.appendChild(buyBar);
     document.body.style.paddingBottom = '60px';
   }
@@ -1009,7 +1009,7 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
 // EMAIL MODAL
 function openEmailModal() {
-  // Check if already submitted — send to checkout
+  // Check if already submitted  - send to checkout
   if (localStorage.getItem('ugc_email')) {
     window.open('https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=brand-database-cta&utm_campaign=closer-kit-returning', '_blank');
     if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'brand-database-cta-returning',value:197,currency:'USD'});
