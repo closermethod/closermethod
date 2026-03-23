@@ -358,6 +358,11 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
   font-size: 16px; color: var(--text2); margin-bottom: 28px;
 }
 
+/* FAQ ACCORDION */
+details summary::-webkit-details-marker { display: none; }
+details summary::marker { display: none; content: ''; }
+details[open] summary span:last-child { transform: rotate(45deg); }
+
 /* FOOTER */
 footer {
   text-align: center; padding: 40px 24px;
@@ -609,33 +614,33 @@ footer a { color: var(--text3); }
       </tr>
       <!-- BLURRED ROWS -->
       <tr class="db-locked-row">
-        <td class="blurred">Brand Name</td>
+        <td class="blurred">Ridge Wallet</td>
         <td class="blurred"><span class="niche-tag" style="background:rgba(255,255,255,.06);color:var(--text3)">Tech</span></td>
         <td class="blurred budget">$700&ndash;1,800</td>
-        <td class="blurred">d****@brand.com</td>
+        <td class="blurred">d****@ridgewallet.com</td>
       </tr>
       <tr class="db-locked-row">
-        <td class="blurred">Brand Name</td>
-        <td class="blurred"><span class="niche-tag" style="background:rgba(255,255,255,.06);color:var(--text3)">Pet</span></td>
+        <td class="blurred">Native</td>
+        <td class="blurred"><span class="niche-tag" style="background:rgba(255,255,255,.06);color:var(--text3)">Beauty</span></td>
         <td class="blurred budget">$400&ndash;900</td>
-        <td class="blurred">l****@brand.com</td>
+        <td class="blurred">l****@nativeos.com</td>
       </tr>
       <tr class="db-locked-row">
-        <td class="blurred">Brand Name</td>
+        <td class="blurred">Rare Beauty</td>
         <td class="blurred"><span class="niche-tag" style="background:rgba(255,255,255,.06);color:var(--text3)">Beauty</span></td>
         <td class="blurred budget">$550&ndash;1,300</td>
-        <td class="blurred">t****@brand.com</td>
+        <td class="blurred">t****@rarebeauty.com</td>
       </tr>
       <tr class="db-locked-row">
-        <td class="blurred">Brand Name</td>
-        <td class="blurred"><span class="niche-tag" style="background:rgba(255,255,255,.06);color:var(--text3)">Home</span></td>
+        <td class="blurred">Bloom Nutrition</td>
+        <td class="blurred"><span class="niche-tag" style="background:rgba(255,255,255,.06);color:var(--text3)">Health</span></td>
         <td class="blurred budget">$500&ndash;1,200</td>
-        <td class="blurred">n****@brand.com</td>
+        <td class="blurred">n****@bloomnu.com</td>
       </tr>
     </tbody>
   </table>
   <div class="db-cta-bar">
-    <div class="db-cta-text">+169 more brands locked. <span>All niches. All pre-researched contacts.</span><br><a href="#" onclick="openEmailModal();return false;" style="display:inline-block;margin-top:8px;padding:8px 20px;background:#c8ff00;color:#0a0a0a;font-size:13px;font-weight:700;border-radius:8px;text-decoration:none;font-family:'DM Sans',sans-serif">Unlock All 175+ Brands</a></div>
+    <div class="db-cta-text">+169 more brands locked. <span>All niches. All pre-researched contacts.</span><br><a href="#" onclick="openEmailModal();return false;" style="display:inline-block;margin-top:8px;padding:8px 20px;background:#c8ff00;color:#0a0a0a;font-size:13px;font-weight:700;border-radius:8px;text-decoration:none;font-family:'DM Sans',sans-serif">Get Your Free Rate First &rarr;</a></div>
   </div>
 </section>
 
@@ -673,8 +678,8 @@ footer a { color: var(--text3); }
     </div>
   </div>
 
-  <a href="#" class="cta-btn" onclick="openEmailModal(); return false;">See How Creators Close $800+ Deals <span class="arrow">&rarr;</span></a>
-  <div class="cta-note"><strong>Free. No spam.</strong> Watch the exact system that turns $150 conversations into $800 deals.</div>
+  <a href="#" class="cta-btn" onclick="openEmailModal(); return false;">Try the Free Rate Calculator <span class="arrow">&rarr;</span></a>
+  <div class="cta-note"><strong>Free. No credit card.</strong> See your real rate in 60 seconds.</div>
 </section>
 
 <!-- WHY THIS WORKS -->
@@ -698,8 +703,8 @@ footer a { color: var(--text3); }
     </div>
     <div class="why-card">
       <div class="icon">&#128200;</div>
-      <h4>"Is it worth $197?"</h4>
-      <p>You spend $197 on the kit. You close one $800 deal. That's a 4x return in your first week.</p>
+      <h4>"How do I start?"</h4>
+      <p>Use the free rate calculator. See what you should charge. Then decide if you want the scripts to actually close at that rate.</p>
     </div>
   </div>
 </section>
@@ -855,8 +860,8 @@ footer a { color: var(--text3); }
       <div class="label">Candi's Best Deal</div>
     </div>
     <div class="proof-stat">
-      <div class="num">$197</div>
-      <div class="label">One-Time Payment <span style="font-size:.65em;opacity:.7">(sale price)</span></div>
+      <div class="num">Free</div>
+      <div class="label">Rate Calculator</div>
     </div>
   </div>
 </section>
@@ -1063,12 +1068,13 @@ footer a { color: var(--text3); }
 
 <section class="bottom-cta fade-up">
   <h2>Your next brand deal is sitting in your inbox. Do you know what to say?</h2>
-  <p>Every day you negotiate without a system, you leave thousands on the table. One deal with the Closer Kit pays for itself 4x over.</p>
-  <a href="#" class="cta-btn" onclick="openEmailModal(); return false;">Start Closing $800+ Deals <span class="arrow">&rarr;</span></a>
-  <div style="font-size:14px;color:var(--text2);margin-top:12px"><strong style="color:#fff">$197</strong> <span style="text-decoration:line-through;color:var(--text3)">$497</span> or <strong style="color:#fff">4x $61.50</strong> payment plan</div>
-  <div style="font-size:13px;color:var(--text3);margin-top:6px">Tax season sale ends March 31. $497 after that.</div>
-  <div style="font-size:13px;color:var(--green);margin-top:8px">&#128737; 30-day "I'll coach you" guarantee. Not happy? I'll personally coach you until you close.</div>
-  <div class="cta-note">Enter your email &rarr; watch the free breakdown &rarr; unlock 175+ brands and 60+ closing scripts</div>
+  <p>Most creators undercharge by $300+ per deal. Find out your real rate in 60 seconds — free.</p>
+  <a href="#" class="cta-btn" onclick="openEmailModal(); return false;">Get Your Free Rate Calculation <span class="arrow">&rarr;</span></a>
+  <div class="cta-note" style="margin-top:12px">Free. No credit card. See your rate in 60 seconds.</div>
+  <div style="font-size:13px;color:var(--green);margin-top:12px">&#128737; 30-day "I'll coach you" guarantee on the full kit.</div>
+  <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border)">
+    <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=brand-database-bottom-cta&utm_campaign=closer-kit" target="_blank" style="font-size:13px;color:var(--text3);text-decoration:underline;transition:color .2s" onmouseover="this.style.color='var(--text2)'" onmouseout="this.style.color='var(--text3)'">Already know you want the full kit? Get it for $197 <span style="text-decoration:line-through">$497</span> &rarr;</a>
+  </div>
 </section>
 
 <!-- VERIFIED BADGE (no exit links) -->
@@ -1095,6 +1101,34 @@ footer a { color: var(--text3); }
     </div>
   </div>
 </div>
+
+<!-- FAQ SECTION -->
+<section class="fade-up" style="max-width:600px;margin:0 auto;padding:48px 24px 40px">
+  <h2 style="font-size:20px;font-weight:700;color:#fff;text-align:center;margin-bottom:24px;font-family:'Space Grotesk',sans-serif">Quick Answers</h2>
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <details style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+      <summary style="padding:18px 24px;font-size:15px;font-weight:700;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;-webkit-user-select:none;user-select:none">
+        Is the rate calculator really free?
+        <span style="color:var(--text3);font-size:18px;transition:transform .2s;flex-shrink:0;margin-left:12px">+</span>
+      </summary>
+      <div style="padding:0 24px 18px;font-size:14px;color:var(--text2);line-height:1.6">Yes. No credit card, no catch. See your real rate in 60 seconds.</div>
+    </details>
+    <details style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+      <summary style="padding:18px 24px;font-size:15px;font-weight:700;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;-webkit-user-select:none;user-select:none">
+        Who is this for?
+        <span style="color:var(--text3);font-size:18px;transition:transform .2s;flex-shrink:0;margin-left:12px">+</span>
+      </summary>
+      <div style="padding:0 24px 18px;font-size:14px;color:var(--text2);line-height:1.6">UGC creators who want to stop undercharging. Whether you're brand new or charging $500+, the calculator shows you what brands actually pay.</div>
+    </details>
+    <details style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+      <summary style="padding:18px 24px;font-size:15px;font-weight:700;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;-webkit-user-select:none;user-select:none">
+        What happens after I use the calculator?
+        <span style="color:var(--text3);font-size:18px;transition:transform .2s;flex-shrink:0;margin-left:12px">+</span>
+      </summary>
+      <div style="padding:0 24px 18px;font-size:14px;color:var(--text2);line-height:1.6">You'll see your recommended rate, plus optional tools to help you pitch and close at that rate.</div>
+    </details>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>

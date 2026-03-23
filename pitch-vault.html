@@ -138,6 +138,16 @@ a{color:var(--green);text-decoration:none}
 .creator p{font-size:14px;color:var(--text2);max-width:480px;margin:0 auto;line-height:1.7}
 .creator-brands{margin-top:16px;font-family:var(--mono);font-size:12px;color:var(--text3);letter-spacing:.5px}
 
+/* FAQ Accordion */
+.faq-section{max-width:640px;margin:0 auto;padding:0 24px 48px}
+.faq-section details{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border .2s}
+.faq-section details[open]{border-color:rgba(200,255,0,.25)}
+.faq-section summary{padding:18px 22px;font-size:15px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--text)}
+.faq-section summary::-webkit-details-marker{display:none}
+.faq-section summary::after{content:'+';font-family:var(--mono);font-size:18px;color:var(--green);flex-shrink:0;margin-left:12px;transition:transform .2s}
+.faq-section details[open] summary::after{content:'\2212'}
+.faq-section .faq-answer{padding:0 22px 20px;font-size:14px;color:var(--text2);line-height:1.7}
+
 /* Final CTA */
 .final-cta{text-align:center;padding:56px 0 80px;border-top:1px solid var(--border)}
 .final-cta h2{font-family:var(--serif);font-size:30px;font-weight:800;margin-bottom:8px}
@@ -268,6 +278,22 @@ a{color:var(--green);text-decoration:none}
       <div style="border-radius:12px;border:1px solid var(--border);overflow:hidden;background:#111"><img src="/assets/testimonial-final-5.png" alt="Jamie - soo helpful" style="width:100%;display:block"></div>
       <div style="border-radius:12px;border:1px solid var(--border);overflow:hidden;background:#111"><img src="/assets/testimonial-final-3.png" alt="Abbie - used on big brand" style="width:100%;display:block"></div>
     </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:480px;margin:12px auto 0">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px">
+        <div style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:8px">"I used one of the pitch templates to a really big baseball brand... <strong style="color:var(--green)">got a good conversion going!</strong>"</div>
+        <div style="font-size:12px;color:var(--text3)">Abbie</div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px">
+        <div style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:8px">"Holy cow! This is <strong style="color:var(--green)">SO KIND of you!!!!</strong> This is all so incredibly helpful"</div>
+        <div style="font-size:12px;color:var(--text3)">Jamie <span style="color:var(--text3)">@jamiejohnsonugc</span></div>
+      </div>
+    </div>
+    <div style="max-width:480px;margin:12px auto 0">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;text-align:center">
+        <div style="font-family:var(--serif);font-size:28px;font-weight:800;color:var(--green);margin-bottom:4px">10/10</div>
+        <div style="font-size:12px;color:var(--text3)">Jen E <span style="color:var(--text3)">@explorewithjene</span></div>
+      </div>
+    </div>
   </div>
   <div style="text-align:center;margin-top:12px;font-size:12px;color:var(--text3)">Real screenshots. Real DMs. Not paid reviews.</div>
 </div>
@@ -365,7 +391,7 @@ a{color:var(--green);text-decoration:none}
     <p class="form-sub">Instant access. 30-day coaching guarantee.</p>
     <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=pitch_vault&utm_campaign=pitch_vault" class="form-btn" style="display:block;text-align:center;text-decoration:none;color:#000" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'pitch-vault-hero',value:27,currency:'USD'})">START GETTING BRAND REPLIES - $27</a>
     <p class="form-trust">One reply pays for this 20x over.</p>
-    <div style="font-size:12px;color:var(--text3, #666);margin-top:8px;">Tax season pricing through March 31. One reply pays for this 20x over.</div>
+    <div style="font-size:12px;color:var(--text3, #666);margin-top:8px;">&#9200; <strong style="color:var(--amber)">Tax season pricing ends March 31.</strong> Write off your $27 investment this tax year. One reply pays for this 20x over.</div>
   </div>
 </div>
 
@@ -388,9 +414,35 @@ a{color:var(--green);text-decoration:none}
   <div class="wrap">
     <div class="creator-name">Built by Elisabeth</div>
     <div class="creator-handle">@closermethod</div>
-    <p>15 years across enterprise sales, advertising, PR, social media, and community management in NYC. Criteo, Deel, Autodesk, McCann, Y&amp;R, NBC News, HBO, Bloomberg, Rolling Stone, Levi's, Kenneth Cole, Limited Brands, Anthropologie, Milk Studios. $1.2M+ in closed deals. Now I teach UGC creators the negotiation and pitching skills that took me 15 years to learn, so you can skip the learning curve and start charging what you're worth.</p>
-    <div class="creator-brands">CRITEO &middot; DEEL &middot; AUTODESK &middot; McCANN &middot; Y&amp;R &middot; HBO &middot; BLOOMBERG &middot; NBC NEWS &middot; ROLLING STONE &middot; LEVI'S &middot; LIMITED BRANDS &middot; ANTHROPOLOGIE &middot; MILK STUDIOS</div>
+    <p>15 years across enterprise sales, advertising, PR, social media, and community management in NYC. Criteo, Deel, Autodesk, Red Points, McCann, Y&amp;R, NBC News, HBO, Bloomberg, Rolling Stone, Levi's, Kenneth Cole, Limited Brands, Anthropologie, Milk Studios. $1.2M+ in closed deals. Now I teach UGC creators the negotiation and pitching skills that took me 15 years to learn, so you can skip the learning curve and start charging what you're worth.</p>
+    <div class="creator-brands">CRITEO &middot; DEEL &middot; AUTODESK &middot; RED POINTS &middot; McCANN &middot; Y&amp;R &middot; HBO &middot; BLOOMBERG &middot; NBC NEWS &middot; ROLLING STONE &middot; LEVI'S &middot; KENNETH COLE &middot; LIMITED BRANDS &middot; ANTHROPOLOGIE &middot; MILK STUDIOS</div>
   </div>
+</div>
+
+<!-- FAQ / Objection Handling -->
+<div class="faq-section">
+  <div style="font-family:var(--mono);font-size:11px;color:var(--green);text-transform:uppercase;letter-spacing:2px;text-align:center;margin-bottom:8px">FAQ</div>
+  <h2 style="font-family:var(--serif);font-size:28px;font-weight:800;text-align:center;margin-bottom:24px">Common Questions</h2>
+
+  <details>
+    <summary>I'm too new - will this work for beginners?</summary>
+    <div class="faq-answer">These templates are designed for creators at every level. Newer creators actually see the biggest jumps because they go from guessing to using proven frameworks. Jamie called it "so incredibly helpful, especially as a newer creator."</div>
+  </details>
+
+  <details>
+    <summary>Can't I find pitch templates for free online?</summary>
+    <div class="faq-answer">You can. And they'll sound like every other creator in the brand's inbox. These are built from 15 years closing $1.2M in enterprise deals at Criteo, Deel, and Autodesk - not recycled influencer tips.</div>
+  </details>
+
+  <details>
+    <summary>Why only $27?</summary>
+    <div class="faq-answer">Because the Pitch Vault is your entry point. Once you see brands actually responding, you'll want the full Closer Kit ($197) to negotiate and close at higher rates. This is the first step, priced so there's zero risk.</div>
+  </details>
+
+  <details>
+    <summary>What if brands still don't reply?</summary>
+    <div class="faq-answer">The 30-day coaching guarantee covers you. If the templates don't get responses, I'll personally review your pitches and help you adjust until they do.</div>
+  </details>
 </div>
 
 <!-- Final CTA -->
@@ -404,6 +456,7 @@ a{color:var(--green);text-decoration:none}
       <p class="form-sub">Your next brand deal starts with the right email.</p>
       <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=pitch_vault&utm_campaign=pitch_vault" class="form-btn" style="display:block;text-align:center;text-decoration:none;color:#000">START GETTING BRAND REPLIES → $27</a>
       <p class="form-trust">Instant access. 30-day guarantee. One reply pays for it 20x.</p>
+      <div style="font-size:12px;color:var(--text3, #666);margin-top:8px;">&#9200; <strong style="color:var(--amber)">Tax season pricing ends March 31.</strong> Write it off this tax year.</div>
     </div>
   </div>
 </div>
