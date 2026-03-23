@@ -737,6 +737,56 @@ footer a { color: var(--text2); text-decoration: none; }
   .proof-cards { gap: 12px; }
   .proof-card { padding: 20px 18px 16px; }
 }
+
+/* SHARE RESULTS CARD */
+.share-results-card {
+  margin-top: 20px;
+  background: var(--bg2, #111);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+.share-results-card .share-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+.share-results-card .share-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.share-results-card .share-copy-btn:hover {
+  background: var(--accent2, #a8d900);
+  transform: translateY(-1px);
+}
+.share-results-card .share-copy-btn.copied {
+  background: var(--green, #00c853);
+  color: #fff;
+}
+.share-results-card .share-ig-prompt {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--text2, #999);
+  line-height: 1.5;
+}
+.share-results-card .share-ig-prompt strong {
+  color: var(--text, #e8e8e8);
+}
 </style>
 </head>
 <body>
@@ -765,7 +815,7 @@ footer a { color: var(--text2); text-decoration: none; }
 <!-- HERO -->
 <section class="hero fade-up">
   <div class="hero-badge"><span class="dot"></span> Free - No credit card</div>
-  <h1>Find out what you<br>should actually be<br><em>charging brands.</em></h1>
+  <h1>Smart. Let's find your<br><em>real number.</em></h1>
   <p class="hero-sub">Stop guessing. Stop undercharging. Use the pricing framework built from 15 years of enterprise sales at Criteo, Deel, Bloomberg &amp; HBO. Free. Takes 30 seconds.</p>
   <div class="hero-proof">
     <span><span class="check">&check;</span> Free forever</span>
@@ -818,7 +868,7 @@ footer a { color: var(--text2); text-decoration: none; }
           Posted on X
         </div>
       </div>
-    </a>
+    </div>
 
     <!-- JEN E - VERIFIED X POST -->
     <div class="proof-card">
@@ -837,7 +887,7 @@ footer a { color: var(--text2); text-decoration: none; }
           Posted on X
         </div>
       </div>
-    </a>
+    </div>
 
     <!-- CANDI - UGC CREATOR -->
     <div class="proof-card">
@@ -896,7 +946,7 @@ footer a { color: var(--text2); text-decoration: none; }
           Posted on X
         </div>
       </div>
-    </a>
+    </div>
 
     <!-- YULI - UGC CREATOR -->
     <div class="proof-card">
@@ -995,7 +1045,7 @@ footer a { color: var(--text2); text-decoration: none; }
           Posted on X
         </div>
       </div>
-    </a>
+    </div>
 
     <!-- AGGREGATE STATS BAR -->
     <div class="proof-stats-bar">
@@ -1151,6 +1201,20 @@ footer a { color: var(--text2); text-decoration: none; }
         </div>
       </div>
 
+<!-- SHARE YOUR RESULTS -->
+<div class="share-results-card" id="shareResultsCard">
+  <div class="share-title">Share your rate with your creator friends</div>
+  <button class="share-copy-btn" id="shareCopyBtn" onclick="shareResults()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+    Copy to clipboard
+  </button>
+  <div class="share-ig-prompt">Or screenshot your results and share to Instagram Stories.<br><strong>Tag @closermethod</strong> so we can hype you up.</div>
+</div>
+
+<div style="text-align:center;font-size:13px;color:var(--text2, #999);margin-top:12px;padding:8px 16px;background:rgba(200,255,0,0.04);border-radius:8px;">
+  Your full rate breakdown was sent to your inbox. Check it for your defense script starter.
+</div>
+
       <!-- COST OF INACTION -->
       <div class="cost-of-inaction" id="costOfInaction" style="display:none;">
         <div class="coi-headline">
@@ -1180,10 +1244,9 @@ footer a { color: var(--text2); text-decoration: none; }
         <div class="bridge-headline">You just calculated your rate.<br>But what do you say when a brand offers <em style="color:var(--accent)">half</em>?</div>
         <p class="bridge-sub" id="vslRedirectText">87% of UGC creators know their rate. Only 12% know how to defend it. The Closer Kit has the exact words for the moment a brand says <strong>"our budget is lower."</strong> That moment decides whether you make $200 or $800.</p>
         <a href="vsl.html" class="vsl-redirect-btn" id="vslRedirectBtn">Get the 60 Scripts That Close $800+ Deals &rarr;</a>
-        <div class="bridge-proof">Ty used these scripts. Same brand. $150 &rarr; $800. One conversation.</div>
-        <div class="bridge-urgency"><span class="pulse-dot"></span> Tax season sale ends March 31 &middot; $197 <span style="text-decoration:line-through">$497</span></div>
-      </div>
-    </div>
+        <div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
+  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
+</div>
   </div>
 </section>
 
@@ -1205,14 +1268,26 @@ footer a { color: var(--text2); text-decoration: none; }
   </div>
 </div>
 
-<!-- CROSS-LINK: Next Steps -->
-<div class="fade-up" style="max-width:600px;margin:0 auto;padding:32px 20px 0;text-align:center">
-  <div style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px">NOW THAT YOU KNOW YOUR RATE</div>
-  <div style="display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto">
-    <a href="/brand-database.html" style="display:block;padding:16px 20px;background:var(--card);border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--text);font-weight:600;font-size:15px;transition:border-color .2s">Find brands that pay this rate &rarr;</a>
-    <a href="/tool3-closer-coach.html" style="display:block;padding:16px 20px;background:var(--card);border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--text);font-weight:600;font-size:15px;transition:border-color .2s">Practice your pitch with AI Coach &rarr;</a>
-    <a href="/pitch-vault.html" style="display:block;padding:16px 20px;background:var(--card);border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--text);font-weight:600;font-size:15px;transition:border-color .2s">Get 9 pitch templates ($27) &rarr;</a>
-  </div>
+<!-- SINGLE CTA: Close the gap -->
+<div class="fade-up" style="max-width:600px;margin:0 auto;padding:40px 20px 0;text-align:center">
+  <div style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px">NOW THAT YOU KNOW YOUR RATE</div>
+  <p style="font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px;font-family:'Space Grotesk',sans-serif">Knowing your rate and getting brands to pay it are two different skills.</p>
+  <p style="font-size:15px;color:var(--muted, #999);margin-bottom:24px;line-height:1.6">The creators closing $800+ deals aren't more talented. They have scripts, systems, and a 175+ brand database. Tax season sale ends March 31.</p>
+  <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=rate_calculator&utm_campaign=closer_kit&utm_content=post_calc_cta" target="_blank" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-kit-rate-calc-post',value:197,currency:'USD'})" style="display:block;max-width:400px;margin:0 auto 12px;padding:18px 20px;background:var(--accent);border:none;border-radius:12px;text-decoration:none;color:#000;font-weight:800;font-size:17px;font-family:'Space Grotesk',sans-serif;transition:transform .15s">Start Closing $800+ Deals - $197</a>
+  <div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
+  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
+</div>
+  <div style="font-size:12px;color:var(--muted, #999);margin-top:8px"><s style="color:#555">$497</s> $197 tax season sale. One deal pays for this 4x over.</div>
+  <div style="font-size:11px;color:#555">Coaching guarantee. 60+ scripts. 175+ brands. 9 AI tools.</div>
+</div>
+
+<!-- DOWNSELL CTA: Pitch Vault -->
+<div class="fade-up" style="max-width:540px;margin:32px auto 0;padding:28px 24px;text-align:center;border:1.5px solid var(--accent);border-radius:14px;background:rgba(255,255,255,0.03)">
+  <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted, #999);margin-bottom:10px">NOT READY FOR THE FULL SYSTEM?</div>
+  <p style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;font-family:'Space Grotesk',sans-serif">Start with the Pitch Vault - $27</p>
+  <p style="font-size:14px;color:var(--muted, #999);margin-bottom:20px;line-height:1.6">12 cold pitch templates with a 20% response rate. 60+ scripts. 175+ brand database. One reply pays for this 20x. The entry point to the Closer Method.</p>
+  <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=rate_calculator&utm_campaign=pitch_vault&utm_content=post_calc_downsell" target="_blank" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'pitch-vault-calculator-downsell',value:27,currency:'USD'})" style="display:block;max-width:340px;margin:0 auto 12px;padding:14px 18px;background:transparent;border:2px solid var(--accent);border-radius:10px;text-decoration:none;color:var(--accent);font-weight:700;font-size:15px;font-family:'Space Grotesk',sans-serif;transition:transform .15s,background .15s">Land Your First Brand Deal for $27</a>
+  <div style="font-size:11px;color:#555">Instant access. 30-day guarantee.</div>
 </div>
 
 <!-- FOOTER -->
@@ -1269,8 +1344,10 @@ var urlParams = new URLSearchParams(window.location.search);
 if (urlParams.get('from') === 'vsl-rate') {
   var redirectText = document.getElementById('vslRedirectText');
   var redirectBtn = document.getElementById('vslRedirectBtn');
-  if (redirectText) redirectText.innerHTML = '<strong>You know your rate. Now get the system to close at it.</strong> 60+ scripts, 175+ brand contacts, 5 AI tools, and a deal tracker CRM. One brand deal pays for it 3x over.';
-  if (redirectBtn) { redirectBtn.href = 'https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=rate-calc-post&utm_campaign=closer-kit-vsl197'; redirectBtn.textContent = 'Get the Full Closer Kit - $197 \u2192'; }
+  if (redirectText) redirectText.innerHTML = '<strong>You know your rate. Now get the system to close at it.</strong> 60+ scripts, 175+ brand contacts, 9 AI tools, and a deal tracker CRM. One brand deal pays for it 3x over.';
+  if (redirectBtn) { redirectBtn.href = 'https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=rate-calc-post&utm_campaign=closer-kit-vsl197'; redirectBtn.textContent = 'Start Closing $800+ Deals - $197 \u2192'; }
+  var couponBlock = document.getElementById('bridgeCouponBlock');
+  if (couponBlock) couponBlock.style.display = 'block';
 }
 
 // Flash glow on select change
@@ -1349,6 +1426,13 @@ function calculateRate() {
   document.getElementById('placeholder').style.display = 'none';
   requestAnimationFrame(function(){ requestAnimationFrame(function(){ resultArea.classList.add('visible'); }); });
 
+  // Personalize result heading with first name from email gate
+  var userName = localStorage.getItem('ugc_name') || '';
+  var rateLabel = document.querySelector('.result-rate-label');
+  if (rateLabel && userName) {
+    rateLabel.textContent = userName + ', Your Rate';
+  }
+
   // ANIMATE the rate number counting up (slot machine effect)
   var rateEl = document.getElementById('totalRate');
   animateValue(rateEl, 0, finalPerUnit, 1200, '$', '');
@@ -1418,13 +1502,33 @@ function calculateRate() {
     animateValue(coiYearly, 0, yearlyLoss, 1200, '-$', '');
   }, 1000);
 
+  // Store calculated rate for sharing
+  window._calculatedRate = finalPerUnit;
+
   // Show CTA bridge after 2.5 seconds
   setTimeout(function() {
     document.getElementById('vslRedirect').classList.add('show');
-    setTimeout(function() {
-      document.getElementById('vslRedirect').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 300);
+    // Auto-scroll removed: let the dopamine from seeing their rate pull them down naturally
+    // setTimeout(function() {
+    //   document.getElementById('vslRedirect').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // }, 300);
   }, 2500);
+}
+
+// SHARE RESULTS
+function shareResults() {
+  var rate = window._calculatedRate || 0;
+  var shareText = "Just ran my UGC rate and... I've been massively undercharging. My rate should be $" + rate + "/video.\n\nRun yours (it takes 30 seconds): ugc-closer-suite.netlify.app/tool1-rate-calculator.html";
+  var btn = document.getElementById('shareCopyBtn');
+  navigator.clipboard.writeText(shareText).then(function() {
+    btn.classList.add('copied');
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+    if(typeof fbq==='function')fbq('trackCustom','ShareResults',{content_name:'rate-calculator-share',value:rate});
+    setTimeout(function() {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy to clipboard';
+    }, 2500);
+  });
 }
 
 // SCROLL ANIMATIONS - Intersection Observer
@@ -1464,5 +1568,13 @@ document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el
 </div>
 
 <script src="/global-nav.js" defer></script>
+<script>
+// Auto-copy coupon code when any CTA button is clicked
+document.querySelectorAll('a[href*="stan.store"][href*="closer-kit"]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    navigator.clipboard.writeText('VSL197').catch(function(){});
+  });
+});
+</script>
 </body>
 </html>

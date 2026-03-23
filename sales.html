@@ -374,6 +374,7 @@ a { color:var(--accent); }
   .stack-title { font-size:19px; }
   .how-subtitle { font-size:19px; }
   body { padding-bottom:70px; }
+  .mini-testimonials-grid { grid-template-columns:1fr !important; }
 }
 @media(min-width:601px) {
   .sticky-bar { display:none !important; }
@@ -386,7 +387,7 @@ a { color:var(--accent); }
 <div class="top-bar">
   <span class="top-bar-text">&#x1F525; Tax Season Sale: <strong>$497 &rarr; $197</strong></span>
   <span class="top-bar-timer" id="topTimer"></span>
-  <a class="top-bar-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-top-bar',value:197,currency:'USD'})">Close Your Next Deal &rarr;</a>
+  <a class="top-bar-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=sales_page&utm_campaign=closer_kit" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-top-bar',value:197,currency:'USD'})">Close Your Next Deal - $197 &rarr;</a>
 </div>
 
 <div class="page">
@@ -395,7 +396,7 @@ a { color:var(--accent); }
   <div class="hero">
     <div class="hero-badge">TAX SEASON SALE &middot; ENDS MARCH 31</div>
     <h1>Ty was about to say "$150." He said <span class="hl">these words</span> instead. The brand paid $800.</h1>
-    <p class="hero-sub">60+ word-for-word negotiation scripts, 175+ brand database, 9 AI tools. Built from $1.2M in B2B deals at Criteo, Deel, Autodesk, McCann &amp; Y&amp;R.<br><strong style="color:var(--accent)">My goal: you close a deal at your real rate within 24 hours of opening this Kit.</strong></p>
+    <p class="hero-sub">60+ word-for-word negotiation scripts, 175+ brand database, 9 AI tools. Built from $1.2M in B2B deals at Criteo, Deel, Autodesk, Red Points, McCann &amp; Y&amp;R.<br><strong style="color:var(--accent)">My goal: you close a deal at your real rate within 24 hours of opening this Kit.</strong></p>
     <div class="hero-proof">
       <span><span class="dot">&#9679;</span> Ty: $150 &rarr; $800</span>
       <span><span class="dot">&#9679;</span> Candi: $650 &rarr; $4,750</span>
@@ -423,30 +424,62 @@ a { color:var(--accent); }
     </div>
   </div>
 
+  <!-- PAIN SECTION (Wendt: feel seen before you trust receipts) -->
+  <div style="text-align:center;padding:32px 20px;max-width:480px;margin:0 auto;">
+    <p style="font-size:16px;color:var(--text3, #666);line-height:1.9;font-style:italic;">
+      Brand DMs you. Asks your rate. Your heart races.<br>
+      You type $200, delete it, type $250, delete it, send $200.<br>
+      They say "perfect!" and you feel sick because you know<br>
+      that "perfect" means you just left $600 on the table.
+    </p>
+    <p style="font-size:15px;color:var(--text2, #999);margin-top:16px;line-height:1.7;">
+      You Google "UGC rates 2026" and get 47 different answers. You screenshot other creators' rate cards and wonder what they know that you don't.
+    </p>
+    <p style="font-size:17px;color:var(--text, #e8e8e8);font-weight:700;margin-top:16px;font-family:'Space Grotesk',sans-serif;">
+      Here's what they know: the exact words.
+    </p>
+  </div>
+
   <!-- CTA #1 -->
   <div class="cta-block" id="cta1">
     <div class="countdown-bar" id="countdown1">
       <span class="countdown-label" id="cdLabel1">Tax season price ends in</span>
       <span class="countdown-digits" id="cdDigits1"></span>
+      <div style="font-size:12px;color:var(--red, #ff4444);font-weight:600;margin-top:6px;text-align:center;">April 1: price goes back to $497. No exceptions.</div>
     </div>
-    <a class="cta-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-cta1',value:197,currency:'USD'})">Start Closing $800+ Deals &rarr;</a>
-    <div class="cta-price"><s>$497</s> &rarr; <strong>$197</strong> <span style="color:var(--text3)">or 4x $61.50</span> &middot; tax season only</div>
-    <div class="cta-guarantee">&#x1F6E1;&#xFE0F; 30-day coaching guarantee &middot; One deal pays for this 4x</div>
+    <a class="cta-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=sales_page&utm_campaign=closer_kit" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-cta1',value:197,currency:'USD'})">Start Closing $800+ Deals - $197 &rarr;</a>
+    <div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
+  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
+</div>
+    <div style="text-align:center;font-size:12px;color:var(--text3, #666);margin-top:6px;">Or 4 payments of $61.50</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;font-size:12px;color:#00c853;font-weight:600;">
+      <span>&#x1F6E1;&#xFE0F;</span> Doesn't work? I'll personally coach you until it does.
+    </div>
   </div>
 
-  <!-- HOW IT WORKS -->
-  <div class="how-section">
-    <div class="how-title">HOW IT WORKS</div>
-    <div class="how-subtitle">Close your next $800 deal in 3 steps</div>
-    <div class="how-steps">
-      <div class="how-step">
-        <div class="how-num">1</div>
-        <div class="how-step-content">
-          <div class="how-step-title">Get the Kit</div>
-          <div class="how-step-desc">Instant access to 60+ negotiation scripts, 175+ brand database, rate calculator, and 9 AI tools. Everything downloads in seconds.</div>
-          <div class="how-step-time">Instant access</div>
-        </div>
-      </div>
+  <!-- MINI TESTIMONIALS (social proof after first CTA) -->
+  <div class="mini-testimonials-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:8px 0 32px;max-width:560px;margin:0 auto;">
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:12px;color:var(--text3);margin-bottom:6px;font-weight:600;">Jen E <span style="color:var(--text3);font-weight:400;">@explorewithjene</span></div>
+      <div style="font-size:13px;color:var(--text2);line-height:1.5;">"<strong style="color:var(--accent)">10/10.</strong> Building confidence in pricing and negotiating."</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:12px;color:var(--text3);margin-bottom:6px;font-weight:600;">Jamie <span style="color:var(--text3);font-weight:400;">@jamiejohnsonugc</span></div>
+      <div style="font-size:13px;color:var(--text2);line-height:1.5;">"<strong style="color:var(--accent)">Soo helpful</strong>"</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:12px;color:var(--text3);margin-bottom:6px;font-weight:600;">Milena <span style="color:var(--text3);font-weight:400;">@UGCbyMilenaVonX</span></div>
+      <div style="font-size:13px;color:var(--text2);line-height:1.5;">"Has a <strong style="color:var(--text)">stellar way for dealing with this.</strong> Super simple and keeps you in the position of polite, but explaining value."</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;">
+      <div style="font-size:12px;color:var(--text3);margin-bottom:6px;font-weight:600;">Abbie <span style="color:var(--text3);font-weight:400;">UGC Creator</span></div>
+      <div style="font-size:13px;color:var(--text2);line-height:1.5;">"I used one of the pitch templates to a really big baseball brand... <strong style="color:var(--text)">I got a good conversion going!</strong>"</div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS (continued) -->
+  <div class="how-section" style="padding-top:0;">
+    <div class="how-steps" style="max-width:480px;margin:0 auto;">
       <div class="how-connector"></div>
       <div class="how-step">
         <div class="how-num">2</div>
@@ -466,6 +499,12 @@ a { color:var(--accent); }
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- WHY ME (Wendt: creator-as-brand credibility beat) -->
+  <div style="text-align:center;padding:32px 0;font-size:15px;color:var(--text2, #999);line-height:1.7;max-width:480px;margin:0 auto;">
+    <strong style="color:var(--text, #e8e8e8);font-size:17px;font-family:'Space Grotesk',sans-serif;">Why me?</strong><br><br>
+    I spent 15 years closing B2B deals at Criteo, Deel, Autodesk, Red Points, HBO, Bloomberg, McCann, and Y&amp;R. The scripts in this Kit are the same frameworks that closed $1.2M in enterprise contracts, rebuilt for creators who deserve to stop guessing.
   </div>
 
   <!-- PROOF SECTION -->
@@ -720,122 +759,37 @@ a { color:var(--accent); }
       No usage rights fee. No exclusivity clause. No revision cap.<br><br>
       That brand turned your video into a <span class="hl">$50,000 ad campaign.</span><br><br>
       You got $200. They got your face on billboards across the country.<br><br>
-      <strong style="color:var(--text)">The difference between you and the creator who charges $800? Thirty seconds of words. We give you those words.</strong>
+      <strong style="color:var(--text)">The difference between you and the creator who charges $800? Thirty seconds of words. We give you those words.</strong><br><br>
+      <strong style="color:var(--text, #e8e8e8)">You're not bad at negotiation. You just never had the words. Now you do.</strong>
     </div>
   </div>
 
   <!-- CTA #2 -->
   <div class="cta-block" id="cta2">
-    <a class="cta-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-cta2',value:197,currency:'USD'})">Start Closing $800+ Brand Deals &rarr;</a>
-    <div class="cta-price"><s>$497</s> &rarr; <strong>$197</strong> <span style="color:var(--text3)">or 4x $61.50</span> &middot; 30-day guarantee</div>
-  </div>
-
-  <!-- VALUE STACK -->
-  <div class="stack">
-    <div class="stack-card">
-      <div class="stack-header">
-        <div class="stack-eyebrow">EVERYTHING INSIDE THE UGC CLOSER KIT</div>
-        <div class="stack-title">$1,626 in Value. You Pay $197.</div>
-      </div>
-      <div class="stack-item">
-        <span class="stack-item-name"><span class="check">&#10004;&#65039;</span> 60+ Negotiation Scripts <span class="stack-item-badge">BIGGEST IMPACT</span></span>
-        <span class="stack-item-value">$497 value</span>
-      </div>
-      <div class="stack-item">
-        <span class="stack-item-name"><span class="check">&#10004;&#65039;</span> 175+ Brand Database <span class="stack-item-badge">MOST POPULAR</span></span>
-        <span class="stack-item-value">$297 value</span>
-      </div>
-      <div class="stack-item">
-        <span class="stack-item-name"><span class="check">&#10004;&#65039;</span> 12 Outbound Pitch Templates</span>
-        <span class="stack-item-value">$147 value</span>
-      </div>
-      <div class="stack-item">
-        <span class="stack-item-name"><span class="check">&#10004;&#65039;</span> 9 AI-Powered Tools</span>
-        <span class="stack-item-value">$197 value</span>
-      </div>
-      <div class="stack-item">
-        <span class="stack-item-name"><span class="check">&#10004;&#65039;</span> Retainer Conversion Playbook</span>
-        <span class="stack-item-value">$197 value</span>
-      </div>
-      <div class="stack-item">
-        <span class="stack-item-name"><span class="check">&#10004;&#65039;</span> Rate Calculator + Defense Scripts</span>
-        <span class="stack-item-value">$97 value</span>
-      </div>
-      <div class="stack-item">
-        <span class="stack-item-name"><span class="check">&#10004;&#65039;</span> Deal Tracker CRM</span>
-        <span class="stack-item-value">$97 value</span>
-      </div>
-      <div class="stack-item">
-        <span class="stack-item-name"><span class="check">&#10004;&#65039;</span> 30-Day Beginner Action Plan</span>
-        <span class="stack-item-value">$97 value</span>
-      </div>
-      <div class="stack-total">
-        <span>TOTAL VALUE</span>
-        <span>$1,626</span>
-      </div>
-      <div class="stack-you-pay">You pay: <span>$197</span> <span style="font-size:14px; color:var(--text3); font-weight:500;">or 4x $61.50</span></div>
-      <div class="stack-savings">That's 88% off. Tax season only. One deal pays for this 4x.</div>
+    <a class="cta-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=sales_page&utm_campaign=closer_kit" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-cta2',value:197,currency:'USD'})">Start Closing $800+ Brand Deals - $197 &rarr;</a>
+    <div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
+  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
+</div>
+    <div style="text-align:center;font-size:12px;color:var(--text3, #666);margin-top:6px;">Or 4 payments of $61.50</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;font-size:12px;color:#00c853;font-weight:600;">
+      <span>&#x1F6E1;&#xFE0F;</span> Doesn't work? I'll personally coach you until it does.
     </div>
-  </div>
 
   <!-- CTA #3 -->
   <div class="cta-block" id="cta3">
     <div class="countdown-bar" id="countdown2">
       <span class="countdown-label" id="cdLabel2">Tax season price ends in</span>
       <span class="countdown-digits" id="cdDigits2"></span>
+      <div style="font-size:12px;color:var(--red, #ff4444);font-weight:600;margin-top:6px;text-align:center;">April 1: price goes back to $497. No exceptions.</div>
     </div>
-    <a class="cta-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-cta3',value:197,currency:'USD'})">Start Closing $800+ Deals &rarr;</a>
-    <div class="cta-price"><s>$497</s> &rarr; <strong>$197</strong> <span style="color:var(--text3)">or 4x $61.50</span> &middot; tax season only</div>
-    <div class="cta-guarantee">&#x1F6E1;&#xFE0F; 30-day coaching guarantee</div>
-  </div>
-
-  <!-- WHO THIS IS FOR -->
-  <div class="who-section">
-    <div class="who-title" style="color:var(--green)">&#10003; This is for you if:</div>
-    <ul class="who-list">
-      <li><span class="icon">&rarr;</span> You freeze when brands ask your rate and end up saying whatever feels "safe"</li>
-      <li><span class="icon">&rarr;</span> You know you're undercharging but don't know by how much or how to fix it</li>
-      <li><span class="icon">&rarr;</span> You've lost deals because you didn't know how to handle pushback</li>
-      <li><span class="icon">&rarr;</span> You want to turn one-off UGC gigs into $2K-$5K monthly retainers</li>
-      <li><span class="icon">&rarr;</span> You want to write off a business expense before tax season ends</li>
-    </ul>
-    <br>
-    <div class="who-title" style="color:var(--red)">&#10007; Skip this if:</div>
-    <ul class="who-list">
-      <li><span class="icon" style="color:var(--red)">&rarr;</span> You're already consistently closing $1K+ deals</li>
-      <li><span class="icon" style="color:var(--red)">&rarr;</span> You have a sales/negotiation background</li>
-      <li><span class="icon" style="color:var(--red)">&rarr;</span> You're not actively doing UGC</li>
-    </ul>
-  </div>
-
-  <!-- FAQ ACCORDION -->
-  <div class="faq">
-    <div class="faq-title">Common Questions</div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Will this work if I'm brand new to UGC?</div>
-      <div class="faq-a">Yes. The 30-Day Beginner Action Plan walks you through everything step by step. Jamie said it was "incredibly helpful, especially as a newer creator." You don't need experience. You need the right words.</div>
+    <a class="cta-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=sales_page&utm_campaign=closer_kit" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-cta3',value:197,currency:'USD'})">Start Closing $800+ Deals - $197 &rarr;</a>
+    <div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
+  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
+</div>
+    <div style="text-align:center;font-size:12px;color:var(--text3, #666);margin-top:6px;">Or 4 payments of $61.50</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;font-size:12px;color:#00c853;font-weight:600;">
+      <span>&#x1F6E1;&#xFE0F;</span> Doesn't work? I'll personally coach you until it does.
     </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if the scripts don't work for my niche?</div>
-      <div class="faq-a">The scripts are niche-agnostic. They work for beauty, tech, food, fitness, lifestyle, and every other UGC vertical. The psychology of negotiation doesn't change by niche. Plus, 30-day guarantee. If they don't work, personal coaching session.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">I already have scripts I found for free online. How is this different?</div>
-      <div class="faq-a">Free scripts tell you what to say. This system tells you what to say, when to say it, how to handle every objection, how to calculate your actual rate, and how to find brands that can afford you. It's the difference between having a recipe and having the entire kitchen.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I really make back $197 on my first deal?</div>
-      <div class="faq-a">Ty went from $150 to $800 on his first conversation using the system. That's a $650 increase, 3x the cost. Candi's first repriced deal was worth $4,100 more. One conversation is all it takes.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What's the guarantee?</div>
-      <div class="faq-a">30-day coaching guarantee. Use the scripts. Try them on real brand conversations. If you haven't raised your rates or closed a bigger deal, email me personally and I'll coach you through your next pitch until you do. That's how confident I am in this system.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is $197 the lowest price?</div>
-      <div class="faq-a">Yes. This is a tax season sale. Normally $497. The price goes back up March 31 at midnight. It's also 100% tax deductible as a business expense.</div>
-    </div>
-  </div>
 
   <!-- GUARANTEE -->
   <div class="guarantee">
@@ -856,37 +810,23 @@ a { color:var(--accent); }
       Not $5. Not $50. <strong style="color:var(--text)">Thousands.</strong><br><br>
       <span style="color:var(--accent);font-weight:700">Fix it today.</span>
     </p>
-    <a class="cta-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-cta4',value:197,currency:'USD'})">Get the Words That Close $800 Deals &rarr;</a>
-    <div class="cta-price"><s>$497</s> &rarr; <strong>$197</strong> <span style="color:var(--text3)">or 4x $61.50</span> &middot; Ends March 31</div>
-    <div class="cta-guarantee">&#x1F6E1;&#xFE0F; 30-day guarantee &middot; Lifetime access &middot; 100% tax deductible</div>
-  </div>
-
-  <!-- P.S. SECTION -->
-  <div class="ps-section" style="padding:48px 0 20px; border-top:1px solid var(--border); margin-top:20px;">
-    <p style="font-size:16px; color:var(--text2); line-height:1.7;">
-      <strong style="color:var(--accent); font-size:18px;">P.S.</strong> The UGC Closer Kit includes 60+ negotiation scripts, 175+ brand database, 9 AI tools, rate calculator, outreach templates, retainer playbook, and a 30-day beginner action plan. All for <strong style="color:var(--text);">$197</strong> <span style="color:var(--text3)">(or 4x $61.50)</span> instead of $497. Tax season price ends March 31 at midnight. 30-day coaching guarantee.
+    <p style="font-size:18px;color:var(--text2, #999);line-height:1.7;margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto;text-align:center;">
+      If you close just 2 brand deals per month at $200 instead of $800, you're losing <strong style="color:var(--red, #ff4444)">$14,400 per year.</strong><br><br>
+      This kit is $197. One time. Or 4 payments of $61.50.<br><br>
+      <span style="color:var(--accent, #c8ff00);font-weight:700">The math is not complicated.</span>
     </p>
-    <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px; margin:24px 0;">
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
-        <div class="proof-avatar-ph" style="width:32px; height:32px; font-size:13px;">T</div>
-        <div>
-          <div style="font-size:13px; font-weight:700;">Ty Murph</div>
-          <div style="font-size:11px; color:var(--text3);">@Ty__Murph &middot; Verified on X</div>
-        </div>
-        <span style="margin-left:auto; font-size:11px; font-weight:800; color:var(--accent); background:rgba(200,255,0,0.08); border:1px solid rgba(200,255,0,0.2); padding:3px 8px; border-radius:12px;">$150 &rarr; $800</span>
-      </div>
-      <p style="font-size:14px; color:var(--text2); line-height:1.6;">"Using her rate calculator and scripts, <strong style="color:var(--text);">I negotiated to $800 for 2 videos.</strong> She knows ball!!"</p>
+    <a class="cta-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=sales_page&utm_campaign=closer_kit" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-cta4',value:197,currency:'USD'})">Get the Words That Close $800 Deals - $197 &rarr;</a>
+    <div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
+  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
+</div>
+    <div style="text-align:center;font-size:12px;color:var(--text3, #666);margin-top:6px;">Or 4 payments of $61.50</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;font-size:12px;color:#00c853;font-weight:600;">
+      <span>&#x1F6E1;&#xFE0F;</span> Doesn't work? I'll personally coach you until it does.
     </div>
-    <div class="cta-block" id="cta5" style="padding:24px 0;">
-      <a class="cta-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-cta5',value:197,currency:'USD'})">Get the Words That Close $800 Deals &rarr;</a>
-      <div class="cta-price"><s>$497</s> &rarr; <strong>$197</strong> <span style="color:var(--text3)">or 4x $61.50</span> &middot; Ends March 31</div>
-      <div class="cta-guarantee">&#x1F6E1;&#xFE0F; 30-day guarantee &middot; Lifetime access &middot; 100% tax deductible</div>
-    </div>
-  </div>
 
   <!-- FOOTER -->
   <div class="footer">
-    <p>&copy; 2026 Elisabeth &middot; closermethod - Built from 15 years at Criteo, Deel, Autodesk, HBO, Bloomberg, McCann, Y&amp;R &amp; more</p>
+    <p>&copy; 2026 Elisabeth &middot; closermethod - Built from 15 years at Criteo, Deel, Autodesk, Red Points, HBO, Bloomberg, McCann, Y&amp;R, NBC News, Rolling Stone, Levi's, Kenneth Cole, Limited Brands, Anthropologie &amp; Milk Studios</p>
     <p style="margin-top:8px;">Questions? DM me on <a href="https://instagram.com/closermethod" target="_blank">Instagram</a> or <a href="https://x.com/closermethod" target="_blank">X</a></p>
   </div>
 
@@ -898,7 +838,10 @@ a { color:var(--accent); }
     <div class="sticky-bar-text"><s>$497</s> &rarr; <strong>$197</strong></div>
     <div class="sticky-bar-timer" id="stickyTimer"></div>
   </div>
-  <a class="sticky-bar-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-sticky',value:197,currency:'USD'})">Close Deals &rarr;</a>
+  <a class="sticky-bar-btn" href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=sales_page&utm_campaign=closer_kit" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-sticky',value:197,currency:'USD'})">Close Deals - $197 &rarr;</a>
+  <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:4px;font-size:10px;color:#00c853;font-weight:600;">
+    <span>&#x1F6E1;&#xFE0F;</span> Doesn't work? I'll personally coach you until it does.
+  </div>
 </div>
 
 <script>
@@ -948,5 +891,13 @@ document.querySelectorAll('.cta-btn, .sticky-bar-btn, .top-bar-btn').forEach(fun
 </script>
 
 <script src="/global-nav.js" defer></script>
+<script>
+// Auto-copy coupon code when any CTA button is clicked
+document.querySelectorAll('a[href*="stan.store"][href*="closer-kit"]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    navigator.clipboard.writeText('VSL197').catch(function(){});
+  });
+});
+</script>
 </body>
 </html>

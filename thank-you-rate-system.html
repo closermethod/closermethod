@@ -154,7 +154,7 @@ footer p{font-size:11px;color:#444}
 
 <nav>
   <div class="nav-brand">closer<span>method</span></div>
-  <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=thank_you_upsell&utm_campaign=closer_kit&utm_content=rate_system" class="nav-cta">Get The Kit</a>
+  <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=thank_you_upsell&utm_campaign=closer_kit&utm_content=rate_system" class="nav-cta">Start Closing $800+ Deals</a>
 </nav>
 
 <div class="wrap">
@@ -235,19 +235,9 @@ footer p{font-size:11px;color:#444}
     </div>
 
     <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=thank_you_upsell&utm_campaign=closer_kit&utm_content=rate_system" class="main-cta" id="mainCta">Get The UGC Closer Kit → $197</a>
-    <div style="text-align:center;color:#22c55e;font-size:13px;font-weight:700;margin-top:8px">Tax season sale - ends March 31</div>
-
-    <div class="trust-row">
-      <span>🔒 Secure checkout</span>
-      <span>⚡ Instant delivery</span>
-      <span>📱 Works on any device</span>
-    </div>
-
-    <div class="guarantee-box">
-      <div class="title">🛡️ 30-Day Coaching Guarantee</div>
-      <div class="desc">Try it for 30 days. Use the scripts on real brands. If you don't feel like it was worth every penny, email me for a personal coaching session. No questions, no hoops.</div>
-    </div>
-  </div>
+    <div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
+  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
+</div>
 </div>
 
 <!-- Social Proof -->
@@ -282,6 +272,9 @@ footer p{font-size:11px;color:#444}
 <!-- Final CTA -->
 <div class="final">
   <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=thank_you_upsell&utm_campaign=closer_kit&utm_content=rate_system" class="main-cta" style="max-width:480px;margin:0 auto;display:block">Get The UGC Closer Kit → $197</a>
+  <div style="margin-top:10px;max-width:480px;margin-left:auto;margin-right:auto;text-align:center;font-size:13px;color:var(--text2, #999);">
+  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
+</div>
   <p><s>$497</s> $197 today · Instant access · 30-day guarantee</p>
   <p style="color:#22c55e;font-size:13px;font-weight:700;margin-top:4px">Tax season sale - ends March 31</p>
 </div>
@@ -297,6 +290,17 @@ footer p{font-size:11px;color:#444}
 document.querySelectorAll('.main-cta, .nav-cta').forEach(function(btn) {
   btn.addEventListener('click', function() {
     if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-thank-you-rate',value:197,currency:'USD'});
+  });
+});
+</script>
+<script>
+if(typeof fbq==='function')fbq('track','Purchase',{content_name:'rate-system',value:27.00,currency:'USD'});
+</script>
+<script>
+// Auto-copy coupon code when any CTA button is clicked
+document.querySelectorAll('a[href*="stan.store"][href*="closer-kit"]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    navigator.clipboard.writeText('VSL197').catch(function(){});
   });
 });
 </script>

@@ -618,12 +618,18 @@ function showResults() {
       '<div style="margin-bottom:12px"><span class="price-old">$497</span><span class="price">$197</span></div>' +
       '<p class="price-sub">one-time payment · instant access</p>' +
       '<a class="cta-btn" href="' + tier.ctaLink + '" target="_blank" style="margin-top:16px;display:inline-block;">' + tier.ctaBtn + '</a>' +
+      '<div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
+  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
+</div>' +
       '</div>';
   } else if (tier.ctaType === 'nurture') {
     ctaContainer.innerHTML = '<div class="cta-box">' +
       '<p>' + tier.ctaText + '</p>' +
       '<a class="cta-btn" href="' + tier.ctaLink + '" target="_blank">' + tier.ctaBtn + '</a>' +
       '<div style="margin-top:12px"><a href="' + tier.ctaLink2 + '" target="_blank" style="font-size:13px;color:var(--accent);text-decoration:underline;">' + tier.ctaBtn2 + '</a></div>' +
+      '<div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
+  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
+</div>' +
       '</div>';
   } else if (tier.ctaType === 'free') {
     ctaContainer.innerHTML = '<div class="cta-box">' +
@@ -685,5 +691,13 @@ function retakeQuiz() {
 }
 </script>
 <script src="/global-nav.js" defer></script>
+<script>
+// Auto-copy coupon code when any CTA button is clicked
+document.querySelectorAll('a[href*="stan.store"][href*="closer-kit"]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    navigator.clipboard.writeText('VSL197').catch(function(){});
+  });
+});
+</script>
 </body>
 </html>

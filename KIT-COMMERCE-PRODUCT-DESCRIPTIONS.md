@@ -28,13 +28,13 @@ The Authenticity Premium is the complete system for turning the AI shift into yo
 
 ✓ Premium Positioning System — How to position yourself as the premium choice brands seek out — not one of 50 creators they're comparing on price.
 
-✓ Cold Outreach Swipe File — 100-brand database with decision-maker contacts + outreach templates with 40%+ response rates. Tested over 10 years in enterprise sales at Criteo, Deel, Autodesk, Red Points, and HBO.
+✓ Cold Outreach Swipe File — 100-brand database with decision-maker contacts + outreach templates with 40%+ response rates. Tested over 15 years in enterprise sales at Criteo, Deel, Autodesk, Red Points, and HBO.
 
 ✓ The Negotiation Vault — Advanced frameworks for procurement teams, scope creep, budget constraints, multi-project discounts, and the "that's too much" counter.
 
 **Total value: $932 → You pay: $297 (68% off)**
 
-Instant digital download. Access in 2 minutes. One-time payment. No subscription. 30-day money-back guarantee.
+Instant digital download. Access in 2 minutes. One-time payment. No subscription. 30-day coaching guarantee.
 
 ---
 
@@ -63,17 +63,17 @@ The First $1K Kit is the starter toolkit for creators who want to stop guessing 
 
 ✓ UGC Portfolio Templates — Clean, professional templates that make your work look like it's worth what you're charging. Customizable in Canva.
 
-✓ Pricing Psychology Playbook — The anchoring, framing, and packaging techniques that make $500 feel like a steal. Based on 10 years of enterprise deal strategy.
+✓ Pricing Psychology Playbook — The anchoring, framing, and packaging techniques that make $500 feel like a steal. Based on 15 years of enterprise deal strategy.
 
 ✓ Private Community Access — Connect with other creators, share wins, get feedback on pitches, and access live rate reviews.
 
 **Total value: $652 → You pay: $27 (96% off)**
 
-Instant digital download. One-time payment. 30-day money-back guarantee.
+Instant digital download. One-time payment. 30-day coaching guarantee.
 
 ---
 
-## Product 3: The UGC Closer Kit — $246
+## Product 3: The UGC Closer Kit — $497
 
 **Product URL:** stan.store/perolikebro/p/the-ugc-closer-kit
 
@@ -94,15 +94,15 @@ Most creators deliver the project, send an invoice, and never hear from that bra
 
 ✓ Strategic Positioning Guide — How to move from "vendor" to "creative partner" in the brand's eyes. Positioning shifts that justify 3× your current rate.
 
-✓ Advanced Negotiation Playbook — Enterprise-level tactics for procurement teams, multi-month contracts, exclusivity premiums, and package deals. Built from a decade of closing six-figure deals at Criteo, Deel, and Autodesk.
+✓ Advanced Negotiation Playbook — Enterprise-level tactics for procurement teams, multi-month contracts, exclusivity premiums, and package deals. Built from 15 years of closing six-figure deals at Criteo, Deel, and Autodesk.
 
 ✓ Rate Escalation Calendar — The 90-day plan to raise your rates 3× without losing a single client. Week-by-week: when to raise, how much, and the exact scripts for each conversation.
 
 ✓ Brand Partnership Legal Templates — SOW template, retainer agreement, usage rights addendum, NDA, and invoice template. All customizable. All reviewed by legal.
 
-**Total value: $605 → You pay: $246 (67% off)**
+**Total value: $605 → You pay: $497 (18% off)**
 
-Instant digital download. One-time payment. 30-day money-back guarantee.
+Instant digital download. One-time payment. 30-day coaching guarantee.
 
 ---
 
@@ -120,5 +120,5 @@ Instant digital download. One-time payment. 30-day money-back guarantee.
 
 3. **Post-purchase redirect URLs:**
    - Authenticity Premium → redirect to a thank-you page or the Closer Kit OTO page
-   - First $1K Kit → redirect to closer-kit-oto.html (upsell to Closer Kit at $246)
+   - First $1K Kit → redirect to closer-kit-oto.html (upsell to Closer Kit at $497)
    - Closer Kit → redirect to thank-you page

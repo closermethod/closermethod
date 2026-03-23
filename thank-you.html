@@ -193,29 +193,9 @@ a{color:var(--green);text-decoration:none}
           </li>
         </ul>
 
-        <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=thank_you_upsell&utm_campaign=closer_kit&utm_content=general" class="buy-btn" id="buyBtn">GET THE UGC CLOSER KIT</a>
-        <div class="buy-note">Tax season sale - ends March 31</div>
-        <div class="buy-trust">
-          <span>🔒 Secure checkout</span>
-          <span>⚡ Instant delivery</span>
-          <span>♾️ Yours forever</span>
-        </div>
-        <p class="buy-guarantee">🛡️ Try it for 30 days. Use the scripts on real brands. If you don't feel like it was worth every penny, email me and I'll personally coach you through your next pitch. No questions, no hoops.</p>
-      </div>
-    </div>
-
-    <!-- Bridge Text -->
-    <div class="bridge">
-      <p>The <strong>Vault</strong> gets you replies. The <strong>Closer Kit</strong> turns replies into revenue.</p>
-      <p>One system. Premium rates. No more freezing on calls.</p>
-      <div class="tagline">The pitch gets you in. The system gets you paid.</div>
-    </div>
-
-    <!-- Skip Link -->
-    <div class="skip">
-      <a href="#" id="skipLink">No thanks, I'll check my inbox for the Vault</a>
-    </div>
-  </div>
+        <a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=thank_you_upsell&utm_campaign=closer_kit&utm_content=general" class="buy-btn" id="buyBtn">Start Closing $800+ Deals</a>
+        <div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
+  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
 </div>
 
 <!-- Footer -->
@@ -253,6 +233,17 @@ if (skipLink) {
     this.style.cursor = 'default';
   });
 }
+</script>
+<script>
+if(typeof fbq==='function')fbq('track','Purchase',{content_name:'pitch-vault',value:27.00,currency:'USD'});
+</script>
+<script>
+// Auto-copy coupon code when any CTA button is clicked
+document.querySelectorAll('a[href*="stan.store"][href*="closer-kit"]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    navigator.clipboard.writeText('VSL197').catch(function(){});
+  });
+});
 </script>
 </body>
 </html>
