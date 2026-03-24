@@ -123,6 +123,51 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
 .upsell-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 28px;background:transparent;color:var(--accent);font-family:var(--heading);font-weight:700;font-size:15px;border:2px solid var(--accent);border-radius:10px;text-decoration:none;transition:all .2s}
 .upsell-btn:hover{background:rgba(200,255,0,.08)}
 
+/* ===== EMAIL GATE ===== */
+.gate{position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:rgba(0,0,0,.95);display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
+.gate.hidden{display:none}
+.gate-inner{max-width:440px;width:100%;text-align:center}
+.gate-headline{font-family:var(--heading);font-weight:800;font-size:clamp(24px,6vw,32px);color:#fff;line-height:1.2;margin-bottom:24px}
+.gate-proof{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.gate-proof-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-align:left}
+.gate-proof-card .gate-outcome{font-family:var(--mono);font-size:11px;color:var(--accent);background:rgba(200,255,0,.1);display:inline-block;padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.gate-proof-card .gate-quote{font-size:14px;color:#ccc;line-height:1.45;margin-bottom:4px}
+.gate-proof-card .gate-quote strong{color:var(--accent)}
+.gate-proof-card .gate-name{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.gate-form{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.gate-form input{width:100%;min-height:48px;padding:0 16px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;color:var(--text);font-family:var(--font);font-size:16px;outline:none;transition:border-color .2s}
+.gate-form input:focus{border-color:var(--accent)}
+.gate-form input::placeholder{color:var(--text3)}
+.gate-submit{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;padding:14px 24px;background:var(--accent);color:var(--bg);font-family:var(--heading);font-weight:700;font-size:16px;border:none;border-radius:10px;cursor:pointer;transition:opacity .2s}
+.gate-submit:hover{opacity:.9}
+.gate-submit:disabled{opacity:.6;cursor:not-allowed}
+.gate-trust{font-size:12px;color:var(--text3);margin-top:6px}
+
+/* ===== LOSS SECTION ===== */
+.loss{background:#0d0000;border-top:2px solid rgba(255,77,77,.3);border-bottom:2px solid rgba(255,77,77,.3)}
+.loss h2{font-family:var(--heading);font-weight:800;font-size:clamp(22px,5.5vw,30px);line-height:1.2;color:#fff;margin-bottom:28px;text-align:center}
+.loss-compare{display:flex;gap:16px;margin-bottom:28px}
+.loss-col{flex:1;border-radius:12px;padding:20px 16px;text-align:center}
+.loss-col-bad{background:rgba(255,77,77,.06);border:1px solid rgba(255,77,77,.2)}
+.loss-col-good{background:rgba(200,255,0,.04);border:1px solid rgba(200,255,0,.2)}
+.loss-col-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px}
+.loss-col-bad .loss-col-label{color:var(--red)}
+.loss-col-good .loss-col-label{color:var(--accent)}
+.loss-col-stat{font-family:var(--heading);font-weight:800;font-size:32px;margin-bottom:4px}
+.loss-col-bad .loss-col-stat{color:var(--red)}
+.loss-col-good .loss-col-stat{color:var(--accent)}
+.loss-col-desc{font-size:13px;color:var(--text2)}
+.loss-math{text-align:center;margin-bottom:24px}
+.loss-math p{font-size:15px;color:var(--text2);line-height:1.6;margin-bottom:8px}
+.loss-math .loss-monthly{font-family:var(--heading);font-weight:800;font-size:clamp(28px,7vw,40px);color:var(--red);margin:12px 0 4px}
+.loss-math .loss-yearly{font-family:var(--heading);font-weight:800;font-size:clamp(36px,9vw,52px);color:var(--red);margin:8px 0 16px;text-shadow:0 0 30px rgba(255,77,77,.3)}
+.loss-math .loss-context{font-size:16px;color:#ccc;font-weight:600}
+.loss-math .loss-context span{color:var(--red);font-weight:700}
+@media(max-width:639px){
+  .loss-compare{flex-direction:column;gap:12px}
+  .gate-inner{padding:0 4px}
+}
+
 /* ===== STICKY CTA ===== */
 .sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--bg);border-top:1px solid var(--border);padding:12px 20px;padding-bottom:max(12px,env(safe-area-inset-bottom))}
 .sticky.visible{display:block}
@@ -190,7 +235,32 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
 </head>
 <body>
 
-<!-- ===== PAGE CONTENT (no gate, loads immediately) ===== -->
+<!-- ===== EMAIL GATE ===== -->
+<div class="gate" id="emailGate">
+  <div class="gate-inner">
+    <h1 class="gate-headline">Brands ignoring your DMs?<br>Fix that.</h1>
+    <div class="gate-proof">
+      <div class="gate-proof-card">
+        <div class="gate-outcome">$150 &rarr; $800</div>
+        <p class="gate-quote">"Using her rate calculator and scripts, <strong>I negotiated to $800 for 2 videos.</strong>"</p>
+        <p class="gate-name">Ty &middot; @Ty__Murph</p>
+      </div>
+      <div class="gate-proof-card">
+        <div class="gate-outcome">2 replies in 1 day</div>
+        <p class="gate-quote">"<strong>2 responses out of 10 outreaches in one day!</strong>"</p>
+        <p class="gate-name">Milena &middot; @UGCbyMilenaVonX</p>
+      </div>
+    </div>
+    <form class="gate-form" id="gateForm" novalidate>
+      <input type="text" name="first_name" placeholder="First name" required autocomplete="given-name">
+      <input type="email" name="email_address" placeholder="Email address" required autocomplete="email">
+      <button type="submit" class="gate-submit" id="gateBtn">Show me how they did it</button>
+    </form>
+    <p class="gate-trust">No spam. Unsubscribe anytime.</p>
+  </div>
+</div>
+
+<!-- ===== PAGE CONTENT ===== -->
 
   <!-- PROOF FIRST - 3 strongest testimonials, stacked vertically -->
   <div class="proof-banner">
@@ -257,6 +327,33 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
     <p>Built by <strong>Elisabeth</strong> (<span style="color:var(--accent)">@closermethod</span>) &mdash; 15 years enterprise sales at Criteo, Deel, Autodesk, Red Points, HBO, Bloomberg. <strong>$1.2M in closed deals. 268% of quota.</strong></p>
   </div>
 
+  <!-- LOSS SECTION -->
+  <section class="section loss">
+    <div class="wrap">
+      <h2>What generic pitches are actually costing you</h2>
+      <div class="loss-compare">
+        <div class="loss-col loss-col-bad">
+          <div class="loss-col-label">Generic pitches</div>
+          <div class="loss-col-stat">0%</div>
+          <div class="loss-col-desc">response rate</div>
+        </div>
+        <div class="loss-col loss-col-good">
+          <div class="loss-col-label">With these templates</div>
+          <div class="loss-col-stat">20%</div>
+          <div class="loss-col-desc">response rate</div>
+        </div>
+      </div>
+      <div class="loss-math">
+        <p>Average brand deal: <strong style="color:#fff">$500</strong></p>
+        <p>10 pitches/week &times; 20% reply rate = 2 opportunities</p>
+        <p>You're currently getting <strong style="color:var(--red)">zero</strong>.</p>
+        <div class="loss-monthly">-$400/month in missed deals</div>
+        <div class="loss-yearly">-$4,800/year</div>
+        <p class="loss-context">That's <span>rent money</span>. A <span>vacation</span>. A <span>car payment</span>.<br>Gone &mdash; because your pitches sound like everyone else's.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- INLINE EMAIL CAPTURE (after proof/credibility, before price) -->
   <section class="section" style="padding-bottom:0">
     <div class="wrap">
@@ -318,8 +415,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
         <div class="upsell-label">Want the full toolkit?</div>
         <h3>The UGC Closer Kit</h3>
         <p class="upsell-desc">60+ scripts, 9 AI tools, 175+ brand database, negotiation simulator. Everything to close $800+ deals.</p>
-        <div class="upsell-price"><s>$497</s><span>$197</span></div>
-        <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=vault_lp&utm_campaign=kit_upsell" class="upsell-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'kit-upsell-from-vault',value:197,currency:'USD'})">See the Full Kit &rarr;</a>
+        <div class="upsell-price"><s>$497</s><span>$246</span></div>
+        <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=vault_lp&utm_campaign=kit_upsell" class="upsell-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'kit-upsell-from-vault',value:246,currency:'USD'})">See the Full Kit &rarr;</a>
       </div>
     </div>
   </section>
@@ -335,6 +432,36 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
 (function(){
   var ctaSection=document.getElementById('ctaSection'),
       sticky=document.getElementById('sticky');
+
+  // ===== EMAIL GATE =====
+  var gate=document.getElementById('emailGate'),
+      gateForm=document.getElementById('gateForm'),
+      gateBtn=document.getElementById('gateBtn');
+
+  // Lock body scroll while gate is visible
+  document.body.style.overflow='hidden';
+
+  gateForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    var fn=gateForm.first_name.value.trim(),
+        em=gateForm.email_address.value.trim();
+    if(!fn||!em)return;
+
+    gateBtn.disabled=true;
+    gateBtn.textContent='Loading...';
+
+    var d=new FormData();
+    d.append('first_name',fn);
+    d.append('email_address',em);
+
+    fetch('https://app.kit.com/forms/7657498/subscriptions',{
+      method:'POST',body:d,mode:'no-cors'
+    }).finally(function(){
+      gate.classList.add('hidden');
+      document.body.style.overflow='';
+      if(typeof fbq==='function')fbq('track','Lead',{content_name:'vault-gate'});
+    });
+  });
 
   // Inline email capture form
   var inlineForm=document.getElementById('inlineForm'),

@@ -235,39 +235,134 @@ body {
   font-size: 12px; color: var(--text2); position: relative;
 }
 
-/* MONEY LEFT ON TABLE */
-.money-left-card {
-  background: rgba(255,68,68,0.04);
-  border: 1px solid rgba(255,68,68,0.2);
-  border-radius: 14px; padding: 20px; margin-bottom: 20px;
-  text-align: center;
+/* Comparison bar */
+.comparison-bar {
+  margin: 20px 0 0; padding: 16px;
+  background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
 }
-.money-left-label {
-  font-size: 11px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 2px; color: var(--red); margin-bottom: 8px;
+.comparison-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text3); margin-bottom: 12px; }
+.comparison-bars { display: flex; flex-direction: column; gap: 10px; }
+.comp-row { display: flex; align-items: center; gap: 12px; }
+.comp-row-label { font-size: 12px; color: var(--text3); min-width: 110px; font-weight: 500; }
+.comp-track { flex: 1; height: 32px; background: var(--bg3); border-radius: 6px; overflow: hidden; position: relative; }
+.comp-fill {
+  height: 100%; border-radius: 6px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px;
+  font-size: 13px; font-weight: 700; font-family: 'JetBrains Mono', monospace;
+  transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.money-left-amount {
+.comp-fill.low { background: rgba(255,68,68,0.25); color: var(--red); }
+.comp-fill.high { background: rgba(200,255,0,0.2); color: var(--accent); }
+
+/* ============================================================
+   LOSS / COST OF INACTION - HORMOZI GUT PUNCH
+   ============================================================ */
+.loss-section {
+  display: none; margin-top: 24px; padding: 0;
+  animation: fadeUp .6s ease both;
+}
+.loss-section.show { display: block; }
+
+.loss-header {
+  text-align: center; margin-bottom: 20px;
+}
+.loss-header-label {
+  font-size: 12px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 3px; color: var(--red); margin-bottom: 8px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.loss-header-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 36px; font-weight: 700; color: var(--red);
-  line-height: 1; margin-bottom: 6px;
+  font-size: clamp(22px, 4vw, 30px); font-weight: 700; color: #fff;
+  line-height: 1.2;
 }
-.money-left-detail {
-  font-size: 13px; color: var(--text2); line-height: 1.5;
+.loss-header-title em { color: var(--red); font-style: italic; }
+
+/* Big red yearly loss */
+.loss-hero {
+  background: linear-gradient(135deg, rgba(255,68,68,0.12), rgba(255,30,30,0.04));
+  border: 2px solid rgba(255,68,68,0.4);
+  border-radius: 16px; padding: 28px 24px; text-align: center;
+  margin-bottom: 16px; position: relative; overflow: hidden;
 }
-.money-left-detail strong { color: var(--text); }
-.money-left-breakdown {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
-  margin-top: 14px;
+.loss-hero::before {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(255,68,68,0.08) 0%, transparent 70%);
+  animation: lossPulse 2.5s ease-in-out infinite;
 }
-.money-left-item {
-  background: rgba(255,68,68,0.06); border: 1px solid rgba(255,68,68,0.12);
-  border-radius: 8px; padding: 10px 8px;
+@keyframes lossPulse {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.05); opacity: 1; }
 }
-.money-left-item-num {
+.loss-hero-label {
+  font-size: 13px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 2px; color: var(--red); margin-bottom: 10px;
+  position: relative;
+}
+.loss-hero-amount {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(44px, 7vw, 64px); font-weight: 700; color: var(--red);
+  line-height: 1; margin-bottom: 8px; position: relative;
+  text-shadow: 0 0 40px rgba(255,68,68,0.4);
+}
+.loss-hero-sub {
+  font-size: 15px; color: var(--text2); position: relative; line-height: 1.5;
+}
+.loss-hero-sub strong { color: #fff; }
+
+/* Red loss bars */
+.loss-bars {
+  display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 16px;
+}
+.loss-bar {
+  background: rgba(255,68,68,0.06); border: 1px solid rgba(255,68,68,0.2);
+  border-radius: 12px; padding: 16px 18px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; position: relative; overflow: hidden;
+}
+.loss-bar::after {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  background: rgba(255,68,68,0.12); border-radius: 12px 0 0 12px;
+  transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+  width: 0%;
+}
+.loss-bar.animated::after { width: var(--bar-width); }
+.loss-bar-left {
+  position: relative; z-index: 1;
+}
+.loss-bar-num {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 18px; font-weight: 700; color: var(--red);
+  font-size: 22px; font-weight: 700; color: var(--red);
+  line-height: 1.2;
 }
-.money-left-item-label { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 1px; }
+.loss-bar-label {
+  font-size: 12px; color: var(--text3); text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 600;
+}
+.loss-bar-right {
+  position: relative; z-index: 1;
+  text-align: right;
+}
+.loss-bar-comparison {
+  font-size: 14px; color: var(--text); font-weight: 600;
+  line-height: 1.4;
+}
+.loss-bar-comparison em {
+  color: var(--red); font-style: normal; font-weight: 700;
+}
+
+/* Visceral comparison callout */
+.loss-visceral {
+  background: rgba(255,68,68,0.08);
+  border: 1px dashed rgba(255,68,68,0.35);
+  border-radius: 12px; padding: 18px 20px;
+  text-align: center; margin-bottom: 0;
+}
+.loss-visceral-text {
+  font-size: 16px; color: var(--text); font-weight: 600; line-height: 1.6;
+}
+.loss-visceral-text strong { color: var(--red); }
+.loss-visceral-text .accent-text { color: var(--accent); font-weight: 700; }
 
 /* Breakdown table */
 .breakdown-table {
@@ -298,24 +393,6 @@ body {
   padding: 14px 16px; font-size: 14px;
 }
 .breakdown-table tr.total-row td:last-child { color: var(--accent); font-size: 16px; }
-
-/* Comparison bar */
-.comparison-bar {
-  margin: 20px 0 0; padding: 16px;
-  background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
-}
-.comparison-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text3); margin-bottom: 12px; }
-.comparison-bars { display: flex; flex-direction: column; gap: 10px; }
-.comp-row { display: flex; align-items: center; gap: 12px; }
-.comp-row-label { font-size: 12px; color: var(--text3); min-width: 110px; font-weight: 500; }
-.comp-track { flex: 1; height: 32px; background: var(--bg3); border-radius: 6px; overflow: hidden; position: relative; }
-.comp-fill {
-  height: 100%; border-radius: 6px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px;
-  font-size: 13px; font-weight: 700; font-family: 'JetBrains Mono', monospace;
-  transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.comp-fill.low { background: rgba(255,68,68,0.25); color: var(--red); }
-.comp-fill.high { background: rgba(200,255,0,0.2); color: var(--accent); }
 
 /* Total deal value box */
 .deal-value-box {
@@ -403,125 +480,125 @@ body {
 }
 .share-results-card .share-ig-prompt strong { color: var(--text); }
 
-/* PITCH VAULT CTA - Primary */
-.pitch-vault-cta {
-  display: none; margin-top: 24px; padding: 32px;
-  background: linear-gradient(135deg, rgba(200,255,0,0.08), rgba(200,255,0,0.02));
-  border: 2px solid rgba(200,255,0,0.3); border-radius: 16px;
-  text-align: center;
+/* ============================================================
+   INLINE TESTIMONIALS (post-loss, pre-CTA)
+   ============================================================ */
+.inline-proof {
+  display: none; margin-top: 24px;
+  animation: fadeUp .5s ease both;
 }
-.pitch-vault-cta.show { display: block; animation: fadeUp .5s ease both; }
-.pitch-vault-cta .pv-eyebrow {
-  font-size: 11px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 2px; color: var(--accent); margin-bottom: 12px;
-}
-.pitch-vault-cta .pv-headline {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(20px, 3vw, 28px); font-weight: 700; color: #fff;
-  margin-bottom: 8px; line-height: 1.3;
-}
-.pitch-vault-cta .pv-sub {
-  font-size: 15px; color: var(--text2); margin-bottom: 24px; line-height: 1.6;
-  max-width: 500px; margin-left: auto; margin-right: auto;
-}
-.pitch-vault-cta .pv-sub strong { color: #fff; }
-.pitch-vault-cta .pv-btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 36px; background: var(--accent); color: #000;
-  border: none; border-radius: 10px;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 16px; font-weight: 700;
-  cursor: pointer; transition: all .2s; text-decoration: none;
-}
-.pitch-vault-cta .pv-btn:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,255,0,0.2); }
-.pitch-vault-cta .pv-proof {
-  font-size: 12px; color: var(--text3); margin-top: 10px; line-height: 1.5;
-}
-
-/* KIT UPSELL - Secondary */
-.kit-upsell {
-  display: none; margin-top: 20px; padding: 28px 24px;
-  border: 1.5px solid var(--border2); border-radius: 14px;
-  background: rgba(255,255,255,0.02); text-align: center;
-}
-.kit-upsell.show { display: block; animation: fadeUp .5s ease both; }
-.kit-upsell .ku-eyebrow {
-  font-size: 11px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 2px; color: var(--text3); margin-bottom: 10px;
-}
-.kit-upsell .ku-headline {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 8px;
-}
-.kit-upsell .ku-sub {
-  font-size: 14px; color: var(--text2); margin-bottom: 20px; line-height: 1.6;
-}
-.kit-upsell .ku-btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 14px 28px; background: transparent;
-  border: 2px solid var(--accent); border-radius: 10px;
-  color: var(--accent); font-family: 'Space Grotesk', sans-serif;
-  font-size: 15px; font-weight: 700; cursor: pointer;
-  transition: all .2s; text-decoration: none;
-}
-.kit-upsell .ku-btn:hover { background: rgba(200,255,0,0.08); transform: translateY(-1px); }
-.kit-upsell .ku-detail { font-size: 11px; color: var(--text3); margin-top: 8px; }
-
-/* POST-RESULT TESTIMONIALS */
-.post-result-proof {
-  display: none; padding: 40px 0 0; max-width: 900px; margin: 0 auto;
-}
-.post-result-proof.show { display: block; animation: fadeUp .5s ease both; }
-.post-result-proof .prp-title {
+.inline-proof.show { display: block; }
+.inline-proof-title {
   font-size: 12px; font-weight: 700; letter-spacing: 2px;
   text-transform: uppercase; color: var(--text3); margin-bottom: 16px;
   text-align: center;
 }
-.proof-cards { display: flex; flex-direction: column; gap: 14px; }
-.proof-card {
+.inline-proof-cards { display: flex; flex-direction: column; gap: 12px; }
+.inline-proof-card {
   background: var(--card); border: 1px solid var(--border);
-  border-radius: 16px; padding: 24px 24px 20px;
-  transition: border-color .2s;
+  border-radius: 14px; padding: 18px 20px;
+  display: flex; align-items: flex-start; gap: 14px;
 }
-.proof-card-header {
-  display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
-}
-.proof-avatar-placeholder {
-  width: 44px; height: 44px; border-radius: 50%;
+.inline-proof-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
   background: linear-gradient(135deg, var(--accent), #8aae00);
   display: flex; align-items: center; justify-content: center;
-  font-size: 18px; font-weight: 800; color: #1a1a1a; flex-shrink: 0;
+  font-size: 16px; font-weight: 800; color: #1a1a1a; flex-shrink: 0;
 }
-.proof-user-info { flex: 1; min-width: 0; }
-.proof-user-name {
+.inline-proof-content { flex: 1; min-width: 0; }
+.inline-proof-name {
   font-size: 14px; font-weight: 700; color: var(--text);
-  display: flex; align-items: center; gap: 6px;
+  margin-bottom: 4px;
 }
-.proof-verified {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 16px; height: 16px; border-radius: 50%;
-  background: var(--blue); color: #fff; font-size: 9px;
+.inline-proof-result {
+  display: inline-block; font-size: 12px; font-weight: 800;
+  color: var(--accent); background: rgba(200,255,0,0.08);
+  border: 1px solid rgba(200,255,0,0.2);
+  padding: 2px 10px; border-radius: 20px; margin-bottom: 8px;
 }
-.proof-handle { font-size: 13px; color: var(--text3); font-weight: 400; }
-.proof-outcome {
-  font-size: 12px; font-weight: 800; color: var(--green);
-  background: rgba(0,200,83,0.08); border: 1px solid rgba(0,200,83,0.2);
-  padding: 4px 12px; border-radius: 20px; white-space: nowrap;
-  margin-left: auto; flex-shrink: 0;
+.inline-proof-quote {
+  font-size: 14px; color: var(--text2); line-height: 1.6;
 }
-.proof-quote {
-  font-size: 15px; color: var(--text2); line-height: 1.7; margin-bottom: 12px;
+.inline-proof-quote strong { color: var(--text); }
+
+/* ============================================================
+   PRIMARY CTA - UGC CLOSER KIT
+   ============================================================ */
+.kit-cta {
+  display: none; margin-top: 24px; padding: 32px 28px;
+  background: linear-gradient(135deg, rgba(200,255,0,0.1), rgba(200,255,0,0.03));
+  border: 2px solid rgba(200,255,0,0.4); border-radius: 20px;
+  text-align: center; position: relative; overflow: hidden;
+  animation: fadeUp .5s ease both;
 }
-.proof-quote strong { color: var(--text); }
-.proof-footer {
-  display: flex; justify-content: space-between; align-items: center;
-  padding-top: 12px; border-top: 1px solid var(--border);
+.kit-cta.show { display: block; }
+.kit-cta::before {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(200,255,0,0.06) 0%, transparent 70%);
+  animation: scorePulse 3s ease-in-out infinite;
 }
-.proof-platform {
-  font-size: 11px; color: var(--text3); display: flex;
-  align-items: center; gap: 6px; font-weight: 500;
+.kit-cta-eyebrow {
+  font-size: 12px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 2px; color: var(--accent); margin-bottom: 14px;
+  position: relative;
 }
-.proof-platform svg { width: 14px; height: 14px; fill: var(--text3); }
+.kit-cta-headline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(22px, 4vw, 32px); font-weight: 700; color: #fff;
+  margin-bottom: 10px; line-height: 1.2; position: relative;
+}
+.kit-cta-sub {
+  font-size: 15px; color: var(--text2); margin-bottom: 24px; line-height: 1.6;
+  max-width: 500px; margin-left: auto; margin-right: auto; position: relative;
+}
+.kit-cta-sub strong { color: #fff; }
+.kit-cta-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 18px 40px; background: var(--accent); color: #000;
+  border: none; border-radius: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px; font-weight: 700;
+  cursor: pointer; transition: all .2s; text-decoration: none;
+  position: relative; min-height: 48px;
+  box-shadow: 0 4px 20px rgba(200,255,0,0.3);
+}
+.kit-cta-btn:hover {
+  background: var(--accent2); transform: translateY(-2px);
+  box-shadow: 0 8px 40px rgba(200,255,0,0.4);
+}
+.kit-cta-price {
+  font-size: 20px; font-weight: 800; color: var(--accent);
+  margin-top: 14px; position: relative;
+}
+.kit-cta-price s { color: var(--text3); font-size: 16px; font-weight: 500; }
+.kit-cta-countdown {
+  margin-top: 12px; font-size: 13px; color: var(--red); font-weight: 600;
+  position: relative;
+}
+.kit-cta-countdown .countdown-timer {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px; font-weight: 700;
+}
+.kit-cta-proof {
+  font-size: 12px; color: var(--text3); margin-top: 12px; line-height: 1.5;
+  position: relative;
+}
+
+/* DOWNSELL - Pitch Vault */
+.downsell {
+  display: none; margin-top: 16px; text-align: center;
+  padding: 16px 20px;
+  animation: fadeUp .4s ease both;
+}
+.downsell.show { display: block; }
+.downsell-text {
+  font-size: 14px; color: var(--text3); margin-bottom: 8px;
+}
+.downsell-link {
+  font-size: 14px; color: var(--text2); text-decoration: underline;
+  text-underline-offset: 3px; transition: color .2s;
+}
+.downsell-link:hover { color: var(--accent); }
 
 /* EMAIL GATE OVERLAY */
 .email-gate {
@@ -643,22 +720,27 @@ footer a { color: var(--text2); text-decoration: none; }
   .closer-score-number { font-size: 44px; }
   .closer-score-number span { font-size: 22px; }
 
-  .money-left-card { padding: 16px; }
-  .money-left-amount { font-size: 28px; }
-  .money-left-breakdown { grid-template-columns: 1fr; gap: 8px; }
-
-  .breakdown-table { border-radius: 8px; table-layout: fixed; width: 100%; }
-  .breakdown-table td { padding: 10px 10px; font-size: 12px; word-break: break-word; }
-  .breakdown-table td:last-child { width: 80px; text-align: right; font-size: 12px; }
-  .breakdown-table tr.total-row td { padding: 12px 10px; font-size: 13px; }
-  .breakdown-table tr.total-row td:last-child { font-size: 14px; }
-
   .comparison-bar { padding: 12px; margin-top: 16px; }
   .comparison-label { font-size: 10px; margin-bottom: 10px; }
   .comparison-bars .comp-row { flex-direction: column; gap: 4px; }
   .comparison-bars .comp-row-label { min-width: auto; font-size: 11px; }
   .comp-track { height: 28px; }
   .comp-fill { font-size: 11px; padding-right: 8px; }
+
+  .loss-hero { padding: 20px 16px; }
+  .loss-hero-amount { font-size: 38px; }
+  .loss-bar { padding: 14px 14px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .loss-bar-num { font-size: 20px; }
+  .loss-bar-right { text-align: left; }
+  .loss-bar-comparison { font-size: 13px; }
+  .loss-visceral { padding: 14px 16px; }
+  .loss-visceral-text { font-size: 14px; }
+
+  .breakdown-table { border-radius: 8px; table-layout: fixed; width: 100%; }
+  .breakdown-table td { padding: 10px 10px; font-size: 12px; word-break: break-word; }
+  .breakdown-table td:last-child { width: 80px; text-align: right; font-size: 12px; }
+  .breakdown-table tr.total-row td { padding: 12px 10px; font-size: 13px; }
+  .breakdown-table tr.total-row td:last-child { font-size: 14px; }
 
   .deal-value-box { padding: 16px; margin-top: 12px; }
   .deal-value-label { font-size: 10px; }
@@ -679,25 +761,19 @@ footer a { color: var(--text2); text-decoration: none; }
   .share-results-card .share-copy-btn { min-height: 48px; padding: 12px 20px; font-size: 13px; }
   .share-results-card .share-ig-prompt { font-size: 12px; }
 
-  .pitch-vault-cta { padding: 20px 16px; margin-top: 16px; }
-  .pitch-vault-cta .pv-headline { font-size: 20px; }
-  .pitch-vault-cta .pv-sub { font-size: 13px; margin-bottom: 16px; }
-  .pitch-vault-cta .pv-btn { padding: 14px 20px; font-size: 14px; min-height: 48px; width: 100%; justify-content: center; }
+  .inline-proof { margin-top: 20px; }
+  .inline-proof-card { padding: 14px 14px; flex-direction: column; gap: 10px; }
+  .inline-proof-avatar { width: 36px; height: 36px; font-size: 14px; }
+  .inline-proof-name { font-size: 13px; }
+  .inline-proof-quote { font-size: 13px; }
 
-  .kit-upsell { padding: 20px 14px; margin-top: 14px; }
-  .kit-upsell .ku-headline { font-size: 16px; }
-  .kit-upsell .ku-sub { font-size: 13px; }
-  .kit-upsell .ku-btn { padding: 14px 20px; font-size: 14px; min-height: 48px; width: 100%; justify-content: center; }
+  .kit-cta { padding: 24px 16px; margin-top: 20px; }
+  .kit-cta-headline { font-size: 22px; }
+  .kit-cta-sub { font-size: 13px; margin-bottom: 18px; }
+  .kit-cta-btn { padding: 16px 24px; font-size: 16px; min-height: 48px; width: 100%; }
+  .kit-cta-price { font-size: 18px; }
 
-  .post-result-proof { padding: 28px 16px 0; }
-  .proof-card { padding: 16px 14px 14px; border-radius: 12px; }
-  .proof-card-header { flex-wrap: wrap; gap: 8px; }
-  .proof-avatar-placeholder { width: 38px; height: 38px; font-size: 16px; }
-  .proof-user-name { font-size: 13px; }
-  .proof-handle { font-size: 12px; }
-  .proof-outcome { font-size: 11px; padding: 3px 8px; margin-left: 0; margin-top: 4px; flex-basis: 100%; text-align: center; }
-  .proof-quote { font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
-  .proof-footer { flex-direction: column; gap: 6px; align-items: flex-start; }
+  .downsell { margin-top: 12px; padding: 14px 16px; }
 
   .email-gate { padding: 16px; align-items: flex-start; padding-top: 60px; }
   .gate-card { max-width: 100%; }
@@ -812,11 +888,12 @@ footer a { color: var(--text2); text-decoration: none; }
         <p>See what brands should actually pay you.<br>30 seconds. Free forever.</p>
       </div>
       <div class="result-area" id="resultArea">
+        <!-- 1. YOUR RATE RESULT (immediate) -->
         <div class="result-rate-label">Your Rate</div>
         <div class="result-rate" id="totalRate"></div>
         <div class="result-per-unit"><span id="perVidLabel">per video</span></div>
 
-        <!-- Closer Score - Gamified -->
+        <!-- Closer Score - 0.5s delay -->
         <div class="closer-score-card" id="closerScoreCard" style="display:none;">
           <div class="closer-score-label">Your Closer Score</div>
           <div class="closer-score-number" id="closerScoreNum">0<span>/10</span></div>
@@ -827,34 +904,8 @@ footer a { color: var(--text2); text-decoration: none; }
           <div class="closer-score-percentile" id="closerScorePercentile"></div>
         </div>
 
-        <!-- Money Left on Table -->
-        <div class="money-left-card" id="moneyLeftCard" style="display:none;">
-          <div class="money-left-label">You're leaving on the table per year</div>
-          <div class="money-left-amount" id="moneyLeftAmount"></div>
-          <div class="money-left-detail" id="moneyLeftDetail"></div>
-          <div class="money-left-breakdown">
-            <div class="money-left-item">
-              <div class="money-left-item-num" id="moneyLeftDeal"></div>
-              <div class="money-left-item-label">Per Deal</div>
-            </div>
-            <div class="money-left-item">
-              <div class="money-left-item-num" id="moneyLeftMonth"></div>
-              <div class="money-left-item-label">Per Month</div>
-            </div>
-            <div class="money-left-item">
-              <div class="money-left-item-num" id="moneyLeftYear"></div>
-              <div class="money-left-item-label">Per Year</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Professional breakdown table -->
-        <table class="breakdown-table" id="breakdownTable">
-          <tbody id="breakdown"></tbody>
-        </table>
-
-        <!-- Comparison bar - FIXED -->
-        <div class="comparison-bar" id="comparisonBar">
+        <!-- Comparison bar - 1s delay -->
+        <div class="comparison-bar" id="comparisonBar" style="display:none;">
           <div class="comparison-label">How You Compare</div>
           <div class="comparison-bars">
             <div class="comp-row">
@@ -871,6 +922,11 @@ footer a { color: var(--text2); text-decoration: none; }
             </div>
           </div>
         </div>
+
+        <!-- Professional breakdown table -->
+        <table class="breakdown-table" id="breakdownTable">
+          <tbody id="breakdown"></tbody>
+        </table>
 
         <!-- Total deal value box -->
         <div class="deal-value-box">
@@ -904,92 +960,115 @@ footer a { color: var(--text2); text-decoration: none; }
         <div class="share-ig-prompt">Or screenshot your results and share to Instagram Stories.<br><strong>Tag @closermethod</strong> so we can hype you up.</div>
       </div>
 
-      <!-- PITCH VAULT CTA - PRIMARY -->
-      <div class="pitch-vault-cta" id="pitchVaultCta">
-        <div class="pv-eyebrow">Now that you know your rate</div>
-        <div class="pv-headline">Get the templates to<br>pitch at it.</div>
-        <p class="pv-sub">12 cold pitch templates with a <strong>20% response rate</strong>. 60+ negotiation scripts. The exact words to say when brands lowball you. <strong>One reply pays for this 20x.</strong></p>
-        <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=rate_calculator&utm_campaign=pitch_vault&utm_content=post_calc" target="_blank" class="pv-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'pitch-vault-post-calc',value:27,currency:'USD'})">Get the Pitch Vault - $27 &rarr;</a>
-        <div class="pv-proof">Instant access &middot; 30-day guarantee &middot; One brand reply = 20x ROI</div>
-      </div>
-
-      <!-- KIT UPSELL - SECONDARY -->
-      <div class="kit-upsell" id="kitUpsell">
-        <div class="ku-eyebrow">Want the full closing system?</div>
-        <div class="ku-headline">The UGC Closer Kit</div>
-        <p class="ku-sub">Everything in the Pitch Vault + 175+ brand database, deal tracker CRM, 9 AI tools, and coaching guarantee. One deal pays for it 4x over.</p>
-        <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=rate_calculator&utm_campaign=kit_upsell" target="_blank" class="ku-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-kit-rate-calc-upsell',value:197,currency:'USD'})">Get the Full Kit - $197 &rarr;</a>
-        <div class="ku-detail"><s>$497</s> $197 &middot; Tax season sale ends March 31</div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- POST-RESULT TESTIMONIALS - 3 max, after results -->
-<div class="post-result-proof" id="postResultProof" style="padding-left:24px;padding-right:24px;">
-  <div class="prp-title">Creators who used the calculator + scripts</div>
-  <div class="proof-cards">
+<!-- ============================================================
+     2. LOSS / COST OF INACTION - HORMOZI GUT PUNCH (1.5s delay)
+     ============================================================ -->
+<div class="loss-section" id="lossSection" style="max-width:900px;margin:0 auto;padding:0 24px;">
 
-    <!-- TY MURPH -->
-    <div class="proof-card" style="border-color:rgba(200,255,0,0.3);background:linear-gradient(135deg,rgba(200,255,0,0.03),var(--card))">
-      <div class="proof-card-header">
-        <div class="proof-avatar-placeholder">T</div>
-        <div class="proof-user-info">
-          <div class="proof-user-name">Ty Murph <span class="proof-verified">&#10003;</span></div>
-          <div class="proof-handle">@Ty__Murph</div>
-        </div>
-        <div class="proof-outcome" style="background:rgba(200,255,0,0.08);border-color:rgba(200,255,0,0.2);color:var(--accent)">$150 &rarr; $800</div>
-      </div>
-      <div class="proof-quote">"I was in the middle of a negotiation for 2 UGC videos for $150. Using her rate calculator and scripts, <strong>I negotiated to $800 for 2 videos.</strong> She knows ball!!"</div>
-      <div class="proof-footer">
-        <div class="proof-platform">
-          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          Posted on X
-        </div>
-      </div>
-    </div>
-
-    <!-- MILENA -->
-    <div class="proof-card">
-      <div class="proof-card-header">
-        <div class="proof-avatar-placeholder">M</div>
-        <div class="proof-user-info">
-          <div class="proof-user-name">Milena</div>
-          <div class="proof-handle">UGC Creator</div>
-        </div>
-        <div class="proof-outcome">2 replies in 1 day</div>
-      </div>
-      <div class="proof-quote">"Sent 5 pitches using the templates and <strong>got 2 brand replies in 1 day</strong>. The pitch scripts are insane. I was scared to charge this much but the framework made it feel natural."</div>
-      <div class="proof-footer">
-        <div class="proof-platform">
-          <svg viewBox="0 0 24 24" style="fill:var(--green)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Verified customer
-        </div>
-      </div>
-    </div>
-
-    <!-- CANDI -->
-    <div class="proof-card">
-      <div class="proof-card-header">
-        <div class="proof-avatar-placeholder">C</div>
-        <div class="proof-user-info">
-          <div class="proof-user-name">Candi</div>
-          <div class="proof-handle">UGC Creator &middot; Beauty &amp; Lifestyle</div>
-        </div>
-        <div class="proof-outcome">$650 &rarr; $4,750</div>
-      </div>
-      <div class="proof-quote">"I thought I was getting paid at $650 for 5 videos until I ran the numbers. My rate should have been <strong>$950/video</strong>. I was leaving $4,100 on the table every deal. The scripts changed everything."</div>
-      <div class="proof-footer">
-        <div class="proof-platform">
-          <svg viewBox="0 0 24 24" style="fill:var(--green)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Verified customer
-        </div>
-        <span style="font-size:11px;color:var(--text3)">5-video package repriced</span>
-      </div>
-    </div>
-
+  <div class="loss-header">
+    <div class="loss-header-label">&#9888; The cost of doing nothing</div>
+    <div class="loss-header-title">Every deal you send at that old rate,<br><em>you're literally paying the brand.</em></div>
   </div>
+
+  <!-- Big red yearly number -->
+  <div class="loss-hero" id="lossHero">
+    <div class="loss-hero-label">Money you're losing every year</div>
+    <div class="loss-hero-amount" id="lossYearlyAmount">-$0</div>
+    <div class="loss-hero-sub" id="lossHeroSub"></div>
+  </div>
+
+  <!-- Red loss bars with visceral comparisons -->
+  <div class="loss-bars" id="lossBars">
+    <div class="loss-bar" id="lossBarDeal" style="--bar-width:30%">
+      <div class="loss-bar-left">
+        <div class="loss-bar-num" id="lossBarDealNum">-$0</div>
+        <div class="loss-bar-label">Lost per deal</div>
+      </div>
+      <div class="loss-bar-right">
+        <div class="loss-bar-comparison" id="lossBarDealComp"></div>
+      </div>
+    </div>
+    <div class="loss-bar" id="lossBarMonth" style="--bar-width:55%">
+      <div class="loss-bar-left">
+        <div class="loss-bar-num" id="lossBarMonthNum">-$0</div>
+        <div class="loss-bar-label">Lost per month</div>
+      </div>
+      <div class="loss-bar-right">
+        <div class="loss-bar-comparison" id="lossBarMonthComp"></div>
+      </div>
+    </div>
+    <div class="loss-bar" id="lossBarYear" style="--bar-width:90%">
+      <div class="loss-bar-left">
+        <div class="loss-bar-num" id="lossBarYearNum">-$0</div>
+        <div class="loss-bar-label">Lost per year</div>
+      </div>
+      <div class="loss-bar-right">
+        <div class="loss-bar-comparison" id="lossBarYearComp"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Visceral gut-punch comparison -->
+  <div class="loss-visceral" id="lossVisceral">
+    <div class="loss-visceral-text" id="lossVisceralText"></div>
+  </div>
+
+</div>
+
+<!-- ============================================================
+     3. SOCIAL PROOF - "Here's how creators fixed it" (2.5s delay)
+     ============================================================ -->
+<div class="inline-proof" id="inlineProof" style="max-width:900px;margin:0 auto;padding:0 24px;">
+  <div class="inline-proof-title">Here's how creators fixed it</div>
+  <div class="inline-proof-cards">
+    <div class="inline-proof-card" style="border-color:rgba(200,255,0,0.3);background:linear-gradient(135deg,rgba(200,255,0,0.03),var(--card))">
+      <div class="inline-proof-avatar">T</div>
+      <div class="inline-proof-content">
+        <div class="inline-proof-name">Ty Murph</div>
+        <div class="inline-proof-result">$150 &rarr; $800</div>
+        <div class="inline-proof-quote">"Used the rate calculator and scripts mid-negotiation. <strong>Went from $150 to $800 for 2 videos.</strong>"</div>
+      </div>
+    </div>
+    <div class="inline-proof-card">
+      <div class="inline-proof-avatar">M</div>
+      <div class="inline-proof-content">
+        <div class="inline-proof-name">Milena</div>
+        <div class="inline-proof-result">2 brand replies in 1 day</div>
+        <div class="inline-proof-quote">"Sent 5 pitches with the templates. <strong>Got 2 brand replies in 1 day.</strong> The framework made charging more feel natural."</div>
+      </div>
+    </div>
+    <div class="inline-proof-card">
+      <div class="inline-proof-avatar">C</div>
+      <div class="inline-proof-content">
+        <div class="inline-proof-name">Candi</div>
+        <div class="inline-proof-result">$650 &rarr; $4,750</div>
+        <div class="inline-proof-quote">"I was getting paid $650 for 5 videos. My rate should have been <strong>$950/video</strong>. The scripts changed everything."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     4. PRIMARY CTA - UGC CLOSER KIT (3s delay)
+     ============================================================ -->
+<div class="kit-cta" id="kitCta" style="max-width:900px;margin:0 auto 0;margin-left:auto;margin-right:auto;">
+  <div class="kit-cta-eyebrow">Stop leaving money on the table</div>
+  <div class="kit-cta-headline">Get the UGC Closer Kit</div>
+  <p class="kit-cta-sub">Everything you need to pitch at your real rate and close. <strong>175+ brand contacts, 12 pitch templates, 60 negotiation scripts, deal tracker CRM, 9 AI tools</strong>, and a coaching guarantee. One deal pays for the entire kit.</p>
+  <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=rate_calculator&utm_campaign=closer_kit&utm_content=post_loss_cta" target="_blank" class="kit-cta-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-kit-post-loss',value:246,currency:'USD'})">Get the UGC Closer Kit &rarr;</a>
+  <div class="kit-cta-price"><s>$497</s> $246</div>
+  <div class="kit-cta-countdown">Tax season sale ends March 31 &mdash; <span class="countdown-timer" id="countdownTimer"></span></div>
+  <div class="kit-cta-proof">Instant access &middot; 30-day guarantee &middot; One brand deal = 4x ROI</div>
+</div>
+
+<!-- 5. DOWNSELL - Pitch Vault (small, below Kit CTA) -->
+<div class="downsell" id="downsell" style="max-width:900px;margin:0 auto;">
+  <div class="downsell-text">Just need pitch templates?</div>
+  <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=rate_calculator&utm_campaign=pitch_vault&utm_content=downsell" target="_blank" class="downsell-link" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'pitch-vault-downsell',value:27,currency:'USD'})">Get the Pitch Vault - $27 &rarr;</a>
 </div>
 
 <!-- FOOTER -->
@@ -1044,12 +1123,34 @@ document.addEventListener('DOMContentLoaded', function(){
   if (typeof fbq !== 'undefined') {
     fbq('track', 'ViewContent', { content_name: 'rate-calculator-page' });
   }
+
+  // Initialize countdown timer
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 });
 
 // Flash glow on select change
 function flashGlow(el) {
   el.classList.add('glow');
   setTimeout(function(){ el.classList.remove('glow'); }, 600);
+}
+
+// COUNTDOWN TIMER - March 31 deadline
+function updateCountdown() {
+  var el = document.getElementById('countdownTimer');
+  if (!el) return;
+  var now = new Date();
+  var deadline = new Date(now.getFullYear(), 2, 31, 23, 59, 59); // March 31
+  if (now > deadline) {
+    // If past March 31, set to next year
+    deadline = new Date(now.getFullYear() + 1, 2, 31, 23, 59, 59);
+  }
+  var diff = deadline - now;
+  var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  var secs = Math.floor((diff % (1000 * 60)) / 1000);
+  el.textContent = days + 'd ' + hours + 'h ' + mins + 'm ' + secs + 's';
 }
 
 // ANIMATED COUNT-UP EFFECT
@@ -1114,7 +1215,7 @@ function calculateRate() {
   var unitLabel = contentType === 'photo' ? 'photo' : contentType === 'bundle' ? 'package' : 'video';
   var usageLabel = usageRights >= 999 ? 'Perpetual' : usageRights + '-day';
 
-  // Show result area with smooth fade-in
+  // === 1. RATE RESULT (immediate) ===
   var resultArea = document.getElementById('resultArea');
   resultArea.style.display = 'block';
   document.getElementById('placeholder').style.display = 'none';
@@ -1127,15 +1228,15 @@ function calculateRate() {
     rateLabel.textContent = userName + ', Your Rate';
   }
 
-  // ANIMATE the rate number (reveal effect)
+  // ANIMATE the rate number
   var rateEl = document.getElementById('totalRate');
   animateValue(rateEl, 0, finalPerUnit, 1200, '$', '');
 
   // Per unit label
   document.getElementById('perVidLabel').textContent = 'per ' + unitLabel;
 
-  // === CLOSER SCORE (gamified) ===
-  var closerScore = 4; // base
+  // === CLOSER SCORE (0.5s delay) ===
+  var closerScore = 4;
   if (exp === 'advanced') closerScore += 2;
   else if (exp === 'expert') closerScore += 3;
   else if (exp === 'intermediate') closerScore += 1;
@@ -1161,24 +1262,24 @@ function calculateRate() {
     document.getElementById('closerScoreTier').textContent = tierLabels[closerScore] || 'Rising Creator';
     document.getElementById('closerScoreBar').style.width = (closerScore * 10) + '%';
     document.getElementById('closerScorePercentile').textContent = "You're in the top " + (100 - percentile) + '% of UGC creators who price correctly';
-  }, 1400);
+  }, 500);
 
-  // === MONEY LEFT ON TABLE ===
-  var currentRate = Math.round(finalPerUnit * 0.4); // what most charge
-  var gapPerDeal = (finalPerUnit - currentRate) * count;
-  var dealsPerMonth = 2;
-  var monthlyLoss = gapPerDeal * dealsPerMonth;
-  var yearlyLoss = monthlyLoss * 12;
+  // === COMPARISON BAR (1s delay) ===
+  var lowRate = Math.round(finalPerUnit * 0.4);
+  var maxForScale = finalPerUnit * 1.15;
+  var lowPct = Math.min(95, Math.round((lowRate / maxForScale) * 100));
+  var highPct = Math.min(95, Math.round((finalPerUnit / maxForScale) * 100));
 
   setTimeout(function() {
-    var moneyCard = document.getElementById('moneyLeftCard');
-    moneyCard.style.display = 'block';
-    animateValue(document.getElementById('moneyLeftAmount'), 0, yearlyLoss, 1500, '-$', '');
-    document.getElementById('moneyLeftDetail').innerHTML = 'If you\'re charging <strong style="color:var(--red)">$' + currentRate + '</strong> instead of <strong style="color:var(--accent)">$' + finalPerUnit + '</strong> per ' + unitLabel + ', at ' + dealsPerMonth + ' deals/month:';
-    animateValue(document.getElementById('moneyLeftDeal'), 0, gapPerDeal, 800, '-$', '');
-    animateValue(document.getElementById('moneyLeftMonth'), 0, monthlyLoss, 1000, '-$', '');
-    animateValue(document.getElementById('moneyLeftYear'), 0, yearlyLoss, 1200, '-$', '');
-  }, 2200);
+    var compBar = document.getElementById('comparisonBar');
+    compBar.style.display = 'block';
+    var compLow = document.getElementById('compLow');
+    var compHigh = document.getElementById('compHigh');
+    compLow.style.width = lowPct + '%';
+    compLow.textContent = '$' + lowRate;
+    compHigh.style.width = highPct + '%';
+    compHigh.textContent = '$' + finalPerUnit;
+  }, 1000);
 
   // Build breakdown table
   var bd = document.getElementById('breakdown');
@@ -1193,21 +1294,6 @@ function calculateRate() {
   }
   bh += '<tr class="total-row"><td>Your rate per ' + unitLabel + '</td><td>$' + finalPerUnit + '</td></tr>';
   bd.innerHTML = bh;
-
-  // Comparison bars - FIXED: use absolute values for width calculation
-  var lowRate = Math.round(finalPerUnit * 0.4);
-  var maxForScale = finalPerUnit * 1.15; // scale so "your rate" bar is ~87% width
-  var lowPct = Math.min(95, Math.round((lowRate / maxForScale) * 100));
-  var highPct = Math.min(95, Math.round((finalPerUnit / maxForScale) * 100));
-
-  setTimeout(function() {
-    var compLow = document.getElementById('compLow');
-    var compHigh = document.getElementById('compHigh');
-    compLow.style.width = lowPct + '%';
-    compLow.textContent = '$' + lowRate;
-    compHigh.style.width = highPct + '%';
-    compHigh.textContent = '$' + finalPerUnit;
-  }, 600);
 
   // Deal value box - animate
   var dvNum = document.getElementById('dealValueNum');
@@ -1226,20 +1312,74 @@ function calculateRate() {
   window._calculatedRate = finalPerUnit;
   window._calculatedUnitLabel = unitLabel;
 
-  // Show Pitch Vault CTA after 3 seconds (progressive disclosure)
+  // === 2. LOSS / COST OF INACTION (1.5s delay) - THE GUT PUNCH ===
+  var currentRate = Math.round(finalPerUnit * 0.4);
+  var gapPerDeal = (finalPerUnit - currentRate) * count;
+  var dealsPerMonth = 2;
+  var monthlyLoss = gapPerDeal * dealsPerMonth;
+  var yearlyLoss = monthlyLoss * 12;
+
   setTimeout(function() {
-    document.getElementById('pitchVaultCta').classList.add('show');
+    var lossSection = document.getElementById('lossSection');
+    lossSection.classList.add('show');
+
+    // Big yearly number
+    animateValue(document.getElementById('lossYearlyAmount'), 0, yearlyLoss, 1800, '-$', '');
+    document.getElementById('lossHeroSub').innerHTML = 'If you keep charging <strong style="color:var(--red)">$' + currentRate + '</strong> instead of <strong style="color:var(--accent)">$' + finalPerUnit + '</strong> per ' + unitLabel + ', at just ' + dealsPerMonth + ' deals a month...';
+
+    // Red loss bars with visceral comparisons
+    animateValue(document.getElementById('lossBarDealNum'), 0, gapPerDeal, 800, '-$', '');
+    animateValue(document.getElementById('lossBarMonthNum'), 0, monthlyLoss, 1000, '-$', '');
+    animateValue(document.getElementById('lossBarYearNum'), 0, yearlyLoss, 1200, '-$', '');
+
+    // Visceral comparisons for each bar
+    var dealComp = gapPerDeal >= 500 ? "That's a <em>week of groceries</em> you're handing to the brand" : "That's <em>dinner for two</em> you're giving away. Every. Single. Deal.";
+    var monthComp = monthlyLoss >= 1000 ? "That's a <em>car payment</em> every single month" : "That's <em>" + Math.round(monthlyLoss / 50) + " meals out</em> you'll never have";
+    var yearComp = yearlyLoss >= 5000 ? "That's a <em>vacation you'll never take</em>" : "That's <em>new gear you can't afford</em>";
+
+    document.getElementById('lossBarDealComp').innerHTML = dealComp;
+    document.getElementById('lossBarMonthComp').innerHTML = monthComp;
+    document.getElementById('lossBarYearComp').innerHTML = yearComp;
+
+    // Animate bar fills
+    setTimeout(function() {
+      document.getElementById('lossBarDeal').classList.add('animated');
+      document.getElementById('lossBarMonth').classList.add('animated');
+      document.getElementById('lossBarYear').classList.add('animated');
+    }, 200);
+
+    // Visceral gut-punch text
+    var visceralLines = [];
+    if (yearlyLoss >= 10000) {
+      visceralLines.push('You\'re giving away <strong>$' + yearlyLoss.toLocaleString() + '/year</strong>.');
+      visceralLines.push('That\'s a <strong>vacation in Europe</strong> you\'re handing to brands who already have the budget.');
+    } else if (yearlyLoss >= 5000) {
+      visceralLines.push('You\'re giving away <strong>$' + yearlyLoss.toLocaleString() + '/year</strong>.');
+      visceralLines.push('That\'s a <strong>vacation you\'re never going to take</strong> because a brand got your work for cheap.');
+    } else {
+      visceralLines.push('You\'re giving away <strong>$' + yearlyLoss.toLocaleString() + '/year</strong>.');
+      visceralLines.push('That\'s <strong>' + Math.round(yearlyLoss / 200) + ' brand deals worth of money</strong> you\'ll never see.');
+    }
+    visceralLines.push('The brand has the budget. <span class="accent-text">You just didn\'t ask for it.</span>');
+
+    document.getElementById('lossVisceralText').innerHTML = visceralLines.join('<br>');
+
+    // Smooth scroll to loss section
+    setTimeout(function() {
+      lossSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 300);
+  }, 1500);
+
+  // === 3. TESTIMONIALS (2.5s delay) ===
+  setTimeout(function() {
+    document.getElementById('inlineProof').classList.add('show');
+  }, 2500);
+
+  // === 4. KIT CTA (3s delay) ===
+  setTimeout(function() {
+    document.getElementById('kitCta').classList.add('show');
+    document.getElementById('downsell').classList.add('show');
   }, 3000);
-
-  // Show Kit upsell after 4 seconds
-  setTimeout(function() {
-    document.getElementById('kitUpsell').classList.add('show');
-  }, 4000);
-
-  // Show testimonials after 4.5 seconds
-  setTimeout(function() {
-    document.getElementById('postResultProof').classList.add('show');
-  }, 4500);
 }
 
 // SHARE RESULTS
@@ -1267,7 +1407,7 @@ var observer = new IntersectionObserver(function(entries) {
 
 document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
 
-// STICKY MOBILE CTA - pitch vault
+// STICKY MOBILE CTA - Kit (not Pitch Vault)
 (function(){
   var sticky = document.getElementById('stickyCta');
   if (!sticky) return;
@@ -1286,10 +1426,10 @@ document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el
 })();
 </script>
 
-<!-- STICKY MOBILE CTA -->
+<!-- STICKY MOBILE CTA - Kit link -->
 <div class="sticky-cta" id="stickyCta">
   <div class="sticky-cta-text">Your rate: <span class="rate-val" id="stickyRate">-</span></div>
-  <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=rate_calculator&utm_campaign=pitch_vault&utm_content=sticky_mobile" target="_blank" class="sticky-cta-btn" id="stickyCtaBtn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'pitch-vault-sticky',value:27,currency:'USD'})">Get Pitch Vault - $27 &rarr;</a>
+  <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=rate_calculator&utm_campaign=closer_kit&utm_content=sticky_mobile" target="_blank" class="sticky-cta-btn" id="stickyCtaBtn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-kit-sticky',value:246,currency:'USD'})">Get the Kit - $246 &rarr;</a>
 </div>
 
 <script src="/global-nav.js" defer></script>

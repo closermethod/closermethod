@@ -467,7 +467,7 @@ const tiers = [
     ctaLink: "https://ugc-closer-suite.netlify.app/",
     ctaBtn: "Get the Free Tools",
     ctaLink2: "https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=quiz&utm_campaign=closer_kit",
-    ctaBtn2: "See the Closer Kit ($197 - tax season sale)"
+    ctaBtn2: "See the Closer Kit ($246 - tax season sale)"
   },
   {
     min: 18, max: 23,
@@ -481,7 +481,7 @@ const tiers = [
     ctaType: "closer-kit",
     ctaText: "The UGC Closer Kit has 10 Notion-based systems: the Closing System, Money System, 175+ Brand Database, 60+ scripts, and Deal Tracker CRM to close the gap.",
     ctaLink: "https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=quiz&utm_campaign=closer_kit",
-    ctaBtn: "Get the UGC Closer Kit - $197"
+    ctaBtn: "Get the UGC Closer Kit - $246"
   },
   {
     min: 24, max: 28,
@@ -615,11 +615,11 @@ function showResults() {
   if (tier.ctaType === 'closer-kit') {
     ctaContainer.innerHTML = '<div class="closer-kit-cta">' +
       '<p style="font-size:14px;color:var(--text2);line-height:1.6;margin-bottom:16px;">' + tier.ctaText + '</p>' +
-      '<div style="margin-bottom:12px"><span class="price-old">$497</span><span class="price">$197</span></div>' +
+      '<div style="margin-bottom:12px"><span class="price-old">$497</span><span class="price">$246</span></div>' +
       '<p class="price-sub">one-time payment · instant access</p>' +
       '<a class="cta-btn" href="' + tier.ctaLink + '" target="_blank" style="margin-top:16px;display:inline-block;">' + tier.ctaBtn + '</a>' +
       '<div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
-  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
+  <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$246</strong> <span style="color:var(--text3, #666);">Tax Season Sale</span>
 </div>' +
       '</div>';
   } else if (tier.ctaType === 'nurture') {
@@ -628,7 +628,7 @@ function showResults() {
       '<a class="cta-btn" href="' + tier.ctaLink + '" target="_blank">' + tier.ctaBtn + '</a>' +
       '<div style="margin-top:12px"><a href="' + tier.ctaLink2 + '" target="_blank" style="font-size:13px;color:var(--accent);text-decoration:underline;">' + tier.ctaBtn2 + '</a></div>' +
       '<div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
-  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
+  <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$246</strong> <span style="color:var(--text3, #666);">Tax Season Sale</span>
 </div>' +
       '</div>';
   } else if (tier.ctaType === 'free') {
@@ -649,7 +649,7 @@ function showResults() {
   setTimeout(() => {
     document.querySelectorAll('#cta-container a[href*="stan.store"]').forEach(function(a) {
       a.addEventListener('click', function() {
-        if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-quiz',value:197,currency:'USD'});
+        if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-quiz',value:246,currency:'USD'});
       });
     });
   }, 50);
@@ -695,7 +695,7 @@ function retakeQuiz() {
 // Auto-copy coupon code when any CTA button is clicked
 document.querySelectorAll('a[href*="stan.store"][href*="closer-kit"]').forEach(function(btn){
   btn.addEventListener('click', function(){
-    navigator.clipboard.writeText('VSL197').catch(function(){});
+    
   });
 });
 </script>

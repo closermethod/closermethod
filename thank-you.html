@@ -156,7 +156,7 @@ a{color:var(--green);text-decoration:none}
       <div class="product-card-body">
         <div class="product-price">
           <span class="old">$497</span>
-          <span class="price">$197</span>
+          <span class="price">$246</span>
           <span class="note">one-time</span>
         </div>
 
@@ -195,7 +195,7 @@ a{color:var(--green);text-decoration:none}
 
         <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=thank_you_upsell&utm_campaign=closer_kit&utm_content=general" class="buy-btn" id="buyBtn">Start Closing $800+ Deals</a>
         <div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
-  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
+  <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$246</strong> <span style="color:var(--text3, #666);">Tax Season Sale</span>
 </div>
 
 <!-- Footer -->
@@ -218,7 +218,7 @@ if (userName) {
 const buyBtn = document.getElementById('buyBtn');
 if (buyBtn) {
   buyBtn.addEventListener('click', function() {
-    if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-thank-you-upsell',value:197,currency:'USD'});
+    if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-thank-you-upsell',value:246,currency:'USD'});
   });
 }
 
@@ -241,7 +241,7 @@ if(typeof fbq==='function')fbq('track','Purchase',{content_name:'pitch-vault',va
 // Auto-copy coupon code when any CTA button is clicked
 document.querySelectorAll('a[href*="stan.store"][href*="closer-kit"]').forEach(function(btn){
   btn.addEventListener('click', function(){
-    navigator.clipboard.writeText('VSL197').catch(function(){});
+    
   });
 });
 </script>
