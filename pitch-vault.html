@@ -30,7 +30,7 @@ fbq('track', 'ViewContent', {content_name:'pitch-vault',content_type:'product',v
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#0a0a0a;--surface:#141414;--surface2:#1a1a1a;--border:#222;--text:#e8e8e8;--text2:#999;--text3:#666;--green:#c8ff00;--green-dark:#a8d900;--amber:#F59E0B;--red:#ff4444;--font:'DM Sans',system-ui,sans-serif;--serif:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace}
-body{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.7}
+body{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.7;overflow-x:hidden}
 a{color:var(--green);text-decoration:none}
 .wrap{max-width:640px;margin:0 auto;padding:0 24px}
 
@@ -161,13 +161,18 @@ a{color:var(--green);text-decoration:none}
 .sticky-cta button{width:100%;max-width:400px;padding:14px;background:var(--green);color:var(--bg);font-weight:800;font-size:15px;border:none;border-radius:10px;cursor:pointer;font-family:var(--font)}
 
 @media(max-width:600px){
-  .hero{padding:48px 0 36px}
+  .hero{padding:100px 0 36px}
   .hero h1{font-size:28px}
   .template-card{flex-direction:column;gap:8px}
   .proof-bar{gap:20px}
-  .compare-label{font-size:13px}
+  .compare-label{font-size:12px}
+  .compare-them,.compare-you{width:64px;font-size:12px}
+  .compare-row{padding:12px 12px}
   .form-card{padding:24px 20px}
+  .form-btn,.gate-submit{min-height:48px}
   .sticky-cta{display:block}
+  .sticky-cta a{min-height:48px;display:flex;align-items:center;justify-content:center}
+  .faq-section summary{min-height:48px}
   .footer{padding-bottom:80px}
 }
 

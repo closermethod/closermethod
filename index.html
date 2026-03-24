@@ -95,13 +95,14 @@ body {
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
 
 /* NAV */
 .nav {
-  position: fixed; top:0; left:0; right:0; z-index: 100;
+  position: fixed; top:40px; left:0; right:0; z-index: 100;
   background: rgba(10,10,10,0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
@@ -119,7 +120,7 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
 
 /* HERO */
 .hero {
-  padding: 180px 24px 40px;
+  padding: 200px 24px 40px;
   max-width: 800px; margin: 0 auto;
   text-align: center;
 }
@@ -440,22 +441,48 @@ footer a { color: var(--text3); }
 
 /* MOBILE */
 @media (max-width: 640px) {
-  .db-table th, .db-table td { padding: 10px 12px; font-size: 13px; }
-  .db-cta-bar { flex-direction: column; gap: 12px; text-align: center; }
-  .why-cards { grid-template-columns: 1fr; }
-  .proof-stats { gap: 24px; }
-  .filter-bar { justify-content: center; }
-  .hero { padding: 130px 20px 30px; }
-  .modal-card { padding: 28px 20px; }
-  .modal-trust { flex-wrap: wrap; gap: 10px; }
-  .cta-note { font-size: 14px; }
-  .testimonial-detail { font-size: 13px; }
-  .nav-cta { padding: 10px 16px; font-size: 14px; min-height: 44px; display: inline-flex; align-items: center; }
+  /* 1. NAV below banner */
+  .nav { top: 40px; }
+
+  /* 2. Database table: hide Contact column, tighten cells */
+  .db-table th:nth-child(4),
+  .db-table td:nth-child(4) { display: none; }
+  .db-table th, .db-table td { padding: 8px 10px; font-size: 12px; }
+
+  /* 4. Tax banner text: prevent multi-line wrap */
+  #taxBanner {
+    font-size: 11px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px 12px !important;
+  }
+
+  /* 5. Value stack rows: reduce padding on mobile */
+  .value-stack-row,
+  [style*="padding:18px 24px"] { padding: 12px 16px !important; }
+
+  /* 6. ALL buttons min-height 48px for tap targets */
+  .nav-cta { padding: 10px 16px; font-size: 14px; min-height: 48px; display: inline-flex; align-items: center; }
   .cta-btn { padding: 18px 32px; min-height: 48px; }
   .gate-submit { min-height: 48px; }
   .gate-input { min-height: 48px; }
   .modal-submit { min-height: 48px; }
   .modal-input { min-height: 48px; }
+  .cm-compare-cta { min-height: 48px; display: flex; align-items: center; justify-content: center; }
+  .db-cta-bar a { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; }
+  button, [role="button"], input[type="submit"], a.cta-btn, a.cm-compare-cta { min-height: 48px; }
+
+  /* Existing mobile rules */
+  .db-cta-bar { flex-direction: column; gap: 12px; text-align: center; }
+  .why-cards { grid-template-columns: 1fr; }
+  .proof-stats { gap: 24px; }
+  .filter-bar { justify-content: center; }
+  .hero { padding: 150px 20px 30px; }
+  .modal-card { padding: 28px 20px; }
+  .modal-trust { flex-wrap: wrap; gap: 10px; }
+  .cta-note { font-size: 14px; }
+  .testimonial-detail { font-size: 13px; }
   .proof-grid { grid-template-columns: 1fr !important; }
 }
 
@@ -542,8 +569,17 @@ footer a { color: var(--text3); }
 <!-- NAV -->
 <!-- TAX SEASON LAUNCH BANNER -->
 <div id="taxBanner" style="background:linear-gradient(90deg,rgba(200,255,0,0.08),rgba(200,255,0,0.15),rgba(200,255,0,0.08));border-bottom:1px solid rgba(200,255,0,0.3);text-align:center;padding:10px 16px;font-size:13px;color:var(--text);position:fixed;top:0;left:0;right:0;z-index:1100">
-  <strong style="color:var(--accent)">TAX SEASON SALE - <span id="taxDaysLeft"></span> days left:</strong> UGC Closer Kit drops to <strong style="color:#fff">$197</strong> <span style="text-decoration:line-through;color:var(--text3)">$497</span> &middot; <span style="color:var(--accent)">Write it off. Make it back on one deal.</span>
+  <span class="tax-banner-full"><strong style="color:var(--accent)">TAX SEASON SALE - <span id="taxDaysLeft"></span> days left:</strong> UGC Closer Kit drops to <strong style="color:#fff">$197</strong> <span style="text-decoration:line-through;color:var(--text3)">$497</span> &middot; <span style="color:var(--accent)">Write it off. Make it back on one deal.</span></span>
+  <span class="tax-banner-short" style="display:none"><strong style="color:var(--accent)">Tax Season:</strong> Kit <strong style="color:#fff">$197</strong> <span style="text-decoration:line-through;color:var(--text3)">$497</span> - Ends March 31</span>
 </div>
+<style>
+@media (max-width: 640px) {
+  .tax-banner-full { display: none !important; }
+  .tax-banner-short { display: inline !important; }
+  /* Returning visitor buy bar: reduce gap on mobile */
+  body > div[style*="position:fixed"][style*="bottom:0"] { gap: 8px !important; font-size: 13px !important; padding: 10px 12px !important; }
+}
+</style>
 <script>(function(){var end=new Date(2026,2,31,23,59,59);var now=new Date();var days=Math.max(0,Math.ceil((end-now)/(1000*60*60*24)));document.getElementById('taxDaysLeft').textContent=days;})()</script>
 <!-- Page nav removed: global-nav.js handles full navigation -->
 
@@ -867,12 +903,18 @@ footer a { color: var(--text3); }
 </section>
 
 <!-- HORMOZI VALUE STACK -->
+<style>
+@media (max-width: 640px) {
+  .value-stack-container > div[style*="padding:18px 24px"],
+  .value-stack-container > div[style*="padding: 18px 24px"] { padding: 12px 16px !important; }
+}
+</style>
 <section class="fade-up" style="padding:48px 24px;max-width:580px;margin:0 auto">
   <div style="text-align:center;margin-bottom:32px">
     <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px">EVERYTHING INSIDE THE CLOSER KIT</div>
     <h2 style="font-size:clamp(24px,5vw,32px);font-weight:700;color:#fff;line-height:1.2">One system. Every word you need.</h2>
   </div>
-  <div style="border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--card)">
+  <div class="value-stack-container" style="border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--card)">
     <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--border)">
       <span style="font-size:15px;color:var(--text)">175+ Brand Database with Contacts</span>
       <span style="font-size:14px;color:var(--text3);text-decoration:line-through">$297</span>
@@ -1169,7 +1211,7 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     }
     // Add floating buy bar at bottom for returning visitors
     var buyBar = document.createElement('div');
-    buyBar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:300;background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-top:2px solid #c8ff00;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:14px;';
+    buyBar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:300;background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-top:2px solid #c8ff00;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:14px;flex-wrap:wrap;';
     buyBar.innerHTML = '<span style="color:#999;font-weight:600">Welcome back! \u2192</span><a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=brand-database-sticky&utm_campaign=closer-kit-returning" target="_blank" style="background:#c8ff00;color:#0a0a0a;padding:10px 24px;border-radius:8px;font-weight:800;font-size:14px;text-decoration:none" onclick="if(typeof fbq===\'function\')fbq(\'track\',\'InitiateCheckout\',{content_name:\'brand-database-sticky-returning\',value:197,currency:\'USD\'})">Start Closing $800+ Deals - $197</a><span style="color:#c8ff00;font-size:12px;font-weight:700;border:1px dashed #c8ff00;padding:4px 10px;border-radius:6px">Code: VSL197</span>';
     document.body.appendChild(buyBar);
     document.body.style.paddingBottom = '60px';
@@ -1246,8 +1288,10 @@ if (!('ontouchstart' in window) && !navigator.maxTouchPoints) {
 // Push global nav below tax banner on homepage
 document.addEventListener('DOMContentLoaded',function(){
   var nav=document.getElementById('cmNav');
-  if(nav){nav.style.top='38px';}
-  document.body.style.paddingTop='94px';
+  if(nav){nav.style.top='40px';}
+  var mobileMenu=document.getElementById('cmMobileMenu');
+  if(mobileMenu){mobileMenu.style.top='96px';}
+  document.body.style.paddingTop='96px';
 });
 </script>
 <script>

@@ -24,7 +24,7 @@ fbq('track', 'ViewContent', {content_name:'vsl-closer-kit',content_type:'product
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0a0a0a;--bg2:#111;--bg3:#1a1a1a;--card:#141414;--border:#222;--border2:#333;--text:#e8e8e8;--text2:#999;--text3:#666;--accent:#c8ff00;--accent2:#a8d900;--red:#ff4444;--green:#00c853;--blue:#1d9bf0}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:'DM Sans',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
 h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif}
 .container{max-width:720px;margin:0 auto;padding:0 20px 80px}
@@ -122,7 +122,78 @@ h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif}
 .gate-trust span{display:flex;align-items:center;gap:4px}
 .gate-trust .ck{color:var(--accent)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:600px){.container{padding:0 16px 60px}.cta-trust{flex-wrap:wrap;gap:12px}.mini-proof-bar{gap:4px;padding:10px 12px}.mini-proof-bar .mini-proof-item{font-size:12px}body{padding-bottom:70px}.gate-form{padding:16px}.proof-quote{font-size:14px}.proof-handle{font-size:12px}.proof-platform{font-size:12px}.proof-verify-link{font-size:12px}.cta-guarantee{font-size:14px}.vsl-exclusive{font-size:12px}.proof-strip-sub{font-size:13px}.countdown-unit{font-size:11px}.cta-btn{min-height:48px;font-size:17px}.gate-submit{min-height:48px}.gate-input{min-height:48px}.sticky-cta-btn{min-height:44px;padding:14px 22px}}
+@media(max-width:600px){
+/* 4. Prevent horizontal scroll */
+html,body{overflow-x:hidden}
+body{padding-bottom:70px}
+.container{padding:0 16px 60px}
+
+/* 1. Reframe section: reduce padding on mobile */
+.reframe{padding:24px 16px}
+
+/* 2. Sticky CTA bar: tighten guarantee text */
+.sticky-cta{flex-wrap:wrap;padding:8px 12px;gap:4px}
+.sticky-cta>div:last-child{font-size:9px;margin-top:0;width:100%;text-align:center}
+.sticky-cta-btn{min-height:48px;padding:14px 22px;font-size:14px}
+
+/* 3. All CTA buttons/links: 48px min tap targets */
+.cta-btn{min-height:48px;font-size:17px}
+.gate-submit{min-height:48px}
+.gate-input{min-height:48px}
+
+/* 5. FAQ: adequate padding and tap targets */
+.faq-item summary{min-height:48px;padding:14px 16px;font-size:14px}
+.faq-answer{padding:0 16px 16px;font-size:13px}
+
+/* 6. Proof cards: ensure no overflow at 375px */
+.proof-cards{display:flex;flex-direction:column;gap:12px}
+.proof-card{padding:18px 16px 16px}
+.proof-card-header{flex-wrap:wrap;gap:8px}
+.proof-outcome{font-size:11px;padding:3px 10px;margin-left:0;margin-top:4px}
+.proof-stats-bar{flex-wrap:wrap;gap:14px;padding:12px 10px}
+.proof-stat-num{font-size:17px}
+
+/* 7. Countdown timer: fit on 375px */
+.countdown-timer{padding:8px 14px;gap:4px}
+.countdown-digit{font-size:24px;min-width:34px}
+.countdown-sep{font-size:22px}
+.countdown-unit{font-size:9px}
+
+/* 8. Video embed: responsive (already handled by wrapper, reinforce) */
+.video-wrapper{border-radius:10px}
+.video-wrapper iframe,.video-wrapper video{border-radius:10px}
+
+/* 9. Email gate: full-width inputs with proper tap targets */
+.gate-card{padding:0 8px}
+.gate-form{padding:16px}
+.gate-card h2{font-size:24px}
+.gate-sub{font-size:14px}
+
+/* 10. General mobile polish */
+.cta-trust{flex-wrap:wrap;gap:12px}
+.mini-proof-bar{gap:4px;padding:10px 12px}
+.mini-proof-bar .mini-proof-item{font-size:11px}
+.proof-quote{font-size:14px}
+.proof-handle{font-size:12px}
+.proof-platform{font-size:12px}
+.proof-verify-link{font-size:12px;min-height:48px;display:inline-flex;align-items:center}
+.cta-guarantee{font-size:14px}
+.vsl-exclusive{font-size:12px}
+.proof-strip-sub{font-size:13px}
+.video-section{padding:32px 0 28px}
+.video-sub{font-size:14px}
+.cta-price-row{gap:10px}
+.reframe-text{font-size:clamp(18px,4vw,24px)}
+.reframe-sub{font-size:14px}
+.vsl-footer{font-size:11px;padding:20px 8px}
+
+/* Pitch Vault downsell button tap target */
+.container a[href*="pitch-vault"]{min-height:48px !important;display:inline-flex !important;align-items:center !important;justify-content:center !important}
+/* Value stack items: prevent overflow on narrow screens */
+.container [style*="justify-content:space-between"][style*="padding:14px 0"]{flex-wrap:wrap;gap:4px}
+/* Product walkthrough video wrapper */
+.container [style*="padding-bottom:51.58%"]{border-radius:10px !important}
+}
 @media(min-width:601px){.sticky-cta{display:none !important}}
 </style>
 </head>
