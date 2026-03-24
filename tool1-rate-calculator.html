@@ -901,6 +901,8 @@ footer a { color: var(--text2); text-decoration: none; }
             <div class="closer-score-bar" id="closerScoreBar"></div>
           </div>
           <div class="closer-score-percentile" id="closerScorePercentile"></div>
+          <!-- Educational gaps - shown based on score -->
+          <div id="scoreEducation" style="display:none;margin-top:16px;padding:16px;background:rgba(255,68,68,0.04);border:1px solid rgba(255,68,68,0.12);border-radius:10px;font-size:13px;color:#ccc;line-height:1.6;text-align:left;"></div>
         </div>
 
         <!-- Comparison bar - 1s delay -->
@@ -1309,6 +1311,30 @@ function calculateRate() {
   document.getElementById('closerScoreBar').style.width = (closerScore * 10) + '%';
   document.getElementById('closerScorePercentile').textContent = 'Your Closer Score: ' + closerScore + '/10 — ' + (tierLabels[closerScore] || 'Rising Creator');
 
+  // === EDUCATIONAL GAPS (facts-based, not intimidating) ===
+  var eduEl = document.getElementById('scoreEducation');
+  var gaps = [];
+  if (closerScore <= 4) {
+    gaps.push('<strong style="color:#ff6b6b">Here\'s what\'s holding your score back:</strong>');
+  }
+  if (aiClause === 'idk' || aiClause === 'yes') {
+    gaps.push('&#8226; <strong>AI training rights</strong> are being added to UGC contracts in 2025-2026. If you sign one, brands can clone your face and voice for AI-generated ads — forever. 73% of creators don\'t read this clause.');
+  }
+  if (usageRights <= 90) {
+    gaps.push('&#8226; <strong>Usage rights</strong> are where the real money is. A 30-second video is worth $200-400 to produce. But if a brand runs it as a paid ad for 12 months, that\'s $2,000+ in licensing value most creators never charge for.');
+  }
+  if (exp === 'beginner' || exp === 'intermediate') {
+    gaps.push('&#8226; <strong>Rate anchoring:</strong> 82% of UGC creators accept the brand\'s first offer. Enterprise sales data shows the first number spoken in a negotiation anchors the entire deal. If you don\'t name your rate first, you lose.');
+  }
+  if (count >= 3 && volDiscount > 0) {
+    gaps.push('&#8226; <strong>Volume pricing:</strong> Brands expect bulk discounts, but most creators give them away without getting longer contracts or exclusivity in return. A 5% discount should come with a 6-month retainer, not a "thank you."');
+  }
+  if (gaps.length > 1) {
+    gaps.push('<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,68,68,0.15);color:var(--accent);font-weight:700;">The UGC Closer Kit covers all of this. Keep scrolling to see what you\'re leaving on the table &#8595;</div>');
+    eduEl.innerHTML = gaps.join('<br><br>');
+    eduEl.style.display = 'block';
+  }
+
   // === COMPARISON BAR ===
   var lowRate = Math.round(finalPerUnit * 0.4);
   var lowPct = 35;  // Fixed short bar for "most creators"
@@ -1424,7 +1450,11 @@ function calculateRate() {
   document.getElementById('shareResultsCard').style.display = 'block';
 
   // Scroll to results
+  // Show rate first, then bounce to the red zone (loss section) after 2.5s
   resultArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  setTimeout(function() {
+    lossSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 2500);
 }
 
 // SHARE RESULTS
