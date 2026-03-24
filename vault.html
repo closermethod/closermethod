@@ -302,6 +302,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
   <!-- PAIN (Wendt: make them feel seen) -->
   <section class="section pain">
     <div class="wrap">
+      <p style="font-size:17px;color:#ccc;line-height:1.5;margin-bottom:20px">You know your content is good. Brands know it too. So why are they offering you $200?</p>
       <h2>You're pitching brands the same way everyone else is. That's why they're ignoring you.</h2>
       <ul class="pain-list">
         <li class="pain-item"><span class="pain-x">&times;</span><span>You spend 45 min crafting a "perfect" DM. Brand leaves you on read.</span></li>
@@ -328,6 +329,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
         <div style="font-family:var(--mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">Pitch #3 - The 3-Line Pitch</div>
         <p style="font-size:15px;color:#ccc;line-height:1.6;font-style:italic">"I make content that converts for [niche] brands. [Specific result/stat]. Want me to send 2-3 concepts for [their product]?"</p>
       </div>
+      <p style="font-size:15px;color:#bbb;line-height:1.6;text-align:center;margin:24px 0 20px;font-style:italic">These pitches work because they don't sound like pitches. They sound like a professional who knows their value. That's the difference between getting ignored and getting paid.</p>
       <div style="text-align:center;margin:24px 20px;padding:20px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.15);border-radius:12px;">
   <p style="font-size:15px;font-weight:700;color:#c8ff00;margin-bottom:8px;">Know a creator still getting ignored by brands?</p>
   <p style="font-size:14px;color:#999;">Send them this page. The 3 pitches above are free forever.</p>
@@ -357,6 +359,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
   <!-- CREDIBILITY (one line, not a section) -->
   <div class="cred">
     <p>Built by <strong>Elisabeth</strong> (<span style="color:var(--accent)">@closermethod</span>) &mdash; 15 years enterprise sales at Criteo, Deel, Autodesk, Red Points, HBO, Bloomberg. <strong>$1.2M in closed deals. 268% of quota.</strong></p>
+    <p style="font-size:13px;color:var(--text2);margin-top:8px">The same frameworks that close six-figure enterprise deals work even better on an $800 UGC deal.</p>
   </div>
 
   <!-- LOSS SECTION -->
@@ -481,12 +484,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
     gateBtn.disabled=true;
     gateBtn.textContent='Loading...';
 
-    var d=new FormData();
-    d.append('first_name',fn);
-    d.append('email_address',em);
-
     fetch('https://app.kit.com/forms/7657498/subscriptions',{
-      method:'POST',body:d,mode:'no-cors'
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email_address:em,first_name:fn,tags:['vault-subscriber','pitch-funnel']}),
+      mode:'no-cors'
     }).finally(function(){
       gate.classList.add('hidden');
       document.body.style.overflow='';
@@ -508,16 +510,15 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
     inlineBtn.disabled=true;
     inlineBtn.textContent='Sending...';
 
-    var d=new FormData();
-    d.append('first_name',fn);
-    d.append('email_address',em);
-
     fetch('https://app.kit.com/forms/7657498/subscriptions',{
-      method:'POST',body:d,mode:'no-cors'
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email_address:em,first_name:fn,tags:['vault-subscriber','pitch-funnel']}),
+      mode:'no-cors'
     }).finally(function(){
       inlineForm.style.display='none';
       inlineSuccess.style.display='block';
-      if(typeof fbq==='function')fbq('track','Lead');
+      if(typeof fbq==='function')fbq('track','Lead',{content_name:'vault-inline'});
     });
   });
 
