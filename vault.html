@@ -98,7 +98,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
 .countdown{display:inline-flex;gap:6px;font-family:var(--mono);font-size:20px;font-weight:700;color:var(--red)}
 .countdown-unit{display:flex;flex-direction:column;align-items:center;background:rgba(255,77,77,.08);border:1px solid rgba(255,77,77,.2);border-radius:6px;padding:6px 10px;min-width:48px}
 .countdown-unit span:first-child{font-size:20px;line-height:1}
-.countdown-unit span:last-child{font-size:9px;color:var(--text3);font-weight:500;margin-top:2px;text-transform:uppercase;letter-spacing:0.05em}
+.countdown-unit span:last-child{font-size:11px;color:var(--text3);font-weight:500;margin-top:2px;text-transform:uppercase;letter-spacing:0.05em}
 .countdown-sep{color:var(--red);font-size:20px;line-height:1;align-self:flex-start;padding-top:6px}
 
 /* ===== CTA ===== */
@@ -218,8 +218,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
   /* 14. CTA buttons full width */
   .cta-btn{width:100%;max-width:100%;padding:16px 20px;font-size:16px}
   .upsell-btn{width:100%;display:flex;align-items:center;justify-content:center;min-height:48px}
-  /* 15. Hero padding for fixed nav */
-  .proof-banner{padding-top:100px}
+  /* 15. Hero padding - no fixed nav on this page */
+  .proof-banner{padding-top:20px}
   /* 6. Sticky CTA */
   .sticky a{min-height:48px;font-size:15px;padding:14px 12px}
   /* Footer room for sticky */
@@ -260,11 +260,16 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
         <p class="gate-quote">"<strong>2 responses out of 10 outreaches in one day!</strong>"</p>
         <p class="gate-name">Milena &middot; @UGCbyMilenaVonX</p>
       </div>
+      <div class="gate-proof-card">
+        <div class="gate-outcome">$650 &rarr; $4,750</div>
+        <p class="gate-quote">"I thought I was getting paid at $650 for 5 videos until I ran the numbers. <strong>My rate should have been $950/video.</strong>"</p>
+        <p class="gate-name">Candi &middot; @CandiandHerGoldens</p>
+      </div>
     </div>
     <form class="gate-form" id="gateForm" novalidate>
       <input type="text" name="first_name" placeholder="First name" required autocomplete="given-name">
       <input type="email" name="email_address" placeholder="Email address" required autocomplete="email">
-      <button type="submit" class="gate-submit" id="gateBtn">Show me how they did it</button>
+      <button type="submit" class="gate-submit" id="gateBtn">Send me the 3 pitches that work</button>
     </form>
     <p class="gate-trust">No spam. Unsubscribe anytime.</p>
   </div>
@@ -274,7 +279,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
 
   <!-- PROOF FIRST - 3 strongest testimonials, stacked vertically -->
   <div class="proof-banner">
-    <div class="proof-banner-label">Real creators. Real results.</div>
+    <div class="proof-banner-label">They were getting ignored too. Then they sent these pitches.</div>
     <div class="proof-stack">
       <div class="proof-card">
         <div class="proof-card-outcome">$150 &rarr; $800</div>
@@ -323,6 +328,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
         <div style="font-family:var(--mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">Pitch #3 - The 3-Line Pitch</div>
         <p style="font-size:15px;color:#ccc;line-height:1.6;font-style:italic">"I make content that converts for [niche] brands. [Specific result/stat]. Want me to send 2-3 concepts for [their product]?"</p>
       </div>
+      <div style="text-align:center;margin:24px 20px;padding:20px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.15);border-radius:12px;">
+  <p style="font-size:15px;font-weight:700;color:#c8ff00;margin-bottom:8px;">Know a creator still getting ignored by brands?</p>
+  <p style="font-size:14px;color:#999;">Send them this page. The 3 pitches above are free forever.</p>
+</div>
       <p style="font-size:14px;color:var(--text2);text-align:center;margin-top:24px">Those 3 pitches alone will get you replies. But to <strong style="color:#fff">close at $800+</strong>, you need the full system &darr;</p>
       <ul class="solution-list" style="display:none">
         <li class="solution-item">
@@ -398,17 +407,17 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
   <section class="section cta-section" id="ctaSection">
     <div class="wrap">
 
-      <h2 style="font-family:var(--heading);font-size:clamp(24px,6vw,32px);font-weight:800;color:#fff;margin-bottom:24px">Ready to start landing $800+ deals?</h2>
+      <h2 style="font-family:var(--heading);font-size:clamp(24px,6vw,32px);font-weight:800;color:#fff;margin-bottom:24px">Your next brand deal should be $800+. This is how.</h2>
 
       <!-- VALUE STACK - KIT -->
       <div class="value-stack">
-        <div class="value-stack-item"><span>60+ Negotiation Scripts</span><span>$500 value</span></div>
-        <div class="value-stack-item"><span>9 AI-Powered Tools</span><span>$500 value</span></div>
-        <div class="value-stack-item"><span>175+ Brand Database</span><span>$500 value</span></div>
-        <div class="value-stack-item"><span>12 Outbound Pitch Scripts</span><span>$300 value</span></div>
-        <div class="value-stack-item"><span>Deal Tracker CRM</span><span>$300 value</span></div>
-        <div class="value-stack-item"><span>Negotiation War Room</span><span>$300 value</span></div>
-        <div class="value-stack-item"><span>Beginner System</span><span>$200 value</span></div>
+        <div class="value-stack-item"><span>Never freeze when a brand pushes back on your rate</span><span>$500 value</span></div>
+        <div class="value-stack-item"><span>Sound like a pro in every email without overthinking</span><span>$500 value</span></div>
+        <div class="value-stack-item"><span>175+ brands with emails, budgets &amp; niches — skip 10+ hrs of research</span><span>$500+ value</span></div>
+        <div class="value-stack-item"><span>DMs that get replies, not left on read</span><span>$300 value</span></div>
+        <div class="value-stack-item"><span>Know exactly where every deal stands</span><span>$300 value</span></div>
+        <div class="value-stack-item"><span>Walk into every rate conversation with confidence</span><span>$300 value</span></div>
+        <div class="value-stack-item"><span>Go from 'I just started' to your first paid deal</span><span>$200 value</span></div>
         <div class="value-stack-total"><span>Total Value</span><span>$3,500+</span></div>
       </div>
 
@@ -430,9 +439,14 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
         </div>
       </div>
 
+      <div style="margin:0 auto 24px;max-width:500px;padding:20px;border:2px solid #00c853;border-radius:14px;background:rgba(0,200,83,0.06);text-align:center;">
+  <div style="font-size:18px;margin-bottom:8px;">&#x1F6E1;&#xFE0F;</div>
+  <div style="font-weight:700;color:#00c853;font-size:16px;margin-bottom:8px;">The Closer Guarantee</div>
+  <div style="font-size:14px;color:#ccc;line-height:1.6;">Use the Kit for 30 days. If you haven't closed a deal at your real rate, I will personally coach you until you do. No questions. No runaround.</div>
+</div>
+
       <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=vault_lp&utm_campaign=kit" class="cta-btn" id="mainCta" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'kit-from-vault',value:246,currency:'USD'})">Get the UGC Closer Kit &mdash; $246</a>
       <p class="cta-sub">Instant delivery &middot; Notion workspace &middot; Lifetime access</p>
-      <p class="cta-guarantee">&#x1F6E1;&#xFE0F; 30-day guarantee. Doesn't work? I'll personally coach you until it does.</p>
     </div>
   </section>
 

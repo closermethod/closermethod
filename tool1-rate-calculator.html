@@ -173,7 +173,7 @@ body {
 .result-placeholder p { max-width: 200px; line-height: 1.6; }
 
 .result-area { display: none; }
-.result-area.visible { }
+.result-area.visible { display: block; }
 
 /* Hero rate number */
 .result-rate-label {
@@ -247,9 +247,11 @@ body {
 .comp-fill {
   height: 100%; border-radius: 6px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px;
   font-size: 13px; font-weight: 700; font-family: 'JetBrains Mono', monospace;
+  width: 0%; transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+  min-width: 0;
 }
-.comp-fill.low { background: rgba(255,68,68,0.25); color: var(--red); }
-.comp-fill.high { background: rgba(200,255,0,0.2); color: var(--accent); }
+.comp-fill.low { background: rgba(255,68,68,0.35); color: var(--red); }
+.comp-fill.high { background: rgba(200,255,0,0.3); color: var(--accent); }
 
 /* ============================================================
    LOSS / COST OF INACTION - HORMOZI GUT PUNCH
@@ -699,9 +701,10 @@ footer a { color: var(--text2); text-decoration: none; }
   .closer-score-number span { font-size: 22px; }
 
   .comparison-bar { padding: 12px; margin-top: 16px; }
-  .comparison-label { font-size: 10px; margin-bottom: 10px; }
-  .comparison-bars .comp-row { flex-direction: column; gap: 4px; }
-  .comparison-bars .comp-row-label { min-width: auto; font-size: 11px; }
+  .comparison-label { font-size: 11px; margin-bottom: 10px; }
+  .comparison-bars .comp-row { flex-direction: row; gap: 8px; }
+  .comparison-bars .comp-row-label { min-width: 80px; font-size: 11px; flex-shrink: 0; }
+  .comp-track { height: 28px; flex: 1; min-width: 0; }
   .comp-track { height: 28px; }
   .comp-fill { font-size: 11px; padding-right: 8px; }
 
@@ -721,18 +724,18 @@ footer a { color: var(--text2); text-decoration: none; }
   .breakdown-table tr.total-row td:last-child { font-size: 14px; }
 
   .deal-value-box { padding: 16px; margin-top: 12px; }
-  .deal-value-label { font-size: 10px; }
+  .deal-value-label { font-size: 11px; }
   .deal-value-num { font-size: 28px; }
   .deal-value-detail { font-size: 12px; }
 
   .defense-box { padding: 16px; margin-top: 16px; border-radius: 10px; }
-  .defense-label { font-size: 10px; margin-bottom: 10px; }
+  .defense-label { font-size: 11px; margin-bottom: 10px; }
   .defense-visible { font-size: 13px; padding: 12px 14px; line-height: 1.6; }
   .defense-blurred { font-size: 12px; }
   .defense-unlock-overlay { padding: 12px; gap: 8px; }
   .defense-unlock-overlay .lock-icon { font-size: 20px; }
   .defense-unlock-overlay a { font-size: 13px; padding: 12px 18px; min-height: 48px; display: inline-flex; align-items: center; }
-  .defense-unlock-overlay .unlock-sub { font-size: 10px; }
+  .defense-unlock-overlay .unlock-sub { font-size: 11px; }
 
   .share-results-card { padding: 16px; margin-top: 16px; }
   .share-results-card .share-title { font-size: 14px; }
@@ -768,6 +771,8 @@ footer a { color: var(--text2); text-decoration: none; }
 
   footer { padding: 24px 16px; font-size: 12px; }
 
+  #lossSection { padding-left: 16px !important; padding-right: 16px !important; }
+
   section, div { max-width: 100vw; }
 }
 </style>
@@ -778,8 +783,8 @@ footer a { color: var(--text2); text-decoration: none; }
 <div class="email-gate" id="emailGate">
   <div class="gate-card">
     <div class="gate-badge"><span class="dot"></span> Free - 30 seconds</div>
-    <h1>Find out what you<br>should actually be<br><em>charging brands.</em></h1>
-    <p>Enter your email to see your real rate. Most creators are leaving $300+ per deal on the table.</p>
+    <h1>You already know you're undercharging.<br><em>Let's find out by how much.</em></h1>
+    <p>That sick feeling when a brand asks "what's your rate?" and you panic-type a number you made up? We're ending that today.</p>
     <form class="gate-form" id="gateForm" onsubmit="return handleGateSubmit(event)">
       <input type="text" class="gate-input" id="gateName" placeholder="First name" required>
       <input type="email" class="gate-input" id="gateEmail" placeholder="Your best email" required>
@@ -806,10 +811,14 @@ footer a { color: var(--text2); text-decoration: none; }
     <span><span class="check" style="color:var(--accent)">&check;</span> Built from $1.2M in sales</span>
   </div>
 
+  <div style="max-width:400px;margin:0 auto 24px;border-radius:12px;overflow:hidden;border:1px solid rgba(200,255,0,0.15);">
+    <img src="img/ty-testimonial.jpeg" alt="Ty went from $150 to $800 per video using the rate calculator and scripts" style="width:100%;display:block;">
+  </div>
+
   <div class="calc-container">
     <div class="calc-left">
       <div class="field">
-        <label><span class="field-icon">&#127909;</span> Content Type</label>
+        <label><span class="field-icon">&#127909;</span> What are you creating?</label>
         <div class="select-wrap">
           <select id="contentType" onchange="flashGlow(this)">
             <option value="video-30">&#127916; UGC Video (15-30s)</option>
@@ -821,7 +830,7 @@ footer a { color: var(--text2); text-decoration: none; }
         </div>
       </div>
       <div class="field">
-        <label><span class="field-icon">&#128230;</span> Number of Deliverables</label>
+        <label><span class="field-icon">&#128230;</span> How many videos/photos?</label>
         <div class="select-wrap">
           <select id="deliverableCount" onchange="flashGlow(this)">
             <option value="1">1 deliverable</option>
@@ -833,7 +842,7 @@ footer a { color: var(--text2); text-decoration: none; }
         </div>
       </div>
       <div class="field">
-        <label><span class="field-icon">&#128274;</span> Usage Rights</label>
+        <label><span class="field-icon">&#128274;</span> How long can they use it?</label>
         <div class="select-wrap">
           <select id="usageRights" onchange="flashGlow(this)">
             <option value="30">&#128196; 30 days (standard)</option>
@@ -845,7 +854,7 @@ footer a { color: var(--text2); text-decoration: none; }
         </div>
       </div>
       <div class="field">
-        <label><span class="field-icon">&#11088;</span> Experience Level</label>
+        <label><span class="field-icon">&#11088;</span> How long have you been doing UGC?</label>
         <div class="select-wrap">
           <select id="experience" onchange="flashGlow(this)">
             <option value="beginner">&#127793; Beginner (0-6 months)</option>
@@ -855,8 +864,17 @@ footer a { color: var(--text2); text-decoration: none; }
           </select>
         </div>
       </div>
+      <div class="field">
+        <label><span class="field-icon">&#129302;</span> Can they use your content to train AI?</label>
+        <div class="select-wrap">
+          <select id="aiClause" onchange="flashGlow(this)">
+            <option value="no" selected>&#10060; No AI training rights</option>
+            <option value="yes">&#9989; Yes, AI training included (+15-25%)</option>
+          </select>
+        </div>
+      </div>
       <button class="calc-btn" onclick="calculateRate()">Calculate My Rate &rarr;</button>
-      <div class="calc-btn-sub">Free forever &middot; No credit card needed</div>
+      <div class="calc-btn-sub">Includes usage rights + AI clause pricing &middot; Free forever</div>
     </div>
 
     <div class="calc-right">
@@ -888,13 +906,13 @@ footer a { color: var(--text2); text-decoration: none; }
             <div class="comp-row">
               <div class="comp-row-label">Most creators</div>
               <div class="comp-track">
-                <div class="comp-fill low" id="compLow" style="width:0%"></div>
+                <div class="comp-fill low" id="compLow"></div>
               </div>
             </div>
             <div class="comp-row">
               <div class="comp-row-label">Your real rate</div>
               <div class="comp-track">
-                <div class="comp-fill high" id="compHigh" style="width:0%"></div>
+                <div class="comp-fill high" id="compHigh"></div>
               </div>
             </div>
           </div>
@@ -1040,13 +1058,59 @@ footer a { color: var(--text2); text-decoration: none; }
      4. PRIMARY CTA - UGC CLOSER KIT
      ============================================================ -->
 <div class="kit-cta" id="kitCta" style="max-width:900px;margin:0 auto 0;margin-left:auto;margin-right:auto;">
-  <div class="kit-cta-eyebrow">Stop leaving money on the table</div>
-  <div class="kit-cta-headline">Get the UGC Closer Kit</div>
-  <p class="kit-cta-sub">Everything you need to pitch at your real rate and close. <strong>175+ brand contacts, 12 pitch templates, 60 negotiation scripts, deal tracker CRM, 9 AI tools</strong>, and a coaching guarantee. One deal pays for the entire kit.</p>
+  <div class="kit-cta-eyebrow">YOU KNOW YOUR RATE. NOW CLOSE AT IT.</div>
+  <div class="kit-cta-headline">Close your first $800+ deal this month</div>
+  <p class="kit-cta-sub">Your rate is real. Now you need the words to defend it. <strong>One deal at your real rate pays for everything.</strong></p>
+
+  <!-- VALUE STACK -->
+  <div style="margin:0 auto 20px;max-width:500px;text-align:left;">
+    <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--text3);margin-bottom:12px;text-align:center;">What's inside</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.1);border-radius:8px;">
+        <span style="font-size:14px;color:var(--text);">60+ Negotiation Scripts</span>
+        <span style="font-size:13px;color:var(--text3);font-weight:600;">$500 value</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.1);border-radius:8px;">
+        <span style="font-size:14px;color:var(--text);">9 AI-Powered Tools</span>
+        <span style="font-size:13px;color:var(--text3);font-weight:600;">$500 value</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.1);border-radius:8px;">
+        <span style="font-size:14px;color:var(--text);">175+ Brand Database <span style="font-size:11px;color:var(--accent);">(emails, budgets, niches — 10+ hrs of research done for you)</span></span>
+        <span style="font-size:13px;color:var(--text3);font-weight:600;">$500+ value</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.1);border-radius:8px;">
+        <span style="font-size:14px;color:var(--text);">12 Outbound Pitch Scripts</span>
+        <span style="font-size:13px;color:var(--text3);font-weight:600;">$300 value</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.1);border-radius:8px;">
+        <span style="font-size:14px;color:var(--text);">Deal Tracker CRM</span>
+        <span style="font-size:13px;color:var(--text3);font-weight:600;">$300 value</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.1);border-radius:8px;">
+        <span style="font-size:14px;color:var(--text);">Negotiation War Room</span>
+        <span style="font-size:13px;color:var(--text3);font-weight:600;">$300 value</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.1);border-radius:8px;">
+        <span style="font-size:14px;color:var(--text);">Beginner System</span>
+        <span style="font-size:13px;color:var(--text3);font-weight:600;">$200 value</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:rgba(200,255,0,0.1);border:2px solid rgba(200,255,0,0.3);border-radius:8px;margin-top:4px;">
+        <span style="font-size:15px;font-weight:700;color:var(--accent);">Total Value: $3,500+</span>
+        <span style="font-size:15px;font-weight:700;color:#fff;">Yours for $246</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GUARANTEE BLOCK -->
+  <div style="margin:20px auto 24px;max-width:500px;padding:20px;border:2px solid #00c853;border-radius:14px;background:rgba(0,200,83,0.06);text-align:center;">
+    <div style="font-size:18px;margin-bottom:8px;">&#x1F6E1;&#xFE0F;</div>
+    <div style="font-weight:700;color:#00c853;font-size:16px;margin-bottom:8px;">The Closer Guarantee</div>
+    <div style="font-size:14px;color:#ccc;line-height:1.6;">Use the Kit for 30 days. If you haven't closed a deal at your real rate, I will personally coach you until you do. No questions. No runaround.</div>
+  </div>
+
   <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=rate_calculator&utm_campaign=closer_kit&utm_content=post_loss_cta" target="_blank" class="kit-cta-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-kit-post-loss',value:246,currency:'USD'})">Get the UGC Closer Kit &rarr;</a>
   <div class="kit-cta-price"><s>$497</s> $246</div>
   <div class="kit-cta-countdown">Tax season sale ends March 31 &mdash; <span class="countdown-timer" id="countdownTimer"></span></div>
-  <div class="kit-cta-proof">Instant access &middot; 30-day guarantee &middot; One $800 deal covers the entire kit</div>
 </div>
 
 
@@ -1178,8 +1242,12 @@ function calculateRate() {
   var expMult = { beginner: 0.8, intermediate: 1.0, advanced: 1.35, expert: 1.7 };
   var expMultiplier = expMult[exp] || 1.0;
 
+  // AI training rights premium
+  var aiClause = document.getElementById('aiClause').value;
+  var aiPremium = aiClause === 'yes' ? 0.20 : 0; // +20% if AI training included
+
   // Calculate per-unit rate
-  var perUnit = Math.round((baseRate + usageRightsFee) * expMultiplier);
+  var perUnit = Math.round((baseRate + usageRightsFee) * expMultiplier * (1 + aiPremium));
 
   // Volume pricing
   var volDiscount = count >= 10 ? 0.10 : count >= 5 ? 0.08 : count >= 3 ? 0.05 : 0;
@@ -1215,19 +1283,19 @@ function calculateRate() {
   document.getElementById('perVidLabel').textContent = 'per ' + unitLabel;
 
   // === CLOSER SCORE (instant) ===
-  var closerScore = 4;
-  if (exp === 'advanced') closerScore += 2;
-  else if (exp === 'expert') closerScore += 3;
-  else if (exp === 'intermediate') closerScore += 1;
+  // Score starts LOW to create pain - most people get 2-4 without the Kit
+  var closerScore = 2;
+  if (exp === 'advanced') closerScore += 1;
+  else if (exp === 'expert') closerScore += 2;
   if (usageRights >= 180) closerScore += 1;
-  if (count >= 3) closerScore += 1;
-  if (finalPerUnit >= 500) closerScore += 1;
-  closerScore = Math.min(closerScore, 10);
+  if (count >= 5) closerScore += 1;
+  if (finalPerUnit >= 700) closerScore += 1;
+  closerScore = Math.min(closerScore, 6); // Cap at 6 without the Kit
 
   var tierLabels = {
-    10: 'Elite Closer', 9: 'Elite Closer', 8: 'Power Negotiator',
-    7: 'Confident Pitcher', 6: 'Rising Creator', 5: 'Rising Creator',
-    4: 'Getting Started', 3: 'Getting Started', 2: 'Beginner', 1: 'Beginner'
+    6: 'Almost There — missing the closing scripts', 5: 'Knows Their Worth — can\'t defend it yet',
+    4: 'Undercharging — and brands know it', 3: 'Leaving Money on the Table',
+    2: 'Flying Blind — guessing every rate', 1: 'Flying Blind — guessing every rate'
   };
 
   var scoreCard = document.getElementById('closerScoreCard');
@@ -1237,20 +1305,28 @@ function calculateRate() {
   document.getElementById('closerScoreBar').style.width = (closerScore * 10) + '%';
   document.getElementById('closerScorePercentile').textContent = 'Your Closer Score: ' + closerScore + '/10 — ' + (tierLabels[closerScore] || 'Rising Creator');
 
-  // === COMPARISON BAR (instant) ===
+  // === COMPARISON BAR ===
   var lowRate = Math.round(finalPerUnit * 0.4);
-  var maxForScale = finalPerUnit * 1.15;
-  var lowPct = Math.min(95, Math.round((lowRate / maxForScale) * 100));
-  var highPct = Math.min(95, Math.round((finalPerUnit / maxForScale) * 100));
+  var lowPct = 35;  // Fixed short bar for "most creators"
+  var highPct = 88; // Fixed long bar for "your rate" — visual contrast
 
   var compBar = document.getElementById('comparisonBar');
   compBar.style.display = 'block';
   var compLow = document.getElementById('compLow');
   var compHigh = document.getElementById('compHigh');
-  compLow.style.width = lowPct + '%';
+
+  // Reset widths to 0 first so the CSS transition animates
+  compLow.style.width = '0%';
+  compHigh.style.width = '0%';
   compLow.textContent = '$' + lowRate;
-  compHigh.style.width = highPct + '%';
   compHigh.textContent = '$' + finalPerUnit;
+
+  // Trigger reflow, then animate to target widths
+  void compBar.offsetWidth;
+  requestAnimationFrame(function() {
+    compLow.style.width = lowPct + '%';
+    compHigh.style.width = highPct + '%';
+  });
 
   // Build breakdown table
   var bd = document.getElementById('breakdown');
@@ -1259,6 +1335,9 @@ function calculateRate() {
   bh += '<tr class="usage-row"><td>Usage rights (' + usageLabel + ')</td><td>+$' + Math.round(usageRightsFee * expMultiplier) + '</td></tr>';
   if (exp !== 'beginner' && exp !== 'intermediate') {
     bh += '<tr><td>Experience premium (' + exp.charAt(0).toUpperCase() + exp.slice(1) + ')</td><td>&times;' + expMultiplier + '</td></tr>';
+  }
+  if (aiPremium > 0) {
+    bh += '<tr><td style="color:var(--accent)">AI training rights</td><td style="color:var(--accent)">+20%</td></tr>';
   }
   if (volumeDiscount > 0) {
     bh += '<tr><td style="color:var(--green)">Volume discount (' + count + ' ' + unitLabel + 's)</td><td style="color:var(--green)">-' + Math.round(volDiscount * 100) + '%</td></tr>';
@@ -1337,11 +1416,7 @@ function calculateRate() {
   document.getElementById('kitCta').classList.add('show');
 
   // Scroll to results
-  // Scroll to rate first, then after 2s scroll to loss section for gut punch
   resultArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  setTimeout(function() {
-    lossSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, 2000);
 }
 
 // SHARE RESULTS
