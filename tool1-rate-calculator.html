@@ -48,7 +48,7 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: 'DM Sans', -apple-system, sans-serif;
@@ -796,6 +796,534 @@ footer a { color: var(--text2); text-decoration: none; }
 .share-results-card .share-ig-prompt strong {
   color: var(--text, #e8e8e8);
 }
+
+/* ============================================================
+   COMPLETE MOBILE OVERHAUL - 375px target
+   ============================================================ */
+@media (max-width: 600px) {
+
+  /* GLOBAL: prevent horizontal scroll, base font size */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  body {
+    font-size: 14px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* GLOBAL NAV: account for fixed nav height in hero */
+  .nav {
+    padding: 10px 16px;
+  }
+  .nav-logo {
+    font-size: 16px;
+  }
+  .nav-cta {
+    padding: 10px 16px;
+    font-size: 12px;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* HERO: tight padding, account for global nav */
+  .hero {
+    padding: 80px 16px 28px;
+  }
+  .hero h1 {
+    font-size: 28px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .hero-sub {
+    font-size: 15px;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+  .hero-badge {
+    font-size: 11px;
+    padding: 5px 12px;
+    margin-bottom: 16px;
+  }
+  .hero-proof {
+    gap: 12px;
+    font-size: 12px;
+    margin-bottom: 16px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-arrow {
+    font-size: 24px;
+  }
+
+  /* PROOF STRIP in hero */
+  .proof-strip {
+    padding: 12px 16px;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .proof-strip-item {
+    font-size: 13px;
+  }
+
+  /* PROOF SECTION - testimonial cards */
+  .proof-section {
+    padding: 28px 16px 16px;
+  }
+  .proof-strip-title {
+    font-size: 12px;
+  }
+  .proof-strip-sub {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  .proof-cards {
+    gap: 10px;
+  }
+  .proof-card {
+    padding: 16px 14px 14px;
+    border-radius: 12px;
+  }
+  .proof-card-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .proof-avatar-placeholder {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+  .proof-user-name {
+    font-size: 13px;
+  }
+  .proof-handle {
+    font-size: 12px;
+  }
+  .proof-outcome {
+    font-size: 11px;
+    padding: 3px 8px;
+    margin-left: 0;
+    margin-top: 4px;
+    flex-basis: 100%;
+    text-align: center;
+  }
+  .proof-quote {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .proof-footer {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+  .proof-stats-bar {
+    gap: 16px;
+    padding: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .proof-stat-num {
+    font-size: 18px;
+  }
+  .proof-stat-label {
+    font-size: 10px;
+  }
+
+  /* SCREENSHOT PROOF GRID: 1 column on mobile */
+  .screenshot-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  /* INSTANT CALCULATOR SECTION */
+  .instant-section {
+    padding: 32px 16px;
+  }
+  .section-label {
+    font-size: 10px;
+  }
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+  .section-sub {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .free-badge {
+    font-size: 11px;
+    padding: 8px 14px;
+    margin-bottom: 16px;
+  }
+
+  /* CALCULATOR CONTAINER: single column */
+  .calc-container {
+    grid-template-columns: 1fr;
+    border-radius: 14px;
+  }
+  .calc-left {
+    padding: 20px 16px;
+    gap: 16px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .calc-right {
+    padding: 20px 16px;
+  }
+
+  /* FORM FIELDS: full width, 48px min-height */
+  .field label {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+  .field select {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 42px 12px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  /* CALC BUTTON */
+  .calc-btn {
+    min-height: 48px;
+    font-size: 15px;
+    padding: 14px;
+    border-radius: 8px;
+  }
+  .calc-btn-sub {
+    font-size: 11px;
+    margin-top: 8px;
+  }
+
+  /* RESULT PLACEHOLDER: remove huge gap */
+  .result-placeholder {
+    min-height: 0;
+    padding: 24px 0;
+  }
+  .result-placeholder .emoji {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+  .result-placeholder p {
+    font-size: 13px;
+  }
+
+  /* RESULT AREA */
+  .result-rate-label {
+    font-size: 11px;
+  }
+  .result-rate {
+    font-size: 42px;
+    word-break: break-word;
+  }
+  .result-per-unit {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  /* BREAKDOWN TABLE: fit 375px */
+  .breakdown-table {
+    border-radius: 8px;
+    table-layout: fixed;
+    width: 100%;
+  }
+  .breakdown-table td {
+    padding: 10px 10px;
+    font-size: 12px;
+    word-break: break-word;
+  }
+  .breakdown-table td:last-child {
+    width: 80px;
+    text-align: right;
+    font-size: 12px;
+  }
+  .breakdown-table tr.total-row td {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
+  .breakdown-table tr.total-row td:last-child {
+    font-size: 14px;
+  }
+
+  /* COMPARISON BAR */
+  .comparison-bar {
+    padding: 12px;
+    margin-top: 16px;
+  }
+  .comparison-label {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  .comparison-bars .comp-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .comparison-bars .comp-row-label {
+    min-width: auto;
+    font-size: 11px;
+  }
+  .comp-track {
+    height: 24px;
+  }
+  .comp-fill {
+    font-size: 11px;
+    padding-right: 8px;
+  }
+
+  /* DEAL VALUE BOX */
+  .deal-value-box {
+    padding: 16px;
+    margin-top: 12px;
+  }
+  .deal-value-label {
+    font-size: 10px;
+  }
+  .deal-value-num {
+    font-size: 28px;
+  }
+  .deal-value-detail {
+    font-size: 12px;
+  }
+
+  /* DEFENSE SCRIPT BOX */
+  .defense-box {
+    padding: 16px;
+    margin-top: 16px;
+    border-radius: 10px;
+  }
+  .defense-label {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  .defense-visible {
+    font-size: 13px;
+    padding: 12px 14px;
+    line-height: 1.6;
+  }
+  .defense-blurred {
+    font-size: 12px;
+  }
+  .defense-unlock-overlay {
+    padding: 12px;
+    gap: 8px;
+  }
+  .defense-unlock-overlay .lock-icon {
+    font-size: 20px;
+  }
+  .defense-unlock-overlay a {
+    font-size: 13px;
+    padding: 12px 18px;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+  }
+  .defense-unlock-overlay .unlock-sub {
+    font-size: 10px;
+  }
+
+  /* SHARE RESULTS CARD */
+  .share-results-card {
+    padding: 16px;
+    margin-top: 16px;
+  }
+  .share-results-card .share-title {
+    font-size: 14px;
+  }
+  .share-results-card .share-copy-btn {
+    min-height: 48px;
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+  .share-results-card .share-ig-prompt {
+    font-size: 12px;
+  }
+
+  /* COST OF INACTION */
+  .cost-of-inaction {
+    padding: 16px;
+    margin-top: 16px;
+    border-radius: 10px;
+  }
+  .coi-headline {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .coi-losses {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .coi-loss-item {
+    padding: 12px 10px;
+  }
+  .coi-loss-num {
+    font-size: 24px;
+  }
+  .coi-loss-label {
+    font-size: 10px;
+  }
+  .coi-emotional {
+    font-size: 13px;
+  }
+
+  /* VSL REDIRECT BRIDGE */
+  .vsl-redirect {
+    padding: 18px 14px;
+    margin-top: 16px;
+    border-radius: 12px;
+  }
+  .bridge-eyebrow {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+  .bridge-headline {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  .bridge-sub {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .vsl-redirect-btn {
+    padding: 14px 20px;
+    font-size: 14px;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .bridge-proof {
+    font-size: 11px;
+  }
+  .bridge-urgency {
+    font-size: 11px;
+  }
+
+  /* PROOF BAR (scrolling) */
+  .proof-bar {
+    padding: 14px 16px;
+  }
+  .proof-scroll {
+    gap: 32px;
+  }
+  .proof-item {
+    font-size: 12px;
+  }
+
+  /* SINGLE CTA SECTION */
+  .post-calc-cta {
+    padding: 28px 16px 0 !important;
+    max-width: 100% !important;
+  }
+  .post-calc-cta p {
+    font-size: 14px !important;
+  }
+  .post-calc-cta a[href*="stan.store"] {
+    font-size: 15px !important;
+    padding: 16px 16px !important;
+    min-height: 48px;
+    max-width: 100% !important;
+    border-radius: 10px !important;
+  }
+
+  /* DOWNSELL CTA (Pitch Vault) */
+  .downsell-cta {
+    margin: 24px 16px 0 !important;
+    padding: 20px 14px !important;
+    max-width: 100% !important;
+  }
+  .downsell-cta p {
+    font-size: 14px !important;
+  }
+  .downsell-cta a[href*="stan.store"] {
+    font-size: 14px !important;
+    padding: 14px 16px !important;
+    min-height: 48px;
+    max-width: 100% !important;
+  }
+
+  /* EMAIL GATE OVERLAY */
+  .email-gate {
+    padding: 16px;
+    align-items: flex-start;
+    padding-top: 60px;
+  }
+  .gate-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  .gate-badge {
+    font-size: 11px;
+    padding: 5px 12px;
+    margin-bottom: 16px;
+  }
+  .gate-card h1 {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+  .gate-card p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .gate-form {
+    gap: 10px;
+  }
+  .gate-input {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  .gate-submit {
+    width: 100%;
+    min-height: 48px;
+    font-size: 16px;
+    padding: 14px;
+    border-radius: 8px;
+  }
+  .gate-trust {
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 14px;
+    font-size: 11px;
+    align-items: center;
+  }
+
+  /* STICKY CTA: 48px+ tap target */
+  .sticky-cta {
+    padding: 10px 14px;
+  }
+  .sticky-cta-text {
+    font-size: 12px;
+  }
+  .sticky-cta-btn {
+    min-height: 48px;
+    padding: 12px 20px;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 8px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 24px 16px;
+    font-size: 12px;
+  }
+
+  /* Inline-styled sections: enforce max padding */
+  section, div {
+    max-width: 100vw;
+  }
+
+}
 </style>
 </head>
 <body>
@@ -1079,7 +1607,7 @@ footer a { color: var(--text2); text-decoration: none; }
     <!-- SCREENSHOT PROOF -->
     <div style="margin-top:24px;border-top:1px solid var(--border);padding-top:24px">
       <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;text-align:center">REAL SCREENSHOTS. REAL RESULTS.</div>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+      <div class="screenshot-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
         <div style="border-radius:10px;border:1px solid var(--border);overflow:hidden;background:#111"><img src="/assets/testimonial-final-2.png" alt="Ty - $150 to $800" style="width:100%;height:100%;object-fit:contain;display:block"></div>
         <div style="border-radius:10px;border:1px solid var(--border);overflow:hidden;background:#111"><img src="/assets/testimonial-candi.png" alt="Candi - rate calculator" style="width:100%;height:100%;object-fit:contain;display:block"></div>
         <div style="border-radius:10px;border:1px solid var(--border);overflow:hidden;background:#111"><img src="/assets/testimonial-milena-dm.jpeg" alt="Milena - 2 responses in 1 day" style="width:100%;height:100%;object-fit:contain;display:block"></div>
@@ -1278,7 +1806,7 @@ footer a { color: var(--text2); text-decoration: none; }
 </div>
 
 <!-- SINGLE CTA: Close the gap -->
-<div class="fade-up" style="max-width:600px;margin:0 auto;padding:40px 20px 0;text-align:center">
+<div class="fade-up post-calc-cta" style="max-width:600px;margin:0 auto;padding:40px 20px 0;text-align:center">
   <div style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px">NOW THAT YOU KNOW YOUR RATE</div>
   <p style="font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px;font-family:'Space Grotesk',sans-serif">Knowing your rate and getting brands to pay it are two different skills.</p>
   <p style="font-size:15px;color:var(--muted, #999);margin-bottom:24px;line-height:1.6">The creators closing $800+ deals aren't more talented. They have scripts, systems, and a 175+ brand database. Tax season sale ends March 31.</p>
@@ -1291,7 +1819,7 @@ footer a { color: var(--text2); text-decoration: none; }
 </div>
 
 <!-- DOWNSELL CTA: Pitch Vault -->
-<div class="fade-up" style="max-width:540px;margin:32px auto 0;padding:28px 24px;text-align:center;border:1.5px solid var(--accent);border-radius:14px;background:rgba(255,255,255,0.03)">
+<div class="fade-up downsell-cta" style="max-width:540px;margin:32px auto 0;padding:28px 24px;text-align:center;border:1.5px solid var(--accent);border-radius:14px;background:rgba(255,255,255,0.03)">
   <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted, #999);margin-bottom:10px">NOT READY FOR THE FULL SYSTEM?</div>
   <p style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;font-family:'Space Grotesk',sans-serif">Start with the Pitch Vault - $27</p>
   <p style="font-size:14px;color:var(--muted, #999);margin-bottom:20px;line-height:1.6">12 cold pitch templates with a 20% response rate. 60+ scripts. 175+ brand database. One reply pays for this 20x. The entry point to the Closer Method.</p>

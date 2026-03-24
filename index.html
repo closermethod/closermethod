@@ -87,7 +87,7 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: 'DM Sans', -apple-system, sans-serif;
@@ -441,15 +441,22 @@ footer a { color: var(--text3); }
 
 /* MOBILE */
 @media (max-width: 640px) {
-  /* 1. NAV below banner */
-  .nav { top: 40px; }
+  /* 1. Prevent horizontal overflow */
+  html, body { overflow-x: hidden; }
 
-  /* 2. Database table: hide Contact column, tighten cells */
+  /* 2. Body baseline: 14px min */
+  body { font-size: 14px; }
+
+  /* 3. NAV below banner */
+  .nav { top: 40px; padding: 10px 16px; }
+
+  /* 4. Database table: hide Contact column, tighten cells - no overflow */
   .db-table th:nth-child(4),
   .db-table td:nth-child(4) { display: none; }
   .db-table th, .db-table td { padding: 8px 10px; font-size: 12px; }
+  .db-section { padding: 20px 16px 60px; }
 
-  /* 4. Tax banner text: prevent multi-line wrap */
+  /* 5. Tax banner text: prevent multi-line wrap */
   #taxBanner {
     font-size: 11px !important;
     white-space: nowrap;
@@ -458,13 +465,13 @@ footer a { color: var(--text3); }
     padding: 10px 12px !important;
   }
 
-  /* 5. Value stack rows: reduce padding on mobile */
+  /* 6. Value stack rows: reduce padding on mobile */
   .value-stack-row,
   [style*="padding:18px 24px"] { padding: 12px 16px !important; }
 
-  /* 6. ALL buttons min-height 48px for tap targets */
+  /* 7. ALL buttons/inputs min-height 48px for tap targets */
   .nav-cta { padding: 10px 16px; font-size: 14px; min-height: 48px; display: inline-flex; align-items: center; }
-  .cta-btn { padding: 18px 32px; min-height: 48px; }
+  .cta-btn { padding: 18px 32px; min-height: 48px; width: 100%; display: flex; align-items: center; justify-content: center; }
   .gate-submit { min-height: 48px; }
   .gate-input { min-height: 48px; }
   .modal-submit { min-height: 48px; }
@@ -472,18 +479,69 @@ footer a { color: var(--text3); }
   .cm-compare-cta { min-height: 48px; display: flex; align-items: center; justify-content: center; }
   .db-cta-bar a { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; }
   button, [role="button"], input[type="submit"], a.cta-btn, a.cm-compare-cta { min-height: 48px; }
+  a[href*="stan.store"] { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; }
 
-  /* Existing mobile rules */
-  .db-cta-bar { flex-direction: column; gap: 12px; text-align: center; }
-  .why-cards { grid-template-columns: 1fr; }
-  .proof-stats { gap: 24px; }
-  .filter-bar { justify-content: center; }
+  /* 8. Font size minimums: headlines 24px+, body 14px+ */
+  h1, h2 { font-size: 24px; }
+  .hero h1 { font-size: clamp(26px, 6vw, 52px); }
+  .bridge h2 { font-size: clamp(24px, 5vw, 40px); }
+  p, .testimonial-quote, .why-card p, .step-desc, .bridge-sub { font-size: 14px; }
+  .testimonial-quote { font-size: 15px; }
+
+  /* 9. Max horizontal padding 20px */
   .hero { padding: 150px 20px 30px; }
+  .bridge { padding: 60px 20px; }
+  .why-rate { padding: 40px 20px; }
+  .testimonials { padding: 40px 20px 60px; }
+  .bottom-cta { padding: 40px 20px 80px; }
+
+  /* 10. Grids: single column on mobile */
+  .why-cards { grid-template-columns: 1fr; }
+  .proof-grid { grid-template-columns: 1fr !important; }
+  .is-this-grid { grid-template-columns: 1fr !important; }
+
+  /* 11. Flex rows: wrap to prevent overflow */
+  .proof-stats { gap: 24px; flex-wrap: wrap; }
+  .filter-bar { justify-content: center; flex-wrap: wrap; }
+  .db-cta-bar { flex-direction: column; gap: 12px; text-align: center; }
+  .bridge-steps { gap: 0; }
+
+  /* 12. Modal: full-width, proper tap targets */
   .modal-card { padding: 28px 20px; }
   .modal-trust { flex-wrap: wrap; gap: 10px; }
+
+  /* 13. FAQ accordion: 48px+ tap targets */
+  details summary { min-height: 48px; padding: 14px 16px !important; font-size: 14px; }
+  details div[style*="padding:0 24px"] { padding: 0 16px 16px !important; }
+
+  /* 14. Testimonials */
   .cta-note { font-size: 14px; }
   .testimonial-detail { font-size: 13px; }
-  .proof-grid { grid-template-columns: 1fr !important; }
+  .testimonial-card { padding: 20px 16px; }
+
+  /* 15. Email gate: full-width inputs */
+  .gate-card { padding: 0 8px; }
+  .gate-form { gap: 10px; }
+  .gate-trust { flex-wrap: wrap; gap: 10px; }
+
+  /* 16. Images: max-width 100% */
+  img { max-width: 100%; height: auto; }
+
+  /* 17. Comparison table: single column */
+  .cm-compare-grid { grid-template-columns: 1fr; max-width: 340px; }
+  .cm-compare-col.cm-compare-featured { order: -1; }
+  .cm-compare { padding: 0 16px; }
+  .cm-compare-header { padding: 24px 16px 20px; }
+  .cm-compare-features { padding: 16px; }
+  .cm-compare-footer { padding: 16px; }
+  .cm-compare-row { flex-wrap: wrap; gap: 4px; }
+
+  /* 18. Returning visitor floating buy bar */
+  body > div[style*="position:fixed"][style*="bottom:0"] { gap: 8px !important; font-size: 13px !important; padding: 10px 12px !important; flex-wrap: wrap !important; }
+  body > div[style*="position:fixed"][style*="bottom:0"] a { min-height: 48px !important; display: inline-flex !important; align-items: center !important; }
+
+  /* 19. Authority section: stack on mobile */
+  section[style*="display:flex"][style*="gap:32px"] { flex-direction: column; align-items: center; text-align: center; }
 }
 
 /* EMAIL GATE OVERLAY */

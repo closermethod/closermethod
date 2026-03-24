@@ -25,7 +25,7 @@ fbq('track', 'ViewContent', {content_name:'vsl-closer-kit',content_type:'product
 <style>
 :root{--bg:#0a0a0a;--bg2:#111;--bg3:#1a1a1a;--card:#141414;--border:#222;--border2:#333;--text:#e8e8e8;--text2:#999;--text3:#666;--accent:#c8ff00;--accent2:#a8d900;--red:#ff4444;--green:#00c853;--blue:#1d9bf0}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:'DM Sans',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+body{font-family:'DM Sans',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}
 h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif}
 .container{max-width:720px;margin:0 auto;padding:0 20px 80px}
 .top-bar{text-align:center;padding:14px 20px;font-size:12px;font-weight:600;color:var(--text3);letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--border)}
@@ -123,55 +123,72 @@ h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif}
 .gate-trust .ck{color:var(--accent)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:600px){
-/* 4. Prevent horizontal scroll */
+/* 1. Prevent horizontal scroll */
 html,body{overflow-x:hidden}
-body{padding-bottom:70px}
+
+/* 2. Body baseline: 14px min, padding for sticky */
+body{padding-bottom:70px;font-size:14px}
 .container{padding:0 16px 60px}
 
-/* 1. Reframe section: reduce padding on mobile */
-.reframe{padding:24px 16px}
+/* 3. Font size minimums */
+p,span,div{font-size:inherit}
+h1,h2,.video-headline{font-size:24px}
+.video-headline{font-size:clamp(24px,6vw,44px)}
 
-/* 2. Sticky CTA bar: tighten guarantee text */
+/* 4. Reframe section: reduce padding on mobile */
+.reframe{padding:24px 16px}
+.reframe-text{font-size:clamp(18px,4vw,24px)}
+.reframe-sub{font-size:14px}
+
+/* 5. Sticky CTA bar: 48px+ tap target, no content overlap */
 .sticky-cta{flex-wrap:wrap;padding:8px 12px;gap:4px}
 .sticky-cta>div:last-child{font-size:9px;margin-top:0;width:100%;text-align:center}
 .sticky-cta-btn{min-height:48px;padding:14px 22px;font-size:14px}
+.sticky-cta-price{font-size:18px}
+.sticky-cta-timer{font-size:10px}
 
-/* 3. All CTA buttons/links: 48px min tap targets */
-.cta-btn{min-height:48px;font-size:17px}
+/* 6. All CTA buttons/links: 48px min tap targets */
+.cta-btn{min-height:48px;font-size:17px;padding:18px 24px;width:100%;display:flex;align-items:center;justify-content:center}
 .gate-submit{min-height:48px}
 .gate-input{min-height:48px}
 
-/* 5. FAQ: adequate padding and tap targets */
+/* 7. FAQ: adequate padding and tap targets */
 .faq-item summary{min-height:48px;padding:14px 16px;font-size:14px}
-.faq-answer{padding:0 16px 16px;font-size:13px}
+.faq-answer{padding:0 16px 16px;font-size:14px}
 
-/* 6. Proof cards: ensure no overflow at 375px */
+/* 8. Proof cards: ensure no overflow at 375px */
 .proof-cards{display:flex;flex-direction:column;gap:12px}
 .proof-card{padding:18px 16px 16px}
 .proof-card-header{flex-wrap:wrap;gap:8px}
 .proof-outcome{font-size:11px;padding:3px 10px;margin-left:0;margin-top:4px}
 .proof-stats-bar{flex-wrap:wrap;gap:14px;padding:12px 10px}
 .proof-stat-num{font-size:17px}
+.proof-footer{flex-wrap:wrap;gap:6px}
 
-/* 7. Countdown timer: fit on 375px */
+/* 9. Countdown timer: fit on 375px */
 .countdown-timer{padding:8px 14px;gap:4px}
 .countdown-digit{font-size:24px;min-width:34px}
 .countdown-sep{font-size:22px}
 .countdown-unit{font-size:9px}
+.countdown-label{font-size:11px}
 
-/* 8. Video embed: responsive (already handled by wrapper, reinforce) */
+/* 10. Video embed: responsive */
 .video-wrapper{border-radius:10px}
 .video-wrapper iframe,.video-wrapper video{border-radius:10px}
 
-/* 9. Email gate: full-width inputs with proper tap targets */
+/* 11. Email gate: full-width inputs with proper tap targets */
 .gate-card{padding:0 8px}
 .gate-form{padding:16px}
 .gate-card h2{font-size:24px}
 .gate-sub{font-size:14px}
+.gate-trust{flex-wrap:wrap;gap:10px}
 
-/* 10. General mobile polish */
+/* 12. Images: max-width 100% */
+img{max-width:100%;height:auto}
+
+/* 13. General mobile polish */
 .cta-trust{flex-wrap:wrap;gap:12px}
-.mini-proof-bar{gap:4px;padding:10px 12px}
+.mini-proof-bar{gap:4px;padding:10px 12px;flex-wrap:wrap}
 .mini-proof-bar .mini-proof-item{font-size:11px}
 .proof-quote{font-size:14px}
 .proof-handle{font-size:12px}
@@ -183,16 +200,24 @@ body{padding-bottom:70px}
 .video-section{padding:32px 0 28px}
 .video-sub{font-size:14px}
 .cta-price-row{gap:10px}
-.reframe-text{font-size:clamp(18px,4vw,24px)}
-.reframe-sub{font-size:14px}
+.cta-new{font-size:clamp(40px,10vw,64px)}
+.cta-old{font-size:20px}
+.cta-anchor{font-size:14px}
+.top-bar{font-size:11px;padding:10px 12px}
 .vsl-footer{font-size:11px;padding:20px 8px}
 
-/* Pitch Vault downsell button tap target */
-.container a[href*="pitch-vault"]{min-height:48px !important;display:inline-flex !important;align-items:center !important;justify-content:center !important}
+/* 14. Pitch Vault downsell button tap target */
+.container a[href*="pitch-vault"]{min-height:48px !important;display:inline-flex !important;align-items:center !important;justify-content:center !important;width:100%}
 /* Value stack items: prevent overflow on narrow screens */
 .container [style*="justify-content:space-between"][style*="padding:14px 0"]{flex-wrap:wrap;gap:4px}
 /* Product walkthrough video wrapper */
 .container [style*="padding-bottom:51.58%"]{border-radius:10px !important}
+
+/* 15. All anchor/button tap targets */
+a[href*="stan.store"]{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+
+/* 16. Inline flex rows: wrap on mobile */
+.container div[style*="display:flex"][style*="gap:12px"]{flex-wrap:wrap}
 }
 @media(min-width:601px){.sticky-cta{display:none !important}}
 </style>
@@ -430,7 +455,7 @@ body{padding-bottom:70px}
   .faq-item{background:var(--card, #141414);border:1px solid var(--border, #222);border-radius:12px;overflow:hidden;transition:border-color .2s;}
   .faq-item:hover,.faq-item[open]{border-color:var(--border2, #333);}
   .faq-item[open]{background:var(--bg3, #1a1a1a);}
-  .faq-item summary{padding:18px 20px;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--text, #e8e8e8);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;-webkit-user-select:none;user-select:none;}
+  .faq-item summary{padding:18px 20px;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--text, #e8e8e8);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;-webkit-user-select:none;user-select:none;min-height:48px;}
   .faq-item summary::-webkit-details-marker{display:none;}
   .faq-item summary::after{content:'+';font-size:20px;font-weight:700;color:var(--accent, #c8ff00);flex-shrink:0;transition:transform .2s;}
   .faq-item[open] summary::after{content:'\2212';}

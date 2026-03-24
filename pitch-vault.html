@@ -30,7 +30,8 @@ fbq('track', 'ViewContent', {content_name:'pitch-vault',content_type:'product',v
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#0a0a0a;--surface:#141414;--surface2:#1a1a1a;--border:#222;--text:#e8e8e8;--text2:#999;--text3:#666;--green:#c8ff00;--green-dark:#a8d900;--amber:#F59E0B;--red:#ff4444;--font:'DM Sans',system-ui,sans-serif;--serif:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace}
-body{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.7;overflow-x:hidden}
+html,body{overflow-x:hidden}
+body{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.7}
 a{color:var(--green);text-decoration:none}
 .wrap{max-width:640px;margin:0 auto;padding:0 24px}
 
@@ -161,19 +162,65 @@ a{color:var(--green);text-decoration:none}
 .sticky-cta button{width:100%;max-width:400px;padding:14px;background:var(--green);color:var(--bg);font-weight:800;font-size:15px;border:none;border-radius:10px;cursor:pointer;font-family:var(--font)}
 
 @media(max-width:600px){
-  .hero{padding:100px 0 36px}
-  .hero h1{font-size:28px}
-  .template-card{flex-direction:column;gap:8px}
-  .proof-bar{gap:20px}
+  /* 1. Overflow */
+  html,body{overflow-x:hidden}
+  /* 2. All buttons/inputs min 48px */
+  .form-btn,.gate-submit,.form-card input[type="text"],.form-card input[type="email"],
+  .gate-input,button,input[type="text"],input[type="email"]{min-height:48px}
+  /* 3. Font sizes: body 14px min, headlines 24px min */
+  body{font-size:14px}
+  .hero h1{font-size:clamp(24px,7vw,48px)}
+  .section-title{font-size:24px}
+  .final-cta h2{font-size:24px}
+  .gate-card h2.gate-h{font-size:clamp(24px,5vw,40px)}
+  .creator-name{font-size:20px}
+  .featured-card h4{font-size:16px}
+  /* 4. Horizontal overflow prevention */
+  img{max-width:100%;height:auto}
+  .wrap,.faq-section{max-width:100vw;overflow-x:hidden}
+  /* 5. Padding max 20px horizontal */
+  .wrap{padding:0 20px}
+  .faq-section{padding:0 20px 48px}
+  .form-card{padding:24px 16px}
+  .objection{padding:24px 16px}
+  .featured-card{padding:24px 16px}
+  .template-card{padding:16px}
+  .script-card{padding:14px 16px}
+  /* 6. Sticky CTA 48px+ */
+  .sticky-cta{display:block;padding:12px 16px;padding-bottom:max(12px,env(safe-area-inset-bottom))}
+  .sticky-cta a{min-height:48px;display:flex;align-items:center;justify-content:center;font-size:15px;padding:14px 12px}
+  .sticky-cta button{min-height:48px}
+  /* 7. Testimonial cards stack, no overflow */
+  .template-card{flex-direction:column;gap:8px;overflow:hidden;word-wrap:break-word}
+  /* 8. Price displays readable */
+  .hero-sub{font-size:15px}
+  /* 9. Countdown / proof bar fits 375px */
+  .proof-bar{gap:16px;padding:24px 0}
+  .proof-num{font-size:18px}
+  .proof-label{font-size:10px}
+  /* 10. Value stack / compare items don't overflow */
+  .compare{max-width:100%;overflow-x:hidden}
   .compare-label{font-size:12px}
-  .compare-them,.compare-you{width:64px;font-size:12px}
-  .compare-row{padding:12px 12px}
-  .form-card{padding:24px 20px}
-  .form-btn,.gate-submit{min-height:48px}
-  .sticky-cta{display:block}
-  .sticky-cta a{min-height:48px;display:flex;align-items:center;justify-content:center}
-  .faq-section summary{min-height:48px}
-  .footer{padding-bottom:80px}
+  .compare-them,.compare-you{width:56px;font-size:11px}
+  .compare-row{padding:12px 10px}
+  /* 11. FAQ accordion 48px tap targets */
+  .faq-section summary{min-height:48px;padding:16px 18px;font-size:14px}
+  .faq-section .faq-answer{padding:0 18px 16px;font-size:14px}
+  /* 12. Creator/credibility text wraps */
+  .creator p{font-size:13px;word-wrap:break-word;overflow-wrap:break-word}
+  .creator-brands{font-size:10px;word-wrap:break-word;overflow-wrap:break-word;line-height:1.8}
+  /* 13. Email capture form full width, 48px */
+  .gate-input{width:100%;min-height:48px;font-size:16px}
+  .gate-submit{width:100%;min-height:52px;font-size:16px}
+  .form-card input[type="text"],.form-card input[type="email"]{width:100%;min-height:48px;font-size:16px}
+  /* 14. CTA buttons full width with padding */
+  .form-btn{width:100%;min-height:52px;padding:16px 20px;font-size:16px}
+  /* 15. Hero padding for fixed nav */
+  .hero{padding:100px 0 36px}
+  /* Footer room for sticky */
+  .footer{padding-bottom:100px}
+  /* Also-included grid single column */
+  .bonus-list li{word-wrap:break-word}
 }
 
 /* EMAIL GATE OVERLAY */
@@ -407,7 +454,7 @@ a{color:var(--green);text-decoration:none}
       <div class="objection-q">"Why only $27?"</div>
       <div class="objection-a">Because the pitch is step one. <span>Closing is step two.</span> These templates get brands to reply, but when they offer you $150/video, you'll need the negotiation scripts. That's what the UGC Closer Kit is for. The vault is priced so one reply pays for it 20x over.</div>
       <div style="margin-top:24px;text-align:center;">
-        <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=pitch_vault&utm_campaign=closer_kit&utm_content=objection_buster" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-kit-from-pitch-vault',value:197,currency:'USD'})" style="display:inline-block;padding:14px 28px;background:var(--accent, #c8ff00);color:#000;font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:800;text-decoration:none;border-radius:10px;transition:.15s;">Start Closing $800+ Deals - $197</a>
+        <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=pitch_vault&utm_campaign=closer_kit&utm_content=objection_buster" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-kit-from-pitch-vault',value:197,currency:'USD'})" style="display:block;width:100%;padding:14px 20px;min-height:48px;background:var(--accent, #c8ff00);color:#000;font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:800;text-decoration:none;border-radius:10px;transition:.15s;text-align:center;">Start Closing $800+ Deals - $197</a>
         <div style="font-size:12px;color:var(--text3, #666);margin-top:8px;"><s>$497</s> $197 tax season sale. Ends March 31.</div>
       </div>
     </div>
