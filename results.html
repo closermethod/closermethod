@@ -13,10 +13,11 @@
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','35298849146380570');fbq('track','PageView');
 </script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"/></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#0a0a0a;--surface:#141414;--border:#1e1e1e;--text:#e8e8e8;--text2:#999;--text3:#888;--accent:#c8ff00;--red:#ff4d4d;--font:'DM Sans',sans-serif;--heading:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace}
-body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-bottom:100px}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 .wrap{max-width:640px;margin:0 auto;padding:0 20px}
 
 /* Hero */
@@ -31,7 +32,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
 .result-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden}
 .result-card-header{padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
 .result-card-name{font-weight:700;font-size:15px}
-.result-card-handle{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.result-card-handle{font-family:var(--mono);font-size:12px;color:var(--accent);text-decoration:none}
+a.result-card-handle:hover{text-decoration:underline}
 .result-card-outcome{display:inline-block;font-family:var(--mono);font-size:12px;background:rgba(200,255,0,.1);color:var(--accent);padding:4px 10px;border-radius:6px;font-weight:700}
 .result-card img{width:100%;display:block}
 .result-card-caption{padding:14px 20px;font-size:13px;color:var(--text2);border-top:1px solid var(--border)}
@@ -51,17 +53,21 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
 @media(max-width:640px){
   .hero{padding:80px 0 32px}
   .sticky{display:block}
+  body{padding-bottom:100px}
+}
+@media(min-width:641px){
+  .sticky{display:none!important}
 }
 </style>
 </head>
 <body>
-<script src="global-nav.js"></script>
+<script src="/global-nav.js"></script>
 
 <div class="wrap">
   <div class="hero">
     <div class="hero-badge">REAL RESULTS</div>
     <h1>These creators stopped <em>undercharging.</em></h1>
-    <p class="hero-sub">Real screenshots. Real DMs. Real X posts. Nothing fabricated. Click any handle to verify.</p>
+    <p class="hero-sub">Real screenshots. Real DMs. Real X posts. Nothing fabricated.</p>
   </div>
 
   <div class="results-grid">
@@ -71,7 +77,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
       <div class="result-card-header">
         <div>
           <div class="result-card-name">Ty</div>
-          <div class="result-card-handle">@Ty__Murph</div>
+          <a href="https://x.com/Ty__Murph" target="_blank" rel="noopener" class="result-card-handle">@Ty__Murph</a>
         </div>
         <div class="result-card-outcome">$150 → $800</div>
       </div>
@@ -84,7 +90,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
       <div class="result-card-header">
         <div>
           <div class="result-card-name">Candi</div>
-          <div class="result-card-handle">@CandiandHerGoldens</div>
+          <a href="https://x.com/CandiandHerGoldens" target="_blank" rel="noopener" class="result-card-handle">@CandiandHerGoldens</a>
         </div>
         <div class="result-card-outcome">$650 → $4,750</div>
       </div>
@@ -97,7 +103,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
       <div class="result-card-header">
         <div>
           <div class="result-card-name">Milena</div>
-          <div class="result-card-handle">@UGCbyMilenaVonX</div>
+          <a href="https://x.com/UGCbyMilenaVonX" target="_blank" rel="noopener" class="result-card-handle">@UGCbyMilenaVonX</a>
         </div>
         <div class="result-card-outcome">2 replies in 1 day</div>
       </div>
@@ -110,7 +116,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
       <div class="result-card-header">
         <div>
           <div class="result-card-name">Milena</div>
-          <div class="result-card-handle">@UGCbyMilenaVonX</div>
+          <a href="https://x.com/UGCbyMilenaVonX" target="_blank" rel="noopener" class="result-card-handle">@UGCbyMilenaVonX</a>
         </div>
         <div class="result-card-outcome">"Learnt from the BEEST!"</div>
       </div>
@@ -136,7 +142,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
       <div class="result-card-header">
         <div>
           <div class="result-card-name">Jamie</div>
-          <div class="result-card-handle">@jamiejohnsonugc</div>
+          <a href="https://x.com/jamiejohnsonugc" target="_blank" rel="noopener" class="result-card-handle">@jamiejohnsonugc</a>
         </div>
         <div class="result-card-outcome">"SO KIND of you!!!!"</div>
       </div>
@@ -149,7 +155,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
       <div class="result-card-header">
         <div>
           <div class="result-card-name">Jamie</div>
-          <div class="result-card-handle">@jamiejohnsonugc</div>
+          <a href="https://x.com/jamiejohnsonugc" target="_blank" rel="noopener" class="result-card-handle">@jamiejohnsonugc</a>
         </div>
         <div class="result-card-outcome">Soo helpful</div>
       </div>
@@ -175,7 +181,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
       <div class="result-card-header">
         <div>
           <div class="result-card-name">Jen E</div>
-          <div class="result-card-handle">@explorewithjene</div>
+          <a href="https://x.com/explorewithjene" target="_blank" rel="noopener" class="result-card-handle">@explorewithjene</a>
         </div>
         <div class="result-card-outcome">Kit buyer</div>
       </div>
@@ -188,7 +194,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
       <div class="result-card-header">
         <div>
           <div class="result-card-name">Jen E</div>
-          <div class="result-card-handle">@explorewithjene</div>
+          <a href="https://x.com/explorewithjene" target="_blank" rel="noopener" class="result-card-handle">@explorewithjene</a>
         </div>
         <div class="result-card-outcome">Wants to be affiliate</div>
       </div>

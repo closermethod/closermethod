@@ -8,24 +8,26 @@ if(document.body.getAttribute('data-no-nav')==='true')return;
 // === TAX SEASON BANNER ===
 var bannerStyle=document.createElement('style');
 bannerStyle.textContent=`
-.cm-tax-banner{position:fixed;top:0;left:0;right:0;z-index:1001;background:linear-gradient(90deg,#1a0000,#2a0000,#1a0000);border-bottom:1px solid rgba(255,68,68,0.4);padding:10px 24px;text-align:center;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-.cm-tax-banner-text{font-size:13px;font-weight:700;color:#ff4444;letter-spacing:0.5px}
+.cm-tax-banner{position:fixed;top:0;left:0;right:0;z-index:1001;background:linear-gradient(90deg,#1a0000,#2a0000,#1a0000);border-bottom:1px solid rgba(255,68,68,0.4);padding:8px 20px;text-align:center;font-family:'DM Sans',sans-serif}
+.cm-tax-banner-inner{display:flex;align-items:center;justify-content:center;gap:10px;max-width:900px;margin:0 auto}
+.cm-tax-banner-text{font-size:12px;font-weight:600;color:#ff4444}
 .cm-tax-banner-text strong{color:#fff}
-.cm-tax-banner-timer{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:#ff4444;background:rgba(255,68,68,0.15);border:1px solid rgba(255,68,68,0.3);padding:4px 12px;border-radius:6px;letter-spacing:1px}
-.cm-tax-banner-cta{font-size:12px;font-weight:700;color:#0a0a0a;background:#ff4444;padding:5px 14px;border-radius:6px;text-decoration:none;transition:all .2s;white-space:nowrap}
-.cm-tax-banner-cta:hover{background:#ff6666;transform:translateY(-1px)}
-@media(max-width:600px){.cm-tax-banner{padding:8px 16px;gap:8px}.cm-tax-banner-text{font-size:11px}.cm-tax-banner-timer{font-size:12px;padding:3px 8px}}
+.cm-tax-banner-text s{color:#666;font-weight:400}
+.cm-tax-banner-timer{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#ff4444;white-space:nowrap}
+.cm-tax-banner-cta{font-size:11px;font-weight:700;color:#fff;background:#ff4444;padding:4px 12px;border-radius:4px;text-decoration:none;white-space:nowrap;flex-shrink:0}
+.cm-tax-banner-cta:hover{background:#ff6666}
+@media(max-width:600px){.cm-tax-banner{padding:6px 12px}.cm-tax-banner-inner{flex-wrap:wrap;gap:6px}.cm-tax-banner-text{font-size:11px;width:100%}.cm-tax-banner-timer{font-size:11px}.cm-tax-banner-cta{font-size:11px;padding:4px 10px}}
 `;
 document.head.appendChild(bannerStyle);
 
 var banner=document.createElement('div');
 banner.className='cm-tax-banner';
 banner.id='cmTaxBanner';
-banner.innerHTML=`
-<span class="cm-tax-banner-text">TAX SEASON SALE: UGC Closer Kit <strong>$246</strong> <s style="color:#666;font-weight:400">$497</s> — Ends March 31</span>
-<span class="cm-tax-banner-timer" id="cmBannerCountdown">--d --h --m --s</span>
-<a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale" class="cm-tax-banner-cta" target="_blank">GRAB IT →</a>
-`;
+banner.innerHTML=`<div class="cm-tax-banner-inner">
+<span class="cm-tax-banner-text">TAX SALE: Kit <strong>$246</strong> <s>$497</s></span>
+<span class="cm-tax-banner-timer" id="cmBannerCountdown">--d --h --m</span>
+<a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale" class="cm-tax-banner-cta" target="_blank">GET IT →</a>
+</div>`;
 document.body.insertBefore(banner,document.body.firstChild);
 
 // Banner countdown

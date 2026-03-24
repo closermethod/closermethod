@@ -367,8 +367,8 @@ a { color:var(--accent); }
   /* 1. Prevent horizontal overflow */
   html, body { overflow-x:hidden; }
 
-  /* 2. Body font minimum 14px + bottom padding for sticky bar */
-  body { font-size:14px; padding-bottom:70px; }
+  /* 2. Body font minimum 14px */
+  body { font-size:14px; }
 
   /* 3. Max horizontal padding 20px */
   .page { padding:0 16px; }
@@ -379,8 +379,8 @@ a { color:var(--accent); }
   .top-bar-text { font-size:12px; line-height:1.4; }
   .top-bar-timer { font-size:13px; }
 
-  /* HERO */
-  .hero { padding:140px 0 30px; }
+  /* HERO: extra top padding to clear stacked top-bar (~120px tall) below global nav (56px) */
+  .hero { padding:190px 0 30px; }
   .hero h1 { font-size:28px; letter-spacing:-1px; }
   .hero-sub { font-size:15px; }
   .hero-proof { gap:10px; font-size:12px; flex-wrap:wrap; justify-content:center; }

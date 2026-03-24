@@ -34,8 +34,8 @@ fbq('track', 'ViewContent', {content_name: 'vault-lp', value: 246, currency: 'US
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#0a0a0a;--surface:#141414;--border:#1e1e1e;--text:#e8e8e8;--text2:#999;--text3:#888;--accent:#c8ff00;--red:#ff4d4d;--font:'DM Sans',sans-serif;--heading:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace}
-html,body{overflow-x:hidden}
-body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+html{overflow-x:hidden}
+body{overflow-x:hidden;background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 
 .wrap{max-width:560px;margin:0 auto;padding:0 20px}
 .section{padding:56px 0;margin-bottom:24px}
@@ -43,8 +43,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
 /* ===== TESTIMONIALS (stacked vertically) ===== */
 .proof-banner{background:var(--surface);border-bottom:1px solid var(--border);padding:20px;margin-bottom:24px}
 .proof-banner-label{font-family:var(--mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:16px;text-align:center}
-.proof-stack{display:flex;flex-direction:column;gap:0;max-width:560px;margin:0 auto}
-.proof-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px}
+.proof-stack{display:flex;flex-direction:column;gap:20px;max-width:560px;margin:0 auto}
+.proof-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:20px}
 .proof-card-quote{font-size:14px;color:#ccc;line-height:1.45;margin-bottom:8px}
 .proof-card-quote strong{color:var(--accent)}
 .proof-card-name{font-family:var(--mono);font-size:12px;color:var(--accent)}
@@ -103,7 +103,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
 
 /* ===== CTA ===== */
 .cta-section{text-align:center;padding-top:32px}
-.cta-price-old{font-size:20px;color:var(--text3);text-decoration:line-through;margin-right:8px}
+.cta-price-old{font-size:20px;color:var(--text3);text-decoration:line-through}
 .cta-price-new{font-family:var(--heading);font-size:clamp(48px,12vw,64px);font-weight:800;color:#fff;display:block;margin:4px 0 4px}
 .cta-note{font-size:15px;color:var(--text2);margin-bottom:24px}
 .cta-note strong{color:var(--red)}
@@ -168,6 +168,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
   .loss-col{margin-bottom:12px}
   .gate-inner{padding:0 4px}
 }
+/* Consolidated mobile overrides below */
 
 /* ===== STICKY CTA ===== */
 .sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--bg);border-top:1px solid var(--border);padding:12px 20px;padding-bottom:max(12px,env(safe-area-inset-bottom))}
@@ -179,8 +180,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
 
 /* ===== MOBILE (375px) ===== */
 @media(max-width:639px){
-  /* 1. Overflow */
-  html,body{overflow-x:hidden}
   /* 2. Buttons/inputs min 48px */
   .cta-btn,.inline-capture-btn,.upsell-btn,button,input[type="text"],input[type="email"]{min-height:48px}
   /* 3. Font sizes */
@@ -195,8 +194,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
   .inline-capture{padding:24px 16px}
   .upsell{padding:24px 16px}
   /* 7. Testimonial cards stack */
-  .proof-stack{flex-direction:column;gap:0;overflow:hidden}
-  .proof-card{max-width:100%;overflow:hidden;word-wrap:break-word;margin-bottom:16px;padding:20px 16px}
+  .proof-stack{flex-direction:column;gap:16px;overflow:hidden}
+  .proof-card{max-width:100%;overflow:hidden;word-wrap:break-word;padding:20px 16px}
   /* 8. Price displays */
   .cta-price-new{font-size:clamp(42px,10vw,64px)}
   .cta-price-old{font-size:18px}
@@ -335,7 +334,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
   <p style="font-size:14px;color:#999;">Send them this page. The 3 pitches above are free forever.</p>
 </div>
       <p style="font-size:14px;color:var(--text2);text-align:center;margin-top:24px">Those 3 pitches alone will get you replies. But to <strong style="color:#fff">close at $800+</strong>, you need the full system &darr;</p>
-      <ul class="solution-list" style="display:none">
+      <ul class="solution-list">
         <li class="solution-item">
           <span class="solution-check">&#10003;</span>
           <div><div class="solution-title">9 Pitch Templates</div><div class="solution-desc">Cold DM, email, LinkedIn, follow-up, re-engagement. Copy, customize, send.</div></div>
@@ -381,9 +380,9 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
       <div class="loss-math">
         <p>Average brand deal: <strong style="color:#fff">$500</strong></p>
         <p>10 pitches/week &times; 20% reply rate = 2 opportunities</p>
-        <p>You're currently getting <strong style="color:var(--red)">zero</strong>.</p>
-        <div class="loss-monthly">-$400/month in missed deals</div>
-        <div class="loss-yearly">-$4,800/year</div>
+        <p>Close just 1 deal/month you're currently missing:</p>
+        <div class="loss-monthly">-$500/month in missed deals</div>
+        <div class="loss-yearly">-$6,000/year</div>
         <p class="loss-context">That's <span>rent money</span>. A <span>vacation</span>. A <span>car payment</span>.<br>Gone &mdash; because your pitches sound like everyone else's.</p>
       </div>
     </div>
@@ -416,11 +415,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
       <div class="value-stack">
         <div class="value-stack-item"><span>Never freeze when a brand pushes back on your rate</span><span>$500 value</span></div>
         <div class="value-stack-item"><span>Sound like a pro in every email without overthinking</span><span>$500 value</span></div>
-        <div class="value-stack-item"><span>175+ brands with emails, budgets &amp; niches — skip 10+ hrs of research</span><span>$500+ value</span></div>
-        <div class="value-stack-item"><span>DMs that get replies, not left on read</span><span>$300 value</span></div>
-        <div class="value-stack-item"><span>Know exactly where every deal stands</span><span>$300 value</span></div>
-        <div class="value-stack-item"><span>Walk into every rate conversation with confidence</span><span>$300 value</span></div>
-        <div class="value-stack-item"><span>Go from 'I just started' to your first paid deal</span><span>$200 value</span></div>
+        <div class="value-stack-item"><span>175+ brands with emails, budgets &amp; niches — skip 10+ hrs of research</span><span>$750 value</span></div>
+        <div class="value-stack-item"><span>DMs that get replies, not left on read</span><span>$500 value</span></div>
+        <div class="value-stack-item"><span>Know exactly where every deal stands</span><span>$500 value</span></div>
+        <div class="value-stack-item"><span>Walk into every rate conversation with confidence</span><span>$500 value</span></div>
+        <div class="value-stack-item"><span>Go from 'I just started' to your first paid deal</span><span>$250 value</span></div>
         <div class="value-stack-total"><span>Total Value</span><span>$3,500+</span></div>
       </div>
 
@@ -489,7 +488,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({email_address:em,first_name:fn,tags:['vault-subscriber','pitch-funnel']}),
       mode:'no-cors'
-    }).finally(function(){
+    }).then(function(){
+      gate.classList.add('hidden');
+      document.body.style.overflow='';
+      if(typeof fbq==='function')fbq('track','Lead',{content_name:'vault-gate'});
+    }).catch(function(){
+      // Still close gate on error since no-cors responses look like errors
       gate.classList.add('hidden');
       document.body.style.overflow='';
       if(typeof fbq==='function')fbq('track','Lead',{content_name:'vault-gate'});
@@ -515,7 +519,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({email_address:em,first_name:fn,tags:['vault-subscriber','pitch-funnel']}),
       mode:'no-cors'
-    }).finally(function(){
+    }).then(function(){
+      inlineForm.style.display='none';
+      inlineSuccess.style.display='block';
+      if(typeof fbq==='function')fbq('track','Lead',{content_name:'vault-inline'});
+    }).catch(function(){
+      // no-cors responses trigger catch; treat as success
       inlineForm.style.display='none';
       inlineSuccess.style.display='block';
       if(typeof fbq==='function')fbq('track','Lead',{content_name:'vault-inline'});
@@ -532,6 +541,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
       document.getElementById('cd-hours').textContent='00';
       document.getElementById('cd-mins').textContent='00';
       document.getElementById('cd-secs').textContent='00';
+      var cw=document.getElementById('countdownWrap');
+      if(cw)cw.style.display='none';
       return;
     }
     var d=Math.floor(diff/86400000);
