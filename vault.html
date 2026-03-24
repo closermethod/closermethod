@@ -244,244 +244,162 @@ body{overflow-x:hidden;background:var(--bg);color:var(--text);font-family:var(--
 </head>
 <body>
 
-<!-- ===== EMAIL GATE ===== -->
+<!-- ===== 1. EMAIL GATE ===== -->
 <div class="gate" id="emailGate">
   <div class="gate-inner">
-    <h1 class="gate-headline">Your DMs are collecting dust because you don't know what to say.</h1>
-    <p style="font-size:15px;color:var(--text2);line-height:1.5;margin-bottom:24px;max-width:400px;margin-left:auto;margin-right:auto">3 free pitch templates that actually get brand replies. Built from $1.2M in enterprise sales. Not recycled influencer tips.</p>
-    <div class="gate-proof">
-      <div class="gate-proof-card">
-        <div class="gate-outcome">$150 &rarr; $800</div>
-        <p class="gate-quote">"Using her rate calculator and scripts, <strong>I negotiated to $800 for 2 videos.</strong>"</p>
-        <p class="gate-name">Ty &middot; @Ty__Murph</p>
-      </div>
-      <div class="gate-proof-card">
-        <div class="gate-outcome">2 replies in 1 day</div>
-        <p class="gate-quote">"<strong>2 responses out of 10 outreaches in one day!</strong>"</p>
-        <p class="gate-name">Milena &middot; @UGCbyMilenaVonX</p>
-      </div>
-      <div class="gate-proof-card">
-        <div class="gate-outcome">$650 &rarr; $4,750</div>
-        <p class="gate-quote">"I thought I was getting paid at $650 for 5 videos until I ran the numbers. <strong>My rate should have been $950/video.</strong>"</p>
-        <p class="gate-name">Candi &middot; @CandiandHerGoldens</p>
-      </div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px">
-      <div style="border:1px solid #00c853;border-radius:8px;padding:10px 14px;text-align:left;font-size:13px;color:#ccc;line-height:1.4">Abbie used template #1 on a major baseball brand. Got a conversion.</div>
-      <div style="border:1px solid #00c853;border-radius:8px;padding:10px 14px;text-align:left;font-size:13px;color:#ccc;line-height:1.4">Jamie: "Holy cow! This is SO KIND of you! So incredibly helpful."</div>
-    </div>
+    <h1 class="gate-headline">Brands are ignoring your DMs.<br>These 3 pitches fix that.</h1>
+    <p style="font-size:15px;color:var(--text2);line-height:1.5;margin-bottom:16px;max-width:400px;margin-left:auto;margin-right:auto">Milena sent 10 pitches with these templates. <strong style="color:var(--accent, #c8ff00)">2 brand replies in ONE day.</strong></p>
     <form class="gate-form" id="gateForm" novalidate>
       <input type="text" name="first_name" placeholder="First name" required autocomplete="given-name">
       <input type="email" name="email_address" placeholder="Email address" required autocomplete="email">
-      <button type="submit" class="gate-submit" id="gateBtn">Send me the 3 pitches that work</button>
+      <button type="submit" class="gate-submit" id="gateBtn">Show me the 3 pitches &rarr;</button>
     </form>
-    <p class="gate-trust">No spam. Unsubscribe anytime.</p>
+    <p class="gate-trust">No spam. Unsubscribe anytime. Free forever.</p>
   </div>
 </div>
 
-<!-- ===== PAGE CONTENT ===== -->
+<!-- ===== 2. INTERACTIVE PITCH GRADER ===== -->
+<section class="section" style="padding-top:80px" id="pitchGrader">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="font-family:var(--mono);font-size:11px;color:var(--accent, #c8ff00);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px">FREE PITCH GRADER</div>
+      <h2 style="font-family:var(--heading, 'Space Grotesk');font-size:clamp(24px,5vw,32px);font-weight:800;color:#fff;margin-bottom:8px">Paste your pitch. Find out why brands ignore it.</h2>
+      <p style="font-size:14px;color:var(--text2)">The same framework used to close $1.2M in B2B deals. Takes 10 seconds.</p>
+    </div>
 
-  <!-- PROOF FIRST - 3 strongest testimonials, stacked vertically -->
-  <div class="proof-banner">
-    <div class="proof-banner-label">They were getting ignored too. Then they sent these pitches.</div>
-    <div class="proof-stack">
-      <div class="proof-card">
-        <div class="proof-card-outcome">$150 &rarr; $800</div>
-        <p class="proof-card-quote">"Using her rate calculator and scripts, <strong>I negotiated to $800 for 2 videos.</strong> She knows ball!!"</p>
-        <p class="proof-card-name">Ty &middot; @Ty__Murph</p>
+    <!-- PITCH INPUT -->
+    <div style="background:var(--surface, #141414);border:1px solid var(--border, #1e1e1e);border-radius:16px;padding:24px;margin-bottom:16px">
+      <label style="font-family:var(--mono);font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:1.5px;display:block;margin-bottom:10px">Paste your pitch DM or email</label>
+      <textarea id="pitchInput" rows="5" placeholder="Hey! I love your brand and would love to collab! I'm a UGC creator and I think we'd be a great fit. Let me know if you're interested!" style="width:100%;padding:16px;background:var(--bg, #0a0a0a);border:1px solid var(--border, #222);border-radius:10px;color:var(--text);font-family:var(--font);font-size:15px;line-height:1.6;resize:vertical;min-height:120px;outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--accent, #c8ff00)'" onblur="this.style.borderColor='var(--border, #222)'"></textarea>
+      <button onclick="gradePitch()" style="width:100%;padding:16px;background:var(--accent, #c8ff00);color:#000;border:none;border-radius:10px;font-family:var(--heading);font-size:16px;font-weight:800;cursor:pointer;margin-top:12px;min-height:48px;transition:all .2s" onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform='none'">Grade My Pitch &rarr;</button>
+      <p style="font-size:12px;color:var(--text3);margin-top:8px;text-align:center">Or just hit Grade to see how the default pitch scores</p>
+    </div>
+
+    <!-- RESULTS (hidden until graded) -->
+    <div id="pitchResults" style="display:none">
+      <!-- SCORE -->
+      <div style="background:var(--surface, #141414);border:2px solid rgba(255,68,68,0.4);border-radius:16px;padding:28px 24px;margin-bottom:16px;text-align:center" id="pitchScoreCard">
+        <div style="font-family:var(--mono);font-size:11px;color:var(--red, #ff4444);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px">YOUR PITCH SCORE</div>
+        <div style="font-family:var(--heading);font-size:64px;font-weight:800;line-height:1" id="pitchScoreNum"><span style="color:var(--red, #ff4444)">0</span><span style="font-size:28px;color:var(--text3)">/10</span></div>
+        <div style="font-size:16px;font-weight:700;margin-top:8px" id="pitchScoreTier"></div>
+        <div style="height:8px;background:var(--bg, #0a0a0a);border-radius:4px;margin:16px 0 8px;overflow:hidden">
+          <div id="pitchScoreBar" style="height:100%;background:linear-gradient(90deg,var(--red, #ff4444),#ffaa00);border-radius:4px;width:0%;transition:width 1s ease"></div>
+        </div>
       </div>
-      <div class="proof-card">
-        <div class="proof-card-outcome">2 replies in 1 day</div>
-        <p class="proof-card-quote">"I have modified them only VERY little. <strong>2 responses out of 10 outreaches in one day!</strong>"</p>
-        <p class="proof-card-name">Milena &middot; @UGCbyMilenaVonX</p>
+
+      <!-- PROBLEMS FOUND -->
+      <div style="background:var(--surface, #141414);border:1px solid var(--border, #1e1e1e);border-radius:14px;padding:24px;margin-bottom:16px" id="pitchProblems">
+        <div style="font-family:var(--mono);font-size:11px;color:var(--red, #ff4444);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px">PROBLEMS FOUND</div>
+        <div id="problemsList" style="display:flex;flex-direction:column;gap:10px"></div>
       </div>
-      <div class="proof-card">
-        <div class="proof-card-outcome">$650 &rarr; $4,750</div>
-        <p class="proof-card-quote">"I thought I was getting paid at $650 for 5 videos until I ran the numbers. <strong>My rate should have been $950/video.</strong>"</p>
-        <p class="proof-card-name">Candi &middot; @CandiandHerGoldens</p>
+
+      <!-- HERE'S WHAT A WINNING PITCH LOOKS LIKE -->
+      <div style="background:var(--surface, #141414);border:2px solid rgba(200,255,0,0.3);border-radius:16px;padding:24px;margin-bottom:16px;position:relative">
+        <div style="position:absolute;top:-10px;left:20px;background:var(--accent, #c8ff00);color:#000;font-size:11px;font-weight:800;padding:3px 12px;border-radius:4px;font-family:var(--mono)">SCORE: 9/10</div>
+        <div style="font-family:var(--mono);font-size:11px;color:var(--accent, #c8ff00);margin-bottom:8px;margin-top:4px">HERE'S WHAT A WINNING PITCH LOOKS LIKE</div>
+        <p style="font-size:16px;color:#fff;line-height:1.7;font-style:italic;padding:16px;background:rgba(200,255,0,0.04);border-radius:8px;border-left:3px solid var(--accent, #c8ff00)">"Hey [brand]! I create UGC for [niche] brands &mdash; my last video drove 2.3x ROAS for [similar brand]. I have 2-3 concepts for [their product]. Want me to send them over?"</p>
+        <p style="font-size:13px;color:var(--text2);margin-top:10px;line-height:1.6"><strong style="color:var(--accent, #c8ff00)">&check; Specific</strong> &mdash; names a result. <strong style="color:var(--accent, #c8ff00)">&check; Short</strong> &mdash; 3 lines. <strong style="color:var(--accent, #c8ff00)">&check; Action</strong> &mdash; clear next step. <strong style="color:var(--accent, #c8ff00)">&check; Value-first</strong> &mdash; leads with what they get.</p>
+        <p style="font-size:12px;color:var(--text3);margin-top:10px">This is the 3-Line Pitch from the Pitch Vault. It's the one Milena used to get 2 brand replies in 1 day.</p>
+      </div>
+
+      <!-- THE GAP -->
+      <div style="text-align:center;padding:24px 16px;margin-bottom:16px">
+        <p style="font-size:15px;color:var(--text2);line-height:1.7">Your pitch scored <strong style="color:var(--red, #ff4444)" id="gapScoreText">2/10</strong>. The winning pitch scores <strong style="color:var(--accent, #c8ff00)">9/10</strong>.</p>
+        <p style="font-size:18px;font-weight:800;color:#fff;margin-top:8px">That gap is costing you every brand deal you're not getting.</p>
+        <p style="font-size:14px;color:var(--text3);margin-top:8px">The Pitch Vault has 9 templates like the one above &mdash; plus 4 scripts for when brands push back on your rate.</p>
       </div>
     </div>
   </div>
+</section>
 
-  <p style="text-align:center;font-style:italic;color:var(--text2);font-size:14px;max-width:560px;margin:0 auto;padding:0 20px 24px">These creators all started exactly where you are. Staring at their phone. Wondering what to say. The difference? They had the templates. Now they have brand deals.</p>
-
-  <!-- PAIN (Wendt: make them feel seen) -->
-  <section class="section pain">
-    <div class="wrap">
-      <p style="font-size:17px;color:#ccc;line-height:1.5;margin-bottom:20px">You know your content is good. Brands know it too. So why are they offering you $200?</p>
-      <h2>You're pitching brands the same way everyone else is. That's why they're ignoring you.</h2>
-      <ul class="pain-list">
-        <li class="pain-item"><span class="pain-x">&times;</span><span>You spend 45 min crafting a "perfect" DM. Brand leaves you on read.</span></li>
-        <li class="pain-item"><span class="pain-x">&times;</span><span>You copy free templates from TikTok. They sound generic. Brands can tell.</span></li>
-        <li class="pain-item"><span class="pain-x">&times;</span><span>A brand replies asking your rate. Your stomach drops. You lowball yourself.</span></li>
-      </ul>
-      <p style="font-size:15px;color:#bbb;line-height:1.7;margin-bottom:28px;padding:20px;background:rgba(255,77,77,.04);border-left:3px solid var(--red);border-radius:0 8px 8px 0">You spend 45 minutes crafting the perfect DM. You check it 6 times. You hit send. Read receipts: on. No reply. Not today. Not tomorrow. Not ever. The brand hired someone who sent a 3-line pitch.</p>
-      <p class="pain-transition">Here's what works instead &darr;</p>
+<!-- ===== 3. THE SHOCK — "But then what?" ===== -->
+<section class="section" id="shockSection" style="display:none;padding-top:0;padding-bottom:32px">
+  <div class="wrap" style="text-align:center">
+    <p style="font-size:18px;font-weight:700;color:#fff;line-height:1.5;margin-bottom:16px">OK so now you have a better pitch. Brands start replying.</p>
+    <p style="font-size:22px;font-weight:800;color:var(--red, #ff4d4d);margin-bottom:16px">But then what?</p>
+    <div style="font-size:15px;color:var(--text2);line-height:1.8;max-width:480px;margin:0 auto">
+      <p>The brand replies. They ask your rate. Your stomach drops.</p>
+      <p style="margin-top:8px">You type $200. Delete it. Type $250. Delete it. Send $200.</p>
+      <p style="margin-top:8px">They say <strong style="color:#fff">"perfect!"</strong> and you feel sick &mdash; because <strong style="color:var(--red, #ff4d4d)">"perfect" means you went too low.</strong></p>
+      <p style="margin-top:16px;color:var(--text3);font-size:14px">The pitch gets you in the door. You need the scripts to get you <em>paid.</em></p>
     </div>
-  </section>
-
-  <!-- SOLUTION -->
-  <section class="section solution">
-    <div class="wrap">
-      <h2>Here are 3 pitches you can copy right now</h2>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px">
-        <div style="font-family:var(--mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">Pitch #1 - Cold DM</div>
-        <p style="font-size:15px;color:#ccc;line-height:1.6;font-style:italic">"Hey [brand]! I create UGC for [niche] brands and loved your [specific product]. I'd love to put together 2-3 concepts for your next campaign. Want me to send some ideas?"</p>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px">
-        <div style="font-family:var(--mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">Pitch #2 - Follow-Up (Day 3)</div>
-        <p style="font-size:15px;color:#ccc;line-height:1.6;font-style:italic">"Hey [brand]! Just circling back - I put together a quick mood board for how I'd approach your next launch. Happy to share if you're open to it!"</p>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px">
-        <div style="font-family:var(--mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">Pitch #3 - The 3-Line Pitch</div>
-        <p style="font-size:15px;color:#ccc;line-height:1.6;font-style:italic">"I make content that converts for [niche] brands. [Specific result/stat]. Want me to send 2-3 concepts for [their product]?"</p>
-      </div>
-      <p style="font-size:15px;color:#bbb;line-height:1.6;text-align:center;margin:24px 0 20px;font-style:italic">These pitches work because they don't sound like pitches. They sound like a professional who knows their value. That's the difference between getting ignored and getting paid.</p>
-      <div style="text-align:center;margin:24px 20px;padding:20px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.15);border-radius:12px;">
-  <p style="font-size:15px;font-weight:700;color:#c8ff00;margin-bottom:8px;">Know a creator still getting ignored by brands?</p>
-  <p style="font-size:14px;color:#999;">Send them this page. The 3 pitches above are free forever.</p>
-</div>
-      <p style="font-size:14px;color:var(--text2);text-align:center;margin-top:24px">Those 3 pitches alone will get you replies. But to <strong style="color:#fff">close at $800+</strong>, you need the full system &darr;</p>
-      <ul class="solution-list">
-        <li class="solution-item">
-          <span class="solution-check">&#10003;</span>
-          <div><div class="solution-title">9 Pitch Templates</div><div class="solution-desc">Cold DM, email, LinkedIn, follow-up, re-engagement. Copy, customize, send.</div></div>
-        </li>
-        <li class="solution-item">
-          <span class="solution-check">&#10003;</span>
-          <div><div class="solution-title">The 3-Line Pitch</div><div class="solution-desc">Hooks in line 1. Proves value in line 2. Gets the reply in line 3. Built from $1.2M in B2B deals.</div></div>
-        </li>
-        <li class="solution-item">
-          <span class="solution-check">&#10003;</span>
-          <div><div class="solution-title">4 Situational Scripts</div><div class="solution-desc">"Your rate is too high." "We don't have budget." "We'll get back to you." You'll know exactly what to say.</div></div>
-        </li>
-        <li class="solution-item">
-          <span class="solution-check">&#10003;</span>
-          <div><div class="solution-title">Follow-Up System</div><div class="solution-desc">80% of deals close after the follow-up. Most creators never follow up. This makes it automatic.</div></div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- CREDIBILITY (one line, not a section) -->
-  <div class="cred">
-    <p>Built by <strong>Elisabeth</strong> (<span style="color:var(--accent)">@closermethod</span>) &mdash; 15 years enterprise sales at Criteo, Deel, Autodesk, Red Points, HBO, Bloomberg. <strong>$1.2M in closed deals. 268% of quota.</strong></p>
-    <p style="font-size:13px;color:var(--text2);margin-top:8px">The same frameworks that close six-figure enterprise deals work even better on an $800 UGC deal.</p>
   </div>
+</section>
 
-  <!-- LOSS SECTION -->
-  <section class="section loss">
-    <div class="wrap">
-      <h2>What generic pitches are actually costing you</h2>
-      <div class="loss-compare">
-        <div class="loss-col loss-col-bad">
-          <div class="loss-col-label">Generic pitches</div>
-          <div class="loss-col-stat">0%</div>
-          <div class="loss-col-desc">response rate</div>
-        </div>
-        <div class="loss-col loss-col-good">
-          <div class="loss-col-label">With these templates</div>
-          <div class="loss-col-stat">20%</div>
-          <div class="loss-col-desc">response rate</div>
-        </div>
-      </div>
-      <div class="loss-math">
-        <p>Average brand deal: <strong style="color:#fff">$500</strong></p>
-        <p>10 pitches/week &times; 20% reply rate = 2 opportunities</p>
-        <p>Close just 1 deal/month you're currently missing:</p>
-        <div class="loss-monthly">-$500/month in missed deals</div>
-        <div class="loss-yearly">-$6,000/year</div>
-        <p class="loss-context">That's <span>rent money</span>. A <span>vacation</span>. A <span>car payment</span>.<br>Gone &mdash; because your pitches sound like everyone else's.</p>
-      </div>
+<!-- ===== 4. PROOF ===== -->
+<div class="proof-banner">
+  <div class="proof-banner-label">Creators who had the scripts</div>
+  <div class="proof-stack">
+    <div class="proof-card">
+      <div class="proof-card-outcome">$150 &rarr; $800</div>
+      <p class="proof-card-quote">"I was mid-negotiation for $150. Used the scripts. <strong>Negotiated to $800 for 2 videos.</strong>"</p>
+      <p class="proof-card-name">Ty &middot; @Ty__Murph</p>
     </div>
-  </section>
-
-  <!-- INLINE EMAIL CAPTURE (after proof/credibility, before price) -->
-  <section class="section" style="padding-bottom:0">
-    <div class="wrap">
-      <div class="inline-capture">
-        <div class="inline-capture-label">Free bonus</div>
-        <h3>Get the free rate calculator + pitch tips</h3>
-        <form class="inline-capture-form" id="inlineForm" novalidate>
-          <input type="text" name="first_name" placeholder="First name" required autocomplete="given-name">
-          <input type="email" name="email_address" placeholder="Email address" required autocomplete="email">
-          <button type="submit" class="inline-capture-btn" id="inlineBtn">Send me free pitch tips</button>
-        </form>
-        <p class="inline-capture-trust">No spam. Unsubscribe anytime.</p>
-        <p class="inline-capture-success" id="inlineSuccess">Check your inbox - it's on the way!</p>
-      </div>
+    <div class="proof-card">
+      <div class="proof-card-outcome">$650 &rarr; $4,750</div>
+      <p class="proof-card-quote">"I was getting $650 for 5 videos. My rate should have been <strong>$950/video.</strong> The scripts changed everything."</p>
+      <p class="proof-card-name">Candi &middot; @CandiandHerGoldens</p>
     </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section cta-section" id="ctaSection">
-    <div class="wrap">
-
-      <h2 style="font-family:var(--heading);font-size:clamp(24px,6vw,32px);font-weight:800;color:#fff;margin-bottom:24px">Your next brand deal should be $800+. This is how.</h2>
-
-      <!-- VALUE STACK - KIT -->
-      <div class="value-stack">
-        <div class="value-stack-item"><span>Never freeze when a brand pushes back on your rate</span><span>$500 value</span></div>
-        <div class="value-stack-item"><span>Sound like a pro in every email without overthinking</span><span>$500 value</span></div>
-        <div class="value-stack-item"><span>175+ brands with emails, budgets &amp; niches — skip 10+ hrs of research</span><span>$750 value</span></div>
-        <div class="value-stack-item"><span>DMs that get replies, not left on read</span><span>$500 value</span></div>
-        <div class="value-stack-item"><span>Know exactly where every deal stands</span><span>$500 value</span></div>
-        <div class="value-stack-item"><span>Walk into every rate conversation with confidence</span><span>$500 value</span></div>
-        <div class="value-stack-item"><span>Go from 'I just started' to your first paid deal</span><span>$250 value</span></div>
-        <div class="value-stack-total"><span>Total Value</span><span>$3,500+</span></div>
-      </div>
-
-      <span class="cta-price-old">$497</span>
-      <span class="cta-price-new">$246</span>
-      <p class="cta-note">Tax season pricing. <strong>Ends March 31.</strong> One brand deal covers the entire kit.</p>
-
-      <!-- COUNTDOWN TIMER -->
-      <div class="countdown-wrap" id="countdownWrap">
-        <div class="countdown-label">Offer ends in</div>
-        <div class="countdown" id="countdown">
-          <div class="countdown-unit"><span id="cd-days">00</span><span>Days</span></div>
-          <div class="countdown-sep">:</div>
-          <div class="countdown-unit"><span id="cd-hours">00</span><span>Hrs</span></div>
-          <div class="countdown-sep">:</div>
-          <div class="countdown-unit"><span id="cd-mins">00</span><span>Min</span></div>
-          <div class="countdown-sep">:</div>
-          <div class="countdown-unit"><span id="cd-secs">00</span><span>Sec</span></div>
-        </div>
-      </div>
-
-      <div style="margin:0 auto 24px;max-width:500px;padding:20px;border:2px solid #00c853;border-radius:14px;background:rgba(0,200,83,0.06);text-align:center;">
-  <div style="font-size:18px;margin-bottom:8px;">&#x1F6E1;&#xFE0F;</div>
-  <div style="font-weight:700;color:#00c853;font-size:16px;margin-bottom:8px;">The Closer Guarantee</div>
-  <div style="font-size:14px;color:#ccc;line-height:1.6;">Use the Kit for 30 days. If you haven't closed a deal at your real rate, I will personally coach you until you do. No questions. No runaround.</div>
+    <div class="proof-card">
+      <p class="proof-card-quote">"<strong>10/10.</strong> Helping to build confidence in pricing and negotiating."</p>
+      <p class="proof-card-name">Jen E &middot; @explorewithjene</p>
+    </div>
+  </div>
 </div>
 
-      <p style="font-size:15px;color:#ccc;line-height:1.5;margin-bottom:20px;max-width:400px;margin-left:auto;margin-right:auto;text-align:center">The pitch gets you in the door. The Kit gets you paid. Ty used both&nbsp;&mdash; $150 became $800 in one conversation.</p>
-      <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=vault_lp&utm_campaign=kit" class="cta-btn" id="mainCta" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'kit-from-vault',value:246,currency:'USD'})">Start Closing $800+ Deals &rarr;</a>
-      <p style="font-size:14px;color:var(--text2);margin-top:8px;"><s style="color:var(--text3)">$497</s> <strong style="color:var(--accent)">$246</strong> &mdash; or 4 payments of $61.50</p>
-      <p class="cta-sub">Instant delivery &middot; Notion workspace &middot; Lifetime access</p>
-      <p style="font-size:12px;color:#00c853;margin-top:8px;font-weight:600;">&#x1F6E1;&#xFE0F; Doesn't work? I'll personally coach you until it does.</p>
+<!-- ===== 5. THE PITCH VAULT CTA — $27 ===== -->
+<section class="section cta-section" id="ctaSection" style="padding-top:32px">
+  <div class="wrap" style="text-align:center">
+    <h2 style="font-family:var(--heading);font-size:clamp(22px,5vw,30px);font-weight:800;color:#fff;margin-bottom:8px">Get 9 pitch templates + 4 objection scripts for $27</h2>
+    <p style="font-size:15px;color:var(--text2);margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto">Everything you need to pitch brands AND handle "your rate is too high." One reply pays for this 20x over.</p>
 
-      <!-- DOWNSELL: Objection Handler -->
-      <div style="margin-top:32px;padding-top:24px;border-top:1px solid var(--border);">
-        <p style="font-size:13px;color:var(--text3);text-align:center;margin-bottom:12px;">Not ready for the full Kit?</p>
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;">
-          <p style="font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;">The Objection Handler — $47</p>
-          <p style="font-size:14px;color:var(--text2);line-height:1.5;margin-bottom:16px;">"Your rate is too high." "We don't have budget." "We'll get back to you."<br>Know exactly what to say to every pushback. 15+ scripts for the conversations that cost you money.</p>
-          <a href="https://stan.store/perolikebro/p/the-objection-handler?utm_source=website&utm_medium=vault_lp&utm_campaign=objection_handler_downsell" target="_blank" style="display:inline-block;padding:14px 28px;border:2px solid var(--accent);color:var(--accent);border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:all .2s;min-height:48px;" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'objection-handler-vault-downsell',value:47,currency:'USD'})">Get the Objection Handler — $47</a>
-        </div>
-      </div>
+    <div style="display:flex;flex-direction:column;gap:8px;max-width:440px;margin:0 auto 20px;text-align:left">
+      <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text)"><span style="color:var(--accent, #c8ff00)">&#10003;</span> 9 pitch templates (cold DM, email, LinkedIn, follow-up + more)</div>
+      <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text)"><span style="color:var(--accent, #c8ff00)">&#10003;</span> The 3-Line Pitch (the one that gets the highest reply rate)</div>
+      <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text)"><span style="color:var(--accent, #c8ff00)">&#10003;</span> 4 situational scripts ("rate too high", ghosted, lowball, scope creep)</div>
+      <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text)"><span style="color:var(--accent, #c8ff00)">&#10003;</span> Complete follow-up system (Day 3 + Day 7 templates)</div>
+      <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text)"><span style="color:var(--accent, #c8ff00)">&#10003;</span> Decision table: which template to use when</div>
     </div>
-  </section>
 
-  <div class="footer">
-    <p>&copy; 2026 closermethod. <a href="https://instagram.com/closermethod" target="_blank" style="color:var(--accent);text-decoration:none;">@closermethod</a></p>
-    <p style="margin-top:8px;font-size:12px;color:var(--text3)">Built from 15 years at Criteo, Deel, Autodesk, Red Points, HBO, Bloomberg, McCann, Y&amp;R, NBC News, Rolling Stone, Levi's, Kenneth Cole, Limited Brands, Anthropologie &amp; Milk Studios</p>
-    <p style="margin-top:8px;font-size:12px"><a href="/privacy-policy.html" style="color:var(--text3);text-decoration:none">Privacy Policy</a></p>
+    <div style="margin-bottom:20px">
+      <div style="font-size:14px;color:var(--text3);margin-bottom:4px"><s>$97</s></div>
+      <div style="font-family:var(--heading);font-size:48px;font-weight:800;color:var(--accent, #c8ff00)">$27</div>
+      <div style="font-size:13px;color:var(--text3);margin-top:4px">Tax season write-off. Ends March 31.</div>
+    </div>
+
+    <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=vault_lp&utm_campaign=pitch_vault" class="cta-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'pitch-vault-from-vault',value:27,currency:'USD'})">Start Getting Brand Replies &mdash; $27 &rarr;</a>
+    <p style="font-size:12px;color:#00c853;margin-top:10px;font-weight:600">&#x1F6E1;&#xFE0F; 30-day coaching guarantee. Templates don't get replies? I'll review your pitches personally.</p>
+    <p style="font-size:12px;color:var(--text3);margin-top:6px">Instant access &middot; Notion workspace &middot; Lifetime updates</p>
   </div>
+</section>
 
-<!-- STICKY MOBILE CTA -->
+<!-- ===== 6. UPSELL — Kit at $246 ===== -->
+<section class="section" style="padding-top:0;padding-bottom:32px">
+  <div class="wrap" style="text-align:center">
+    <div style="padding:28px 24px;background:var(--surface, #141414);border:2px solid rgba(200,255,0,0.2);border-radius:16px">
+      <p style="font-size:13px;color:var(--text3);margin-bottom:8px">Want the complete system?</p>
+      <h3 style="font-family:var(--heading);font-size:22px;font-weight:800;color:#fff;margin-bottom:8px">The UGC Closer Kit</h3>
+      <p style="font-size:14px;color:var(--text2);line-height:1.6;margin-bottom:16px">60+ negotiation scripts. 9 AI tools. 175+ brand database. The Pitch Vault is included. Ty used this to go from $150 to $800 in one conversation.</p>
+      <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=vault_lp&utm_campaign=kit" style="display:inline-block;padding:14px 28px;background:var(--accent, #c8ff00);color:#000;border-radius:10px;font-weight:800;font-size:15px;text-decoration:none;min-height:48px;transition:all .2s" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'kit-from-vault',value:246,currency:'USD'})">Start Closing $800+ Deals &mdash; $246</a>
+      <p style="font-size:13px;color:var(--text2);margin-top:10px"><s style="color:var(--text3)">$497</s> $246 &mdash; or 4 payments of $61.50</p>
+      <p style="font-size:12px;color:#00c853;margin-top:6px;font-weight:600">&#x1F6E1;&#xFE0F; Doesn't work? I'll personally coach you until it does.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. CREDIBILITY + FOOTER ===== -->
+<div style="text-align:center;padding:32px 24px;max-width:560px;margin:0 auto;border-top:1px solid var(--border, #1e1e1e)">
+  <p style="font-size:14px;color:var(--text2);line-height:1.6">Built by <strong style="color:#fff">Elisabeth</strong> (<span style="color:var(--accent, #c8ff00)">@closermethod</span>) — 15 years enterprise sales. $1.2M+ in closed deals. 268% of quota at Criteo.</p>
+  <p style="font-family:var(--mono);font-size:10px;color:var(--text3);margin-top:12px;letter-spacing:.5px;line-height:1.8">CRITEO · DEEL · AUTODESK · RED POINTS · HBO · BLOOMBERG · McCANN · Y&amp;R · NBC NEWS · ROLLING STONE · LEVI'S · KENNETH COLE · LIMITED BRANDS · ANTHROPOLOGIE · MILK STUDIOS</p>
+</div>
+
+<div class="footer">
+  <p>&copy; 2026 closermethod. <a href="https://instagram.com/closermethod" target="_blank" style="color:var(--accent, #c8ff00);text-decoration:none">@closermethod</a></p>
+  <p style="margin-top:8px;font-size:12px"><a href="/privacy-policy.html" style="color:var(--text3);text-decoration:none">Privacy Policy</a></p>
+</div>
+
 <div class="sticky" id="sticky">
-  <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=vault_lp&utm_campaign=kit_sticky" id="stickyLink" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'kit-sticky',value:246,currency:'USD'})">Close $800+ Deals &mdash; $246 &rarr;</a>
+  <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=vault_lp&utm_campaign=pitch_vault_sticky" id="stickyLink" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'pitch-vault-sticky',value:27,currency:'USD'})">Get the Pitch Vault &mdash; $27 &rarr;</a>
 </div>
 
 <script>
@@ -523,66 +441,6 @@ body{overflow-x:hidden;background:var(--bg);color:var(--text);font-family:var(--
     });
   });
 
-  // Inline email capture form
-  var inlineForm=document.getElementById('inlineForm'),
-      inlineBtn=document.getElementById('inlineBtn'),
-      inlineSuccess=document.getElementById('inlineSuccess');
-
-  inlineForm.addEventListener('submit',function(e){
-    e.preventDefault();
-    var fn=inlineForm.first_name.value.trim(),
-        em=inlineForm.email_address.value.trim();
-    if(!fn||!em)return;
-
-    inlineBtn.disabled=true;
-    inlineBtn.textContent='Sending...';
-
-    fetch('https://app.kit.com/forms/7657498/subscriptions',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({email_address:em,first_name:fn,tags:['vault-subscriber','pitch-funnel']}),
-      mode:'no-cors'
-    }).then(function(){
-      inlineForm.style.display='none';
-      inlineSuccess.style.display='block';
-      if(typeof fbq==='function')fbq('track','Lead',{content_name:'vault-inline'});
-    }).catch(function(){
-      // no-cors responses trigger catch; treat as success
-      inlineForm.style.display='none';
-      inlineSuccess.style.display='block';
-      if(typeof fbq==='function')fbq('track','Lead',{content_name:'vault-inline'});
-    });
-  });
-
-  // Countdown timer to March 31 2026 23:59:59 local time
-  var deadline=new Date(2026,2,31,23,59,59).getTime();
-  function updateCountdown(){
-    var now=Date.now();
-    var diff=deadline-now;
-    if(diff<=0){
-      document.getElementById('cd-days').textContent='00';
-      document.getElementById('cd-hours').textContent='00';
-      document.getElementById('cd-mins').textContent='00';
-      document.getElementById('cd-secs').textContent='00';
-      var cw=document.getElementById('countdownWrap');
-      if(cw)cw.style.display='none';
-      return;
-    }
-    var d=Math.floor(diff/86400000);
-    diff%=86400000;
-    var h=Math.floor(diff/3600000);
-    diff%=3600000;
-    var m=Math.floor(diff/60000);
-    diff%=60000;
-    var s=Math.floor(diff/1000);
-    document.getElementById('cd-days').textContent=d<10?'0'+d:d;
-    document.getElementById('cd-hours').textContent=h<10?'0'+h:h;
-    document.getElementById('cd-mins').textContent=m<10?'0'+m:m;
-    document.getElementById('cd-secs').textContent=s<10?'0'+s:s;
-  }
-  updateCountdown();
-  setInterval(updateCountdown,1000);
-
   // Sticky CTA
   var sv=false;
   window.addEventListener('scroll',function(){
@@ -591,6 +449,91 @@ body{overflow-x:hidden;background:var(--bg);color:var(--text);font-family:var(--
     else if(r.bottom>=0&&sv){sticky.classList.remove('visible');sv=false}
   },{passive:true});
 })();
+
+// ===== PITCH GRADER =====
+function gradePitch(){
+  var pitch = document.getElementById('pitchInput').value.trim();
+  if(!pitch) pitch = document.getElementById('pitchInput').placeholder;
+
+  var score = 10;
+  var problems = [];
+  var pl = pitch.toLowerCase();
+  var words = pitch.split(/\s+/).length;
+
+  // 1. Too long (>60 words)
+  if(words > 60){ score -= 2; problems.push({icon:'&#128214;', title:'Too long ('+words+' words)', desc:'Brand managers scan DMs in 3 seconds. Your pitch needs to be under 40 words. Yours is '+words+'.', color:'var(--red, #ff4444)'}); }
+  else if(words > 40){ score -= 1; problems.push({icon:'&#128214;', title:'A bit long ('+words+' words)', desc:'Best-performing pitches are under 40 words. Trim the fat.', color:'#ffaa00'}); }
+
+  // 2. No specific result/number
+  if(!/\d/.test(pitch) && !/roas|conversion|revenue|sales|roi/i.test(pitch)){ score -= 2; problems.push({icon:'&#128200;', title:'No specific results or numbers', desc:'Brands want proof. "I drove 2.3x ROAS" beats "I make great content" every time. Add a metric.', color:'var(--red, #ff4444)'}); }
+
+  // 3. "Collab" or "collaboration" - amateur signal
+  if(/collab/i.test(pl)){ score -= 2; problems.push({icon:'&#128683;', title:'Uses "collab" — instant credibility killer', desc:'Professionals don\'t "collab." They pitch partnerships with clear deliverables. Delete this word forever.', color:'var(--red, #ff4444)'}); }
+
+  // 4. "I love your brand" - generic flattery
+  if(/i love your|i\'m a big fan|i really love|love your brand|love your product/i.test(pl)){ score -= 1; problems.push({icon:'&#128172;', title:'Generic flattery ("I love your brand")', desc:'Every DM starts with this. It signals "I copy-pasted this to 50 brands." Be specific about WHAT you love and WHY.', color:'#ffaa00'}); }
+
+  // 5. No clear CTA / next step
+  if(!/\?/.test(pitch)){ score -= 2; problems.push({icon:'&#10067;', title:'No question / no clear next step', desc:'Your pitch needs to end with a specific question. "Want me to send 2-3 concepts?" gives them something to say yes to.', color:'var(--red, #ff4444)'}); }
+
+  // 6. "Let me know" - weak close
+  if(/let me know|lmk|if you\'re interested/i.test(pl)){ score -= 1; problems.push({icon:'&#128556;', title:'"Let me know" = weak close', desc:'This puts the burden on the brand. Replace with a specific ask: "Can I send you 2 concepts by Friday?"', color:'#ffaa00'}); }
+
+  // 7. No mention of THEIR product/brand specifically
+  if(/\[brand\]|\[product\]|your brand|your company/i.test(pl) || pitch.length < 40){ /* template or too short, skip */ }
+  else if(!/their|your .{3,20}(product|campaign|launch|collection|line|ad|video|content)/i.test(pl)){ score -= 1; problems.push({icon:'&#127919;', title:'Not specific about their product', desc:'Mention their actual product, campaign, or recent launch. Shows you did homework, not mass-DM.', color:'#ffaa00'}); }
+
+  // 8. "Great fit" - meaningless
+  if(/great fit|perfect fit|good fit/i.test(pl)){ score -= 1; problems.push({icon:'&#128164;', title:'"Great fit" says nothing', desc:'Every creator says this. Instead: "I create [content type] for [niche] brands — my last video drove [result]."', color:'#ffaa00'}); }
+
+  // 9. No value proposition
+  if(!/concept|idea|strategy|approach|roas|result|drove|increased|helped|create.*for/i.test(pl)){ score -= 1; problems.push({icon:'&#128176;', title:'No value proposition', desc:'You\'re telling brands about YOU. They care about THEM. Lead with what you can do for their business.', color:'var(--red, #ff4444)'}); }
+
+  // Cap score
+  score = Math.max(1, Math.min(10, score));
+
+  // If no problems found (score is high)
+  if(problems.length === 0){ problems.push({icon:'&#10024;', title:'Not bad! But the Pitch Vault templates score 9/10', desc:'Your pitch is decent, but the Vault templates are engineered for maximum reply rate using enterprise sales psychology.', color:'var(--accent, #c8ff00)'}); }
+
+  // Render results
+  var results = document.getElementById('pitchResults');
+  results.style.display = 'block';
+
+  // Score
+  var scoreColor = score <= 3 ? 'var(--red, #ff4444)' : score <= 6 ? '#ffaa00' : 'var(--accent, #c8ff00)';
+  var scoreCard = document.getElementById('pitchScoreCard');
+  scoreCard.style.borderColor = score <= 3 ? 'rgba(255,68,68,0.4)' : score <= 6 ? 'rgba(255,170,0,0.4)' : 'rgba(200,255,0,0.3)';
+  document.getElementById('pitchScoreNum').innerHTML = '<span style="color:'+scoreColor+'">'+score+'</span><span style="font-size:28px;color:var(--text3)">/10</span>';
+
+  var tiers = {1:'Brand Delete Zone',2:'Getting Ignored',3:'Getting Ignored',4:'Needs Work',5:'Needs Work',6:'Almost There',7:'Decent',8:'Good',9:'Strong',10:'Pro Level'};
+  var tierEl = document.getElementById('pitchScoreTier');
+  tierEl.textContent = tiers[score] || 'Needs Work';
+  tierEl.style.color = scoreColor;
+
+  document.getElementById('pitchScoreBar').style.width = (score*10)+'%';
+  document.getElementById('pitchScoreBar').style.background = score <= 3 ? 'linear-gradient(90deg,var(--red, #ff4444),#ff6666)' : score <= 6 ? 'linear-gradient(90deg,#ffaa00,#ffcc00)' : 'linear-gradient(90deg,var(--accent, #c8ff00),#eeff88)';
+
+  // Problems
+  var html = '';
+  for(var i=0;i<problems.length;i++){
+    var p = problems[i];
+    html += '<div style="display:flex;gap:12px;align-items:flex-start;padding:14px;background:rgba(255,255,255,0.02);border-radius:10px;border-left:3px solid '+p.color+'">';
+    html += '<span style="font-size:18px;flex-shrink:0">'+p.icon+'</span>';
+    html += '<div><div style="font-size:14px;font-weight:700;color:'+p.color+';margin-bottom:4px">'+p.title+'</div>';
+    html += '<div style="font-size:13px;color:var(--text2);line-height:1.5">'+p.desc+'</div></div></div>';
+  }
+  document.getElementById('problemsList').innerHTML = html;
+  document.getElementById('gapScoreText').textContent = score+'/10';
+
+  // Show shock section
+  document.getElementById('shockSection').style.display = 'block';
+
+  // Scroll to results
+  results.scrollIntoView({behavior:'smooth', block:'start'});
+
+  // Track
+  if(typeof fbq==='function') fbq('trackCustom','PitchGraded',{score:score,problems:problems.length});
+}
 </script>
 </body>
 </html>

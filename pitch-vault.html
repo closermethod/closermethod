@@ -40,7 +40,7 @@ a{color:var(--green);text-decoration:none}
 .top-bar strong{color:var(--green);font-family:var(--mono)}
 
 /* Hero */
-.hero{padding:72px 0 48px;text-align:center}
+.hero{padding:110px 0 48px;text-align:center}
 .badge{display:inline-block;background:rgba(200,255,0,.1);border:1px solid rgba(200,255,0,.2);color:var(--green);font-size:11px;font-weight:700;padding:6px 18px;border-radius:99px;margin-bottom:24px;text-transform:uppercase;letter-spacing:1.5px;font-family:var(--mono)}
 .hero h1{font-family:var(--serif);font-size:clamp(30px,7vw,48px);font-weight:800;line-height:1.15;margin-bottom:20px}
 .hero h1 em{font-style:normal;color:var(--green)}
@@ -216,7 +216,7 @@ a{color:var(--green);text-decoration:none}
   /* 14. CTA buttons full width with padding */
   .form-btn{width:100%;min-height:52px;padding:16px 20px;font-size:16px}
   /* 15. Hero padding for fixed nav */
-  .hero{padding:100px 0 36px}
+  .hero{padding:130px 0 36px}
   /* Footer room for sticky */
   .footer{padding-bottom:100px}
   /* Also-included grid single column */
@@ -288,6 +288,11 @@ a{color:var(--green);text-decoration:none}
     <div class="gate-badge"><span class="gdot"></span> pitch vault</div>
     <h2 class="gate-h">copy their exact pitch.<br>watch brands <em>respond.</em></h2>
     <p class="gate-sub">enter your email to see 9 pitch templates that actually get responses. not the ones that get ignored.</p>
+    <p style="font-size:14px;color:#888;font-style:italic;line-height:1.6;margin-bottom:20px;max-width:400px;margin-left:auto;margin-right:auto;">You spent 2 hours on that DM. Checked it 6 times. Hit send. Read receipts: on. Nothing. Not today. Not tomorrow. Not ever. Meanwhile, the creator who got the deal? She sent a 3-line pitch.</p>
+    <div style="margin-bottom:16px;">
+      <div style="border-left:3px solid #c8ff00;padding:10px 14px;margin-bottom:8px;font-size:13px;color:#ccc;background:rgba(200,255,0,0.04);border-radius:0 8px 8px 0;">Milena sent 10 pitches. Got 2 brand replies in ONE DAY.</div>
+      <div style="border-left:3px solid #c8ff00;padding:10px 14px;margin-bottom:8px;font-size:13px;color:#ccc;background:rgba(200,255,0,0.04);border-radius:0 8px 8px 0;">Abbie landed a conversation with a major baseball brand on her first try.</div>
+    </div>
     <form class="gate-form" id="gateForm" onsubmit="return handleGateSubmit(event)">
       <input type="text" class="gate-input" id="gateName" placeholder="first name" required>
       <input type="email" class="gate-input" id="gateEmail" placeholder="your best email" required>
@@ -304,8 +309,9 @@ a{color:var(--green);text-decoration:none}
 
 <!-- PAIN (Wendt: open with the wound) -->
 <div style="text-align:center;padding:32px 24px 0;max-width:560px;margin:0 auto">
-  <p style="font-size:16px;color:var(--text2);line-height:1.7">You spent 2 hours crafting the perfect DM. The brand left you on read. Again.</p>
-  <p style="font-size:14px;color:var(--text3);margin-top:8px">The problem isn't your content. It's your words.</p>
+  <p style="font-size:16px;color:var(--text2);line-height:1.8;margin-bottom:12px">You spent 2 hours on that DM. Researched the brand. Rewrote it 4 times. Hit send with your heart pounding.</p>
+  <p style="font-size:20px;font-weight:700;color:var(--red);margin-bottom:8px">Left on read.</p>
+  <p style="font-size:14px;color:var(--text3)">The creator who got that deal sent a 3-line pitch in 45 seconds. The difference wasn't talent. It was the words.</p>
 </div>
 
 <!-- Hero (identity, NO price yet - Wendt: dopamine before dollars) -->
@@ -439,9 +445,10 @@ a{color:var(--green);text-decoration:none}
 <!-- PRICE REVEAL (Wendt: AFTER pain > identity > proof > what you get) -->
 <div style="max-width:440px;margin:0 auto;padding:0 24px 48px">
   <div class="form-card" id="hero-form-card">
-    <h3>Get the Pitch Vault - $27</h3>
+    <h3>Start Getting Brand Replies — $27</h3>
     <p class="form-sub">Instant access. 30-day coaching guarantee.</p>
     <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=pitch_vault&utm_campaign=pitch_vault" class="form-btn" style="display:block;text-align:center;text-decoration:none;color:#000" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'pitch-vault-hero',value:27,currency:'USD'})">START GETTING BRAND REPLIES - $27</a>
+    <p style="font-size:12px;color:#00c853;margin-top:8px;font-weight:600;">🛡️ 30-day coaching guarantee. Templates don't get replies? I'll review your pitches personally.</p>
     <p class="form-trust">One reply pays for this 20x over.</p>
     <div style="font-size:12px;color:var(--text3, #888);margin-top:8px;">&#9200; <strong style="color:var(--amber)">Tax season pricing ends March 31.</strong> Write off your $27 investment this tax year. One reply pays for this 20x over.</div>
   </div>
@@ -456,6 +463,10 @@ a{color:var(--green);text-decoration:none}
       <div style="margin-top:24px;text-align:center;">
         <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=pitch_vault&utm_campaign=closer_kit&utm_content=objection_buster" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-kit-from-pitch-vault',value:246,currency:'USD'})" style="display:block;width:100%;padding:14px 20px;min-height:48px;background:var(--accent, #c8ff00);color:#000;font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:800;text-decoration:none;border-radius:10px;transition:.15s;text-align:center;">Start Closing $800+ Deals - $246</a>
         <div style="font-size:12px;color:var(--text3, #888);margin-top:8px;"><s>$497</s> $246 tax season sale. Ends March 31.</div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border, #222);">
+          <p style="font-size:12px;color:var(--text3);margin-bottom:8px;">Just need the objection scripts?</p>
+          <a href="https://stan.store/perolikebro/p/the-objection-handler?utm_source=website&utm_medium=pitch_vault&utm_campaign=objection_handler" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'objection-handler-from-pitch-vault',value:47,currency:'USD'})" style="display:inline-block;padding:10px 20px;border:1px solid var(--green, #c8ff00);color:var(--green, #c8ff00);border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">The Objection Handler — $47</a>
+        </div>
       </div>
     </div>
   </div>
@@ -504,9 +515,10 @@ a{color:var(--green);text-decoration:none}
     <p class="sub">9 pitch templates. The 3-Line Pitch. 4 situational scripts. Complete follow-up system. Just $27.</p>
 
     <div class="form-card" style="text-align:left">
-      <h3 style="text-align:center">Get the Pitch Vault - $27</h3>
+      <h3 style="text-align:center">Start Getting Brand Replies — $27</h3>
       <p class="form-sub">Your next brand deal starts with the right email.</p>
       <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=pitch_vault&utm_campaign=pitch_vault" class="form-btn" style="display:block;text-align:center;text-decoration:none;color:#000">START GETTING BRAND REPLIES → $27</a>
+      <p style="font-size:12px;color:#00c853;margin-top:8px;font-weight:600;">🛡️ 30-day coaching guarantee. Templates don't get replies? I'll review your pitches personally.</p>
       <p class="form-trust">Instant access. 30-day guarantee. One reply pays for it 20x.</p>
       <div style="font-size:12px;color:var(--text3, #888);margin-top:8px;">&#9200; <strong style="color:var(--amber)">Tax season pricing ends March 31.</strong> Write it off this tax year.</div>
     </div>
@@ -515,7 +527,9 @@ a{color:var(--green);text-decoration:none}
 
 <!-- Footer -->
 <div class="footer">
-  &copy; 2026 closermethod
+  <p>&copy; 2026 closermethod. <a href="https://instagram.com/closermethod" target="_blank" style="color:var(--green);text-decoration:none">@closermethod</a></p>
+  <p style="margin-top:8px;font-size:12px;color:var(--text3)">Built from 15 years at Criteo, Deel, Autodesk, Red Points, HBO, Bloomberg, McCann, Y&amp;R, NBC News, Rolling Stone, Levi's, Kenneth Cole, Limited Brands, Anthropologie &amp; Milk Studios</p>
+  <p style="margin-top:8px;font-size:12px"><a href="/privacy-policy.html" style="color:var(--text3);text-decoration:none">Privacy Policy</a></p>
 </div>
 
 <!-- Sticky Mobile CTA -->
