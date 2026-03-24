@@ -59,28 +59,11 @@ body {
   overflow-x: hidden;
 }
 
-/* NAV */
-.nav {
-  position: fixed; top:0; left:0; right:0; z-index: 100;
-  background: rgba(10,10,10,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  padding: 12px 24px;
-  display: flex; justify-content: space-between; align-items: center;
-}
-.nav-logo { font-family: 'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color: var(--text); }
-.nav-logo span { color: var(--accent); font-style: italic; }
-.nav-cta {
-  background: var(--accent); border: none; color: #000;
-  padding: 10px 20px; border-radius: 8px; font-size: 13px; font-weight: 700;
-  cursor: pointer; transition: all .2s;
-  text-decoration: none; font-family: inherit;
-}
-.nav-cta:hover { background: var(--accent2); transform: translateY(-1px); }
+/* NAV handled by global-nav.js */
 
 /* INSTANT CALC SECTION */
 .instant-section {
-  padding: 100px 24px 40px;
+  padding: 120px 24px 40px;
   max-width: 900px; margin: 0 auto;
   position: relative;
 }
@@ -1077,31 +1060,31 @@ footer a { color: var(--text2); text-decoration: none; }
     <div style="display:flex;flex-direction:column;gap:8px;">
       <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.1);border-radius:8px;">
         <span style="font-size:14px;color:var(--text);">60+ Negotiation Scripts</span>
-        <span style="font-size:13px;color:var(--text3);font-weight:600;">$500 value</span>
+        <span style="font-size:13px;color:var(--text3);font-weight:600;">$750 value</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.1);border-radius:8px;">
         <span style="font-size:14px;color:var(--text);">9 AI-Powered Tools</span>
         <span style="font-size:13px;color:var(--text3);font-weight:600;">$500 value</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.1);border-radius:8px;">
-        <span style="font-size:14px;color:var(--text);">175+ Brand Database <span style="font-size:11px;color:var(--accent);">(emails, budgets, niches — 10+ hrs of research done for you)</span></span>
-        <span style="font-size:13px;color:var(--text3);font-weight:600;">$500+ value</span>
+        <span style="font-size:14px;color:var(--text);">175+ Brand Database <span style="font-size:11px;color:var(--accent);">(emails, budgets, niches)</span></span>
+        <span style="font-size:13px;color:var(--text3);font-weight:600;">$500 value</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.1);border-radius:8px;">
         <span style="font-size:14px;color:var(--text);">12 Outbound Pitch Scripts</span>
-        <span style="font-size:13px;color:var(--text3);font-weight:600;">$300 value</span>
+        <span style="font-size:13px;color:var(--text3);font-weight:600;">$500 value</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.1);border-radius:8px;">
         <span style="font-size:14px;color:var(--text);">Deal Tracker CRM</span>
-        <span style="font-size:13px;color:var(--text3);font-weight:600;">$300 value</span>
+        <span style="font-size:13px;color:var(--text3);font-weight:600;">$500 value</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.1);border-radius:8px;">
         <span style="font-size:14px;color:var(--text);">Negotiation War Room</span>
-        <span style="font-size:13px;color:var(--text3);font-weight:600;">$300 value</span>
+        <span style="font-size:13px;color:var(--text3);font-weight:600;">$500 value</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(200,255,0,0.04);border:1px solid rgba(200,255,0,0.1);border-radius:8px;">
         <span style="font-size:14px;color:var(--text);">Beginner System</span>
-        <span style="font-size:13px;color:var(--text3);font-weight:600;">$200 value</span>
+        <span style="font-size:13px;color:var(--text3);font-weight:600;">$250 value</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:rgba(200,255,0,0.1);border:2px solid rgba(200,255,0,0.3);border-radius:8px;margin-top:4px;">
         <span style="font-size:15px;font-weight:700;color:var(--accent);">Total Value: $3,500+</span>
@@ -1117,8 +1100,9 @@ footer a { color: var(--text2); text-decoration: none; }
     <div style="font-size:14px;color:#ccc;line-height:1.6;">Use the Kit for 30 days. If you haven't closed a deal at your real rate, I will personally coach you until you do. No questions. No runaround.</div>
   </div>
 
-  <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=rate_calculator&utm_campaign=closer_kit&utm_content=post_loss_cta" target="_blank" class="kit-cta-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-kit-post-loss',value:246,currency:'USD'})">Get the UGC Closer Kit &rarr;</a>
+  <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=rate_calculator&utm_campaign=closer_kit&utm_content=post_loss_cta" target="_blank" class="kit-cta-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-kit-post-loss',value:246,currency:'USD'})">Start Closing $800+ Deals &rarr;</a>
   <div class="kit-cta-price"><s>$497</s> $246</div>
+  <div style="font-size:13px;color:var(--text2);margin-top:6px;">or 4 payments of $61.50</div>
   <div class="kit-cta-countdown">Tax season sale ends March 31 &mdash; <span class="countdown-timer" id="countdownTimer"></span></div>
 </div>
 
@@ -1126,7 +1110,7 @@ footer a { color: var(--text2); text-decoration: none; }
 <!-- FOOTER -->
 <footer class="fade-up">
   <p>&copy; 2026 closermethod. <a href="https://instagram.com/closermethod" target="_blank">@closermethod</a></p>
-  <p style="margin-top:8px">Built from 15 years at Criteo, Deel, Autodesk, HBO, Bloomberg, McCann, Y&amp;R &amp; more</p>
+  <p style="margin-top:8px">Built from 15 years at Criteo, Deel, Autodesk, Red Points, HBO, Bloomberg, McCann, Y&amp;R, NBC News, Rolling Stone, Levi's, Kenneth Cole, Limited Brands, Anthropologie &amp; Milk Studios</p>
   <p style="margin-top:8px;font-size:13px;color:var(--text2)">The same frameworks that close six-figure enterprise deals work even better on an $800 UGC deal.</p>
   <p style="margin-top:8px;font-size:12px"><a href="/privacy-policy.html" style="color:var(--text3)">Privacy Policy</a></p>
 </footer>
@@ -1535,7 +1519,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- STICKY MOBILE CTA - Kit link -->
 <div class="sticky-cta" id="stickyCta">
   <div class="sticky-cta-text">Your rate: <span class="rate-val" id="stickyRate">-</span></div>
-  <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=rate_calculator&utm_campaign=closer_kit&utm_content=sticky_mobile" target="_blank" class="sticky-cta-btn" id="stickyCtaBtn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-kit-sticky',value:246,currency:'USD'})">Get the Kit - $246 &rarr;</a>
+  <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=rate_calculator&utm_campaign=closer_kit&utm_content=sticky_mobile" target="_blank" class="sticky-cta-btn" id="stickyCtaBtn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-kit-sticky',value:246,currency:'USD'})">Close $800+ Deals - $246 &rarr;</a>
 </div>
 
 <script src="/global-nav.js" defer></script>
