@@ -108,7 +108,7 @@ h2{font-size:22px;font-weight:700;line-height:1.3;letter-spacing:-.3px}
 /* Email gate */
 .email-section{text-align:left}
 .email-section .icon-row{font-size:40px;margin-bottom:16px}
-.input-field{display:block;width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:10px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);background:var(--surface2);margin-bottom:10px;transition:border-color .15s;outline:none}
+.input-field{display:block;width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:10px;font-family:'Inter',sans-serif;font-size:16px;color:var(--text);background:var(--surface2);margin-bottom:10px;transition:border-color .15s;outline:none}
 .input-field:focus{border-color:var(--accent)}
 .input-field::placeholder{color:#555}
 
@@ -195,7 +195,7 @@ h2{font-size:22px;font-weight:700;line-height:1.3;letter-spacing:-.3px}
 .gate-input {
   width:100%; padding:14px 16px;
   background:#111; border:1px solid #333;
-  border-radius:10px; color:#e8e8e8; font-size:15px;
+  border-radius:10px; color:#e8e8e8; font-size:16px;
   font-family:inherit;
 }
 .gate-input:focus { outline:none; border-color:#c8ff00; }
@@ -350,13 +350,14 @@ function handleGateSubmit(e) {
   var name = document.getElementById('gateName').value.trim();
   var email = document.getElementById('gateEmail').value.trim();
   if (!name || !email) return false;
+  if (!/\S+@\S+\.\S+/.test(email)) return false;
   localStorage.setItem('ugc_name', name);
   localStorage.setItem('ugc_email', email);
   fetch('https://app.kit.com/forms/9131179/subscriptions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email_address: email, first_name: name, tags: ['quiz-lead', 'manychat-lead'] })
-  }).catch(function(){});
+  }).catch(function(err){ console.warn('Kit sync:', err); });
   if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'quiz-lead', value: 0, currency: 'USD' });
   document.getElementById('emailGate').classList.add('hidden');
   document.body.style.overflow = '';
@@ -467,7 +468,7 @@ const tiers = [
     ctaLink: "/tool1-rate-calculator.html",
     ctaBtn: "Try the Free Rate Calculator",
     ctaLink2: "https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=quiz&utm_campaign=closer_kit",
-    ctaBtn2: "See the Closer Kit ($246 - tax season sale)"
+    ctaBtn2: "See the Closer Kit ($247 - tax season sale)"
   },
   {
     min: 18, max: 23,
@@ -481,7 +482,7 @@ const tiers = [
     ctaType: "closer-kit",
     ctaText: "The UGC Closer Kit has 10 Notion-based systems: the Closing System, Money System, 175+ Brand Database, 60+ scripts, and Deal Tracker CRM to close the gap.",
     ctaLink: "https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=quiz&utm_campaign=closer_kit",
-    ctaBtn: "Get the UGC Closer Kit - $246"
+    ctaBtn: "Start Closing $800+ Deals - $247"
   },
   {
     min: 24, max: 28,
@@ -587,9 +588,9 @@ function submitEmail() {
       email_address: email,
       tags: ['quiz-lead', 'ugc-closer-score', scoreTag]
     })
-  }).catch(() => {});
+  }).catch(function(err){ console.warn('Kit sync:', err); });
 
-  console.log('Quiz lead:', { name, email, score: totalScore, tag: scoreTag });
+  console.warn('Quiz lead:', { name, email, score: totalScore, tag: scoreTag });
   showResults();
 }
 
@@ -615,11 +616,11 @@ function showResults() {
   if (tier.ctaType === 'closer-kit') {
     ctaContainer.innerHTML = '<div class="closer-kit-cta">' +
       '<p style="font-size:14px;color:var(--text2);line-height:1.6;margin-bottom:16px;">' + tier.ctaText + '</p>' +
-      '<div style="margin-bottom:12px"><span class="price-old">$497</span><span class="price">$246</span></div>' +
+      '<div style="margin-bottom:12px"><span class="price-old">$497</span><span class="price">$247</span></div>' +
       '<p class="price-sub">one-time payment · instant access</p>' +
       '<a class="cta-btn" href="' + tier.ctaLink + '" target="_blank" style="margin-top:16px;display:inline-block;">' + tier.ctaBtn + '</a>' +
       '<div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
-  <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$246</strong> <span style="color:var(--text3, #666);">Tax Season Sale</span>
+  <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$247</strong> <span style="color:var(--text3, #666);">Tax Season Sale</span>
 </div>' +
       '</div>';
   } else if (tier.ctaType === 'nurture') {
@@ -628,7 +629,7 @@ function showResults() {
       '<a class="cta-btn" href="' + tier.ctaLink + '" target="_blank">' + tier.ctaBtn + '</a>' +
       '<div style="margin-top:12px"><a href="' + tier.ctaLink2 + '" target="_blank" style="font-size:13px;color:var(--accent);text-decoration:underline;">' + tier.ctaBtn2 + '</a></div>' +
       '<div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
-  <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$246</strong> <span style="color:var(--text3, #666);">Tax Season Sale</span>
+  <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$247</strong> <span style="color:var(--text3, #666);">Tax Season Sale</span>
 </div>' +
       '</div>';
   } else if (tier.ctaType === 'free') {
@@ -649,7 +650,7 @@ function showResults() {
   setTimeout(() => {
     document.querySelectorAll('#cta-container a[href*="stan.store"]').forEach(function(a) {
       a.addEventListener('click', function() {
-        if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-quiz',value:246,currency:'USD'});
+        if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-quiz',value:247,currency:'USD'});
       });
     });
   }, 50);
@@ -667,7 +668,7 @@ function shareQuiz() {
       title: "How Much Money Are You Losing Per Brand Deal?",
       text: 'I got ' + totalScore + '/28 on the UGC Closer Score quiz. Take it:',
       url: shareUrl
-    }).catch(() => {});
+    }).catch(function(err){console.warn('Kit sync:',err)});
   } else {
     window.open(shareUrl, '_blank');
   }
@@ -679,7 +680,7 @@ function copyLink() {
     const orig = btn.textContent;
     btn.textContent = 'Copied!';
     setTimeout(() => { btn.textContent = orig; }, 2000);
-  }).catch(() => {});
+  }).catch(function(err){console.warn('Kit sync:',err)});
 }
 
 function retakeQuiz() {

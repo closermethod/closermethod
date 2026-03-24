@@ -17,7 +17,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '35298849146380570');
 fbq('track', 'PageView');
-fbq('track', 'ViewContent', {content_name:'vsl-rate-calculator',content_type:'product',value:246,currency:'USD'});
+fbq('track', 'ViewContent', {content_name:'vsl-rate-calculator',content_type:'product',value:247,currency:'USD'});
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
@@ -433,12 +433,12 @@ h1,h2,h3,h4 { font-family:'Space Grotesk',sans-serif; }
       <div class="cta-exclusive">Offer only available here</div>
       <div class="cta-price-row">
         <span class="cta-old">$497</span>
-        <span class="cta-new">$246</span>
+        <span class="cta-new">$247</span>
       </div>
       <div class="cta-save">Save 60% &middot; only on this page</div>
       <p class="cta-anchor">The calculator shows your rate. <strong>The Kit gives you the words to close at that rate.</strong></p>
-      <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=vsl-rate&utm_campaign=closer-kit-tax246" class="cta-btn-secondary" id="ctaBtnSecondary">
-        Get the Full Closer Kit - $246 &rarr;
+      <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=vsl-rate&utm_campaign=closer_kit-tax247" class="cta-btn-secondary" id="ctaBtnSecondary">
+        Start Closing $800+ Deals - $247 &rarr;
       </a>
       <p class="cta-guarantee">Use the scripts on real brands. If you don't feel like it was worth every penny, email me within 30 days for a personal coaching session. No questions.</p>
     </div>
@@ -510,8 +510,8 @@ h1,h2,h3,h4 { font-family:'Space Grotesk',sans-serif; }
         </div>
       </div>
     </div>
-    <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=vsl-rate&utm_campaign=closer-kit-tax246" class="cta-btn-secondary" style="margin-top:16px;">
-      Get the Full Closer Kit - $246 &rarr;
+    <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=vsl-rate&utm_campaign=closer_kit-tax247" class="cta-btn-secondary" style="margin-top:16px;">
+      Start Closing $800+ Deals - $247 &rarr;
     </a>
     <div class="cta-trust" style="margin-top:16px;">
       <span><span class="tick">&check;</span> 60+ scripts</span>
@@ -536,13 +536,14 @@ function handleGateSubmit(e) {
   var name = document.getElementById('gateName').value.trim();
   var email = document.getElementById('gateEmail').value.trim();
   if (!name || !email) return false;
+  if (!/\S+@\S+\.\S+/.test(email)) return false;
   localStorage.setItem('ugc_name', name);
   localStorage.setItem('ugc_email', email);
   fetch('https://app.kit.com/forms/9131179/subscriptions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email_address: email, first_name: name, tags: ['vsl-rate-lead', 'rate-calculator-user'] })
-  }).catch(function(){});
+  }).catch(function(err){ console.warn('Kit sync:', err); });
   if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'vsl-rate-gate', value: 0, currency: 'USD' });
   document.getElementById('emailGate').classList.add('hidden');
   document.body.style.overflow = '';
@@ -615,7 +616,7 @@ document.querySelectorAll('.cta-btn-primary').forEach(function(btn){
 });
 document.querySelectorAll('.cta-btn-secondary').forEach(function(btn){
   btn.addEventListener('click', function(){
-    if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-from-rate-vsl',value:246,currency:'USD'});
+    if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-from-rate-vsl',value:247,currency:'USD'});
   });
 });
 </script>

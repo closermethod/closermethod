@@ -171,7 +171,7 @@ footer{text-align:center;padding:40px 20px;font-size:11px;color:#444}
     <div class="ptc-tag">✓ Practice done - get the full system</div>
     <div class="ptc-title">Want <span>60+ proven scripts</span> + the complete closing system?</div>
     <p class="ptc-sub">The UGC Closer Kit has the exact words top creators use to close $500-$2,000 deals. 10 Notion-based systems including 60+ scripts, 175+ Brand Database, Deal Tracker CRM, and more.</p>
-    <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=closer_coach" class="ptc-btn">Start Closing $800+ Deals</a>
+    <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=free_tool&utm_campaign=closer_kit&utm_content=closer_coach" class="ptc-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-coach-cta',value:247,currency:'USD'})">Start Closing $800+ Deals</a>
     <p style="text-align:center;color:#888;font-size:11px;margin-top:6px">Built from $1.2M in enterprise sales</p>
   </div>
 </div>
@@ -183,11 +183,12 @@ footer{text-align:center;padding:40px 20px;font-size:11px;color:#444}
 const KIT_FORM_ID='9131179';
 function unlockTool(){
   const email=document.getElementById('gateEmail').value.trim();
-  if(!email||!email.includes('@'))return;
-  fetch(`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,tags:['closer-coach-user','link-in-bio-lead']})}).catch(()=>{});
+  if(!email||!email.includes('@'))return;if(!/\S+@\S+\.\S+/.test(email))return;
+  fetch(`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,tags:['closer-coach-user','link-in-bio-lead']})}).catch(function(err){console.warn('Kit sync:',err)});
   localStorage.setItem('ugc_email',JSON.stringify({email,ts:Date.now()}));
   document.getElementById('emailGate').style.display='none';
   document.getElementById('toolArea').classList.add('active');
+  if(typeof fbq==='function')fbq('track','Lead',{content_name:'closer-coach-gate'});
 }
 const urlParams=new URLSearchParams(window.location.search);if(localStorage.getItem('ugc_email')||urlParams.get('unlocked')==='1'){document.getElementById('emailGate').style.display='none';document.getElementById('toolArea').classList.add('active');if(!localStorage.getItem('ugc_email')){localStorage.setItem('ugc_email',JSON.stringify({email:'homepage-lead',ts:Date.now()}))}}
 

@@ -144,7 +144,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
 <!-- Social proof bar -->
 <div style="background:linear-gradient(90deg,#1a1000,#0a1a00,#1a1000);border-bottom:1px solid var(--accent);text-align:center;padding:10px 12px;font-size:12px;color:var(--text);position:sticky;top:0;z-index:100;animation:urgencyPulse 3s ease-in-out infinite">
-  <strong style="color:var(--accent)">TAX SEASON SPECIAL:</strong> UGC Closer Kit drops to <strong style="color:#fff">$246</strong> <span style="text-decoration:line-through;color:var(--text2)">$497</span> &middot; Ends March 31 &middot; <span style="color:var(--accent)">Save $251</span>
+  <strong style="color:var(--accent)">TAX SEASON SPECIAL:</strong> UGC Closer Kit drops to <strong style="color:#fff">$247</strong> <span style="text-decoration:line-through;color:var(--text2)">$497</span> &middot; Ends March 31 &middot; <span style="color:var(--accent)">Save $250</span>
 </div>
 <style>@keyframes urgencyPulse{0%,100%{opacity:1}50%{opacity:.85}}</style>
 
@@ -155,7 +155,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
   <div class="avatar-placeholder">E</div>
   <div class="handle">@closermethod</div>
   <div class="name">Elisabeth | closermethod</div>
-  <div class="bio">15 years in enterprise sales at Criteo, Deel, Autodesk, McCann, Y&amp;R, NBC News, HBO, Bloomberg, Rolling Stone, Levi's, Kenneth Cole, Limited Brands, Anthropologie, Milk Studios. 268% of quota. NYU educated. Now I teach UGC creators the sales frameworks that move money in boardrooms.</div>
+  <div class="bio">15 years in enterprise sales at Criteo, Deel, Autodesk, Red Points, McCann, Y&amp;R, NBC News, HBO, Bloomberg, Rolling Stone, Levi's, Kenneth Cole, Limited Brands, Anthropologie, Milk Studios. 268% of quota. NYU educated. Now I teach UGC creators the sales frameworks that move money in boardrooms.</div>
 </div>
 
 <!-- Stats -->
@@ -212,8 +212,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 <!-- TAX SEASON COUNTDOWN -->
 <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;margin-bottom:16px">
   <div style="font-size:11px;color:var(--red);font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px">Tax Season Sale - Live Now Through March 31</div>
-  <div style="font-size:13px;color:var(--text2);line-height:1.5">The UGC Closer Kit drops to <strong style="color:var(--accent)">$246</strong> for a limited time. Write it off as a business expense. Make it back on your next deal.</div>
-  <div style="margin-top:10px;font-size:12px;color:var(--accent);font-weight:600">$246 for a limited time. Ends March 31 at midnight.</div>
+  <div style="font-size:13px;color:var(--text2);line-height:1.5">The UGC Closer Kit drops to <strong style="color:var(--accent)">$247</strong> for a limited time. Write it off as a business expense. Make it back on your next deal.</div>
+  <div style="margin-top:10px;font-size:12px;color:var(--accent);font-weight:600">$247 for a limited time. Ends March 31 at midnight.</div>
 </div>
 
 <div class="kit-cta">
@@ -223,17 +223,17 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
   <div class="kit-includes">Closing System · Money System · 175+ Brands · 60+ Scripts · CRM · Scale System</div>
   <div class="kit-price">
     <span class="old">$497</span>
-    <span class="current" style="color:var(--accent)">$246</span>
+    <span class="current" style="color:var(--accent)">$247</span>
   </div>
-  <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=linkinbio&utm_medium=links_page&utm_campaign=closer_kit_vsl" class="kit-btn" id="kitBtn">Start Closing $800+ Deals → $246 (Tax Season Sale)</a>
+  <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=linkinbio&utm_medium=links_page&utm_campaign=closer_kit_vsl" class="kit-btn" id="kitBtn">Start Closing $800+ Deals → $247 (Tax Season Sale)</a>
   <div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
-  <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$246</strong> <span style="color:var(--text3, #666);">Tax Season Sale</span>
+  <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$247</strong> <span style="color:var(--text3, #666);">Tax Season Sale</span>
 </div>
   </div>
 
 <!-- PITCH VAULT - Secondary product -->
 <div style="text-align:center;margin-bottom:16px;">
-  <a href="/pitch-vault.html" style="font-size:13px;color:var(--text3, #888);text-decoration:underline;text-underline-offset:3px;">Just need pitch templates? The Pitch Vault - $27</a>
+  <a href="/pitch-vault.html" style="font-size:13px;color:var(--text3, #888);text-decoration:underline;text-underline-offset:3px;">Just need pitch templates? The Pitch Vault - $37</a>
 </div>
 
   <!-- CANDI - Verified public X post - $650 to $4,750 -->
@@ -342,7 +342,9 @@ function showUnlocked() {
 
 async function handleEmailCapture(e) {
   e.preventDefault();
-  const email = document.getElementById('emailInput').value;
+  const email = document.getElementById('emailInput').value.trim();
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) { alert('Please enter a valid email address'); return; }
   const btn = e.target.querySelector('button');
   btn.textContent = 'Sending...';
   btn.disabled = true;
@@ -365,7 +367,7 @@ async function handleEmailCapture(e) {
     const formData = new FormData();
     formData.append('form-name', 'email-capture');
     formData.append('email', email);
-    fetch('/', { method: 'POST', body: formData }).catch(() => {});
+    fetch('/', { method: 'POST', body: formData }).catch(function(err) { console.warn('Netlify form sync error (non-blocking):', err); });
 
     // Track with Meta Pixel
     if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'link-in-bio-lead', value: 0, currency: 'USD' });
@@ -383,7 +385,7 @@ checkOptIn();
 const kitBtn = document.getElementById('kitBtn');
 if (kitBtn) {
   kitBtn.addEventListener('click', function() {
-    if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-links-page',value:246,currency:'USD'});
+    if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-links-page',value:247,currency:'USD'});
   });
 }
 </script>

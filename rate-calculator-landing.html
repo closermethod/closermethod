@@ -19,13 +19,14 @@ function handleGateSubmit(e) {
   var name = document.getElementById('gateName').value.trim();
   var email = document.getElementById('gateEmail').value.trim();
   if (!name || !email) return false;
+  if (!/\S+@\S+\.\S+/.test(email)) return false;
   localStorage.setItem('ugc_name', name);
   localStorage.setItem('ugc_email', email);
   fetch('https://app.kit.com/forms/9131179/subscriptions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email_address: email, first_name: name, tags: ['rate-calculator-user', 'manychat-lead'] })
-  }).catch(function(){});
+  }).catch(function(err){ console.warn('Kit sync:', err); });
   if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'rate-calculator-user', value: 0, currency: 'USD' });
   document.getElementById('emailGate').classList.add('hidden');
   document.body.style.overflow = '';
@@ -224,7 +225,7 @@ body {
   border: 1px solid var(--border2);
   border-radius: 10px;
   color: var(--text);
-  font-size: 15px;
+  font-size: 16px;
   font-family: inherit;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
@@ -504,7 +505,7 @@ body {
   position:fixed; top:0; left:0; right:0; bottom:0;
   z-index:9999; background:#0a0a0a;
   display:flex; align-items:center; justify-content:center;
-  padding:24px;
+  padding:24px; overflow-y: auto;
 }
 .email-gate.hidden { display:none; }
 .gate-card {
@@ -534,7 +535,7 @@ body {
 .gate-input {
   width:100%; padding:14px 16px;
   background:#111; border:1px solid #333;
-  border-radius:10px; color:#e8e8e8; font-size:15px;
+  border-radius:10px; color:#e8e8e8; font-size:16px;
   font-family:inherit;
 }
 .gate-input:focus { outline:none; border-color:#c8ff00; }
@@ -557,7 +558,7 @@ body {
 
 </style>
 </head>
-<body>
+<body data-no-nav="true">
 <!-- EMAIL GATE OVERLAY -->
 <div class="email-gate" id="emailGate">
   <div class="gate-card">
@@ -676,7 +677,7 @@ body {
     <!-- Secondary CTA -->
     <div style="text-align:center; margin-top:32px; padding:24px; background:var(--card); border:1px solid var(--border); border-radius:12px;">
       <p style="color:var(--text2); font-size:14px; margin-bottom:12px;">Already know your rate but need help landing deals?</p>
-      <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=landing_page&utm_campaign=closer_kit&utm_content=rate_calc_landing" target="_blank" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-rate-calc-landing',value:246,currency:'USD'})" style="color:var(--accent); font-family:'Space Grotesk',sans-serif; font-weight:700; text-decoration:none; font-size:15px; letter-spacing:-.01em;">Get The UGC Closer Kit - Pitch Scripts, Follow-Ups & Negotiation Playbook →</a>
+      <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=landing_page&utm_campaign=closer_kit&utm_content=rate_calc_landing" target="_blank" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-rate-calc-landing',value:247,currency:'USD'})" style="color:var(--accent); font-family:'Space Grotesk',sans-serif; font-weight:700; text-decoration:none; font-size:15px; letter-spacing:-.01em;">Get The UGC Closer Kit - Pitch Scripts, Follow-Ups & Negotiation Playbook →</a>
     </div>
 
     <!-- Footer -->
@@ -741,7 +742,7 @@ body {
 if (localStorage.getItem('ugc_email')) {
   document.getElementById('emailForm').innerHTML = '<p style="color: var(--text2); font-size: 14px;">Redirecting to calculator...</p>';
   setTimeout(() => {
-    window.location.href = 'https://ugc-closer-suite.netlify.app/tool1-rate-calculator.html';
+    window.location.href = '/tool1-rate-calculator.html';
   }, 500);
 }
 
@@ -753,6 +754,7 @@ function handleSubmit(e) {
   const email = document.getElementById('formEmail').value.trim();
 
   if (!name || !email) return false;
+  if (!/\S+@\S+\.\S+/.test(email)) return false;
 
   // Disable button
   const submitBtn = document.getElementById('submitBtn');
@@ -775,7 +777,7 @@ function handleSubmit(e) {
     })
   })
     .then(res => res.json())
-    .catch(err => console.log('Kit sync:', err))
+    .catch(function(err){ console.warn('Kit sync:', err); })
     .finally(() => {
       // Track with Meta Pixel
       if (typeof fbq !== 'undefined') {
@@ -788,7 +790,7 @@ function handleSubmit(e) {
 
       // Redirect to calculator
       setTimeout(() => {
-        window.location.href = 'https://ugc-closer-suite.netlify.app/tool1-rate-calculator.html';
+        window.location.href = '/tool1-rate-calculator.html';
       }, 800);
     });
 
@@ -827,6 +829,7 @@ function handleExitSubmit(e) {
   const email = document.getElementById('exitEmail').value.trim();
 
   if (!name || !email) return false;
+  if (!/\S+@\S+\.\S+/.test(email)) return false;
 
   // Save locally
   localStorage.setItem('ugc_name', name);
@@ -842,7 +845,7 @@ function handleExitSubmit(e) {
       tags: ['rate-calculator-user', 'exit-intent-capture']
     })
   })
-    .catch(err => console.log('Kit sync:', err))
+    .catch(function(err){ console.warn('Kit sync:', err); })
     .finally(() => {
       // Track
       if (typeof fbq !== 'undefined') {
@@ -855,7 +858,7 @@ function handleExitSubmit(e) {
 
       // Redirect
       setTimeout(() => {
-        window.location.href = 'https://ugc-closer-suite.netlify.app/tool1-rate-calculator.html';
+        window.location.href = '/tool1-rate-calculator.html';
       }, 800);
     });
 

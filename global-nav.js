@@ -24,19 +24,29 @@ var banner=document.createElement('div');
 banner.className='cm-tax-banner';
 banner.id='cmTaxBanner';
 banner.innerHTML=`<div class="cm-tax-banner-inner">
-<span class="cm-tax-banner-text">TAX SALE: Kit <strong>$246</strong> <s>$497</s></span>
+<span class="cm-tax-banner-text">TAX SALE: Kit <strong>$247</strong> <s>$497</s></span>
 <span class="cm-tax-banner-timer" id="cmBannerCountdown">--d --h --m</span>
-<a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale" class="cm-tax-banner-cta" target="_blank">GET IT →</a>
+<a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=tax_banner&utm_campaign=closer_kit&utm_content=tax_banner" class="cm-tax-banner-cta" target="_blank">GET IT →</a>
 </div>`;
 document.body.insertBefore(banner,document.body.firstChild);
 
 // Banner countdown
+var bannerCountdownInterval;
 function updateBannerCountdown(){
   var el=document.getElementById('cmBannerCountdown');
   if(!el)return;
   var now=new Date();
   var deadline=new Date(now.getFullYear(),2,31,23,59,59);
-  if(now>deadline)deadline=new Date(now.getFullYear()+1,2,31,23,59,59);
+  if(now>deadline){
+    // Sale has ended — update banner to reflect that
+    el.style.display='none';
+    var bannerText=document.querySelector('.cm-tax-banner-text');
+    if(bannerText)bannerText.innerHTML='TAX SALE HAS ENDED — Join the waitlist for next year';
+    var ctaLinks=document.querySelectorAll('.cm-tax-banner-cta');
+    ctaLinks.forEach(function(link){link.textContent='JOIN WAITLIST \u2192';});
+    if(bannerCountdownInterval)clearInterval(bannerCountdownInterval);
+    return;
+  }
   var diff=deadline-now;
   var d=Math.floor(diff/(1000*60*60*24));
   var h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
@@ -45,7 +55,7 @@ function updateBannerCountdown(){
   el.textContent=d+'d '+h+'h '+m+'m '+s+'s';
 }
 updateBannerCountdown();
-setInterval(updateBannerCountdown,1000);
+bannerCountdownInterval=setInterval(updateBannerCountdown,1000);
 
 // Calculate banner height for offsets
 var bannerHeight=40;
@@ -93,7 +103,7 @@ nav.innerHTML=`
 <a href="/" class="cm-nav-logo">closer<em style="color:#c8ff00;font-style:italic">method</em><img src="/assets/elisabeth-headshot.jpg" alt="Elisabeth" class="cm-nav-headshot"></a>
 <ul class="cm-nav-links">
 <li><a href="/tool1-rate-calculator.html">Rate Calculator</a></li>
-<li><a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=nav&utm_campaign=closer-kit" class="cm-nav-cta" target="_blank">Close $800+ Deals - $246</a></li>
+<li><a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=nav&utm_campaign=closer_kit&utm_content=nav_desktop" class="cm-nav-cta" target="_blank">Close $800+ Deals - $247</a></li>
 </ul>
 <button class="cm-nav-hamburger" id="cmHamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </div>
@@ -101,7 +111,7 @@ nav.innerHTML=`
 <div class="cm-nav-mobile" id="cmMobileMenu">
 <div class="cm-nav-mobile-inner">
 <a href="/tool1-rate-calculator.html">Rate Calculator</a>
-<a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=nav&utm_campaign=closer-kit" class="cm-nav-mobile-cta" target="_blank">Close $800+ Deals - $246</a>
+<a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=nav&utm_campaign=closer_kit&utm_content=nav_mobile" class="cm-nav-mobile-cta" target="_blank">Close $800+ Deals - $247</a>
 </div>
 </div>`;
 document.body.insertBefore(nav,document.body.firstChild);

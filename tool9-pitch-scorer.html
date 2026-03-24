@@ -609,7 +609,7 @@ footer a { color: var(--text2); text-decoration: none; }
 <!-- FOOTER -->
 <footer>
   <p>&copy; 2026 closermethod &middot; <a href="https://instagram.com/closermethod" target="_blank">@closermethod</a></p>
-  <p style="margin-top:8px">Built from 15 years at Criteo, Deel, Autodesk, HBO, Bloomberg, McCann, Y&amp;R &amp; more</p>
+  <p style="margin-top:8px">Built from 15 years at Criteo, Deel, Autodesk, Red Points, HBO, Bloomberg, McCann, Y&amp;R, NBC News, Rolling Stone, Levi's, Kenneth Cole, Limited Brands, Anthropologie &amp; Milk Studios</p>
   <p style="margin-top:8px"><a href="/privacy-policy.html">Privacy Policy</a></p>
 </footer>
 
@@ -633,6 +633,8 @@ function handleGateSubmit(e) {
   e.preventDefault();
   const email = document.getElementById('gateEmail').value.trim();
   if (!email) return false;
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) { alert('Please enter a valid email address'); return false; }
 
   emailSubmitted = true;
   localStorage.setItem('ugc_email', JSON.stringify({email, ts: Date.now()}));
@@ -646,7 +648,7 @@ function handleGateSubmit(e) {
       email_address: email,
       tags: ['pitch-scorer-user']
     })
-  }).catch(() => {});
+  }).catch(function(err) { console.warn('Kit sync error (non-blocking):', err); });
 
   // Track with Meta Pixel
   fbq('track', 'Lead', { content_name: 'pitch-scorer-gate', value: 0, currency: 'USD' });
@@ -671,6 +673,8 @@ function handleExitSubmit(e) {
   e.preventDefault();
   const email = document.getElementById('exitEmail').value.trim();
   if (!email) return false;
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) { alert('Please enter a valid email address'); return false; }
 
   emailSubmitted = true;
   localStorage.setItem('ugc_email', JSON.stringify({email, ts: Date.now()}));
@@ -684,7 +688,7 @@ function handleExitSubmit(e) {
       email_address: email,
       tags: ['pitch-scorer-user', 'exit-intent']
     })
-  }).catch(() => {});
+  }).catch(function(err) { console.warn('Kit sync error (non-blocking):', err); });
 
   fbq('track', 'Lead', { content_name: 'pitch-scorer-exit-modal', value: 0, currency: 'USD' });
 

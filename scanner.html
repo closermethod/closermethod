@@ -894,8 +894,8 @@ body::before {
       </div>
       <div class="script-upsell">
         <p>That's 1 of 60+ negotiation scripts in the UGC Closer Kit.</p>
-        <p class="upsell-price">Tax season deal: <s>$1,626 in value</s> <strong>$246</strong> (ends March 31)</p>
-        <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=scanner&utm_campaign=closer-kit" class="cta-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-scanner',value:246,currency:'USD'})">Get the Kit - $246 →</a>
+        <p class="upsell-price">Tax season deal: <s>$1,626 in value</s> <strong>$247</strong> (ends March 31)</p>
+        <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=scanner&utm_campaign=closer_kit" class="cta-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-scanner',value:247,currency:'USD'})">Start Closing $800+ Deals - $247 →</a>
     </div>
 
     <div class="action-buttons">
@@ -974,7 +974,7 @@ body::before {
   </section>
 
   <footer class="scanner-footer">
-    Part of <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=scanner&utm_campaign=closer-kit">The Closer Method</a>. Built for creators who know their worth.
+    Part of <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=scanner&utm_campaign=closer_kit">The Closer Method</a>. Built for creators who know their worth.
     <br><a href="/privacy-policy.html" style="margin-top:8px;display:inline-block">Privacy Policy</a>
   </footer>
 </div>
@@ -1024,6 +1024,7 @@ function handleGateSubmit() {
     showToast('Please enter your name and email.');
     return;
   }
+  if (!/\S+@\S+\.\S+/.test(email)) return;
   // Use consistent localStorage keys across funnel
   localStorage.setItem('ugc_name', name);
   localStorage.setItem('ugc_email', email);
@@ -1038,7 +1039,7 @@ function handleGateSubmit() {
       first_name: name,
       tags: ['scanner-user', 'brand-database-funnel']
     })
-  }).catch(function(){});
+  }).catch(function(err){ console.warn('Kit sync:', err); });
 
   // Track with Meta Pixel
   if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'scanner-gate', value: 0, currency: 'USD' });
@@ -1323,7 +1324,7 @@ dealInput.addEventListener('keydown', (e) => {
 
 <div class="sticky-cta" id="stickyCta">
   <div class="sticky-cta-text">Get scripts for every flag</div>
-  <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=scanner&utm_campaign=closer-kit-sticky" class="sticky-cta-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-scanner-sticky',value:246,currency:'USD'})">Get the Kit - $246 →</a>
+  <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=scanner&utm_campaign=closer_kit-sticky" class="sticky-cta-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'ugc-closer-kit-scanner-sticky',value:247,currency:'USD'})">Start Closing $800+ Deals - $247 →</a>
 </div>
 <script src="/global-nav.js" defer></script>
 <script>

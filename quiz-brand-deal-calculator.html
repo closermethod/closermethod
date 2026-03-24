@@ -871,8 +871,8 @@ body {
     <div class="cta-box">
       <h3>Close Deals at These Rates</h3>
       <p>The UGC Closer Kit gives you the complete Closing System, Money System, 175+ brand database, 60+ scripts, Deal Tracker CRM, and 7 more systems to close deals.</p>
-      <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=quiz&utm_campaign=closer_kit&utm_content=brand_deal_calc" class="cta-btn" target="_blank" rel="noopener">Start Closing $800+ Deals</a>
-      <div class="cta-price"><s>$4,891+ value</s> &nbsp; <strong>$246 tax season sale</strong> <s style="color:#666">$497</s> &middot; 30-day guarantee</div>
+      <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=quiz&utm_campaign=closer_kit&utm_content=brand_deal_calc" class="cta-btn" target="_blank" rel="noopener" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'quiz-brand-deal-calculator',value:247,currency:'USD'})">Start Closing $800+ Deals</a>
+      <div class="cta-price"><s>$4,891+ value</s> &nbsp; <strong>$247 tax season sale</strong> <s style="color:#666">$497</s> &middot; 30-day guarantee</div>
       <div style="text-align:center;color:#a8d900;font-size:12px;font-weight:700;margin-top:6px">Includes 60+ negotiation scripts, 175+ brand database, and 9 AI tools</div>
     </div>
 
@@ -898,13 +898,15 @@ function handleGateSubmit(e) {
   var name = document.getElementById('gateName').value.trim();
   var email = document.getElementById('gateEmail').value.trim();
   if (!name || !email) return false;
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) { alert('Please enter a valid email address'); return false; }
   localStorage.setItem('ugc_name', name);
   localStorage.setItem('ugc_email', email);
   fetch('https://app.kit.com/forms/9131179/subscriptions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email_address: email, first_name: name, tags: ['quiz-lead', 'manychat-lead'] })
-  }).catch(function(){});
+  }).catch(function(err){ console.warn('Kit sync error (non-blocking):', err); });
   if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'quiz-lead', value: 0, currency: 'USD' });
   document.getElementById('emailGate').classList.add('hidden');
   document.body.style.overflow = '';
@@ -929,6 +931,8 @@ inlineGateForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const email = emailInput.value.trim();
   if (!email) return;
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) { alert('Please enter a valid email address'); return; }
 
   gateBtn.disabled = true;
   gateBtn.textContent = 'Starting...';
@@ -941,11 +945,10 @@ inlineGateForm.addEventListener('submit', async (e) => {
     fd.append('tags[]', 'quiz-lead');
     await fetch('https://app.kit.com/forms/9131179/subscriptions', {
       method: 'POST',
-      body: fd,
-      mode: 'no-cors'
+      body: fd
     });
   } catch (err) {
-    // Silently continue - no-cors won't give us a usable response
+    console.warn('Kit sync error (non-blocking):', err);
   }
 
   localStorage.setItem('ugc_email', email);

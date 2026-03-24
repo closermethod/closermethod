@@ -9,6 +9,14 @@
 /pitch-review /tool6-pitch-review.html      200
 /share       /tool7-share-score.html        200
 /community   /tool8-closer-community.html   200
+/vault       /vault.html                    200
+/pitch-vault /pitch-vault.html              200
+/scorer      /tool9-pitch-scorer.html       200
+/income      /tool10-income-calculator.html  200
+/scanner     /scanner.html                  200
+/links       /links.html                    200
+/sales       /sales.html                    200
+/vsl         /vsl.html                      200
 
 # Legacy URL compatibility (! forces redirect over existing files)
 /tool5-landing-page   /tool5-negotiation-sim.html   200!
