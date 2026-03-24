@@ -21,9 +21,9 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 <title>Free UGC Rate Calculator - Stop Undercharging for Brand Deals</title>
-<meta name="description" content="Calculate your real UGC rate with a framework built from 15 years of enterprise sales at Criteo, Deel, Bloomberg & HBO. Free forever. Built from 15 years of enterprise sales.">
+<meta name="description" content="Calculate your real UGC rate with a framework built from 15 years of enterprise sales at Criteo, Deel, Bloomberg & HBO. Free forever.">
 <meta property="og:title" content="Free UGC Rate Calculator - Built from Fortune 500 Sales">
-<meta property="og:description" content="Calculate your real rate, qualify brand deals, get word-for-word negotiation scripts. All free.">
+<meta property="og:description" content="Calculate your real rate in 30 seconds. Free forever.">
 <link rel="canonical" href="https://ugc-closer-suite.netlify.app/tool1-rate-calculator.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,173 +74,13 @@ body {
   background: var(--accent); border: none; color: #000;
   padding: 10px 20px; border-radius: 8px; font-size: 13px; font-weight: 700;
   cursor: pointer; transition: all .2s;
-  text-decoration: none;
-  font-family: inherit;
+  text-decoration: none; font-family: inherit;
 }
 .nav-cta:hover { background: var(--accent2); transform: translateY(-1px); }
 
-/* HERO */
-.hero {
-  padding: 100px 24px 40px;
-  max-width: 800px; margin: 0 auto;
-  text-align: center;
-}
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--bg3); border: 1px solid var(--border2);
-  padding: 6px 14px; border-radius: 100px;
-  font-size: 12px; font-weight: 600; color: var(--accent);
-  text-transform: uppercase; letter-spacing: 1px;
-  margin-bottom: 24px;
-}
-.hero-badge .dot { width:6px; height:6px; background:var(--green); border-radius:50%; animation: pulse 2s infinite; }
-@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
-
-.hero h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(32px, 6vw, 52px);
-  font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  color: #fff;
-}
-.hero h1 em { font-style: italic; color: var(--accent); }
-
-.hero-sub {
-  font-size: clamp(16px, 2.5vw, 20px);
-  color: var(--text2);
-  max-width: 560px; margin: 0 auto 32px;
-  line-height: 1.5;
-}
-
-.hero-proof {
-  display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
-  font-size: 13px; color: var(--text3);
-  margin-bottom: 24px;
-}
-.hero-proof span { display: flex; align-items: center; gap: 6px; }
-.hero-proof .check { color: var(--accent); }
-
-/* PROOF STRIP - Hero results */
-.proof-strip {
-  max-width: 700px; margin: 0 auto 32px;
-  display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
-  padding: 16px 20px;
-  background: rgba(200,255,0,0.04);
-  border: 1px solid rgba(200,255,0,0.12);
-  border-radius: 12px;
-}
-.proof-strip-item {
-  font-size: 14px; font-weight: 600; color: var(--text);
-  display: flex; align-items: center; gap: 6px;
-}
-.proof-strip-item .name { color: var(--accent); }
-.proof-strip-item .arrow { color: var(--text3); }
-.proof-strip-item .result { color: var(--green); font-weight: 700; }
-@media(max-width:600px) {
-  .proof-strip { flex-direction: column; align-items: center; gap: 10px; }
-}
-
-.hero-arrow {
-  font-size: 28px; color: var(--accent); animation: bounce 2s infinite;
-  cursor: pointer;
-}
-@keyframes bounce { 0%,20%,50%,80%,100% { transform:translateY(0); } 40% { transform:translateY(-10px); } 60% { transform:translateY(-5px); } }
-
-/* PROOF SECTION - Openclaw-style verified testimonials */
-.proof-section {
-  padding: 40px 24px 20px;
-  max-width: 900px; margin: 0 auto;
-}
-.proof-strip-title {
-  text-align:center; font-size:13px; font-weight:700;
-  letter-spacing:2px; text-transform:uppercase;
-  color:var(--text3); margin-bottom:8px;
-}
-.proof-strip-sub {
-  text-align:center; font-size:14px; color:var(--text3);
-  margin-bottom:28px; font-weight:400;
-}
-.proof-cards { display:flex; flex-direction:column; gap:16px; }
-.proof-card {
-  background:var(--card); border:1px solid var(--border);
-  border-radius:16px; padding:24px 24px 20px;
-  transition:border-color .2s, transform .2s;
-  cursor:pointer; text-decoration:none; display:block;
-}
-.proof-card:hover {
-  border-color:rgba(200,255,0,0.4);
-  transform:translateY(-2px);
-}
-.proof-card-header {
-  display:flex; align-items:center; gap:12px; margin-bottom:14px;
-}
-.proof-avatar {
-  width:44px; height:44px; border-radius:50%;
-  object-fit:cover; border:2px solid var(--border);
-  flex-shrink:0;
-}
-.proof-avatar-placeholder {
-  width:44px; height:44px; border-radius:50%;
-  background:linear-gradient(135deg, var(--accent), #8aae00);
-  display:flex; align-items:center; justify-content:center;
-  font-size:18px; font-weight:800; color:#1a1a1a;
-  flex-shrink:0;
-}
-.proof-user-info { flex:1; min-width:0; }
-.proof-user-name {
-  font-size:14px; font-weight:700; color:var(--text);
-  display:flex; align-items:center; gap:6px;
-}
-.proof-verified {
-  display:inline-flex; align-items:center; justify-content:center;
-  width:16px; height:16px; border-radius:50%;
-  background:var(--blue, #1d9bf0); color:#fff; font-size:9px;
-}
-.proof-handle {
-  font-size:13px; color:var(--text3); font-weight:400;
-}
-.proof-outcome {
-  font-size:12px; font-weight:800; color:var(--green);
-  background:rgba(0,200,83,0.08); border:1px solid rgba(0,200,83,0.2);
-  padding:4px 12px; border-radius:20px; white-space:nowrap;
-  margin-left:auto; flex-shrink:0;
-}
-.proof-quote {
-  font-size:15px; color:var(--text2); line-height:1.7;
-  margin-bottom:12px;
-}
-.proof-quote strong { color:var(--text); }
-.proof-footer {
-  display:flex; justify-content:space-between; align-items:center;
-  padding-top:12px; border-top:1px solid var(--border);
-}
-.proof-platform {
-  font-size:11px; color:var(--text3); display:flex;
-  align-items:center; gap:6px; font-weight:500;
-}
-.proof-platform svg { width:14px; height:14px; fill:var(--text3); }
-.proof-verify-link {
-  font-size:11px; color:var(--accent); font-weight:600;
-  text-decoration:none; display:flex; align-items:center; gap:4px;
-}
-.proof-verify-link:hover { text-decoration:underline; }
-.proof-stats-bar {
-  display:flex; align-items:center; justify-content:center;
-  gap:24px; margin-top:20px; padding:14px;
-  background:rgba(200,255,0,0.04); border:1px solid rgba(200,255,0,0.1);
-  border-radius:12px; flex-wrap:wrap;
-}
-.proof-stat { text-align:center; }
-.proof-stat-num {
-  font-size:20px; font-weight:900; color:var(--accent);
-  font-family:'JetBrains Mono',monospace;
-}
-.proof-stat-label { font-size:11px; color:var(--text3); font-weight:500; }
-
 /* INSTANT CALC SECTION */
 .instant-section {
-  padding: 60px 24px;
+  padding: 100px 24px 40px;
   max-width: 900px; margin: 0 auto;
   position: relative;
 }
@@ -252,30 +92,18 @@ body {
 }
 .section-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(24px, 4vw, 36px);
+  font-size: clamp(28px, 5vw, 44px);
   font-weight: 700; color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 8px; line-height: 1.1;
 }
-.section-sub { color: var(--text2); font-size: 16px; margin-bottom: 32px; }
-
-/* FREE BADGE - floating */
-.free-badge {
-  position: absolute; top: 52px; right: 24px;
-  background: rgba(200,255,0,0.06);
-  border: 1px solid rgba(200,255,0,0.2);
-  border-radius: 12px; padding: 10px 16px;
-  font-size: 12px; color: var(--accent); font-weight: 600;
-  text-align: center; line-height: 1.5;
-  animation: badgePulse 3s ease-in-out infinite;
+.section-title em { color: var(--accent); font-style: italic; }
+.section-sub { color: var(--text2); font-size: 16px; margin-bottom: 32px; line-height: 1.5; }
+.section-proof {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  font-size: 13px; color: var(--text3); margin-bottom: 24px;
 }
-.free-badge .badge-icon { font-size: 18px; display: block; margin-bottom: 2px; }
-@keyframes badgePulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(200,255,0,0); }
-  50% { box-shadow: 0 0 20px 4px rgba(200,255,0,0.08); }
-}
-@media(max-width:700px) {
-  .free-badge { position: relative; top: auto; right: auto; display: inline-block; margin-bottom: 20px; }
-}
+.section-proof span { display: flex; align-items: center; gap: 6px; }
+.section-proof .check { color: var(--accent); }
 
 /* CALCULATOR - Premium SaaS feel */
 .calc-container {
@@ -302,29 +130,21 @@ body {
   color: var(--text2); margin-bottom: 8px;
 }
 .field label .field-icon { font-size: 14px; }
-
-.field .select-wrap {
-  position: relative;
-}
+.field .select-wrap { position: relative; }
 .field select {
   width:100%; padding: 14px 42px 14px 16px; background: var(--bg);
   border: 1px solid var(--border2); border-radius: 10px;
-  color: var(--text); font-size: 15px; font-family: inherit;
-  font-weight: 500;
+  color: var(--text); font-size: 15px; font-family: inherit; font-weight: 500;
   cursor: pointer; appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23999' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
+  background-repeat: no-repeat; background-position: right 16px center;
   transition: all .25s ease;
 }
 .field select:focus {
-  outline:none;
-  border-color: var(--accent);
+  outline:none; border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(200,255,0,0.1), 0 0 20px rgba(200,255,0,0.05);
 }
 .field select:hover { border-color: var(--text3); }
-
-/* Select glow animation on change */
 .field select.glow {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(200,255,0,0.15), 0 0 30px rgba(200,255,0,0.08);
@@ -336,29 +156,23 @@ body {
   border: none; border-radius: 10px;
   font-size: 16px; font-weight: 700;
   cursor: pointer; font-family: 'Space Grotesk', sans-serif;
-  transition: all .2s;
-  margin-top: 4px;
-  position: relative;
-  overflow: hidden;
+  transition: all .2s; margin-top: 4px;
+  position: relative; overflow: hidden;
 }
 .calc-btn:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,255,0,0.2); }
 .calc-btn:active { transform: translateY(0); }
-
-.calc-btn-sub {
-  text-align:center; margin-top:10px; font-size:11px; color:var(--text3);
-}
+.calc-btn-sub { text-align:center; margin-top:10px; font-size:11px; color:var(--text3); }
 
 /* RESULT AREA */
 .result-placeholder {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   height: 100%; min-height: 340px;
-  text-align: center; color: var(--text3);
-  font-size: 14px;
+  text-align: center; color: var(--text3); font-size: 14px;
 }
 .result-placeholder .emoji { font-size: 48px; margin-bottom: 16px; opacity: 0.7; }
 .result-placeholder p { max-width: 200px; line-height: 1.6; }
 
-.result-area { display: none; opacity: 0; transition: opacity 0.4s ease; }
+.result-area { display: none; opacity: 0; transition: opacity 0.6s ease; }
 .result-area.visible { opacity: 1; }
 
 /* Hero rate number */
@@ -369,76 +183,135 @@ body {
 .result-rate {
   font-family: 'Space Grotesk',sans-serif;
   font-size: clamp(52px, 8vw, 72px);
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 6px;
+  font-weight: 700; color: var(--accent);
+  line-height: 1; margin-bottom: 6px;
   text-shadow: 0 0 40px rgba(200,255,0,0.3);
 }
 .result-per-unit {
-  font-size: 16px; color: var(--text2); margin-bottom: 24px; font-weight: 500;
+  font-size: 16px; color: var(--text2); margin-bottom: 20px; font-weight: 500;
 }
 
-/* Breakdown table - premium with alternating rows */
+/* CLOSER SCORE */
+.closer-score-card {
+  background: linear-gradient(135deg, rgba(200,255,0,0.08), rgba(200,255,0,0.02));
+  border: 2px solid rgba(200,255,0,0.25);
+  border-radius: 16px; padding: 24px; margin-bottom: 20px;
+  text-align: center; position: relative; overflow: hidden;
+}
+.closer-score-card::before {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(200,255,0,0.05) 0%, transparent 70%);
+  animation: scorePulse 3s ease-in-out infinite;
+}
+@keyframes scorePulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+.closer-score-label {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 2px; color: var(--text3); margin-bottom: 12px;
+  position: relative;
+}
+.closer-score-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 56px; font-weight: 700; color: var(--accent);
+  line-height: 1; margin-bottom: 4px; position: relative;
+}
+.closer-score-number span { font-size: 28px; color: var(--text3); }
+.closer-score-tier {
+  font-size: 14px; font-weight: 600; color: var(--text);
+  margin-bottom: 12px; position: relative;
+}
+.closer-score-bar-wrap {
+  height: 8px; background: var(--bg3); border-radius: 4px;
+  overflow: hidden; margin-bottom: 8px; position: relative;
+}
+.closer-score-bar {
+  height: 100%; background: linear-gradient(90deg, var(--red), #ffaa00, var(--accent));
+  border-radius: 4px; transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+  width: 0%;
+}
+.closer-score-percentile {
+  font-size: 12px; color: var(--text2); position: relative;
+}
+
+/* MONEY LEFT ON TABLE */
+.money-left-card {
+  background: rgba(255,68,68,0.04);
+  border: 1px solid rgba(255,68,68,0.2);
+  border-radius: 14px; padding: 20px; margin-bottom: 20px;
+  text-align: center;
+}
+.money-left-label {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 2px; color: var(--red); margin-bottom: 8px;
+}
+.money-left-amount {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 36px; font-weight: 700; color: var(--red);
+  line-height: 1; margin-bottom: 6px;
+}
+.money-left-detail {
+  font-size: 13px; color: var(--text2); line-height: 1.5;
+}
+.money-left-detail strong { color: var(--text); }
+.money-left-breakdown {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  margin-top: 14px;
+}
+.money-left-item {
+  background: rgba(255,68,68,0.06); border: 1px solid rgba(255,68,68,0.12);
+  border-radius: 8px; padding: 10px 8px;
+}
+.money-left-item-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px; font-weight: 700; color: var(--red);
+}
+.money-left-item-label { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 1px; }
+
+/* Breakdown table */
 .breakdown-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 0;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid var(--border);
+  width: 100%; border-collapse: collapse; margin-bottom: 0;
+  border-radius: 10px; overflow: hidden; border: 1px solid var(--border);
 }
 .breakdown-table tr { transition: background .2s; }
 .breakdown-table tr:nth-child(even) { background: rgba(255,255,255,0.02); }
 .breakdown-table tr:nth-child(odd) { background: var(--bg); }
 .breakdown-table td {
-  padding: 11px 16px;
-  font-size: 13px;
-  color: var(--text2);
+  padding: 11px 16px; font-size: 13px; color: var(--text2);
   border-bottom: 1px solid var(--border);
 }
 .breakdown-table td:last-child {
   text-align: right; font-weight: 600; font-family: 'JetBrains Mono', monospace;
   color: var(--text);
 }
-.breakdown-table tr.usage-row {
-  background: rgba(200,255,0,0.06) !important;
-}
-.breakdown-table tr.usage-row td {
-  color: var(--accent); font-weight: 600;
-}
+.breakdown-table tr.usage-row { background: rgba(200,255,0,0.06) !important; }
+.breakdown-table tr.usage-row td { color: var(--accent); font-weight: 600; }
 .breakdown-table tr.usage-row td:first-child::before {
   content: ""; display: inline-block; width: 4px; height: 14px;
   background: var(--accent); border-radius: 2px; margin-right: 10px;
   vertical-align: middle;
 }
-.breakdown-table tr.total-row {
-  background: rgba(200,255,0,0.04) !important;
-}
+.breakdown-table tr.total-row { background: rgba(200,255,0,0.04) !important; }
 .breakdown-table tr.total-row td {
-  font-weight: 700; color: #fff;
-  border-bottom: none; padding: 14px 16px;
-  font-size: 14px;
+  font-weight: 700; color: #fff; border-bottom: none;
+  padding: 14px 16px; font-size: 14px;
 }
-.breakdown-table tr.total-row td:last-child {
-  color: var(--accent); font-size: 16px;
-}
+.breakdown-table tr.total-row td:last-child { color: var(--accent); font-size: 16px; }
 
-/* Comparison bar - what most charge vs what you should */
+/* Comparison bar */
 .comparison-bar {
-  margin: 20px 0 0;
-  padding: 16px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  margin: 20px 0 0; padding: 16px;
+  background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
 }
 .comparison-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text3); margin-bottom: 12px; }
-.comparison-bars { display: flex; flex-direction: column; gap: 8px; }
+.comparison-bars { display: flex; flex-direction: column; gap: 10px; }
 .comp-row { display: flex; align-items: center; gap: 12px; }
-.comp-row-label { font-size: 12px; color: var(--text3); min-width: 100px; font-weight: 500; }
-.comp-track { flex: 1; height: 28px; background: var(--bg3); border-radius: 6px; overflow: hidden; position: relative; }
-.comp-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px;
-  font-size: 12px; font-weight: 700; font-family: 'JetBrains Mono', monospace;
+.comp-row-label { font-size: 12px; color: var(--text3); min-width: 110px; font-weight: 500; }
+.comp-track { flex: 1; height: 32px; background: var(--bg3); border-radius: 6px; overflow: hidden; position: relative; }
+.comp-fill {
+  height: 100%; border-radius: 6px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px;
+  font-size: 13px; font-weight: 700; font-family: 'JetBrains Mono', monospace;
   transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .comp-fill.low { background: rgba(255,68,68,0.25); color: var(--red); }
@@ -446,12 +319,9 @@ body {
 
 /* Total deal value box */
 .deal-value-box {
-  margin-top: 16px;
-  padding: 20px;
+  margin-top: 16px; padding: 20px;
   background: linear-gradient(135deg, rgba(200,255,0,0.08), rgba(200,255,0,0.03));
-  border: 2px solid rgba(200,255,0,0.25);
-  border-radius: 14px;
-  text-align: center;
+  border: 2px solid rgba(200,255,0,0.25); border-radius: 14px; text-align: center;
 }
 .deal-value-label {
   font-size: 11px; font-weight: 700; text-transform: uppercase;
@@ -464,7 +334,7 @@ body {
 }
 .deal-value-detail { font-size: 13px; color: var(--text2); margin-top: 4px; }
 
-/* DEFENSE SCRIPT - Premium teaser with glassmorphism */
+/* Defense script teaser */
 .defense-box {
   background: var(--bg); border: 1px solid var(--border2);
   border-radius: 14px; padding: 20px; margin-top: 20px;
@@ -482,212 +352,214 @@ body {
   background-repeat: no-repeat; background-position: center; background-size: 12px;
 }
 .defense-visible {
-  font-size: 14px; color: var(--text); line-height: 1.7;
-  font-style: italic;
-  padding: 14px 18px;
-  background: rgba(200,255,0,0.04);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 8px 8px 0;
-  margin-bottom: 4px;
+  font-size: 14px; color: var(--text); line-height: 1.7; font-style: italic;
+  padding: 14px 18px; background: rgba(200,255,0,0.04);
+  border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; margin-bottom: 4px;
 }
 .defense-blurred-wrap { position: relative; }
 .defense-blurred {
   font-size: 13px; color: var(--text2); line-height: 1.6; font-style: italic;
-  filter: blur(6px); user-select: none; pointer-events: none;
-  padding: 12px 0;
+  filter: blur(6px); user-select: none; pointer-events: none; padding: 12px 0;
 }
 .defense-unlock-overlay {
   position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  /* Glassmorphism */
   background: rgba(17,17,17,0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(200,255,0,0.1);
-  border-radius: 10px;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(200,255,0,0.1); border-radius: 10px;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 10px; padding: 16px;
 }
-.defense-unlock-overlay .lock-icon {
-  font-size: 24px; margin-bottom: 2px;
-}
+.defense-unlock-overlay .lock-icon { font-size: 24px; margin-bottom: 2px; }
 .defense-unlock-overlay a {
-  font-size: 14px; color: #000; font-weight: 700;
-  text-decoration: none; padding: 12px 24px;
-  background: var(--accent);
-  border-radius: 8px;
-  transition: all .2s;
-  font-family: inherit;
+  font-size: 14px; color: #000; font-weight: 700; text-decoration: none;
+  padding: 12px 24px; background: var(--accent); border-radius: 8px;
+  transition: all .2s; font-family: inherit;
 }
 .defense-unlock-overlay a:hover { background: var(--accent2); transform: translateY(-1px); }
-.defense-unlock-overlay .unlock-sub {
-  font-size: 11px; color: var(--text3); font-style: normal;
-}
+.defense-unlock-overlay .unlock-sub { font-size: 11px; color: var(--text3); font-style: normal; }
 
-/* COST OF INACTION BOX */
-.cost-of-inaction {
-  margin-top: 24px;
-  padding: 24px;
-  background: rgba(255,68,68,0.04);
-  border: 1px solid rgba(255,68,68,0.15);
-  border-radius: 14px;
+/* Share results */
+.share-results-card {
+  margin-top: 20px; background: var(--bg2);
+  border: 1px solid var(--accent); border-radius: 12px;
+  padding: 20px; text-align: center;
+}
+.share-results-card .share-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px; font-weight: 700; color: var(--accent);
+  margin-bottom: 14px; letter-spacing: 0.5px;
+}
+.share-results-card .share-copy-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); color: #000; border: none;
+  padding: 10px 22px; border-radius: 8px;
+  font-size: 13px; font-weight: 700; cursor: pointer;
+  transition: all 0.2s; font-family: inherit;
+}
+.share-results-card .share-copy-btn:hover { background: var(--accent2); transform: translateY(-1px); }
+.share-results-card .share-copy-btn.copied { background: var(--green); color: #fff; }
+.share-results-card .share-ig-prompt {
+  margin-top: 14px; font-size: 13px; color: var(--text2); line-height: 1.5;
+}
+.share-results-card .share-ig-prompt strong { color: var(--text); }
+
+/* PITCH VAULT CTA - Primary */
+.pitch-vault-cta {
+  display: none; margin-top: 24px; padding: 32px;
+  background: linear-gradient(135deg, rgba(200,255,0,0.08), rgba(200,255,0,0.02));
+  border: 2px solid rgba(200,255,0,0.3); border-radius: 16px;
   text-align: center;
 }
-.coi-headline {
-  font-size: 15px; color: var(--text); font-weight: 600;
-  margin-bottom: 16px; line-height: 1.5;
-}
-.coi-headline .current-rate { color: var(--red); }
-.coi-headline .should-rate { color: var(--accent); }
-.coi-losses {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
-  margin-bottom: 16px;
-}
-@media(max-width:500px) { .coi-losses { grid-template-columns: 1fr; gap: 8px; } }
-.coi-loss-item {
-  background: rgba(255,68,68,0.06);
-  border: 1px solid rgba(255,68,68,0.12);
-  border-radius: 10px; padding: 14px 12px;
-}
-.coi-loss-num {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 28px; font-weight: 700; color: var(--red);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.coi-loss-label { font-size: 11px; color: var(--text3); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
-.coi-emotional {
-  font-size: 14px; color: var(--text2); font-style: italic; line-height: 1.6;
-}
-.coi-emotional strong { color: var(--text); font-style: normal; }
-
-/* VSL BRIDGE CTA - Natural next step */
-.vsl-redirect {
-  display: none;
-  background: linear-gradient(135deg, rgba(200,255,0,0.06), rgba(200,255,0,0.02));
-  border: 2px solid rgba(200,255,0,0.2);
-  border-radius: 16px; padding: 32px;
-  margin-top: 24px; text-align: center;
-}
-.vsl-redirect.show { display: block; animation: fadeUp .5s ease both; }
-.bridge-eyebrow {
+.pitch-vault-cta.show { display: block; animation: fadeUp .5s ease both; }
+.pitch-vault-cta .pv-eyebrow {
   font-size: 11px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 2px; color: var(--text3); margin-bottom: 12px;
+  letter-spacing: 2px; color: var(--accent); margin-bottom: 12px;
 }
-.bridge-headline {
+.pitch-vault-cta .pv-headline {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(20px, 3vw, 26px); font-weight: 700; color: #fff;
+  font-size: clamp(20px, 3vw, 28px); font-weight: 700; color: #fff;
   margin-bottom: 8px; line-height: 1.3;
 }
-.bridge-sub {
-  font-size: 15px; color: var(--text2); margin-bottom: 20px; line-height: 1.6;
+.pitch-vault-cta .pv-sub {
+  font-size: 15px; color: var(--text2); margin-bottom: 24px; line-height: 1.6;
   max-width: 500px; margin-left: auto; margin-right: auto;
 }
-.bridge-sub strong { color: #fff; }
-.vsl-redirect-btn {
+.pitch-vault-cta .pv-sub strong { color: #fff; }
+.pitch-vault-cta .pv-btn {
   display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 36px;
-  background: var(--accent); color: #000;
+  padding: 16px 36px; background: var(--accent); color: #000;
   border: none; border-radius: 10px;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 16px; font-weight: 700;
-  cursor: pointer; transition: all .2s;
-  text-decoration: none;
+  cursor: pointer; transition: all .2s; text-decoration: none;
 }
-.vsl-redirect-btn:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,255,0,0.2); }
-.bridge-proof {
+.pitch-vault-cta .pv-btn:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,255,0,0.2); }
+.pitch-vault-cta .pv-proof {
   font-size: 12px; color: var(--text3); margin-top: 10px; line-height: 1.5;
 }
-.bridge-urgency {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 12px; color: var(--text3); margin-top: 12px;
-}
-.bridge-urgency .pulse-dot {
-  width: 6px; height: 6px; background: var(--green); border-radius: 50%;
-  animation: pulse 2s infinite;
-}
 
-/* SOCIAL PROOF BAR */
-.proof-bar {
-  padding: 20px 24px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  overflow: hidden;
-  background: var(--bg2);
+/* KIT UPSELL - Secondary */
+.kit-upsell {
+  display: none; margin-top: 20px; padding: 28px 24px;
+  border: 1.5px solid var(--border2); border-radius: 14px;
+  background: rgba(255,255,255,0.02); text-align: center;
 }
-.proof-scroll {
-  display: flex; gap: 48px;
-  animation: scrollProof 30s linear infinite;
-  white-space: nowrap;
+.kit-upsell.show { display: block; animation: fadeUp .5s ease both; }
+.kit-upsell .ku-eyebrow {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 2px; color: var(--text3); margin-bottom: 10px;
 }
-@keyframes scrollProof {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.kit-upsell .ku-headline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 8px;
 }
-.proof-item {
-  font-size: 13px; color: var(--text2);
-  display: flex; align-items: center; gap: 8px;
-  flex-shrink: 0;
+.kit-upsell .ku-sub {
+  font-size: 14px; color: var(--text2); margin-bottom: 20px; line-height: 1.6;
 }
-.proof-item strong { color: var(--text); }
+.kit-upsell .ku-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px; background: transparent;
+  border: 2px solid var(--accent); border-radius: 10px;
+  color: var(--accent); font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px; font-weight: 700; cursor: pointer;
+  transition: all .2s; text-decoration: none;
+}
+.kit-upsell .ku-btn:hover { background: rgba(200,255,0,0.08); transform: translateY(-1px); }
+.kit-upsell .ku-detail { font-size: 11px; color: var(--text3); margin-top: 8px; }
 
-/* FOOTER */
-footer {
-  padding: 32px 24px;
+/* POST-RESULT TESTIMONIALS */
+.post-result-proof {
+  display: none; padding: 40px 0 0; max-width: 900px; margin: 0 auto;
+}
+.post-result-proof.show { display: block; animation: fadeUp .5s ease both; }
+.post-result-proof .prp-title {
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text3); margin-bottom: 16px;
   text-align: center;
-  border-top: 1px solid var(--border);
-  font-size: 13px; color: var(--text3);
 }
-footer a { color: var(--text2); text-decoration: none; }
+.proof-cards { display: flex; flex-direction: column; gap: 14px; }
+.proof-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 24px 24px 20px;
+  transition: border-color .2s;
+}
+.proof-card-header {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+}
+.proof-avatar-placeholder {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #8aae00);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 800; color: #1a1a1a; flex-shrink: 0;
+}
+.proof-user-info { flex: 1; min-width: 0; }
+.proof-user-name {
+  font-size: 14px; font-weight: 700; color: var(--text);
+  display: flex; align-items: center; gap: 6px;
+}
+.proof-verified {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--blue); color: #fff; font-size: 9px;
+}
+.proof-handle { font-size: 13px; color: var(--text3); font-weight: 400; }
+.proof-outcome {
+  font-size: 12px; font-weight: 800; color: var(--green);
+  background: rgba(0,200,83,0.08); border: 1px solid rgba(0,200,83,0.2);
+  padding: 4px 12px; border-radius: 20px; white-space: nowrap;
+  margin-left: auto; flex-shrink: 0;
+}
+.proof-quote {
+  font-size: 15px; color: var(--text2); line-height: 1.7; margin-bottom: 12px;
+}
+.proof-quote strong { color: var(--text); }
+.proof-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 12px; border-top: 1px solid var(--border);
+}
+.proof-platform {
+  font-size: 11px; color: var(--text3); display: flex;
+  align-items: center; gap: 6px; font-weight: 500;
+}
+.proof-platform svg { width: 14px; height: 14px; fill: var(--text3); }
 
 /* EMAIL GATE OVERLAY */
 .email-gate {
   position: fixed; top:0; left:0; right:0; bottom:0;
-  z-index: 9999;
-  background: var(--bg);
-  display: flex; align-items: center; justify-content: center;
-  padding: 24px;
+  z-index: 9999; background: var(--bg);
+  display: flex; align-items: center; justify-content: center; padding: 24px;
 }
 .email-gate.hidden { display: none; }
-.gate-card {
-  max-width: 460px; width: 100%;
-  text-align: center;
-}
+.gate-card { max-width: 460px; width: 100%; text-align: center; }
 .gate-badge {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--bg3); border: 1px solid var(--border2);
   padding: 6px 14px; border-radius: 100px;
   font-size: 12px; font-weight: 600; color: var(--accent);
-  text-transform: uppercase; letter-spacing: 1px;
-  margin-bottom: 24px;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px;
 }
 .gate-badge .dot { width:6px; height:6px; background:var(--green); border-radius:50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
 .gate-card h1 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(28px, 5vw, 42px);
-  font-weight: 700; line-height: 1.1;
+  font-size: clamp(28px, 5vw, 42px); font-weight: 700; line-height: 1.1;
   color: #fff; margin-bottom: 16px;
 }
 .gate-card h1 em { color: var(--accent); font-style: italic; }
-.gate-card p {
-  font-size: 16px; color: var(--text2);
-  margin-bottom: 28px; line-height: 1.5;
-}
+.gate-card p { font-size: 16px; color: var(--text2); margin-bottom: 28px; line-height: 1.5; }
 .gate-form { display: flex; flex-direction: column; gap: 12px; }
 .gate-input {
-  width: 100%; padding: 14px 16px;
-  background: var(--bg2); border: 1px solid var(--border2);
-  border-radius: 10px; color: var(--text); font-size: 15px;
-  font-family: inherit;
+  width: 100%; padding: 14px 16px; background: var(--bg2);
+  border: 1px solid var(--border2); border-radius: 10px;
+  color: var(--text); font-size: 15px; font-family: inherit;
 }
 .gate-input:focus { outline: none; border-color: var(--accent); }
 .gate-input::placeholder { color: var(--text3); }
 .gate-submit {
-  width: 100%; padding: 16px;
-  background: var(--accent); color: #000;
+  width: 100%; padding: 16px; background: var(--accent); color: #000;
   border: none; border-radius: 10px;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 17px; font-weight: 700;
-  cursor: pointer; transition: all .15s;
+  font-size: 17px; font-weight: 700; cursor: pointer; transition: all .15s;
 }
 .gate-submit:hover { background: var(--accent2); transform: translateY(-1px); }
 .gate-trust {
@@ -697,6 +569,14 @@ footer a { color: var(--text2); text-decoration: none; }
 .gate-trust span { display: flex; align-items: center; gap: 4px; }
 .gate-trust .ck { color: var(--accent); }
 
+/* FOOTER */
+footer {
+  padding: 32px 24px; text-align: center;
+  border-top: 1px solid var(--border);
+  font-size: 13px; color: var(--text3);
+}
+footer a { color: var(--text2); text-decoration: none; }
+
 /* ANIMATIONS */
 .fade-up {
   opacity: 0; transform: translateY(30px);
@@ -705,15 +585,13 @@ footer a { color: var(--text2); text-decoration: none; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
 
-/* Count-up animation */
 .counting { opacity: 0.9; }
 
 /* STICKY MOBILE CTA */
 .sticky-cta {
   position:fixed; bottom:0; left:0; right:0; z-index:99;
   background:rgba(10,10,10,0.95); backdrop-filter:blur(12px);
-  border-top:1px solid var(--border);
-  padding:12px 16px;
+  border-top:1px solid var(--border); padding:12px 16px;
   display:none; align-items:center; justify-content:space-between;
 }
 .sticky-cta.visible { display:flex; }
@@ -727,602 +605,117 @@ footer a { color: var(--text2); text-decoration: none; }
 @media (min-width:701px) { .sticky-cta { display:none !important; } }
 @media (max-width:700px) { body { padding-bottom:65px; } }
 
-/* Mobile refinements */
-@media(max-width:700px) {
-  .calc-left, .calc-right { padding: 24px 20px; }
-  .result-rate { font-size: 48px; }
-  .result-placeholder { min-height: 200px; }
-  .coi-losses { grid-template-columns: 1fr; }
-  .comparison-bars .comp-row { flex-direction: column; gap: 4px; }
-  .comparison-bars .comp-row-label { min-width: auto; }
-  .deal-value-num { font-size: 28px; }
-  .proof-cards { gap: 12px; }
-  .proof-card { padding: 20px 18px 16px; }
-  .vsl-redirect { padding: 20px 16px; }
-  .calc-btn, .gate-submit, .vsl-redirect-btn, .nav-cta { min-height: 48px; }
-  .sticky-cta-btn { min-height: 48px; padding: 14px 24px; display: inline-flex; align-items: center; }
-  .defense-unlock-overlay a { min-height: 48px; display: inline-flex; align-items: center; }
-  .share-copy-btn { min-height: 48px; }
-  .proof-outcome { font-size: 11px; padding: 3px 8px; }
-  .proof-card-header { flex-wrap: wrap; gap: 8px; }
-}
-
-/* SHARE RESULTS CARD */
-.share-results-card {
-  margin-top: 20px;
-  background: var(--bg2, #111);
-  border: 1px solid var(--accent);
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-}
-.share-results-card .share-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 14px;
-  letter-spacing: 0.5px;
-}
-.share-results-card .share-copy-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--accent);
-  color: #000;
-  border: none;
-  padding: 10px 22px;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-family: inherit;
-}
-.share-results-card .share-copy-btn:hover {
-  background: var(--accent2, #a8d900);
-  transform: translateY(-1px);
-}
-.share-results-card .share-copy-btn.copied {
-  background: var(--green, #00c853);
-  color: #fff;
-}
-.share-results-card .share-ig-prompt {
-  margin-top: 14px;
-  font-size: 13px;
-  color: var(--text2, #999);
-  line-height: 1.5;
-}
-.share-results-card .share-ig-prompt strong {
-  color: var(--text, #e8e8e8);
-}
-
 /* ============================================================
-   COMPLETE MOBILE OVERHAUL - 375px target
+   MOBILE OVERHAUL
    ============================================================ */
 @media (max-width: 600px) {
+  html, body { overflow-x: hidden; max-width: 100vw; }
+  body { font-size: 14px; -webkit-text-size-adjust: 100%; }
 
-  /* GLOBAL: prevent horizontal scroll, base font size */
-  html, body {
-    overflow-x: hidden;
-    max-width: 100vw;
-  }
-  body {
-    font-size: 14px;
-    -webkit-text-size-adjust: 100%;
-  }
+  .nav { padding: 10px 16px; }
+  .nav-logo { font-size: 16px; }
+  .nav-cta { padding: 10px 16px; font-size: 12px; min-height: 48px; display: inline-flex; align-items: center; }
 
-  /* GLOBAL NAV: account for fixed nav height in hero */
-  .nav {
-    padding: 10px 16px;
-  }
-  .nav-logo {
-    font-size: 16px;
-  }
-  .nav-cta {
-    padding: 10px 16px;
-    font-size: 12px;
-    min-height: 48px;
-    display: inline-flex;
-    align-items: center;
-  }
+  .instant-section { padding: 80px 16px 28px; }
+  .section-title { font-size: 26px; }
+  .section-sub { font-size: 14px; margin-bottom: 20px; }
+  .section-proof { gap: 10px; font-size: 12px; flex-direction: column; }
 
-  /* HERO: tight padding, account for global nav */
-  .hero {
-    padding: 80px 16px 28px;
-  }
-  .hero h1 {
-    font-size: 28px;
-    line-height: 1.15;
-    margin-bottom: 16px;
-  }
-  .hero-sub {
-    font-size: 15px;
-    margin-bottom: 20px;
-    padding: 0;
-  }
-  .hero-badge {
-    font-size: 11px;
-    padding: 5px 12px;
-    margin-bottom: 16px;
-  }
-  .hero-proof {
-    gap: 12px;
-    font-size: 12px;
-    margin-bottom: 16px;
-    flex-direction: column;
-    align-items: center;
-  }
-  .hero-arrow {
-    font-size: 24px;
-  }
+  .calc-container { grid-template-columns: 1fr; border-radius: 14px; }
+  .calc-left { padding: 20px 16px; gap: 16px; border-right: none; border-bottom: 1px solid var(--border); }
+  .calc-right { padding: 20px 16px; }
 
-  /* PROOF STRIP in hero */
-  .proof-strip {
-    padding: 12px 16px;
-    gap: 8px;
-    margin-bottom: 20px;
-  }
-  .proof-strip-item {
-    font-size: 13px;
-  }
+  .field label { font-size: 11px; margin-bottom: 6px; }
+  .field select { width: 100%; min-height: 48px; padding: 12px 42px 12px 14px; font-size: 14px; border-radius: 8px; }
 
-  /* PROOF SECTION - testimonial cards */
-  .proof-section {
-    padding: 28px 16px 16px;
-  }
-  .proof-strip-title {
-    font-size: 12px;
-  }
-  .proof-strip-sub {
-    font-size: 13px;
-    margin-bottom: 20px;
-  }
-  .proof-cards {
-    gap: 10px;
-  }
-  .proof-card {
-    padding: 16px 14px 14px;
-    border-radius: 12px;
-  }
-  .proof-card-header {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .proof-avatar-placeholder {
-    width: 38px;
-    height: 38px;
-    font-size: 16px;
-  }
-  .proof-user-name {
-    font-size: 13px;
-  }
-  .proof-handle {
-    font-size: 12px;
-  }
-  .proof-outcome {
-    font-size: 11px;
-    padding: 3px 8px;
-    margin-left: 0;
-    margin-top: 4px;
-    flex-basis: 100%;
-    text-align: center;
-  }
-  .proof-quote {
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-  }
-  .proof-footer {
-    flex-direction: column;
-    gap: 6px;
-    align-items: flex-start;
-  }
-  .proof-stats-bar {
-    gap: 16px;
-    padding: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .proof-stat-num {
-    font-size: 18px;
-  }
-  .proof-stat-label {
-    font-size: 10px;
-  }
+  .calc-btn { min-height: 48px; font-size: 15px; padding: 14px; border-radius: 8px; }
+  .calc-btn-sub { font-size: 11px; margin-top: 8px; }
 
-  /* SCREENSHOT PROOF GRID: 1 column on mobile */
-  .screenshot-grid {
-    grid-template-columns: 1fr !important;
-    gap: 8px !important;
-  }
+  .result-placeholder { min-height: 0; padding: 24px 0; }
+  .result-placeholder .emoji { font-size: 36px; margin-bottom: 12px; }
+  .result-placeholder p { font-size: 13px; }
 
-  /* INSTANT CALCULATOR SECTION */
-  .instant-section {
-    padding: 32px 16px;
-  }
-  .section-label {
-    font-size: 10px;
-  }
-  .section-title {
-    font-size: 24px;
-    margin-bottom: 6px;
-  }
-  .section-sub {
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-  .free-badge {
-    font-size: 11px;
-    padding: 8px 14px;
-    margin-bottom: 16px;
-  }
+  .result-rate-label { font-size: 11px; }
+  .result-rate { font-size: 42px; word-break: break-word; }
+  .result-per-unit { font-size: 14px; margin-bottom: 16px; }
 
-  /* CALCULATOR CONTAINER: single column */
-  .calc-container {
-    grid-template-columns: 1fr;
-    border-radius: 14px;
-  }
-  .calc-left {
-    padding: 20px 16px;
-    gap: 16px;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-  .calc-right {
-    padding: 20px 16px;
-  }
+  .closer-score-card { padding: 18px; }
+  .closer-score-number { font-size: 44px; }
+  .closer-score-number span { font-size: 22px; }
 
-  /* FORM FIELDS: full width, 48px min-height */
-  .field label {
-    font-size: 11px;
-    margin-bottom: 6px;
-  }
-  .field select {
-    width: 100%;
-    min-height: 48px;
-    padding: 12px 42px 12px 14px;
-    font-size: 14px;
-    border-radius: 8px;
-  }
+  .money-left-card { padding: 16px; }
+  .money-left-amount { font-size: 28px; }
+  .money-left-breakdown { grid-template-columns: 1fr; gap: 8px; }
 
-  /* CALC BUTTON */
-  .calc-btn {
-    min-height: 48px;
-    font-size: 15px;
-    padding: 14px;
-    border-radius: 8px;
-  }
-  .calc-btn-sub {
-    font-size: 11px;
-    margin-top: 8px;
-  }
+  .breakdown-table { border-radius: 8px; table-layout: fixed; width: 100%; }
+  .breakdown-table td { padding: 10px 10px; font-size: 12px; word-break: break-word; }
+  .breakdown-table td:last-child { width: 80px; text-align: right; font-size: 12px; }
+  .breakdown-table tr.total-row td { padding: 12px 10px; font-size: 13px; }
+  .breakdown-table tr.total-row td:last-child { font-size: 14px; }
 
-  /* RESULT PLACEHOLDER: remove huge gap */
-  .result-placeholder {
-    min-height: 0;
-    padding: 24px 0;
-  }
-  .result-placeholder .emoji {
-    font-size: 36px;
-    margin-bottom: 12px;
-  }
-  .result-placeholder p {
-    font-size: 13px;
-  }
+  .comparison-bar { padding: 12px; margin-top: 16px; }
+  .comparison-label { font-size: 10px; margin-bottom: 10px; }
+  .comparison-bars .comp-row { flex-direction: column; gap: 4px; }
+  .comparison-bars .comp-row-label { min-width: auto; font-size: 11px; }
+  .comp-track { height: 28px; }
+  .comp-fill { font-size: 11px; padding-right: 8px; }
 
-  /* RESULT AREA */
-  .result-rate-label {
-    font-size: 11px;
-  }
-  .result-rate {
-    font-size: 42px;
-    word-break: break-word;
-  }
-  .result-per-unit {
-    font-size: 14px;
-    margin-bottom: 16px;
-  }
+  .deal-value-box { padding: 16px; margin-top: 12px; }
+  .deal-value-label { font-size: 10px; }
+  .deal-value-num { font-size: 28px; }
+  .deal-value-detail { font-size: 12px; }
 
-  /* BREAKDOWN TABLE: fit 375px */
-  .breakdown-table {
-    border-radius: 8px;
-    table-layout: fixed;
-    width: 100%;
-  }
-  .breakdown-table td {
-    padding: 10px 10px;
-    font-size: 12px;
-    word-break: break-word;
-  }
-  .breakdown-table td:last-child {
-    width: 80px;
-    text-align: right;
-    font-size: 12px;
-  }
-  .breakdown-table tr.total-row td {
-    padding: 12px 10px;
-    font-size: 13px;
-  }
-  .breakdown-table tr.total-row td:last-child {
-    font-size: 14px;
-  }
+  .defense-box { padding: 16px; margin-top: 16px; border-radius: 10px; }
+  .defense-label { font-size: 10px; margin-bottom: 10px; }
+  .defense-visible { font-size: 13px; padding: 12px 14px; line-height: 1.6; }
+  .defense-blurred { font-size: 12px; }
+  .defense-unlock-overlay { padding: 12px; gap: 8px; }
+  .defense-unlock-overlay .lock-icon { font-size: 20px; }
+  .defense-unlock-overlay a { font-size: 13px; padding: 12px 18px; min-height: 48px; display: inline-flex; align-items: center; }
+  .defense-unlock-overlay .unlock-sub { font-size: 10px; }
 
-  /* COMPARISON BAR */
-  .comparison-bar {
-    padding: 12px;
-    margin-top: 16px;
-  }
-  .comparison-label {
-    font-size: 10px;
-    margin-bottom: 10px;
-  }
-  .comparison-bars .comp-row {
-    flex-direction: column;
-    gap: 4px;
-  }
-  .comparison-bars .comp-row-label {
-    min-width: auto;
-    font-size: 11px;
-  }
-  .comp-track {
-    height: 24px;
-  }
-  .comp-fill {
-    font-size: 11px;
-    padding-right: 8px;
-  }
+  .share-results-card { padding: 16px; margin-top: 16px; }
+  .share-results-card .share-title { font-size: 14px; }
+  .share-results-card .share-copy-btn { min-height: 48px; padding: 12px 20px; font-size: 13px; }
+  .share-results-card .share-ig-prompt { font-size: 12px; }
 
-  /* DEAL VALUE BOX */
-  .deal-value-box {
-    padding: 16px;
-    margin-top: 12px;
-  }
-  .deal-value-label {
-    font-size: 10px;
-  }
-  .deal-value-num {
-    font-size: 28px;
-  }
-  .deal-value-detail {
-    font-size: 12px;
-  }
+  .pitch-vault-cta { padding: 20px 16px; margin-top: 16px; }
+  .pitch-vault-cta .pv-headline { font-size: 20px; }
+  .pitch-vault-cta .pv-sub { font-size: 13px; margin-bottom: 16px; }
+  .pitch-vault-cta .pv-btn { padding: 14px 20px; font-size: 14px; min-height: 48px; width: 100%; justify-content: center; }
 
-  /* DEFENSE SCRIPT BOX */
-  .defense-box {
-    padding: 16px;
-    margin-top: 16px;
-    border-radius: 10px;
-  }
-  .defense-label {
-    font-size: 10px;
-    margin-bottom: 10px;
-  }
-  .defense-visible {
-    font-size: 13px;
-    padding: 12px 14px;
-    line-height: 1.6;
-  }
-  .defense-blurred {
-    font-size: 12px;
-  }
-  .defense-unlock-overlay {
-    padding: 12px;
-    gap: 8px;
-  }
-  .defense-unlock-overlay .lock-icon {
-    font-size: 20px;
-  }
-  .defense-unlock-overlay a {
-    font-size: 13px;
-    padding: 12px 18px;
-    min-height: 48px;
-    display: inline-flex;
-    align-items: center;
-    text-align: center;
-  }
-  .defense-unlock-overlay .unlock-sub {
-    font-size: 10px;
-  }
+  .kit-upsell { padding: 20px 14px; margin-top: 14px; }
+  .kit-upsell .ku-headline { font-size: 16px; }
+  .kit-upsell .ku-sub { font-size: 13px; }
+  .kit-upsell .ku-btn { padding: 14px 20px; font-size: 14px; min-height: 48px; width: 100%; justify-content: center; }
 
-  /* SHARE RESULTS CARD */
-  .share-results-card {
-    padding: 16px;
-    margin-top: 16px;
-  }
-  .share-results-card .share-title {
-    font-size: 14px;
-  }
-  .share-results-card .share-copy-btn {
-    min-height: 48px;
-    padding: 12px 20px;
-    font-size: 13px;
-  }
-  .share-results-card .share-ig-prompt {
-    font-size: 12px;
-  }
+  .post-result-proof { padding: 28px 16px 0; }
+  .proof-card { padding: 16px 14px 14px; border-radius: 12px; }
+  .proof-card-header { flex-wrap: wrap; gap: 8px; }
+  .proof-avatar-placeholder { width: 38px; height: 38px; font-size: 16px; }
+  .proof-user-name { font-size: 13px; }
+  .proof-handle { font-size: 12px; }
+  .proof-outcome { font-size: 11px; padding: 3px 8px; margin-left: 0; margin-top: 4px; flex-basis: 100%; text-align: center; }
+  .proof-quote { font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+  .proof-footer { flex-direction: column; gap: 6px; align-items: flex-start; }
 
-  /* COST OF INACTION */
-  .cost-of-inaction {
-    padding: 16px;
-    margin-top: 16px;
-    border-radius: 10px;
-  }
-  .coi-headline {
-    font-size: 14px;
-    margin-bottom: 12px;
-  }
-  .coi-losses {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    margin-bottom: 12px;
-  }
-  .coi-loss-item {
-    padding: 12px 10px;
-  }
-  .coi-loss-num {
-    font-size: 24px;
-  }
-  .coi-loss-label {
-    font-size: 10px;
-  }
-  .coi-emotional {
-    font-size: 13px;
-  }
+  .email-gate { padding: 16px; align-items: flex-start; padding-top: 60px; }
+  .gate-card { max-width: 100%; }
+  .gate-badge { font-size: 11px; padding: 5px 12px; margin-bottom: 16px; }
+  .gate-card h1 { font-size: 26px; margin-bottom: 12px; }
+  .gate-card p { font-size: 14px; margin-bottom: 20px; }
+  .gate-form { gap: 10px; }
+  .gate-input { min-height: 48px; padding: 12px 14px; font-size: 16px; border-radius: 8px; }
+  .gate-submit { min-height: 48px; font-size: 16px; padding: 14px; border-radius: 8px; }
+  .gate-trust { flex-direction: column; gap: 6px; margin-top: 14px; font-size: 11px; align-items: center; }
 
-  /* VSL REDIRECT BRIDGE */
-  .vsl-redirect {
-    padding: 18px 14px;
-    margin-top: 16px;
-    border-radius: 12px;
-  }
-  .bridge-eyebrow {
-    font-size: 10px;
-    margin-bottom: 8px;
-  }
-  .bridge-headline {
-    font-size: 20px;
-    margin-bottom: 6px;
-  }
-  .bridge-sub {
-    font-size: 13px;
-    margin-bottom: 16px;
-  }
-  .vsl-redirect-btn {
-    padding: 14px 20px;
-    font-size: 14px;
-    min-height: 48px;
-    display: inline-flex;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
-  .bridge-proof {
-    font-size: 11px;
-  }
-  .bridge-urgency {
-    font-size: 11px;
-  }
+  .sticky-cta { padding: 10px 14px; }
+  .sticky-cta-text { font-size: 12px; }
+  .sticky-cta-btn { min-height: 48px; padding: 12px 20px; font-size: 13px; display: inline-flex; align-items: center; border-radius: 8px; }
 
-  /* PROOF BAR (scrolling) */
-  .proof-bar {
-    padding: 14px 16px;
-  }
-  .proof-scroll {
-    gap: 32px;
-  }
-  .proof-item {
-    font-size: 12px;
-  }
+  footer { padding: 24px 16px; font-size: 12px; }
 
-  /* SINGLE CTA SECTION */
-  .post-calc-cta {
-    padding: 28px 16px 0 !important;
-    max-width: 100% !important;
-  }
-  .post-calc-cta p {
-    font-size: 14px !important;
-  }
-  .post-calc-cta a[href*="stan.store"] {
-    font-size: 15px !important;
-    padding: 16px 16px !important;
-    min-height: 48px;
-    max-width: 100% !important;
-    border-radius: 10px !important;
-  }
-
-  /* DOWNSELL CTA (Pitch Vault) */
-  .downsell-cta {
-    margin: 24px 16px 0 !important;
-    padding: 20px 14px !important;
-    max-width: 100% !important;
-  }
-  .downsell-cta p {
-    font-size: 14px !important;
-  }
-  .downsell-cta a[href*="stan.store"] {
-    font-size: 14px !important;
-    padding: 14px 16px !important;
-    min-height: 48px;
-    max-width: 100% !important;
-  }
-
-  /* EMAIL GATE OVERLAY */
-  .email-gate {
-    padding: 16px;
-    align-items: flex-start;
-    padding-top: 60px;
-  }
-  .gate-card {
-    max-width: 100%;
-    width: 100%;
-  }
-  .gate-badge {
-    font-size: 11px;
-    padding: 5px 12px;
-    margin-bottom: 16px;
-  }
-  .gate-card h1 {
-    font-size: 26px;
-    margin-bottom: 12px;
-  }
-  .gate-card p {
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-  .gate-form {
-    gap: 10px;
-  }
-  .gate-input {
-    width: 100%;
-    min-height: 48px;
-    padding: 12px 14px;
-    font-size: 16px;
-    border-radius: 8px;
-  }
-  .gate-submit {
-    width: 100%;
-    min-height: 48px;
-    font-size: 16px;
-    padding: 14px;
-    border-radius: 8px;
-  }
-  .gate-trust {
-    flex-direction: column;
-    gap: 6px;
-    margin-top: 14px;
-    font-size: 11px;
-    align-items: center;
-  }
-
-  /* STICKY CTA: 48px+ tap target */
-  .sticky-cta {
-    padding: 10px 14px;
-  }
-  .sticky-cta-text {
-    font-size: 12px;
-  }
-  .sticky-cta-btn {
-    min-height: 48px;
-    padding: 12px 20px;
-    font-size: 13px;
-    display: inline-flex;
-    align-items: center;
-    border-radius: 8px;
-  }
-
-  /* FOOTER */
-  footer {
-    padding: 24px 16px;
-    font-size: 12px;
-  }
-
-  /* Inline-styled sections: enforce max padding */
-  section, div {
-    max-width: 100vw;
-  }
-
+  section, div { max-width: 100vw; }
 }
 </style>
 </head>
@@ -1331,7 +724,7 @@ footer a { color: var(--text2); text-decoration: none; }
 <!-- EMAIL GATE OVERLAY -->
 <div class="email-gate" id="emailGate">
   <div class="gate-card">
-    <div class="gate-badge"><span class="dot"></span> Free - 90 seconds</div>
+    <div class="gate-badge"><span class="dot"></span> Free - 30 seconds</div>
     <h1>Find out what you<br>should actually be<br><em>charging brands.</em></h1>
     <p>Enter your email to see your real rate. Most creators are leaving $300+ per deal on the table.</p>
     <form class="gate-form" id="gateForm" onsubmit="return handleGateSubmit(event)">
@@ -1349,284 +742,15 @@ footer a { color: var(--text2); text-decoration: none; }
 
 <!-- Page nav removed: global-nav.js handles site navigation -->
 
-<!-- HERO -->
-<section class="hero fade-up">
-  <div class="hero-badge"><span class="dot"></span> Free - No credit card</div>
-  <h1>Smart. Let's find your<br><em>real number.</em></h1>
-  <p class="hero-sub">Stop guessing. Stop undercharging. Use the pricing framework built from 15 years of enterprise sales at Criteo, Deel, Bloomberg &amp; HBO. Free. Takes 30 seconds.</p>
-  <div class="hero-proof">
-    <span><span class="check">&check;</span> Free forever</span>
-    <span><span class="check">&check;</span> Takes 30 seconds</span>
-    <span><span class="check">&check;</span> Built from $1.2M in sales</span>
-  </div>
-
-  <!-- PROOF STRIP -->
-  <div class="proof-strip">
-    <div class="proof-strip-item">
-      <span class="name">Ty</span>
-      <span class="arrow">$150 &rarr;</span>
-      <span class="result">$800</span>
-    </div>
-    <div class="proof-strip-item">
-      <span class="name">Candi</span>
-      <span class="arrow">$650 &rarr;</span>
-      <span class="result">$4,750</span>
-    </div>
-    <div class="proof-strip-item">
-      <span class="name">Mel</span>
-      <span class="arrow">&rarr;</span>
-      <span class="result">$800/video</span>
-    </div>
-  </div>
-
-  <div class="hero-arrow" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">&#8595;</div>
-</section>
-
-<!-- PROOF - OPENCLAW-STYLE VERIFIED TESTIMONIALS -->
-<section class="proof-section fade-up">
-  <div class="proof-strip-title">Real results from real creators</div>
-  <div class="proof-strip-sub">These creators used the same scripts you'll get inside the Kit</div>
-  <div class="proof-cards">
-
-    <!-- TY MURPH - VERIFIED X POST -->
-    <div class="proof-card" style="border-color:rgba(200,255,0,0.3);background:linear-gradient(135deg,rgba(200,255,0,0.03),var(--card))">
-      <div class="proof-card-header">
-        <div class="proof-avatar-placeholder">T</div>
-        <div class="proof-user-info">
-          <div class="proof-user-name">Ty Murph <span class="proof-verified">&#10003;</span></div>
-          <div class="proof-handle">@Ty__Murph</div>
-        </div>
-        <div class="proof-outcome" style="background:rgba(200,255,0,0.08);border-color:rgba(200,255,0,0.2);color:var(--accent)">$150 &rarr; $800</div>
-      </div>
-      <div class="proof-quote">"I was in the middle of a negotiation for 2 UGC videos for $150. Using her rate calculator and scripts, <strong>I negotiated to $800 for 2 videos.</strong> She knows ball!!"</div>
-      <div class="proof-footer">
-        <div class="proof-platform">
-          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          Posted on X
-        </div>
-      </div>
-    </div>
-
-    <!-- JEN E - VERIFIED X POST -->
-    <div class="proof-card">
-      <div class="proof-card-header">
-        <div class="proof-avatar-placeholder">J</div>
-        <div class="proof-user-info">
-          <div class="proof-user-name">Jen E <span class="proof-verified">&#10003;</span></div>
-          <div class="proof-handle">@explorewithjene</div>
-        </div>
-        <div class="proof-outcome">Rate confidence</div>
-      </div>
-      <div class="proof-quote">"I finally stopped second-guessing myself. <strong>The calculator showed me exactly what I should be charging</strong> and the scripts gave me the words to back it up."</div>
-      <div class="proof-footer">
-        <div class="proof-platform">
-          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          Posted on X
-        </div>
-      </div>
-    </div>
-
-    <!-- CANDI - UGC CREATOR -->
-    <div class="proof-card">
-      <div class="proof-card-header">
-        <div class="proof-avatar-placeholder">C</div>
-        <div class="proof-user-info">
-          <div class="proof-user-name">Candi</div>
-          <div class="proof-handle">UGC Creator &middot; Beauty &amp; Lifestyle</div>
-        </div>
-        <div class="proof-outcome">$650 &rarr; $4,750</div>
-      </div>
-      <div class="proof-quote">"I thought I was getting paid at $650 for 5 videos until I ran the numbers. My rate should have been <strong>$950/video</strong>. I was leaving $4,100 on the table every deal. The scripts changed everything."</div>
-      <div class="proof-footer">
-        <div class="proof-platform">
-          <svg viewBox="0 0 24 24" style="fill:var(--green)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Verified customer
-        </div>
-        <span style="font-size:11px;color:var(--text3)">5-video package repriced</span>
-      </div>
-    </div>
-
-    <!-- MEL - UGC CREATOR -->
-    <div class="proof-card">
-      <div class="proof-card-header">
-        <div class="proof-avatar-placeholder">M</div>
-        <div class="proof-user-info">
-          <div class="proof-user-name">Mel</div>
-          <div class="proof-handle">UGC Creator</div>
-        </div>
-        <div class="proof-outcome">Now: $800/video</div>
-      </div>
-      <div class="proof-quote">"The rate card scripts are <strong>BRILLIANT!!</strong> I finally have real numbers to anchor to instead of guessing. The confidence shift is immediate."</div>
-      <div class="proof-footer">
-        <div class="proof-platform">
-          <svg viewBox="0 0 24 24" style="fill:var(--green)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Verified customer
-        </div>
-        <span style="font-size:11px;color:var(--text3)">Rate scripts user</span>
-      </div>
-    </div>
-
-    <!-- JAMIE JOHNSON - VERIFIED X POST -->
-    <div class="proof-card">
-      <div class="proof-card-header">
-        <div class="proof-avatar-placeholder">J</div>
-        <div class="proof-user-info">
-          <div class="proof-user-name">Jamie <span class="proof-verified">&#10003;</span></div>
-          <div class="proof-handle">@jamiejohnsonugc</div>
-        </div>
-        <div class="proof-outcome">Rates 3x'd</div>
-      </div>
-      <div class="proof-quote">"I used to just pick a number and hope. Now I have <strong>a framework that makes the brand feel like THEY'RE getting the deal.</strong> My rates tripled in two months."</div>
-      <div class="proof-footer">
-        <div class="proof-platform">
-          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          Posted on X
-        </div>
-      </div>
-    </div>
-
-    <!-- YULI - UGC CREATOR -->
-    <div class="proof-card">
-      <div class="proof-card-header">
-        <div class="proof-avatar-placeholder">Y</div>
-        <div class="proof-user-info">
-          <div class="proof-user-name">Yuli</div>
-          <div class="proof-handle">UGC Creator</div>
-        </div>
-        <div class="proof-outcome">Stopped undercharging</div>
-      </div>
-      <div class="proof-quote">"I didn't realize how much I was leaving on the table until I saw the usage rights breakdown. <strong>That alone changed everything.</strong>"</div>
-      <div class="proof-footer">
-        <div class="proof-platform">
-          <svg viewBox="0 0 24 24" style="fill:var(--green)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Verified customer
-        </div>
-        <span style="font-size:11px;color:var(--text3)">Rate calculator user</span>
-      </div>
-    </div>
-
-    <!-- INTERIOR MENTOR - UGC CREATOR -->
-    <div class="proof-card">
-      <div class="proof-card-header">
-        <div class="proof-avatar-placeholder">I</div>
-        <div class="proof-user-info">
-          <div class="proof-user-name">Interior Mentor</div>
-          <div class="proof-handle">UGC Creator &middot; Home &amp; Design</div>
-        </div>
-        <div class="proof-outcome">$800/video</div>
-      </div>
-      <div class="proof-quote">"Rates came up at <strong>$800/video</strong>. I was charging $200. The calculator doesn't just give you a number. It gives you the confidence to actually say it."</div>
-      <div class="proof-footer">
-        <div class="proof-platform">
-          <svg viewBox="0 0 24 24" style="fill:var(--green)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Verified customer
-        </div>
-        <span style="font-size:11px;color:var(--text3)">Rate calculator user</span>
-      </div>
-    </div>
-
-    <!-- SIERRA - UGC CREATOR -->
-    <div class="proof-card">
-      <div class="proof-card-header">
-        <div class="proof-avatar-placeholder">S</div>
-        <div class="proof-user-info">
-          <div class="proof-user-name">Sierra</div>
-          <div class="proof-handle">UGC Creator</div>
-        </div>
-        <div class="proof-outcome">Negotiation confidence</div>
-      </div>
-      <div class="proof-quote">"I used to panic when brands pushed back on price. <strong>Now I have the exact words to say.</strong> The scripts are worth 10x what I paid."</div>
-      <div class="proof-footer">
-        <div class="proof-platform">
-          <svg viewBox="0 0 24 24" style="fill:var(--green)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Verified customer
-        </div>
-        <span style="font-size:11px;color:var(--text3)">Closer Kit user</span>
-      </div>
-    </div>
-
-    <!-- MILENA - UGC CREATOR -->
-    <div class="proof-card">
-      <div class="proof-card-header">
-        <div class="proof-avatar-placeholder">M</div>
-        <div class="proof-user-info">
-          <div class="proof-user-name">Milena</div>
-          <div class="proof-handle">UGC Creator</div>
-        </div>
-        <div class="proof-outcome">Rate increase</div>
-      </div>
-      <div class="proof-quote">"The breakdown of usage rights was eye-opening. Brands were getting <strong>thousands of dollars of value</strong> from my content and I was charging pennies for it."</div>
-      <div class="proof-footer">
-        <div class="proof-platform">
-          <svg viewBox="0 0 24 24" style="fill:var(--green)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Verified customer
-        </div>
-        <span style="font-size:11px;color:var(--text3)">Rate calculator user</span>
-      </div>
-    </div>
-
-    <!-- FRANCU - VERIFIED X POST -->
-    <div class="proof-card">
-      <div class="proof-card-header">
-        <div class="proof-avatar-placeholder">F</div>
-        <div class="proof-user-info">
-          <div class="proof-user-name">Francu <span class="proof-verified">&#10003;</span></div>
-          <div class="proof-handle">@fcucullu</div>
-        </div>
-        <div class="proof-outcome">First $1k deal</div>
-      </div>
-      <div class="proof-quote">"Closed my <strong>first $1,000+ deal</strong> after using the calculator to understand my real value. The scripts made the negotiation feel easy."</div>
-      <div class="proof-footer">
-        <div class="proof-platform">
-          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          Posted on X
-        </div>
-      </div>
-    </div>
-
-    <!-- AGGREGATE STATS BAR -->
-    <div class="proof-stats-bar">
-      <div class="proof-stat">
-        <div class="proof-stat-num">5.3x</div>
-        <div class="proof-stat-label">Avg rate increase</div>
-      </div>
-      <div class="proof-stat">
-        <div class="proof-stat-num">$800+</div>
-        <div class="proof-stat-label">Avg deal size</div>
-      </div>
-      <div class="proof-stat">
-        <div class="proof-stat-num">24hrs</div>
-        <div class="proof-stat-label">First results</div>
-      </div>
-      <div class="proof-stat">
-        <div class="proof-stat-num">30-day</div>
-        <div class="proof-stat-label">Coaching guarantee</div>
-      </div>
-    </div>
-
-    <!-- SCREENSHOT PROOF -->
-    <div style="margin-top:24px;border-top:1px solid var(--border);padding-top:24px">
-      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;text-align:center">REAL SCREENSHOTS. REAL RESULTS.</div>
-      <div class="screenshot-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
-        <div style="border-radius:10px;border:1px solid var(--border);overflow:hidden;background:#111"><img src="/assets/testimonial-final-2.png" alt="Ty - $150 to $800" style="width:100%;height:100%;object-fit:contain;display:block"></div>
-        <div style="border-radius:10px;border:1px solid var(--border);overflow:hidden;background:#111"><img src="/assets/testimonial-candi.png" alt="Candi - rate calculator" style="width:100%;height:100%;object-fit:contain;display:block"></div>
-        <div style="border-radius:10px;border:1px solid var(--border);overflow:hidden;background:#111"><img src="/assets/testimonial-milena-dm.jpeg" alt="Milena - 2 responses in 1 day" style="width:100%;height:100%;object-fit:contain;display:block"></div>
-        <div style="border-radius:10px;border:1px solid var(--border);overflow:hidden;background:#111"><img src="/assets/testimonial-final-5.png" alt="Jamie - so helpful" style="width:100%;height:100%;object-fit:contain;display:block"></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- INSTANT CALCULATOR -->
+<!-- CALCULATOR - FIRST THING AFTER GATE -->
 <section class="instant-section fade-up" id="calculator">
-  <div class="section-label">Tool 01 - Free</div>
-  <h2 class="section-title">UGC Rate Calculator</h2>
-  <p class="section-sub">Built from 15 years across enterprise sales, advertising, and PR at Criteo, Deel, Autodesk, HBO, Bloomberg, McCann, Y&amp;R &amp; more.</p>
-
-  <div class="free-badge">
-    <span class="badge-icon">&#9889;</span>
-    Free &middot; No credit card<br>30 seconds
+  <div class="section-label">Free Tool</div>
+  <h2 class="section-title">Find your <em>real rate.</em></h2>
+  <p class="section-sub">Stop guessing. Use the pricing framework built from 15 years of enterprise sales at Criteo, Deel, Bloomberg &amp; HBO. Takes 30 seconds.</p>
+  <div class="section-proof">
+    <span><span class="check" style="color:var(--accent)">&check;</span> Free forever</span>
+    <span><span class="check" style="color:var(--accent)">&check;</span> Takes 30 seconds</span>
+    <span><span class="check" style="color:var(--accent)">&check;</span> Built from $1.2M in sales</span>
   </div>
 
   <div class="calc-container">
@@ -1692,12 +816,44 @@ footer a { color: var(--text2); text-decoration: none; }
         <div class="result-rate" id="totalRate"></div>
         <div class="result-per-unit"><span id="perVidLabel">per video</span></div>
 
+        <!-- Closer Score - Gamified -->
+        <div class="closer-score-card" id="closerScoreCard" style="display:none;">
+          <div class="closer-score-label">Your Closer Score</div>
+          <div class="closer-score-number" id="closerScoreNum">0<span>/10</span></div>
+          <div class="closer-score-tier" id="closerScoreTier"></div>
+          <div class="closer-score-bar-wrap">
+            <div class="closer-score-bar" id="closerScoreBar"></div>
+          </div>
+          <div class="closer-score-percentile" id="closerScorePercentile"></div>
+        </div>
+
+        <!-- Money Left on Table -->
+        <div class="money-left-card" id="moneyLeftCard" style="display:none;">
+          <div class="money-left-label">You're leaving on the table per year</div>
+          <div class="money-left-amount" id="moneyLeftAmount"></div>
+          <div class="money-left-detail" id="moneyLeftDetail"></div>
+          <div class="money-left-breakdown">
+            <div class="money-left-item">
+              <div class="money-left-item-num" id="moneyLeftDeal"></div>
+              <div class="money-left-item-label">Per Deal</div>
+            </div>
+            <div class="money-left-item">
+              <div class="money-left-item-num" id="moneyLeftMonth"></div>
+              <div class="money-left-item-label">Per Month</div>
+            </div>
+            <div class="money-left-item">
+              <div class="money-left-item-num" id="moneyLeftYear"></div>
+              <div class="money-left-item-label">Per Year</div>
+            </div>
+          </div>
+        </div>
+
         <!-- Professional breakdown table -->
         <table class="breakdown-table" id="breakdownTable">
           <tbody id="breakdown"></tbody>
         </table>
 
-        <!-- Comparison bar -->
+        <!-- Comparison bar - FIXED -->
         <div class="comparison-bar" id="comparisonBar">
           <div class="comparison-label">How You Compare</div>
           <div class="comparison-bars">
@@ -1708,7 +864,7 @@ footer a { color: var(--text2); text-decoration: none; }
               </div>
             </div>
             <div class="comp-row">
-              <div class="comp-row-label">Your rate</div>
+              <div class="comp-row-label">Your real rate</div>
               <div class="comp-track">
                 <div class="comp-fill high" id="compHigh" style="width:0%"></div>
               </div>
@@ -1723,7 +879,7 @@ footer a { color: var(--text2); text-decoration: none; }
           <div class="deal-value-detail" id="dealValueDetail"></div>
         </div>
 
-        <!-- DEFENSE SCRIPT - Premium glassmorphism teaser -->
+        <!-- DEFENSE SCRIPT -->
         <div class="defense-box">
           <div class="defense-label">Your Defense Script</div>
           <div class="defense-visible" id="defenseVisible"></div>
@@ -1731,100 +887,109 @@ footer a { color: var(--text2); text-decoration: none; }
             <div class="defense-blurred" id="defenseBlurred">The usage rights alone represent significant value. Content you can run in paid campaigns converts 3-4x higher than static ads. If budget is a concern, I'm happy to explore adjusting the usage window or deliverable structure to find something that works. I never discount my base rate, but I'm flexible on scope. Here's what I'd suggest as alternatives...</div>
             <div class="defense-unlock-overlay">
               <span class="lock-icon">&#128274;</span>
-              <a href="vsl.html">Start Closing at Your Real Rate - $197</a>
-              <span class="unlock-sub">Word-for-word scripts for every negotiation scenario</span>
+              <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=rate_calculator&utm_campaign=pitch_vault&utm_content=defense_unlock" target="_blank" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'pitch-vault-defense-unlock',value:27,currency:'USD'})">Unlock Full Scripts - $27</a>
+              <span class="unlock-sub">12 pitch templates + 60 negotiation scripts</span>
             </div>
           </div>
         </div>
       </div>
 
-<!-- SHARE YOUR RESULTS -->
-<div class="share-results-card" id="shareResultsCard">
-  <div class="share-title">Share your rate with your creator friends</div>
-  <button class="share-copy-btn" id="shareCopyBtn" onclick="shareResults()">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-    Copy to clipboard
-  </button>
-  <div class="share-ig-prompt">Or screenshot your results and share to Instagram Stories.<br><strong>Tag @closermethod</strong> so we can hype you up.</div>
-</div>
-
-<div style="text-align:center;font-size:13px;color:var(--text2, #999);margin-top:12px;padding:8px 16px;background:rgba(200,255,0,0.04);border-radius:8px;">
-  Your full rate breakdown was sent to your inbox. Check it for your defense script starter.
-</div>
-
-      <!-- COST OF INACTION -->
-      <div class="cost-of-inaction" id="costOfInaction" style="display:none;">
-        <div class="coi-headline">
-          If you're charging <span class="current-rate" id="coiCurrentRate">$220</span> instead of <span class="should-rate" id="coiShouldRate">$550</span>, you're losing:
-        </div>
-        <div class="coi-losses">
-          <div class="coi-loss-item">
-            <div class="coi-loss-num" id="coiPerDeal">-$990</div>
-            <div class="coi-loss-label">Per Deal</div>
-          </div>
-          <div class="coi-loss-item">
-            <div class="coi-loss-num" id="coiMonthly">-$1,980</div>
-            <div class="coi-loss-label">Per Month</div>
-          </div>
-          <div class="coi-loss-item">
-            <div class="coi-loss-num" id="coiYearly">-$23,760</div>
-            <div class="coi-loss-label">Per Year</div>
-          </div>
-        </div>
-        <div class="coi-emotional">That's <strong>a vacation</strong>. That's <strong>rent</strong>. That's your <strong>emergency fund</strong>.</div>
-        <div class="coi-emotional" style="margin-top:12px;"><strong>The Closer Kit pays for itself on your next deal.</strong> $197 &rarr; one deal at your real rate = $800+. That's a 4x return.</div>
+      <!-- SHARE YOUR RESULTS -->
+      <div class="share-results-card" id="shareResultsCard">
+        <div class="share-title">Share your rate with your creator friends</div>
+        <button class="share-copy-btn" id="shareCopyBtn" onclick="shareResults()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy to clipboard
+        </button>
+        <div class="share-ig-prompt">Or screenshot your results and share to Instagram Stories.<br><strong>Tag @closermethod</strong> so we can hype you up.</div>
       </div>
 
-      <!-- CTA BRIDGE - Natural next step -->
-      <div class="vsl-redirect" id="vslRedirect">
-        <div class="bridge-eyebrow">THE MISSING PIECE</div>
-        <div class="bridge-headline">You just calculated your rate.<br>But what do you say when a brand offers <em style="color:var(--accent)">half</em>?</div>
-        <p class="bridge-sub" id="vslRedirectText">87% of UGC creators know their rate. Only 12% know how to defend it. The Closer Kit has the exact words for the moment a brand says <strong>"our budget is lower."</strong> That moment decides whether you make $200 or $800.</p>
-        <a href="vsl.html" class="vsl-redirect-btn" id="vslRedirectBtn">Get the 60 Scripts That Close $800+ Deals &rarr;</a>
-        <div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
-  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
-</div>
+      <!-- PITCH VAULT CTA - PRIMARY -->
+      <div class="pitch-vault-cta" id="pitchVaultCta">
+        <div class="pv-eyebrow">Now that you know your rate</div>
+        <div class="pv-headline">Get the templates to<br>pitch at it.</div>
+        <p class="pv-sub">12 cold pitch templates with a <strong>20% response rate</strong>. 60+ negotiation scripts. The exact words to say when brands lowball you. <strong>One reply pays for this 20x.</strong></p>
+        <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=rate_calculator&utm_campaign=pitch_vault&utm_content=post_calc" target="_blank" class="pv-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'pitch-vault-post-calc',value:27,currency:'USD'})">Get the Pitch Vault - $27 &rarr;</a>
+        <div class="pv-proof">Instant access &middot; 30-day guarantee &middot; One brand reply = 20x ROI</div>
+      </div>
+
+      <!-- KIT UPSELL - SECONDARY -->
+      <div class="kit-upsell" id="kitUpsell">
+        <div class="ku-eyebrow">Want the full closing system?</div>
+        <div class="ku-headline">The UGC Closer Kit</div>
+        <p class="ku-sub">Everything in the Pitch Vault + 175+ brand database, deal tracker CRM, 9 AI tools, and coaching guarantee. One deal pays for it 4x over.</p>
+        <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=rate_calculator&utm_campaign=kit_upsell" target="_blank" class="ku-btn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-kit-rate-calc-upsell',value:197,currency:'USD'})">Get the Full Kit - $197 &rarr;</a>
+        <div class="ku-detail"><s>$497</s> $197 &middot; Tax season sale ends March 31</div>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<!-- PROOF BAR -->
-<div class="proof-bar fade-up">
-  <div class="proof-scroll" id="proofScroll">
-    <div class="proof-item"><strong>Candi</strong> discovered she was leaving $4,100/deal on the table</div>
-    <div class="proof-item"><strong>Ty:</strong> $150 to $800</div>
-    <div class="proof-item"><strong>15 yrs</strong> enterprise sales at Criteo, Deel, Autodesk, HBO, Bloomberg, McCann, Y&amp;R &amp; more</div>
-    <div class="proof-item"><strong>Mel:</strong> "Your rate calculator - it's BRILLIANT!!"</div>
-    <div class="proof-item"><strong>Interior Mentor:</strong> rates came up at $800/video</div>
-    <div class="proof-item"><strong>268%</strong> of sales quota</div>
-    <div class="proof-item"><strong>Candi</strong> discovered she was leaving $4,100/deal on the table</div>
-    <div class="proof-item"><strong>Ty:</strong> $150 to $800</div>
-    <div class="proof-item"><strong>15 yrs</strong> enterprise sales at Criteo, Deel, Autodesk, HBO, Bloomberg, McCann, Y&amp;R &amp; more</div>
-    <div class="proof-item"><strong>Mel:</strong> "Your rate calculator - it's BRILLIANT!!"</div>
-    <div class="proof-item"><strong>Interior Mentor:</strong> rates came up at $800/video</div>
-    <div class="proof-item"><strong>268%</strong> of sales quota</div>
+<!-- POST-RESULT TESTIMONIALS - 3 max, after results -->
+<div class="post-result-proof" id="postResultProof" style="padding-left:24px;padding-right:24px;">
+  <div class="prp-title">Creators who used the calculator + scripts</div>
+  <div class="proof-cards">
+
+    <!-- TY MURPH -->
+    <div class="proof-card" style="border-color:rgba(200,255,0,0.3);background:linear-gradient(135deg,rgba(200,255,0,0.03),var(--card))">
+      <div class="proof-card-header">
+        <div class="proof-avatar-placeholder">T</div>
+        <div class="proof-user-info">
+          <div class="proof-user-name">Ty Murph <span class="proof-verified">&#10003;</span></div>
+          <div class="proof-handle">@Ty__Murph</div>
+        </div>
+        <div class="proof-outcome" style="background:rgba(200,255,0,0.08);border-color:rgba(200,255,0,0.2);color:var(--accent)">$150 &rarr; $800</div>
+      </div>
+      <div class="proof-quote">"I was in the middle of a negotiation for 2 UGC videos for $150. Using her rate calculator and scripts, <strong>I negotiated to $800 for 2 videos.</strong> She knows ball!!"</div>
+      <div class="proof-footer">
+        <div class="proof-platform">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Posted on X
+        </div>
+      </div>
+    </div>
+
+    <!-- MILENA -->
+    <div class="proof-card">
+      <div class="proof-card-header">
+        <div class="proof-avatar-placeholder">M</div>
+        <div class="proof-user-info">
+          <div class="proof-user-name">Milena</div>
+          <div class="proof-handle">UGC Creator</div>
+        </div>
+        <div class="proof-outcome">2 replies in 1 day</div>
+      </div>
+      <div class="proof-quote">"Sent 5 pitches using the templates and <strong>got 2 brand replies in 1 day</strong>. The pitch scripts are insane. I was scared to charge this much but the framework made it feel natural."</div>
+      <div class="proof-footer">
+        <div class="proof-platform">
+          <svg viewBox="0 0 24 24" style="fill:var(--green)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Verified customer
+        </div>
+      </div>
+    </div>
+
+    <!-- CANDI -->
+    <div class="proof-card">
+      <div class="proof-card-header">
+        <div class="proof-avatar-placeholder">C</div>
+        <div class="proof-user-info">
+          <div class="proof-user-name">Candi</div>
+          <div class="proof-handle">UGC Creator &middot; Beauty &amp; Lifestyle</div>
+        </div>
+        <div class="proof-outcome">$650 &rarr; $4,750</div>
+      </div>
+      <div class="proof-quote">"I thought I was getting paid at $650 for 5 videos until I ran the numbers. My rate should have been <strong>$950/video</strong>. I was leaving $4,100 on the table every deal. The scripts changed everything."</div>
+      <div class="proof-footer">
+        <div class="proof-platform">
+          <svg viewBox="0 0 24 24" style="fill:var(--green)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Verified customer
+        </div>
+        <span style="font-size:11px;color:var(--text3)">5-video package repriced</span>
+      </div>
+    </div>
+
   </div>
-</div>
-
-<!-- SINGLE CTA: Close the gap -->
-<div class="fade-up post-calc-cta" style="max-width:600px;margin:0 auto;padding:40px 20px 0;text-align:center">
-  <div style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px">NOW THAT YOU KNOW YOUR RATE</div>
-  <p style="font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px;font-family:'Space Grotesk',sans-serif">Knowing your rate and getting brands to pay it are two different skills.</p>
-  <p style="font-size:15px;color:var(--muted, #999);margin-bottom:24px;line-height:1.6">The creators closing $800+ deals aren't more talented. They have scripts, systems, and a 175+ brand database. Tax season sale ends March 31.</p>
-  <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=rate_calculator&utm_campaign=closer_kit&utm_content=post_calc_cta" target="_blank" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-kit-rate-calc-post',value:197,currency:'USD'})" style="display:block;max-width:400px;margin:0 auto 12px;padding:18px 20px;background:var(--accent);border:none;border-radius:12px;text-decoration:none;color:#000;font-weight:800;font-size:17px;font-family:'Space Grotesk',sans-serif;transition:transform .15s">Start Closing $800+ Deals - $197</a>
-  <div style="margin-top:10px;text-align:center;font-size:13px;color:var(--text2, #999);">
-  Use code <strong style="color:var(--accent, #c8ff00);font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:2px;cursor:pointer;" onclick="navigator.clipboard.writeText('VSL197');this.textContent='COPIED!';setTimeout(()=>this.textContent='VSL197',2000)">VSL197</strong> at checkout for <s style="color:var(--text3, #666)">$497</s> <strong style="color:var(--accent, #c8ff00)">$197</strong> <span style="color:var(--text3, #666);">| Ends March 31</span>
-</div>
-  <div style="font-size:12px;color:var(--muted, #999);margin-top:8px"><s style="color:#555">$497</s> $197 tax season sale. One deal pays for this 4x over.</div>
-  <div style="font-size:11px;color:#555">Coaching guarantee. 60+ scripts. 175+ brands. 9 AI tools.</div>
-</div>
-
-<!-- DOWNSELL CTA: Pitch Vault -->
-<div class="fade-up downsell-cta" style="max-width:540px;margin:32px auto 0;padding:28px 24px;text-align:center;border:1.5px solid var(--accent);border-radius:14px;background:rgba(255,255,255,0.03)">
-  <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted, #999);margin-bottom:10px">NOT READY FOR THE FULL SYSTEM?</div>
-  <p style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;font-family:'Space Grotesk',sans-serif">Start with the Pitch Vault - $27</p>
-  <p style="font-size:14px;color:var(--muted, #999);margin-bottom:20px;line-height:1.6">12 cold pitch templates with a 20% response rate. 60+ scripts. 175+ brand database. One reply pays for this 20x. The entry point to the Closer Method.</p>
-  <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=rate_calculator&utm_campaign=pitch_vault&utm_content=post_calc_downsell" target="_blank" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'pitch-vault-calculator-downsell',value:27,currency:'USD'})" style="display:block;max-width:340px;margin:0 auto 12px;padding:14px 18px;background:transparent;border:2px solid var(--accent);border-radius:10px;text-decoration:none;color:var(--accent);font-weight:700;font-size:15px;font-family:'Space Grotesk',sans-serif;transition:transform .15s,background .15s">Land Your First Brand Deal for $27</a>
-  <div style="font-size:11px;color:#555">Instant access. 30-day guarantee.</div>
 </div>
 
 <!-- FOOTER -->
@@ -1835,7 +1000,7 @@ footer a { color: var(--text2); text-decoration: none; }
 </footer>
 
 <script>
-// EMAIL GATE LOGIC
+// EMAIL GATE LOGIC - Kit form 7657498
 function handleGateSubmit(e) {
   e.preventDefault();
   var name = document.getElementById('gateName').value.trim();
@@ -1845,14 +1010,14 @@ function handleGateSubmit(e) {
   localStorage.setItem('ugc_name', name);
   localStorage.setItem('ugc_email', email);
 
-  var KIT_FORM_ID = '9131179';
+  var KIT_FORM_ID = '7657498';
   fetch('https://app.kit.com/forms/' + KIT_FORM_ID + '/subscriptions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       email_address: email,
       first_name: name,
-      tags: ['rate-calculator-user', 'brand-database-funnel']
+      tags: ['rate-calculator-user']
     })
   }).catch(function(){});
 
@@ -1874,18 +1039,12 @@ document.addEventListener('DOMContentLoaded', function(){
   } else {
     document.body.style.overflow = 'hidden';
   }
-});
 
-// If user came from the VSL funnel
-var urlParams = new URLSearchParams(window.location.search);
-if (urlParams.get('from') === 'vsl-rate') {
-  var redirectText = document.getElementById('vslRedirectText');
-  var redirectBtn = document.getElementById('vslRedirectBtn');
-  if (redirectText) redirectText.innerHTML = '<strong>You know your rate. Now get the system to close at it.</strong> 60+ scripts, 175+ brand contacts, 9 AI tools, and a deal tracker CRM. One brand deal pays for it 3x over.';
-  if (redirectBtn) { redirectBtn.href = 'https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=rate-calc-post&utm_campaign=closer-kit-vsl197'; redirectBtn.textContent = 'Start Closing $800+ Deals - $197 \u2192'; }
-  var couponBlock = document.getElementById('bridgeCouponBlock');
-  if (couponBlock) couponBlock.style.display = 'block';
-}
+  // Fire ViewContent on load
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'ViewContent', { content_name: 'rate-calculator-page' });
+  }
+});
 
 // Flash glow on select change
 function flashGlow(el) {
@@ -1904,7 +1063,6 @@ function animateValue(el, start, end, duration, prefix, suffix) {
   function step(timestamp) {
     if (!startTime) startTime = timestamp;
     var progress = Math.min((timestamp - startTime) / duration, 1);
-    // Ease out cubic
     var eased = 1 - Math.pow(1 - progress, 3);
     var current = Math.round(start + range * eased);
     el.textContent = prefix + current.toLocaleString() + suffix;
@@ -1950,7 +1108,6 @@ function calculateRate() {
 
   // Round to nearest $25
   finalPerUnit = Math.round(finalPerUnit / 25) * 25;
-
   var totalDeal = finalPerUnit * count;
 
   // Content type labels
@@ -1963,21 +1120,67 @@ function calculateRate() {
   document.getElementById('placeholder').style.display = 'none';
   requestAnimationFrame(function(){ requestAnimationFrame(function(){ resultArea.classList.add('visible'); }); });
 
-  // Personalize result heading with first name from email gate
+  // Personalize result heading
   var userName = localStorage.getItem('ugc_name') || '';
   var rateLabel = document.querySelector('.result-rate-label');
   if (rateLabel && userName) {
     rateLabel.textContent = userName + ', Your Rate';
   }
 
-  // ANIMATE the rate number counting up (slot machine effect)
+  // ANIMATE the rate number (reveal effect)
   var rateEl = document.getElementById('totalRate');
   animateValue(rateEl, 0, finalPerUnit, 1200, '$', '');
 
   // Per unit label
   document.getElementById('perVidLabel').textContent = 'per ' + unitLabel;
 
-  // Build professional breakdown table
+  // === CLOSER SCORE (gamified) ===
+  var closerScore = 4; // base
+  if (exp === 'advanced') closerScore += 2;
+  else if (exp === 'expert') closerScore += 3;
+  else if (exp === 'intermediate') closerScore += 1;
+  if (usageRights >= 180) closerScore += 1;
+  if (count >= 3) closerScore += 1;
+  if (finalPerUnit >= 500) closerScore += 1;
+  closerScore = Math.min(closerScore, 10);
+
+  var percentile = Math.min(95, Math.round(closerScore * 10 + 5));
+  var tierLabels = {
+    10: 'Elite Closer', 9: 'Elite Closer', 8: 'Power Negotiator',
+    7: 'Confident Pitcher', 6: 'Rising Creator', 5: 'Rising Creator',
+    4: 'Getting Started', 3: 'Getting Started', 2: 'Beginner', 1: 'Beginner'
+  };
+
+  setTimeout(function() {
+    var scoreCard = document.getElementById('closerScoreCard');
+    scoreCard.style.display = 'block';
+    animateValue(document.getElementById('closerScoreNum'), 0, closerScore, 1000, '', '');
+    setTimeout(function() {
+      document.getElementById('closerScoreNum').innerHTML = closerScore + '<span>/10</span>';
+    }, 1050);
+    document.getElementById('closerScoreTier').textContent = tierLabels[closerScore] || 'Rising Creator';
+    document.getElementById('closerScoreBar').style.width = (closerScore * 10) + '%';
+    document.getElementById('closerScorePercentile').textContent = "You're in the top " + (100 - percentile) + '% of UGC creators who price correctly';
+  }, 1400);
+
+  // === MONEY LEFT ON TABLE ===
+  var currentRate = Math.round(finalPerUnit * 0.4); // what most charge
+  var gapPerDeal = (finalPerUnit - currentRate) * count;
+  var dealsPerMonth = 2;
+  var monthlyLoss = gapPerDeal * dealsPerMonth;
+  var yearlyLoss = monthlyLoss * 12;
+
+  setTimeout(function() {
+    var moneyCard = document.getElementById('moneyLeftCard');
+    moneyCard.style.display = 'block';
+    animateValue(document.getElementById('moneyLeftAmount'), 0, yearlyLoss, 1500, '-$', '');
+    document.getElementById('moneyLeftDetail').innerHTML = 'If you\'re charging <strong style="color:var(--red)">$' + currentRate + '</strong> instead of <strong style="color:var(--accent)">$' + finalPerUnit + '</strong> per ' + unitLabel + ', at ' + dealsPerMonth + ' deals/month:';
+    animateValue(document.getElementById('moneyLeftDeal'), 0, gapPerDeal, 800, '-$', '');
+    animateValue(document.getElementById('moneyLeftMonth'), 0, monthlyLoss, 1000, '-$', '');
+    animateValue(document.getElementById('moneyLeftYear'), 0, yearlyLoss, 1200, '-$', '');
+  }, 2200);
+
+  // Build breakdown table
   var bd = document.getElementById('breakdown');
   var bh = '';
   bh += '<tr><td>Base production rate (' + contentType.replace('-', 's ') + ')</td><td>$' + Math.round(baseRate * expMultiplier) + '</td></tr>';
@@ -1991,17 +1194,20 @@ function calculateRate() {
   bh += '<tr class="total-row"><td>Your rate per ' + unitLabel + '</td><td>$' + finalPerUnit + '</td></tr>';
   bd.innerHTML = bh;
 
-  // Comparison bars
+  // Comparison bars - FIXED: use absolute values for width calculation
   var lowRate = Math.round(finalPerUnit * 0.4);
-  var maxRate = Math.round(finalPerUnit * 1.2);
-  var lowPct = Math.round((lowRate / maxRate) * 100);
-  var highPct = Math.round((finalPerUnit / maxRate) * 100);
+  var maxForScale = finalPerUnit * 1.15; // scale so "your rate" bar is ~87% width
+  var lowPct = Math.min(95, Math.round((lowRate / maxForScale) * 100));
+  var highPct = Math.min(95, Math.round((finalPerUnit / maxForScale) * 100));
+
   setTimeout(function() {
-    document.getElementById('compLow').style.width = lowPct + '%';
-    document.getElementById('compLow').textContent = '$' + lowRate;
-    document.getElementById('compHigh').style.width = highPct + '%';
-    document.getElementById('compHigh').textContent = '$' + finalPerUnit;
-  }, 400);
+    var compLow = document.getElementById('compLow');
+    var compHigh = document.getElementById('compHigh');
+    compLow.style.width = lowPct + '%';
+    compLow.textContent = '$' + lowRate;
+    compHigh.style.width = highPct + '%';
+    compHigh.textContent = '$' + finalPerUnit;
+  }, 600);
 
   // Deal value box - animate
   var dvNum = document.getElementById('dealValueNum');
@@ -2016,40 +1222,24 @@ function calculateRate() {
     fbq('track', 'ViewContent', { content_name: 'rate-calculated', value: finalPerUnit, currency: 'USD' });
   }
 
-  // COST OF INACTION
-  var currentRate = Math.round(finalPerUnit * 0.4);
-  var gapPerDeal = (finalPerUnit - currentRate) * count;
-  var monthlyLoss = gapPerDeal * 2;
-  var yearlyLoss = monthlyLoss * 12;
-
-  document.getElementById('coiCurrentRate').textContent = '$' + currentRate;
-  document.getElementById('coiShouldRate').textContent = '$' + finalPerUnit;
-
-  var coiPerDeal = document.getElementById('coiPerDeal');
-  var coiMonthly = document.getElementById('coiMonthly');
-  var coiYearly = document.getElementById('coiYearly');
-
-  // Show COI box
-  document.getElementById('costOfInaction').style.display = 'block';
-
-  // Animate losses after a beat
-  setTimeout(function() {
-    animateValue(coiPerDeal, 0, gapPerDeal, 800, '-$', '');
-    animateValue(coiMonthly, 0, monthlyLoss, 1000, '-$', '');
-    animateValue(coiYearly, 0, yearlyLoss, 1200, '-$', '');
-  }, 1000);
-
   // Store calculated rate for sharing
   window._calculatedRate = finalPerUnit;
+  window._calculatedUnitLabel = unitLabel;
 
-  // Show CTA bridge after 2.5 seconds
+  // Show Pitch Vault CTA after 3 seconds (progressive disclosure)
   setTimeout(function() {
-    document.getElementById('vslRedirect').classList.add('show');
-    // Auto-scroll removed: let the dopamine from seeing their rate pull them down naturally
-    // setTimeout(function() {
-    //   document.getElementById('vslRedirect').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    // }, 300);
-  }, 2500);
+    document.getElementById('pitchVaultCta').classList.add('show');
+  }, 3000);
+
+  // Show Kit upsell after 4 seconds
+  setTimeout(function() {
+    document.getElementById('kitUpsell').classList.add('show');
+  }, 4000);
+
+  // Show testimonials after 4.5 seconds
+  setTimeout(function() {
+    document.getElementById('postResultProof').classList.add('show');
+  }, 4500);
 }
 
 // SHARE RESULTS
@@ -2068,18 +1258,16 @@ function shareResults() {
   });
 }
 
-// SCROLL ANIMATIONS - Intersection Observer
+// SCROLL ANIMATIONS
 var observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) { entry.target.classList.add('visible'); }
   });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
 
-// STICKY MOBILE CTA
+// STICKY MOBILE CTA - pitch vault
 (function(){
   var sticky = document.getElementById('stickyCta');
   if (!sticky) return;
@@ -2101,17 +1289,9 @@ document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta" id="stickyCta">
   <div class="sticky-cta-text">Your rate: <span class="rate-val" id="stickyRate">-</span></div>
-  <a href="vsl.html" class="sticky-cta-btn" id="stickyCtaBtn">Close at Your Real Rate &rarr;</a>
+  <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=rate_calculator&utm_campaign=pitch_vault&utm_content=sticky_mobile" target="_blank" class="sticky-cta-btn" id="stickyCtaBtn" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'pitch-vault-sticky',value:27,currency:'USD'})">Get Pitch Vault - $27 &rarr;</a>
 </div>
 
 <script src="/global-nav.js" defer></script>
-<script>
-// Auto-copy coupon code when any CTA button is clicked
-document.querySelectorAll('a[href*="stan.store"][href*="closer-kit"]').forEach(function(btn){
-  btn.addEventListener('click', function(){
-    navigator.clipboard.writeText('VSL197').catch(function(){});
-  });
-});
-</script>
 </body>
 </html>
