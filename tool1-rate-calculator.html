@@ -811,8 +811,8 @@ footer a { color: var(--text2); text-decoration: none; }
     <span><span class="check" style="color:var(--accent)">&check;</span> Built from $1.2M in sales</span>
   </div>
 
-  <div style="max-width:400px;margin:0 auto 24px;border-radius:12px;overflow:hidden;border:1px solid rgba(200,255,0,0.15);">
-    <img src="img/ty-testimonial.jpeg" alt="Ty went from $150 to $800 per video using the rate calculator and scripts" style="width:100%;display:block;">
+  <div style="max-width:260px;margin:0 auto 20px;border-radius:10px;overflow:hidden;border:1px solid rgba(200,255,0,0.12);">
+    <img src="img/ty-testimonial.jpeg" alt="Ty: $150 to $800 per video" style="width:100%;display:block;">
   </div>
 
   <div class="calc-container">
@@ -882,7 +882,7 @@ footer a { color: var(--text2); text-decoration: none; }
         <div class="emoji">&#x1F9EE;</div>
         <p>See what brands should actually pay you.<br>30 seconds. Free forever.</p>
       </div>
-      <div class="result-area" id="resultArea">
+      <div class="result-area" id="resultArea" style="display:none">
         <!-- 1. YOUR RATE RESULT (immediate) -->
         <div class="result-rate-label">Your Rate</div>
         <div class="result-rate" id="totalRate"></div>
@@ -919,7 +919,7 @@ footer a { color: var(--text2); text-decoration: none; }
         </div>
 
         <!-- Professional breakdown table -->
-        <table class="breakdown-table" id="breakdownTable">
+        <table class="breakdown-table" id="breakdownTable" style="display:none">
           <tbody id="breakdown"></tbody>
         </table>
 
@@ -946,7 +946,7 @@ footer a { color: var(--text2); text-decoration: none; }
       </div>
 
       <!-- SHARE YOUR RESULTS -->
-      <div class="share-results-card" id="shareResultsCard">
+      <div class="share-results-card" id="shareResultsCard" style="display:none">
         <div class="share-title">Share your rate with your creator friends</div>
         <button class="share-copy-btn" id="shareCopyBtn" onclick="shareResults()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
@@ -1344,6 +1344,7 @@ function calculateRate() {
   }
   bh += '<tr class="total-row"><td>Your rate per ' + unitLabel + '</td><td>$' + finalPerUnit + '</td></tr>';
   bd.innerHTML = bh;
+  document.getElementById('breakdownTable').style.display = 'table';
 
   // Deal value box - instant
   var dvNum = document.getElementById('dealValueNum');
@@ -1414,6 +1415,9 @@ function calculateRate() {
 
   // === 5. KIT CTA (instant) ===
   document.getElementById('kitCta').classList.add('show');
+
+  // Show share results card
+  document.getElementById('shareResultsCard').style.display = 'block';
 
   // Scroll to results
   resultArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
