@@ -1303,9 +1303,9 @@ function calculateRate() {
   document.getElementById('lossBarYearNum').textContent = '-$' + yearlyLoss.toLocaleString();
 
   // Visceral comparisons for each bar
-  var dealComp = gapPerDeal >= 500 ? "That's a <em>week of groceries</em> you're handing to the brand" : "That's <em>dinner for two</em> you're giving away. Every. Single. Deal.";
-  var monthComp = monthlyLoss >= 1000 ? "That's a <em>car payment</em> every single month" : "That's <em>" + Math.round(monthlyLoss / 50) + " meals out</em> you'll never have";
-  var yearComp = yearlyLoss >= 5000 ? "That's a <em>vacation you'll never take</em>" : "That's <em>new gear you can't afford</em>";
+  var dealComp = gapPerDeal >= 300 ? "That's a <em>nice dinner out</em> you're handing to the brand. Every. Single. Deal." : "That's <em>your Spotify, Netflix, and gym membership combined</em> — gone.";
+  var monthComp = monthlyLoss >= 800 ? "That's a <em>rent payment</em> you're giving away every month" : "That's <em>" + Math.round(monthlyLoss / 15) + " coffees</em> — or one flight home for the holidays";
+  var yearComp = yearlyLoss >= 5000 ? "That's a <em>vacation you'll never take</em>" : "That's a <em>new laptop</em> you can't afford";
 
   document.getElementById('lossBarDealComp').innerHTML = dealComp;
   document.getElementById('lossBarMonthComp').innerHTML = monthComp;
