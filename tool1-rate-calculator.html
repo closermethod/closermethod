@@ -1337,7 +1337,11 @@ function calculateRate() {
   document.getElementById('kitCta').classList.add('show');
 
   // Scroll to results
+  // Scroll to rate first, then after 2s scroll to loss section for gut punch
   resultArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  setTimeout(function() {
+    lossSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 2000);
 }
 
 // SHARE RESULTS
