@@ -69,7 +69,7 @@ nav.innerHTML=`
 <li><a href="/closer-score-quiz.html">Quiz</a></li>
 <li><a href="/pitch-vault.html">Pitch Vault</a></li>
 <li><a href="/#results">Results</a></li>
-<li><a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=nav&utm_campaign=closer-kit" class="cm-nav-cta" target="_blank">Close $800+ Deals - $197</a></li>
+<li><a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=nav&utm_campaign=closer-kit" class="cm-nav-cta" target="_blank">Close $800+ Deals - $197</a></li>
 </ul>
 <button class="cm-nav-hamburger" id="cmHamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </div>
@@ -90,7 +90,7 @@ nav.innerHTML=`
 <a href="/closer-score-quiz.html">Closer Score Quiz</a>
 <a href="/pitch-vault.html">Pitch Vault - $27</a>
 <a href="/#results">Real Results</a>
-<a href="https://stan.store/perolikebro/p/the-ugc-closer-kit-vsl?utm_source=website&utm_medium=nav&utm_campaign=closer-kit" class="cm-nav-mobile-cta" target="_blank">Close $800+ Deals - $197</a>
+<a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=nav&utm_campaign=closer-kit" class="cm-nav-mobile-cta" target="_blank">Close $800+ Deals - $197</a>
 </div>
 </div>`;
 document.body.insertBefore(nav,document.body.firstChild);
