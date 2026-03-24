@@ -694,20 +694,13 @@ footer a { color: var(--text3); }
 
 
 <!-- NAV -->
-<!-- TAX SEASON LAUNCH BANNER -->
-<div id="taxBanner" style="background:linear-gradient(90deg,rgba(200,255,0,0.08),rgba(200,255,0,0.15),rgba(200,255,0,0.08));border-bottom:1px solid rgba(200,255,0,0.3);text-align:center;padding:10px 16px;font-size:13px;color:var(--text);position:fixed;top:0;left:0;right:0;z-index:1100">
-  <span class="tax-banner-full"><strong style="color:var(--accent)">TAX SEASON SALE - <span id="taxDaysLeft"></span> days left:</strong> UGC Closer Kit drops to <strong style="color:#fff">$246</strong> <span style="text-decoration:line-through;color:var(--text3)">$497</span> &middot; <span style="color:var(--accent)">Write it off. Make it back on one deal.</span></span>
-  <span class="tax-banner-short" style="display:none"><strong style="color:var(--accent)">Tax Season:</strong> Kit <strong style="color:#fff">$246</strong> <span style="text-decoration:line-through;color:var(--text3)">$497</span> - Ends March 31</span>
-</div>
+<!-- Tax banner handled by global-nav.js -->
 <style>
 @media (max-width: 640px) {
-  .tax-banner-full { display: none !important; }
-  .tax-banner-short { display: inline !important; }
   /* Returning visitor buy bar: reduce gap on mobile */
   body > div[style*="position:fixed"][style*="bottom:0"] { gap: 8px !important; font-size: 13px !important; padding: 10px 12px !important; }
 }
 </style>
-<script>(function(){var end=new Date(2026,2,31,23,59,59);var now=new Date();var days=Math.max(0,Math.ceil((end-now)/(1000*60*60*24)));document.getElementById('taxDaysLeft').textContent=days;})()</script>
 <!-- Page nav removed: global-nav.js handles full navigation -->
 
 <!-- HERO -->
