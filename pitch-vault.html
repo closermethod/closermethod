@@ -29,7 +29,7 @@ fbq('track', 'ViewContent', {content_name:'pitch-vault',content_type:'product',v
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1a1a1a;--border:#222;--text:#e8e8e8;--text2:#999;--text3:#666;--green:#c8ff00;--green-dark:#a8d900;--amber:#F59E0B;--red:#ff4444;--font:'DM Sans',system-ui,sans-serif;--serif:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace}
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1a1a1a;--border:#222;--text:#e8e8e8;--text2:#999;--text3:#888;--green:#c8ff00;--green-dark:#a8d900;--amber:#F59E0B;--red:#ff4444;--font:'DM Sans',system-ui,sans-serif;--serif:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace}
 html,body{overflow-x:hidden}
 body{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.7}
 a{color:var(--green);text-decoration:none}
@@ -59,7 +59,7 @@ a{color:var(--green);text-decoration:none}
 .form-btn{width:100%;padding:16px;background:var(--green);color:var(--bg);font-weight:800;font-size:16px;border:none;border-radius:10px;cursor:pointer;font-family:var(--font);transition:all .2s;letter-spacing:.3px}
 .form-btn:hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:0 6px 24px rgba(200,255,0,.25)}
 .form-btn:disabled{opacity:.7;cursor:not-allowed;transform:none;box-shadow:none}
-.form-trust{text-align:center;margin-top:12px;font-size:12px;color:var(--text3)}
+.form-trust{text-align:center;margin-top:12px;font-size:13px;color:var(--text3)}
 
 /* Proof bar */
 .proof-bar{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;padding:32px 0;border-bottom:1px solid var(--border)}
@@ -155,7 +155,7 @@ a{color:var(--green);text-decoration:none}
 .final-cta .sub{font-size:15px;color:var(--text2);margin-bottom:28px}
 
 /* Footer */
-.footer{text-align:center;padding:24px;border-top:1px solid var(--border);font-size:12px;color:var(--text3)}
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);font-size:13px;color:var(--text3)}
 
 /* Sticky mobile CTA */
 .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--bg);border-top:1px solid var(--border);padding:12px 20px;z-index:100;text-align:center}
@@ -262,7 +262,7 @@ a{color:var(--green);text-decoration:none}
   font-family:inherit;
 }
 .gate-input:focus { outline:none; border-color:#c8ff00; }
-.gate-input::placeholder { color:#666; }
+.gate-input::placeholder { color:#888; }
 .gate-submit {
   width:100%; padding:16px;
   background:#c8ff00; color:#000;
@@ -274,7 +274,7 @@ a{color:var(--green);text-decoration:none}
 .gate-submit:hover { background:#a8d900; transform:translateY(-1px); }
 .gate-trust {
   display:flex; justify-content:center; gap:20px;
-  margin-top:16px; font-size:12px; color:#666;
+  margin-top:16px; font-size:12px; color:#888;
 }
 .gate-trust span { display:flex; align-items:center; gap:4px; }
 .gate-trust .gck { color:#c8ff00; }
@@ -431,7 +431,7 @@ a{color:var(--green);text-decoration:none}
     <div style="text-align:center;margin:20px 0;padding:16px;background:rgba(200,255,0,0.04);border-radius:12px;">
       <div style="font-size:13px;color:var(--text2, #999);margin-bottom:4px;"><s>$347 value</s></div>
       <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:var(--accent, #c8ff00);">$27</div>
-      <div style="font-size:12px;color:var(--text3, #666);margin-top:4px;">One reply pays for this 20x over.</div>
+      <div style="font-size:12px;color:var(--text3, #888);margin-top:4px;">One reply pays for this 20x over.</div>
     </div>
   </div>
 </div>
@@ -443,7 +443,7 @@ a{color:var(--green);text-decoration:none}
     <p class="form-sub">Instant access. 30-day coaching guarantee.</p>
     <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=pitch_vault&utm_campaign=pitch_vault" class="form-btn" style="display:block;text-align:center;text-decoration:none;color:#000" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'pitch-vault-hero',value:27,currency:'USD'})">START GETTING BRAND REPLIES - $27</a>
     <p class="form-trust">One reply pays for this 20x over.</p>
-    <div style="font-size:12px;color:var(--text3, #666);margin-top:8px;">&#9200; <strong style="color:var(--amber)">Tax season pricing ends March 31.</strong> Write off your $27 investment this tax year. One reply pays for this 20x over.</div>
+    <div style="font-size:12px;color:var(--text3, #888);margin-top:8px;">&#9200; <strong style="color:var(--amber)">Tax season pricing ends March 31.</strong> Write off your $27 investment this tax year. One reply pays for this 20x over.</div>
   </div>
 </div>
 
@@ -455,7 +455,7 @@ a{color:var(--green);text-decoration:none}
       <div class="objection-a">Because the pitch is step one. <span>Closing is step two.</span> These templates get brands to reply, but when they offer you $150/video, you'll need the negotiation scripts. That's what the UGC Closer Kit is for. The vault is priced so one reply pays for it 20x over.</div>
       <div style="margin-top:24px;text-align:center;">
         <a href="https://stan.store/perolikebro/p/ugc-closer-kit-tax-sale?utm_source=website&utm_medium=pitch_vault&utm_campaign=closer_kit&utm_content=objection_buster" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'closer-kit-from-pitch-vault',value:246,currency:'USD'})" style="display:block;width:100%;padding:14px 20px;min-height:48px;background:var(--accent, #c8ff00);color:#000;font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:800;text-decoration:none;border-radius:10px;transition:.15s;text-align:center;">Start Closing $800+ Deals - $246</a>
-        <div style="font-size:12px;color:var(--text3, #666);margin-top:8px;"><s>$497</s> $246 tax season sale. Ends March 31.</div>
+        <div style="font-size:12px;color:var(--text3, #888);margin-top:8px;"><s>$497</s> $246 tax season sale. Ends March 31.</div>
       </div>
     </div>
   </div>
@@ -508,7 +508,7 @@ a{color:var(--green);text-decoration:none}
       <p class="form-sub">Your next brand deal starts with the right email.</p>
       <a href="https://stan.store/perolikebro/p/the-ugc-pitch-vault?utm_source=website&utm_medium=pitch_vault&utm_campaign=pitch_vault" class="form-btn" style="display:block;text-align:center;text-decoration:none;color:#000">START GETTING BRAND REPLIES → $27</a>
       <p class="form-trust">Instant access. 30-day guarantee. One reply pays for it 20x.</p>
-      <div style="font-size:12px;color:var(--text3, #666);margin-top:8px;">&#9200; <strong style="color:var(--amber)">Tax season pricing ends March 31.</strong> Write it off this tax year.</div>
+      <div style="font-size:12px;color:var(--text3, #888);margin-top:8px;">&#9200; <strong style="color:var(--amber)">Tax season pricing ends March 31.</strong> Write it off this tax year.</div>
     </div>
   </div>
 </div>
@@ -537,7 +537,7 @@ function handleGateSubmit(e) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email_address: email, first_name: name, tags: ['pitch-vault-lead', 'manychat-lead'] })
-  }).catch(function(){});
+  }).catch(function(err){ console.log('Kit sync error (non-blocking):', err); });
   if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'pitch-vault-lead', value: 0, currency: 'USD' });
   document.getElementById('emailGate').classList.add('hidden');
   document.body.style.overflow = '';

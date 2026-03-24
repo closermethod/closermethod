@@ -38,7 +38,7 @@ src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"
   --border2: #333;
   --text: #e8e8e8;
   --text2: #999;
-  --text3: #666;
+  --text3: #888;
   --accent: #c8ff00;
   --accent2: #a8d900;
   --accent-glow: rgba(200,255,0,0.15);
@@ -161,7 +161,7 @@ body {
 }
 .calc-btn:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,255,0,0.2); }
 .calc-btn:active { transform: translateY(0); }
-.calc-btn-sub { text-align:center; margin-top:10px; font-size:11px; color:var(--text3); }
+.calc-btn-sub { text-align:center; margin-top:10px; font-size:13px; color:var(--text3); }
 
 /* RESULT AREA */
 .result-placeholder {
@@ -232,7 +232,7 @@ body {
   width: 0%;
 }
 .closer-score-percentile {
-  font-size: 12px; color: var(--text2); position: relative;
+  font-size: 13px; color: var(--text2); position: relative;
 }
 
 /* Comparison bar */
@@ -1094,7 +1094,7 @@ function handleGateSubmit(e) {
       first_name: name,
       tags: ['rate-calculator-user']
     })
-  }).catch(function(){});
+  }).catch(function(err){ console.log('Kit sync error (non-blocking):', err); });
 
   if (typeof fbq !== 'undefined') {
     fbq('track', 'Lead', { content_name: 'rate-calculator-gate', value: 0, currency: 'USD' });
@@ -1241,7 +1241,6 @@ function calculateRate() {
   if (finalPerUnit >= 500) closerScore += 1;
   closerScore = Math.min(closerScore, 10);
 
-  var percentile = Math.min(95, Math.round(closerScore * 10 + 5));
   var tierLabels = {
     10: 'Elite Closer', 9: 'Elite Closer', 8: 'Power Negotiator',
     7: 'Confident Pitcher', 6: 'Rising Creator', 5: 'Rising Creator',
@@ -1257,7 +1256,7 @@ function calculateRate() {
     }, 1050);
     document.getElementById('closerScoreTier').textContent = tierLabels[closerScore] || 'Rising Creator';
     document.getElementById('closerScoreBar').style.width = (closerScore * 10) + '%';
-    document.getElementById('closerScorePercentile').textContent = "You're in the top " + (100 - percentile) + '% of UGC creators who price correctly';
+    document.getElementById('closerScorePercentile').textContent = 'Your Closer Score: ' + closerScore + '/10 — ' + (tierLabels[closerScore] || 'Rising Creator');
   }, 500);
 
   // === COMPARISON BAR (1s delay) ===

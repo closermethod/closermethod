@@ -33,7 +33,7 @@ fbq('track', 'ViewContent', {content_name: 'vault-lp', value: 246, currency: 'US
 
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0a0a0a;--surface:#141414;--border:#1e1e1e;--text:#e8e8e8;--text2:#999;--text3:#666;--accent:#c8ff00;--red:#ff4d4d;--font:'DM Sans',sans-serif;--heading:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace}
+:root{--bg:#0a0a0a;--surface:#141414;--border:#1e1e1e;--text:#e8e8e8;--text2:#999;--text3:#888;--accent:#c8ff00;--red:#ff4d4d;--font:'DM Sans',sans-serif;--heading:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace}
 html,body{overflow-x:hidden}
 body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 
@@ -82,7 +82,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
 .inline-capture-btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;padding:14px 24px;background:var(--accent);color:var(--bg);font-family:var(--heading);font-weight:700;font-size:16px;border:none;border-radius:10px;cursor:pointer;transition:opacity .2s}
 .inline-capture-btn:hover{opacity:.9}
 .inline-capture-btn:disabled{opacity:.6;cursor:not-allowed}
-.inline-capture-trust{font-size:12px;color:var(--text3);margin-top:10px}
+.inline-capture-trust{font-size:13px;color:var(--text3);margin-top:10px}
 .inline-capture-success{display:none;font-size:15px;color:var(--accent);font-weight:600;padding:12px 0}
 
 /* ===== VALUE STACK ===== */
@@ -141,7 +141,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
 .gate-submit{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;padding:14px 24px;background:var(--accent);color:var(--bg);font-family:var(--heading);font-weight:700;font-size:16px;border:none;border-radius:10px;cursor:pointer;transition:opacity .2s}
 .gate-submit:hover{opacity:.9}
 .gate-submit:disabled{opacity:.6;cursor:not-allowed}
-.gate-trust{font-size:12px;color:var(--text3);margin-top:6px}
+.gate-trust{font-size:13px;color:var(--text3);margin-top:6px}
 
 /* ===== LOSS SECTION ===== */
 .loss{background:#0d0000;border-top:2px solid rgba(255,77,77,.3);border-bottom:2px solid rgba(255,77,77,.3)}
@@ -174,7 +174,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
 .sticky a{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;padding:12px;background:var(--accent);color:var(--bg);font-family:var(--heading);font-weight:700;font-size:15px;border-radius:8px;text-decoration:none}
 
 /* ===== FOOTER ===== */
-.footer{text-align:center;padding:24px 20px 100px;font-size:12px;color:var(--text3)}
+.footer{text-align:center;padding:24px 20px 100px;font-size:13px;color:var(--text3)}
 
 /* ===== MOBILE (375px) ===== */
 @media(max-width:639px){
@@ -500,10 +500,13 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16
   // Countdown timer to March 31 2026 23:59:59 local time
   var deadline=new Date(2026,2,31,23,59,59).getTime();
   function updateCountdown(){
-    var now=Date.now(),
-        diff=deadline-now;
+    var now=Date.now();
+    var diff=deadline-now;
     if(diff<=0){
-      document.getElementById('countdownWrap').style.display='none';
+      document.getElementById('cd-days').textContent='00';
+      document.getElementById('cd-hours').textContent='00';
+      document.getElementById('cd-mins').textContent='00';
+      document.getElementById('cd-secs').textContent='00';
       return;
     }
     var d=Math.floor(diff/86400000);
