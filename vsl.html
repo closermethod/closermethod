@@ -218,6 +218,71 @@ a[href*="stan.store"]{min-height:48px;display:inline-flex;align-items:center;jus
 
 /* 16. Inline flex rows: wrap on mobile */
 .container div[style*="display:flex"][style*="gap:12px"]{flex-wrap:wrap}
+
+/* ===== MOBILE SPACING FIX: prevent touching borders / overlapping ===== */
+
+/* SECTION PADDING: every major content block */
+.video-section, .cta-section, .proof-strip, .reframe, .faq-section, .vsl-footer {
+  padding: 48px 20px;
+}
+
+/* PROOF CARDS: clear separation */
+.proof-card {
+  margin-bottom: 14px;
+  border-radius: 12px;
+  padding: 16px;
+}
+.proof-cards { gap: 14px; }
+
+/* FAQ ITEMS: each details element gets spacing */
+details.faq-item, .faq-item { margin-bottom: 10px; }
+.faq-list { gap: 10px; }
+
+/* CTA SECTIONS: clear separation from content above and below */
+.cta-section { padding: 40px 20px; }
+
+/* VALUE STACK (inline-styled): adequate padding, no overlapping */
+.container div[style*="justify-content:space-between"][style*="padding:14px 0"] {
+  padding: 14px 16px !important;
+  margin-bottom: 2px;
+}
+
+/* VALUE STACK card */
+.container > div[style*="border:2px solid rgba(200,255,0"] {
+  padding: 36px 20px !important;
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+
+/* REFRAME card */
+.reframe { padding: 40px 20px; margin-bottom: 16px; border-radius: 14px; }
+
+/* PROOF STRIP */
+.proof-strip { padding: 48px 20px; margin-top: 32px; }
+
+/* PITCH VAULT downsell card */
+.container > div[style*="margin-top:48px"][style*="border-radius:14px"] {
+  padding: 32px 20px !important;
+  margin-bottom: 16px;
+}
+
+/* BODY: padding-bottom for sticky bar */
+body { padding-bottom: 80px; }
+
+/* COUNTDOWN BAR: breathing room */
+.countdown-bar { margin-bottom: 24px; padding: 16px 20px; border-radius: 12px; }
+
+/* Remove any negative margins that cause overlapping */
+[style*="margin-top:-"], [style*="margin:-"] { margin-top: 0 !important; }
+
+/* General card spacing */
+.proof-card, .reframe, .faq-item {
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+/* PROOF STATS BAR */
+.proof-stats-bar { margin-top: 16px; margin-bottom: 16px; padding: 14px 16px; border-radius: 12px; }
 }
 @media(min-width:601px){.sticky-cta{display:none !important}}
 </style>

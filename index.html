@@ -542,6 +542,75 @@ footer a { color: var(--text3); }
 
   /* 19. Authority section: stack on mobile */
   section[style*="display:flex"][style*="gap:32px"] { flex-direction: column; align-items: center; text-align: center; }
+
+  /* ===== MOBILE SPACING FIX: prevent touching borders / overlapping ===== */
+
+  /* SECTION PADDING: every major content block */
+  .db-section, .bridge, .why-rate, .testimonials, .proof-bar, .bottom-cta, .faq-section {
+    padding: 48px 20px;
+  }
+
+  /* TESTIMONIAL / PROOF CARDS: clear separation */
+  .testimonial-card {
+    margin-bottom: 16px;
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  /* PROOF GRID items */
+  .proof-grid > div {
+    margin-bottom: 14px;
+    border-radius: 12px !important;
+  }
+
+  /* WHY CARDS: spacing between cards */
+  .why-card {
+    margin-bottom: 14px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+  .why-cards { gap: 14px; }
+
+  /* FAQ ITEMS: each details element gets spacing */
+  details, details.faq-item, .faq-item { margin-bottom: 10px; }
+  .faq-list { gap: 10px; }
+
+  /* CTA SECTIONS: clear separation */
+  .bottom-cta { padding: 40px 20px 80px; }
+
+  /* VALUE STACK items: adequate padding, no overlapping borders */
+  .value-stack-container > div { padding: 14px 16px !important; }
+
+  /* PROOF STATS BAR */
+  .proof-bar { padding: 48px 20px; }
+  .proof-stats { gap: 24px; }
+
+  /* FILTER BAR chips */
+  .filter-chip { margin-bottom: 6px; }
+
+  /* BRIDGE STEPS */
+  .bridge-step { padding: 16px 0; margin-bottom: 8px; }
+
+  /* BODY: padding-bottom for sticky bar / floating bar */
+  body { padding-bottom: 80px; }
+
+  /* Remove any negative margins that cause overlapping */
+  [style*="margin-top:-"], [style*="margin:-"] { margin-top: 0 !important; }
+
+  /* General card spacing */
+  .testimonial-card, .why-card, .proof-grid > div {
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+
+  /* SCREENSHOT PROOF GALLERY items */
+  #results .proof-grid > div, [id="results"] > div[style*="grid"] > div {
+    margin-bottom: 14px;
+    border-radius: 12px !important;
+  }
+
+  /* Authority section spacing */
+  section.fade-up { padding-left: 20px; padding-right: 20px; }
 }
 
 /* EMAIL GATE OVERLAY */

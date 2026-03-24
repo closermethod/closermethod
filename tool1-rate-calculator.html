@@ -172,8 +172,8 @@ body {
 .result-placeholder .emoji { font-size: 48px; margin-bottom: 16px; opacity: 0.7; }
 .result-placeholder p { max-width: 200px; line-height: 1.6; }
 
-.result-area { display: none; opacity: 0; transition: opacity 0.6s ease; }
-.result-area.visible { opacity: 1; }
+.result-area { display: none; }
+.result-area.visible { }
 
 /* Hero rate number */
 .result-rate-label {
@@ -195,7 +195,7 @@ body {
 .closer-score-card {
   background: linear-gradient(135deg, rgba(200,255,0,0.08), rgba(200,255,0,0.02));
   border: 2px solid rgba(200,255,0,0.25);
-  border-radius: 16px; padding: 24px; margin-bottom: 20px;
+  border-radius: 16px; padding: 24px; margin-bottom: 20px; margin-top: 20px;
   text-align: center; position: relative; overflow: hidden;
 }
 .closer-score-card::before {
@@ -228,8 +228,7 @@ body {
 }
 .closer-score-bar {
   height: 100%; background: linear-gradient(90deg, var(--red), #ffaa00, var(--accent));
-  border-radius: 4px; transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
-  width: 0%;
+  border-radius: 4px;
 }
 .closer-score-percentile {
   font-size: 13px; color: var(--text2); position: relative;
@@ -237,7 +236,7 @@ body {
 
 /* Comparison bar */
 .comparison-bar {
-  margin: 20px 0 0; padding: 16px;
+  margin: 20px 0 20px; padding: 16px;
   background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
 }
 .comparison-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text3); margin-bottom: 12px; }
@@ -248,7 +247,6 @@ body {
 .comp-fill {
   height: 100%; border-radius: 6px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px;
   font-size: 13px; font-weight: 700; font-family: 'JetBrains Mono', monospace;
-  transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .comp-fill.low { background: rgba(255,68,68,0.25); color: var(--red); }
 .comp-fill.high { background: rgba(200,255,0,0.2); color: var(--accent); }
@@ -258,7 +256,6 @@ body {
    ============================================================ */
 .loss-section {
   display: none; margin-top: 24px; padding: 0;
-  animation: fadeUp .6s ease both;
 }
 .loss-section.show { display: block; }
 
@@ -282,7 +279,7 @@ body {
   background: linear-gradient(135deg, rgba(255,68,68,0.12), rgba(255,30,30,0.04));
   border: 2px solid rgba(255,68,68,0.4);
   border-radius: 16px; padding: 28px 24px; text-align: center;
-  margin-bottom: 16px; position: relative; overflow: hidden;
+  margin-bottom: 20px; position: relative; overflow: hidden;
 }
 .loss-hero::before {
   content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
@@ -311,8 +308,8 @@ body {
 
 /* Red loss bars */
 .loss-bars {
-  display: flex; flex-direction: column; gap: 10px;
-  margin-bottom: 16px;
+  display: flex; flex-direction: column; gap: 16px;
+  margin-bottom: 20px;
 }
 .loss-bar {
   background: rgba(255,68,68,0.06); border: 1px solid rgba(255,68,68,0.2);
@@ -323,10 +320,8 @@ body {
 .loss-bar::after {
   content: ''; position: absolute; left: 0; top: 0; bottom: 0;
   background: rgba(255,68,68,0.12); border-radius: 12px 0 0 12px;
-  transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
-  width: 0%;
+  width: var(--bar-width);
 }
-.loss-bar.animated::after { width: var(--bar-width); }
 .loss-bar-left {
   position: relative; z-index: 1;
 }
@@ -356,7 +351,7 @@ body {
   background: rgba(255,68,68,0.08);
   border: 1px dashed rgba(255,68,68,0.35);
   border-radius: 12px; padding: 18px 20px;
-  text-align: center; margin-bottom: 0;
+  text-align: center; margin-bottom: 20px;
 }
 .loss-visceral-text {
   font-size: 16px; color: var(--text); font-weight: 600; line-height: 1.6;
@@ -366,7 +361,7 @@ body {
 
 /* Breakdown table */
 .breakdown-table {
-  width: 100%; border-collapse: collapse; margin-bottom: 0;
+  width: 100%; border-collapse: collapse; margin-bottom: 20px; margin-top: 20px;
   border-radius: 10px; overflow: hidden; border: 1px solid var(--border);
 }
 .breakdown-table tr { transition: background .2s; }
@@ -396,7 +391,7 @@ body {
 
 /* Total deal value box */
 .deal-value-box {
-  margin-top: 16px; padding: 20px;
+  margin-top: 20px; margin-bottom: 20px; padding: 20px;
   background: linear-gradient(135deg, rgba(200,255,0,0.08), rgba(200,255,0,0.03));
   border: 2px solid rgba(200,255,0,0.25); border-radius: 14px; text-align: center;
 }
@@ -414,7 +409,7 @@ body {
 /* Defense script teaser */
 .defense-box {
   background: var(--bg); border: 1px solid var(--border2);
-  border-radius: 14px; padding: 20px; margin-top: 20px;
+  border-radius: 14px; padding: 20px; margin-top: 20px; margin-bottom: 20px;
   position: relative; overflow: hidden;
 }
 .defense-label {
@@ -457,7 +452,7 @@ body {
 
 /* Share results */
 .share-results-card {
-  margin-top: 20px; background: var(--bg2);
+  margin-top: 20px; margin-bottom: 20px; background: var(--bg2);
   border: 1px solid var(--accent); border-radius: 12px;
   padding: 20px; text-align: center;
 }
@@ -485,7 +480,6 @@ body {
    ============================================================ */
 .inline-proof {
   display: none; margin-top: 24px;
-  animation: fadeUp .5s ease both;
 }
 .inline-proof.show { display: block; }
 .inline-proof-title {
@@ -493,10 +487,10 @@ body {
   text-transform: uppercase; color: var(--text3); margin-bottom: 16px;
   text-align: center;
 }
-.inline-proof-cards { display: flex; flex-direction: column; gap: 12px; }
+.inline-proof-cards { display: flex; flex-direction: column; gap: 16px; }
 .inline-proof-card {
   background: var(--card); border: 1px solid var(--border);
-  border-radius: 14px; padding: 18px 20px;
+  border-radius: 12px; padding: 18px 20px;
   display: flex; align-items: flex-start; gap: 14px;
 }
 .inline-proof-avatar {
@@ -529,7 +523,6 @@ body {
   background: linear-gradient(135deg, rgba(200,255,0,0.1), rgba(200,255,0,0.03));
   border: 2px solid rgba(200,255,0,0.4); border-radius: 20px;
   text-align: center; position: relative; overflow: hidden;
-  animation: fadeUp .5s ease both;
 }
 .kit-cta.show { display: block; }
 .kit-cta::before {
@@ -588,7 +581,6 @@ body {
 .downsell {
   display: none; margin-top: 16px; text-align: center;
   padding: 16px 20px;
-  animation: fadeUp .4s ease both;
 }
 .downsell.show { display: block; }
 .downsell-text {
@@ -1052,8 +1044,15 @@ footer a { color: var(--text2); text-decoration: none; }
   </div>
 </div>
 
+<!-- FOMO LINE -->
+<div class="fomo-line" id="fomoLine" style="display:none;max-width:900px;margin:20px auto;padding:0 24px;">
+  <div style="text-align:center;padding:18px 20px;background:rgba(200,255,0,0.06);border:1px solid rgba(200,255,0,0.2);border-radius:12px;">
+    <div style="font-size:15px;font-weight:700;color:var(--accent);line-height:1.6;">Creators who use the Closer Kit close their first $800+ deal within 14 days</div>
+  </div>
+</div>
+
 <!-- ============================================================
-     4. PRIMARY CTA - UGC CLOSER KIT (3s delay)
+     4. PRIMARY CTA - UGC CLOSER KIT
      ============================================================ -->
 <div class="kit-cta" id="kitCta" style="max-width:900px;margin:0 auto 0;margin-left:auto;margin-right:auto;">
   <div class="kit-cta-eyebrow">Stop leaving money on the table</div>
@@ -1211,11 +1210,11 @@ function calculateRate() {
   var unitLabel = contentType === 'photo' ? 'photo' : contentType === 'bundle' ? 'package' : 'video';
   var usageLabel = usageRights >= 999 ? 'Perpetual' : usageRights + '-day';
 
-  // === 1. RATE RESULT (immediate) ===
+  // === 1. RATE RESULT (instant) ===
   var resultArea = document.getElementById('resultArea');
   resultArea.style.display = 'block';
   document.getElementById('placeholder').style.display = 'none';
-  requestAnimationFrame(function(){ requestAnimationFrame(function(){ resultArea.classList.add('visible'); }); });
+  resultArea.classList.add('visible');
 
   // Personalize result heading
   var userName = localStorage.getItem('ugc_name') || '';
@@ -1224,14 +1223,14 @@ function calculateRate() {
     rateLabel.textContent = userName + ', Your Rate';
   }
 
-  // ANIMATE the rate number
+  // Set the rate number INSTANTLY (no animation)
   var rateEl = document.getElementById('totalRate');
-  animateValue(rateEl, 0, finalPerUnit, 1200, '$', '');
+  rateEl.textContent = '$' + finalPerUnit.toLocaleString();
 
   // Per unit label
   document.getElementById('perVidLabel').textContent = 'per ' + unitLabel;
 
-  // === CLOSER SCORE (0.5s delay) ===
+  // === CLOSER SCORE (instant) ===
   var closerScore = 4;
   if (exp === 'advanced') closerScore += 2;
   else if (exp === 'expert') closerScore += 3;
@@ -1247,34 +1246,27 @@ function calculateRate() {
     4: 'Getting Started', 3: 'Getting Started', 2: 'Beginner', 1: 'Beginner'
   };
 
-  setTimeout(function() {
-    var scoreCard = document.getElementById('closerScoreCard');
-    scoreCard.style.display = 'block';
-    animateValue(document.getElementById('closerScoreNum'), 0, closerScore, 1000, '', '');
-    setTimeout(function() {
-      document.getElementById('closerScoreNum').innerHTML = closerScore + '<span>/10</span>';
-    }, 1050);
-    document.getElementById('closerScoreTier').textContent = tierLabels[closerScore] || 'Rising Creator';
-    document.getElementById('closerScoreBar').style.width = (closerScore * 10) + '%';
-    document.getElementById('closerScorePercentile').textContent = 'Your Closer Score: ' + closerScore + '/10 — ' + (tierLabels[closerScore] || 'Rising Creator');
-  }, 500);
+  var scoreCard = document.getElementById('closerScoreCard');
+  scoreCard.style.display = 'block';
+  document.getElementById('closerScoreNum').innerHTML = closerScore + '<span>/10</span>';
+  document.getElementById('closerScoreTier').textContent = tierLabels[closerScore] || 'Rising Creator';
+  document.getElementById('closerScoreBar').style.width = (closerScore * 10) + '%';
+  document.getElementById('closerScorePercentile').textContent = 'Your Closer Score: ' + closerScore + '/10 — ' + (tierLabels[closerScore] || 'Rising Creator');
 
-  // === COMPARISON BAR (1s delay) ===
+  // === COMPARISON BAR (instant) ===
   var lowRate = Math.round(finalPerUnit * 0.4);
   var maxForScale = finalPerUnit * 1.15;
   var lowPct = Math.min(95, Math.round((lowRate / maxForScale) * 100));
   var highPct = Math.min(95, Math.round((finalPerUnit / maxForScale) * 100));
 
-  setTimeout(function() {
-    var compBar = document.getElementById('comparisonBar');
-    compBar.style.display = 'block';
-    var compLow = document.getElementById('compLow');
-    var compHigh = document.getElementById('compHigh');
-    compLow.style.width = lowPct + '%';
-    compLow.textContent = '$' + lowRate;
-    compHigh.style.width = highPct + '%';
-    compHigh.textContent = '$' + finalPerUnit;
-  }, 1000);
+  var compBar = document.getElementById('comparisonBar');
+  compBar.style.display = 'block';
+  var compLow = document.getElementById('compLow');
+  var compHigh = document.getElementById('compHigh');
+  compLow.style.width = lowPct + '%';
+  compLow.textContent = '$' + lowRate;
+  compHigh.style.width = highPct + '%';
+  compHigh.textContent = '$' + finalPerUnit;
 
   // Build breakdown table
   var bd = document.getElementById('breakdown');
@@ -1290,9 +1282,9 @@ function calculateRate() {
   bh += '<tr class="total-row"><td>Your rate per ' + unitLabel + '</td><td>$' + finalPerUnit + '</td></tr>';
   bd.innerHTML = bh;
 
-  // Deal value box - animate
+  // Deal value box - instant
   var dvNum = document.getElementById('dealValueNum');
-  animateValue(dvNum, 0, totalDeal, 1500, '$', '');
+  dvNum.textContent = '$' + totalDeal.toLocaleString();
   document.getElementById('dealValueDetail').textContent = count + ' ' + unitLabel + (count > 1 ? 's' : '') + ' \u00d7 $' + finalPerUnit + ' each';
 
   // Defense script
@@ -1307,74 +1299,63 @@ function calculateRate() {
   window._calculatedRate = finalPerUnit;
   window._calculatedUnitLabel = unitLabel;
 
-  // === 2. LOSS / COST OF INACTION (1.5s delay) - THE GUT PUNCH ===
+  // === 2. LOSS / COST OF INACTION (instant) ===
   var currentRate = Math.round(finalPerUnit * 0.4);
   var gapPerDeal = (finalPerUnit - currentRate) * count;
   var dealsPerMonth = 2;
   var monthlyLoss = gapPerDeal * dealsPerMonth;
   var yearlyLoss = monthlyLoss * 12;
 
-  setTimeout(function() {
-    var lossSection = document.getElementById('lossSection');
-    lossSection.classList.add('show');
+  var lossSection = document.getElementById('lossSection');
+  lossSection.classList.add('show');
 
-    // Big yearly number
-    animateValue(document.getElementById('lossYearlyAmount'), 0, yearlyLoss, 1800, '-$', '');
-    document.getElementById('lossHeroSub').innerHTML = 'If you keep charging <strong style="color:var(--red)">$' + currentRate + '</strong> instead of <strong style="color:var(--accent)">$' + finalPerUnit + '</strong> per ' + unitLabel + ', at just ' + dealsPerMonth + ' deals a month...';
+  // Big yearly number - instant
+  document.getElementById('lossYearlyAmount').textContent = '-$' + yearlyLoss.toLocaleString();
+  document.getElementById('lossHeroSub').innerHTML = 'If you keep charging <strong style="color:var(--red)">$' + currentRate + '</strong> instead of <strong style="color:var(--accent)">$' + finalPerUnit + '</strong> per ' + unitLabel + ', at just ' + dealsPerMonth + ' deals a month...';
 
-    // Red loss bars with visceral comparisons
-    animateValue(document.getElementById('lossBarDealNum'), 0, gapPerDeal, 800, '-$', '');
-    animateValue(document.getElementById('lossBarMonthNum'), 0, monthlyLoss, 1000, '-$', '');
-    animateValue(document.getElementById('lossBarYearNum'), 0, yearlyLoss, 1200, '-$', '');
+  // Red loss bars - instant values
+  document.getElementById('lossBarDealNum').textContent = '-$' + gapPerDeal.toLocaleString();
+  document.getElementById('lossBarMonthNum').textContent = '-$' + monthlyLoss.toLocaleString();
+  document.getElementById('lossBarYearNum').textContent = '-$' + yearlyLoss.toLocaleString();
 
-    // Visceral comparisons for each bar
-    var dealComp = gapPerDeal >= 500 ? "That's a <em>week of groceries</em> you're handing to the brand" : "That's <em>dinner for two</em> you're giving away. Every. Single. Deal.";
-    var monthComp = monthlyLoss >= 1000 ? "That's a <em>car payment</em> every single month" : "That's <em>" + Math.round(monthlyLoss / 50) + " meals out</em> you'll never have";
-    var yearComp = yearlyLoss >= 5000 ? "That's a <em>vacation you'll never take</em>" : "That's <em>new gear you can't afford</em>";
+  // Visceral comparisons for each bar
+  var dealComp = gapPerDeal >= 500 ? "That's a <em>week of groceries</em> you're handing to the brand" : "That's <em>dinner for two</em> you're giving away. Every. Single. Deal.";
+  var monthComp = monthlyLoss >= 1000 ? "That's a <em>car payment</em> every single month" : "That's <em>" + Math.round(monthlyLoss / 50) + " meals out</em> you'll never have";
+  var yearComp = yearlyLoss >= 5000 ? "That's a <em>vacation you'll never take</em>" : "That's <em>new gear you can't afford</em>";
 
-    document.getElementById('lossBarDealComp').innerHTML = dealComp;
-    document.getElementById('lossBarMonthComp').innerHTML = monthComp;
-    document.getElementById('lossBarYearComp').innerHTML = yearComp;
+  document.getElementById('lossBarDealComp').innerHTML = dealComp;
+  document.getElementById('lossBarMonthComp').innerHTML = monthComp;
+  document.getElementById('lossBarYearComp').innerHTML = yearComp;
 
-    // Animate bar fills
-    setTimeout(function() {
-      document.getElementById('lossBarDeal').classList.add('animated');
-      document.getElementById('lossBarMonth').classList.add('animated');
-      document.getElementById('lossBarYear').classList.add('animated');
-    }, 200);
+  // Visceral gut-punch text
+  var visceralLines = [];
+  if (yearlyLoss >= 10000) {
+    visceralLines.push('You\'re giving away <strong>$' + yearlyLoss.toLocaleString() + '/year</strong>.');
+    visceralLines.push('That\'s a <strong>vacation in Europe</strong> you\'re handing to brands who already have the budget.');
+  } else if (yearlyLoss >= 5000) {
+    visceralLines.push('You\'re giving away <strong>$' + yearlyLoss.toLocaleString() + '/year</strong>.');
+    visceralLines.push('That\'s a <strong>vacation you\'re never going to take</strong> because a brand got your work for cheap.');
+  } else {
+    visceralLines.push('You\'re giving away <strong>$' + yearlyLoss.toLocaleString() + '/year</strong>.');
+    visceralLines.push('That\'s <strong>' + Math.round(yearlyLoss / 200) + ' brand deals worth of money</strong> you\'ll never see.');
+  }
+  visceralLines.push('The brand has the budget. <span class="accent-text">You just didn\'t ask for it.</span>');
 
-    // Visceral gut-punch text
-    var visceralLines = [];
-    if (yearlyLoss >= 10000) {
-      visceralLines.push('You\'re giving away <strong>$' + yearlyLoss.toLocaleString() + '/year</strong>.');
-      visceralLines.push('That\'s a <strong>vacation in Europe</strong> you\'re handing to brands who already have the budget.');
-    } else if (yearlyLoss >= 5000) {
-      visceralLines.push('You\'re giving away <strong>$' + yearlyLoss.toLocaleString() + '/year</strong>.');
-      visceralLines.push('That\'s a <strong>vacation you\'re never going to take</strong> because a brand got your work for cheap.');
-    } else {
-      visceralLines.push('You\'re giving away <strong>$' + yearlyLoss.toLocaleString() + '/year</strong>.');
-      visceralLines.push('That\'s <strong>' + Math.round(yearlyLoss / 200) + ' brand deals worth of money</strong> you\'ll never see.');
-    }
-    visceralLines.push('The brand has the budget. <span class="accent-text">You just didn\'t ask for it.</span>');
+  document.getElementById('lossVisceralText').innerHTML = visceralLines.join('<br>');
 
-    document.getElementById('lossVisceralText').innerHTML = visceralLines.join('<br>');
+  // === 3. TESTIMONIALS (instant) ===
+  document.getElementById('inlineProof').classList.add('show');
 
-    // Smooth scroll to loss section
-    setTimeout(function() {
-      lossSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 300);
-  }, 1500);
+  // === 4. FOMO LINE (instant) ===
+  document.getElementById('fomoLine').style.display = 'block';
 
-  // === 3. TESTIMONIALS (2.5s delay) ===
-  setTimeout(function() {
-    document.getElementById('inlineProof').classList.add('show');
-  }, 2500);
+  // === 5. KIT CTA (instant) ===
+  document.getElementById('kitCta').classList.add('show');
+  var downsellEl = document.getElementById('downsell');
+  if (downsellEl) downsellEl.classList.add('show');
 
-  // === 4. KIT CTA (3s delay) ===
-  setTimeout(function() {
-    document.getElementById('kitCta').classList.add('show');
-    document.getElementById('downsell').classList.add('show');
-  }, 3000);
+  // Scroll to results
+  resultArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // SHARE RESULTS
@@ -1409,6 +1390,7 @@ document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el
   var calcBtn = document.querySelector('.calc-btn');
   if (!calcBtn) return;
   calcBtn.addEventListener('click', function() {
+    // Show sticky CTA after a brief moment for the rate to be set
     setTimeout(function() {
       var rateEl = document.getElementById('totalRate');
       if (rateEl && rateEl.textContent && rateEl.textContent !== '') {
@@ -1416,7 +1398,7 @@ document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el
         if (stickyRateEl) stickyRateEl.textContent = rateEl.textContent + '/video';
         sticky.classList.add('visible');
       }
-    }, 1500);
+    }, 100);
   });
 })();
 </script>

@@ -454,6 +454,54 @@ a { color:var(--accent); }
 
   /* All anchor/button tap targets */
   a[href*="stan.store"] { min-height:48px; display:inline-flex; align-items:center; justify-content:center; }
+
+  /* ===== MOBILE SPACING FIX: prevent touching borders / overlapping ===== */
+
+  /* SECTION PADDING: every major block needs breathing room */
+  .proof-section, .how-section, .reframe, .stack, .who-section, .faq, .faq-section, .guarantee, .footer, .cta-block {
+    padding: 48px 20px;
+  }
+
+  /* PROOF CARDS: clear separation */
+  .proof-card {
+    margin-bottom: 14px;
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .proof-cards { gap: 14px; }
+
+  /* FAQ ITEMS: each details element gets spacing */
+  .faq-item, details.faq-item { margin-bottom: 10px; }
+  .faq-list { gap: 10px; }
+
+  /* CTA SECTIONS: clear separation from surrounding content */
+  .cta-block { padding: 40px 20px; }
+
+  /* VALUE STACK items: padding and no overlapping borders */
+  .stack-card { padding: 24px 16px; }
+  .stack-item { padding: 14px 0; margin-bottom: 2px; }
+
+  /* MINI PROOF BAR */
+  .mini-proof { margin-bottom: 16px; padding: 16px 20px; border-radius: 12px; }
+
+  /* MINI TESTIMONIALS GRID items */
+  .mini-testimonials-grid > div { padding: 16px !important; margin-bottom: 14px; border-radius: 12px !important; }
+
+  /* GUARANTEE card spacing */
+  .guarantee { margin: 40px 0; padding: 40px 20px; border-radius: 12px; }
+
+  /* BODY: padding-bottom for sticky bar */
+  body { padding-bottom: 80px; }
+
+  /* Remove any negative margins that cause overlapping */
+  [style*="margin-top:-"], [style*="margin:-"] { margin-top: 0 !important; }
+  .how-section[style*="padding-top:0"] { padding-top: 24px !important; }
+
+  /* General card spacing */
+  .proof-card, .testimonial-card, .guarantee, .stack-card, .mini-proof {
+    padding: 16px;
+    margin-bottom: 14px;
+  }
 }
 @media(min-width:601px) {
   .sticky-bar { display:none !important; }
