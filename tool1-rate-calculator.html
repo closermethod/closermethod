@@ -867,10 +867,14 @@ footer a { color: var(--text2); text-decoration: none; }
       <div class="field">
         <label><span class="field-icon">&#129302;</span> Can they use your content to train AI?</label>
         <div class="select-wrap">
-          <select id="aiClause" onchange="flashGlow(this)">
-            <option value="no" selected>&#10060; No AI training rights</option>
-            <option value="yes">&#9989; Yes, AI training included (+15-25%)</option>
+          <select id="aiClause" onchange="flashGlow(this);var w=document.getElementById('aiWarning');var wt=document.getElementById('aiWarningText');if(this.value==='yes'){w.style.display='block';wt.innerHTML='<strong style=color:#ff4444>&#9888; Warning:</strong> If you give AI training rights, brands can use your face, voice, and likeness to generate AI content forever — without paying you again. Most creators don\'t even know this clause exists in their contracts. <strong style=color:#fff>The UGC Closer Kit includes AI clause scripts that protect you.</strong>'}else if(this.value==='idk'){w.style.display='block';wt.innerHTML='<strong style=color:#ff4444>&#9888; This is exactly the problem.</strong> If you don\'t know what AI training rights are, you might already be giving them away for free. Brands are quietly adding AI clauses to contracts right now. <strong style=color:#fff>The Closer Kit teaches you exactly how to spot and negotiate these clauses.</strong>'}else{w.style.display='none'}">
+            <option value="no" selected>&#10060; No — I don't give AI training rights</option>
+            <option value="yes">&#9989; Yes — brand can use my content to train AI</option>
+            <option value="idk">&#129300; I don't know what this means</option>
           </select>
+        </div>
+        <div id="aiWarning" style="display:none;margin-top:10px;padding:14px 16px;background:rgba(255,68,68,0.08);border:1px solid rgba(255,68,68,0.25);border-radius:10px;font-size:13px;color:#ff6b6b;line-height:1.5;">
+          <span id="aiWarningText"></span>
         </div>
       </div>
       <button class="calc-btn" onclick="calculateRate()">Calculate My Rate &rarr;</button>
