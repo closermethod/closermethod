@@ -1,0 +1,2531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CloserAI | The Closer Method</title>
+<meta name="description" content="AI negotiation tools for UGC creators. Paste the brand message, get the perfect reply. Built from 10+ years in enterprise sales.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://closermethod.com/app/">
+<meta property="og:title" content="CloserAI | AI Tools for UGC Creators">
+<meta property="og:description" content="Paste the brand message. Get the perfect reply. AI negotiation tools built from 10+ years in enterprise sales.">
+<meta property="og:image" content="https://closermethod.com/og-image.png">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@closermethod">
+<meta name="twitter:title" content="CloserAI | AI Tools for UGC Creators">
+<meta name="twitter:description" content="Paste the brand message. Get the perfect reply. Close the deal.">
+<meta name="twitter:image" content="https://closermethod.com/og-image.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"></noscript>
+<link rel="canonical" href="https://closermethod.com/app">
+
+<!-- JSON-LD Product schema (CloserAI Lite $97 entry tier) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"CloserAI Lite","description":"The 5 core CloserAI negotiation tools as a standalone entry tier. Brand reply generator, 3-option menu, objection handler, follow-up ladder, deal qualifier. Built from 10+ years of enterprise sales.","brand":{"@type":"Brand","name":"The Closer Method"},"image":"https://closermethod.com/app/og-image.jpg","url":"https://closermethod.com/app","sku":"closerai-lite-97","offers":{"@type":"Offer","priceCurrency":"USD","price":"97","availability":"https://schema.org/InStock","priceValidUntil":"2026-12-31","url":"https://closermethod.com/app","seller":{"@type":"Organization","name":"The Closer Method"}}}
+</script>
+
+<!-- JSON-LD Person schema -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Elisabeth Hitz","alternateName":"Elisabeth Bierschenk Hitz","url":"https://closermethod.com","sameAs":["https://x.com/closermethod","https://instagram.com/closermethod"],"jobTitle":"Founder, The Closer Method","alumniOf":{"@type":"CollegeOrUniversity","name":"New York University"},"description":"Founder of The Closer Method. 10+ years enterprise sales at Deel, Criteo, HBO, Bloomberg, McCann, Y&R. 268% of quota in one quarter at Deel."}
+</script>
+
+<!-- JSON-LD Organization schema -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"The Closer Method","url":"https://closermethod.com","founder":{"@type":"Person","name":"Elisabeth Hitz"}}
+</script>
+
+<!-- Stripe Buy Button -->
+<script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '35298849146380570');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"/></noscript>
+
+<!-- GA4, added Apr 28 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q2458LX0VD',{page_path:'/app'});gtag('event','view_item',{currency:'USD',value:297,items:[{item_id:'closerai',item_name:'CloserAI',price:297}]});</script>
+
+<style>
+:root {
+  --cream: #FEF7F5;
+  --card: #FFFFFF;
+  --dark: #1A1714;
+  --text: #2C2825;
+  --accent: #0A8A6A;
+  --accent-hover: #087A5C;
+  --mid: #6B6560;
+  --sand: #FDF3EF;
+  --deep: #FDF3EF;
+  --rule: #D4CEC4;
+  --green: #0A8A6A;
+  --green-hover: #087A5C;
+  --red: #C0392B;
+  --charcoal: #2C2825;
+  --blue: #EFFCFA;
+  --blue-dark: #0A8A6A;
+  --blue-light: #EFFCFA;
+  --slate: #2C2825;
+  --cyan: #EFFCFA;
+  --mint: #EFFCFA;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--cream);
+  background-image: linear-gradient(165deg, rgba(253,243,239,0.5) 0%, rgba(239,252,250,0.3) 35%, rgba(254,247,245,0.4) 65%, rgba(253,243,239,0.3) 100%);
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--dark);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+.topbar { display: none; }
+
+/* HEADER */
+header {
+  padding: 32px 40px 28px;
+  border-bottom: 1px solid var(--rule);
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 16px;
+  flex-wrap: wrap;
+}
+header h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(24px,4vw,38px);
+  font-weight: 900; letter-spacing: -0.5px;
+}
+header h1 em { color: var(--accent); font-style: normal; }
+.tagline { font-size: 13px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; margin-top: 6px; font-weight: 400; }
+.free-pill {
+  background: var(--card); color: var(--accent);
+  font-size: 11px; font-weight: 600;
+  padding: 8px 16px; border-radius: 24px;
+  letter-spacing: .06em; text-transform: uppercase;
+  border: 1px solid var(--accent);
+  box-shadow: 0 2px 8px rgba(19,179,139,0.1);
+}
+
+/* SOCIAL PROOF TICKER */
+.proof-bar {
+  padding: 14px 0;
+  background: var(--deep);
+  border-bottom: 1px solid var(--rule);
+  overflow: hidden;
+  position: relative;
+  font-size: 14px;
+  color: var(--mid);
+}
+.proof-bar::before, .proof-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+.proof-bar::before { left: 0; background: linear-gradient(to right, var(--deep), transparent); }
+.proof-bar::after { right: 0; background: linear-gradient(to left, var(--deep), transparent); }
+.proof-track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  animation: proofScroll 68s linear infinite;
+  width: max-content;
+}
+.proof-track:hover { animation-play-state: paused; }
+@keyframes proofScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.proof-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  font-size: 14px;
+}
+.proof-sep { color: var(--rule); font-size: 8px; }
+.proof-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); flex-shrink: 0; animation: pulse-dot 2s ease infinite; }
+@keyframes pulse-dot { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(19,179,139,0.4); } 50% { opacity: .8; box-shadow: 0 0 0 4px rgba(19,179,139,0); } }
+.proof-name { font-weight: 500; color: var(--dark); }
+
+/* TABS */
+.tabs {
+  display: flex; padding: 16px 40px 0;
+  gap: 6px; overflow-x: auto;
+  border-bottom: 1px solid var(--rule);
+  scrollbar-width: none; background: var(--cream);
+  position: sticky; top: 0; z-index: 50;
+}
+.tabs::-webkit-scrollbar { display: none; }
+.tab {
+  flex-shrink: 0; padding: 12px 22px 14px;
+  cursor: pointer; border-radius: 10px 10px 0 0;
+  font-size: 12px; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--mid);
+  border: none; border-bottom: 2px solid transparent;
+  background: transparent; transition: all .2s ease;
+  position: relative;
+}
+.tab:hover { color: var(--dark); }
+.tab.on { color: var(--dark); border-bottom: 2px solid var(--accent); background: transparent; }
+.tab .lock-icon { margin-left: 4px; font-size: 10px; transition: transform .2s; }
+.tab:not(.unlocked):hover .lock-icon { animation: shake .4s ease; }
+.tab.unlocked .lock-icon { display: none; }
+
+/* COUNTDOWN */
+.countdown {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 6px;
+}
+.countdown-unit {
+  background: var(--card);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-family: 'Lora', serif;
+  font-weight: 900;
+  font-size: 15px;
+  color: var(--dark);
+  min-width: 32px;
+  text-align: center;
+}
+.countdown-sep { font-size: 11px; color: var(--mid); }
+
+/* SEND TO MENU CTA */
+.btn-send-menu {
+  display: block;
+  width: 100%;
+  background: var(--charcoal);
+  color: white;
+  text-align: center;
+  padding: 18px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all .15s;
+  margin-top: 20px;
+  letter-spacing: .02em;
+}
+.btn-send-menu:hover { background: var(--accent); transform: translateY(-1px); }
+
+/* NEXT STEP NUDGE */
+.next-nudge {
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: var(--sand);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--dark);
+  cursor: pointer;
+  display: none;
+  transition: all .15s;
+}
+.next-nudge:hover { border-color: var(--accent); }
+.next-nudge .nudge-link { color: var(--accent); font-weight: 600; }
+
+/* PANELS */
+.panels { padding: 48px 40px; max-width: 780px; }
+.panel { display: none; }
+.panel.on { display: block; }
+
+/* SECTION HEADER */
+.section-title { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+.panel-headline {
+  font-family: 'Lora', serif;
+  font-size: clamp(32px,5vw,48px);
+  font-weight: 900; line-height: 1.08;
+  letter-spacing: -0.5px; margin-bottom: 16px;
+  color: var(--dark);
+}
+.panel-headline em { color: var(--accent); font-style: normal; }
+.panel-sub { font-size: 16px; color: var(--text); font-weight: 400; margin-bottom: 36px; line-height: 1.7; }
+
+/* INPUTS */
+label {
+  display: block; font-size: 12px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--mid); margin-bottom: 10px;
+}
+textarea, select, input[type=text], input[type=number], input[type=email] {
+  width: 100%; background: var(--card);
+  border: 1px solid var(--rule); border-radius: 10px;
+  padding: 16px 18px; font-family: 'Poppins', sans-serif;
+  font-size: 16px; font-weight: 400; color: var(--dark);
+  transition: all .2s ease; resize: vertical;
+  appearance: none;
+  box-shadow: 0 1px 3px rgba(26,23,20,0.04);
+}
+textarea:focus, select:focus, input:focus {
+  outline: none; border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(19,179,139,0.1), 0 1px 3px rgba(26,23,20,0.04);
+}
+textarea { min-height: 150px; }
+select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238C7B6E' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+.field { margin-bottom: 20px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+
+/* BUTTONS */
+.btn-primary {
+  background: var(--accent); color: white;
+  border: none; border-radius: 10px;
+  padding: 18px 28px; font-family: 'Poppins', sans-serif;
+  font-size: 16px; font-weight: 600; cursor: pointer;
+  width: 100%; letter-spacing: .02em;
+  transition: all .2s ease; position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(19,179,139,0.25);
+}
+.btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(19,179,139,0.3); }
+.btn-primary:active { transform: translateY(0); box-shadow: 0 2px 8px rgba(19,179,139,0.2); }
+.btn-primary.loading { opacity: .7; pointer-events: none; }
+.btn-primary.loading::after {
+  content: ''; position: absolute;
+  top: 50%; left: 50%; width: 18px; height: 18px;
+  margin: -9px 0 0 -9px;
+  border: 2px solid rgba(255,255,255,.3);
+  border-top-color: white; border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.btn-copy {
+  background: var(--sand); border: 1px solid var(--rule);
+  color: var(--mid); font-size: 14px; font-weight: 600;
+  padding: 10px 20px; border-radius: 10px; cursor: pointer;
+  letter-spacing: .05em; text-transform: uppercase;
+  transition: all .12s; margin-top: 14px;
+}
+.btn-copy:hover { background: var(--accent); color: white; border-color: var(--accent); }
+.btn-copy.done { background: var(--green); color: white; border-color: var(--green); }
+
+/* OUTPUT */
+.output-box {
+  background: var(--card); border: 1px solid var(--rule);
+  border-radius: 14px; padding: 32px;
+  margin-top: 28px; display: none;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 4px 20px rgba(26,23,20,0.06);
+}
+.output-box.show { display: block; animation: fadeIn .4s ease; }
+.output-label {
+  font-size: 11px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--blue-dark); margin-bottom: 14px;
+}
+.output-text {
+  font-size: 16px; line-height: 1.8; color: var(--dark);
+  white-space: pre-wrap; word-wrap: break-word;
+}
+.output-note {
+  font-size: 15px; color: var(--dark);
+  margin-top: 18px; padding: 16px 18px;
+  background: var(--blue-light);
+  border-radius: 10px;
+  border-left: 3px solid var(--accent);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+/* UPSELL BANNER */
+.upsell-banner {
+  background: var(--sand);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 32px;
+  margin-top: 28px;
+  display: none;
+}
+.upsell-banner.show { display: block; animation: fadeIn .3s ease; }
+.upsell-headline {
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--dark);
+}
+.upsell-headline em { color: var(--accent); font-style: normal; }
+.upsell-sub {
+  font-size: 15px;
+  color: var(--mid);
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.upsell-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.upsell-item {
+  font-size: 13px;
+  background: var(--sand);
+  color: var(--dark);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  border: 1px solid var(--rule);
+}
+.upsell-cta {
+  display: block;
+  background: var(--charcoal);
+  color: white;
+  text-align: center;
+  padding: 16px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all .2s ease;
+  box-shadow: 0 4px 14px rgba(44,40,37,0.2);
+}
+.upsell-cta:hover { background: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(19,179,139,0.25); }
+.upsell-price {
+  text-align: center;
+  font-size: 13px;
+  color: var(--mid);
+  margin-top: 10px;
+}
+.upsell-price s { color: var(--mid); }
+
+/* EMAIL GATE MODAL */
+.email-gate-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(26, 18, 8, 0.85);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.email-gate-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+.email-gate-overlay.hidden {
+  display: none;
+}
+.email-gate-modal {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 36px 32px 28px;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 25px 80px rgba(26, 18, 8, 0.35), 0 8px 24px rgba(26,18,8,0.1);
+  transform: translateY(20px);
+  transition: transform .3s ease;
+  border: 1px solid rgba(212,206,196,0.3);
+  margin: 20px 0;
+  flex-shrink: 0;
+}
+.email-gate-overlay.visible .email-gate-modal {
+  transform: translateY(0);
+}
+.email-badge {
+  display: inline-block;
+  background: var(--sand);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 24px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  border: 1px solid rgba(19,179,139,0.15);
+}
+.email-gate-modal h2 {
+  font-family: 'Lora', serif;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+.email-gate-modal h2 em {
+  color: var(--accent);
+  font-style: normal;
+}
+.gate-tool-preview {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.gate-tool-tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  color: var(--mid);
+  transition: all .2s ease;
+}
+.gate-tool-tag.active {
+  background: rgba(19,179,139,0.08);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.email-gate-subtitle {
+  font-size: 16px;
+  color: var(--mid);
+  margin-bottom: 28px;
+  line-height: 1.65;
+}
+.email-gate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.email-gate-form input {
+  padding: 16px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: var(--dark);
+  transition: border-color .12s;
+  background: var(--card);
+}
+.email-gate-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.email-gate-form button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 18px 28px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: .02em;
+  transition: all .15s;
+}
+.email-gate-form button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+.email-gate-note {
+  font-size: 12px;
+  color: var(--mid);
+  margin-top: 16px;
+}
+.gate-social-proof {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 1.5;
+}
+.gate-social-proof strong { color: var(--dark); font-weight: 600; }
+
+/* OBJECTION GRID */
+.obj-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+  gap: 10px; margin-bottom: 20px;
+}
+.obj-card {
+  background: var(--card); border: 1px solid var(--rule);
+  border-radius: 12px; padding: 18px 20px;
+  cursor: pointer; transition: all .2s ease;
+  font-size: 15px; line-height: 1.5;
+  box-shadow: 0 2px 8px rgba(26,23,20,0.04);
+}
+.obj-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(26,23,20,0.08); }
+.obj-card.selected { border-color: var(--accent); background: var(--sand); border-width: 2px; box-shadow: 0 4px 12px rgba(19,179,139,0.1); }
+.obj-num { font-size: 10px; font-weight: 700; color: var(--accent); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 6px; }
+
+/* RATE RESULT */
+.rate-display {
+  background: var(--card); border: 1px solid var(--rule);
+  border-left: 4px solid var(--accent); border-radius: 14px;
+  padding: 32px; margin-top: 28px; display: none;
+  box-shadow: 0 4px 20px rgba(26,23,20,0.06);
+}
+.rate-display.show { display: block; animation: fadeIn .3s ease; }
+.rate-big {
+  font-family: 'Lora', serif;
+  font-size: 58px; font-weight: 900; color: var(--slate);
+  line-height: 1;
+}
+.rate-label { font-size: 14px; color: var(--mid); margin-top: 6px; }
+.rate-breakdown { margin-top: 16px; border-top: 1px solid var(--rule); padding-top: 16px; }
+.rate-row { display: flex; justify-content: space-between; font-size: 15px; padding: 6px 0; }
+.rate-row .rr-label { color: var(--mid); }
+.rate-row .rr-value { font-weight: 600; }
+
+/* DIVIDER */
+.rule-line { height: 1px; background: var(--rule); margin: 24px 0; }
+
+/* BOTTOM BAR */
+.bottom-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: rgba(254,247,245,0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--rule);
+  padding: 12px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; z-index: 100;
+}
+.bb-left { font-size: 12px; color: var(--mid); font-weight: 400; letter-spacing: .04em; }
+.bb-right { font-size: 13px; }
+.bb-right a {
+  text-decoration: none; font-weight: 600; transition: all .2s ease;
+  padding: 10px 24px; background: var(--accent); color: white; border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(19,179,139,0.2);
+  font-size: 13px;
+}
+.bb-right a:hover { background: var(--accent-hover); box-shadow: 0 4px 14px rgba(19,179,139,0.3); transform: translateY(-1px); }
+
+body { padding-bottom: 60px; }
+
+/* SUCCESS STATE */
+.success-banner {
+  display: none;
+  background: linear-gradient(135deg, var(--blue-light), var(--sand));
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  padding: 32px;
+  margin: 0 40px 24px;
+  text-align: center;
+  animation: fadeIn .5s ease;
+}
+.success-banner.show { display: block; }
+.success-icon { font-size: 48px; margin-bottom: 12px; }
+.success-title {
+  font-family: 'Lora', serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+.success-title em { color: var(--accent); font-style: normal; }
+.success-sub {
+  font-size: 15px;
+  color: var(--mid);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+.success-tools {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.success-tool {
+  background: white;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark);
+  cursor: pointer;
+  transition: all .15s;
+}
+.success-tool:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+/* ANIMATIONS */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+.shake { animation: shake .3s ease; }
+@keyframes confettiFall { 0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(720deg); opacity: 0; } }
+.confetti-piece {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  z-index: 9999;
+  animation: confettiFall 3s ease-in forwards;
+  pointer-events: none;
+}
+
+/* TAB VISUAL ORDER - Rate Calc first */
+.tabs button:nth-child(1) { order: 2; }
+.tabs button:nth-child(2) { order: 1; }
+.tabs button:nth-child(3) { order: 3; }
+.tabs button:nth-child(4) { order: 4; }
+.tabs button:nth-child(5) { order: 5; }
+
+/* INLINE EMAIL CAPTURE */
+.inline-capture {
+  background: var(--deep);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  display: none;
+}
+.inline-capture.show { display: block; animation: fadeIn .3s ease; }
+.inline-capture-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+.inline-capture-form {
+  display: flex;
+  gap: 8px;
+}
+.inline-capture-form input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background: var(--card);
+}
+.inline-capture-form button {
+  padding: 12px 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .15s;
+}
+.inline-capture-form button:hover { background: var(--accent-hover); }
+.inline-capture-done {
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* PURCHASE GATE */
+.purchase-features {
+  text-align: left;
+  margin: 12px 0;
+}
+.purchase-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 5px 0;
+  font-size: 14px;
+  color: var(--dark);
+  line-height: 1.4;
+}
+.purchase-feature .pf-check {
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.purchase-price-box {
+  background: var(--card);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+}
+.purchase-price-big {
+  font-family: 'Lora', serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--dark);
+}
+.purchase-price-note {
+  font-size: 13px;
+  color: var(--mid);
+  margin-top: 4px;
+}
+.purchase-btn {
+  display: block;
+  width: 100%;
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 18px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all .2s ease;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 14px rgba(19,179,139,0.3);
+}
+.purchase-btn:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(19,179,139,0.35); }
+.already-purchased {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--mid);
+}
+.already-purchased a {
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: underline;
+}
+.verify-form {
+  display: none;
+  margin-top: 12px;
+}
+.verify-form.show { display: flex; gap: 8px; }
+.verify-form input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+}
+.verify-form button {
+  padding: 10px 16px;
+  background: var(--charcoal);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px) {
+  header { padding: 14px 16px 10px; }
+  header h1 { font-size: 24px; }
+  .tagline { font-size: 11px; letter-spacing: .06em; }
+  .free-pill { font-size: 10px; padding: 6px 12px; }
+  .tabs { padding: 12px 8px 0; gap: 2px; }
+  .tab { padding: 10px 10px 12px; font-size: 11px; letter-spacing: .03em; }
+  .panels { padding: 28px 16px; }
+  .panel-headline { font-size: 28px; }
+  .panel-sub { font-size: 14px; margin-bottom: 20px; }
+  .proof-bar { padding: 10px 0; }
+  .proof-item { font-size: 13px; }
+  .field-row { grid-template-columns: 1fr; }
+  .obj-grid { grid-template-columns: 1fr; }
+
+  /* Bottom bar: full-width CTA on mobile, hide label */
+  .bottom-bar { padding: 10px 16px; flex-direction: column; gap: 0; }
+  .bb-left { display: none; }
+  .bb-right { width: 100%; }
+  .bb-right a { display: block; width: 100%; text-align: center; padding: 14px 16px; font-size: 14px; border-radius: 10px; }
+  body { padding-bottom: 64px; }
+
+  /* Gate modal - must scroll on small screens */
+  .email-gate-overlay { padding: 10px; }
+  .email-gate-modal { padding: 20px 16px 16px; max-width: 100%; margin: 8px 0; border-radius: 16px; }
+  .email-gate-modal h2 { font-size: 20px; }
+  .email-badge { font-size: 10px; padding: 6px 12px; margin-bottom: 12px; }
+  .gate-tool-preview { gap: 4px; }
+  .gate-tool-tag { font-size: 11px; padding: 6px 10px; }
+  .purchase-features { margin: 14px 0; }
+  .purchase-feature { font-size: 13px; padding: 6px 0; }
+  .purchase-price-box { padding: 16px; margin: 14px 0; }
+  .purchase-price-big { font-size: 40px; }
+  .gate-social-proof { font-size: 11px; }
+  .already-purchased { font-size: 12px; }
+
+  /* Stripe embed responsive */
+  #stripeEmbedWrap { width: 100%; }
+  stripe-buy-button { width: 100%; }
+
+  /* Form elements */
+  textarea { min-height: 120px; font-size: 15px; }
+  select, input[type=text], input[type=number], input[type=email] { font-size: 15px; padding: 14px 16px; }
+  .btn-primary { padding: 16px 20px; font-size: 15px; }
+  .btn-send-menu { padding: 16px 20px; font-size: 15px; }
+  .inline-capture-form { flex-direction: column; }
+  .verify-form { flex-direction: column; }
+
+  /* Output */
+  .output-box { padding: 20px 16px; }
+  .output-text { font-size: 15px; }
+  .output-note { font-size: 14px; padding: 14px 16px; }
+  .upsell-banner { padding: 20px 16px; }
+  .upsell-headline { font-size: 18px; }
+  .upsell-items { gap: 6px; }
+  .upsell-cta { padding: 14px 20px; font-size: 15px; }
+  .next-nudge { font-size: 12px; }
+
+  /* Rate display */
+  .rate-big { font-size: 42px; }
+  .rate-display { padding: 20px 16px; }
+
+  /* Tab order */
+  .tabs button:nth-child(1) { order: 2; }
+  .tabs button:nth-child(2) { order: 1; }
+
+  /* Success banner */
+  .success-banner { margin: 0 16px 16px; padding: 24px 16px; }
+  .success-title { font-size: 22px; }
+  .success-tools { gap: 6px; }
+  .success-tool { padding: 10px 14px; font-size: 13px; }
+
+  /* Objection cards */
+  .obj-card { padding: 14px 16px; font-size: 14px; }
+}
+</style>
+
+<!-- GA4 → Stripe cid forwarding (so purchase events attribute to landing page) -->
+<script>
+(function(){
+  function getGaCid() {
+    var m = document.cookie.match(/_ga=(GA\d\.\d\.[^;]+)/);
+    if (!m) return null;
+    return m[1].split('.').slice(2).join('.');
+  }
+  function buildUrl(href, cid) {
+    if (!cid) return href;
+    var sep = href.indexOf('?') > -1 ? '&' : '?';
+    if (href.indexOf('client_reference_id=') > -1) return href;
+    return href + sep + 'client_reference_id=' + encodeURIComponent(cid);
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href*="buy.stripe.com"]');
+    if (!a) return;
+    var cid = getGaCid();
+    if (!cid) return;
+    a.href = buildUrl(a.href, cid);
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'begin_checkout', { content_id: a.href.split('/').pop().split('?')[0] });
+    }
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'InitiateCheckout');
+    }
+  }, true);
+})();
+</script>
+</head>
+<body>
+
+<!-- Social proof strip · real receipts only -->
+<div style="background:#FAF6F2;border-top:1px solid #E2DDD5;border-bottom:1px solid #E2DDD5;padding:20px 16px;font-family:'Inter',-apple-system,sans-serif;color:#14110F;">
+  <div style="max-width:920px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;justify-content:center;align-items:center;font-size:13px;line-height:1.5;">
+    <div style="flex:1;min-width:220px;">
+      <strong style="color:#E5552F;">$150 → $800</strong><br>
+      Ty Murph used the rate calculator structure. 5x in 2 weeks.
+    </div>
+    <div style="flex:1;min-width:220px;">
+      <strong style="color:#E5552F;">2 brand replies, day one</strong><br>
+      Milena V sent 10 pitches with the script. Got 2 replies.
+    </div>
+    <div style="flex:1;min-width:220px;">
+      <strong style="color:#E5552F;">268% of quota at Deel</strong><br>
+      Built on $1.2M+ enterprise sales (Deel, Criteo, HBO, Bloomberg).
+    </div>
+  </div>
+</div>
+
+<div class="topbar"></div>
+
+
+<!-- CLOSERAI LITE PURCHASE GATE ($97) tools-only tier (full system at /closerai $297) -->
+<div class="email-gate-overlay" id="purchaseGateOverlay">
+  <div class="email-gate-modal" style="position:relative;">
+    <div onclick="dismissGate()" style="position:absolute; top:12px; right:16px; cursor:pointer; font-size:20px; color:var(--mid); line-height:1; z-index:2;">&#10005;</div>
+
+    <div style="font-size:11px; letter-spacing:0.12em; color:var(--accent); font-weight:700; margin-bottom:8px;">CLOSERAI LITE &middot; TOOLS ONLY</div>
+    <h2 id="gateHeadline" style="margin-bottom:8px;">You know your rate.<br>Now <em>close it.</em></h2>
+    <div id="gateValueAnchor" style="font-size:14px; color:var(--accent); font-weight:600; margin-bottom:12px; display:none;"></div>
+
+    <div style="font-size:14px; color:var(--text); text-align:center; margin-bottom:14px; line-height:1.7;">
+      Get all 4 closing tools: the menu generator, follow-up ladder, objection handler, and CloserAI tab. Pays for itself on one deal.
+    </div>
+
+    <div style="margin:0 0 12px; display:flex; justify-content:center; flex-direction:column; align-items:center; gap:10px;" id="stripeEmbedWrap">
+      <a href="https://buy.stripe.com/3cIfZb1iFgfs6CC10T5Ne0e" class="purchase-btn" id="stripeFallback" onclick="trackPurchaseClick()">Get CloserAI Lite, $97</a>
+    </div>
+
+    <div style="text-align:center; font-size:12px; color:var(--mid); line-height:1.5; margin-bottom:12px; padding-top:10px; border-top:1px solid var(--rule);">
+      Want the full system + Notion workspace + scripts? <a href="/closerai" style="color:var(--accent); font-weight:600; text-decoration:none;">See CloserAI, $297 &rarr;</a>
+    </div>
+
+    <div class="already-purchased">
+      Already purchased? <a onclick="showVerify()">Click here to open</a>
+      <div class="verify-form" id="verifyForm">
+        <input type="email" id="verifyEmail" placeholder="Email used at checkout">
+        <button onclick="verifyPurchase()">Open</button>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:8px; cursor:pointer; font-size:12px; color:var(--rule);" onclick="dismissGate()">No thanks</div>
+  </div>
+</div>
+
+<header>
+  <div>
+    <h1>Closer<em>AI</em></h1>
+    <div class="tagline">10+ years closing deals at Criteo, Deel, HBO. Now built into tools for you.</div>
+  </div>
+</header>
+
+<div class="proof-bar">
+  <div class="proof-track">
+    <div class="proof-item"><div class="proof-dot"></div><span class="proof-name">Ty @Ty__Murph</span> "$150 to $800 on first try"</div>
+    <span class="proof-sep">&#9679;</span>
+    <div class="proof-item"><div class="proof-dot"></div><span class="proof-name">Milena @UGCbyMilenaVonX</span> "2 responses out of 10 outreaches in one day!"</div>
+    <span class="proof-sep">&#9679;</span>
+    <div class="proof-item"><div class="proof-dot"></div><span class="proof-name">Candi @TheGoldens</span> "Thought $650 for 5 videos was good until the calculator showed the real number"</div>
+    <span class="proof-sep">&#9679;</span>
+    <div class="proof-item"><div class="proof-dot"></div><span class="proof-name">@NewsBoss</span> "Definitely exceeded my expectations!"</div>
+    <span class="proof-sep">&#9679;</span>
+    <div class="proof-item"><div class="proof-dot"></div><span class="proof-name">Milena @UGCbyMilenaVonX</span> "Stellar way for dealing with objections"</div>
+    <span class="proof-sep">&#9679;</span>
+    <div class="proof-item"><div class="proof-dot"></div><span class="proof-name">Jamie @jamiejohnsonugc</span> "I'm excited to have this tool in my back pocket!"</div>
+    <span class="proof-sep">&#9679;</span>
+    <div class="proof-item"><div class="proof-dot"></div><span class="proof-name">Mel V</span> "Rate calculator is BRILLIANT"</div>
+    <span class="proof-sep">&#9679;</span>
+    <!-- duplicate for seamless loop -->
+    <div class="proof-item"><div class="proof-dot"></div><span class="proof-name">Ty @Ty__Murph</span> "$150 to $800 on first try"</div>
+    <span class="proof-sep">&#9679;</span>
+    <div class="proof-item"><div class="proof-dot"></div><span class="proof-name">Milena @UGCbyMilenaVonX</span> "2 responses out of 10 outreaches in one day!"</div>
+    <span class="proof-sep">&#9679;</span>
+    <div class="proof-item"><div class="proof-dot"></div><span class="proof-name">Candi @TheGoldens</span> "Thought $650 for 5 videos was good until the calculator showed the real number"</div>
+    <span class="proof-sep">&#9679;</span>
+    <div class="proof-item"><div class="proof-dot"></div><span class="proof-name">@NewsBoss</span> "Definitely exceeded my expectations!"</div>
+    <span class="proof-sep">&#9679;</span>
+    <div class="proof-item"><div class="proof-dot"></div><span class="proof-name">Milena @UGCbyMilenaVonX</span> "Stellar way for dealing with objections"</div>
+    <span class="proof-sep">&#9679;</span>
+    <div class="proof-item"><div class="proof-dot"></div><span class="proof-name">Jamie @jamiejohnsonugc</span> "I'm excited to have this tool in my back pocket!"</div>
+    <span class="proof-sep">&#9679;</span>
+    <div class="proof-item"><div class="proof-dot"></div><span class="proof-name">Mel V</span> "Rate calculator is BRILLIANT"</div>
+  </div>
+</div>
+
+<!-- SUCCESS BANNER (shown after purchase) -->
+<div class="success-banner" id="successBanner">
+  <div class="success-icon">&#127881;</div>
+  <div class="success-title">You're in. All tools <em>ready.</em></div>
+  <div class="success-sub" id="successSub">Close your first higher deal in the next 5 minutes. Here's how:</div>
+  <div style="text-align:left; max-width:380px; margin:0 auto 16px;">
+    <div style="display:flex; gap:12px; align-items:flex-start; padding:8px 0; font-size:14px; cursor:pointer;" onclick="showTab(2)">
+      <span style="background:var(--accent); color:white; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px; flex-shrink:0;">1</span>
+      <span><strong>Open 3-Option Menu.</strong> Enter the rate you just calculated. Get 3 pricing options to send.</span>
+    </div>
+    <div style="display:flex; gap:12px; align-items:flex-start; padding:8px 0; font-size:14px;">
+      <span style="background:var(--accent); color:white; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px; flex-shrink:0;">2</span>
+      <span><strong>Copy the menu.</strong> Paste it directly into the brand DM. They pick the middle.</span>
+    </div>
+    <div style="display:flex; gap:12px; align-items:flex-start; padding:8px 0; font-size:14px; cursor:pointer;" onclick="showTab(4)">
+      <span style="background:var(--accent); color:white; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px; flex-shrink:0;">3</span>
+      <span><strong>They push back?</strong> Open Objection Handler. Get the exact script. Never drop your price.</span>
+    </div>
+  </div>
+  <div class="success-tools">
+    <div class="success-tool" onclick="showTab(2)">Start With 3-Option Menu &#8594;</div>
+  </div>
+  <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--rule);">
+    <div style="font-size:14px; color:var(--mid); margin-bottom:8px;">These tools handle individual deals. Want the full system that runs your entire pipeline?</div>
+    <a href="/closerai" style="display:inline-block; background:var(--charcoal); color:white; padding:12px 24px; border-radius:10px; text-decoration:none; font-weight:700; font-size:14px; transition:all .15s;">See CloserAI ($297 founding price)</a>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab" onclick="showTab(0)">CloserAI <span class="lock-icon">&#128274;</span></button>
+  <button class="tab on" onclick="showTab(1)">Rate Calc</button>
+  <button class="tab" onclick="showTab(2)">Menu <span class="lock-icon">&#128274;</span></button>
+  <button class="tab" onclick="showTab(3)">Follow-Up <span class="lock-icon">&#128274;</span></button>
+  <button class="tab" onclick="showTab(4)">Objections <span class="lock-icon">&#128274;</span></button>
+</div>
+
+<div class="panels">
+
+<!-- TAB 0: CLOSER (free after email capture) -->
+<div class="panel" id="panel-0">
+  <div class="section-title">CloserAI</div>
+  <div class="panel-headline">Never freeze on a<br>brand reply <em>again.</em></div>
+  <div class="panel-sub">Paste what the brand said. Get the exact words to send back.</div>
+  <div style="padding:12px 16px; background:var(--card); border:1px solid var(--rule); border-left:4px solid var(--accent); border-radius:10px; margin-bottom:24px; font-size:13px; color:var(--text); line-height:1.6;">
+    <strong style="color:var(--accent);">Built on 10+ years of enterprise sales.</strong> CloserAI is powered by the UGC Closer Kit -- 16 modules of negotiation frameworks, usage rights pricing, and real deal data. It reads the brand's message, finds the leverage points, and writes the exact DM you send back. Never drops price. Always redirects to scope.
+  </div>
+
+  <div class="field">
+    <label>Paste the brand's message</label>
+    <textarea id="brand-msg" placeholder="e.g. 'Hey! We're launching a new skincare line and love your content. We'd like 3 UGC videos for our campaign. Our budget is around $150 per video. Let us know if you're interested!'"></textarea>
+  </div>
+
+  <div class="field">
+    <label>What do you need?</label>
+    <select id="closer-stage">
+      <option value="rates">They asked for my rates</option>
+      <option value="menu">I need to send pricing options</option>
+      <option value="pushback">They said my price is too high</option>
+      <option value="silent">They went silent</option>
+      <option value="retainer">I want to pitch a retainer</option>
+      <option value="contract">I need to set payment terms</option>
+    </select>
+  </div>
+
+  <!-- Niche + experience removed from Closer tab: they don't change the output. They live in Rate Calculator where they matter. -->
+
+  <button class="btn-primary" id="closer-btn" onclick="runCloser()">Generate My Reply</button>
+
+  <!-- CLOSER EMAIL GATE -->
+  <div id="closerEmailGate" style="display:none;">
+    <div style="text-align:center; padding:32px 24px; background:var(--card); border:1px solid var(--rule); border-radius:14px; margin-top:28px; box-shadow:0 4px 20px rgba(26,23,20,0.06);">
+      <div style="font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">YOUR REPLY IS READY</div>
+      <div style="font-family:'Lora',serif; font-size:18px; color:var(--dark); user-select:auto; margin-bottom:12px; line-height:1.6;" id="closerBlurred"></div>
+      <div style="font-size:15px; color:var(--mid); margin-bottom:20px; line-height:1.6;">Enter your email to see the full reply<br>and get scripts for every brand situation.</div>
+      <div style="font-size:11px; color:var(--accent); font-weight:600; margin-bottom:8px;">Not templates. Real negotiation strategy.</div>
+      <form class="email-gate-form" onsubmit="unlockCloserWithEmail(event)" style="max-width:320px; margin:0 auto;">
+        <input type="text" id="closer-gate-name" placeholder="First name" style="text-transform:capitalize;">
+        <input type="email" id="closer-gate-email" placeholder="Your best email" required>
+        <button type="submit" style="background:var(--accent); color:white; border:none; border-radius:10px; padding:16px 28px; font-family:'Poppins',sans-serif; font-size:15px; font-weight:600; cursor:pointer; box-shadow:0 4px 14px rgba(19,179,139,0.25); transition:all .2s ease;">Show My Reply</button>
+      </form>
+      <div style="font-size:11px; color:var(--mid); margin-top:12px;">Instant access. Real reply when you DM.</div>
+    </div>
+  </div>
+
+  <div class="output-box" id="closer-output">
+    <div class="output-label">Your Reply - Copy and Send</div>
+    <div class="output-text" id="closer-text"></div>
+    <div class="output-note" id="closer-note"></div>
+    <button class="btn-copy" onclick="copyOutput('closer-text', this)">Copy Reply</button>
+    <div class="rate-gap" id="closer-gap" style="display:none; margin-top:20px; padding:24px; background:var(--card); border:1px solid var(--rule); border-radius:16px; text-align:center;">
+      <div style="font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--accent); font-weight:700; margin-bottom:12px;">What you're leaving on the table</div>
+      <div style="display:flex; justify-content:center; align-items:center; gap:20px; flex-wrap:wrap;">
+        <div><span style="font-size:12px; color:var(--mid); display:block;">Their offer</span><span id="gap-their" style="font-family:'Lora',serif; font-size:32px; font-weight:900; color:var(--mid); text-decoration:line-through;">$150</span></div>
+        <div style="font-size:24px; color:var(--accent);">&rarr;</div>
+        <div><span style="font-size:12px; color:var(--accent); display:block;">Your rate</span><span id="gap-yours" style="font-family:'Lora',serif; font-size:32px; font-weight:900; color:var(--accent);">$525</span></div>
+      </div>
+      <div id="gap-delta" style="font-size:15px; color:var(--mid); margin-top:14px;"></div>
+    </div>
+    <div class="next-step" id="closer-next" style="display:none; margin-top:16px; padding:16px 18px; background:var(--sand); border:2px solid var(--accent); border-radius:10px; font-size:14px; color:var(--dark); cursor:pointer;" onclick="showTab(2)">
+      <strong>Next step:</strong> Don't send a flat rate. Send a 3-option pricing menu. Brands always pick the middle. You set the middle. <span style="color:var(--accent); font-weight:700;">Get the 3-Option Menu &#8594;</span>
+    </div>
+    <!-- $97 TOOLS BRIDGE (non-purchasers) -->
+    <div class="upsell-banner" id="closer-tools-upsell" style="display:none;">
+      <div class="upsell-headline">You handled one reply. What happens when they <em>push back?</em></div>
+      <div class="upsell-sub">You need the 3-option pricing menu, the follow-up ladder, and 12 objection scripts. Copy-paste closing tools for every brand situation.</div>
+      <a href="javascript:void(0)" onclick="showPurchaseGate(4)" class="upsell-cta">Open Closing Tools</a>
+      <div class="upsell-price">$97. Pays for itself on one deal.</div>
+    </div>
+    <!-- CloserAI $297 UPSELL (purchasers) -->
+    <div class="upsell-banner" id="closer-upsell">
+      <div class="upsell-headline">You just handled one reply. <em>CloserAI</em> handles your entire pipeline.</div>
+      <div class="upsell-sub">Usage rights tracking, hybrid pay structures, retainer pricing, AI sales coaching, and contract templates. The complete closing system.</div>
+      <div class="upsell-items">
+        <span class="upsell-item">Close $800+ deals consistently</span>
+        <span class="upsell-item">Turn one-off gigs into retainers</span>
+        <span class="upsell-item">Full negotiation playbook</span>
+      </div>
+      <a href="/closerai" class="upsell-cta">See What's Inside CloserAI</a>
+      <div class="upsell-price"><s>$497</s> $297 founding member price. Limited availability.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 1: RATE CALC (100% free, no gate - maximum virality) -->
+<div class="panel on" id="panel-1">
+  <div class="panel-headline">Brands are underpaying you.<br>Find out by <em>how much.</em></div>
+  <div class="panel-sub">The average UGC deliverable pays $198. Creators who know their number charge $800-3,000+ for the same work. Takes 60 seconds.</div>
+
+  <!-- CALCULATE BUTTON (above customize) -->
+  <button class="btn-primary" id="quickCalcBtn" onclick="calcRate()" style="margin-bottom:8px;">Calculate My Rate</button>
+  <div style="text-align:center; font-size:11px; color:var(--mid); margin-bottom:10px;">Default: Beauty, Intermediate, 3 videos</div>
+  <div style="text-align:center; margin-bottom:16px;">
+    <span id="customizeToggle" onclick="toggleCustomize()" style="font-size:13px; color:var(--accent); font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:4px;">
+      <span id="customizeArrow" style="transition:transform .2s; font-size:10px;">&#9654;</span> Change niche, experience, or deliverables
+    </span>
+  </div>
+
+  <div id="customizeFields" style="display:none;">
+  <div class="field-row">
+    <div>
+      <label>Your niche</label>
+      <select id="calc-niche">
+        <option value="beauty" data-min="150" data-max="450" selected>Beauty & Skincare</option>
+        <option value="fashion" data-min="125" data-max="400">Fashion & Apparel</option>
+        <option value="fitness" data-min="150" data-max="450">Fitness & Wellness</option>
+        <option value="food" data-min="140" data-max="420">Food & Beverage</option>
+        <option value="health" data-min="175" data-max="550">Health & Supplements</option>
+        <option value="tech" data-min="200" data-max="700">Tech & Gadgets</option>
+        <option value="home" data-min="150" data-max="450">Home & Lifestyle</option>
+        <option value="fintech" data-min="225" data-max="800">Finance & Fintech</option>
+      </select>
+    </div>
+    <div>
+      <label>Experience level</label>
+      <select id="calc-exp">
+        <option value="0.65">Beginner (0-6 months)</option>
+        <option value="1.0" selected>Intermediate (6-12 months)</option>
+        <option value="1.6">Experienced (1-2 years)</option>
+        <option value="2.5">Expert (2+ years)</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="field-row">
+    <div>
+      <label>Content format</label>
+      <select id="calc-format">
+        <option value="1.0" selected>30-second vertical video</option>
+        <option value="1.5">60-second video with hook/CTA</option>
+        <option value="0.5">Static product photo</option>
+        <option value="1.25">Hooks & variations (3-5 versions)</option>
+      </select>
+    </div>
+    <div>
+      <label>Number of deliverables</label>
+      <input type="number" id="calc-videos" value="3" min="1" max="20">
+    </div>
+  </div>
+
+  <div class="field-row">
+    <div>
+      <label>Usage rights</label>
+      <select id="calc-usage">
+        <option value="1.0">Organic only (base rate)</option>
+        <option value="1.5">Paid ads - 30 days (+50%)</option>
+        <option value="1.85">Paid ads - 90 days (+85%)</option>
+        <option value="2.25">Paid ads - 6 months (+125%)</option>
+        <option value="2.75">Perpetual / unlimited (+175%)</option>
+      </select>
+    </div>
+    <div>
+      <label>Brand size</label>
+      <select id="calc-brand-main">
+        <option value="1.0" selected>Small / startup (base)</option>
+        <option value="1.15">Mid-size brand (+15%)</option>
+        <option value="1.35">Enterprise / Fortune 500 (+35%)</option>
+        <option value="1.5">Celebrity brand (+50%)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- ADVANCED OPTIONS (collapsed by default) -->
+  <div style="text-align:center; margin:4px 0 8px;">
+    <span id="advancedToggle" onclick="toggleAdvanced()" style="font-size:12px; color:var(--accent); font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:4px;">
+      <span id="advancedArrow" style="transition:transform .2s;">&#9654;</span> Advanced options (whitelisting, exclusivity, rush)
+    </span>
+  </div>
+  <div id="advancedFields" style="display:none;">
+    <div class="field-row">
+      <div>
+        <label>Whitelisting / Spark Ads?</label>
+        <select id="calc-whitelist">
+          <option value="1.0">No</option>
+          <option value="1.3">Yes - they run ads from my account (+30%)</option>
+        </select>
+      </div>
+      <div>
+        <label>Exclusivity?</label>
+        <select id="calc-exclusivity">
+          <option value="1.0">No exclusivity</option>
+          <option value="1.25">Yes - 30 days (+25%)</option>
+          <option value="1.5">Yes - 90 days (+50%)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Rush delivery?</label>
+      <select id="calc-rush">
+        <option value="1.0">No - standard timeline</option>
+        <option value="1.35">Yes - 24-48 hours (+35%)</option>
+      </select>
+    </div>
+  </div>
+
+  <button class="btn-primary" id="calcRateBtn" onclick="calcRate()">Calculate My Rate</button>
+  </div><!-- /customizeFields -->
+
+
+  <!-- EMAIL GATE (shows after Calculate, before result) -->
+  <div id="rateEmailGate" style="display:none;">
+    <div style="text-align:center; padding:32px 24px; background:var(--card); border:1px solid var(--rule); border-radius:14px; margin-top:28px; box-shadow:0 4px 20px rgba(26,23,20,0.06);">
+      <div style="font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">YOUR RATE IS READY</div>
+      <div style="font-family:'Lora',serif; font-size:36px; font-weight:900; color:var(--accent); margin-bottom:8px;" id="rateBlurred">your rate is ready</div>
+      <div style="font-size:15px; color:var(--text); margin-bottom:20px; line-height:1.6;">Enter your email to see your personalized rate.<br>Negotiation scripts come with it.</div>
+      <form class="email-gate-form" onsubmit="unlockRateWithEmail(event)" style="max-width:320px; margin:0 auto;">
+        <input type="text" id="rate-gate-name" placeholder="First name" style="text-transform:capitalize;">
+        <input type="email" id="rate-gate-email" placeholder="Your best email" required>
+        <button type="submit" style="background:var(--accent); color:white; border:none; border-radius:10px; padding:16px 28px; font-family:'Poppins',sans-serif; font-size:15px; font-weight:600; cursor:pointer; box-shadow:0 4px 14px rgba(10,138,106,0.25); transition:all .2s ease;">Show My Rate</button>
+      </form>
+      <div style="font-size:11px; color:var(--mid); margin-top:12px;">Instant access. Real reply when you DM.</div>
+    </div>
+  </div>
+
+  <div class="rate-display" id="rate-result">
+    <div class="rate-label">Recommended rate for this deal</div>
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px; flex-wrap:wrap;">
+      <div id="rateBasedOn" style="font-size:12px; color:var(--mid);"></div>
+      <span onclick="document.getElementById('rate-result').classList.remove('show'); document.getElementById('quickCalcBtn').style.display='block'; document.getElementById('customizeFields').style.display='block'; document.getElementById('customizeArrow').style.transform='rotate(90deg)'; window.scrollTo({top:0,behavior:'smooth'});" style="font-size:12px; color:var(--accent); font-weight:600; cursor:pointer; white-space:nowrap;">Recalculate</span>
+    </div>
+    <div class="rate-big" id="rate-value">$0</div>
+    <div class="rate-label" id="rate-range-label"></div>
+    <div class="rate-breakdown">
+      <div class="rate-row"><span class="rr-label">Base rate per video</span><span class="rr-value" id="rb-base"></span></div>
+      <div class="rate-row"><span class="rr-label">Number of videos</span><span class="rr-value" id="rb-vids"></span></div>
+      <div class="rate-row"><span class="rr-label">Usage rights multiplier</span><span class="rr-value" id="rb-usage"></span></div>
+      <div class="rate-row"><span class="rr-label">Rush / brand premiums</span><span class="rr-value" id="rb-extras"></span></div>
+      <div class="rule-line"></div>
+      <div class="rate-row"><span class="rr-label" style="font-weight:700;color:var(--dark)">Total package rate</span><span class="rr-value" style="color:var(--accent);font-size:18px" id="rb-total"></span></div>
+    </div>
+
+
+    <!-- $97 CLOSING TOOLS BRIDGE -->
+    <div id="rateClosingBridge" style="margin-top:24px; padding:24px; background:var(--card); border:2px solid var(--accent); border-radius:14px; text-align:center;">
+      <div style="font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">Next step</div>
+      <div style="font-family:'Lora',serif; font-size:20px; font-weight:900; color:var(--dark); line-height:1.2; margin-bottom:12px;">You know your rate.<br>Now <em style="color:var(--accent); font-style:normal;">close it.</em></div>
+      <div style="font-size:14px; color:var(--text); margin-bottom:16px; line-height:1.6;">AI reply generator, pricing menus, follow-up scripts, and objection handlers. Paste into the DM and close.</div>
+      <button class="btn-send-menu" onclick="showPurchaseGate(0)" style="margin-top:0;">Start Closing Bigger Deals &#8594;</button>
+      <div id="bridgeReturnNote" style="font-size:12px; color:var(--accent); font-weight:600; margin-top:8px;"></div>
+      <div style="font-size:11px; color:var(--mid); margin-top:6px;">$97 one payment &middot; lifetime access &middot; pays for itself on one deal.</div>
+    </div>
+
+    <!-- LOSS FRAMING (below bridge - for people who scrolled past the CTA) -->
+    <div id="rateLossFrame" style="display:none; margin-top:20px; padding:20px; background:linear-gradient(135deg, #FFF5F5, #FEF0EE); border-radius:12px; border:1px solid #E8D5D0; text-align:center;">
+      <div style="font-size:13px; color:var(--mid); margin-bottom:4px;">Every time you reply without knowing your rate, you lose</div>
+      <div id="rateLossAmount" style="font-family:'Lora',serif; font-size:32px; font-weight:900; color:#C0392B;"></div>
+      <div id="rateLossMonthly" style="font-size:13px; color:var(--mid); margin-top:6px;"></div>
+    </div>
+
+    <!-- WHAT YOU MIGHT BE MISSING -->
+    <div id="rateMissing" style="display:none; margin-top:20px; padding:16px 20px; background:var(--blue-light); border-radius:12px; border:1px solid rgba(19,179,139,0.15);">
+      <div style="font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">Are you also charging for these?</div>
+      <div style="font-size:13px; color:var(--dark); line-height:1.7;">
+        <div style="padding:3px 0;"><strong>Hook variations</strong> (+$200-400) -- brands need 3-5 for Meta ad testing</div>
+        <div style="padding:3px 0;"><strong>Cross-platform usage</strong> (+50-75%) -- TikTok + IG + website = 3 separate licenses</div>
+        <div style="padding:3px 0;"><strong>Raw footage</strong> (+30-50%) -- separate deliverable, not a discount</div>
+        <div style="padding:3px 0;"><strong>AI likeness rights</strong> -- if they train AI on your face/voice, premium. Non-negotiable in 2026</div>
+      </div>
+      <div style="font-size:12px; color:var(--accent); font-weight:600; margin-top:10px;">Most creators leave 30-50% on the table by not charging for these.</div>
+    </div>
+
+    <!-- NON-BLOCKING EMAIL CAPTURE (for calculator users who don't buy) -->
+    <div id="rateInlineCapture" style="display:none; margin-top:20px; padding:18px 20px; background:var(--card); border:1px solid var(--rule); border-radius:12px; text-align:center;">
+      <div style="font-size:14px; color:var(--dark); font-weight:500; margin-bottom:10px;">Want your rate breakdown sent to your inbox?</div>
+      <form onsubmit="captureRateEmail(event)" style="display:flex; gap:8px; max-width:360px; margin:0 auto;">
+        <input type="email" id="rate-inline-email" placeholder="Your email" required style="flex:1; padding:12px 14px; border:1px solid var(--rule); border-radius:8px; font-family:'Poppins',sans-serif; font-size:14px; background:var(--card);">
+        <button type="submit" style="padding:12px 18px; background:var(--accent); color:white; border:none; border-radius:8px; font-family:'Poppins',sans-serif; font-size:14px; font-weight:600; cursor:pointer; white-space:nowrap;">Send It</button>
+      </form>
+      <div style="font-size:11px; color:var(--mid); margin-top:8px;">Instant access.</div>
+    </div>
+
+    <!-- CloserAI UPSELL (shown to purchasers ONLY) -->
+    <div class="upsell-banner" id="rate-upsell">
+      <div class="upsell-headline">You know your number. <em>CloserAI</em> gives you the full system to close it.</div>
+      <div class="upsell-sub">Includes Rate Calc Pro (retainer pricing, usage rights tracking, hybrid pay structures), plus AI sales coaching, contract templates, and pipeline management.</div>
+      <a href="/closerai" class="upsell-cta">See What's Inside CloserAI</a>
+      <div class="upsell-price"><s>$497</s> $297 founding member price. Limited availability.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 2: 3-OPTION MENU -->
+<div class="panel" id="panel-2">
+  <div class="section-title">3-Option Menu Generator</div>
+  <div class="panel-headline">Never send<br>a flat rate <em>again.</em></div>
+  <div class="panel-sub">Enterprise sales teams have used 3-option pricing for decades. People almost always pick the middle. You set the middle. This is how you control the deal.</div>
+
+  <div class="field-row">
+    <div>
+      <label>Your target rate (Option B)</label>
+      <input type="number" id="menu-target" placeholder="e.g. 600" min="50">
+    </div>
+    <div>
+      <label>Number of videos in target package</label>
+      <input type="number" id="menu-videos" placeholder="e.g. 3" min="1">
+    </div>
+  </div>
+
+  <div class="field-row">
+    <div>
+      <label>Usage rights for Option B</label>
+      <select id="menu-usage">
+        <option value="organic">Organic only</option>
+        <option value="30days" selected>Paid ads - 30 days (+50%)</option>
+        <option value="90days">Paid ads - 90 days (+85%)</option>
+        <option value="1year">Paid ads - 6 months (+125%)</option>
+      </select>
+    </div>
+    <div>
+      <label>Brand name (optional)</label>
+      <input type="text" id="menu-brand" placeholder="e.g. Glossier">
+    </div>
+  </div>
+
+  <button class="btn-primary" id="menuBtn" onclick="genMenu()">Generate My 3 Options</button>
+
+  <div class="output-box" id="menu-output">
+    <div class="output-label">Your 3-Option Menu - Copy and Send</div>
+    <div class="output-text" id="menu-text"></div>
+    <div class="output-note">Enterprise sales teams have used 3-option pricing for decades. People almost always pick the middle. You set the middle. That's how you control the deal.</div>
+    <button class="btn-copy" onclick="copyOutput('menu-text', this)">Copy All 3 Options</button>
+    <div class="next-nudge" id="menu-next" onclick="showTab(4)">
+      <strong>They might push back on your price.</strong> Get the exact script for every objection. <span class="nudge-link">Open Objection Handler &#8594;</span>
+    </div>
+    <div class="upsell-banner" id="menu-upsell">
+      <div class="upsell-headline">This menu works. <em>CloserAI</em> gives you 14 more frameworks like it.</div>
+      <div class="upsell-sub">Retainer pitches. Scope creep defense. Usage rights pricing. The full playbook.</div>
+      <a href="/closerai" class="upsell-cta">See What's Inside CloserAI</a>
+      <div class="upsell-price"><s>$497</s> $297 founding member price. Limited availability.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 3: FOLLOW-UP -->
+<div class="panel" id="panel-3">
+  <div class="section-title">7-Day Follow-Up Ladder</div>
+  <div class="panel-headline">80% of deals close on<br>follow-up <em>2 through 5.</em></div>
+  <div class="panel-sub">Most creators send one message and give up. This is the follow-up ladder.</div>
+
+  <div class="field-row">
+    <div>
+      <label>When did you last message them?</label>
+      <select id="fu-day">
+        <option value="2">2 days ago</option>
+        <option value="4">4 days ago</option>
+        <option value="7">7 days ago</option>
+        <option value="10">10 days ago</option>
+        <option value="21">21+ days ago</option>
+      </select>
+    </div>
+    <div>
+      <label>Brand name</label>
+      <input type="text" id="fu-brand" placeholder="e.g. Glossier">
+    </div>
+  </div>
+
+  <div class="field">
+    <label>What did you send last?</label>
+    <select id="fu-context">
+      <option value="rates">My rates / rate card</option>
+      <option value="menu">A 3-option pricing menu</option>
+      <option value="pitch">An initial pitch / intro</option>
+      <option value="proposal">A full proposal</option>
+    </select>
+  </div>
+
+  <button class="btn-primary" id="fuBtn" onclick="genFollowUp()">Generate Follow-Up</button>
+
+  <div class="output-box" id="fu-output">
+    <div class="output-label">Your Follow-Up - Copy and Send</div>
+    <div class="output-text" id="fu-text"></div>
+    <div class="output-note" id="fu-note"></div>
+    <button class="btn-copy" onclick="copyOutput('fu-text', this)">Copy Follow-Up</button>
+    <div class="next-nudge" id="fu-next" onclick="showTab(4)">
+      <strong>When they reply, they might push back.</strong> Be ready with the exact script. <span class="nudge-link">Open Objection Handler &#8594;</span>
+    </div>
+    <div class="upsell-banner" id="fu-upsell">
+      <div class="upsell-headline">One follow-up won't close every deal. <em>CloserAI</em> runs the full sequence.</div>
+      <div class="upsell-sub">Automated follow-up ladders. Cart recovery. Ghosting sequences. The deal never dies.</div>
+      <a href="/closerai" class="upsell-cta">See What's Inside CloserAI</a>
+      <div class="upsell-price"><s>$497</s> $297 founding member price. Limited availability.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 4: OBJECTIONS -->
+<div class="panel" id="panel-4">
+  <div class="section-title">Objection Handler</div>
+  <div class="panel-headline">Every pushback.<br><em>Handled.</em></div>
+  <div class="panel-sub">Every pushback has a proven response. These scripts come from 10+ years of high-stakes negotiations. Select the objection. Copy the script. Never drop your price.</div>
+
+  <div class="obj-grid" id="obj-grid">
+    <div class="obj-card" onclick="selectObj(this,'high_rate')"><div class="obj-num">01</div>"Your rate is too high"</div>
+    <div class="obj-card" onclick="selectObj(this,'last_creator')"><div class="obj-num">02</div>"Our last creator charged $50"</div>
+    <div class="obj-card" onclick="selectObj(this,'no_budget')"><div class="obj-num">03</div>"We don't have budget right now"</div>
+    <div class="obj-card" onclick="selectObj(this,'one_video')"><div class="obj-num">04</div>"Can we start with one video to test?"</div>
+    <div class="obj-card" onclick="selectObj(this,'exposure')"><div class="obj-num">05</div>"Can you do it for exposure / gifted?"</div>
+    <div class="obj-card" onclick="selectObj(this,'usage_included')"><div class="obj-num">06</div>"Usage rights should be included"</div>
+    <div class="obj-card" onclick="selectObj(this,'net30')"><div class="obj-num">07</div>"We have 60-day payment terms"</div>
+    <div class="obj-card" onclick="selectObj(this,'influencer')"><div class="obj-num">08</div>"We work with influencers not UGC"</div>
+    <div class="obj-card" onclick="selectObj(this,'approval')"><div class="obj-num">09</div>"I need to get budget approval"</div>
+    <div class="obj-card" onclick="selectObj(this,'inhouse')"><div class="obj-num">10</div>"We have an in-house team"</div>
+    <div class="obj-card" onclick="selectObj(this,'raw_only')"><div class="obj-num">11</div>"Raw files only, no editing needed"</div>
+    <div class="obj-card" onclick="selectObj(this,'love_work')"><div class="obj-num">12</div>"We'd love to work together!" (no offer)</div>
+  </div>
+
+  <div class="field">
+    <label>Brand name (optional, for personalized script)</label>
+    <input type="text" id="obj-brand" placeholder="e.g. Glossier">
+  </div>
+
+  <button class="btn-primary" id="objBtn" onclick="genObjHandler()" style="display:none">Get My Objection Script</button>
+
+  <div class="output-box" id="obj-output">
+    <div class="output-label">Your Objection Handler - Copy and Send</div>
+    <div class="output-text" id="obj-text"></div>
+    <div class="output-note" id="obj-note">Remember: you never drop price. You always redirect to scope.</div>
+    <button class="btn-copy" onclick="copyOutput('obj-text', this)">Copy Script</button>
+    <div class="next-nudge" id="obj-next" onclick="showTab(2)">
+      <strong>Now send the pricing menu.</strong> 3 options. They pick the middle. You set the middle. <span class="nudge-link">Open 3-Option Menu &#8594;</span>
+    </div>
+    <div class="upsell-banner" id="obj-upsell">
+      <div class="upsell-headline">12 scripts is a start. <em>CloserAI</em> handles every scenario you will ever face.</div>
+      <div class="upsell-sub">Contract terms. Scope creep. Usage rights. Retainer conversions. AI likeness clauses. All of it.</div>
+      <a href="/closerai" class="upsell-cta">See What's Inside CloserAI</a>
+      <div class="upsell-price"><s>$497</s> $297 founding member price. Limited availability.</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /panels -->
+
+<div class="bottom-bar" id="bottomBar" style="display:none;">
+  <div class="bb-left">closermethod.com | Built by Elisabeth</div>
+  <div class="bb-right" id="bbRight">
+    <a href="javascript:void(0)" onclick="showPurchaseGate(0)" id="bbCta">Start Closing Bigger Deals</a>
+  </div>
+</div>
+
+<script>
+// ==========================================
+// STATE
+// ==========================================
+let isPurchased = localStorage.getItem('closerAppPurchased') === 'true';
+let emailCaptured = localStorage.getItem('closerAppEmail') === 'true';
+let toolUseCount = parseInt(localStorage.getItem('closerToolUses') || '0');
+let pendingTab = null;
+
+// Check URL params for Stripe success redirect
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('unlocked') === 'true') {
+  // Server-side verify: check Stripe for a real $97 purchase before unlocking
+  var storedEmail = window._closerEmail || localStorage.getItem('closerAppGateEmail') || '';
+  if (storedEmail) {
+    // Verify against Stripe before unlocking
+    fetch('/.netlify/functions/verify-purchase', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: storedEmail })
+    }).then(function(r) { return r.json(); }).then(function(data) {
+      if (data.verified) {
+        isPurchased = true;
+        localStorage.setItem('closerAppPurchased', 'true');
+        unlockAllTools();
+        var banner = document.getElementById('successBanner');
+        if (banner) { banner.classList.add('show'); launchConfetti(); }
+      }
+    }).catch(function() {
+      // On network error, trust the redirect (don't punish paying customers)
+      isPurchased = true;
+      localStorage.setItem('closerAppPurchased', 'true');
+      unlockAllTools();
+      var banner = document.getElementById('successBanner');
+      if (banner) { banner.classList.add('show'); launchConfetti(); }
+    });
+  } else {
+    // No email stored -- could be a real buyer whose session cleared, or a URL hack.
+    // Don't auto-unlock. Show the verify form so they can prove purchase with their email.
+    // The "Already purchased?" link on the gate handles this.
+  }
+  // Clean URL
+  window.history.replaceState({}, '', '/app');
+  if (typeof fbq !== 'undefined') {
+    var purchaseData = { value: 97, currency: 'USD', content_name: 'closer-tools' };
+    var utm = sessionStorage.getItem('closerUtm');
+    if (utm) { try { var u = JSON.parse(utm); purchaseData.utm_source = u.utm_source || ''; purchaseData.utm_campaign = u.utm_campaign || ''; } catch(e){} }
+    fbq('track', 'Purchase', purchaseData);
+  }
+  // Note: unlockAllTools() handles the success banner + confetti + personalization
+}
+
+function launchConfetti() {
+  var colors = ['#13B38B', '#EFFCFA', '#FDF3EF', '#0F9A77', '#D4CEC4', '#FEF7F5', '#D4CEC4'];
+  // Two waves of confetti for a bigger moment
+  function burst(delay) {
+    setTimeout(function() {
+      for (var i = 0; i < 60; i++) {
+        var piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = Math.random() * 100 + 'vw';
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+        piece.style.width = (Math.random() * 10 + 6) + 'px';
+        piece.style.height = (Math.random() * 10 + 6) + 'px';
+        piece.style.animationDuration = (Math.random() * 2 + 2.5) + 's';
+        piece.style.animationDelay = (Math.random() * 1) + 's';
+        document.body.appendChild(piece);
+        setTimeout(function() { piece.remove(); }, 6000);
+      }
+    }, delay);
+  }
+  burst(0);
+  burst(800);
+  // Quick screen flash
+  var flash = document.createElement('div');
+  flash.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(19,179,139,0.15);z-index:9998;pointer-events:none;';
+  document.body.appendChild(flash);
+  setTimeout(function() { flash.style.transition = 'opacity .5s'; flash.style.opacity = '0'; }, 100);
+  setTimeout(function() { flash.remove(); }, 700);
+}
+
+// If already purchased, remove all locks and update UI
+if (isPurchased) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.add('unlocked'));
+  const freePill = document.querySelector('.free-pill');
+  if (freePill) { freePill.textContent = 'All Tools Ready'; freePill.style.background = 'var(--mint)'; }
+  // Switch bottom bar to $297 upsell
+  const bbCta = document.getElementById('bbCta');
+  if (bbCta) { bbCta.textContent = 'Get the Full System'; bbCta.href = '/closerai'; bbCta.onclick = null; }
+}
+
+// ==========================================
+// COUNTDOWN TIMER (to April 30 PT · actual price-hike calendar)
+// ==========================================
+function updateCountdown() {
+  // Apr 30 23:59 PT = May 1 06:59 UTC
+  var deadline = new Date('2026-05-01T06:59:59Z');
+  var now = new Date();
+  // If past the deadline, hide the countdown rather than fake a rolling window
+  if (now >= deadline) {
+    var cd = document.getElementById('countdownTimer') || document.querySelector('.countdown');
+    if (cd) cd.style.display = 'none';
+    return;
+  }
+  var diff = deadline - now;
+  if (diff <= 0) return;
+  const days = Math.floor(diff / (1000*60*60*24));
+  const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+  const el = document.getElementById('gateCountdown');
+  if (el) {
+    el.innerHTML = '<span class="countdown-sep">Founding price ends in</span> ' +
+      '<span class="countdown-unit">' + days + '</span><span class="countdown-sep">d</span>' +
+      '<span class="countdown-unit">' + hours + '</span><span class="countdown-sep">h</span>' +
+      '<span class="countdown-unit">' + mins + '</span><span class="countdown-sep">m</span>';
+  }
+}
+updateCountdown();
+setInterval(updateCountdown, 60000);
+
+// Stripe Buy Button fallback: if embed doesn't load in 3s, show regular link
+setTimeout(function() {
+  var stripeBtn = document.querySelector('stripe-buy-button');
+  var fallback = document.getElementById('stripeFallback');
+  if (stripeBtn && fallback) {
+    // Check if the shadow DOM rendered (means Stripe JS loaded)
+    if (!stripeBtn.shadowRoot || stripeBtn.shadowRoot.children.length === 0) {
+      stripeBtn.style.display = 'none';
+      fallback.style.display = 'block';
+    }
+  }
+}, 3000);
+
+// ==========================================
+// INLINE EMAIL CAPTURE
+// ==========================================
+async function captureEmail(e, source) {
+  e.preventDefault();
+  const input = document.getElementById(source + '-capture-email');
+  const email = input.value.trim();
+  if (!email || !email.includes('@')) {
+    input.classList.add('shake');
+    setTimeout(() => input.classList.remove('shake'), 400);
+    return;
+  }
+
+  const captureDiv = document.getElementById(source + '-capture');
+  const form = captureDiv.querySelector('.inline-capture-form');
+  form.innerHTML = '<div class="inline-capture-done">Saved! Check your inbox.</div>';
+
+  emailCaptured = true;
+  localStorage.setItem('closerAppEmail', 'true');
+
+  // Fire pixel
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Lead', { content_name: 'closer-app-' + source });
+  }
+
+  try {
+    await fetch('/.netlify/functions/subscribe-closer', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, first_name: '' })
+    });
+  } catch (err) {
+    console.log('Email capture attempted:', email);
+  }
+}
+
+// Hide inline captures if already captured
+if (emailCaptured) {
+  document.querySelectorAll('.inline-capture').forEach(el => {
+    el.innerHTML = '<div class="inline-capture-done">You are subscribed.</div>';
+    el.classList.add('show');
+  });
+}
+
+// ==========================================
+// $97 PURCHASE GATE
+// ==========================================
+function showPurchaseGate(tabIndex) {
+  pendingTab = tabIndex;
+  var overlay = document.getElementById('purchaseGateOverlay');
+  overlay.classList.remove('hidden');
+  setTimeout(function() { overlay.classList.add('visible'); }, 10);
+
+  var headline = document.getElementById('gateHeadline');
+  var valueAnchor = document.getElementById('gateValueAnchor');
+
+  // Dynamic headline based on context
+  if (calcedRate > 0 && headline) {
+    var total = calcedRate * calcedVideos;
+    headline.innerHTML = 'Your $' + total.toLocaleString() + ' rate.<br><em>Ready to close.</em>';
+    if (valueAnchor) {
+      valueAnchor.textContent = '$97 to close a $' + total.toLocaleString() + ' deal.';
+      valueAnchor.style.display = 'block';
+    }
+  } else if (headline) {
+    var toolHeadlines = {
+      0: 'Stop guessing on replies.<br><em>Start closing.</em>',
+      2: 'Brands always pick the middle.<br><em>You set the middle.</em>',
+      3: '80% of deals close on<br>follow-up <em>2 through 5.</em>',
+      4: 'Every pushback has a script.<br><em>Never drop your price.</em>'
+    };
+    headline.innerHTML = toolHeadlines[tabIndex] || 'Start closing <em>$800+ deals.</em>';
+    if (valueAnchor) valueAnchor.style.display = 'none';
+  }
+
+  // Track gate view
+  if (typeof fbq !== 'undefined') {
+    fbq('trackCustom', 'GateView', { tab: tabIndex });
+  }
+}
+
+function closePurchaseGate() {
+  const overlay = document.getElementById('purchaseGateOverlay');
+  overlay.classList.remove('visible');
+  setTimeout(() => overlay.classList.add('hidden'), 300);
+}
+
+function dismissGate() {
+  // Track that they saw the gate but chose not to buy (retargeting data)
+  if (typeof fbq !== 'undefined') {
+    fbq('trackCustom', 'GateDismiss');
+  }
+  // If we captured their email this session, tag them for abandoned gate recovery
+  if (window._closerEmail) {
+    fetch('/.netlify/functions/subscribe-closer', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: window._closerEmail, tag: 'gate-abandon' })
+    }).catch(function(){});
+  }
+  closePurchaseGate();
+}
+
+function trackPurchaseClick() {
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'InitiateCheckout', { value: 97, currency: 'USD', content_name: 'closer-tools' });
+  }
+}
+
+// Listen for focus return - if they paid in the other tab, localStorage will be set
+window.addEventListener('focus', function() {
+  if (!isPurchased && localStorage.getItem('closerAppPurchased') === 'true') {
+    unlockAllTools();
+  }
+});
+
+function showVerify() {
+  document.getElementById('verifyForm').classList.toggle('show');
+}
+
+async function verifyPurchase() {
+  const email = document.getElementById('verifyEmail').value.trim();
+  if (!email || !email.includes('@')) return;
+  const btn = document.querySelector('#verifyForm button');
+  btn.textContent = 'Checking...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('/.netlify/functions/verify-purchase', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    });
+    const data = await res.json();
+    if (data.verified) {
+      unlockAllTools();
+    } else {
+      btn.textContent = 'Not found';
+      btn.style.background = '#c0392b';
+      setTimeout(function() { btn.textContent = 'Open'; btn.style.background = ''; btn.disabled = false; }, 2500);
+    }
+  } catch (err) {
+    // On network error, allow unlock (don't punish paying customers)
+    unlockAllTools();
+  }
+}
+
+function unlockAllTools() {
+  isPurchased = true;
+  localStorage.setItem('closerAppPurchased', 'true');
+  document.querySelectorAll('.tab').forEach(t => t.classList.add('unlocked'));
+  var freePill = document.querySelector('.free-pill');
+  if (freePill) { freePill.textContent = 'All Tools Ready'; freePill.style.background = 'var(--mint)'; }
+  // Switch bottom bar to $297 upsell
+  var bbCta = document.getElementById('bbCta');
+  if (bbCta) { bbCta.textContent = 'Get the Full System'; bbCta.href = '/closerai'; bbCta.onclick = null; }
+  closePurchaseGate();
+  var banner = document.getElementById('successBanner');
+  if (banner) banner.classList.add('show');
+  // Personalize success copy if they used rate calc
+  if (calcedRate > 0) {
+    var total = calcedRate * calcedVideos;
+    var sub = document.getElementById('successSub');
+    if (sub) sub.textContent = 'You just turned $97 into a $' + total.toLocaleString() + ' closing system. Here\'s how to use it:';
+  }
+  launchConfetti();
+  if (pendingTab !== null) { showTab(pendingTab); pendingTab = null; }
+}
+
+// ==========================================
+// TAB SWITCHING
+// ==========================================
+function showTab(i) {
+  // All tabs are browsable. Purchase gate triggers on Generate buttons, not tab clicks.
+  document.querySelectorAll('.tab').forEach((t,j) => t.classList.toggle('on', i===j));
+  document.querySelectorAll('.panel').forEach((p,j) => p.classList.toggle('on', i===j));
+}
+
+// ==========================================
+// COPY HELPER
+// ==========================================
+function copyOutput(id, btn) {
+  const txt = document.getElementById(id)?.innerText || '';
+  navigator.clipboard.writeText(txt).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = 'Copied!';
+    btn.classList.add('done');
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('done'); }, 2000);
+  });
+}
+
+// ==========================================
+// TAB 0: CLOSER (template-based)
+// ==========================================
+const closerTemplates = {
+  rates: {
+    generate: function(msg, niche, exp) {
+      // Extract brand name if present
+      const brandMatch = msg.match(/(?:from|at|with|for)\s+([A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+)?)/);
+      const brandName = brandMatch ? brandMatch[1] : null;
+      const greeting = brandName ? `Thanks so much for reaching out, ${brandName}!` : 'Thanks so much for reaching out!';
+      // Check if brand already offered a price
+      const priceMatch = msg.match(/\$(\d[\d,]*)/);
+      const offeredPrice = priceMatch ? parseInt(priceMatch[1].replace(',','')) : null;
+      // Check if they mentioned a specific number of videos
+      const videoMatch = msg.match(/(\d+)\s*(?:video|content piece|reel|clip)/i);
+
+      if (offeredPrice) {
+        // Brand already gave a number -- don't ask "how many videos?" when they told you
+        const videoCount = videoMatch ? parseInt(videoMatch[1]) : null;
+        const videoRef = videoCount ? `${videoCount} video${videoCount > 1 ? 's' : ''}` : 'this project';
+        return `${greeting} I'd love to make this work.\n\nBefore I put together options for ${videoRef}, one quick question: is this for organic posting only, or will the content be used in paid ads? That determines usage rights pricing and I want to make sure I'm quoting accurately.\n\nOnce I know that, I'll send over a few package options that fit your campaign goals.`;
+      }
+
+      const videoNote = videoMatch ? `\n\nI see you mentioned ${videoMatch[1]} video${parseInt(videoMatch[1])>1?'s':''}. Before I quote on that specifically, ` : '\n\nBefore I send over my rates, ';
+      return `${greeting} I'd love to put something together for you.${videoNote}two quick questions so I can tailor the package:\n\n1. Is this for organic posting or will the content be used in paid ads?\n2. How many videos are you thinking for this campaign?\n\nOnce I know that, I'll send over a few options that fit your goals.`;
+    },
+    note: 'Never send a flat rate first. These questions add $200-600 to the average deal because they unlock usage rights pricing and scope anchoring.'
+  },
+  menu: {
+    generate: function(msg, niche, exp) {
+      // Try to extract the number they offered
+      const priceMatch = msg.match(/\$(\d+)/);
+      const offeredPrice = priceMatch ? parseInt(priceMatch[1]) : null;
+      const target = offeredPrice ? Math.round(offeredPrice * 3.5) : '[your target rate]';
+      const optA = offeredPrice ? '$' + Math.round(offeredPrice * 2.5) : '[lower price]';
+      const optC = offeredPrice ? '$' + Math.round(offeredPrice * 5) : '[premium price]';
+      const targetDisplay = offeredPrice ? '$' + target : target;
+      return `Thanks for the details! Here are a few options depending on what fits your campaign:\n\nOption A - ${optA}\n1 video, organic use only\n\nOption B - ${targetDisplay} (Most Popular)\n3 videos, 30-day paid ads usage rights\n\nOption C - ${optC}\n4 videos, 90-day paid ads usage rights, priority turnaround\n\nHappy to adjust any of these based on your goals. Which direction feels right?`;
+    },
+    note: 'Always mark Option B as "Most Popular." People almost always pick the middle.'
+  },
+  pushback: {
+    generate: function(msg, niche, exp) {
+      // Extract all dollar amounts, use context clues to find the brand's budget
+      const allPrices = [...msg.matchAll(/\$(\d[\d,]*)/g)].map(m => parseInt(m[1].replace(',','')));
+      // If multiple prices, the lowest is likely the brand's counter-offer
+      const brandBudget = allPrices.length > 1 ? Math.min(...allPrices) : (allPrices.length === 1 ? allPrices[0] : null);
+      const budgetRef = brandBudget ? ` I hear you that $${brandBudget.toLocaleString()} is closer to what works on your end.` : '';
+      return `I hear you.${budgetRef} Quick question: which part of the package is outside your budget?\n\nI can adjust scope while keeping my rate the same. We could reduce the number of videos or shorten usage rights.\n\nThat way you get the quality you need at a number that works for both of us.`;
+    },
+    note: 'You redirected to scope, not price. "Which part" forces them to be specific. Specific = negotiable.'
+  },
+  silent: {
+    generate: function(msg, niche, exp) {
+      return `Hey! Just wanted to check in on this. Did the package options get buried?\n\nHappy to adjust scope if it wasn't quite right. I want to make sure we find something that fits your campaign.`;
+    },
+    note: '80% of deals close on follow-up 2-5. "Get buried?" gives them an easy out and makes it about them, not you.'
+  },
+  retainer: {
+    generate: function(msg, niche, exp) {
+      return `I've really enjoyed working together on this! One thing I wanted to float:\n\nA lot of my long-term brand partners move to a monthly content package. It locks in my availability, keeps your content pipeline consistent, and usually saves 15-20% versus booking one-off.\n\nWould something like 4 videos/month at a flat monthly rate make sense for your content calendar? Happy to put together a few options.`;
+    },
+    note: 'Retainer language normalizes recurring revenue. Make it feel obvious, not salesy.'
+  },
+  contract: {
+    generate: function(msg, niche, exp) {
+      return `Excited to get started! Here's how I typically structure the business side:\n\n- 50% deposit before filming begins\n- Remaining 50% due on delivery\n- Net-14 payment terms\n- Usage rights begin on payment completion\n\nThis protects both of us and ensures I can prioritise your project on my calendar. I'll send over a simple agreement once we lock in the package. Does this work on your end?`;
+    },
+    note: '50% deposit before filming. Non-negotiable. Protects you from ghosting after delivery.'
+  }
+};
+
+function runCloser() {
+  if (!isPurchased) { showPurchaseGate(0); return; }
+  var msg = document.getElementById('brand-msg').value.trim();
+  var stage = document.getElementById('closer-stage').value;
+  var btn = document.getElementById('closer-btn');
+
+  if (!msg) {
+    document.getElementById('brand-msg').classList.add('shake');
+    setTimeout(function(){ document.getElementById('brand-msg').classList.remove('shake'); }, 400);
+    return;
+  }
+
+  btn.classList.add('loading');
+  btn.textContent = '';
+
+  setTimeout(function() {
+    var template = closerTemplates[stage];
+    var generatedText = template.generate(msg);
+    var generatedNote = template.note;
+
+    // Store generated output in the DOM
+    document.getElementById('closer-text').textContent = generatedText;
+    document.getElementById('closer-note').textContent = generatedNote;
+
+    if (!emailCaptured) {
+      // Show email gate with blurred preview of the reply
+      var preview = generatedText.substring(0, 100) + '...';
+      document.getElementById('closerBlurred').textContent = preview;
+      document.getElementById('closerEmailGate').style.display = 'block';
+      document.getElementById('closer-output').classList.remove('show');
+      document.getElementById('closerEmailGate').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+      // Already have email, show output directly
+      showCloserResult();
+    }
+
+    btn.classList.remove('loading');
+    btn.textContent = 'Generate My Reply';
+  }, 800);
+}
+
+function unlockCloserWithEmail(e) {
+  e.preventDefault();
+  var input = document.getElementById('closer-gate-email');
+  var email = input.value.trim();
+  if (!email || !email.includes('@')) {
+    input.classList.add('shake');
+    setTimeout(function(){ input.classList.remove('shake'); }, 400);
+    return;
+  }
+  var firstName = (document.getElementById('closer-gate-name').value || '').trim();
+
+  emailCaptured = true;
+  localStorage.setItem('closerAppEmail', 'true');
+  localStorage.setItem('closerAppGateEmail', email);
+  window._closerEmail = email;
+
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Lead', { content_name: 'closer-app-closer-gate' });
+  }
+
+  try {
+    fetch('/.netlify/functions/subscribe-closer', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, first_name: firstName })
+    });
+  } catch (err) {}
+
+  document.getElementById('closerEmailGate').style.display = 'none';
+  showCloserResult();
+}
+
+function showCloserResult() {
+  var out = document.getElementById('closer-output');
+  var msg = document.getElementById('brand-msg').value.trim();
+  out.classList.add('show');
+  revealPaidUI();
+
+  // Show rate gap if brand mentioned a price
+  var gapEl = document.getElementById('closer-gap');
+  var priceInMsg = msg.match(/\$(\d[\d,]*)/);
+  if (priceInMsg && gapEl) {
+    var offered = parseInt(priceInMsg[1].replace(',',''));
+    var recommended = Math.round(offered * 3.5);
+    var delta = recommended - offered;
+    document.getElementById('gap-their').textContent = '$' + offered.toLocaleString();
+    document.getElementById('gap-yours').textContent = '$' + recommended.toLocaleString();
+    document.getElementById('gap-delta').textContent = "That's $" + delta.toLocaleString() + ' you lose every time you reply without knowing your rate.';
+    gapEl.style.display = 'block';
+  }
+
+  // Show correct upsell based on purchase state
+  setTimeout(function() {
+    if (!isPurchased) {
+      // Haven't bought $97 yet - show closing tools pitch
+      var toolsUpsell = document.getElementById('closer-tools-upsell');
+      if (toolsUpsell) { toolsUpsell.style.display = 'block'; toolsUpsell.classList.add('show'); }
+    } else {
+      // Already purchased $97 - show CloserAI $297 upsell
+      document.getElementById('closer-upsell').classList.add('show');
+    }
+  }, 2000);
+
+  // Show "next step" nudge toward closing tools
+  var nextStep = document.getElementById('closer-next');
+  if (nextStep) nextStep.style.display = 'block';
+
+  // Track tool use
+  toolUseCount++;
+  localStorage.setItem('closerToolUses', toolUseCount);
+
+  out.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// ==========================================
+// TAB 1: RATE CALC
+// ==========================================
+let calcedRate = 0;
+let calcedVideos = 1;
+
+function toggleCustomize() {
+  var fields = document.getElementById('customizeFields');
+  var arrow = document.getElementById('customizeArrow');
+  if (fields.style.display === 'none') {
+    fields.style.display = 'block';
+    arrow.style.transform = 'rotate(90deg)';
+    // Keep both calc buttons visible -- one above, one at bottom of form
+  } else {
+    fields.style.display = 'none';
+    arrow.style.transform = 'rotate(0deg)';
+  }
+}
+
+function toggleAdvanced() {
+  var fields = document.getElementById('advancedFields');
+  var arrow = document.getElementById('advancedArrow');
+  if (fields.style.display === 'none') {
+    fields.style.display = 'block';
+    arrow.style.transform = 'rotate(90deg)';
+  } else {
+    fields.style.display = 'none';
+    arrow.style.transform = 'rotate(0deg)';
+  }
+}
+
+function calcRate() {
+  var btn = document.getElementById('calcRateBtn');
+  btn.classList.add('loading');
+  btn.textContent = '';
+  setTimeout(function() {
+  btn.classList.remove('loading');
+  btn.textContent = 'Calculate My Rate';
+  var nicheEl = document.getElementById('calc-niche');
+  var expMult = parseFloat(document.getElementById('calc-exp').value);
+  var formatMult = parseFloat(document.getElementById('calc-format').value);
+  var videos = parseInt(document.getElementById('calc-videos').value) || 1;
+  var usageMult = parseFloat(document.getElementById('calc-usage').value);
+  var rushMult = parseFloat(document.getElementById('calc-rush').value);
+  var brandMult = parseFloat(document.getElementById('calc-brand-main').value);
+  var whitelistMult = parseFloat(document.getElementById('calc-whitelist').value);
+  var exclusivityMult = parseFloat(document.getElementById('calc-exclusivity').value);
+
+  var nOpt = nicheEl.options[nicheEl.selectedIndex];
+  var minRate = parseInt(nOpt.dataset.min);
+  var maxRate = parseInt(nOpt.dataset.max);
+  var midRate = Math.round((minRate + maxRate) / 2);
+
+  var basePerVideo = Math.round(midRate * expMult * formatMult);
+  var withUsage = Math.round(basePerVideo * usageMult);
+  var withWhitelist = Math.round(withUsage * whitelistMult);
+  var withExclusivity = Math.round(withWhitelist * exclusivityMult);
+  var withRush = Math.round(withExclusivity * rushMult);
+  var withBrand = Math.round(withRush * brandMult);
+  var total = withBrand * videos;
+
+  calcedRate = withBrand;
+  calcedVideos = videos;
+
+  // Calculate extras combined
+  var extrasMult = rushMult * brandMult * whitelistMult * exclusivityMult;
+  var extrasLabel = [];
+  if (formatMult !== 1) { var fLabel = formatMult > 1 ? '+' + Math.round((formatMult-1)*100) + '%' : '-' + Math.round((1-formatMult)*100) + '%'; extrasLabel.push('Format ' + fLabel); }
+  if (whitelistMult > 1) extrasLabel.push('Whitelisting +' + Math.round((whitelistMult-1)*100) + '%');
+  if (exclusivityMult > 1) extrasLabel.push('Exclusivity +' + Math.round((exclusivityMult-1)*100) + '%');
+  if (rushMult > 1) extrasLabel.push('Rush +' + Math.round((rushMult-1)*100) + '%');
+  if (brandMult > 1) extrasLabel.push('Brand +' + Math.round((brandMult-1)*100) + '%');
+
+  // Show what defaults were used
+  var nicheLabel = nicheEl.options[nicheEl.selectedIndex].text.split(' &')[0];
+  var expShort = {'0.65':'Beginner','1':'Intermediate','1.6':'Experienced','2.5':'Expert'}[document.getElementById('calc-exp').value] || 'Intermediate';
+  document.getElementById('rateBasedOn').textContent = 'Based on: ' + nicheLabel + ', ' + expShort + ', ' + videos + ' video' + (videos > 1 ? 's' : '');
+
+  // Populate result
+  document.getElementById('rate-value').textContent = '$' + total.toLocaleString();
+  document.getElementById('rate-range-label').textContent =
+    'Range: $' + Math.round(total * 0.85).toLocaleString() + ' - $' + Math.round(total * 1.15).toLocaleString();
+  document.getElementById('rb-base').textContent = '$' + basePerVideo + '/video';
+  document.getElementById('rb-vids').textContent = videos + (videos===1?' deliverable':' deliverables');
+  document.getElementById('rb-usage').textContent = usageMult === 1 ? 'None (organic)' : '+' + Math.round((usageMult-1)*100) + '% usage rights';
+  document.getElementById('rb-extras').textContent = extrasLabel.length > 0 ? extrasLabel.join(', ') : 'None';
+  document.getElementById('rb-total').textContent = '$' + total.toLocaleString();
+
+  if (emailCaptured) {
+    // Already have their email - show result directly
+    showRateResult();
+  } else {
+    // Gate the result with email capture
+    document.getElementById('rateBlurred').textContent = '$' + total.toLocaleString();
+    document.getElementById('rateEmailGate').style.display = 'block';
+    document.getElementById('rate-result').classList.remove('show');
+    document.getElementById('rateEmailGate').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+  }, 600);
+}
+
+
+function animateCount(el, target, duration) {
+  var start = 0;
+  var startTime = null;
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    var progress = Math.min((timestamp - startTime) / duration, 1);
+    // Ease out cubic for satisfying deceleration
+    var eased = 1 - Math.pow(1 - progress, 3);
+    var current = Math.round(start + (target - start) * eased);
+    el.textContent = '$' + current.toLocaleString();
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function revealPaidUI() {
+  // Show bottom bar and lock icons after first tool use
+  var bb = document.getElementById('bottomBar');
+  if (bb) { bb.style.display = ''; bb.style.animation = 'fadeIn .3s ease'; }
+  document.querySelectorAll('.lock-icon').forEach(function(el) { el.style.display = ''; });
+}
+
+function showRateResult() {
+  document.getElementById('rate-result').classList.add('show');
+  revealPaidUI();
+  // Animate the rate number counting up
+  var rateEl = document.getElementById('rate-value');
+  var total = calcedRate * calcedVideos;
+  animateCount(rateEl, total, 1200);
+
+  // Show "what you might be missing" section
+  var missingEl = document.getElementById('rateMissing');
+  if (missingEl) missingEl.style.display = 'block';
+
+  // Show inline email capture for non-captured users
+  if (!emailCaptured) {
+    var inlineCapture = document.getElementById('rateInlineCapture');
+    if (inlineCapture) inlineCapture.style.display = 'block';
+  }
+
+  // Loss framing: show what they leave on the table
+  var total = calcedRate * calcedVideos;
+  var lossFrame = document.getElementById('rateLossFrame');
+  if (total > 200 && lossFrame) {
+    // Assume most creators accept 40% of what they should charge
+    var lostPerDeal = Math.round(total * 0.6);
+    document.getElementById('rateLossAmount').textContent = '$' + lostPerDeal.toLocaleString() + ' per deal';
+    document.getElementById('rateLossMonthly').textContent = 'That\'s $' + (lostPerDeal * 4).toLocaleString() + '/month if you close 4 deals without this system.';
+    lossFrame.style.display = 'block';
+  }
+
+  // Smart upsell logic
+  var bridge = document.getElementById('rateClosingBridge');
+  if (isPurchased && bridge) {
+    // Already purchased $97 tools - hide bridge, show CloserAI upsell
+    bridge.style.display = 'none';
+    setTimeout(function() {
+      document.getElementById('rate-upsell').classList.add('show');
+    }, 1500);
+  } else if (bridge) {
+    // Haven't purchased yet - show $97 bridge prominently
+    bridge.style.display = 'block';
+    // Show ROI math
+    var returnNote = document.getElementById('bridgeReturnNote');
+    if (returnNote && total > 0) {
+      returnNote.textContent = '$97 to close a $' + total.toLocaleString() + ' deal. That\'s a ' + Math.round(total/97) + 'x return.';
+    }
+    // Do NOT show $297 upsell for non-purchasers - creates wrong price anchoring
+  }
+
+  document.getElementById('rate-result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function unlockRateWithEmail(e) {
+  e.preventDefault();
+  var input = document.getElementById('rate-gate-email');
+  var email = input.value.trim();
+  if (!email || !email.includes('@')) {
+    input.classList.add('shake');
+    setTimeout(function(){ input.classList.remove('shake'); }, 400);
+    return;
+  }
+  var firstName = (document.getElementById('rate-gate-name').value || '').trim();
+  emailCaptured = true;
+  localStorage.setItem('closerAppEmail', 'true');
+  localStorage.setItem('closerAppGateEmail', email);
+  window._closerEmail = email;
+  if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'closer-app-rate-gate' });
+  try {
+    fetch('/.netlify/functions/subscribe-closer', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, first_name: firstName })
+    });
+  } catch (err) {}
+  document.getElementById('rateEmailGate').style.display = 'none';
+  showRateResult();
+}
+
+function captureRateEmail(e) {
+  e.preventDefault();
+  var input = document.getElementById('rate-inline-email');
+  var email = input.value.trim();
+  if (!email || !email.includes('@')) return;
+  emailCaptured = true;
+  localStorage.setItem('closerAppEmail', 'true');
+  localStorage.setItem('closerAppGateEmail', email);
+  window._closerEmail = email;
+  if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'closer-app-rate-inline' });
+  try {
+    fetch('/.netlify/functions/subscribe-closer', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, first_name: '' })
+    });
+  } catch(err) {}
+  var wrap = document.getElementById('rateInlineCapture');
+  wrap.innerHTML = '<div style="font-size:14px; color:var(--accent); font-weight:600; padding:8px 0;">Sent! Check your inbox.</div>';
+}
+
+function sendToMenu() {
+  document.getElementById('menu-target').value = calcedRate;
+  document.getElementById('menu-videos').value = calcedVideos;
+  showTab(2);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ==========================================
+// TAB 2: 3-OPTION MENU
+// ==========================================
+function genMenu() {
+  if (!isPurchased) { showPurchaseGate(2); return; }
+  const target = parseFloat(document.getElementById('menu-target').value);
+  const videos = parseInt(document.getElementById('menu-videos').value) || 3;
+  const usage = document.getElementById('menu-usage').value;
+  const brand = document.getElementById('menu-brand').value.trim() || 'the brand';
+
+  if (!target || target < 10) {
+    document.getElementById('menu-target').classList.add('shake');
+    setTimeout(() => document.getElementById('menu-target').classList.remove('shake'), 400);
+    return;
+  }
+
+  var mbtn = document.getElementById('menuBtn');
+  mbtn.classList.add('loading'); mbtn.textContent = '';
+  setTimeout(function() {
+  mbtn.classList.remove('loading'); mbtn.textContent = 'Generate My 3 Options';
+
+  // Kit formula: A = base (organic), B = base + 50% (usage), C = base + 85%
+  const optA_price = Math.round(target * 0.75);
+  const optA_videos = Math.max(1, videos - 1);
+  const optB_price = target;
+  const optB_videos = videos;
+  const optC_price = Math.round(target * 1.4);
+  const optC_videos = videos + 1;
+
+  const usageLabels = {
+    organic: 'organic use', '30days': '30-day paid ads usage rights',
+    '90days': '90-day paid ads usage rights', '1year': '6-month paid ads usage rights'
+  };
+  const usageUpgrade = usage === '30days' ? '90-day' : usage === '90days' ? '6-month' : usage === 'organic' ? '30-day paid ads' : 'perpetual';
+
+  const menu = `Here are a few options depending on what fits your campaign:\n\nOption A - Starter\n${optA_videos} video${optA_videos > 1 ? 's' : ''}, organic use\n$${optA_price.toLocaleString()}\n\nOption B - Most Popular\n${optB_videos} video${optB_videos > 1 ? 's' : ''}, ${usageLabels[usage]}\n$${optB_price.toLocaleString()}\n\nOption C - Full Package\n${optC_videos} video${optC_videos > 1 ? 's' : ''}, ${usageUpgrade} usage rights, 1 revision round, priority turnaround\n$${optC_price.toLocaleString()}\n\nWhich feels like the best fit?`;
+
+  document.getElementById('menu-text').textContent = menu;
+  document.getElementById('menu-output').classList.add('show');
+  // Show cross-tool nudge
+  var menuNext = document.getElementById('menu-next');
+  if (menuNext) menuNext.style.display = 'block';
+  // Show upsell after delay
+  setTimeout(function() { document.getElementById('menu-upsell').classList.add('show'); }, 2000);
+  document.getElementById('menu-output').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 600);
+}
+
+// ==========================================
+// TAB 3: FOLLOW-UP
+// ==========================================
+function genFollowUp() {
+  if (!isPurchased) { showPurchaseGate(3); return; }
+  var fbtn = document.getElementById('fuBtn');
+  fbtn.classList.add('loading'); fbtn.textContent = '';
+  setTimeout(function() {
+  fbtn.classList.remove('loading'); fbtn.textContent = 'Generate Follow-Up';
+  const day = document.getElementById('fu-day').value;
+  const brand = document.getElementById('fu-brand').value.trim() || 'there';
+  const ctx = document.getElementById('fu-context').value;
+
+  const ctxMap = { rates: 'rates', menu: 'the package options', pitch: 'my pitch', proposal: 'the proposal' };
+  const sentThing = ctxMap[ctx];
+
+  const scripts = {
+    '2':  `Hey ${brand}! Making sure ${sentThing} didn't get buried. Did any of those options feel like a fit?`,
+    '4':  `Hey ${brand}! Still exploring options, or did you go another direction?`,
+    '7':  `Hey ${brand}! I have one spot open this month that would work for your timeline. Want me to hold it?`,
+    '10': `Hey ${brand}! Freeing up my calendar. Happy to reconnect when timing is better!`,
+    '21': `Hey ${brand}! Checking back in. Do you have any UGC needs coming up?`
+  };
+
+  const notes = {
+    '2': '"Didn\'t get buried" gives them an easy out. "Did any of those options feel like a fit?" keeps the conversation on your menu, not on whether to hire you.',
+    '4': 'Permission to close or move on. Either they reply or you know it\'s a pass. Both are progress.',
+    '7': 'Create urgency with a real constraint: your calendar. "Want me to hold it?" is a soft close that works.',
+    '10': 'The walk-away. "Freeing up my calendar" signals you\'re moving on without burning the bridge.',
+    '21': 'Long-game reactivation. New quarter, new budgets. 80% of deals close on follow-up 2-5.'
+  };
+
+  document.getElementById('fu-text').textContent = scripts[day];
+  document.getElementById('fu-note').textContent = notes[day];
+  document.getElementById('fu-output').classList.add('show');
+  // Show cross-tool nudge
+  var fuNext = document.getElementById('fu-next');
+  if (fuNext) fuNext.style.display = 'block';
+  // Show upsell after delay
+  setTimeout(function() { document.getElementById('fu-upsell').classList.add('show'); }, 2000);
+  document.getElementById('fu-output').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 600);
+}
+
+// ==========================================
+// TAB 4: OBJECTIONS
+// ==========================================
+let selectedObj = null;
+
+function selectObj(card, type) {
+  document.querySelectorAll('.obj-card').forEach(c => c.classList.remove('selected'));
+  card.classList.add('selected');
+  selectedObj = type;
+  document.getElementById('objBtn').style.display = 'block';
+}
+
+const objScripts = {
+  high_rate: {
+    script: (b) => `I hear you. Which part of the package is outside your budget? I can adjust scope while keeping my rate the same. We could reduce the number of videos or shorten the usage rights period.`,
+    note: 'You redirect to scope, not price. "Which part" forces them to be specific. Specific = negotiable.'
+  },
+  last_creator: {
+    script: (b) => `Interesting! What did that include? That helps me understand what we're comparing. Rates vary a lot depending on deliverable type, editing, usage rights, and turnaround. I want to make sure we're looking at the same thing.`,
+    note: 'Never validate the $50 claim. Ask what it included. Almost always a different scope.'
+  },
+  no_budget: {
+    script: (b) => `That makes total sense. When does your next budget cycle open? I'll reach out then. I'd hate for us to miss the window when you're ready to move.`,
+    note: 'Plant the seed for the next cycle. This is a "not now" not a "no."'
+  },
+  one_video: {
+    script: (b) => `Yes! I do test packages at my full rate so the quality reflects what you'd get at scale. Once we see how it performs, I can put together a retainer or bundle for ongoing work.`,
+    note: 'Say yes to the one video. At YOUR rate. Never discount to "test."'
+  },
+  exposure: {
+    script: (b) => `I really appreciate the offer! I'm fully booked for gifted collaborations right now, but I'd love to make a paid package work. Even a smaller package at my rate would be a great way to get started.`,
+    note: 'Never say "exposure doesn\'t pay bills." Just say you\'re fully booked for gifted.'
+  },
+  usage_included: {
+    script: (b) => `Usage rights are actually a separate license fee. Think of it like stock photography. Organic posting is included in my base rate. Running content as paid ads requires a licensing fee on top.\n\nHere's how I structure it: 30-day paid ads is +50%, 90 days is +85%, and perpetual is 2-3x base rate. Which usage type are you planning? That way I can quote accurately.`,
+    note: 'Education mode. Frame it like stock photography. Usage rights are "the part that quietly doubles the cost" according to industry data. You SHOULD be charging for them.'
+  },
+  net30: {
+    script: (b) => `I work on Net-14 with a 50% deposit upfront before filming begins. It protects both of us and ensures I can prioritise your project.\n\nI can do Net-30 with a 15% fee on the total rate. What works best on your end?`,
+    note: '50% deposit is non-negotiable. Net-30 is fine but costs them 15%.'
+  },
+  influencer: {
+    script: (b) => `That's actually a great distinction! UGC and influencer content have different jobs. Influencer content leverages their audience for reach. UGC is ad-ready creative for your own paid channels. No audience required from me.\n\nBrands typically use both for different objectives. Happy to explain more if it's helpful!`,
+    note: 'Education, not defense. They\'re confused about the difference. You\'re clarifying.'
+  },
+  approval: {
+    script: (b) => `Of course. When does that process usually close? I want to make sure I hold space in my schedule. Once approval comes through, I can usually start within a week.`,
+    note: 'Get a date. A vague "need approval" without a date is a soft no. A date means it\'s real.'
+  },
+  inhouse: {
+    script: (b) => `That makes sense! In-house teams are great for branded content. UGC is a bit different. It's designed to look organic and perform in paid ads exactly because it doesn't look like a brand made it.\n\nMost brands I work with use both. Happy to share how the mix typically works.`,
+    note: 'Reframe: UGC and in-house serve different creative purposes. Not competition.'
+  },
+  raw_only: {
+    script: (b) => `Raw footage is a separate deliverable, not a discount. Raw files give your team editing flexibility, which is valuable. My raw footage rate is +30-50% on top of base.\n\nIf you want raw files AND the edited versions, I can package that together. Would you like me to put together options?`,
+    note: 'Raw footage is NOT cheaper. It gives the brand flexibility to edit, which is an additional deliverable worth +30-50% of base rate.'
+  },
+  love_work: {
+    script: (b) => `Thank you so much! I'd love to make something happen. I have spots available this month. Here are a couple of options depending on what fits your campaign:\n\n[Insert your 3-option menu here]`,
+    note: 'Enthusiasm without an offer = they need a nudge. Give them the 3-option menu immediately.'
+  }
+};
+
+function genObjHandler() {
+  if (!isPurchased) { showPurchaseGate(4); return; }
+  if (!selectedObj) return;
+  var obtn = document.getElementById('objBtn');
+  obtn.classList.add('loading'); obtn.textContent = '';
+  setTimeout(function() {
+  obtn.classList.remove('loading'); obtn.textContent = 'Get My Objection Script';
+  const brand = document.getElementById('obj-brand').value.trim() || 'the brand';
+  const obj = objScripts[selectedObj];
+
+  document.getElementById('obj-text').textContent = obj.script(brand);
+  document.getElementById('obj-note').textContent = obj.note;
+  document.getElementById('obj-output').classList.add('show');
+  // Show cross-tool nudge
+  var objNext = document.getElementById('obj-next');
+  if (objNext) objNext.style.display = 'block';
+  // Show upsell after delay
+  setTimeout(function() { document.getElementById('obj-upsell').classList.add('show'); }, 2000);
+  document.getElementById('obj-output').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 600);
+}
+
+// ==========================================
+// UTM PARAMETER TRACKING
+// ==========================================
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  var utmData = {};
+  var hasUtm = false;
+  utmKeys.forEach(function(key) {
+    var val = params.get(key);
+    if (val) { utmData[key] = val; hasUtm = true; }
+  });
+  if (hasUtm) {
+    sessionStorage.setItem('closerUtm', JSON.stringify(utmData));
+    if (typeof fbq !== 'undefined') {
+      fbq('trackCustom', 'UTMCapture', utmData);
+    }
+  }
+  // Store referrer if no UTM
+  if (!hasUtm && document.referrer && !document.referrer.includes('closermethod.com')) {
+    sessionStorage.setItem('closerReferrer', document.referrer);
+  }
+})();
+
+// Attach UTM data to Kit subscriptions
+var _origSubscribe = window.fetch;
+window.fetch = function(url, opts) {
+  if (url && url.includes('subscribe-closer') && opts && opts.body) {
+    try {
+      var body = JSON.parse(opts.body);
+      var utm = sessionStorage.getItem('closerUtm');
+      if (utm) {
+        var utmData = JSON.parse(utm);
+        if (!body.fields) body.fields = {};
+        if (utmData.utm_source) body.fields.utm_source = utmData.utm_source;
+        if (utmData.utm_medium) body.fields.utm_medium = utmData.utm_medium;
+        if (utmData.utm_campaign) body.fields.utm_campaign = utmData.utm_campaign;
+        opts.body = JSON.stringify(body);
+      }
+    } catch(e) {}
+  }
+  return _origSubscribe.apply(this, arguments);
+};
+
+// ==========================================
+// HIDE BOTTOM BAR WHEN BRIDGE CTA IS VISIBLE
+// ==========================================
+(function() {
+  var bb = document.querySelector('.bottom-bar');
+  var bridge = document.getElementById('rateClosingBridge');
+  if (!bb || !bridge) return;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      bb.style.transform = entry.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+      bb.style.transition = 'transform .3s ease';
+    });
+  }, { threshold: 0.3 });
+  observer.observe(bridge);
+})();
+
+// ==========================================
+// EXIT-INTENT POPUP (desktop only)
+// ==========================================
+(function() {
+  var exitShown = false;
+  // Desktop: mouse leaves viewport
+  document.addEventListener('mouseout', function(e) {
+    if (exitShown || isPurchased) return;
+    if (e.clientY > 5) return; // Only trigger when mouse goes above viewport
+    if (!emailCaptured) return; // Only show to users who already entered email
+    // Don't show if purchase gate is currently visible
+    var gate = document.getElementById('purchaseGateOverlay');
+    if (gate && gate.classList.contains('visible')) return;
+    exitShown = true;
+    // Show a lightweight exit nudge
+    var nudge = document.createElement('div');
+    nudge.id = 'exitNudge';
+    nudge.innerHTML = '<div style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.4);z-index:9998;display:flex;align-items:center;justify-content:center;animation:fadeIn .3s ease;" onclick="this.remove()">' +
+      '<div style="background:var(--card);border-radius:16px;padding:32px;max-width:380px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.2);position:relative;" onclick="event.stopPropagation()">' +
+      '<div style="position:absolute;top:12px;right:16px;cursor:pointer;font-size:18px;color:var(--mid);line-height:1;" onclick="document.getElementById(\'exitNudge\').remove()">&#10005;</div>' +
+      '<div style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">Before you go</div>' +
+      '<div style="font-family:Lora,serif;font-size:22px;font-weight:900;color:var(--dark);line-height:1.3;margin-bottom:10px;">Your rate is worth<br>more than a guess.</div>' +
+      '<div style="font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:16px;">The closing tools turn your calculated rate into a signed deal. Copy-paste scripts that work.</div>' +
+      '<div style="font-size:12px;color:var(--dark);font-weight:600;margin-bottom:12px;">$2,670+ in tools. <span style="color:var(--accent);">$97 one time.</span></div>' +
+      '<button onclick="document.getElementById(\'exitNudge\').remove();showPurchaseGate(2);" style="width:100%;padding:14px;background:var(--accent);color:white;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:Poppins,sans-serif;">Unlock the Closing Tools - $97</button>' +
+      '<div style="font-size:11px;color:var(--rule);margin-top:10px;cursor:pointer;" onclick="document.getElementById(\'exitNudge\').remove()">No thanks</div>' +
+      '</div></div>';
+    document.body.appendChild(nudge);
+    if (typeof fbq !== 'undefined') {
+      fbq('trackCustom', 'ExitIntent');
+    }
+  });
+})();
+</script>
+</body>
+</html>

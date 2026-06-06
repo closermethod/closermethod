@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0B">
+<title>your voice skill is ready · closer method</title>
+<meta name="description" content="your free skill is ready to install. answer five questions once, then every Claude output ships in your voice as a finished file. then the full 27-skill toolkit, founding rate.">
+<link rel="canonical" href="https://closermethod.com/thanks/build/">
+<meta name="robots" content="noindex,follow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://closermethod.com/thanks/build/">
+<meta property="og:title" content="your voice skill is ready · closer method">
+<meta property="og:description" content="install one skill. Claude stops sounding generic. then the full 27-skill toolkit.">
+<meta property="og:image" content="https://closermethod.com/og/og-build.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="your voice skill is ready · closer method">
+<meta name="twitter:description" content="install one skill. Claude stops sounding generic. then the full 27-skill toolkit.">
+<meta name="twitter:image" content="https://closermethod.com/og/og-build.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://buy.stripe.com">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=optional">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=optional" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=optional"></noscript>
+<style>
+/* Metric-matched fallback for Geist · prevents CLS during font swap (2026-06-03 v3 · empirically tuned vs live Geist v5, was 13% too short) */
+@font-face{font-family:'Geist Fallback';src:local('Arial'),local('Helvetica Neue'),local('Roboto'),local('Segoe UI');size-adjust:105%;ascent-override:99.8%;descent-override:25%;line-gap-override:0%}
+@font-face{font-family:'Geist Mono Fallback';src:local('Menlo'),local('Consolas'),local('Courier New');size-adjust:99.7%;ascent-override:102%;descent-override:26.1%;line-gap-override:0%}
+:root{--bg:#0A0A0B;--surface:#131316;--surface-2:#1C1C20;--border:#27272A;--border-strong:#3F3F46;--text:#FAFAFA;--text-2:#D4D4D8;--text-3:#B4B4BE;--accent:#FF6B35;--accent-hover:#FF8556;--accent-soft:rgba(255,107,53,.12);--pos:#4ADE80;--pos-soft:rgba(74,222,128,.1);--radius:10px;--radius-lg:14px;--maxw:780px;--pad:20px;--t-sans:'Geist','Geist Fallback',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--t-mono:'Geist Mono','Geist Mono Fallback',ui-monospace,'SF Mono',Menlo,monospace}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--t-sans);font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--text);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--border-strong)}
+a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-family:var(--t-mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-2);margin:0 0 12px;display:inline-flex;align-items:center;gap:8px}
+.muted{color:var(--text-2)}
+.accent{color:var(--accent)}
+
+/* ===== value-delivery (the free skill they just earned) ===== */
+.hero{padding:64px 0 24px}
+@media(min-width:768px){.hero{padding:88px 0 40px}}
+.check{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:var(--pos-soft);border:1px solid rgba(74,222,128,.4);margin:0 0 18px;animation:pop .5s cubic-bezier(.2,.9,.3,1.3) both}
+.check svg{width:24px;height:24px}
+.h1{font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.06;letter-spacing:-.025em;font-weight:600;margin:0 0 14px}
+.h1 i{font-style:normal;color:var(--accent)}
+.lead{font-size:1.08rem;line-height:1.55;color:var(--text-2);margin:0 0 24px;max-width:620px}
+.files{margin:22px 0 0}
+.files h2{font-size:1.02rem;font-weight:600;margin:0 0 4px}
+.files .sub{color:var(--text-2);font-size:.9rem;margin:0 0 16px}
+.dl-grid{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:640px){.dl-grid{grid-template-columns:1fr 1fr}}
+.dl{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;text-decoration:none;transition:border-color .15s ease,transform .08s ease}
+.dl:hover{border-color:var(--pos);transform:translateY(-1px)}
+.dl .nm{font-family:var(--t-mono);font-size:.86rem;color:var(--text)}
+.dl .desc{display:block;font-family:var(--t-sans);font-size:.77rem;color:var(--text-3);margin-top:3px;text-decoration:none}
+.dl .go{font-family:var(--t-mono);font-size:.78rem;color:var(--pos);white-space:nowrap}
+.steps{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;margin:22px 0 0}
+.steps h2{font-size:1.02rem;font-weight:600;margin:0 0 12px}
+.steps ol{margin:0;padding:0 0 0 20px;color:var(--text-2);line-height:1.7;font-size:.92rem}
+.steps li{margin:0 0 6px}
+.steps b{color:var(--text);font-weight:500}
+
+/* ===== voice-transform demo · the wow (same prompt, two Claudes) ===== */
+.vt{margin:26px 0 0;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface);overflow:hidden}
+.vt-head{display:flex;flex-direction:column;gap:6px;padding:14px 16px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,var(--surface-2),var(--surface))}
+.vt-eyebrow{font-family:var(--t-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3)}
+.vt-prompt{font-family:var(--t-mono);font-size:.84rem;color:var(--text)}
+.vt-prompt::before{content:"\203A  ";color:var(--accent)}
+.vt-pills{display:flex;gap:8px;padding:14px 16px 0}
+.vt-pill{flex:1;font-family:var(--t-mono);font-size:.74rem;padding:9px 8px;border-radius:999px;border:1px solid var(--border-strong);background:var(--surface-2);color:var(--text-3);cursor:pointer;transition:color .15s ease,border-color .15s ease,background .15s ease;text-align:center}
+.vt-pill[data-k="a"].is-on{border-color:var(--border-strong);color:var(--text);background:var(--surface-2)}
+.vt-pill[data-k="b"].is-on{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.vt-screen{margin:14px 16px;min-height:150px;padding:16px;border-radius:var(--radius);background:#0d0d10;border:1px solid var(--border);transition:border-color .3s ease,box-shadow .3s ease}
+.vt-screen.is-voice{border-color:rgba(255,107,53,.45);box-shadow:0 0 0 1px rgba(255,107,53,.12),0 0 34px -12px rgba(255,107,53,.55)}
+.vt-out{margin:0;font-size:.95rem;line-height:1.6;color:var(--text-3)}
+.vt-screen.is-voice .vt-out{color:var(--text)}
+.vt-screen.is-typing .vt-out::after{content:"";display:inline-block;width:8px;height:1.05em;margin-left:2px;vertical-align:-2px;background:var(--accent);animation:blink 1s step-end infinite}
+.vt-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px 16px}
+.vt-tag{font-family:var(--t-mono);font-size:.72rem;color:var(--text-3);min-height:1em;line-height:1.4}
+.vt-replay{flex:0 0 auto;font-family:var(--t-mono);font-size:.74rem;color:var(--text-2);background:none;border:1px solid var(--border-strong);border-radius:999px;padding:6px 12px;cursor:pointer;transition:color .15s ease,border-color .15s ease}
+.vt-replay::before{content:"\25B8  "}
+.vt-replay:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ===== the turn ("but wait") ===== */
+.turn{padding:56px 0 8px;text-align:center}
+.turn .kicker{font-family:var(--t-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);margin:0 0 10px}
+.turn h2{font-size:clamp(1.5rem,3.6vw,2.1rem);font-weight:600;letter-spacing:-.02em;line-height:1.12;margin:0 auto;max-width:600px}
+.turn h2 .hl{color:var(--accent)}
+.turn p{color:var(--text-2);font-size:1rem;max-width:560px;margin:14px auto 0}
+
+/* ===== the demo (show the loop run before the ask) ===== */
+.demo-sec{padding:14px 0 12px;text-align:center}
+.demo-sec .kicker{font-family:var(--t-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.demo-h{font-size:clamp(1.35rem,3vw,1.85rem);font-weight:600;letter-spacing:-.02em;line-height:1.14;margin:0 auto;max-width:560px}
+.demo-h .hl{color:var(--accent)}
+.demo-sub{color:var(--text-2);font-size:.96rem;line-height:1.55;max-width:540px;margin:12px auto 22px}
+.demo-frame{position:relative;max-width:760px;margin:0 auto;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-strong);background:var(--surface);box-shadow:0 24px 60px -30px rgba(0,0,0,.85)}
+.demo-video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--bg)}
+
+/* ===== the OTO (magic · distinct conversion treatment) ===== */
+.oto-sec{padding:24px 0 40px}
+.oto{position:relative;border-radius:18px;padding:2px;background:linear-gradient(130deg,var(--accent),#ff9a6b,#ff5a2c,var(--accent));background-size:300% 300%;animation:borderShift 6s ease infinite;box-shadow:0 0 0 1px rgba(255,107,53,.15),0 24px 60px -24px rgba(255,107,53,.45)}
+.oto-inner{background:radial-gradient(120% 140% at 50% 0%,#1a1410 0%,#121013 46%,var(--surface) 100%);border-radius:16px;padding:28px 22px}
+@media(min-width:768px){.oto-inner{padding:40px 38px}}
+.oto-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--t-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border:1px solid rgba(255,107,53,.35);border-radius:999px;padding:6px 12px;margin:0 0 16px}
+.oto-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:blink 1.3s ease-in-out infinite}
+.oto h3{font-size:clamp(1.5rem,3.6vw,2rem);font-weight:600;letter-spacing:-.02em;line-height:1.12;margin:0 0 12px}
+.oto h3 .hl{color:var(--accent)}
+.oto .pitch{color:var(--text-2);font-size:.98rem;line-height:1.6;margin:0 0 20px;max-width:600px}
+.stack{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:9px}
+.stack li{display:flex;align-items:flex-start;gap:10px;font-size:.94rem;color:var(--text);line-height:1.5}
+.stack li svg{flex:0 0 auto;width:18px;height:18px;margin-top:2px;color:var(--accent)}
+.stack li b{font-weight:500}
+.stack li span{color:var(--text-2)}
+.anchor{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 0;margin:0 0 20px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.anchor .was{color:var(--text-3);font-size:.9rem}
+.anchor .was s{color:var(--text-3)}
+.anchor .now{font-size:1.7rem;font-weight:700;letter-spacing:-.02em}
+.anchor .now .cur{color:var(--accent)}
+.anchor .term{font-family:var(--t-mono);font-size:.8rem;color:var(--text-2)}
+.scarcity{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:0 0 20px}
+.timer{display:inline-flex;align-items:center;gap:9px;font-family:var(--t-mono);font-size:.82rem;color:var(--text);background:var(--surface-2);border:1px solid var(--border-strong);border-radius:999px;padding:8px 14px}
+.timer .lab{color:var(--text-3);text-transform:uppercase;letter-spacing:.08em;font-size:.68rem}
+.timer .clock{color:var(--accent);font-weight:500;font-variant-numeric:tabular-nums}
+.scarcity .note{font-size:.82rem;color:var(--text-3)}
+.cta-wrap{margin:4px 0 0}
+.btn-oto{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:18px 24px;font-family:var(--t-sans);font-size:1.08rem;font-weight:600;letter-spacing:-.01em;border-radius:12px;border:none;cursor:pointer;text-decoration:none;line-height:1;color:#0A0A0B;background:linear-gradient(180deg,var(--accent-hover),var(--accent));box-shadow:0 10px 30px -8px rgba(255,107,53,.6);animation:pulse 2.4s ease-in-out infinite;transition:transform .08s ease}
+.btn-oto:hover{color:#0A0A0B;transform:translateY(-2px)}
+.btn-oto .price{font-family:var(--t-mono);font-size:.92rem;opacity:.78}
+.reassure{margin:14px 0 0;font-size:.85rem;color:var(--text-2);display:flex;flex-wrap:wrap;gap:6px 16px}
+.reassure span{display:inline-flex;align-items:center;gap:6px}
+.reassure svg{width:14px;height:14px;color:var(--pos)}
+.guarantee{margin:18px 0 0;padding:14px 16px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);font-size:.88rem;color:var(--text-2);line-height:1.55}
+.guarantee b{color:var(--text);font-weight:600}
+/* ===== social proof · founder authority now + real-quote slot ===== */
+.proof{margin:0 0 20px}
+.proof-by{display:flex;align-items:center;gap:13px;padding:14px 16px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius)}
+.proof-avatar{flex:0 0 auto;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--t-mono);font-size:.86rem;font-weight:600;letter-spacing:.02em;color:#0A0A0B;background:linear-gradient(180deg,var(--accent-hover),var(--accent))}
+.proof-by-txt{min-width:0}
+.proof-name{margin:0 0 3px;font-size:.92rem;font-weight:600;color:var(--text)}
+.proof-cred{margin:0;font-size:.8rem;line-height:1.5;color:var(--text-3)}
+.proof-cred b{color:var(--text-2);font-weight:500}
+.quote{margin:12px 0 0;padding:16px 18px;background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius)}
+.quote blockquote{margin:0 0 8px;font-size:.95rem;line-height:1.55;color:var(--text)}
+.quote figcaption{margin:0;font-size:.82rem;color:var(--text-3)}
+.quote figcaption b{color:var(--text-2);font-weight:600}
+
+/* secondary, de-emphasized */
+.alt{margin:26px 0 0;text-align:center;font-size:.9rem;color:var(--text-3)}
+.alt a{color:var(--text-2)}
+
+.foot{border-top:1px solid var(--border);padding:24px 0;color:var(--text-3);font-size:.82rem;text-align:center;margin-top:40px}
+
+/* reveal-on-scroll */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+@keyframes pop{0%{transform:scale(.5);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes pulse{0%,100%{box-shadow:0 10px 30px -8px rgba(255,107,53,.55)}50%{box-shadow:0 12px 40px -6px rgba(255,107,53,.85)}}
+@keyframes borderShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+/* ===== exit-intent re-engagement (page-cro · catches the bounce) ===== */
+.xi-scrim{position:fixed;inset:0;background:rgba(5,5,7,.8);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px;z-index:90;opacity:0;transition:opacity .25s ease}
+.xi-scrim.show{display:flex;opacity:1}
+.xi{position:relative;width:100%;max-width:460px;border-radius:18px;padding:2px;background:linear-gradient(130deg,var(--accent),#ff9a6b,#ff5a2c,var(--accent));background-size:300% 300%;box-shadow:0 30px 80px -30px rgba(255,107,53,.6);animation:borderShift 6s ease infinite}
+.xi-scrim.show .xi{animation:borderShift 6s ease infinite,xiBounce .6s cubic-bezier(.2,.9,.3,1.45) both}
+.xi-inner{background:radial-gradient(120% 140% at 50% 0%,#1a1410 0%,#121013 46%,var(--surface) 100%);border-radius:16px;padding:30px 24px}
+.xi-close{position:absolute;top:8px;right:10px;z-index:2;background:none;border:none;color:var(--text-3);font-size:1.5rem;line-height:1;cursor:pointer;padding:8px;border-radius:8px}
+.xi-close:hover{color:var(--text)}
+.xi-kicker{font-family:var(--t-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.xi h3{font-size:clamp(1.35rem,4vw,1.55rem);font-weight:600;letter-spacing:-.02em;line-height:1.14;margin:0 0 12px}
+.xi h3 .hl{color:var(--accent)}
+.xi-lead{color:var(--text-2);font-size:.95rem;line-height:1.55;margin:0 0 18px}
+.xi .btn-oto{margin:0;animation:none}
+.xi-guar{margin:14px 0 0;padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);font-size:.82rem;color:var(--text-2);line-height:1.5}
+.xi-guar b{color:var(--text);font-weight:600}
+.xi-alt{margin:14px 0 0;text-align:center;font-size:.85rem;color:var(--text-3)}
+.xi-alt a{color:var(--text-2)}
+@keyframes xiBounce{0%{transform:translateY(18px) scale(.94);opacity:.4}55%{transform:translateY(-5px) scale(1.015)}100%{transform:none;opacity:1}}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){.check,.oto,.oto-badge .dot,.btn-oto,.xi,.xi-scrim.show .xi{animation:none}.xi{transform:none}.reveal{opacity:1;transform:none;transition:none}}
+
+/* ===== sticky buy bar · keeps the offer one tap away for mobile fast-bouncers (page-cro: a sticky CTA on a purchase-decision page lifts mobile conversion 12-31% · Contentsquare/CRE). reveals only after the free files are delivered, hides while the inline offer is on screen ===== */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:80;transform:translateY(125%);transition:transform .3s cubic-bezier(.2,.9,.3,1);background:rgba(12,12,14,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--border-strong);padding:10px 14px;padding-bottom:calc(10px + env(safe-area-inset-bottom));box-shadow:0 -12px 34px -14px rgba(0,0,0,.75)}
+.sticky-cta.show{transform:none}
+.sticky-row{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:10px}
+.sticky-txt{min-width:0;flex:1;line-height:1.22}
+.sticky-txt .t1{font-size:.86rem;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sticky-txt .t2{font-size:.72rem;color:var(--text-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sticky-buy{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:11px;font-family:var(--t-sans);font-size:.96rem;font-weight:600;line-height:1;color:#0A0A0B;text-decoration:none;background:linear-gradient(180deg,var(--accent-hover),var(--accent));box-shadow:0 8px 22px -8px rgba(255,107,53,.6)}
+.sticky-buy:hover{color:#0A0A0B}
+.sticky-buy .p{font-family:var(--t-mono);font-size:.82rem;opacity:.8}
+.sticky-close{flex:0 0 auto;background:none;border:none;color:var(--text-3);font-size:1.2rem;line-height:1;cursor:pointer;padding:6px 8px;border-radius:8px}
+.sticky-close:hover{color:var(--text)}
+@media (prefers-reduced-motion:reduce){.sticky-cta{transition:none}}
+</style>
+</head>
+<body>
+<main id="main">
+
+<!-- ===== 1 · YOU'RE IN · deliver the value they just earned ===== -->
+<header class="hero">
+  <div class="wrap">
+    <span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+    <p class="eyebrow">email confirmed · your skill is ready</p>
+    <h1 class="h1">your free skill is yours. install it and Claude stops sounding <i>generic</i>.</h1>
+    <p class="lead">this is the single skill that makes Claude write in your voice instead of everyone's. answer five quick questions once (about five minutes), then every output ships in your voice. a finished file, not another chat thread you have to fix.</p>
+
+    <!-- voice-transform demo · the wow · same prompt, two Claudes (page-cro #1) -->
+    <div class="vt reveal" id="vt" aria-label="demo: the same prompt in generic Claude versus Claude running your voice skill">
+      <div class="vt-head">
+        <span class="vt-eyebrow">same prompt · two Claudes</span>
+        <span class="vt-prompt">write the hero for my homepage</span>
+      </div>
+      <div class="vt-pills" role="tablist" aria-label="compare the two outputs">
+        <button class="vt-pill is-on" data-k="a" type="button" role="tab" aria-selected="true">generic Claude</button>
+        <button class="vt-pill" data-k="b" type="button" role="tab" aria-selected="false">Claude + your skill</button>
+      </div>
+      <div class="vt-screen is-generic" id="vtScreen">
+        <p class="vt-out" id="vtOut" aria-live="polite"></p>
+      </div>
+      <div class="vt-foot">
+        <span class="vt-tag" id="vtTag"></span>
+        <button class="vt-replay" id="vtReplay" type="button">replay</button>
+      </div>
+    </div>
+
+    <div class="files">
+      <h2>download your four files</h2>
+      <p class="sub">one skill, one voice doc, one finished output. start with SKILL.md.</p>
+      <div class="dl-grid">
+        <a class="dl" href="https://ai-builder-setup.netlify.app/starter/SKILL.md" download data-event="thanks_build_dl_skill"><span class="nm">SKILL.md<span class="desc">the master skill · install this first</span></span><span class="go">download →</span></a>
+        <a class="dl" href="https://ai-builder-setup.netlify.app/brain-doc-template.md" download data-event="thanks_build_dl_brain"><span class="nm">brain-doc-template.md<span class="desc">5 questions · ~5 min to fill</span></span><span class="go">download →</span></a>
+        <a class="dl" href="https://ai-builder-setup.netlify.app/starter/01-website.md" download data-event="thanks_build_dl_website"><span class="nm">01-website.md<span class="desc">ship a homepage in your voice</span></span><span class="go">download →</span></a>
+        <a class="dl" href="https://ai-builder-setup.netlify.app/starter/INSTALL.md" download data-event="thanks_build_dl_install"><span class="nm">INSTALL.md<span class="desc">the step-by-step setup walkthrough</span></span><span class="go">download →</span></a>
+      </div>
+    </div>
+
+    <div class="steps">
+      <h2>how to install · about 5 minutes start to finish</h2>
+      <ol>
+        <li><b>drag SKILL.md into a Claude project</b> as project knowledge. that's the skill installed.</li>
+        <li><b>fill the 5-question voice doc</b> (~5 min) and drag it in too. now Claude knows your voice, your business, your edge.</li>
+        <li><b>open a new chat in that project and say "build me a homepage."</b> the skill kicks in, asks 3-5 quick questions, then ships a finished HTML file in your voice. that's the proof it worked.</li>
+        <li><b>it's saved to your inbox too</b> · add elisabeth@closermethod.com to your contacts so the rest land in primary.</li>
+      </ol>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 2 · THE TURN · "but wait" ===== -->
+<section class="turn reveal">
+  <div class="wrap">
+    <p class="kicker">before you go build</p>
+    <h2>that one skill fixes <span class="hl">one</span> thing. your business runs on <span class="hl">27</span>.</h2>
+    <p>you'll feel it the next time you open Claude for something else. the homepage worked, so now you want it for the cold DM, the pitch, the offer, the launch email. without the system, every one of those starts the same way: you, re-explaining your voice to a blank chat from scratch.</p>
+    <p>there's a second ceiling too, and it's quieter. the brain doc you just filled is the <span class="hl">lite</span> version: 3 questions, enough to feel Claude shift. the full one is 5 questions with a worked example, and that's the difference between output that's close and output you ship without a single rewrite. the toolkit is both fixes at once: the brain doc done right, plus all 27 workflows already wired to it.</p>
+  </div>
+</section>
+
+<!-- ===== 2.5 · THE DEMO · one skill, end to end (page-cro: show the outcome before the ask) ===== -->
+<section class="demo-sec reveal">
+  <div class="wrap">
+    <p class="kicker">see it run · 24 seconds</p>
+    <h2 class="demo-h">one skill in, a <span class="hl">finished file</span> out.</h2>
+    <p class="demo-sub">drag the skill into Claude, ask for your homepage, watch it ship in your voice. this is the exact loop you just started, run start to finish.</p>
+    <div class="demo-frame">
+      <video class="demo-video" controls preload="none" muted playsinline poster="skill-demo-poster.jpg" width="1920" height="1080" data-event="thanks_build_demo_play">
+        <source src="skill-demo.mp4" type="video/mp4">
+        your browser can't play this. <a href="skill-demo.mp4" style="color:var(--accent)">open the walkthrough</a>.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 · THE OTO · on this page only ===== -->
+<section class="oto-sec">
+  <div class="wrap">
+    <div class="oto reveal" id="oto">
+      <div class="oto-inner">
+        <span class="oto-badge"><span class="dot" aria-hidden="true"></span>founding rate · one payment, yours forever</span>
+        <h3>your whole business, already in <span class="hl">your voice</span>. all 27 skills, wired to the brain doc done right.</h3>
+        <p class="pitch">the toolkit is every skill your business needs, each one connected to the full brain doc, the 5-question version of the one you just started. Claude knows your voice before you type a word. not a prompt pack. a system that ships finished files. you just dragged the free one in yourself, that's the whole install, and the other 26 go in the exact same way: drag in, done.</p>
+
+        <ul class="stack">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>27 production skills</b> · homepage, cold DM, pitch deck, offer, launch plan, and 22 more</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>the brain doc, done right</b> · the full 5-question version with a worked example, so every skill speaks in your exact voice</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>finished files, not prompts</b> · each skill ships a real asset you can use that day</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>yours forever</b> · install once, keep every update</span></li>
+        </ul>
+
+        <div class="anchor">
+          <span class="was">an agency builds this kind of voice-matched system for <s>$13,400+</s> and takes weeks. you get all 27 for about $5 a skill.</span>
+          <span class="now"><span class="cur">$147</span></span>
+          <span class="term">once · founding rate · yours forever</span>
+        </div>
+
+        <div class="scarcity">
+          <span class="timer"><span class="lab">founding rate</span><span class="clock">$147 locked</span></span>
+          <span class="note">the lowest it will ever be. you're already set up: you've done the lite brain doc, so the full one takes five more minutes and all 27 skills install the same way you just installed the free one.</span>
+        </div>
+
+        <div class="proof">
+          <!-- AUTHORITY · these are Eli's real roles + quota history. SAFE to use as credentials. -->
+          <div class="proof-by">
+            <div class="proof-avatar" aria-hidden="true">EH</div>
+            <div class="proof-by-txt">
+              <p class="proof-name">built by eli hitz</p>
+              <p class="proof-cred">10 years closing enterprise deals · <b>Deel (268% in Q3)</b>, <b>Criteo (167% to quota)</b>, plus brand work for HBO, Bloomberg, McCann, Y&amp;R and Autodesk. that's who wired these 27 skills.</p>
+            </div>
+          </div>
+
+          <!-- ============================================================
+               REAL TESTIMONIAL SLOT · Eli, paste real buyer quotes here.
+               Copy one <figure class="quote"> per quote, fill the words +
+               first name + their result. DO NOT invent quotes. leave this
+               commented out until you have real ones from real buyers.
+
+          <figure class="quote">
+            <blockquote>"REAL QUOTE FROM A REAL BUYER GOES HERE, what changed for them."</blockquote>
+            <figcaption><b>First name L.</b> · what they do / the result</figcaption>
+          </figure>
+
+          ============================================================ -->
+        </div>
+
+        <div class="cta-wrap">
+          <a class="btn-oto" href="https://buy.stripe.com/dRm6oB8L70gu5yy8tl5Ne0I" data-event="thanks_build_oto_buy_click" rel="noopener">install all 27 skills now <span class="price">· $147 once</span></a>
+        </div>
+
+        <div class="reassure">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>instant access</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>one payment, forever</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>works in your Claude account</span>
+        </div>
+
+        <div class="guarantee">
+          <b>made-to-work guarantee.</b> tell me what's not working for your business and i rewrite the skill for you, free, as many times as it takes until it ships in your voice. DM @closermethod.
+        </div>
+      </div>
+    </div>
+
+    <p class="alt reveal">want the install handheld first? <a href="/install/" data-event="thanks_build_install_cta">the step-by-step walkthrough is $37</a> and takes $20 off the toolkit inside 14 days.</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">© 2026 closer method · <a href="https://instagram.com/closermethod" target="_blank" rel="noopener" style="color:var(--text-2)">@closermethod</a></div>
+</footer>
+
+<!-- ===== exit-intent re-engagement (page-cro · catches the bounce) ===== -->
+<div class="xi-scrim" id="xiScrim" role="dialog" aria-modal="true" aria-labelledby="xiTitle" aria-hidden="true">
+  <div class="xi">
+    <div class="xi-inner">
+      <button class="xi-close" id="xiClose" type="button" aria-label="close and keep my free skill">&times;</button>
+      <p class="xi-kicker">before you build alone</p>
+      <h3 id="xiTitle">your free skill fixes <span class="hl">one</span> thing. the toolkit ships the other <span class="hl">26</span>.</h3>
+      <p class="xi-lead">install all 27 skills, already wired to the voice doc you just filled. you dragged the free one in yourself. the other 26 go in the exact same way. founding rate, one payment, yours forever.</p>
+      <a class="btn-oto" href="https://buy.stripe.com/dRm6oB8L70gu5yy8tl5Ne0I" data-event="xi_oto_buy_click" rel="noopener">install all 27 skills <span class="price">· $147 once</span></a>
+      <div class="xi-guar"><b>made-to-work guarantee.</b> tell me what's not landing and i rewrite the skill for you, free, until it ships in your voice. DM @closermethod.</div>
+      <p class="xi-alt">want the install handheld first? <a href="/install/" data-event="xi_install_cta">the step-by-step walkthrough is $37</a>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== sticky buy bar · always one tap from the offer on mobile · revealed after the free files are delivered ===== -->
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <div class="sticky-row">
+    <div class="sticky-txt">
+      <div class="t1">all 27 skills, in your voice</div>
+      <div class="t2">founding rate · one payment, yours forever</div>
+    </div>
+    <a class="sticky-buy" href="https://buy.stripe.com/dRm6oB8L70gu5yy8tl5Ne0I" data-event="thanks_build_sticky_buy_click" rel="noopener">install <span class="p">$147</span></a>
+    <button class="sticky-close" id="stickyClose" type="button" aria-label="hide this bar">&times;</button>
+  </div>
+</div>
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-Q2458LX0VD',{send_page_view:true,page_path:'/thanks/build'});
+gtag('event','generate_lead',{source:'build',value:0,page:'/thanks/build'});
+
+/* carry attribution + utm onto the Stripe checkout so purchases tie back to this lead */
+(function(){
+  try{
+    var qs=new URLSearchParams(location.search);
+    var ref=(qs.get('email')||qs.get('cid')||('tb_'+Date.now().toString(36)));
+    document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(a){
+      var u=new URL(a.href);
+      u.searchParams.set('client_reference_id',ref);
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(qs.get(k))u.searchParams.set(k,qs.get(k));});
+      a.href=u.toString();
+    });
+  }catch(e){}
+})();
+
+/* click tracking · OTO checkout fires begin_checkout + InitiateCheckout (value 147) */
+document.querySelectorAll('[data-event]').forEach(function(el){
+  el.addEventListener('click',function(){
+    var ev=el.getAttribute('data-event');
+    gtag('event','cta_click',{cta:ev,page:'/thanks/build'});
+    if(ev==='thanks_build_oto_buy_click'||ev==='xi_oto_buy_click'||ev==='thanks_build_sticky_buy_click'){
+      gtag('event','begin_checkout',{currency:'USD',value:147,items:[{item_name:'AI Builder Toolkit',price:147}],page:'/thanks/build'});
+      if(window.fbq)fbq('track','InitiateCheckout',{content_name:'ai-builder-toolkit',value:147,currency:'USD'});
+    }
+  });
+});
+
+/* reveal on scroll + fire view_oto once when the offer is seen */
+(function(){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      e.target.classList.add('in');
+      if(e.target.id==='oto'&&!e.target.dataset.seen){
+        e.target.dataset.seen='1';
+        gtag('event','view_oto',{offer:'ai-builder-toolkit',value:147,page:'/thanks/build'});
+        if(window.fbq)fbq('trackCustom','ViewOTO',{content_name:'ai-builder-toolkit'});
+      }
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+
+/* voice-transform demo · the wow · autoplay-on-view typewriter, generic Claude then your voice */
+(function(){
+  var vt=document.getElementById('vt');if(!vt)return;
+  var out=document.getElementById('vtOut'),screen=document.getElementById('vtScreen'),
+      tag=document.getElementById('vtTag'),replay=document.getElementById('vtReplay'),
+      pills=vt.querySelectorAll('.vt-pill');
+  var DATA={
+    a:{txt:"Elevate your brand with a seamless, game-changing platform. We supercharge your workflow and unlock new synergies to help you revolutionize the way you work.",tag:"generic · sounds like every other chatbot",cls:"is-generic"},
+    b:{txt:"you film. i make the funnel print. drag one file into claude and your homepage sounds like you wrote it. punchy, lowercase, zero founder-speak. a finished file you ship today, not someday.",tag:"your voice · a finished file, not another chat to fix",cls:"is-voice"}
+  };
+  var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var timer=null,played=false;
+  function setPills(k){pills.forEach(function(p){var on=p.dataset.k===k;p.classList.toggle('is-on',on);p.setAttribute('aria-selected',on?'true':'false');});}
+  function type(k,then){
+    if(timer){clearInterval(timer);timer=null;}
+    var d=DATA[k];setPills(k);
+    screen.className='vt-screen '+d.cls;
+    out.textContent='';tag.textContent='';
+    tag.style.color=(k==='b')?'var(--accent)':'var(--text-3)';
+    if(reduced){out.textContent=d.txt;tag.textContent=d.tag;if(then)then();return;}
+    screen.classList.add('is-typing');
+    var i=0,s=d.txt;
+    timer=setInterval(function(){
+      out.textContent=s.slice(0,++i);
+      if(i>=s.length){clearInterval(timer);timer=null;screen.classList.remove('is-typing');tag.textContent=d.tag;if(then)then();}
+    },16);
+  }
+  function run(){type('a',function(){setTimeout(function(){type('b');},1200);});}
+  function autoplay(){if(played)return;played=true;run();gtag('event','demo_view',{demo:'voice-transform',page:'/thanks/build'});}
+  pills.forEach(function(p){p.addEventListener('click',function(){played=true;type(p.dataset.k);});});
+  replay.addEventListener('click',function(){played=true;run();gtag('event','demo_replay',{demo:'voice-transform',page:'/thanks/build'});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){autoplay();io.disconnect();}});},{threshold:.5});
+    io.observe(vt);
+  }else{autoplay();}
+})();
+
+/* exit-intent re-engagement · page-cro · catches the bounce, fires once per session, no guilt copy */
+(function(){
+  var scrim=document.getElementById('xiScrim');if(!scrim)return;
+  var KEY='tb_xi_shown',armed=false,bought=false;
+  function seen(){try{return sessionStorage.getItem(KEY)==='1';}catch(e){return false;}}
+  function mark(){try{sessionStorage.setItem(KEY,'1');}catch(e){}}
+  function open(){
+    if(!armed||seen()||bought||scrim.classList.contains('show'))return;
+    mark();
+    scrim.classList.add('show');scrim.setAttribute('aria-hidden','false');
+    var c=document.getElementById('xiClose');if(c)c.focus();
+    gtag('event','exit_intent_view',{offer:'ai-builder-toolkit',value:147,page:'/thanks/build'});
+    if(window.fbq)fbq('trackCustom','ExitIntentView',{content_name:'ai-builder-toolkit'});
+  }
+  function close(){scrim.classList.remove('show');scrim.setAttribute('aria-hidden','true');}
+  document.getElementById('xiClose').addEventListener('click',close);
+  scrim.addEventListener('click',function(e){if(e.target===scrim)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&scrim.classList.contains('show'))close();});
+  document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(a){a.addEventListener('click',function(){bought=true;mark();});});
+  document.addEventListener('mouseout',function(e){if(e.clientY<=0&&!e.relatedTarget&&!e.toElement)open();});
+  var lastY=window.scrollY;var peak=0;
+  window.addEventListener('scroll',function(){var y=window.scrollY;if(y>peak)peak=y;if(peak>500&&y<120&&lastY-y>40)open();lastY=y;},{passive:true});
+  setTimeout(function(){armed=true;},4000);
+})();
+
+/* sticky buy bar · reveal once the pitch begins (free files already delivered above), hide while the inline offer is on screen, dismissable for the session */
+(function(){
+  var bar=document.getElementById('stickyCta');if(!bar)return;
+  var KEY='tb_sticky_dismissed';
+  function dismissed(){try{return sessionStorage.getItem(KEY)==='1';}catch(e){return false;}}
+  function drop(){try{sessionStorage.setItem(KEY,'1');}catch(e){}}
+  var oto=document.getElementById('oto'),otoVisible=false,armed=false,seen=false;
+  function render(){
+    var show=armed&&!otoVisible&&!dismissed();
+    bar.classList.toggle('show',show);
+    bar.setAttribute('aria-hidden',show?'false':'true');
+    if(show&&!seen){seen=true;gtag('event','view_sticky_cta',{offer:'ai-builder-toolkit',value:147,page:'/thanks/build'});}
+  }
+  var turn=document.querySelector('.turn');
+  if(turn&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!armed){armed=true;render();}});},{threshold:0}).observe(turn);
+  }else{setTimeout(function(){armed=true;render();},6000);}
+  if(oto&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){es.forEach(function(e){otoVisible=e.isIntersecting;render();});},{threshold:.25}).observe(oto);
+  }
+  document.getElementById('stickyClose').addEventListener('click',function(){drop();render();});
+  document.querySelectorAll('.sticky-buy').forEach(function(a){a.addEventListener('click',drop);});
+})();
+</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','35298849146380570');fbq('track','PageView');fbq('track','Lead',{content_name:'build-starter-complete'});
+</script>
+</body>
+</html>

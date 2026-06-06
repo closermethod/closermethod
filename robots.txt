@@ -1,0 +1,17 @@
+# closermethod.com · the AI tools ecosystem for UGC creators
+# Welcome, crawler. Everything's open. Sitemap below.
+
+User-agent: *
+Allow: /
+
+# Block buyer-portal pages — these are post-purchase, not for indexation.
+Disallow: /access/
+
+# Block Stripe purchase redirects — they 302 to checkout.stripe.com.
+Disallow: /buy
+Disallow: /buy/
+
+# Block asset downloads (zips, future PDFs).
+Disallow: /downloads/
+
+Sitemap: https://closermethod.com/sitemap.xml

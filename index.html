@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0B">
+<title>The Closer Method · 27 Claude Skills, built by a $1.2M enterprise closer</title>
+<meta name="description" content="27 production-tested Claude Skills + brain doc + drag-and-drop install. Lifetime updates · made to work for your business.">
+<link rel="canonical" href="https://closermethod.com/">
+<!-- Favicon · inline SVG (matches existing closermethod brand mark) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230A0A0B'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%23FF6B35' font-style='italic'%3Em%3C/text%3E%3C/svg%3E">
+
+<!-- OG + Twitter sharing -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://closermethod.com/">
+<meta property="og:title" content="The Closer Method · 27 Claude Skills for solo founders">
+<meta property="og:description" content="27 production-tested Claude Skills · lifetime updates · made to work.">
+<meta property="og:image" content="https://closermethod.com/og/og-home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Closer Method · AI Builder Toolkit · 27 production-tested Claude Skills">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@closermethod">
+<meta name="twitter:title" content="The Closer Method · 27 Claude Skills for solo founders">
+<meta name="twitter:description" content="I closed $1.2M in enterprise software. The edge was structured thinking. I wrote 27 of those systems down as Claude skills.">
+<meta name="twitter:image" content="https://closermethod.com/og/og-home.png">
+
+<!-- JSON-LD · Person + WebSite + SoftwareApplication (the AI Builder Toolkit) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"The Closer Method","url":"https://closermethod.com/","description":"AI Builder Toolkit · 27 production-tested Claude Skills + brain doc for solo founders. Built on $1.2M in B2B sales at Deel, Criteo, HBO, Bloomberg.","author":{"@type":"Person","name":"Eli Hitz","sameAs":["https://instagram.com/closermethod"]}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Eli Hitz","jobTitle":"Founder, Closer Method","description":"10 years enterprise sales. Ex-Deel (268% Q3 quota), ex-Criteo (167% quota). HBO, Bloomberg, McCann, Y&R, Autodesk.","image":"https://closermethod.com/img/eli-hitz.jpg","sameAs":["https://instagram.com/closermethod","https://closermethod.com"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Builder Toolkit","applicationCategory":"BusinessApplication","operatingSystem":"Web (Claude, ChatGPT, Cursor, Gemini, Perplexity)","description":"27 production-tested Claude Skills + brain doc template + drag-and-drop install. Works in Claude, ChatGPT, Cursor, Gemini, Perplexity.","author":{"@type":"Person","name":"Eli Hitz"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"The Closer Method","url":"https://closermethod.com/","logo":"https://closermethod.com/og/og-home.png","founder":{"@type":"Person","name":"Eli Hitz"},"sameAs":["https://instagram.com/closermethod","https://x.com/closermethod","https://www.tiktok.com/@closermethod"],"description":"AI Builder Toolkit · 27 production-tested Claude Skills for solo founders. Built on 10 years of B2B sales at Deel, Criteo, HBO, Bloomberg.","contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://instagram.com/closermethod","availableLanguage":"en"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this a course?","acceptedAnswer":{"@type":"Answer","text":"No. No videos, no modules, no 8-hour course to sit through. It's 27 .md files you drop into one Claude Project and use forever, plus a brain doc template that tells Claude who you are. The Project path works on every plan, including the free one."}},{"@type":"Question","name":"Does the AI Builder Toolkit work in ChatGPT, Cursor, Gemini, and Perplexity?","acceptedAnswer":{"@type":"Answer","text":"Yes. The .md format is universal. Drop into ChatGPT Custom GPTs, Cursor Rules, Gemini Gems, or Perplexity Collections. One file format, every platform."}},{"@type":"Question","name":"What if a Claude skill doesn't fit my niche?","acceptedAnswer":{"@type":"Answer","text":"DM Eli on Instagram with what's not working. She rewrites the skill for your specific business and sends it back. No time limit. No extra cost. As many rebuilds as it takes. This is the made-to-work guarantee."}},{"@type":"Question","name":"What does '27 Claude Skills' actually mean?","acceptedAnswer":{"@type":"Answer","text":"27 separate SKILL.md files with YAML frontmatter (Anthropic 2026 spec compliant). Each handles one specific task: homepage, cold DM, pitch deck, positioning, GTM, brand voice, social calendar, and 20 more. Each activates automatically in Claude when you ask for that build."}},{"@type":"Question","name":"Is there a subscription?","acceptedAnswer":{"@type":"Answer","text":"No. You pay once and keep the files plus every monthly update after, forever. No subscription, no resetting timer. Made to work for your business or it gets rewritten free."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to install the AI Builder Toolkit in Claude","description":"Add all 27 Claude Skills + brain doc template to one Claude Project. Works on every Claude plan, including the free one. Pro users can also upload skills individually.","totalTime":"PT2M","supply":[{"@type":"HowToSupply","name":"A Claude account (free plan works)"},{"@type":"HowToSupply","name":"AI Builder Toolkit bundle .zip (27 skill files + brain doc)"}],"step":[{"@type":"HowToStep","name":"Download the toolkit bundle","text":"Download the AI Builder Toolkit bundle .zip after checkout. It holds all 27 skill files plus the brain doc template."},{"@type":"HowToStep","name":"Drop it into a Claude Project","text":"Open a Claude Project, then Project knowledge, and drag the bundle in. This is the fastest path and works on every plan, including free. Pro, Max, Team, and Enterprise users can also upload skills individually under Settings, then Skills."},{"@type":"HowToStep","name":"Open a chat and ask for any build","text":"In that Project, type 'use the website skill to build me a homepage.' Claude reads the skill, asks the brain-doc questions, and produces a deployable file."}]}
+</script>
+
+<!-- LCP boost · preload byline founder photo (above fold) -->
+<link rel="preload" as="image" href="/img/eli-hitz.jpg" fetchpriority="high">
+<!-- LCP boost · self-hosted Geist fonts · preloaded so browser starts download in parallel with HTML parse (no Google Fonts CSS roundtrip) -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/geist-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/geist-mono-latin.woff2" crossorigin>
+<style>
+/* Self-hosted Geist · variable font · supports weights 100-900 from one file · LCP win vs Google Fonts (eliminates 2 round-trips) */
+@font-face{font-family:'Geist';font-style:normal;font-weight:100 900;font-display:swap;src:url('/fonts/geist-latin.woff2') format('woff2-variations')}
+@font-face{font-family:'Geist Mono';font-style:normal;font-weight:100 900;font-display:swap;src:url('/fonts/geist-mono-latin.woff2') format('woff2-variations')}
+:root{
+  --bg:#0A0A0B;--surface:#131316;--surface-2:#1C1C20;--surface-3:#26262A;
+  --border:#27272A;--border-strong:#3F3F46;
+  --text:#FAFAFA;--text-2:#A1A1AA;--text-3:#9999A3;
+  --accent:#FF6B35;--accent-hover:#FF8556;--accent-soft:rgba(255,107,53,.12);
+  --pos:#4ADE80;--info:#60A5FA;
+  --radius:10px;--radius-lg:14px;--maxw:1140px;--pad:20px;
+  --t-sans:'Geist',system-ui,-apple-system,sans-serif;
+  --t-mono:'Geist Mono',ui-monospace,'SF Mono',Menlo,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--t-sans);font-weight:400;line-height:1.5;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+a{color:var(--text);text-decoration:none}
+a:hover{color:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:var(--t-mono);font-size:.78em;letter-spacing:.02em;color:var(--text-2)}
+.eyebrow{font-family:var(--t-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);margin:0 0 14px;font-weight:500}
+
+/* === LAUNCH BANNER · sticky · matches /build/ for consistency === */
+.bar{position:sticky;top:0;z-index:50;background:rgba(10,10,11,.96);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border)}
+.bar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px var(--pad);font-family:var(--t-mono);font-size:.78rem;color:var(--text-2);max-width:var(--maxw);margin:0 auto}
+.bar-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;box-shadow:0 0 10px rgba(255,107,53,.7);animation:pulse 1.8s ease-in-out infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.15)}}
+.bar-left{display:flex;align-items:center;gap:10px}
+.bar a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,107,53,.4)}
+.bar a:hover{text-decoration-color:var(--accent)}
+@media(max-width:600px){.bar-inner{font-size:.7rem}.bar-cta{display:none}}
+
+/* === NAV · minimal · removed multi-audience clutter === */
+.nav{position:relative;z-index:40;padding:18px 0;border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo{font-family:var(--t-sans);font-weight:600;font-size:1.05rem;color:var(--text);letter-spacing:-.01em}
+.nav-logo em{font-style:italic;color:var(--accent);font-weight:400}
+.nav-right{display:flex;align-items:center;gap:20px;font-size:.9rem}
+.nav-right a{color:var(--text-2);transition:color .15s}
+.nav-right a:hover{color:var(--text)}
+.nav-cta{padding:9px 16px;border:1px solid var(--border-strong);border-radius:100px;font-family:var(--t-mono);font-size:.78rem;letter-spacing:.02em;color:var(--text);transition:all .15s}
+.nav-cta:hover{background:var(--accent);color:#0A0A0B;border-color:var(--accent)}
+@media(max-width:680px){.nav-right .nav-link-hide{display:none}}
+
+/* === HERO · split-screen · Datadog/Cursor pattern === */
+.hero{padding:64px 0 56px;position:relative;overflow:hidden}
+@media(min-width:880px){.hero{padding:96px 0 80px}}
+.hero::before{content:"";position:absolute;top:-40%;right:-20%;width:60%;height:120%;background:radial-gradient(circle,rgba(255,107,53,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+.hero-grid{position:relative;z-index:1;display:grid;gap:48px}
+@media(min-width:920px){.hero-grid{grid-template-columns:1.2fr 1fr;align-items:center;gap:72px}}
+.hero h1{font-size:clamp(2.4rem,5.5vw,4rem);line-height:1.02;letter-spacing:-.03em;font-weight:600;margin:0 0 24px;color:var(--text)}
+.hero h1 .accent{color:var(--accent);font-style:italic;font-weight:500}
+.hero h1 .strike{text-decoration:line-through;text-decoration-color:rgba(255,107,53,.4);text-decoration-thickness:3px;color:var(--text-3);font-weight:400}
+.hero-sub{font-size:clamp(1.1rem,2.4vw,1.3rem);line-height:1.5;color:var(--text-2);max-width:560px;margin:0 0 28px}
+.hero-sub strong{color:var(--text);font-weight:500}
+
+/* Founder byline · sophisticated · large photo === */
+.byline{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);max-width:560px}
+.byline-mark{width:64px;height:64px;border-radius:50%;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,var(--accent),#C8421E)}
+.byline-mark img{width:100%;height:100%;object-fit:cover;display:block}
+.byline-text{font-size:.88rem;line-height:1.4;color:var(--text-2)}
+.byline-text b{color:var(--text);font-weight:600;letter-spacing:-.005em}
+.byline-text .creds{font-family:var(--t-mono);font-size:.78rem;letter-spacing:.01em;color:var(--text-3);margin-top:2px;display:block}
+
+.hero-cta-row{display:flex;flex-direction:column;gap:12px;margin:0 0 24px}
+@media(min-width:560px){.hero-cta-row{flex-direction:row;align-items:center}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 26px;font-family:var(--t-sans);font-size:1rem;font-weight:500;letter-spacing:-.005em;border-radius:var(--radius);border:1px solid transparent;cursor:pointer;text-decoration:none;line-height:1;transition:transform .08s ease,background .15s ease,border-color .15s ease}
+.btn-primary{background:var(--accent);color:#0A0A0B;border-color:var(--accent);font-weight:600}
+.btn-primary:hover{background:var(--accent-hover);color:#0A0A0B;transform:translateY(-1px)}
+.btn-primary .price{font-family:var(--t-mono);opacity:.85;font-size:.85rem;margin-left:8px;font-weight:500}
+.btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border-strong)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.hero-meta{font-family:var(--t-mono);font-size:.72rem;color:var(--text-3);letter-spacing:.04em}
+.hero-meta .pos{color:var(--pos)}
+
+/* === PRODUCT-DEMO PANEL · the show-don't-tell · Cursor pattern === */
+.demo{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 24px 48px -16px rgba(0,0,0,.5),0 0 0 1px rgba(255,107,53,.06)}
+.demo-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--surface-2);border-bottom:1px solid var(--border);font-family:var(--t-mono);font-size:.72rem;color:var(--text-3);letter-spacing:.02em}
+.demo-bar-dots{display:flex;gap:6px}
+.demo-bar-dot{width:9px;height:9px;border-radius:50%;background:var(--border-strong)}
+.demo-bar-dot:nth-child(1){background:#FF5F57}
+.demo-bar-dot:nth-child(2){background:#FFBD2E}
+.demo-bar-dot:nth-child(3){background:#27C93F}
+.demo-bar-url{flex:1;text-align:center}
+.demo-body{padding:18px;font-family:var(--t-mono);font-size:.78rem;line-height:1.65;color:var(--text-2)}
+.demo-body .you{color:var(--info);font-weight:500;display:block;margin-bottom:6px}
+.demo-body .claude{color:var(--accent);font-weight:500;display:block;margin:14px 0 6px}
+.demo-body .out{color:var(--text);padding:10px 12px;background:var(--bg);border-left:2px solid var(--accent);border-radius:4px;margin-top:6px;white-space:pre-wrap;font-size:.74rem}
+.demo-skill-active{display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);color:var(--accent);font-size:.7rem;padding:3px 8px;border-radius:100px;border:1px solid rgba(255,107,53,.3);font-weight:500;letter-spacing:.02em;margin:8px 0 4px}
+.demo-skill-active::before{content:"";width:5px;height:5px;background:var(--accent);border-radius:50%;animation:pulse 1.8s infinite}
+
+/* === SOCIAL PROOF STRIP · brand credentials · Linear pattern === */
+.proof{padding:36px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface)}
+.proof-label{font-family:var(--t-mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-2);text-align:center;margin:0 0 16px;font-weight:500}
+.proof-logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:36px 48px;color:var(--text-2);font-family:var(--t-sans);font-weight:500;font-size:.95rem;letter-spacing:-.01em;opacity:.85}
+.proof-logos span{position:relative;transition:color .2s,opacity .2s;cursor:default}
+.proof-logos span:hover{color:var(--text);opacity:1}
+
+/* === TWO-PATH IDENTITY SPLIT · the dual funnel === */
+.paths{padding:80px 0 64px}
+.paths h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.05;letter-spacing:-.025em;font-weight:600;margin:0 0 12px;text-align:center}
+.paths-sub{text-align:center;color:var(--text-2);font-size:1.05rem;margin:0 0 48px;max-width:560px;margin-left:auto;margin-right:auto}
+.paths-grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:768px){.paths-grid{grid-template-columns:1fr 1fr;gap:24px}}
+.path-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px 30px;transition:border-color .2s,transform .15s}
+.path-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.path-card .tag{display:inline-block;font-family:var(--t-mono);font-size:.7rem;color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:.12em;margin:0 0 14px;font-weight:500}
+.path-card h3{font-size:1.4rem;font-weight:600;margin:0 0 12px;letter-spacing:-.015em;line-height:1.2}
+.path-card .who{color:var(--text-2);font-size:.95rem;line-height:1.55;margin:0 0 20px}
+.path-card .stack{display:flex;flex-direction:column;gap:8px;font-family:var(--t-mono);font-size:.78rem;color:var(--text-3);margin:0 0 24px}
+.path-card .stack b{color:var(--text-2);font-weight:500}
+.path-card .price{font-family:var(--t-mono);font-size:.88rem;color:var(--text);font-weight:500;margin:0 0 18px;display:flex;justify-content:space-between;align-items:baseline;padding-top:18px;border-top:1px solid var(--border)}
+.path-card .price s{color:#9999A3;font-weight:400;margin-right:6px}
+.path-card .price-pos{color:var(--accent)}
+.path-card .cta{display:flex;align-items:center;justify-content:center;gap:6px;padding:14px 22px;background:var(--bg);color:var(--text);border:1px solid var(--border-strong);border-radius:var(--radius);font-weight:500;font-size:.95rem;transition:all .15s;width:100%;cursor:pointer}
+.path-card:hover .cta{background:var(--accent);color:#0A0A0B;border-color:var(--accent)}
+.path-card .cta span{font-family:var(--t-mono);font-size:.78rem;opacity:.7;margin-left:4px}
+.path-card.primary{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 16px 48px -16px rgba(255,107,53,.25)}
+.path-card.primary .cta{background:var(--accent);color:#0A0A0B;border-color:var(--accent);font-weight:600}
+.path-card.primary .cta:hover{background:var(--accent-hover)}
+
+/* === FOUNDER STORY · editorial · 1 paragraph === */
+.story{padding:80px 0 64px;border-top:1px solid var(--border)}
+.story-grid{display:grid;gap:36px;align-items:start}
+@media(min-width:880px){.story-grid{grid-template-columns:280px 1fr;gap:60px}}
+.story-photo img{width:100%;max-width:280px;border-radius:var(--radius-lg);display:block;border:1px solid var(--border)}
+.story-photo-meta{font-family:var(--t-mono);font-size:.72rem;color:var(--text-3);margin-top:12px;letter-spacing:.04em;text-align:center}
+.story h2{font-size:clamp(1.5rem,3vw,2rem);line-height:1.15;letter-spacing:-.02em;font-weight:600;margin:0 0 18px;color:var(--text)}
+.story p{font-size:1.08rem;line-height:1.65;color:var(--text-2);margin:0 0 18px}
+.story p:last-child{margin:0}
+.story strong{color:var(--text);font-weight:500}
+
+/* === THE 27 SKILLS GRID · Linear-pattern · sophisticated reveal === */
+.skills{padding:80px 0;border-top:1px solid var(--border);background:linear-gradient(180deg,var(--bg) 0%,var(--surface) 50%,var(--bg) 100%)}
+.skills h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.05;letter-spacing:-.025em;font-weight:600;margin:0 0 12px;text-align:center}
+.skills-sub{text-align:center;color:var(--text-2);font-size:1.05rem;margin:0 0 48px;max-width:620px;margin-left:auto;margin-right:auto}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.skill{padding:18px 20px;background:var(--surface);transition:background .15s}
+.skill:hover{background:var(--surface-2)}
+.skill .icon{font-family:var(--t-mono);font-size:.7rem;color:var(--accent);letter-spacing:.04em;margin:0 0 8px;font-weight:500}
+.skill .name{font-size:.92rem;color:var(--text);font-weight:500;line-height:1.3;letter-spacing:-.005em}
+.skill .new{display:inline-block;font-family:var(--t-mono);font-size:.62rem;color:var(--pos);border:1px solid var(--pos);padding:1px 6px;border-radius:3px;margin-left:8px;vertical-align:middle;letter-spacing:.04em;font-weight:500}
+
+/* === AI BUILDER LOUNGE WAITLIST · slow-burn email capture === */
+.lounge{padding:96px 0 80px;border-top:1px solid var(--border)}
+.lounge-grid{display:grid;gap:36px;align-items:center}
+@media(min-width:768px){.lounge-grid{grid-template-columns:1.2fr 1fr;gap:60px}}
+.lounge-eyebrow{font-family:var(--t-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);margin:0 0 16px;font-weight:500}
+.lounge h2{font-size:clamp(1.6rem,3.2vw,2.2rem);line-height:1.1;letter-spacing:-.02em;font-weight:600;margin:0 0 18px}
+.lounge p{color:var(--text-2);font-size:1rem;line-height:1.55;margin:0 0 24px;max-width:520px}
+.lounge-form{display:flex;flex-direction:column;gap:10px;max-width:480px}
+@media(min-width:560px){.lounge-form{flex-direction:row;align-items:stretch}}
+.lounge-input{flex:1;padding:14px 16px;background:var(--bg);color:var(--text);border:1px solid var(--border-strong);border-radius:var(--radius);font-family:var(--t-sans);font-size:.95rem;outline:none;transition:border-color .15s}
+.lounge-input:focus{border-color:var(--accent)}
+.lounge-input::placeholder{color:var(--text-3)}
+.lounge-submit{padding:14px 24px;background:var(--accent);color:#0A0A0B;border:none;border-radius:var(--radius);font-family:var(--t-sans);font-size:.95rem;font-weight:600;cursor:pointer;letter-spacing:-.005em;transition:background .15s}
+.lounge-submit:hover{background:var(--accent-hover)}
+.lounge-meta{font-family:var(--t-mono);font-size:.74rem;color:var(--text-3);margin:14px 0 0;letter-spacing:.02em}
+.lounge-visual{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;font-family:var(--t-mono);font-size:.84rem;color:var(--text-2);line-height:1.7}
+.lounge-visual .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--border)}
+.lounge-visual .row:last-child{border-bottom:none}
+.lounge-visual .row b{color:var(--text);font-weight:500}
+.lounge-visual h4{margin:0 0 14px;font-family:var(--t-sans);font-size:.85rem;color:var(--text);letter-spacing:.02em;text-transform:uppercase;font-weight:600;letter-spacing:.12em;color:var(--text-3)}
+
+/* === FAQ · pulled from research signal "common builder questions" === */
+.faq-sect{padding:64px 0 80px;border-top:1px solid var(--border)}
+.faq-sect h2{font-size:clamp(1.5rem,3vw,2rem);line-height:1.05;letter-spacing:-.02em;font-weight:600;margin:0 0 36px;text-align:center}
+.faq-list{max-width:780px;margin:0 auto}
+.faq-list details{border-top:1px solid var(--border);padding:20px 0}
+.faq-list details:last-of-type{border-bottom:1px solid var(--border)}
+.faq-list summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:1.02rem;font-weight:500;color:var(--text);letter-spacing:-.005em}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";font-family:var(--t-mono);color:var(--accent);font-size:1.4rem;transition:transform .15s}
+.faq-list details[open] summary::after{transform:rotate(45deg)}
+.faq-list p{margin:14px 0 0;color:var(--text-2);font-size:.96rem;line-height:1.6}
+
+/* === FINAL CTA · the closer === */
+.final{padding:96px 0;text-align:center;border-top:1px solid var(--border);background:linear-gradient(180deg,var(--bg) 0%,var(--surface) 100%)}
+.final h2{font-size:clamp(2rem,5vw,3rem);line-height:1.05;letter-spacing:-.03em;font-weight:600;margin:0 0 18px}
+.final h2 .accent{color:var(--accent);font-style:italic;font-weight:500}
+.final p{color:var(--text-2);font-size:1.1rem;margin:0 0 32px;max-width:560px;margin-left:auto;margin-right:auto}
+.final .btn-primary{padding:18px 36px;font-size:1.05rem}
+.final-meta{margin:20px 0 0;font-family:var(--t-mono);font-size:.78rem;color:var(--text-3);letter-spacing:.04em}
+
+/* === FOOTER === */
+.foot{padding:36px 0 88px;border-top:1px solid var(--border);color:var(--text-3);font-size:.85rem}
+/* Sticky mobile bottom CTA · 2026 research +31% mobile conversion lift on long-scroll pages · only shown on mobile */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:rgba(10,10,11,.96);backdrop-filter:saturate(140%) blur(12px);border-top:1px solid var(--border);padding:12px var(--pad);z-index:60;display:none;align-items:center;justify-content:space-between;gap:12px;animation:slideUp .3s ease-out}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.sticky-cta-text{font-family:var(--t-mono);font-size:.72rem;color:var(--text-2);letter-spacing:.02em;line-height:1.3;flex:1;min-width:0}
+.sticky-cta-text b{color:var(--text);font-weight:600}
+.sticky-cta-text .accent{color:var(--accent);font-weight:600}
+.sticky-cta-btn{padding:11px 18px;background:var(--accent);color:#0A0A0B;border-radius:100px;font-family:var(--t-sans);font-size:.85rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .15s,transform .08s;flex-shrink:0}
+.sticky-cta-btn:hover{background:var(--accent-hover);color:#0A0A0B;transform:translateY(-1px)}
+@media(max-width:767px){.sticky-cta{display:flex}}
+/* Skip-to-content for keyboard nav · WCAG · hidden until focused */
+.skip-link{position:absolute;top:-100px;left:0;background:var(--accent);color:#0A0A0B;padding:10px 16px;font-family:var(--t-mono);font-size:.85rem;font-weight:600;text-decoration:none;z-index:100;transition:top .15s}
+.skip-link:focus{top:0;color:#0A0A0B}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center}
+.foot a{color:var(--text-2);margin-left:18px;transition:color .15s}
+.foot a:hover{color:var(--accent)}
+.foot .copy{font-family:var(--t-mono);font-size:.78rem;letter-spacing:.02em}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+</style>
+</head>
+<body>
+
+<!-- STICKY LAUNCH BANNER · state-machine wired (matches current homepage cron logic) -->
+<div class="bar" id="cmLaunchBar"
+     data-sold-out="false"
+     data-founder-cutoff-iso="2020-01-01T00:00:00Z">
+  <div class="bar-inner">
+    <div class="bar-left">
+      <span class="bar-dot" aria-hidden="true"></span>
+      <span id="cmStripText"><strong style="color:var(--text)">AI Builder Toolkit</strong> · 27 production-tested Claude skills · <strong style="color:var(--accent)">yours forever</strong> · install now →</span>
+    </div>
+    <a class="bar-cta" id="cmStripCta" href="/build/">install the toolkit →</a>
+  </div>
+</div>
+<script>
+/* Banner state machine · ported from current homepage 2026-05-24. Idempotent. No external deps.
+   Price-free copy + /build/ destination (price lives on /build, not the homepage).
+   Manual sold-out override: set data-sold-out="true" on #cmLaunchBar. */
+(function(){
+  var strip = document.getElementById('cmLaunchBar');
+  if(!strip) return;
+  var txt = document.getElementById('cmStripText');
+  var cta = document.getElementById('cmStripCta');
+  var founderCutoff = new Date(strip.dataset.founderCutoffIso || '2026-06-01T06:59:00Z');
+  var soldOut = strip.dataset.soldOut === 'true';
+  var now = new Date();
+  var state = soldOut ? 'sold-out' : (now < founderCutoff ? 'pre' : 'post');
+  strip.dataset.state = state;
+  var copy = {
+    'pre':      '<strong style="color:var(--text)">AI Builder Toolkit</strong> · 27 production-tested Claude skills · <strong style="color:var(--accent)">yours forever</strong> · install now →',
+    'sold-out': '<strong style="color:var(--text)">AI Builder Toolkit</strong> · 27 production-tested Claude skills · <strong style="color:var(--accent)">yours forever</strong> · install now →',
+    'post':     '<strong style="color:var(--text)">AI Builder Toolkit</strong> · 27 production-tested Claude skills · <strong style="color:var(--accent)">yours forever</strong> · install now →'
+  };
+  if (txt && copy[state]) txt.innerHTML = copy[state];
+  if (cta) cta.setAttribute('href', '/build/');
+})();
+</script>
+
+<!-- NAV · minimal · only what converts -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">the closer <em>method</em></a>
+    <div class="nav-right">
+      <a href="/starter/" class="nav-link-hide">free starter</a>
+      <a href="/ugc/" class="nav-link-hide">for creators</a>
+      <a href="/build/" class="nav-cta">install →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Skip-to-content for keyboard nav · WCAG 2.4.1 -->
+<a href="#main" class="skip-link">skip to content</a>
+
+<main id="main">
+
+<!-- ============================================================
+HERO · split-screen · Cursor/Datadog pattern
+Quantifiable founder credential headline · product demo on right
+============================================================ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">27 claude skills · built from 10 years closing enterprise deals</p>
+      <h1>I closed <span class="accent">$1.2M in enterprise software.</span><br>
+      the edge was structured thinking.<br>
+      <span class="accent">now it's 27 Claude skills.</span></h1>
+      <p class="hero-sub">ten years of discovery, qualification, and closing taught me enterprise sales is just structured thinking written down. I wrote 27 of those systems as Claude skills, plus a brain doc that makes Claude sound like <strong>you</strong>, not generic AI.</p>
+
+      <div class="byline">
+        <div class="byline-mark">
+          <img src="/img/eli-hitz.jpg" width="64" height="64" alt="Eli Hitz, founder of Closer Method" loading="eager" decoding="async" fetchpriority="high">
+        </div>
+        <div class="byline-text">
+          <b>built by eli hitz</b>
+          <span class="creds">10y B2B sales · 268% Q3 at Deel · 167% at Criteo</span>
+        </div>
+      </div>
+
+      <div class="hero-cta-row">
+        <a href="/build/" class="btn btn-primary">install the toolkit <span>→</span></a>
+        <a href="/starter/" class="btn btn-secondary">get the free starter skill</a>
+      </div>
+      <p class="hero-meta"><span class="pos">●</span> 27 skills · drag-and-drop install · works in Claude · ChatGPT · Cursor · Gemini · Perplexity</p>
+    </div>
+
+    <!-- Product-demo panel · the show-don't-tell · simulates Claude UI -->
+    <div class="demo" aria-label="Live demo of one Claude Skill activating">
+      <div class="demo-bar">
+        <div class="demo-bar-dots">
+          <span class="demo-bar-dot"></span>
+          <span class="demo-bar-dot"></span>
+          <span class="demo-bar-dot"></span>
+        </div>
+        <div class="demo-bar-url">claude.ai · new chat</div>
+        <div style="width:48px"></div>
+      </div>
+      <div class="demo-body">
+        <span class="you">you</span>
+        <div>"build me a homepage for a UGC creator agency. ICP is brand managers at DTC skincare brands. founder rate $1,800/mo retainer."</div>
+
+        <span class="demo-skill-active">ai-builder-website skill activated</span>
+
+        <span class="claude">claude</span>
+        <div>"loading the website-creator skill. before I write, I need 12 details about your business. what's your founder name + location?"</div>
+
+        <div class="out">[answers 12 questions across 5 min]
+[Claude returns 1,400 words of homepage copy + HTML structure + JSON-LD schema]
+[ready to drop into Netlify · live URL in 60 sec]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+SOCIAL PROOF · brand credential strip · Linear-pattern minimalism
+============================================================ -->
+<section class="proof">
+  <div class="wrap">
+    <p class="proof-label">10 years closing enterprise software</p>
+    <div class="proof-logos">
+      <span>Deel</span>
+      <span>Criteo</span>
+      <span>HBO</span>
+      <span>Bloomberg</span>
+      <span>McCann</span>
+      <span>Y&amp;R</span>
+      <span>Autodesk</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+TWO-PATH IDENTITY SPLIT · the dual funnel
+Builders go left · creators go right · no overlap
+============================================================ -->
+<section class="paths">
+  <div class="wrap">
+    <h2>Two ways to use this. <span style="color:var(--text-2)">Pick the one that's you.</span></h2>
+    <p class="paths-sub">Same founder. Two products. Different audiences. No overlap.</p>
+
+    <div class="paths-grid">
+      <!-- LEFT · AI Builder · the primary funnel · marked .primary -->
+      <article class="path-card primary">
+        <span class="tag">for AI builders</span>
+        <h3>27 Claude Skills + a brain doc</h3>
+        <p class="who">For solo founders who subscribed Claude Pro and don't know what to type. Production-tested .md files you paste once and use forever.</p>
+        <div class="stack">
+          <b>· website, lead magnet, booking page, FAQ, quiz, library</b>
+          <b>· cold dm, pitch deck, email funnel, launch plan</b>
+          <b>· positioning, GTM, competitor analysis</b>
+          <b>· brand voice, social calendar, annual review</b>
+          <b>· 27 total · works in Claude, ChatGPT, Cursor, Gemini, Perplexity</b>
+        </div>
+        <div class="price">
+          <span class="price-pos">the full AI build system</span>
+          <span style="font-family:var(--t-mono);font-size:.72rem;color:var(--text-3)">yours forever · no subscription</span>
+        </div>
+        <a href="/build/" class="cta">install the AI Builder Toolkit <span>→</span></a>
+      </article>
+
+      <!-- RIGHT · UGC creator · co-primary funnel · elevated to parity with the builder door (2026-06-06) -->
+      <article class="path-card primary">
+        <span class="tag">for UGC creators</span>
+        <h3>Closer Method UGC Toolkit</h3>
+        <p class="who">The system that closes $500-$5K brand deals for content creators. Built from $1.2M in B2B enterprise sales · adapted for creator-brand pitching.</p>
+        <div class="stack">
+          <b>· cold pitch generator · brand reply scripts · rate calculator</b>
+          <b>· retainer skill · objection handler · negotiation playbook</b>
+          <b>· 60+ pitch templates · DM scripts</b>
+          <b>· UGC Closer Kit standalone · Stack Installer upsell</b>
+        </div>
+        <div class="price">
+          <span class="price-pos">the full creator system</span>
+          <span style="font-family:var(--t-mono);font-size:.72rem;color:var(--text-3)">pitch → reply → retainer</span>
+        </div>
+        <a href="/ugc/" class="cta">get the UGC Toolkit <span>→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+FOUNDER STORY · editorial · 1 paragraph · the why
+Photo + 3 short paragraphs · creates "I trust this person" moment
+============================================================ -->
+<section class="story">
+  <div class="wrap story-grid">
+    <div class="story-photo">
+      <img src="/img/eli-hitz.jpg" alt="Eli Hitz, founder of Closer Method, photographed in studio" width="280" height="280" loading="lazy" decoding="async">
+      <p class="story-photo-meta">Eli Hitz · founder · @closermethod</p>
+    </div>
+    <div>
+      <h2>I spent 10 years selling enterprise software. Then I started prompting Claude with the same frameworks.</h2>
+      <p>I closed <strong>$1.2M+ at Deel</strong>. Hit <strong>268% of Q3 quota</strong>. Did 167% at Criteo. Sold to HBO, Bloomberg, McCann, Y&amp;R, Autodesk. Ten years of pipeline reviews, discovery calls, MEDDICC qualification, mutual-action plans, and the worst Salesforce hygiene you've ever seen.</p>
+      <p>Then I quit my W2 and started prompting Claude with the same frameworks. <strong>Turns out enterprise sales is just structured thinking written down.</strong> Discovery → qualification → close. Same MUSE used at Deel works on a Tuesday-night Claude session for "rewrite my homepage."</p>
+      <p>I wrote 27 of these frameworks down as Claude Skills. <strong>Some for AI builders. Some for UGC creators.</strong> Both halves run on the same operator. That's why this site has two doors and one founder.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+THE 27 SKILLS GRID · Linear-pattern reveal
+Make the product concrete · every skill listed by name
+============================================================ -->
+<section class="skills">
+  <div class="wrap">
+    <h2>The 27 skills inside the toolkit</h2>
+    <p class="skills-sub">Each is one .md file. YAML frontmatter. Paste into Claude once. Use forever.</p>
+    <div class="skills-grid">
+      <div class="skill"><div class="icon">001 · ship online</div><div class="name">ai-builder-website</div></div>
+      <div class="skill"><div class="icon">002</div><div class="name">ai-builder-lead-magnet</div></div>
+      <div class="skill"><div class="icon">003</div><div class="name">ai-builder-booking-page</div></div>
+      <div class="skill"><div class="icon">004</div><div class="name">ai-builder-faq-page</div></div>
+      <div class="skill"><div class="icon">005</div><div class="name">ai-builder-interactive-quiz</div></div>
+      <div class="skill"><div class="icon">006</div><div class="name">ai-builder-resource-library</div></div>
+      <div class="skill"><div class="icon">007 · email</div><div class="name">ai-builder-email-funnel</div></div>
+      <div class="skill"><div class="icon">008</div><div class="name">ai-builder-launch-plan</div></div>
+      <div class="skill"><div class="icon">009</div><div class="name">ai-builder-event-marketing</div></div>
+      <div class="skill"><div class="icon">010 · offers</div><div class="name">ai-builder-pricing-strategy</div></div>
+      <div class="skill"><div class="icon">011</div><div class="name">ai-builder-pricing-calculator</div></div>
+      <div class="skill"><div class="icon">012</div><div class="name">ai-builder-partnership-proposal</div></div>
+      <div class="skill"><div class="icon">013</div><div class="name">ai-builder-referral-program</div></div>
+      <div class="skill"><div class="icon">014 · strategy</div><div class="name">ai-builder-go-to-market <span class="new">NEW</span></div></div>
+      <div class="skill"><div class="icon">015</div><div class="name">ai-builder-positioning <span class="new">NEW</span></div></div>
+      <div class="skill"><div class="icon">016</div><div class="name">ai-builder-marketing-strategy</div></div>
+      <div class="skill"><div class="icon">017</div><div class="name">ai-builder-competitor-analysis</div></div>
+      <div class="skill"><div class="icon">018</div><div class="name">ai-builder-business-plan</div></div>
+      <div class="skill"><div class="icon">019</div><div class="name">ai-builder-pitch-deck</div></div>
+      <div class="skill"><div class="icon">020 · clients</div><div class="name">ai-builder-client-onboarding</div></div>
+      <div class="skill"><div class="icon">021</div><div class="name">ai-builder-welcome-packet</div></div>
+      <div class="skill"><div class="icon">022</div><div class="name">ai-builder-testimonial-collector</div></div>
+      <div class="skill"><div class="icon">023</div><div class="name">ai-builder-course-outline</div></div>
+      <div class="skill"><div class="icon">024 · voice</div><div class="name">ai-builder-brand-voice</div></div>
+      <div class="skill"><div class="icon">025</div><div class="name">ai-builder-social-calendar</div></div>
+      <div class="skill"><div class="icon">026</div><div class="name">ai-builder-annual-review</div></div>
+      <div class="skill"><div class="icon">027 · orchestrator</div><div class="name">ai-builder-start-here</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+AI BUILDER LOUNGE WAITLIST · slow-burn capture
+For visitors who don't buy today · the long-game email list
+============================================================ -->
+<section class="lounge">
+  <div class="wrap lounge-grid">
+    <div>
+      <p class="lounge-eyebrow">Now open · the AI Builder Lounge · founding 50</p>
+      <h2>A live build every week, plus new Claude skills and build critiques.</h2>
+      <p>Every week I run a live "build with me" session for lounge members, plus new Claude skill drops and build critiques. <strong>It lives on Skool, not Discord · one calm space, no daily noise.</strong> Founding rate locked for life for the first 50.</p>
+
+      <div class="lounge-form" style="flex-direction:column;align-items:flex-start;gap:14px">
+        <a href="https://www.skool.com/ai-builders-lounge-4555" target="_blank" rel="noopener" class="lounge-submit" data-join="lounge" style="display:inline-block;text-align:center;text-decoration:none">Join the founding 50 on Skool →</a>
+        <a href="/lounge/" style="font-family:var(--t-mono);font-size:.8rem;color:var(--text-3);text-decoration:underline;letter-spacing:.02em">Prefer to look first? See what's inside →</a>
+      </div>
+      <p class="lounge-meta">founding rate locked for life · payment + community on Skool</p>
+    </div>
+
+    <!-- Right side · live signal · airtight: ONE waitlist, one audience (AI-for-creators, the pre-Lounge brand vision). Kit ACTIVE closer-method-waitlist tag = 141 (2026-06-03); lounge_waitlist re-tag = 54; both are the same waitlist. "100+ and growing" is grounded in the 141 active tag (a real currently-subscribed count, NOT the GA4-inflated 111, NOT a placeholder). -->
+    <div class="lounge-visual">
+      <h3 style="margin:0 0 14px;font-family:var(--t-sans);font-size:.85rem;color:var(--text-3);letter-spacing:.12em;text-transform:uppercase;font-weight:600">the lounge · live</h3>
+      <div class="row"><span>status</span><b>founding 50 · open</b></div>
+      <div class="row"><span>platform</span><b>Skool</b></div>
+      <div class="row"><span>founding window</span><b>open now</b></div>
+      <div class="row"><span>founding seats</span><b>50</b></div>
+      <div class="row"><span>on the waitlist</span><b>100+ and growing</b></div>
+      <div class="row"><span>cadence</span><b>weekly live builds</b></div>
+      <div class="row"><span>founding rate</span><b>locked for life</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+FAQ · pulled from research signals · "common builder questions"
+============================================================ -->
+<section class="faq-sect">
+  <div class="wrap">
+    <h2>The 6 questions I get most</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Is this a course?</summary>
+        <p>No. No videos, no modules, no 8-hour course to sit through. It's 27 .md files you drop into one Claude Project and use forever, plus a brain doc template that tells Claude who you are. The Project path works on every plan, including the free one.</p>
+      </details>
+      <details>
+        <summary>Does it work in ChatGPT, Cursor, Gemini, Perplexity?</summary>
+        <p>Yes. The .md format is universal. Drop into ChatGPT Custom GPTs, Cursor Rules, Gemini Gems, or Perplexity Collections. One file, every platform.</p>
+      </details>
+      <details>
+        <summary>What if a skill doesn't fit my niche?</summary>
+        <p>DM me on instagram with what's not working. I'll rewrite the skill for your specific business and send it back. No time limit. No extra cost. As many rebuilds as it takes. This is the made-to-work guarantee.</p>
+      </details>
+      <details>
+        <summary>What does "27 Claude Skills" actually mean?</summary>
+        <p>27 separate SKILL.md files with YAML frontmatter (Anthropic 2026 spec compliant). Each handles one specific task (homepage, cold dm, pitch deck, etc.) and activates automatically when you ask Claude for that build. See the full list above.</p>
+      </details>
+      <details>
+        <summary>What if I'm not sure it'll work for me?</summary>
+        <p>Every skill is made to work for your business. DM me what's not fitting and I rewrite it for your specific niche, free, as many times as it takes. That's the whole guarantee.</p>
+      </details>
+      <details>
+        <summary>Is there a subscription?</summary>
+        <p>No. You pay once and keep the files plus every monthly update after, forever. No subscription, no resetting timer. I'm not running this as a SaaS course because I don't have one in me · I have 27 skills that ship the work.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+FINAL CTA · the closer · one button, no upsell
+============================================================ -->
+<section class="final">
+  <div class="wrap">
+    <h2>One folder. <span class="accent">No course.</span> Drag-and-drop install.</h2>
+    <p>27 production-tested Claude Skills + brain doc template + made-to-work guarantee. Yours forever.</p>
+    <a href="/build/" class="btn btn-primary">install the AI Builder Toolkit <span>→</span></a>
+    <p class="final-meta">made to work for your business · DM @closermethod anytime</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="copy">© 2026 closer method</div>
+    <div>
+      <a href="https://instagram.com/closermethod" target="_blank" rel="noopener">@closermethod</a>
+      <a href="/starter/">free starter</a>
+      <a href="/build/">for builders</a>
+      <a href="/ugc/">for creators</a>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<!-- Sticky mobile bottom CTA · 2026 research +31% mobile conversion lift · only renders on mobile via CSS -->
+<aside class="sticky-cta" role="complementary" aria-label="Quick checkout">
+  <div class="sticky-cta-text">
+    <b>AI Builder Toolkit</b><br>
+    <span class="accent">yours forever</span> · no subscription
+  </div>
+  <a href="/build/" class="sticky-cta-btn" data-event="sticky_mobile_cta">install →</a>
+</aside>
+
+<!-- GA4 + Meta Pixel · deferred via requestIdleCallback so they don't block LCP -->
+<script>
+(function(){
+  function load3P(){
+    var gt=document.createElement('script');gt.async=true;gt.src='https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD';document.head.appendChild(gt);
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag;gtag('js',new Date());gtag('config','G-Q2458LX0VD',{send_page_view:true,page_path:'/'});
+    gtag('event','view_item',{content_name:'homepage_v3',content_category:'top_of_funnel',page:'/'});
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','35298849146380570');
+    fbq('track','PageView');
+    fbq('track','ViewContent',{content_name:'homepage_v3',content_category:'ai_builder_toolkit'});
+  }
+  if(window.requestIdleCallback){window.requestIdleCallback(load3P,{timeout:3000});}
+  else{window.addEventListener('load',function(){setTimeout(load3P,1500);});}
+  // CTA click tracking · fires gtag + fbq on every CTA when clicked
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href]');
+    if(!a) return;
+    var href = a.getAttribute('href');
+    var label = a.textContent.trim().slice(0,40);
+    if(href === '/build/' || href === '/build'){
+      if(window.gtag) gtag('event','cta_click',{cta_label:label,cta_destination:'build',page:'/'});
+      if(window.fbq) fbq('track','InitiateCheckout',{content_name:'ai_builder_toolkit',value:147,currency:'USD',cta:label});
+    } else if(href === '/starter/' || href === '/starter'){
+      if(window.gtag) gtag('event','cta_click',{cta_label:label,cta_destination:'starter',page:'/'});
+    } else if(href === '/ugc/' || href === '/ugc'){
+      if(window.gtag) gtag('event','cta_click',{cta_label:label,cta_destination:'ugc',page:'/'});
+    }
+  });
+})();
+</script>
+
+<!-- Homepage lounge waitlist form wire · POSTs to /api/subscribe with source=lounge_waitlist -->
+<script>
+(function(){
+  var form = document.getElementById('lounge-form');
+  if(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var input = form.querySelector('.lounge-input');
+    var btn = form.querySelector('.lounge-submit');
+    var email = (input && input.value || '').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      if(input){input.style.borderColor='#FF6B35';input.focus();}
+      return;
+    }
+    var originalBtn = btn ? btn.textContent : '';
+    if(btn){btn.disabled = true; btn.textContent = 'sending...';}
+    try{
+      var res = await fetch('/api/subscribe', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({email: email, source: 'lounge_waitlist'})
+      });
+      var data = await res.json();
+      if(res.ok && data.subscriber_id){
+        if(btn){btn.textContent = "you're in"; btn.style.background = '#4ADE80'; btn.style.color = '#0A0A0B';}
+        if(input){input.value = ''; input.placeholder = 'first drop lands Monday';}
+        if(typeof gtag !== 'undefined') gtag('event', 'lounge_waitlist_subscribe', {transport_type:'beacon', form_id:'lounge-form', page:'/'});
+        if(typeof fbq !== 'undefined') fbq('track', 'Lead', {content_name:'lounge_waitlist', page:'/'});
+      } else {
+        if(btn){btn.disabled = false; btn.textContent = originalBtn;}
+        if(input){input.style.borderColor = '#FF6B35';}
+      }
+    } catch(err){
+      if(btn){btn.disabled = false; btn.textContent = originalBtn;}
+      if(input){input.style.borderColor = '#FF6B35'; input.placeholder = 'something broke · DM @closermethod';}
+    }
+  });
+  }
+
+  // Skool join is off-site · fire intent events on click so we keep attribution
+  document.querySelectorAll('[data-join="lounge"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      if(typeof gtag !== 'undefined') gtag('event','begin_checkout',{content_name:'lounge_founding',value:47,currency:'USD'});
+      if(typeof fbq !== 'undefined') fbq('track','InitiateCheckout',{content_name:'lounge_founding',value:47,currency:'USD'});
+    });
+  });
+})();
+</script>
+</body>
+</html>

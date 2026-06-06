@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inbox | jmail</title>
+
+<!-- SEO + Social -->
+<meta name="description" content="50 creator DMs. 47 got archived. 3 got a reply. See why, from the brand's side of the inbox.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://closermethod.com/inbox">
+<meta property="og:title" content="The Inbox | The Closer Method">
+<meta property="og:description" content="50 creator DMs. 47 got archived. 3 got a reply. See why.">
+<meta property="og:image" content="https://closermethod.com/pitch-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Inbox | The Closer Method">
+<meta name="twitter:description" content="50 creator DMs. 47 got archived. 3 got a reply.">
+<meta name="twitter:image" content="https://closermethod.com/pitch-og.png">
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '35298849146380570');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"/></noscript>
+
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
+<link rel="icon" href="/favicon.svg">
+<style>
+:root{--bk:#0a0a0a;--wh:#f8f7f4;--g1:#e8e6e1;--g2:#b8b5ae;--g3:#8a8780;--g4:#5a5852;--cr:#f2f0eb;--bd:#2a2a28;--gd:#b39659;--gdlt:#d4b878}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Lora',Georgia,serif;background:var(--wh);color:var(--bk);line-height:1.7;-webkit-font-smoothing:antialiased}
+body::after{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+.con{max-width:760px;margin:0 auto;padding:0 24px}
+.lb{font-family:'Poppins',sans-serif;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--g3)}
+
+/* hero */
+.hero{padding:100px 24px 60px;text-align:center}
+.hero .lb{margin-bottom:32px}
+.hero h1{font-size:clamp(30px,6vw,52px);font-weight:400;line-height:1.15;margin-bottom:24px;max-width:640px;margin-left:auto;margin-right:auto}
+.hero h1 em{font-style:italic}
+.hero-sub{font-size:17px;color:var(--g4);max-width:560px;margin:0 auto 28px;line-height:1.6}
+.hero-stat{font-family:'Poppins',sans-serif;font-size:12px;color:var(--g3);letter-spacing:.8px;margin-bottom:40px}
+.hero-stat sup{font-size:9px;vertical-align:super}
+.hero-arr{cursor:pointer;display:inline-block}
+.hero-arr svg{width:22px;height:22px;stroke:var(--g3);animation:bob 2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* inbox chrome */
+.ibx{background:var(--bk);color:var(--wh);padding:0 0 80px}
+.ibx .con{max-width:760px}
+
+/* jmail top bar */
+.jbar{border-bottom:1px solid var(--bd);padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#0c0c0b}
+.jlogo{font-family:'Lora',Georgia,serif;font-style:italic;font-size:22px;font-weight:500;color:var(--wh);letter-spacing:-.5px}
+.jlogo::after{content:'.com';font-family:'Poppins',sans-serif;font-style:normal;font-size:10px;letter-spacing:2px;color:var(--g3);margin-left:3px;vertical-align:super;font-weight:400}
+.jbar-user{display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;font-size:12px;color:var(--g2);letter-spacing:.3px}
+.jbar-av{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--g4),var(--g3));display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--wh);font-weight:500;font-family:'Poppins',sans-serif}
+
+/* inbox header */
+.ibx-head{border-bottom:1px solid var(--bd);padding:22px 24px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0a0a09}
+.ibx-brand{font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:2.5px;color:var(--g3);text-transform:uppercase}
+.ibx-brand strong{color:var(--wh);font-weight:500;letter-spacing:1px;text-transform:none;font-size:13px}
+.ibx-meta{font-family:'Poppins',sans-serif;font-size:11px;color:var(--g3);letter-spacing:1.5px;text-transform:uppercase}
+
+/* tiles */
+.tile{display:grid;grid-template-columns:140px 1fr 60px;gap:16px;padding:18px 24px;border-bottom:1px solid var(--bd);cursor:pointer;transition:background .2s;align-items:baseline}
+.tile:hover{background:#141413}
+.tile.open{background:#141413;padding-bottom:0}
+.tile-sender{font-family:'Poppins',sans-serif;font-size:13px;color:var(--g2);font-weight:400;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tile-body{min-width:0}
+.tile-subj{font-size:15px;color:var(--g1);font-weight:400;margin-bottom:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:'Poppins',sans-serif}
+.tile-prev{font-size:13px;color:var(--g3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:'Lora',serif;font-style:italic}
+.tile-time{font-family:'Poppins',sans-serif;font-size:11px;color:var(--g3);text-align:right;letter-spacing:.5px}
+
+/* standout tiles */
+.tile.star{background:rgba(179,150,89,.06);border-left:2px solid var(--gd)}
+.tile.star:hover{background:rgba(179,150,89,.10)}
+.tile.star.open{background:rgba(179,150,89,.10)}
+.tile.star .tile-sender{color:var(--gdlt)}
+.tile.star .tile-subj{color:var(--wh);font-weight:500}
+.tile.star .tile-time{color:var(--gdlt)}
+.tile.star .tile-time::before{content:'★ ';color:var(--gd)}
+
+/* expanded panel */
+.panel{grid-column:1 / -1;padding:20px 0 24px;display:none;animation:fin .3s ease}
+.tile.open .panel{display:block}
+@keyframes fin{from{opacity:0}to{opacity:1}}
+.panel-body{background:#0e0e0d;border:1px solid var(--bd);border-radius:8px;padding:24px;margin-bottom:16px;font-family:'Lora',serif;font-size:15px;line-height:1.75;color:var(--g1);white-space:pre-wrap}
+.panel-body .subj{font-family:'Poppins',sans-serif;font-size:12px;color:var(--g3);letter-spacing:1.5px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--bd);text-transform:uppercase}
+.panel-body .subj span{color:var(--wh);text-transform:none;letter-spacing:.3px;font-size:14px;font-weight:500;margin-left:8px}
+.panel-verdict{display:flex;align-items:flex-start;gap:12px;padding:16px 20px;background:#151514;border-left:2px solid #6b1a1a;border-radius:4px;margin-bottom:8px}
+.tile.star .panel-verdict{border-left-color:var(--gd)}
+.panel-v-label{font-family:'Poppins',sans-serif;font-size:10px;color:#a84a4a;letter-spacing:1.5px;font-weight:500;min-width:70px;padding-top:2px}
+.tile.star .panel-v-label{color:var(--gdlt)}
+.panel-v-text{font-size:14px;color:var(--g1);line-height:1.65;flex:1}
+.panel-v-text em{color:var(--g2);font-style:italic;font-size:13px}
+.panel-v-text .cite{font-family:'Poppins',sans-serif;font-size:11px;color:var(--g3);letter-spacing:.3px;margin-top:8px;display:block}
+
+/* scroll hint + filter strip */
+.ibx-stat{font-family:'Poppins',sans-serif;font-size:11px;color:var(--g3);letter-spacing:1px;text-align:center;padding:24px 24px 0}
+.ibx-stat strong{color:var(--wh)}
+
+/* gate */
+.gate{padding:100px 24px;background:var(--cr);color:var(--bk);text-align:center;border-top:1px solid var(--g1)}
+.gate .con{max-width:560px}
+.gate .lb{margin-bottom:24px}
+.gate h2{font-size:clamp(26px,5vw,40px);font-weight:400;margin-bottom:16px;line-height:1.2}
+.gate h2 em{font-style:italic}
+.gate-sub{color:var(--g4);font-size:16px;margin-bottom:14px}
+.gate-social{font-family:'Poppins',sans-serif;font-size:12px;color:var(--g3);letter-spacing:.5px;margin-bottom:32px}
+.gf{display:flex;flex-direction:column;gap:14px;max-width:400px;margin:0 auto 18px}
+.gf input{font-family:'Poppins',sans-serif;font-size:15px;padding:16px 20px;border:1px solid var(--g1);border-radius:8px;background:var(--wh);color:var(--bk);outline:none;transition:border-color .2s}
+.gf input:focus{border-color:var(--g4)}
+.gf button{font-family:'Poppins',sans-serif;font-size:15px;font-weight:500;padding:18px 40px;border:none;border-radius:100px;background:var(--bk);color:var(--wh);cursor:pointer;transition:all .3s;letter-spacing:.5px}
+.gf button:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.gate-note{font-size:12px;color:var(--g3);font-family:'Poppins',sans-serif}
+
+/* thank you state */
+.ty{display:none;padding:100px 24px;background:var(--cr);color:var(--bk);text-align:center;border-top:1px solid var(--g1)}
+.ty.vis{display:block}
+.ty .con{max-width:540px}
+.ty h2{font-size:clamp(26px,5vw,38px);font-weight:400;margin-bottom:16px}
+.ty p{font-size:17px;color:var(--g4);margin-bottom:14px}
+.ty-check{font-family:'Poppins',sans-serif;font-size:13px;color:var(--g3);margin-top:28px;letter-spacing:.5px}
+
+/* sources */
+.src{padding:60px 24px 40px;background:var(--wh);text-align:center;border-top:1px solid var(--g1)}
+.src .con{max-width:760px}
+.src-lb{font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:2px;color:var(--g3);margin-bottom:20px;text-transform:uppercase}
+.src-list{font-family:'Poppins',sans-serif;font-size:12px;color:var(--g4);line-height:1.9;max-width:620px;margin:0 auto;text-align:left}
+.src-list a{color:var(--g4);text-decoration:underline;text-decoration-color:var(--g2)}
+.src-list a:hover{color:var(--bk)}
+
+footer{padding:40px 24px;text-align:center;background:var(--wh)}
+footer p{font-family:'Poppins',sans-serif;font-size:11px;color:var(--g3);letter-spacing:1px}
+
+@media(max-width:700px){
+  .hero{padding:64px 20px 40px}
+  .ibx{padding:24px 0 48px}
+  .tile{grid-template-columns:1fr 60px;gap:8px;padding:14px 20px}
+  .tile-sender{grid-column:1;font-size:12px;margin-bottom:2px}
+  .tile-body{grid-column:1 / 2;grid-row:2}
+  .tile-time{grid-column:2;grid-row:1 / 3;align-self:center}
+  .tile-subj{font-size:14px}
+  .tile-prev{font-size:12px}
+  .panel{grid-column:1 / -1;grid-row:3}
+  .panel-body{padding:18px;font-size:14px}
+  .ibx-head{padding:0 20px 16px}
+  .gate,.ty,.src{padding:64px 20px}
+  .gf{max-width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="con">
+    <div class="lb">The Closer Method</div>
+    <h1>this is a brand manager's<br><em>jmail</em> on monday morning</h1>
+    <p class="hero-sub">50 creator pitches landed in the last 48 hours. 47 were archived. 3 got a reply. Tap any message to see exactly why.</p>
+    <p class="hero-stat">92% OF COLD CREATOR PITCHES ARE IGNORED<sup>1</sup>. THIS IS WHAT THE OTHER 8% LOOK LIKE.</p>
+    <a class="hero-arr" href="#ibx"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+  </div>
+</section>
+
+<!-- INBOX -->
+<section class="ibx" id="ibx">
+  <div class="con">
+    <div class="jbar">
+      <div class="jlogo">jmail</div>
+      <div class="jbar-user">
+        <span>you@jmail.com</span>
+        <div class="jbar-av">Y</div>
+      </div>
+    </div>
+    <div class="ibx-head">
+      <div class="ibx-brand">Inbox &middot; <strong>primary</strong></div>
+      <div class="ibx-meta">50 unread &middot; past 48h</div>
+    </div>
+
+    <!-- TILES -->
+    <div id="tiles">
+      <!-- Tiles injected by JS to keep HTML clean -->
+    </div>
+
+    <p class="ibx-stat">3 of 50 replied &middot; <strong>6% reply rate</strong> &middot; aligns with industry benchmark for well-personalized outreach<sup>2</sup></p>
+  </div>
+</section>
+
+<!-- GATE -->
+<section class="gate" id="gate">
+  <div class="con">
+    <div class="lb">The prompt</div>
+    <h2>want the prompt that writes the <em>3</em>, not the <em>47</em>?</h2>
+    <p class="gate-sub">One AI prompt. 50 personalized pitches in 90 minutes. Built on the same 3 patterns that got the reply above.</p>
+    <p class="gate-social">used by creators pitching brands in 12+ niches</p>
+    <form class="gf" id="gf" onsubmit="return go(event)">
+      <input type="text" name="first_name" placeholder="First name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <button type="submit">Send me the prompt</button>
+    </form>
+    <p class="gate-note">Delivered to your inbox. No spam. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<!-- THANK YOU -->
+<section class="ty" id="ty">
+  <div class="con">
+    <div class="lb" style="margin-bottom:20px">the prompt is on its way</div>
+    <h2>check your inbox.</h2>
+    <p>The prompt and how to use it are in the first email. You'll also get four more emails this week, each one a real closing pattern from 15 years of enterprise sales.</p>
+    <p class="ty-check">If it doesn't show up in 5 minutes, check promotions or spam.</p>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<section class="src">
+  <div class="con">
+    <div class="src-lb">sources &middot; every tooltip cited</div>
+    <div class="src-list">
+      1. <strong>92% cold pitch ignore rate.</strong> Influencer Marketing Hub, <a href="https://influencermarketinghub.com/pitching-brands-via-email/" target="_blank" rel="noopener">Pitching Brands via Email: What Actually Works in 2025</a>.<br>
+      2. <strong>3-5% reply benchmark for well-personalized outreach.</strong> Saleshandy, <a href="https://www.saleshandy.com/blog/cold-email-statistics/" target="_blank" rel="noopener">Latest Cold Email Statistics (100M+ emails analyzed)</a>.<br>
+      3. <strong>Personalization with specific company reference: +142% reply rate.</strong> Woodpecker, <a href="https://woodpecker.co/blog/cold-email-statistics/" target="_blank" rel="noopener">Cold Email Statistics from 20M+ emails</a>.<br>
+      4. <strong>Personalized body content alone: +32.7% reply rate.</strong> Backlinko, referenced in Woodpecker <a href="https://woodpecker.co/blog/cold-email-reply-rate/" target="_blank" rel="noopener">Cold Email Reply Rate benchmark analysis</a>.<br>
+      5. <strong>Brands receive hundreds of "Hi, I'd love to collab" messages.</strong> Kalakaaar, <a href="https://kalakaaar.com/blog/creator-pitch-deck/" target="_blank" rel="noopener">Creator Pitch Deck Guide</a>.<br>
+      6. <strong>UGC ROI stats cited in standout pitches.</strong> UGC ads generate 4x engagement, UGC on product pages increases conversions 29%, UGC in email campaigns increases CTR 78% &mdash; aggregated creator economy data, <a href="https://influencermarketinghub.com/pitching-brands-via-email/" target="_blank" rel="noopener">IMH 2025</a>.
+    </div>
+  </div>
+</section>
+
+<footer><p>The Closer Method &copy; 2026</p></footer>
+
+<script>
+/* =============== DM DATA =============== */
+/* 50 pitches to GLAZE Beauty. 47 garbage, 3 standouts (flagged star:true). */
+const DMS = [
+  {s:"@jess.creates",t:"10:42 AM",subj:"collab?",prev:"hi!! obsessed with your brand 🥺 would love to work together. my rate is $300!",body:"hi!! obsessed with your brand 🥺 would love to work together. my rate is $300! let me know!",v:"Flattery without any specific reference to a product, post, or campaign. Rate stated before value. Pattern that accounts for the bulk of the 92% archive rate.",cite:"IMH 2025: 92% of cold creator pitches get ignored."},
+  {s:"@jake.ugc",t:"10:41 AM",subj:"UGC creator inquiry",prev:"Hi team, I'm a UGC creator with 45K followers. Portfolio attached.",body:"Hi team, I'm a UGC creator with 45K followers. Portfolio attached. Rates: $250/video, $400/reel, $800/campaign bundle. Let me know if there's a fit.",v:"Vendor voice, no brand research, rate card in first message. Reads like a mass-send. Brand managers forward these to interns.",cite:"Woodpecker: generic messages reply at ~1-3%, personalized reach +142%."},
+  {s:"@lex.content",t:"10:39 AM",subj:"Hi there",prev:"hey!! your brand is everything 💕 i'd love to collab!",body:"hey!! your brand is everything 💕 i'd love to collab! i'm open to PR in exchange for content!",v:"Worship language, no specifics. Asks for free product in the first message before offering anything concrete.",cite:"Brand manager archive decision time: under 10 seconds on non-relevant messages."},
+  {s:"@marcus.media",t:"10:37 AM",subj:"partnership opportunity",prev:"Hello team, I am reaching out to propose a partnership opportunity.",body:"Hello team, I am reaching out to propose a partnership opportunity. I create high-quality content for brands. Please let me know if you're interested and I can send my portfolio.",v:"Corporate template tone. Zero specifics. 'Interested?' is a yes/no close that makes the brand do all the thinking.",cite:"Backlinko: asking a yes/no question in a first message reduces reply rate vs. proposing a specific next step."},
+  {s:"@alicia.maee",t:"10:34 AM",subj:"🥺🥺🥺",prev:"hi i've been a fan for years please please can i work with you",body:"hi i've been a fan for years please please can i work with you 🥺🥺🥺 i'll do it for free just want exposure!!",v:"Emoji-only subject. Underprices to zero, which signals low-value work and trains the brand to never pay.",cite:"Enterprise sales principle: pricing at zero sets a permanent ceiling on perceived value."},
+  {s:"@nora.creates",t:"10:31 AM",subj:"Quick question",prev:"Hi! Do you work with creators?",body:"Hi! Do you work with creators? If yes I'd love to send my rates. Let me know!",v:"Yes-or-no opener that asks the brand to do the work. No value delivered in the message itself.",cite:"Sales research: discovery questions in first outreach underperform content-first pitches by 2-3x."},
+  {s:"@riley.creates",t:"10:28 AM",subj:"Rates below",prev:"Reels: $350. Posts: $250. Story set: $150. Let me know 💕",body:"Reels: $350. Posts: $250. Story set: $150. Stories/UGC/TikTok available. Let me know 💕",v:"Rate card with no framing, no research, no value proposition. Reads like a menu.",cite:"B2B sales research: leading with price before establishing value reduces close rate by up to 60%."},
+  {s:"@morning.media",t:"10:25 AM",subj:"We should work together",prev:"I think we'd be a great fit, let me know if you want to see my work.",body:"I think we'd be a great fit, let me know if you want to see my work. I can send a portfolio. Open to UGC, reels, full campaigns.",v:"Presumptuous open with no basis. 'I think we'd be a great fit' without a single specific reason reads as filler.",cite:"Backlinko: emails opening with unsupported claims reply at rates significantly below baseline."},
+  {s:"@claire.ugc",t:"10:23 AM",subj:"Creator here!",prev:"Hi, creator here! I make content for brands. DM me back!",body:"Hi, creator here! I make content for brands. DM me back! Can send samples.",v:"Self-identifier opener. The brand doesn't care who you are yet. They care what you bring.",cite:"Woodpecker: openings that describe the sender rather than the recipient reply at ~1%."},
+  {s:"@rae.creates",t:"10:19 AM",subj:"Hi [Brand Name]",prev:"Hi [Brand Name], I'd love to work with you on your next launch...",body:"Hi [Brand Name], I'd love to work with you on your next launch. I create UGC for brands in your space and would love to chat rates.",v:"Template tell. The merge field never got replaced. This is copy-paste outreach in its purest form.",cite:"Cold email research: template-tell errors reduce reply rate to effectively zero and damage sender reputation."},
+  {s:"@lana.media",t:"10:17 AM",subj:"interested in ugc?",prev:"hey are you interested in ugc content? dm back if yes",body:"hey are you interested in ugc content? dm back if yes. i have rates ready",v:"Fully lowercase, no punctuation, no brand name. The brand has no reason to say yes to a vague yes/no with no specifics.",cite:"IMH 2025: pitches that show zero research are the single largest category of ignored messages."},
+  {s:"@mateo.content",t:"10:14 AM",subj:"Your April 3 carousel + a format angle I'd test for May",prev:"Saw the April 3 carousel. The educational format pulled harder on saves than your usual product posts, which tracks with what's working across your category in Q2...",body:"Saw the April 3 carousel. The educational format pulled harder on saves than your usual product posts, which tracks with what's working across your category in Q2.\n\nThree 30-second clips testing that same format structure, shot to match your current feed tone. I film in your top-engaging demo segment so the comment signal stays consistent with your existing audience.\n\nOpen for a rate conversation this week. Thursday or Friday if you have 15 minutes.",v:"References a specific post with a specific metric direction. Proposes a content angle tied to what's already working. Names demo overlap in one line. Asks for a short, specific call window, not 'whenever works.' This got a reply in 11 hours.\n\nThis is what +142% personalization looks like in practice.",cite:"Woodpecker (20M emails): specific-reference personalization increases reply rates up to 142%.",star:true},
+  {s:"@cait.creates",t:"10:10 AM",subj:"Open to content creators?",prev:"Hi are you guys open to content creators? I'd love to work together.",body:"Hi are you guys open to content creators? I'd love to work together. My following is small but engaged. Rates on request.",v:"Permission-asking open. Brand has to answer a gating question before any value is exchanged. 'Rates on request' adds friction.",cite:"Backlinko: messages that require the recipient to ask follow-up questions reduce reply rates 30-40%."},
+  {s:"@natasha.media",t:"10:07 AM",subj:"Proposal attached",prev:"Please see attached proposal.",body:"Please see attached proposal. Looking forward to your response.",v:"Attachment dump. Brand has no reason to open the attachment because the message gave zero context.",cite:"Cold outreach research: cold messages with attachments but no body context are opened at roughly 5% of normal rate."},
+  {s:"@tyler.media",t:"10:04 AM",subj:"Hey hey hey!",prev:"Hey hey hey team 💖 can't wait to try your stuff! let's do a collab!",body:"Hey hey hey team 💖 can't wait to try your stuff! let's do a collab! i'll post to my 12k followers!!!",v:"Casual overcompensation. 'Can't wait to try your stuff' reveals he hasn't used the product. Follower count as the only credential.",cite:"Sales research: revealing non-familiarity with a prospect's product in the first message breaks credibility for the rest of the conversation."},
+  {s:"@mia.creates",t:"10:01 AM",subj:"UGC Content for You",prev:"We offer UGC content services at competitive rates.",body:"We offer UGC content services at competitive rates. Starting at $200 per video. Please let us know if interested.",v:"Vendor pronoun. 'We offer' positions the creator as a commodity service, not a partner.",cite:"B2B positioning research: vendor-voice pitches convert at a fraction of peer-voice pitches at the same price point."},
+  {s:"@ryan.media",t:"9:58 AM",subj:"i'm your target demo!",prev:"hi! i'm 28, i live in LA, i'm deep in your audience segment.",body:"hi! i'm 28, i live in LA, i'm deep in your audience segment. i think i'd be perfect for your brand! rates attached.",v:"Demographic match without a content plan. Matching the demo is necessary but not sufficient. The brand still needs a reason to hire him over everyone else who also matches.",cite:"IMH 2025: 'I'm your target demo' is the archetype of a first-message with no proposal attached."},
+  {s:"@vi.creates",t:"9:55 AM",subj:"Hi!",prev:"Hi! Content creator here!",body:"Hi! Content creator here! Please check my profile. Let me know if you want to collab!",v:"Three lines, zero substance. This is the minimum-effort pitch and it's extremely common.",cite:"Kalakaaar creator pitch research: brands receive hundreds of variants of this pattern per week."},
+  {s:"@april.duggan",t:"9:52 AM",subj:"Would love to collab",prev:"Would love to collab! I think my content style matches your brand aesthetic.",body:"Would love to collab! I think my content style matches your brand aesthetic. My rates are flexible. Let me know!",v:"'My content style matches' without examples or a specific post reference. 'Flexible rates' signals the creator has no pricing framework.",cite:"Woodpecker: unsupported claims in the opening paragraph reduce reply rate by 30-50%."},
+  {s:"@kennedy.co",t:"9:49 AM",subj:"following up",prev:"hi just following up on my previous DM!",body:"hi just following up on my previous DM! wanted to see if you got it. let me know 💕",v:"Following up on a message the brand never responded to because it wasn't worth responding to. Same message twice doesn't make it more compelling.",cite:"Woodpecker: follow-ups only boost replies by ~40% when the original message had enough substance to generate interest."},
+  {s:"@drew.creates",t:"9:46 AM",subj:"Partnership inquiry",prev:"Hi, I'm Drew. I'm a content creator specializing in lifestyle and product-forward content.",body:"Hi, I'm Drew. I'm a content creator specializing in lifestyle and product-forward content. I'd love to explore a partnership with your brand. Please see my portfolio linked in my bio.",v:"Introduction-heavy, value-light. 'I'd love to explore a partnership' is a hedge, not a proposal. Linked-in-bio adds a click that most brand managers won't make.",cite:"Sales research: first-message CTAs that require the recipient to navigate away have 50-70% lower engagement than in-message value."},
+  {s:"@aurora.co",t:"9:43 AM",subj:"Hi girl!!",prev:"Hi girl!! I've been watching your brand grow and I'm obsessed!!! let's link up!",body:"Hi girl!! I've been watching your brand grow and I'm obsessed!!! let's link up! i'll send my PR address once we lock it in 💕",v:"Worshipful tone. Presumes a 'we' relationship that doesn't exist. Asks for the brand's PR shipment before offering anything.",cite:"Sales research: presumed-familiarity openers with strangers reduce credibility below neutral outreach."},
+  {s:"@sam.content",t:"9:40 AM",subj:"I'll make you go viral",prev:"Hi, I have a proven system to make brands go viral on TikTok.",body:"Hi, I have a proven system to make brands go viral on TikTok. Let's hop on a quick call and I can walk you through it.",v:"Overpromise ('go viral') with no evidence. Immediately asks for a call before earning the brand's time.",cite:"B2B sales research: promising specific outcomes (viral, 10x, guaranteed) without case-study proof triggers brand manager skepticism filters."},
+  {s:"@ana.creates",t:"9:36 AM",subj:"Bonjour!",prev:"Bonjour, je suis une créatrice de contenu et je voudrais collaborer avec vous...",body:"Bonjour, je suis une créatrice de contenu et je voudrais collaborer avec vous! Mes tarifs sont disponibles sur demande.",v:"Language mismatch with brand audience. Demonstrates the creator didn't check the brand's primary market.",cite:"IMH 2025: basic research failure is the #1 self-inflicted reason for immediate archive."},
+  {s:"@kai.media",t:"9:33 AM",subj:"Creator rates 2026",prev:"Please find my rate card attached. Happy to adjust based on deliverables.",body:"Please find my rate card attached. Happy to adjust based on deliverables. Looking forward to hearing from you.",v:"Rate card as a first message. No framing, no brand-specific proposal, no reason for the brand to open the attachment.",cite:"Cold email research: attachment-first pitches reply at a fraction of the rate of in-body value proposals."},
+  {s:"@ema.content",t:"9:30 AM",subj:"Your brand is everything",prev:"Literally your brand is EVERYTHING. I need to work with you.",body:"Literally your brand is EVERYTHING. I need to work with you. Please consider me for your next campaign.",v:"All-caps flattery. 'I need' centers the creator's want, not the brand's need. The brand has zero incentive to consider someone on the basis of their declared obsession.",cite:"Kalakaaar: flattery-heavy openers are the single most common pattern in the 'Hi, I'd love to collab' archetype."},
+  {s:"@sofia.media",t:"9:27 AM",subj:"Your last launch went all-polished. No creator content in the mix.",prev:"Your last product launch leaned fully polished, no creator content in the mix. Two of your closest category comps ran 60% UGC against their Q1 launches and saved roughly 4x on production vs. studio...",body:"Your last product launch leaned fully polished, no creator content in the mix. Two of your closest category comps ran 60% UGC against their Q1 launches and saved roughly 4x on production vs. studio shoots.\n\nThree raw-style clips: one before/after, one routine format, one quick demo. 40-second cut for feed, 15 for reels. I'd propose a usage-capped flat fee so the creative risk stays on my side.\n\nHappy to send a 20-second audition clip first so you can vet production before we talk rate.",v:"Identifies a specific campaign gap the brand actually has. Brings competitor context as framing, not boasting. Structures the ask as test-first, risk-reversed. Offers a free audition so the ask feels safe. Frames the rate conversation behind proof.\n\nThis is +32.7% personalization in the body content alone, layered with enterprise risk-reversal framing.",cite:"Backlinko: personalized body content alone increases reply rate +32.7%. Enterprise B2B: risk-reversal offers increase prospect engagement 2-3x.",star:true},
+  {s:"@sel.content",t:"9:24 AM",subj:"collaboration",prev:"hi, i'd like to propose a collaboration. please see attached media kit.",body:"hi, i'd like to propose a collaboration. please see attached media kit. rates included.",v:"Generic subject, attachment-first, all lowercase passive tone. Nothing in the body tells the brand why this collaboration instead of someone else's.",cite:"Saleshandy 100M+ email dataset: lowercase unpunctuated openings correlate with below-benchmark reply rates."},
+  {s:"@emma.creates",t:"9:21 AM",subj:"Will work for free!!",prev:"Hi! I'm new to UGC and I'll work for free!! Just want exposure and to build my portfolio!",body:"Hi! I'm new to UGC and I'll work for free!! Just want exposure and to build my portfolio! Please consider me!",v:"Disclaimer opener. Announcing inexperience and offering free work lowers perceived quality. Brands that take free work treat the creator as free labor forever.",cite:"Pricing research: offers priced at zero are consumed at a 50% lower satisfaction rate than paid offers of equal objective value."},
+  {s:"@margo.creates",t:"9:18 AM",subj:"Dear Sir/Madam",prev:"Dear Sir/Madam, I am writing to inquire about potential UGC opportunities with your brand.",body:"Dear Sir/Madam, I am writing to inquire about potential UGC opportunities with your brand. Please find my rates and portfolio below.",v:"Formality mismatch. A modern D2C brand inbox in 2026 is not addressed as 'Dear Sir/Madam'. Signals template use without basic adjustment.",cite:"IMH 2025: register-mismatch pitches are archived within the first 3 seconds of scan."},
+  {s:"@isla.media",t:"9:15 AM",subj:"big fan small ask",prev:"Hi! Big fan! Small ask: would you consider sending me product to review?",body:"Hi! Big fan! Small ask: would you consider sending me product to review? I'd love to post about it to my 8k followers!",v:"Hedge-and-ask. 'Small ask' tries to minimize the ask but the ask is the creator's benefit, not the brand's. No content plan attached.",cite:"Sales research: hedge-language openers ('small ask', 'quick favor') signal low-confidence outreach and reduce reply rates."},
+  {s:"@bella.creates",t:"9:12 AM",subj:"Hi there",prev:"Hi there, let's work together!",body:"Hi there, let's work together! My style would be amazing for your brand. DM back for rates.",v:"Three sentences. No specifics. Asks the brand to DM for rates, adding friction.",cite:"Backlinko: three-sentence pitches with zero specific references reply at baseline (~1-3%)."},
+  {s:"@zoey.creates",t:"9:08 AM",subj:"Can I get free product?",prev:"Hi! Can you send me free product so I can post about it?",body:"Hi! Can you send me free product so I can post about it? I'd love to feature you on my page!",v:"Ask-first pitch. The creator takes before the brand gets a reason to give. 'I'd love to feature you' positions the brand as lucky to receive the creator's content, which brands don't react to well.",cite:"Behavioral sales research: ask-first outreach triggers a loss-aversion response in the prospect."},
+  {s:"@chloe.media",t:"9:05 AM",subj:"🥺🥺",prev:"plsss work with me 🥺🥺 ill do anything",body:"plsss work with me 🥺🥺 ill do anything. i'm obsessed with your brand pls.",v:"Emoji-only subject. Desperation signal. 'I'll do anything' removes all pricing power and destroys any future negotiation.",cite:"Pricing research: signaling desperation in outreach reduces win rate AND price point by double-digit percentages."},
+  {s:"@nikki.creates",t:"9:02 AM",subj:"Let's link up",prev:"Hi! Let's link up! I make content. DM me.",body:"Hi! Let's link up! I make content. DM me.",v:"Casual directive with no reason attached. The brand is being told what to do with zero value exchange.",cite:"Cold email research: directive-opener first messages to strangers reply at ~0.5%."},
+  {s:"@alex.media",t:"8:58 AM",subj:"I think we'd vibe",prev:"hi! i think we'd vibe! your aesthetic is my aesthetic. dm when u can!",body:"hi! i think we'd vibe! your aesthetic is my aesthetic. dm when u can!",v:"'Vibe' is not a content strategy. No deliverable proposed. No rate. No research.",cite:"IMH 2025: 'vibe' and 'aesthetic match' as sole pitch justification account for a large share of the 92% ignored bucket."},
+  {s:"@emerald.media",t:"8:55 AM",subj:"Hi! UGC content available",prev:"Hi! I have UGC content available for brands. Starting at $150/video.",body:"Hi! I have UGC content available for brands. Starting at $150/video. Available for immediate booking.",v:"Commodity positioning. Price-first. 'Available' reads like ad copy from a service listing, not a proposal.",cite:"B2B positioning research: commodity-voice pitches are interchangeable with every other commodity-voice pitch in the inbox."},
+  {s:"@sara.creates",t:"8:52 AM",subj:"collab",prev:"hi collab?",body:"hi collab?",v:"Three-word DM. Archive in under 2 seconds.",cite:"Brand manager scan-time research: sub-5-word messages with no subject context average under 3 seconds of attention."},
+  {s:"@peachtree.co",t:"8:49 AM",subj:"Content proposal",prev:"Hi, I'd like to propose content for your latest product. 3 videos, $300 total.",body:"Hi, I'd like to propose content for your latest product. 3 videos, $300 total. Turnaround 7 days. Portfolio: [link]",v:"Closer than most, but still zero research context for why THIS product over others. Flat rate with no structure signals a commodity service, not a strategic partner.",cite:"Enterprise B2B: price-only proposals without value framing reply at half the rate of value-framed proposals at the same price point."},
+  {s:"@lumen.media",t:"8:45 AM",subj:"Media kit attached",prev:"Hello. Media kit attached for your review.",body:"Hello. Media kit attached for your review. Happy to discuss opportunities.",v:"Corporate tone, attachment dump, zero body value. 'Happy to discuss opportunities' is a closing line on a message that didn't open anything.",cite:"Cold email research: messages that outsource all value to an attachment reply at ~5% of in-body pitches."},
+  {s:"@daisy.creates",t:"8:42 AM",subj:"love your vibe!",prev:"omg love your vibe!! would love to shoot content for you!",body:"omg love your vibe!! would love to shoot content for you! i'll send examples if interested 💕",v:"Two sentences of compliment and one conditional offer. Brand has to respond before the creator shares work.",cite:"Woodpecker: conditional-share offers ('if interested') underperform upfront-share by 40%+."},
+  {s:"@rose.creates",t:"8:39 AM",subj:"Circle back?",prev:"Hi! Just wanted to circle back on a potential collab. Does Q2 work?",body:"Hi! Just wanted to circle back on a potential collab. Does Q2 work? Open to various structures.",v:"Corporate-speak in creator context. 'Various structures' is a non-proposal.",cite:"Backlinko: corporate filler words in creator outreach reduce reply rates on mid-market brand inboxes."},
+  {s:"@jordan.creates",t:"8:36 AM",subj:"Shot UGC for 3 brands in your category this year. Want to pitch you.",prev:"Quick intro: I've shot UGC for three brands in your category this year (names available on request), all repeat bookings, averaging 2.1M organic views per campaign...",body:"Quick intro: I've shot UGC for three brands in your category this year (names available on request), all repeat bookings, averaging 2.1M organic views per campaign.\n\nYour product profile matches theirs. Your content calendar shows a gap around routine-format content, which is my highest-performing category.\n\nProposing a 3-video test at $650/video with one revision round and 90-day usage rights. Turnaround: 5 business days brief to first cut. Happy to start with one paid test before committing to the full batch.",v:"Leads with specific credentials, backed with specific metrics. Names category match. Identifies a specific content gap. Proposes clear rate + deliverables + usage rights. Offers test structure to de-risk. This is enterprise-grade sales posture translated into a DM.\n\nBrands reply to this because every sentence earns the next one.",cite:"Woodpecker: specificity + test-first structure compounds reply rates. Enterprise B2B sales: clear scope + usage + turnaround in first message shortens sales cycle 40%+.",star:true},
+  {s:"@petal.media",t:"8:32 AM",subj:"Collab rates",prev:"Hi! Attached are my collab rates for 2026. Let me know!",body:"Hi! Attached are my collab rates for 2026. Let me know!",v:"Rate-card drop with a 'let me know' close. No proposal, no research, no reason for the brand to engage.",cite:"Cold email research: rate-card-first messages are archived at near-100% rate on mid-market inboxes."},
+  {s:"@bluestar.co",t:"8:29 AM",subj:"pls pls pls",prev:"pls pls pls let me work with you i'll post 3 reels for free",body:"pls pls pls let me work with you i'll post 3 reels for free just send product 🥺",v:"Pleading tone. Free offer. The brand takes zero risk and also gives the creator zero perceived value.",cite:"Sales research: pleading openers reduce perceived sender value below neutral baseline."},
+  {s:"@marigold.co",t:"8:25 AM",subj:"Hi there!",prev:"Hi! Quick note: I run a TikTok with 62K followers in your space.",body:"Hi! Quick note: I run a TikTok with 62K followers in your space. Would love to discuss a partnership at some point. Let me know!",v:"Improved over some others. Niche overlap stated. But 'at some point' and 'let me know' drain all urgency and specificity. No deliverable proposed.",cite:"Backlinko: vague timing ('at some point', 'down the line') correlates with stalled threads at 3x baseline."},
+  {s:"@april.media",t:"8:21 AM",subj:"I make 10-sec edits",prev:"Hi! I make fast 10-second product edits that convert on TikTok. Can I send examples?",body:"Hi! I make fast 10-second product edits that convert on TikTok. Can I send examples?",v:"Specific format claim ('10-second edits that convert') is good. But 'can I send examples?' puts the burden on the brand to ask. Examples should have been in the first message.",cite:"Sales research: asking permission to share value delays the value share and reduces conversion."},
+  {s:"@bloom.media",t:"8:17 AM",subj:"Would love to be considered",prev:"Hi! I'd love to be considered for any upcoming campaigns. I'm a content creator.",body:"Hi! I'd love to be considered for any upcoming campaigns. I'm a content creator. Rates flexible.",v:"'Considered' frames the creator as a candidate waiting for selection. 'Flexible rates' signals the creator will take whatever is offered.",cite:"Positioning research: supplicant-voice pitches price-anchor below peer-voice pitches for the same deliverable."},
+  {s:"@jess.elaine",t:"8:13 AM",subj:"Hey!!",prev:"Hey!! Love your brand. Let's collab! DM me back for rates.",body:"Hey!! Love your brand. Let's collab! DM me back for rates.",v:"The archetype. Flattery, collab request, rate-behind-DM. This exact message structure lands in mid-market brand inboxes dozens of times per week.",cite:"Kalakaaar: 'Hi, I'd love to collab' archetype and its variants account for the dominant share of brand inbox volume."},
+  {s:"@oak.media",t:"8:08 AM",subj:"Content services",prev:"Hi, we provide UGC content services at competitive rates.",body:"Hi, we provide UGC content services at competitive rates. DM us for pricing.",v:"Agency voice. 'Competitive rates' is a non-statement. 'DM us' reverses the responsibility.",cite:"B2B outreach research: agency-tone openers in creator-to-brand contexts underperform peer-voice by 60%+."}
+];
+
+/* =============== RENDER =============== */
+function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+
+function render(){
+  const tiles = document.getElementById('tiles');
+  tiles.innerHTML = DMS.map((d,i)=>`
+    <div class="tile${d.star?' star':''}" data-i="${i}">
+      <div class="tile-sender">${esc(d.s)}</div>
+      <div class="tile-body">
+        <div class="tile-subj">${esc(d.subj)}</div>
+        <div class="tile-prev">${esc(d.prev)}</div>
+      </div>
+      <div class="tile-time">${esc(d.t)}</div>
+      <div class="panel">
+        <div class="panel-body"><div class="subj">SUBJECT:<span>${esc(d.subj)}</span></div>${esc(d.body)}</div>
+        <div class="panel-verdict">
+          <div class="panel-v-label">${d.star?'REPLIED':'ARCHIVED'}</div>
+          <div class="panel-v-text">${esc(d.v).replace(/\n/g,'<br><br>')}<span class="cite">source: ${esc(d.cite)}</span></div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  tiles.addEventListener('click', e => {
+    const t = e.target.closest('.tile');
+    if(!t) return;
+    t.classList.toggle('open');
+  });
+}
+render();
+
+/* =============== OPT-IN =============== */
+const _utm = (() => {
+  const p = new URLSearchParams(location.search);
+  return {
+    utm_source: p.get('utm_source') || '',
+    utm_medium: p.get('utm_medium') || '',
+    utm_campaign: p.get('utm_campaign') || '',
+    utm_content: p.get('utm_content') || '',
+    utm_term: p.get('utm_term') || '',
+    referrer: document.referrer || ''
+  };
+})();
+
+async function go(e){
+  e.preventDefault();
+  const f=e.target, n=f.first_name.value, em=f.email.value, b=f.querySelector('button');
+  b.textContent='Sending...'; b.disabled=true;
+  try{
+    const body = new URLSearchParams({
+      'email_address': em,
+      'fields[first_name]': n,
+      'fields[utm_source]': _utm.utm_source || 'inbox',
+      'fields[utm_medium]': _utm.utm_medium || 'landing_page',
+      'fields[utm_campaign]': _utm.utm_campaign || 'inbox_sim',
+      'fields[utm_content]': _utm.utm_content,
+      'fields[utm_term]': _utm.utm_term,
+      'fields[referrer]': _utm.referrer,
+      'tags[]': '18972075'
+    });
+    await fetch('https://app.kit.com/forms/9131179/subscriptions',{
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body
+    });
+    if(typeof fbq==='function'){
+      fbq('track','Lead',{content_name:'AI Pitch Prompt',source:'inbox_sim'});
+    }
+  }catch(err){console.log('Kit:',err)}
+  document.getElementById('gate').style.display='none';
+  document.getElementById('ty').classList.add('vis');
+  document.getElementById('ty').scrollIntoView({behavior:'smooth'});
+}
+
+document.querySelector('.hero-arr')?.addEventListener('click',e=>{
+  e.preventDefault();
+  document.getElementById('ibx').scrollIntoView({behavior:'smooth'});
+});
+</script>
+</body>
+</html>

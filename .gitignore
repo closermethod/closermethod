@@ -1,0 +1,22 @@
+# ── secrets / local state · never commit ──
+.env
+.env.*
+*.key
+*.pem
+*secret*
+
+# Local Netlify folder (can hold auth tokens)
+.netlify/
+
+# ── dependencies / build artifacts ──
+node_modules/
+dist/
+.cache/
+
+# ── OS / editor cruft ──
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+.idea/
+.vscode/

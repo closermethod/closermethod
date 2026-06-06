@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Builder Lounge | Build artifacts. Ship URLs. Stop disappearing.</title>
+<meta name="description" content="A weekly community for builders who use AI to make real things. Live build sessions every Wednesday. Weekly prompt drops. Feedback on your builds from Eli directly. Founding rate $47/mo.">
+<meta property="og:title" content="The AI Builder Lounge | Build with Claude weekly">
+<meta property="og:description" content="Live build sessions every Wednesday. Weekly prompt drops. Feedback on your builds. Founding rate $47/mo locked for life.">
+<meta property="og:url" content="https://closermethod.com/lounge">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://closermethod.com/lounge">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+
+<!-- FB Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','35298849146380570');fbq('track','PageView');
+fbq('track','ViewContent',{content_name:'lounge_page',content_category:'community',value:47,currency:'USD'});
+</script>
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-Q2458LX0VD',{page_path:'/lounge'});
+gtag('event','view_item',{currency:'USD',value:47,items:[{item_id:'ai_builder_lounge',item_name:'AI Builder Lounge',price:47}]});
+</script>
+
+<style>
+:root {
+  --cream: #faf6ee; --cream-deep: #f1ead8; --paper: #fffdf7;
+  --ink: #2a2a28; --ink-soft: #4a4a46; --ink-muted: #7a7a70;
+  --sage: #7a9778; --sage-deep: #4e6d4f; --sage-soft: #b8cdb6; --sage-whisper: #e6ede4;
+  --rule: #d8cfb8;
+  --terracotta: #C4704B; --terracotta-light: #D4916F;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); font-size: 17px; line-height: 1.65; }
+.container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+.container-wide { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+/* Top bar */
+.topbar { padding: 18px 24px; text-align: center; border-bottom: 1px solid var(--rule); background: rgba(250,246,238,0.94); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 50; }
+.topbar a { font-family: 'Lora', serif; font-weight: 600; font-size: 17px; color: var(--ink); text-decoration: none; }
+.topbar a em { font-style: italic; color: var(--sage-deep); font-weight: 500; }
+
+/* Hero */
+.hero { padding: 64px 0 48px; text-align: center; }
+.hero .eyebrow { display: inline-block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage-deep); font-weight: 600; padding: 7px 18px; background: var(--sage-whisper); border-radius: 100px; margin-bottom: 22px; }
+.hero h1 { font-family: 'Lora', serif; font-size: clamp(36px, 6.5vw, 60px); line-height: 1.05; font-weight: 500; letter-spacing: -0.025em; margin-bottom: 20px; }
+.hero h1 em { font-style: italic; color: var(--sage-deep); font-weight: 500; }
+.hero .subhead { font-size: 18px; line-height: 1.5; color: var(--ink-soft); max-width: 540px; margin: 0 auto 32px; }
+.stat-strip { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; max-width: 600px; margin: 0 auto 36px; padding: 18px 24px; background: var(--paper); border: 1px solid var(--rule); border-radius: 16px; }
+.stat-strip .stat { display: flex; flex-direction: column; align-items: center; }
+.stat-num { font-family: 'Lora', serif; font-size: 28px; font-weight: 600; color: var(--sage-deep); line-height: 1; }
+.stat-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); font-weight: 600; margin-top: 6px; }
+
+/* What's inside */
+.inside { background: var(--paper); padding: 80px 24px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.section-eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage-deep); font-weight: 600; margin-bottom: 14px; display: block; text-align: center; }
+.section-title { font-family: 'Lora', serif; font-size: clamp(30px, 4.6vw, 44px); line-height: 1.15; font-weight: 500; letter-spacing: -0.02em; text-align: center; margin-bottom: 36px; }
+.section-title em { font-style: italic; color: var(--sage-deep); }
+.inside-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; max-width: 980px; margin: 0 auto; }
+.inside-card { background: var(--cream); border: 1px solid var(--rule); border-radius: 14px; padding: 24px 26px; }
+.inside-card .icon { font-family: 'Lora', serif; font-style: italic; font-size: 28px; color: var(--sage-deep); font-weight: 500; line-height: 1; margin-bottom: 10px; display: block; }
+.inside-card h3 { font-family: 'Lora', serif; font-size: 18px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; }
+.inside-card p { font-size: 14px; line-height: 1.55; color: var(--ink-muted); }
+
+/* How it works */
+.how { padding: 80px 24px; }
+.how-steps { max-width: 720px; margin: 0 auto; }
+.how-step { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--rule); align-items: flex-start; }
+.how-step:last-child { border-bottom: none; }
+.how-step .num { flex-shrink: 0; width: 36px; height: 36px; background: var(--sage-deep); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Lora', serif; font-style: italic; font-weight: 600; font-size: 15px; }
+.how-step .body h4 { font-family: 'Lora', serif; font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+.how-step .body p { font-size: 14px; color: var(--ink-muted); line-height: 1.55; }
+
+/* Pricing */
+.pricing { background: var(--cream-deep); padding: 80px 24px; }
+.price-wrap { max-width: 540px; margin: 0 auto; text-align: center; }
+.price-box { background: #fff; border-radius: 18px; padding: 40px 32px; box-shadow: 0 8px 32px rgba(78,109,79,0.08); border: 2px solid var(--sage); position: relative; }
+.price-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--sage-deep); color: #fff; padding: 6px 22px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.price-amount { font-family: 'Lora', serif; font-size: 60px; font-weight: 600; color: var(--sage-deep); line-height: 1; margin: 16px 0 6px; }
+.price-amount .per { font-size: 18px; color: var(--ink-muted); font-weight: 400; vertical-align: middle; }
+.price-anchor { font-size: 13px; color: var(--ink-muted); margin-bottom: 18px; }
+.price-anchor s { color: var(--ink-muted); opacity: 0.7; }
+.price-includes { text-align: left; margin: 22px 0 24px; padding-top: 18px; border-top: 1px solid var(--rule); list-style: none; }
+.price-includes li { padding: 6px 0; padding-left: 26px; position: relative; font-size: 14px; line-height: 1.5; }
+.price-includes li::before { content: "✓"; position: absolute; left: 0; color: var(--sage-deep); font-weight: 700; }
+.cta-btn { display: inline-flex; align-items: center; gap: 10px; padding: 18px 38px; background: var(--sage-deep); color: #fff; border: none; border-radius: 100px; font-family: inherit; font-size: 16px; font-weight: 600; text-decoration: none; cursor: pointer; transition: all 0.2s; box-shadow: 0 6px 18px rgba(92,122,79,0.25); }
+.cta-btn:hover { background: var(--sage); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(92,122,79,0.35); }
+.price-note { margin-top: 14px; font-size: 13px; color: var(--ink-muted); font-style: italic; }
+
+/* Cap warning */
+.cap { background: rgba(196,112,75,0.08); border-left: 3px solid var(--terracotta); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 24px auto 0; max-width: 480px; text-align: left; font-size: 14px; line-height: 1.5; color: var(--ink-soft); }
+.cap strong { color: var(--terracotta); font-weight: 700; display: block; margin-bottom: 4px; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
+
+/* Email gate (for non-buyers) */
+.gate { background: var(--ink); color: var(--cream); padding: 80px 24px; text-align: center; }
+.gate h3 { font-family: 'Lora', serif; font-size: clamp(24px, 4vw, 34px); font-weight: 500; line-height: 1.25; margin-bottom: 14px; }
+.gate h3 em { font-style: italic; color: var(--sage-soft); }
+.gate p { color: rgba(250,246,238,0.7); margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.gate-form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; max-width: 520px; margin: 0 auto; }
+.gate-form input { flex: 1; min-width: 240px; padding: 16px 20px; font-family: inherit; font-size: 15px; border: 1px solid rgba(250,246,238,0.25); background: rgba(250,246,238,0.05); color: var(--cream); border-radius: 100px; outline: none; transition: all 0.2s; }
+.gate-form input:focus { border-color: var(--sage-soft); background: rgba(250,246,238,0.1); }
+.gate-form input::placeholder { color: rgba(250,246,238,0.5); }
+.gate-form button { padding: 14px 28px; background: var(--cream); color: var(--ink); border: none; border-radius: 100px; font-family: inherit; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.gate-form button:hover { background: #fff; transform: translateY(-1px); }
+.gate-status { margin-top: 14px; font-size: 14px; min-height: 20px; }
+
+/* Footer */
+footer { padding: 32px 24px; text-align: center; font-size: 13px; color: var(--ink-muted); border-top: 1px solid var(--rule); }
+footer a { color: var(--ink-soft); text-decoration: none; }
+
+@media (max-width:480px) { .stat-strip { gap: 18px; } .price-amount { font-size: 48px; } }
+</style>
+</head>
+<body>
+
+<nav class="topbar"><a href="https://closermethod.com">the closer <em>method</em></a></nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">The AI Builder Lounge</div>
+    <h1>Build artifacts. Ship URLs.<br><em>Stop disappearing.</em></h1>
+    <p class="subhead">A weekly community for builders who use AI to make real things. Live builds every Wednesday. Weekly prompts. Feedback on your work from me directly.</p>
+    <div class="stat-strip">
+      <div class="stat"><span class="stat-num">$47</span><span class="stat-label">founding rate</span></div>
+      <div class="stat"><span class="stat-num">50</span><span class="stat-label">spots only</span></div>
+      <div class="stat"><span class="stat-num">∞</span><span class="stat-label">locked for life</span></div>
+    </div>
+    <a href="#join" class="cta-btn">See what's inside &rarr;</a>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="inside" id="inside">
+  <div class="container-wide">
+    <span class="section-eyebrow">What's inside</span>
+    <h2 class="section-title">A weekly rhythm. <em>Not another course you abandon.</em></h2>
+    <div class="inside-grid">
+      <div class="inside-card">
+        <span class="icon">i</span>
+        <h3>Live build sessions</h3>
+        <p>Wednesdays 6pm CEST. 45 minutes. I build something live, you watch and ask questions. Recording always posted within 2 hours.</p>
+      </div>
+      <div class="inside-card">
+        <span class="icon">ii</span>
+        <h3>Weekly prompt drops</h3>
+        <p>Every Monday, one new exclusive prompt. Built fresh, tested by me, drops in the classroom + main feed.</p>
+      </div>
+      <div class="inside-card">
+        <span class="icon">iii</span>
+        <h3>Feedback on your builds</h3>
+        <p>Post a live URL. I review specifics. What's working, what's blocking conversion, what to ship next. Every Friday.</p>
+      </div>
+      <div class="inside-card">
+        <span class="icon">iv</span>
+        <h3>DM access</h3>
+        <p>Direct message me inside the community. I answer 1-2x per week. Real questions, real replies, no bot.</p>
+      </div>
+      <div class="inside-card">
+        <span class="icon">v</span>
+        <h3>Classroom library</h3>
+        <p>Every prior session, every weekly prompt, organized in modules. Brand voice → first artifact → compounding builds → pitching with AI.</p>
+      </div>
+      <div class="inside-card">
+        <span class="icon">vi</span>
+        <h3>Member spotlights</h3>
+        <p>Best builds get featured on my X feed (with your permission). Real eyeballs on your work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF (receipts row · same testimonials as /artifacts) -->
+<section style="background:var(--cream); padding:80px 24px; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+  <div class="container-wide">
+    <span class="section-eyebrow">What members have built using these prompts</span>
+    <h2 class="section-title">Receipts, <em>not testimonials.</em></h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px; margin-top:36px; max-width:980px; margin-left:auto; margin-right:auto;">
+      <div style="background:var(--paper); border:1px solid var(--rule); border-radius:16px; padding:26px 28px;">
+        <p style="font-family:'Lora',serif; font-style:italic; font-size:18px; line-height:1.5; color:var(--ink); margin-bottom:18px; letter-spacing:-0.005em;">"Incredible. 10 out of 10. I've never seen anything like this before."</p>
+        <div style="display:flex; justify-content:space-between; padding-top:14px; border-top:1px solid var(--rule); font-size:12px;">
+          <span style="font-weight:600; color:var(--ink-soft);">Jen E · @explorewithjene</span>
+          <span style="color:var(--sage-deep); font-weight:600; font-size:11px; letter-spacing:0.08em; text-transform:uppercase;">On the system</span>
+        </div>
+      </div>
+      <div style="background:var(--paper); border:1px solid var(--rule); border-radius:16px; padding:26px 28px;">
+        <p style="font-family:'Lora',serif; font-style:italic; font-size:18px; line-height:1.5; color:var(--ink); margin-bottom:18px; letter-spacing:-0.005em;">"Already using this with my clients. It's changed how I work."</p>
+        <div style="display:flex; justify-content:space-between; padding-top:14px; border-top:1px solid var(--rule); font-size:12px;">
+          <span style="font-weight:600; color:var(--ink-soft);">Mel Van Niekerk</span>
+          <span style="color:var(--sage-deep); font-weight:600; font-size:11px; letter-spacing:0.08em; text-transform:uppercase;">Using with clients</span>
+        </div>
+      </div>
+      <div style="background:var(--paper); border:1px solid var(--rule); border-radius:16px; padding:26px 28px;">
+        <p style="font-family:'Lora',serif; font-style:italic; font-size:18px; line-height:1.5; color:var(--ink); margin-bottom:18px; letter-spacing:-0.005em;">"The templates actually get replies. My inbox looks different now."</p>
+        <div style="display:flex; justify-content:space-between; padding-top:14px; border-top:1px solid var(--rule); font-size:12px;">
+          <span style="font-weight:600; color:var(--ink-soft);">terii · @TeriiUgc</span>
+          <span style="color:var(--sage-deep); font-weight:600; font-size:11px; letter-spacing:0.08em; text-transform:uppercase;">Active inbound</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live artifacts row · proof of the framework working -->
+    <div style="margin-top:48px; max-width:980px; margin-left:auto; margin-right:auto;">
+      <p style="text-align:center; font-size:13px; color:var(--ink-muted); margin-bottom:16px; font-family:'Lora',serif; font-style:italic;">Built with the same prompts you'll get every Monday in the Lounge:</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px;">
+        <a href="https://closermethod.com/brain" target="_blank" rel="noopener" style="padding:14px 16px; background:var(--paper); border:1px solid var(--rule); border-radius:10px; text-decoration:none; text-align:center; color:var(--ink); font-family:'Lora',serif; font-weight:500; font-size:14px;">Brain Builder<br><span style="font-size:11px; color:var(--sage-deep); font-family:system-ui,sans-serif; font-weight:600; letter-spacing:0.04em;">closermethod.com/brain</span></a>
+        <a href="https://closermethod.com/score" target="_blank" rel="noopener" style="padding:14px 16px; background:var(--paper); border:1px solid var(--rule); border-radius:10px; text-decoration:none; text-align:center; color:var(--ink); font-family:'Lora',serif; font-weight:500; font-size:14px;">Prompt Scorer<br><span style="font-size:11px; color:var(--sage-deep); font-family:system-ui,sans-serif; font-weight:600; letter-spacing:0.04em;">closermethod.com/score</span></a>
+        <a href="https://closermethod.com/rate" target="_blank" rel="noopener" style="padding:14px 16px; background:var(--paper); border:1px solid var(--rule); border-radius:10px; text-decoration:none; text-align:center; color:var(--ink); font-family:'Lora',serif; font-weight:500; font-size:14px;">Rate Calculator<br><span style="font-size:11px; color:var(--sage-deep); font-family:system-ui,sans-serif; font-weight:600; letter-spacing:0.04em;">closermethod.com/rate</span></a>
+        <a href="https://launchstack-ai.netlify.app" target="_blank" rel="noopener" style="padding:14px 16px; background:var(--paper); border:1px solid var(--rule); border-radius:10px; text-decoration:none; text-align:center; color:var(--ink); font-family:'Lora',serif; font-weight:500; font-size:14px;">LaunchStack<br><span style="font-size:11px; color:var(--sage-deep); font-family:system-ui,sans-serif; font-weight:600; letter-spacing:0.04em;">launchstack-ai.netlify.app</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="container">
+    <span class="section-eyebrow">How it works</span>
+    <h2 class="section-title">Show up, build, ship. <em>Compound.</em></h2>
+    <div class="how-steps">
+      <div class="how-step"><div class="num">1</div><div class="body"><h4>Join the lounge</h4><p>Founding rate $47/mo locked for life. After 50 founding members fill, public goes to $97/mo.</p></div></div>
+      <div class="how-step"><div class="num">2</div><div class="body"><h4>Watch Module 1 (10 min)</h4><p>Brand Voice First. Build your AI voice guide. Every prompt you run after this gets dramatically better output.</p></div></div>
+      <div class="how-step"><div class="num">3</div><div class="body"><h4>Pick the weekly prompt</h4><p>Run it. Iterate. Ship to a real URL. Drop it in the feed.</p></div></div>
+      <div class="how-step"><div class="num">4</div><div class="body"><h4>Get feedback</h4><p>I review every member build. Post yours, get specifics back from me, ship the v2.</p></div></div>
+      <div class="how-step"><div class="num">5</div><div class="body"><h4>Show up Wednesday</h4><p>Live build session. Watch me build, ask questions, see how decisions get made in real time.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="join">
+  <div class="price-wrap">
+    <span class="section-eyebrow">Pricing</span>
+    <h2 class="section-title">Founding rate. <em>Locked for life.</em></h2>
+    <div class="price-box">
+      <div class="price-badge">Founding · 50 spots</div>
+      <div class="price-anchor">After 50 founding members: <s>$47</s> → $97/mo</div>
+      <div class="price-amount">$47<span class="per">/mo</span></div>
+      <ul class="price-includes">
+        <li>Weekly live build session (Wed 6pm CEST)</li>
+        <li>Weekly exclusive prompt drop (Mondays)</li>
+        <li>DM access to me directly</li>
+        <li>Build feedback on your live URLs</li>
+        <li>Full classroom library forever</li>
+        <li>Member spotlight feature on my X (opt-in)</li>
+        <li>Cancel anytime · no contracts</li>
+      </ul>
+      <a href="https://www.skool.com/closermethod" class="cta-btn" onclick="if(typeof gtag!=='undefined')gtag('event','lounge_join_click',{transport_type:'beacon'});if(typeof fbq!=='undefined')fbq('track','InitiateCheckout',{value:47,currency:'USD',content_name:'lounge_founding'});" target="_blank" rel="noopener">Join the founding cohort &rarr;</a>
+      <p class="price-note">$47/mo · founding rate locked for life · cancel anytime</p>
+    </div>
+    <div class="cap">
+      <strong>Why the cap is real</strong>
+      Founding rate is actually limited to 50. Once filled, price moves to $97/mo for everyone after. No re-opens. No exceptions. The cap exists so I can show up for every member personally during the first cohort.
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL GATE for non-buyers -->
+<section class="gate">
+  <div class="container">
+    <h3>Not ready yet?<br><em>Get the weekly free prompt.</em></h3>
+    <p>One prompt every Monday, delivered free. Same prompt the lounge gets. The accountability + live sessions + DM access stay paid.</p>
+    <form class="gate-form" id="loungeForm" novalidate>
+      <input type="email" id="loungeEmail" name="email" placeholder="your@email.com" required autocomplete="email" inputmode="email" autocapitalize="off">
+      <button type="submit" id="loungeBtn">Send me the free prompt</button>
+    </form>
+    <div class="gate-status" id="loungeStatus" aria-live="polite"></div>
+  </div>
+</section>
+
+<footer>
+  <p>built by <a href="https://closermethod.com">elisabeth hitz</a> · the closer method · &copy; 2026</p>
+</footer>
+
+<script>
+document.getElementById('loungeForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  var email = document.getElementById('loungeEmail').value.trim();
+  var status = document.getElementById('loungeStatus');
+  var btn = document.getElementById('loungeBtn');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    status.style.color = '#D4916F';
+    status.textContent = 'check that email and try again';
+    return;
+  }
+  btn.disabled = true; btn.textContent = 'sending...';
+  try {
+    await fetch('/.netlify/functions/subscribe', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email, source: 'lounge_waitlist'})
+    });
+    status.style.color = 'var(--sage-soft)';
+    status.textContent = "✓ you're in. first prompt drops Monday.";
+    btn.textContent = 'done';
+    if (typeof gtag !== 'undefined') gtag('event', 'lounge_waitlist_subscribe', {transport_type: 'beacon'});
+    if (typeof fbq !== 'undefined') fbq('track', 'Lead', {content_name: 'lounge_waitlist'});
+  } catch (err) {
+    status.style.color = '#D4916F';
+    status.textContent = 'something broke · try again or DM @closermethod';
+    btn.disabled = false; btn.textContent = 'Send me the free prompt';
+  }
+});
+</script>
+
+</body>
+</html>

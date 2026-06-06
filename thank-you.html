@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You're in. Check your inbox. | The Closer Method</title>
+  <meta name="description" content="Your email is in. The next step is in your inbox."/>
+  <meta name="robots" content="noindex"/>
+  <link rel="canonical" href="https://closermethod.com/thank-you.html"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231A1714'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%2313B38B' font-style='italic'%3Em%3C/text%3E%3C/svg%3E"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','35298849146380570');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"/></noscript>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2458LX0VD', { page_path: '/thank-you.html' });
+
+    // Fire a Lead conversion (this page is reached after an email-capture lander submit).
+    // Source query param (?from=...) tags WHICH lander sent them, so GA4 reports show which lander converted.
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var src = (params.get('from') || 'unknown').toLowerCase().replace(/[^a-z0-9_-]/g,'').slice(0,40);
+      var emailPresent = !!(params.get('e') || '').trim();
+
+      // Dedupe so refreshes don't double-count.
+      var dedupeKey = 'cm_lead_' + src + '_' + (params.get('e') || 'noemail');
+      var fired = false;
+      try { fired = localStorage.getItem(dedupeKey) === '1'; } catch(e) {}
+
+      if (!fired) {
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Lead', { content_name: 'thank-you-' + src, lead_source: src, email_present: emailPresent });
+        }
+        gtag('event', 'generate_lead', { currency: 'USD', value: 0, lead_source: src, email_present: emailPresent });
+        try { localStorage.setItem(dedupeKey, '1'); } catch(e) {}
+      }
+    })();
+  </script>
+
+  <style>
+    :root{--cream:#FEF7F5;--blush:#FDF3EF;--white:#fff;--teal:#13B38B;--teal-hover:#0F9A77;--charcoal:#2C2825;--deep:#1A1714;--warm-gray:#6B635D;--stone:#E9DDD8}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--charcoal);-webkit-font-smoothing:antialiased;font-size:.95rem;line-height:1.7}
+    h1,h2{font-family:'Cormorant Garamond',serif;color:var(--deep);font-weight:500;line-height:1.15}
+    a{color:var(--teal);text-decoration:none}
+    a:hover{color:var(--teal-hover);text-decoration:underline}
+    .topnav{text-align:center;padding:22px 20px;border-bottom:1px solid var(--stone)}
+    .topnav a{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--deep);letter-spacing:.02em;text-decoration:none}
+    .wrap{max-width:680px;margin:0 auto;padding:48px 22px 64px}
+    .card{background:var(--white);border:1px solid var(--stone);border-radius:14px;padding:48px 40px;box-shadow:0 8px 28px rgba(0,0,0,.04)}
+    .eyebrow{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--teal);margin-bottom:14px}
+    h1{font-size:clamp(1.9rem,4.6vw,2.6rem);margin-bottom:14px}
+    .lead{font-size:1.05rem;color:var(--charcoal);margin-bottom:10px}
+    .lead strong{color:var(--deep)}
+    p.note{font-size:.92rem;color:var(--warm-gray);margin-bottom:8px}
+    .steps{margin:28px 0 8px;border-top:1px solid var(--stone);padding-top:24px}
+    .steps li{list-style:none;padding-left:28px;position:relative;margin:0 0 14px;font-size:.95rem;color:var(--charcoal)}
+    .steps li::before{content:counter(s);counter-increment:s;position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:var(--teal);color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+    .steps{counter-reset:s}
+    .next{margin-top:28px;padding-top:24px;border-top:1px solid var(--stone)}
+    .next h2{font-size:1.3rem;margin-bottom:10px}
+    .btn{display:inline-block;padding:13px 24px;background:var(--teal);color:#fff;border-radius:7px;font-weight:600;font-size:.92rem;text-decoration:none;margin-top:6px;transition:background .15s}
+    .btn:hover{background:var(--teal-hover);text-decoration:none;color:#fff}
+    footer{padding:28px 20px;text-align:center;font-size:.82rem;color:var(--warm-gray)}
+    @media(max-width:560px){.card{padding:36px 24px}}
+  </style>
+</head>
+<body>
+
+<nav class="topnav"><a href="https://closermethod.com">the closer method</a></nav>
+
+<main class="wrap">
+  <div class="card">
+    <div class="eyebrow">You're in</div>
+    <h1>Check your inbox.</h1>
+    <p class="lead">Your email is on the list. The next step is sitting in your inbox right now.</p>
+    <p class="note" id="emailLine"></p>
+
+    <ol class="steps">
+      <li>Open your email. Look for a message from <strong>Elisabeth</strong> or <strong>The Closer Method</strong>.</li>
+      <li>If it is not in the inbox in 2 minutes, check Promotions, Updates, or Spam.</li>
+      <li>Reply with one word so the next emails always reach you. Even "hi" works.</li>
+    </ol>
+
+    <div class="next">
+      <h2>While you wait</h2>
+      <p class="note">Every free tool I have built lives in one place. Pick what you need.</p>
+      <a class="btn" href="https://closermethod.com/tools/">See every tool</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Built by <a href="https://closermethod.com">The Closer Method</a>. If something looks off, reply to any email and I will see it.
+</footer>
+
+<script>
+  // Personalize the "we got <email>" line if e= was passed.
+  (function() {
+    try {
+      var e = new URLSearchParams(window.location.search).get('e');
+      if (e && /@/.test(e)) {
+        var safe = String(e).slice(0,80).replace(/[<>"]/g,'');
+        document.getElementById('emailLine').textContent = 'We sent it to ' + safe + '.';
+      }
+    } catch(_) {}
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0B">
+<title>ship your first paying client in 21 days · closer method</title>
+<meta name="description" content="the free day-by-day 21-day plan to your first paying client + 4-file starter. then the full 27-skill toolkit. by eli hitz · ex-deel · ex-criteo.">
+<link rel="canonical" href="https://closermethod.com/ship">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://closermethod.com/ship">
+<meta property="og:title" content="ship your first paying client in 21 days">
+<meta property="og:description" content="the free day-by-day 21-day plan to your first paying client + 4 starter files. then the full 27-skill toolkit.">
+<meta property="og:image" content="https://closermethod.com/og/og-ship.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ship your first paying client in 21 days">
+<meta name="twitter:description" content="the free day-by-day 21-day plan to your first paying client + 4 starter files. then the full 27-skill toolkit.">
+<meta name="twitter:image" content="https://closermethod.com/og/og-ship.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://buy.stripe.com">
+<link rel="preconnect" href="https://closer-kit-launch.netlify.app">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap"></noscript>
+<style>
+:root{
+  --bg:#0A0A0B;
+  --surface:#131316;
+  --surface-2:#1C1C20;
+  --border:#27272A;
+  --border-strong:#3F3F46;
+  --text:#FAFAFA;
+  --text-2:#A1A1AA;
+  --text-3:#9999A3;
+  --accent:#FF6B35;
+  --accent-hover:#FF8556;
+  --accent-soft:rgba(255,107,53,.12);
+  --pos:#4ADE80;
+  --neg:#F87171;
+  --radius:10px;
+  --radius-lg:14px;
+  --maxw:1080px;
+  --pad:20px;
+  --t-sans:'Geist',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --t-mono:'Geist Mono',ui-monospace,'SF Mono',Menlo,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--t-sans);font-weight:400;line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,svg{max-width:100%;display:block}
+a{color:var(--text);text-decoration:none}
+a:hover{color:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:var(--t-mono);font-size:.78em;letter-spacing:.02em;color:var(--text-2)}
+.eyebrow{font-family:var(--t-mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin:0 0 12px}
+.muted{color:var(--text-2)}
+.divider{height:1px;background:var(--border);margin:48px 0}
+
+.bar{position:sticky;top:0;z-index:50;background:rgba(10,10,11,.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border)}
+.bar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px var(--pad);font-family:var(--t-mono);font-size:.78rem;color:var(--text-2)}
+.bar-left{display:flex;gap:10px;align-items:center;min-width:0}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft);flex-shrink:0}
+.bar-cd{color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+#cd{display:inline-block;min-width:14ch}
+#cd2{display:inline-block;min-width:8ch;text-align:left;font-variant-numeric:tabular-nums}
+.bar-cd b{color:var(--accent);font-weight:500}
+.bar-right{display:none}
+@media(min-width:640px){.bar-right{display:block}}
+
+.hero{padding:56px 0 40px}
+@media(min-width:768px){.hero{padding:80px 0 56px}}
+.h1{font-size:clamp(2rem,5.6vw,3.4rem);line-height:1.05;letter-spacing:-.025em;font-weight:600;margin:0 0 18px;color:var(--text)}
+.h1 i{font-style:normal;color:var(--accent)}
+.lead{font-size:clamp(1.05rem,2.2vw,1.25rem);line-height:1.55;color:var(--text-2);margin:0 0 24px;max-width:640px}
+.byline{display:flex;align-items:center;gap:14px;margin:0 0 28px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);max-width:580px}
+.byline-mark{width:64px;height:64px;border-radius:50%;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,var(--accent),#C8421E)}
+.byline-mark img{width:100%;height:100%;object-fit:cover;display:block}
+.byline-text{font-size:.85rem;line-height:1.35;color:var(--text-2)}
+.byline-text b{color:var(--text);font-weight:500}
+.cta-row{display:flex;flex-direction:column;gap:12px;margin:0 0 20px}
+@media(min-width:560px){.cta-row{flex-direction:row;align-items:center}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;font-family:var(--t-sans);font-size:.98rem;font-weight:500;letter-spacing:-.01em;border-radius:var(--radius);border:1px solid transparent;cursor:pointer;transition:transform .08s ease,background .15s ease,border-color .15s ease;text-decoration:none;line-height:1}
+.btn-primary{background:var(--accent);color:#0A0A0B;border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-hover);color:#0A0A0B;transform:translateY(-1px)}
+.btn-primary .price{font-family:var(--t-mono);opacity:.85;font-size:.85rem;margin-left:6px}
+.btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border-strong)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.hero-proof{display:flex;flex-wrap:wrap;gap:18px 22px;font-family:var(--t-mono);font-size:.78rem;color:var(--text-3);margin:0}
+.hero-proof span{display:inline-flex;align-items:center;gap:6px}
+.hero-proof .ok{color:var(--pos)}
+
+.section{padding:48px 0}
+@media(min-width:768px){.section{padding:72px 0}}
+.h2{font-size:clamp(1.5rem,3.6vw,2rem);line-height:1.15;letter-spacing:-.02em;font-weight:600;margin:0 0 14px}
+.h3{font-size:1.05rem;line-height:1.3;font-weight:600;margin:0 0 6px}
+.section-lead{color:var(--text-2);margin:0 0 28px;max-width:640px}
+
+/* 21-day calendar */
+.calendar{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:680px){.calendar{grid-template-columns:repeat(3,1fr)}}
+.day{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:6px}
+.day .num{font-family:var(--t-mono);font-size:.72rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase}
+.day .what{font-size:.92rem;line-height:1.4;color:var(--text)}
+.day .file{font-family:var(--t-mono);font-size:.72rem;color:var(--text-3)}
+.week-label{font-family:var(--t-mono);font-size:.74rem;color:var(--text-3);text-transform:uppercase;letter-spacing:.12em;margin:24px 0 12px}
+.week-label:first-of-type{margin-top:0}
+
+.grid-3{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:680px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px}
+.card .label{font-family:var(--t-mono);font-size:.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin:0 0 10px;display:block}
+.card p{margin:0;color:var(--text-2);font-size:.92rem;line-height:1.5}
+
+.receipts{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:680px){.receipts{grid-template-columns:1fr 1fr}}
+.quote{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
+.quote-text{margin:0 0 12px;font-size:.95rem;line-height:1.5;color:var(--text)}
+.quote-meta{display:flex;justify-content:space-between;align-items:center;font-family:var(--t-mono);font-size:.72rem;color:var(--text-3)}
+.quote-meta .up{color:var(--pos)}
+.quote-meta a{color:var(--text-3);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--border-strong)}
+.quote-meta a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+
+.compare{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.compare-row{display:grid;grid-template-columns:1fr auto;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);font-size:.93rem;align-items:center}
+.compare-row:last-child{border-bottom:none}
+.compare-row .item{color:var(--text-2)}
+.compare-row .price{font-family:var(--t-mono);font-weight:500;color:var(--text)}
+.compare-total{background:rgba(255,107,53,.06);padding:18px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.compare-total .label{font-family:var(--t-mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-2)}
+.compare-total .vs{font-family:var(--t-mono);font-size:1.4rem;font-weight:500;color:var(--accent)}
+.compare-total .vs s{color:var(--text-3);font-weight:400;margin-right:8px;text-decoration:line-through}
+
+.guarantee{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:680px){.guarantee{grid-template-columns:1fr 1fr}}
+.gcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px}
+.gcard .badge{display:inline-block;font-family:var(--t-mono);font-size:.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin:0 0 12px}
+.gcard p{margin:0;color:var(--text-2);font-size:.92rem;line-height:1.55}
+
+.gate{background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px}
+@media(min-width:768px){.gate{padding:40px}}
+.gate-form{display:flex;flex-direction:column;gap:10px;margin:18px 0 12px;max-width:520px}
+@media(min-width:560px){.gate-form{flex-direction:row}}
+.gate-input{flex:1;padding:14px 16px;font-family:var(--t-sans);font-size:.95rem;background:var(--bg);color:var(--text);border:1px solid var(--border-strong);border-radius:var(--radius);outline:none;transition:border-color .15s ease}
+.gate-input:focus{border-color:var(--accent)}
+.gate-input::placeholder{color:var(--text-3)}
+.gate-msg{font-family:var(--t-mono);font-size:.78rem;color:var(--text-2);margin:8px 0 0;min-height:1.2em}
+.gate-msg.ok{color:var(--pos)}
+.gate-msg.err{color:var(--neg)}
+.gate small{display:block;color:var(--text-3);font-size:.78rem;margin-top:6px}
+.hp{position:absolute!important;left:-9999px!important;top:auto;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none}
+.hero-form{margin:6px 0 10px}
+.hero-form .gate-input{background:var(--surface)}
+.hero-sec{margin:14px 0 0;font-family:var(--t-mono);font-size:.78rem;color:var(--text-3)}
+.hero-sec a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.upgrade-note{text-align:center;font-family:var(--t-mono);font-size:.8rem;color:var(--text-3);margin:0 0 4px}
+.upgrade-note b{color:var(--accent);font-weight:500}
+
+.faq{display:flex;flex-direction:column;gap:0}
+.faq details{border-top:1px solid var(--border);padding:18px 0}
+.faq details:last-child{border-bottom:1px solid var(--border)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:1rem;font-weight:500;color:var(--text)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--t-mono);color:var(--accent);font-size:1.3rem;line-height:1;transition:transform .15s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{margin:14px 0 0;color:var(--text-2);font-size:.93rem;line-height:1.55}
+
+.final{text-align:center;padding:64px 0 56px}
+.final .h2{margin:0 0 12px}
+.final .cd{font-family:var(--t-mono);font-size:.95rem;color:var(--accent);margin:0 0 24px}
+.final .btn-primary{padding:18px 32px;font-size:1.05rem}
+.final .below{margin:18px 0 0;font-family:var(--t-mono);font-size:.78rem;color:var(--text-3)}
+
+.foot{border-top:1px solid var(--border);padding:32px 0;color:var(--text-3);font-size:.85rem}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center}
+.foot a{color:var(--text-2);margin-left:14px;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--border-strong)}
+.foot a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"AI Builder Toolkit · 21-day Ship Plan","description":"day-by-day 21-day plan to ship your first paying client, plus 27 production-tested Claude skills, brain doc, and made-to-work guarantee. Free 4-file starter pack available.","brand":{"@type":"Brand","name":"Closer Method"},"offers":{"@type":"Offer","price":"97","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://closermethod.com/ship","priceValidUntil":"2026-05-31"},"image":"https://closermethod.com/og/og-ship.png","author":{"@type":"Person","name":"Eli Hitz","jobTitle":"Founder, Closer Method","sameAs":["https://instagram.com/closermethod"]}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to ship your first paying client in 21 days using Claude","description":"Day-by-day plan using 27 production-tested Claude skills to ship your homepage, build your funnel, design your GTM, and close your first paying client in 21 days.","totalTime":"P21D","estimatedCost":{"@type":"MonetaryAmount","currency":"USD","value":"97"},"step":[
+{"@type":"HowToStep","position":1,"name":"Day 1 · Install + brain doc","text":"Install the 27-skill toolkit. Fill the brain doc template (5 questions about your business). Run the ai-builder-start-here orchestrator."},
+{"@type":"HowToStep","position":2,"name":"Day 2 · Design the offer","text":"Use the ai-builder-pricing-strategy skill to design your 3-tier pricing structure with anchoring psychology."},
+{"@type":"HowToStep","position":3,"name":"Day 3 · Ship the homepage","text":"Use the ai-builder-website skill to ship a single deployable HTML homepage in your voice."},
+{"@type":"HowToStep","position":4,"name":"Day 4 · Build the lead magnet","text":"Use the ai-builder-lead-magnet skill to ship a free magnet people actually finish."},
+{"@type":"HowToStep","position":5,"name":"Day 5 · Build the FAQ + booking page","text":"Use ai-builder-faq-page + ai-builder-booking-page to ship the conversion pages."},
+{"@type":"HowToStep","position":6,"name":"Day 6 · Write the email funnel","text":"Use the ai-builder-email-funnel skill to write a 4-email welcome sequence."},
+{"@type":"HowToStep","position":7,"name":"Day 7 · Extract your voice","text":"Use the ai-builder-brand-voice skill to extract a voice guide from your real writing samples."},
+{"@type":"HowToStep","position":8,"name":"Day 8-14 · Audience + outreach","text":"Build the interactive quiz, social calendar, partnership proposals, and event marketing plan. Each ships a real deployable asset."},
+{"@type":"HowToStep","position":9,"name":"Day 15-18 · GTM + positioning + delivery","text":"Use the ai-builder-go-to-market and ai-builder-positioning skills. Set up client onboarding + welcome packet."},
+{"@type":"HowToStep","position":10,"name":"Day 19-21 · Close + reflect","text":"Set up the testimonial collector. Run the launch plan. Close your first paying client. Run the annual review skill to plan the next 90 days."}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Do I have to pay to get anything?","acceptedAnswer":{"@type":"Answer","text":"No. The 21-day ship map plus a 4-file starter pack is free, drop your email and it lands instantly. The full 27-skill toolkit is $147 if you want every skill behind the plan, but the free files are yours either way."}},
+{"@type":"Question","name":"What if I don't close on day 21?","acceptedAnswer":{"@type":"Answer","text":"The 21-day plan is the floor, not the ceiling. Most builders close their first paid client between day 15 and day 35. The plan gives you a deliverable every day so you always have the next move. If you do the work and still aren't closing, DM Eli, you debug it together. That's the made-to-work guarantee."}},
+{"@type":"Question","name":"What if a skill doesn't fit my niche?","acceptedAnswer":{"@type":"Answer","text":"DM Eli on instagram with what's not working. She rewrites the skill for your specific business, free, as many times as it takes."}},
+{"@type":"Question","name":"Do I have to follow the 21 days exactly?","acceptedAnswer":{"@type":"Answer","text":"No. The calendar is a map. Some people compress to 14 days, some stretch to 6 weeks. The order matters more than the speed: brain doc → offer → page → outreach → close → deliver."}},
+{"@type":"Question","name":"What if a skill doesn't fit my niche?","acceptedAnswer":{"@type":"Answer","text":"DM @closermethod on Instagram with what's not working. I rewrite the skill for your specific business and send it back, free, as many times as it takes. This is the made-to-work guarantee."}},
+{"@type":"Question","name":"Does this work in ChatGPT, Cursor, Gemini, and Perplexity?","acceptedAnswer":{"@type":"Answer","text":"Yes. .md is universal. Drop into ChatGPT custom GPTs, Cursor rules, Gemini Gems, Perplexity collections. One file format, every platform."}},
+{"@type":"Question","name":"What is the 21-day plan to first paying client?","acceptedAnswer":{"@type":"Answer","text":"A day-by-day calendar that maps 27 Claude skills to the actual work of getting paid: install + brain doc day 1, pricing day 2, ship homepage day 3, lead magnet day 4, FAQ + booking page day 5, email funnel day 6, brand voice day 7, audience-building days 8-14 (quiz, social calendar, partnerships, events), GTM + positioning days 15-16, client systems days 17-19, launch + close + reflect days 20-21."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Eli Hitz","jobTitle":"Founder, Closer Method","description":"10 years enterprise sales. Ex-Deel (268% Q3), ex-Criteo (167% quota). HBO, Bloomberg, McCann, Y&R, Autodesk.","sameAs":["https://instagram.com/closermethod","https://closermethod.com"]}
+</script>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-inner">
+    <div class="bar-left">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="bar-cd">the 21-day ship plan · <b>free starter</b></span>
+    </div>
+    <div class="bar-right"><a href="#starter">get the free plan →</a></div>
+  </div>
+</div>
+
+<main id="main"><article>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">the 21-day ship plan · free starter</p>
+    <h1 class="h1">ship your first paying client in <i>21 days</i>.</h1>
+    <p class="lead">the whole map is below. day 3 you ship your homepage. day 15 your go-to-market. day 21 you close. drop your email and i'll send it as a file you can follow.</p>
+
+    <div class="byline">
+      <div class="byline-mark">
+        <img src="/img/eli-hitz.jpg" width="64" height="64" alt="Eli Hitz, founder of Closer Method" loading="eager" decoding="async">
+      </div>
+      <div class="byline-text"><b>built by eli hitz</b> · 10y enterprise sales · ex-Deel (268% Q3), ex-Criteo (167% quota), HBO, Bloomberg, McCann, Y&amp;R, Autodesk · <time datetime="2026-05-24" class="mono">updated may 24 2026</time></div>
+    </div>
+
+    <form class="gate-form hero-form" data-gate novalidate>
+      <label for="heroEmail" class="sr">your email address</label>
+      <input class="gate-input" type="email" name="email" id="heroEmail" placeholder="drop your email for the 21-day plan" autocomplete="email" required>
+      <div class="hp" aria-hidden="true"><label>leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button class="btn btn-primary" type="submit" data-event="hero_gate_submit">send the free plan →</button>
+    </form>
+    <p class="gate-msg" data-gate-msg aria-live="polite"></p>
+
+    <p class="hero-proof">
+      <span><span class="ok">●</span> the full 21-day map · free</span>
+      <span><span class="ok">●</span> day 3 you ship · day 21 you close</span>
+      <span><span class="ok">●</span> in your inbox in 60 seconds</span>
+    </p>
+    <p class="hero-sec">already in? <a href="#buy-section" data-event="hero_buy_jump">install the full 27-skill toolkit →</a></p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">the 21-day calendar</p>
+    <h2 class="h2">the exact map. day-by-day. file-by-file.</h2>
+    <p class="section-lead">this is not "watch the videos and figure it out." this is "day 3, run ai-builder-website, ship your homepage." every day has a deliverable. every deliverable is a finished file. drop your email above and the whole map lands in your inbox as a file you can follow.</p>
+
+    <p class="week-label">week 1 · install + ship the foundation</p>
+    <div class="calendar">
+      <div class="day"><span class="num">day 1</span><span class="what">install the 27-skill toolkit. fill the brain doc (5 questions, 10 min).</span><span class="file">ai-builder-start-here</span></div>
+      <div class="day"><span class="num">day 2</span><span class="what">design your 3-tier pricing with anchoring psychology.</span><span class="file">ai-builder-pricing-strategy</span></div>
+      <div class="day"><span class="num">day 3</span><span class="what">ship your homepage. single HTML file. drop into netlify drop, live URL in 60 sec.</span><span class="file">ai-builder-website</span></div>
+      <div class="day"><span class="num">day 4</span><span class="what">build the lead magnet people actually finish.</span><span class="file">ai-builder-lead-magnet</span></div>
+      <div class="day"><span class="num">day 5</span><span class="what">ship the FAQ that doubles as sales tool + the booking page.</span><span class="file">ai-builder-faq-page + ai-builder-booking-page</span></div>
+      <div class="day"><span class="num">day 6</span><span class="what">write the 4-email welcome funnel that converts.</span><span class="file">ai-builder-email-funnel</span></div>
+      <div class="day"><span class="num">day 7</span><span class="what">extract your voice from real writing samples · every output 10x sharper.</span><span class="file">ai-builder-brand-voice</span></div>
+    </div>
+
+    <p class="week-label">week 2 · audience + outreach</p>
+    <div class="calendar">
+      <div class="day"><span class="num">day 8</span><span class="what">90-day marketing strategy with positioning, channel mix, monthly targets.</span><span class="file">ai-builder-marketing-strategy</span></div>
+      <div class="day"><span class="num">day 9</span><span class="what">analyze competitors + find the white-space they miss.</span><span class="file">ai-builder-competitor-analysis</span></div>
+      <div class="day"><span class="num">day 10</span><span class="what">interactive quiz + 30-day social calendar (5 hook formulas).</span><span class="file">ai-builder-interactive-quiz + ai-builder-social-calendar</span></div>
+      <div class="day"><span class="num">day 11</span><span class="what">ship the interactive pricing calculator (lead-magnet variant).</span><span class="file">ai-builder-pricing-calculator</span></div>
+      <div class="day"><span class="num">day 12</span><span class="what">partnership proposals + referral program (30%+ activation mechanics).</span><span class="file">ai-builder-partnership-proposal + ai-builder-referral-program</span></div>
+      <div class="day"><span class="num">day 13</span><span class="what">map workshop/webinar/launch event for next month.</span><span class="file">ai-builder-event-marketing</span></div>
+      <div class="day"><span class="num">day 14</span><span class="what">resource library (members-only) to anchor recurring value.</span><span class="file">ai-builder-resource-library</span></div>
+    </div>
+
+    <p class="week-label">week 3 · GTM + close + reflect</p>
+    <div class="calendar">
+      <div class="day"><span class="num">day 15</span><span class="what">ship your go-to-market plan · TAM/SAM/SOM · ICP · 90-day sequence.</span><span class="file">ai-builder-go-to-market</span></div>
+      <div class="day"><span class="num">day 16</span><span class="what">write your positioning statement · April Dunford framework.</span><span class="file">ai-builder-positioning</span></div>
+      <div class="day"><span class="num">day 17</span><span class="what">ship business plan + YC-quality pitch deck (investor/bank grade).</span><span class="file">ai-builder-business-plan + ai-builder-pitch-deck</span></div>
+      <div class="day"><span class="num">day 18</span><span class="what">premium client intake + welcome packet (concierge feel).</span><span class="file">ai-builder-client-onboarding + ai-builder-welcome-packet</span></div>
+      <div class="day"><span class="num">day 19</span><span class="what">set up sales-page-ready testimonial collector.</span><span class="file">ai-builder-testimonial-collector</span></div>
+      <div class="day"><span class="num">day 20</span><span class="what">map the 4-week trust-based launch plan + course outline.</span><span class="file">ai-builder-launch-plan + ai-builder-course-outline</span></div>
+      <div class="day"><span class="num">day 21</span><span class="what">close your first paying client. run annual review to plan next 90 days.</span><span class="file">ai-builder-annual-review</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">sound familiar?</p>
+    <h2 class="h2">everyone who needed this 21 days ago.</h2>
+    <p class="section-lead">scroll r/Solopreneur, r/EntrepreneurRideAlong, r/passive_income, or r/nocode and it's the same story on repeat. the fix is a dated plan with a finished file for every day. free to start.</p>
+
+    <div class="receipts">
+      <div class="quote">
+        <p class="quote-text">"i don't need another framework. i need a 21-day plan with the actual files."</p>
+        <div class="quote-meta"><a href="https://www.reddit.com/r/Solopreneur/" target="_blank" rel="noopener">r/Solopreneur</a></div>
+      </div>
+      <div class="quote">
+        <p class="quote-text">"6 months on linkedin. 0 paying clients. what am i actually doing wrong?"</p>
+        <div class="quote-meta"><a href="https://www.reddit.com/r/EntrepreneurRideAlong/" target="_blank" rel="noopener">r/EntrepreneurRideAlong</a></div>
+      </div>
+      <div class="quote">
+        <p class="quote-text">"i can build the thing. i can't get the first sale. that's the whole problem."</p>
+        <div class="quote-meta"><a href="https://www.reddit.com/r/nocode/" target="_blank" rel="noopener">r/nocode</a></div>
+      </div>
+      <div class="quote">
+        <p class="quote-text">"every 'how to get clients' video is the same: post more. i posted more. nothing."</p>
+        <div class="quote-meta"><a href="https://www.reddit.com/r/Solopreneur/" target="_blank" rel="noopener">r/Solopreneur</a></div>
+      </div>
+      <div class="quote">
+        <p class="quote-text">"ADHD. cannot watch 8 hours of video. give me the plan with dates."</p>
+        <div class="quote-meta"><a href="https://www.reddit.com/r/Solopreneur/" target="_blank" rel="noopener">r/Solopreneur</a></div>
+      </div>
+      <div class="quote">
+        <p class="quote-text">"$1,200 in unfinished courses. one more $147 thing that promises clients. why is this different?"</p>
+        <div class="quote-meta"><a href="https://www.reddit.com/r/passive_income/" target="_blank" rel="noopener">r/passive_income</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="starter" style="padding-top:0">
+  <div class="wrap">
+    <div class="gate">
+      <p class="eyebrow">get your 21-day plan</p>
+      <h2 class="h2">drop your email. the plan + 4 files land instantly.</h2>
+      <p class="muted" style="margin:0 0 8px;max-width:560px">the full 21-day ship map as a file you can follow, plus the one skill that converted me, brain-doc lite (3 questions), and the 60-second install guide. in your inbox in 60 seconds.</p>
+
+      <form class="gate-form" id="gateForm" data-gate novalidate>
+        <label for="gateEmail" class="sr">your email address</label>
+        <input class="gate-input" type="email" name="email" id="gateEmail" placeholder="drop your email" autocomplete="email" required>
+        <div class="hp" aria-hidden="true"><label>leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <button class="btn btn-primary" type="submit" id="gateBtn" data-event="gate_submit">send the free plan →</button>
+      </form>
+      <p class="gate-msg" id="gateMsg" data-gate-msg aria-live="polite"></p>
+      <small>the map lands the second you hit send.</small>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section class="section" id="get">
+  <div class="wrap">
+    <p class="upgrade-note">followed the free plan? <b>here's every skill behind it.</b></p>
+    <p class="eyebrow">the full toolkit · what $147 unlocks</p>
+    <h2 class="h2">27 skills behind the 21-day plan.</h2>
+    <p class="section-lead">each day's task is one .md file. self-contained input, tested output, working example. paste it, it runs.</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <span class="label">01 · ship things on the internet</span>
+        <h3 class="h3">website · lead-magnet · booking-page · faq-page · interactive-quiz · resource-library</h3>
+        <p>6 skills behind days 3-7. ship deployable HTML files. drop into Netlify Drop, live URL in 60 seconds. tested in real client deals.</p>
+      </div>
+      <div class="card">
+        <span class="label">02 · funnels + email</span>
+        <h3 class="h3">email-funnel · launch-plan · event-marketing</h3>
+        <p>3 skills behind days 8-10. ship the connective tissue. 4-email welcome sequence, 4-week trust-based launch plan, full event marketing roadmap.</p>
+      </div>
+      <div class="card">
+        <span class="label">03 · offers + pricing</span>
+        <h3 class="h3">pricing-strategy · pricing-calculator · partnership-proposal · referral-program</h3>
+        <p>4 skills behind days 4-13. 3-tier pricing with real anchoring psychology. partnership proposals that get replied to. referral mechanics that hit 30%+ activation.</p>
+      </div>
+      <div class="card">
+        <span class="label">04 · strategy + GTM <small style="color:var(--accent);font-size:.6rem">· 2 NEW</small></span>
+        <h3 class="h3">go-to-market · positioning · marketing-strategy · competitor-analysis · business-plan · pitch-deck</h3>
+        <p>6 strategy skills. GTM ships TAM/SAM/SOM + ICP + 90-day sequence (case-interview ready). positioning follows April Dunford. business plan + pitch deck both investor-grade. day 21 closes with a strategic move.</p>
+      </div>
+      <div class="card">
+        <span class="label">05 · clients + delivery</span>
+        <h3 class="h3">client-onboarding · welcome-packet · testimonial-collector · course-outline</h3>
+        <p>4 skills behind days 15-19. handle premium client experience. concierge intake. printable welcome packet. sales-page-ready quote collector.</p>
+      </div>
+      <div class="card">
+        <span class="label">06 · voice + content</span>
+        <h3 class="h3">brand-voice · social-calendar · annual-review</h3>
+        <p>3 skills behind days 11-12 + ongoing. extract your voice from real writing samples. 30-day social calendar. year-end review when you close day 21.</p>
+      </div>
+      <div class="card">
+        <span class="label">+ orchestrator</span>
+        <h3 class="h3">start-here · routes you to the right skill</h3>
+        <p>day 1. type "/start-here" in any new chat. it asks 5 questions, saves your brain doc, routes every future ask to the right specialist. install this first.</p>
+      </div>
+      <div class="card">
+        <span class="label">+ brain doc</span>
+        <h3 class="h3">the 5-question business context layer</h3>
+        <p>day 1. fill once. attach to any chat (paperclip icon) or upload to Project knowledge. every skill knows your niche, voice, audience, offer. no more "as a helpful assistant" outputs.</p>
+      </div>
+      <div class="card">
+        <span class="label">+ install guide</span>
+        <h3 class="h3">60-second install · 4 screenshots · copy-paste only</h3>
+        <p>works in Claude Projects, ChatGPT custom GPTs, Cursor rules, Gemini Gems. one file format, every platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">the price math</p>
+    <h2 class="h2">what an agency would charge to ship the same plan.</h2>
+    <p class="section-lead">real ranges, not guru inflation. AI consultants bill $100-$200/hr. sales coaches charge $500/hr. close consultants run $3,000-$10,000/launch.</p>
+
+    <div class="compare">
+      <div class="compare-row"><span class="item">27 production-tested skills (4 hrs each, refined)</span><span class="price">$10,800</span></div>
+      <div class="compare-row"><span class="item">21-day day-by-day ship calendar</span><span class="price">$2,000</span></div>
+      <div class="compare-row"><span class="item">brain doc + onboarding</span><span class="price">$1,000</span></div>
+      <div class="compare-row"><span class="item">unlimited custom rebuilds (retainer)</span><span class="price">$1,500/mo</span></div>
+      <div class="compare-row"><span class="item">monthly updates forever (sub)</span><span class="price">$50/mo</span></div>
+      <div class="compare-total">
+        <span class="label">agency replacement cost</span>
+        <span class="vs"><s>$13,400+</s> $147</span>
+      </div>
+    </div>
+    <p class="muted" style="margin:18px 0 0;font-size:.85rem">$147, one time. you keep the files and every monthly update after, forever.</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">the made-to-work guarantee</p>
+    <h2 class="h2">every skill is made to work for your business. or i rewrite it until it does.</h2>
+    <p class="section-lead">tell me what's not fitting and i rewrite the skill for your specific business, free, as many times as it takes. that's the whole guarantee.</p>
+
+    <div class="guarantee">
+      <div class="gcard">
+        <span class="badge">rewritten for your niche</span>
+        <h3 class="h3" style="margin-bottom:10px">a skill doesn't fit? i rebuild it custom.</h3>
+        <p>DM me on instagram, tell me what's not working, i rewrite the skill for your specific business. free, as many times as you need. this is the differentiator. no other $147 product on the internet includes this.</p>
+      </div>
+      <div class="gcard">
+        <span class="badge">no time limit</span>
+        <h3 class="h3" style="margin-bottom:10px">month one or month twelve, same free rewrite.</h3>
+        <p>the made-to-work guarantee never expires. use it for a year and a skill still doesn't fit? same DM, same free rewrite. you are never stuck with a skill that doesn't work for your business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section class="section" id="buy-section">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow" style="display:inline-block">ready to run all 21 days?</p>
+    <h2 class="h2">install the full toolkit. <span style="color:var(--accent)">$147</span> one time.</h2>
+    <p class="section-lead" style="margin-left:auto;margin-right:auto">all 27 skills behind the plan, the brain doc, the install guide, the made-to-work guarantee, monthly updates forever. one price, one time. <b style="color:var(--accent)">$147</b>, lifetime updates.</p>
+    <a class="btn btn-primary" href="https://buy.stripe.com/dRm6oB8L70gu5yy8tl5Ne0I" data-event="offer_buy_click" rel="noopener" style="padding:16px 30px;font-size:1.02rem">install the plan <span class="price">· $147</span></a>
+    <p class="hero-proof" style="justify-content:center;margin-top:18px">
+      <span><span class="ok">●</span> made to work for your business</span>
+      <span><span class="ok">●</span> free rewrites, as many as it takes</span>
+      <span><span class="ok">●</span> monthly updates free, forever</span>
+    </p>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">questions people actually asked</p>
+    <h2 class="h2">straight answers, friend to friend.</h2>
+
+    <div class="faq">
+      <details>
+        <summary>do i have to pay to get anything?</summary>
+        <p>no. the 21-day ship map plus a 4-file starter pack is free. drop your email and it lands instantly. the full 27-skill toolkit is $147 if you want every skill behind the plan, but the free files are yours either way.</p>
+      </details>
+      <details>
+        <summary>what if i don't close on day 21?</summary>
+        <p>the 21-day plan is the floor, not the ceiling. most builders close their first paid client between day 15 and day 35. the plan gives you a deliverable every day so you always have the next move. if you do the work and still aren't closing, DM me, we debug it together. that's the made-to-work guarantee.</p>
+      </details>
+      <details>
+        <summary>what if a skill doesn't fit my niche?</summary>
+        <p>DM me on instagram. tell me what's not working. i rewrite the skill for your specific business and send it back, free, as many times as it takes.</p>
+      </details>
+      <details>
+        <summary>do i have to follow the 21 days exactly?</summary>
+        <p>no. the calendar is a map. some people compress it to 14 days, some stretch it to 6 weeks. the order matters more than the speed: brain doc → offer → page → outreach → close → deliver. don't skip days 1-3 even if you're impatient.</p>
+      </details>
+      <details>
+        <summary>what if i'm not sure it'll work for me?</summary>
+        <p>the free 21-day plan plus starter pack lets you test the exact workflow before you buy. and once you're in, the made-to-work guarantee means i rewrite any skill until it fits your business, free, as many times as it takes. you're never stuck with something that doesn't work.</p>
+      </details>
+      <details>
+        <summary>does it work in chatgpt / cursor / gemini?</summary>
+        <p>yes. .md is universal. drop into ChatGPT custom GPTs, Cursor rules, Gemini Gems, Perplexity collections. one file format, every platform.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <p class="eyebrow">start free · upgrade when you're ready</p>
+    <h2 class="h2">grab the 21-day plan now. the full kit is <span style="color:var(--accent)">$147</span>, one time.</h2>
+    <p class="cd">free plan today · full toolkit $147 one time · updates forever · made to work for your business.</p>
+    <a class="btn btn-primary" href="#starter" data-event="final_gate_click">get the free 21-day plan →</a>
+    <p class="below">or <a href="https://buy.stripe.com/dRm6oB8L70gu5yy8tl5Ne0I" data-event="final_buy_click" rel="noopener" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">install the full toolkit · $147</a></p>
+    <p style="margin:24px 0 0;font-family:var(--t-mono);font-size:.78rem;color:var(--text-3)">just want the toolkit without the calendar? see the <a href="/build/" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">27 claude skills toolkit</a>.</p>
+  </div>
+</section>
+
+</article></main>
+
+<footer class="foot">
+  <nav aria-label="footer" class="wrap foot-grid">
+    <div>© 2026 closer method · <a href="https://instagram.com/closermethod" target="_blank" rel="noopener">@closermethod</a></div>
+    <div>
+      <a href="/skills">/skills</a>
+      <a href="/stack">/stack</a>
+      <a href="/build/">/build</a>
+    </div>
+  </nav>
+</footer>
+
+<script>
+(function(){
+  var url = new URL(window.location.href);
+  var utm = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){
+    var v = url.searchParams.get(k);
+    if(v){ utm[k]=v; try{ sessionStorage.setItem(k,v); }catch(e){} }
+    else { try{ var s=sessionStorage.getItem(k); if(s) utm[k]=s; }catch(e){} }
+  });
+  function appendUTM(href){
+    if(!href || href.indexOf('buy.stripe.com')===-1) return href;
+    try{
+      var u=new URL(href);
+      Object.keys(utm).forEach(function(k){ if(!u.searchParams.get(k)) u.searchParams.set(k, utm[k]); });
+      u.searchParams.set('client_reference_id', (utm.utm_source||'direct')+'-'+Date.now());
+      return u.toString();
+    }catch(e){ return href; }
+  }
+  document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(a){
+    var originalHref = a.getAttribute('href');
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      window.location.href = appendUTM(originalHref);
+    });
+  });
+
+  var END = new Date('2020-01-01T00:00:00-07:00').getTime(); // founder window closed · evergreen $147 (flipped 2026-05-31)
+  // AUTO-FLIP (2026-05-29): once the founder deadline passes, swap buy-CTA links + price $97 → $147
+  // automatically · no manual deploy. Surgical (only $97 buy links). Graceful (JS fail = $97 still works).
+  var EVERGREEN_LINK = 'https://buy.stripe.com/dRm6oB8L70gu5yy8tl5Ne0I';
+  var _flipped = false;
+  function autoFlipPrice(){
+    if(_flipped || Date.now() < END) return;
+    _flipped = true;
+    document.querySelectorAll('a[href*="dRm6oB8L70gu5yy8tl5Ne0I"]').forEach(function(a){
+      a.setAttribute('href', EVERGREEN_LINK);
+      a.innerHTML = a.innerHTML.replace(/\$97\b/g, '$147');
+    });
+  }
+  autoFlipPrice();
+  var cdTimer = null;
+  function pad(n){ return n<10 ? '0'+n : ''+n; }
+  function tick(){
+    var ms = END - Date.now();
+    var el1 = document.getElementById('cd');
+    var el2 = document.getElementById('cd2');
+    if(ms <= 0){
+      if(cdTimer) clearInterval(cdTimer);
+      if(el1) el1.textContent = '$147 now live';
+      if(el2) el2.textContent = 'now';
+      autoFlipPrice();
+      return;
+    }
+    var d = Math.floor(ms/86400000);
+    var h = Math.floor((ms%86400000)/3600000);
+    var m = Math.floor((ms%3600000)/60000);
+    var s = Math.floor((ms%60000)/1000);
+    var label;
+    if(ms > 172800000){ label = '$97 ends in ' + d + 'd ' + h + 'h'; }
+    else { label = '$97 ends in ' + (d>0 ? (d+'d ') : '') + pad(h)+':'+pad(m)+':'+pad(s); }
+    if(el1) el1.textContent = label;
+    if(el2) el2.textContent = (d>0 ? (d+' days') : (h+' hours'));
+  }
+  tick(); cdTimer = setInterval(tick, 1000);
+
+  function ga(name, params){
+    try{ if(window.gtag) window.gtag('event', name, params||{}); }catch(e){}
+    try{ if(window.fbq) window.fbq('trackCustom', name, params||{}); }catch(e){}
+  }
+
+  document.querySelectorAll('[data-event]').forEach(function(el){
+    el.addEventListener('click', function(){
+      var ev = el.getAttribute('data-event');
+      ga('cta_click', { cta: ev, page: '/ship' });
+      if(ev.indexOf('buy_click')>-1){ ga('begin_checkout', { value:147, currency:'USD', items:[{item_id:'ai-builder-toolkit',item_name:'AI Builder Toolkit · 21-day Ship Plan',price:147}] }); try{ if(window.fbq) window.fbq('track','InitiateCheckout',{value:147,currency:'USD'}); }catch(e){} }
+    });
+  });
+
+  // Multi-form lead capture (hero + mid-page gate). Honeypot field 'website' is read and
+  // forwarded so the server bot filter can reject page-rendering bots that auto-fill it.
+  document.querySelectorAll('form[data-gate]').forEach(function(form){
+    var msg = form.parentElement.querySelector('[data-gate-msg]');
+    var btn = form.querySelector('button[type="submit"]');
+    var efocus = form.querySelector('input[type="email"]');
+    if(efocus){ efocus.addEventListener('focus', function(){ ga('form_start', { source: 'ship' }); }, { once: true }); }
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      if(msg){ msg.className = 'gate-msg'; msg.textContent = ''; }
+      var emailEl = form.querySelector('input[type="email"]');
+      var email = ((emailEl && emailEl.value) || '').trim().toLowerCase();
+      var hpEl = form.querySelector('input[name="website"]');
+      var hp = (hpEl && hpEl.value) || '';
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        if(msg){ msg.className = 'gate-msg err'; msg.textContent = 'drop a real email so it lands in your inbox.'; }
+        return;
+      }
+      var orig = btn ? btn.textContent : '';
+      if(btn){ btn.disabled = true; btn.textContent = 'sending...'; }
+      try{
+        var res = await fetch("/api/subscribe", {
+          method: 'POST', headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({
+            email: email, source: 'ship', tag_ids: [19762196], sequence_id: 2768078,
+            website: hp,
+            fields: Object.assign({source_page:'ship'}, utm)
+          })
+        });
+        var data = await res.json();
+        if(data && data.success){
+          if(msg){ msg.className = 'gate-msg ok'; msg.textContent = 'sent. redirecting...'; }
+          if(!data.filtered){
+            ga('generate_lead', { source: 'ship', value: 0 });
+            try{ if(window.fbq) window.fbq('track','Lead',{content_name:'ship-starter'}); }catch(e){}
+          }
+          var thanksUrl = '/thanks/ship/';
+          var qs = Object.keys(utm).filter(function(k){return utm[k];}).map(function(k){return k+'='+encodeURIComponent(utm[k]);}).join('&');
+          window.location.href = qs ? thanksUrl + '?' + qs : thanksUrl;
+          return;
+        } else {
+          if(msg){ msg.className = 'gate-msg err'; msg.textContent = (data && data.error) || 'kit hiccup. try again in 30s.'; }
+        }
+      } catch(err){
+        if(msg){ msg.className = 'gate-msg err'; msg.textContent = 'network blip. try again in 30s.'; }
+      } finally {
+        if(btn){ btn.disabled = false; btn.textContent = orig; }
+      }
+    });
+  });
+
+  ga('page_view', { page: '/ship', page_title: 'ship your first paying client in 21 days' });
+  try{ if(window.fbq) window.fbq('track','PageView'); }catch(e){}
+  try{ if(window.fbq) window.fbq('trackCustom','ShipPageView'); }catch(e){}
+})();
+</script>
+
+<script>
+// Defer all 3P analytics to after page load (Lighthouse perf · saves ~780ms unused JS)
+(function(){
+  function load3P(){
+    var gt = document.createElement('script');
+    gt.async = true;
+    gt.src = 'https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD';
+    document.head.appendChild(gt);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-Q2458LX0VD', {send_page_view: true, page_path: '/ship'});
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','35298849146380570');
+    fbq('track','PageView');
+    fbq('trackCustom','ShipPageView');
+  }
+  if (window.requestIdleCallback) {
+    window.requestIdleCallback(load3P, {timeout: 3000});
+  } else {
+    window.addEventListener('load', function(){ setTimeout(load3P, 1500); });
+  }
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1" alt=""/></noscript>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+# closermethod.com · proxy redirects (plaintext fallback for netlify.toml)
+#
+# This file is a parallel-source redirect declaration. Netlify processes
+# `_redirects` at a different stage than `[[redirects]]` in netlify.toml.
+# If a bundler bug ever blocks TOML redirect processing, these still work.
+#
+# Format: from-path  to-url  status[!=force]
+
+# ─── TOOLS · the AI products ───
+# /retainer is the canonical home of the Retainer Pitch Skill (UGC creator tool · NOT the AI Builder Toolkit /skills plural)
+# /skill (singular) is FREED UP per Eli 2026-05-21 — no rule, 404s until she fills it with something better. Do not re-add as a redirect or proxy to /retainer.
+/retainer       https://retainer-skill.netlify.app                                              200!
+/retainer/*     https://retainer-skill.netlify.app/:splat                                       200!
+/pitch          https://closermethod-pitch-setup.netlify.app                                    200!
+/pitch/*        https://closermethod-pitch-setup.netlify.app/:splat                             200!
+/launchstack    https://launchstack-ai.netlify.app                                              200!
+/launchstack/*  https://launchstack-ai.netlify.app/:splat                                       200!
+/framework      https://closermethod-framework.netlify.app                                      200!
+/framework/*    https://closermethod-framework.netlify.app/:splat                               200!
+/reply          https://closermethod-brand-reply.netlify.app                                    200!
+/reply/*        https://closermethod-brand-reply.netlify.app/:splat                             200!
+/objection      https://closermethod-brand-reply.netlify.app/objection-handler                  200!
+/objection/*    https://closermethod-brand-reply.netlify.app/objection-handler/:splat           200!
+# /toolkit → 4 paid buyers' delivery link · DO NOT REPOINT (Stripe plink_1TRal98 success_url depends on this)
+/toolkit        https://closermethod-toolkit.netlify.app                                        200!
+/toolkit/*      https://closermethod-toolkit.netlify.app/:splat                                 200!
+# /ugc → new home for the Closer Method Toolkit ($147 founding) sales page (moved from /toolkit 2026-05-18)
+/ugc            https://retainer-engine-launch.netlify.app                                      200!
+/ugc/*          https://retainer-engine-launch.netlify.app/:splat                               200!
+/mcp            https://closermethod-mcp.netlify.app                                            200!
+/mcp/*          https://closermethod-mcp.netlify.app/:splat                                     200!
+
+# ─── BUYER PORTAL · post-purchase ───
+/access/founding   https://closer-kit-launch.netlify.app/thanks-retainer/                       200!
+/access/pro        https://closer-kit-launch.netlify.app/thanks-pro/                            200!
+/access/dfy        https://closer-kit-launch.netlify.app/thanks-dfy/                            200!
+/access/kit        https://closer-kit-launch.netlify.app/thanks-uck/                            200!
+/access/bundle     https://closer-kit-launch.netlify.app/thanks-bundle/                         200!
+
+# ─── STRIPE PURCHASE LINKS · 302 (not proxy) ───
+/buy            https://buy.stripe.com/5kQ3cp6CZ7IWgdc6ld5Ne0E?prefilled_promo_code=LAUNCH25    302!
+/buy/founding   https://buy.stripe.com/5kQ3cp6CZ7IWgdc6ld5Ne0E?prefilled_promo_code=LAUNCH25    302!
+/buy/pro        https://buy.stripe.com/aFaeV7aTffbo7GG5h95Ne0A?prefilled_promo_code=PRO25       302!
+/buy/dfy        https://buy.stripe.com/fZueV76CZd3g3qq9xp5Ne0z?prefilled_promo_code=DFY10       302!
+/buy/kit        https://buy.stripe.com/28E8wJ5yV8N00eedNF5Ne0t                                  302!
+
+# ─── EXISTING FREE TOOLS ───
+/rate           https://rate-calculator-pro.netlify.app                                         200!
+/rate/*         https://rate-calculator-pro.netlify.app/:splat                                  200!
+/influencer     https://influencer-rate-calc.netlify.app                                        200!
+/influencer/*   https://influencer-rate-calc.netlify.app/:splat                                 200!
+/pitch-roast    https://closermethod-roast.netlify.app                                          200!
+/pitch-roast/*  https://closermethod-roast.netlify.app/:splat                                   200!
+# /match → the bento quiz · tool-matcher funnel (added 2026-05-22)
+/match          https://closermethod-tools.netlify.app                                          200!
+/match/*        https://closermethod-tools.netlify.app/:splat                                   200!
+# /harness → The Harness Pro sales page (build-time safety for AI builders · added 2026-05-22)
+/harness        https://closermethod-harness.netlify.app                                        200!
+/harness/*      https://closermethod-harness.netlify.app/:splat                                 200!
+# /skill/use is a stale link some lander used; route it to the actual retainer skill tool
+/skill/use      /retainer/use                                                                   301!
+/skill/use/*    /retainer/use/:splat                                                            301!
+
+# ─── ECOSYSTEM PROXIES ───
+# /closerai, /brain, /artifacts are RESTORED LOCAL FILES from May 13 deploy.
+# NO proxies for these paths or their splats — local files must serve.
+
+# ─── LEGACY PATHS · restored May 17 (404s after the May 16 rearchitecture) ───
+# All subdomains have their own GA4 + Meta Pixel + Stripe + Kit · proxy is transparent.
+# /brain-builder is now a RESTORED LOCAL FILE (2026-06-06 · fixed output generator + on-voice copy).
+# Proxy removed so the local apex file serves. External site closermethod-brain-builder.netlify.app
+# stays live and untouched (it owns the stripe-webhook fn for the $147 OTO · do NOT redeploy it).
+# /app, /ai are RESTORED LOCAL FILES (May 13 originals). NO proxies.
+/skills           https://closermethod-skills.netlify.app                                         200!
+/skills/*         https://closermethod-skills.netlify.app/:splat                                  200!
+/vault            https://closermethod-vault.netlify.app                                          200!
+/vault/*          https://closermethod-vault.netlify.app/:splat                                   200!
+/kit              https://closer-kit-launch.netlify.app                                           200!
+/kit/*            https://closer-kit-launch.netlify.app/:splat                                    200!
+/score            https://closermethod-rate-prompt.netlify.app                                    200!
+/score/*          https://closermethod-rate-prompt.netlify.app/:splat                             200!
+/pitch-brain      https://closermethod-pitch-setup.netlify.app                                    200!
+/pitch-brain/*    https://closermethod-pitch-setup.netlify.app/:splat                             200!
+/roast            https://closermethod-roast.netlify.app                                          200!
+/roast/*          https://closermethod-roast.netlify.app/:splat                                   200!
+# /builder → consolidated into /build (2026-05-31) · same $97 AI Builder Toolkit, /build is the corrected 27-skill flagship with auto-flip pricing.
+# local /builder/index.html kept in place so removing these two lines instantly restores the old page (fully reversible).
+/builder          /build                                                                          301!
+/builder/*        /build                                                                          301!
+# /stack → the Stack Installer lead-mag funnel (added 2026-05-20)
+# Note: more-specific /api/stack/* rule above (line ~134) wins for function calls; /stack/* catches everything else
+/stack            https://closermethod-stack-installer.netlify.app                                200!
+/stack/*          https://closermethod-stack-installer.netlify.app/:splat                         200!
+
+# ─── COMPAT ALIASES ───
+/objection-handler     https://closermethod-brand-reply.netlify.app/objection-handler            200!
+/objection-handler/*   https://closermethod-brand-reply.netlify.app/objection-handler/:splat     200!
+/downloads/*           https://closer-kit-launch.netlify.app/downloads/:splat                    200!
+
+# ─── CASE-INSENSITIVITY · normalize uppercase URLs to lowercase ───
+# Netlify is case-sensitive by default · these 301 catch common uppercase typos.
+/SKILL          /skill                                                                          301!
+/Skill          /skill                                                                          301!
+/RETAINER       /retainer                                                                       301!
+/Retainer       /retainer                                                                       301!
+/SKILLS         /skills                                                                          301!
+/Skills         /skills                                                                          301!
+/TOOLKIT        /toolkit                                                                        301!
+/Toolkit        /toolkit                                                                        301!
+/OBJECTION      /objection                                                                      301!
+/Objection      /objection                                                                      301!
+/PITCH          /pitch                                                                          301!
+/Pitch          /pitch                                                                          301!
+/REPLY          /reply                                                                          301!
+/Reply          /reply                                                                          301!
+/MCP            /mcp                                                                            301!
+/Mcp            /mcp                                                                            301!
+/RATE           /rate                                                                           301!
+/Rate           /rate                                                                           301!
+/INFLUENCER     /influencer                                                                     301!
+/Influencer     /influencer                                                                     301!
+/TOOLS          /tools                                                                          301!
+/Tools          /tools                                                                          301!
+/WATCH          /watch                                                                          301!
+/Watch          /watch                                                                          301!
+/BRAIN          /brain                                                                          301!
+/CLOSERAI       /closerai                                                                       301!
+/ARTIFACTS      /artifacts                                                                      301!
+/Artifacts      /artifacts                                                                      301!
+/APP            /app                                                                            301!
+/App            /app                                                                            301!
+/AI             /ai                                                                             301!
+/Ai             /ai                                                                             301!
+/BRAIN-BUILDER  /brain-builder                                                                  301!
+/Brain-Builder  /brain-builder                                                                  301!
+/VAULT          /vault                                                                          301!
+/Vault          /vault                                                                          301!
+/KIT            /kit                                                                            301!
+/Kit            /kit                                                                            301!
+/SCORE          /score                                                                          301!
+/Score          /score                                                                          301!
+/PITCH-BRAIN    /pitch-brain                                                                    301!
+/Pitch-Brain    /pitch-brain                                                                    301!
+/ROAST          /roast                                                                          301!
+/Roast          /roast                                                                          301!
+/BUILDER        /build                                                                          301!
+/Builder        /build                                                                          301!
+/UGC            /ugc                                                                            301!
+/Ugc            /ugc                                                                            301!
+/CREATOR        /creator                                                                        301!
+/Creator        /creator                                                                        301!
+/STACK          /stack                                                                          301!
+/Stack          /stack                                                                          301!
+/MATCH          /match                                                                          301!
+/Match          /match                                                                          301!
+/HARNESS        /harness                                                                        301!
+/Harness        /harness                                                                        301!
+
+# ─── APEX API · canonical Netlify Function aliases (same-origin) ───
+# Pages reference /api/* · these resolve to /.netlify/functions/* on apex
+# /api/stack/* proxies to pitch-engine subdomain (functions live there · can't edit source without stripping them)
+/api/stack/*           https://closermethod-pitch-engine.netlify.app/api/stack/:splat  200!
+/api/subscribe         /.netlify/functions/subscribe          200!
+/api/subscribe-closer  /.netlify/functions/subscribe-closer   200!
+/api/verify-purchase   /.netlify/functions/verify-purchase    200!
+/api/score-prompt      /.netlify/functions/prompt-scorer      200!
+/api/pitch-roast       /.netlify/functions/pitch-roast        200!
+/api/deliver-closerai  /.netlify/functions/deliver-closerai   200!
+/api/register-masterclass /.netlify/functions/register-masterclass 200!
+/api/create-build-checkout /.netlify/functions/create-build-checkout 200!
+
+# ─── FAVICON FALLBACK ───
+/favicon.ico    /favicon.svg                                                                    200!
+
+# Stripe success URL alias
+/skills/thank-you    /skills-thank-you.html    200!
+/skills/thank-you/*  /skills-thank-you.html    200!
+
+# /artifacts/thank-you → canonical 27-skill delivery (2026-05-31)
+# Orphaned legacy page · NO live Stripe link points here · NO inbound links · old cream design with a 404 install-guide link.
+# Forced 301 to the working /access/toolkit/ install hub. local artifacts/thank-you/index.html kept on disk (fully reversible).
+/artifacts/thank-you    /access/toolkit/    301!
+/artifacts/thank-you/   /access/toolkit/    301!
+/artifacts/thank-you/*  /access/toolkit/    301!
+
+# Dashboard (password-gated)
+/dashboard      https://closer-method-dashboard.netlify.app          200!
+/dashboard/*    https://closer-method-dashboard.netlify.app/:splat  200!
+
+# /pricing → canonical pricing on /ugc (moved from /toolkit 2026-05-18 · /toolkit is now the buyer delivery page)
+/pricing  /ugc#pricing  301!
+
+
+# magic-claude redirects · short-path → /access/{name}/
+/dyamond           /access/dyamond/        301!
+/dyamond/*         /access/dyamond/:splat  301!
+
+# /community → /lounge · added 2026-05-24 · SEO + UX (catches the common-word search)
+# /lounge stays canonical · matches Eli's "no daily noise, quiet operator" brand positioning.
+# Per memory feedback_url_meaning_change_audit_2026_05_21.md · this is a NEW path so no inbound link audit needed.
+/community         /lounge                 301
+/community/*       /lounge/:splat          301
+
+# /v3 → / · added 2026-05-25 overnight goal-mode · /v3 was the homepage preview, now promoted to apex
+# Keeps /v3 from showing duplicate content in case anyone bookmarked the preview URL
+/v3                /                       301
+/v3/               /                       301
+/v3/*              /:splat                 301
+
+# ─── STARTER FILE PROXIES · added 2026-05-25 ───
+# 4 starter .md files live on ai-builder-setup.netlify.app · these proxy them to apex
+# so Kit emails can link closermethod.com/starter/*.md (per memory rule: no subdomain marketing URLs)
+# 200! = serve the file at the apex URL · user never sees the subdomain
+/starter/SKILL.md                 https://ai-builder-setup.netlify.app/starter/SKILL.md                 200!
+/starter/brain-doc-template.md    https://ai-builder-setup.netlify.app/brain-doc-template.md            200!
+/starter/01-website.md            https://ai-builder-setup.netlify.app/starter/01-website.md            200!
+/starter/INSTALL.md               https://ai-builder-setup.netlify.app/starter/INSTALL.md               200!
+
+# ─── archive/variant snapshots → canonical · added 2026-06-01 ───
+# These -original / -v1-preview / -v2-just-in-case folders were local backups that
+# stayed reachable on the CDN (200) with stale pricing + pre-refund-sweep copy.
+# Redirect to canonical so crawlers + any stray bookmark never hit duplicate stale pages.
+/lounge-original           /lounge/   301!
+/lounge-original/*         /lounge/   301!
+/lounge-v1-preview         /lounge/   301!
+/lounge-v1-preview/*       /lounge/   301!
+/lounge-v2-just-in-case    /lounge/   301!
+/lounge-v2-just-in-case/*  /lounge/   301!
+/inbox/index-v1-original.html  /inbox/  301!
+/meow-v2-just-in-case          /         301!
+/meow-v2-just-in-case/*        /         301!
+/meow                          /         301!
+/meow/*                        /         301!
+# build-v2 was an unlinked A/B variant left live (200) with the old price-flip countdown. Canonical is /build.
+/build-v2                      /build/   301!
+/build-v2/*                    /build/   301!
+
+# ─── /ai-tool-sprint 404 leak → /build · added 2026-06-05 (GA4-evidenced) ───
+# GA4 28d (2026-05-08→06-04): /ai-tool-sprint = 132 sessions / 99 users landing on a 404 (the #3 entry page).
+# Link lives off-site (bio/old email/post) so the on-site link scan didn't catch it — only the landing-page report did.
+# /ai-tool-sprint was a retired AI-builder page; canonical home for that intent is /build (the $147 AI Toolkit ICP front door).
+/ai-tool-sprint                /build/   301!
+/ai-tool-sprint/               /build/   301!
+/ai-tool-sprint/*              /build/   301!

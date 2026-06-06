@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>OG Preview</title>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"></noscript>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{margin:0;padding:0;width:1200px;height:630px;overflow:hidden;background:#fff}
+body{font-family:'Roboto',Arial,sans-serif;color:#202124}
+.wrap{width:1200px;height:630px;display:grid;grid-template-columns:540px 1fr;background:#fff}
+
+/* left: brand panel */
+.left{background:linear-gradient(135deg,#f4efe8 0%,#ebe0d2 100%);padding:56px 48px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.left::before{content:'';position:absolute;top:-80px;right:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(90,56,37,.08) 0%,transparent 70%)}
+.logo{display:flex;align-items:baseline;gap:12px;position:relative;z-index:1}
+.logo-mark{font-family:'Lora',Georgia,serif;font-style:italic;font-size:64px;font-weight:500;color:#5a3825;letter-spacing:-2px;line-height:1}
+.logo-by{font-family:'Roboto',sans-serif;font-size:13px;font-weight:400;color:#8a8780;letter-spacing:2px;text-transform:uppercase;padding-bottom:10px}
+.headline{position:relative;z-index:1}
+.stat{font-family:'Lora',Georgia,serif;font-size:72px;font-weight:400;color:#202124;line-height:1;margin-bottom:14px;letter-spacing:-2px}
+.stat-sub{font-family:'Roboto',sans-serif;font-size:22px;font-weight:400;color:#5a5852;line-height:1.35;margin-bottom:8px;letter-spacing:-.3px}
+.stat-em{font-style:italic;font-family:'Lora',Georgia,serif;color:#5a3825}
+.foot{font-family:'Roboto',sans-serif;font-size:13px;color:#8a8780;letter-spacing:1.2px;text-transform:uppercase;position:relative;z-index:1}
+
+/* right: fake inbox */
+.right{background:#fff;padding:0;overflow:hidden;position:relative;border-left:1px solid #e8eaed}
+.topbar{height:52px;padding:0 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #e8eaed;background:#fff}
+.topbar-search{flex:1;height:34px;background:#eaf1fb;border-radius:6px;display:flex;align-items:center;padding:0 12px;gap:10px}
+.topbar-search-icon{font-family:'Material Icons Outlined';font-size:18px;color:#5f6368}
+.topbar-search-text{font-family:'Roboto',sans-serif;font-size:13px;color:#5f6368}
+.topbar-av{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#1a73e8,#188038);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:12px}
+.row{display:grid;grid-template-columns:28px 28px 140px 1fr 48px;align-items:center;padding:9px 16px;min-height:38px;border-bottom:1px solid #f0f0f0;font-size:13px;font-family:'Roboto',sans-serif;gap:10px}
+.row.unread{font-weight:500}
+.row-chk{font-family:'Material Icons Outlined';font-size:16px;color:#80868b}
+.row-star{font-family:'Material Icons Outlined';font-size:16px;color:#dadce0}
+.row.star-on .row-star{color:#f4b400}
+.row.star-on{background:#fefaef}
+.row.sys{background:#fbf9f6}
+.row.kit{background:#fef7e0}
+.row.sys .row-sender{color:#5a3825;font-weight:500;display:flex;align-items:center;gap:6px}
+.row.kit .row-sender{color:#8b5a00;font-weight:700;display:flex;align-items:center;gap:6px}
+.row.kit .row-star{color:#f4b400}
+.sys-badge{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:3px;background:#5a3825;color:#fff;font-size:9px;font-weight:700}
+.row.kit .sys-badge{background:#f4b400;color:#5f4300}
+.row-sender{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#202124}
+.row-body{display:flex;gap:6px;min-width:0;overflow:hidden}
+.row-subj{white-space:nowrap}
+.row-snip{color:#5f6368;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:400}
+.row-snip::before{content:' · '}
+.row-time{font-size:11px;color:#5f6368;text-align:right}
+.row.unread .row-subj{font-weight:700}
+.row.unread .row-sender{font-weight:700}
+
+.banner{margin:6px 12px;padding:8px 12px;background:#e8f0fe;border:1px solid #aecbfa;border-radius:4px;font-size:11px;color:#174ea6;font-weight:500;display:flex;align-items:center;gap:8px;line-height:1.35}
+.banner strong{color:#174ea6}
+.banner-icon{font-family:'Material Icons Outlined';font-size:14px;color:#1a73e8}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="left">
+    <div class="logo">
+      <span class="logo-mark">cmail</span>
+      <span class="logo-by">by The Closer Method</span>
+    </div>
+    <div class="headline">
+      <div class="stat">50 pitches.<br>47 archived.<br><span class="stat-em">3 replied.</span></div>
+      <div class="stat-sub">the inbox a brand manager<br>actually sees on monday morning.</div>
+    </div>
+    <div class="foot">closermethod.com/inbox</div>
+  </div>
+
+  <div class="right">
+    <div class="topbar">
+      <div class="topbar-search">
+        <span class="topbar-search-icon">search</span>
+        <span class="topbar-search-text">Search mail</span>
+      </div>
+      <div class="topbar-av">Y</div>
+    </div>
+    <div class="banner"><span class="banner-icon">info</span><span><strong>You are logged in as a brand marketing manager.</strong> 50 pitches, 47 archived, 3 got a reply.</span></div>
+    <div class="row unread"><span class="row-chk">check_box_outline_blank</span><span class="row-star">star_border</span><span class="row-sender">@jess.creates</span><div class="row-body"><span class="row-subj">collab?</span><span class="row-snip">hi!! obsessed with your brand would love to work...</span></div><span class="row-time">10:42</span></div>
+    <div class="row unread"><span class="row-chk">check_box_outline_blank</span><span class="row-star">star_border</span><span class="row-sender">@jake.ugc</span><div class="row-body"><span class="row-subj">UGC creator inquiry</span><span class="row-snip">Hi team, I'm a UGC creator with 45K followers...</span></div><span class="row-time">10:41</span></div>
+    <div class="row unread"><span class="row-chk">check_box_outline_blank</span><span class="row-star">star_border</span><span class="row-sender">@lex.content</span><div class="row-body"><span class="row-subj">Hi there</span><span class="row-snip">hey!! your brand is everything 💕 i'd love to...</span></div><span class="row-time">10:39</span></div>
+    <div class="row unread star-on"><span class="row-chk">check_box_outline_blank</span><span class="row-star">star</span><span class="row-sender">@mateo.content</span><div class="row-body"><span class="row-subj">Your April 3 carousel + a format angle</span><span class="row-snip">Saw the April 3 carousel. The educational...</span></div><span class="row-time">10:14</span></div>
+    <div class="row unread sys"><span class="row-chk">check_box_outline_blank</span><span class="row-star">star_border</span><span class="row-sender"><span class="sys-badge">R</span>Rate Calculator</span><div class="row-body"><span class="row-subj">3 creators quoting under market</span><span class="row-snip">Gap to market: $1,650–$3,700 this week...</span></div><span class="row-time">10:10</span></div>
+    <div class="row unread"><span class="row-chk">check_box_outline_blank</span><span class="row-star">star_border</span><span class="row-sender">@nora.creates</span><div class="row-body"><span class="row-subj">Quick question</span><span class="row-snip">Hi! Do you work with creators? If yes...</span></div><span class="row-time">10:31</span></div>
+    <div class="row unread"><span class="row-chk">check_box_outline_blank</span><span class="row-star">star_border</span><span class="row-sender">@riley.creates</span><div class="row-body"><span class="row-subj">Rates below</span><span class="row-snip">Reels: $350. Posts: $250. Story set: $150...</span></div><span class="row-time">10:28</span></div>
+    <div class="row unread star-on"><span class="row-chk">check_box_outline_blank</span><span class="row-star">star</span><span class="row-sender">@sofia.media</span><div class="row-body"><span class="row-subj">Your last launch went all-polished</span><span class="row-snip">No creator content in the mix. Two of your...</span></div><span class="row-time">9:24</span></div>
+    <div class="row unread kit"><span class="row-chk">check_box_outline_blank</span><span class="row-star">star</span><span class="row-sender"><span class="sys-badge">★</span>The Closer Kit</span><div class="row-body"><span class="row-subj">The system behind the 3 that replied</span><span class="row-snip">$247. made-to-work guarantee. Tax-deductible...</span></div><span class="row-time">Sun</span></div>
+  </div>
+</div>
+</body>
+</html>

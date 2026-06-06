@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">
+
+  <!-- Homepage · NEW v3 design · dark Geist · founder hero · highest priority -->
+  <url>
+    <loc>https://closermethod.com/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- AI Builder Toolkit · primary $97 conversion path -->
+  <url>
+    <loc>https://closermethod.com/build/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.98</priority>
+  </url>
+
+  <!-- AI Builder Toolkit · ship-angle / 21-day calendar -->
+  <url>
+    <loc>https://closermethod.com/ship/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- $37 install walkthrough tripwire -->
+  <url>
+    <loc>https://closermethod.com/install/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Free 4-file starter · top-of-funnel email gate -->
+  <url>
+    <loc>https://closermethod.com/starter/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- AI Builder Lounge waitlist · $47/mo founding · weekly community -->
+  <url>
+    <loc>https://closermethod.com/lounge/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 27 Claude Skills sales page · subdomain proxy -->
+  <url>
+    <loc>https://closermethod.com/skills</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- UGC Closer Method (parallel funnel · DIFFERENT audience) -->
+  <url>
+    <loc>https://closermethod.com/ugc/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- UGC Closer Kit -->
+  <url>
+    <loc>https://closermethod.com/kit</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Free rate calculator (UGC lead-mag) -->
+  <url>
+    <loc>https://closermethod.com/rate/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Stack Installer · UGC $297 upsell -->
+  <url>
+    <loc>https://closermethod.com/stack/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 27 Claude Skills sales page -->
+  <url>
+    <loc>https://closermethod.com/artifacts</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- AI Brain Builder · free 4-tap tool -->
+  <url>
+    <loc>https://closermethod.com/brain</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- The Closer Method Framework · install copy page -->
+  <url>
+    <loc>https://closermethod.com/framework</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- The Harness · build-time safety for AI tools -->
+  <url>
+    <loc>https://closermethod.com/harness</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- MCP Server · 7 retainer tools for Claude + Cursor -->
+  <url>
+    <loc>https://closermethod.com/mcp</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- Free pitch generator -->
+  <url>
+    <loc>https://closermethod.com/pitch</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- Free brand reply generator -->
+  <url>
+    <loc>https://closermethod.com/reply</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- Free objection handler -->
+  <url>
+    <loc>https://closermethod.com/objection</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Free pitch roast -->
+  <url>
+    <loc>https://closermethod.com/pitch-roast</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 2026 Cold DM Quality Report -->
+  <url>
+    <loc>https://closermethod.com/report</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 12 retainer pitch scripts · UGC lead magnet (instant value, print-as-PDF) -->
+  <url>
+    <loc>https://closermethod.com/scripts/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- llms.txt for AI search citation -->
+  <url>
+    <loc>https://closermethod.com/llms.txt</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

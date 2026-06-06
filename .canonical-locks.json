@@ -1,0 +1,6 @@
+{
+  "_comment": "SHA256 hashes of canonical files. Run check-canonical-locks.sh before any apex deploy.",
+  "locks": { "artifacts/index.html": "8816f9d5bd68b466aa89589e348fd9cfb58299a421ed479660858aec1a8a2943" },
+  "last_updated": "2026-05-17T21:11:37Z",
+  "last_deploy_id": "6a0a2ee9d57701c240c03845"
+}

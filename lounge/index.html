@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#FAF6F2">
+<title>The AI Builder Lounge · build the content system that runs without you · The Closer Method</title>
+<meta name="description" content="For creators building their content system on Claude. Every week I build one piece live. Keep all 27 skills, get a new one every month, your work rewritten until it ships. On Skool, not Discord. $47/mo founding · locked for life · 50 spots.">
+<link rel="canonical" href="https://closermethod.com/lounge/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://closermethod.com/lounge/">
+<meta property="og:title" content="The AI Builder Lounge · Build the content system that runs without you.">
+<meta property="og:description" content="For creators building their content system on Claude. One piece built live every week. All 27 skills included, a new one monthly, your work rewritten until it ships. On Skool, not Discord. $47/mo founding · 50 spots · locked for life.">
+<meta property="og:image" content="https://closermethod.com/og/og-lounge.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@closermethod">
+<meta name="twitter:title" content="The AI Builder Lounge · Build the content system that runs without you.">
+<meta name="twitter:description" content="For creators building their content system on Claude. $47/mo founding · 50 spots.">
+<meta name="twitter:image" content="https://closermethod.com/og/og-lounge.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+<style>
+:root{
+  --paper:#FAF6F2;--paper-2:#F4EFE9;--paper-3:#ECE6DE;
+  --ink:#14110F;--ink-2:#2C2925;--charcoal:#4A4541;--warm-gray:#8A8279;
+  --rule:#E2DDD5;--rule-strong:#C8C0B5;
+  --accent:#E5552F;--accent-dark:#C9462E;--accent-soft:#FCEDE5;
+  --shout:#F4D03F;--green:#1E7E5E;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:'JetBrains Mono','SF Mono',Menlo,monospace;
+  --serif:'Instrument Serif',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html,body{overflow-x:hidden;max-width:100vw}
+body{font-family:var(--sans);font-size:17px;line-height:1.55;color:var(--ink-2);background:var(--paper);font-weight:400;-webkit-font-smoothing:antialiased;padding-bottom:40px}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none;transition:opacity .15s,color .15s}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+@media(min-width:720px){.wrap{padding:0 36px}}
+
+h1,h2,h3{font-family:var(--sans);font-weight:800;line-height:1.05;color:var(--ink);letter-spacing:-.025em}
+h1{font-size:clamp(40px,7vw,84px);letter-spacing:-.035em;line-height:1}
+h2{font-size:clamp(28px,4.5vw,48px)}
+h3{font-size:clamp(20px,3vw,26px)}
+p{line-height:1.6}
+
+.mono{font-family:var(--mono);font-size:.78em}
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--warm-gray)}
+.hl{font-style:italic;background:linear-gradient(180deg,transparent 0%,transparent 60%,var(--shout) 60%,var(--shout) 92%,transparent 92%);padding:0 .12em;display:inline-block}
+.serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--accent)}
+
+.top-strip{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);background:var(--paper);position:sticky;top:0;z-index:50}
+.ts-l,.ts-r{flex:1}
+.ts-c{text-align:center;flex:2;color:var(--warm-gray)}
+.ts-r{text-align:right}
+.ts-l strong{color:var(--ink);font-weight:700}
+.ts-c .seats{color:var(--accent);font-weight:700;font-size:11px}
+.ts-cta{display:inline-block;padding:8px 16px;border:1.5px solid var(--ink);border-radius:100px;font-size:10px;font-weight:700;color:var(--ink);letter-spacing:.14em;transition:background .15s,color .15s}
+.ts-cta:hover{background:var(--ink);color:var(--paper)}
+@media(max-width:780px){.top-strip{padding:11px 14px;font-size:9.5px;letter-spacing:.08em}.ts-c{display:none}.ts-cta{padding:6px 13px;font-size:9px}}
+
+.hero{padding:60px 0 48px}
+@media(min-width:880px){.hero{padding:96px 0 64px}}
+.hero-eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 22px}
+.hero-eyebrow::before{content:"▲ ";color:var(--accent);font-weight:700}
+.hero h1{margin:0 0 28px;max-width:14ch}
+.hero h1 .line2{display:block}
+.hero-sub{font-size:clamp(18px,2.4vw,22px);line-height:1.45;color:var(--ink-2);max-width:52ch;margin:0 0 38px;font-weight:400}
+.hero-sub strong{color:var(--ink);font-weight:600}
+
+.gate{background:var(--ink);color:var(--paper);border-radius:18px;padding:34px 28px;max-width:560px;position:relative;overflow:hidden;box-shadow:0 36px 64px -28px rgba(20,17,15,.35),0 12px 32px -12px rgba(20,17,15,.18)}
+@media(min-width:560px){.gate{padding:40px 36px}}
+.gate::before{content:"";position:absolute;top:0;right:0;width:140px;height:140px;background:radial-gradient(circle,rgba(229,85,47,.35) 0%,transparent 70%);pointer-events:none}
+.gate-pos{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,246,242,.55);margin:0 0 16px}
+.gate-pos b{color:var(--accent);font-weight:700;margin-right:8px}
+.gate h3{font-family:var(--sans);font-weight:700;font-size:1.4rem;line-height:1.15;letter-spacing:-.02em;color:var(--paper);margin:0 0 20px;max-width:24ch}
+.gate-form{display:flex;flex-direction:column;gap:11px;position:relative;z-index:1}
+@media(min-width:560px){.gate-form{flex-direction:row}}
+.gate-input{flex:1;padding:16px 18px;background:rgba(250,246,242,.08);color:var(--paper);border:1.5px solid rgba(250,246,242,.18);border-radius:100px;font-family:var(--sans);font-size:15px;outline:none;transition:border-color .15s,background .15s}
+.gate-input:focus{border-color:var(--accent);background:rgba(250,246,242,.12)}
+.gate-input::placeholder{color:rgba(250,246,242,.45)}
+.gate-submit{padding:16px 28px;background:var(--accent);color:var(--ink);border-radius:100px;font-family:var(--sans);font-size:14px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;cursor:pointer;border:none;transition:background .15s,transform .08s}
+.gate-submit:hover{background:#F26749;transform:translateY(-1px)}
+.gate-meta{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:rgba(250,246,242,.45);margin:18px 0 0;line-height:1.55}
+.gate-meta strong{color:rgba(250,246,242,.85);font-weight:500}
+
+.live-band{padding:28px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper-2);margin-top:48px}
+.live-band-inner{display:flex;flex-wrap:wrap;justify-content:space-around;gap:18px 36px;text-align:center;font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--warm-gray)}
+.live-band-inner b{display:block;font-family:var(--sans);font-size:32px;font-weight:800;color:var(--ink);letter-spacing:-.02em;margin:0 0 4px;text-transform:none}
+.live-band-inner .item{padding:8px 4px}
+
+.rhythm{padding:80px 0 64px}
+.rhythm-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--warm-gray);margin:0 0 14px;font-weight:500;text-align:center}
+.rhythm h2{text-align:center;margin:0 0 14px;max-width:18ch;margin-left:auto;margin-right:auto}
+.rhythm-sub{text-align:center;color:var(--ink-2);font-size:18px;line-height:1.55;margin:0 0 48px;max-width:56ch;margin-left:auto;margin-right:auto}
+.rhythm-grid{display:grid;grid-template-columns:1fr;gap:18px;margin:0 0 36px}
+@media(min-width:680px){.rhythm-grid{grid-template-columns:1fr 1fr;gap:22px}}
+.r-card{background:var(--paper);border:1.5px solid var(--rule);border-radius:14px;padding:32px 28px;transition:border-color .2s,transform .15s}
+.r-card:hover{border-color:var(--ink);transform:translateY(-2px)}
+.r-card .day{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.18em;margin:0 0 14px;text-transform:uppercase}
+.r-card h3{font-size:1.25rem;font-weight:700;margin:0 0 12px;letter-spacing:-.015em;line-height:1.2;color:var(--ink)}
+.r-card p{color:var(--charcoal);font-size:15.5px;line-height:1.55;margin:0}
+.r-card .meta{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--warm-gray);margin-top:14px;letter-spacing:.04em}
+
+.founder{padding:80px 0 64px;border-top:1px solid var(--rule);background:var(--paper-2)}
+.founder-grid{display:grid;gap:36px;align-items:center}
+@media(min-width:880px){.founder-grid{grid-template-columns:280px 1fr;gap:60px}}
+.founder-photo{position:relative}
+.founder-photo img{width:100%;max-width:280px;border-radius:14px;border:2px solid var(--ink);box-shadow:8px 8px 0 0 var(--shout)}
+.founder-photo-meta{font-family:var(--mono);font-size:11px;color:var(--warm-gray);margin-top:18px;letter-spacing:.04em;text-align:left}
+.founder h2{font-size:clamp(28px,3.8vw,42px);line-height:1.1;letter-spacing:-.025em;font-weight:800;margin:0 0 20px;color:var(--ink)}
+.founder h2 .serif{color:var(--accent)}
+.founder p{font-size:17px;line-height:1.65;color:var(--ink-2);margin:0 0 18px;max-width:60ch}
+.founder p:last-child{margin:0}
+.founder strong{color:var(--ink);font-weight:600}
+.founder-creds{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0}
+.founder-creds span{font-family:var(--mono);font-size:11px;padding:6px 12px;border:1px solid var(--rule-strong);border-radius:100px;color:var(--ink);letter-spacing:.04em;background:var(--paper)}
+
+.receipts{padding:80px 0 64px;border-top:1px solid var(--rule)}
+.receipts h2{text-align:center;margin:0 0 14px}
+.receipts-sub{text-align:center;color:var(--ink-2);font-size:17px;margin:0 0 40px;max-width:56ch;margin-left:auto;margin-right:auto}
+.receipt-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:18px;max-width:980px;margin:0 auto}
+.receipt-card{background:var(--paper);border:1.5px solid var(--rule);border-radius:14px;padding:24px;font-size:15.5px;line-height:1.6;color:var(--ink-2);position:relative}
+.receipt-card::before{content:"📦";display:block;font-size:24px;margin:0 0 12px}
+.receipt-card .who{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--accent);font-weight:600;margin:0 0 8px;text-transform:uppercase}
+.receipt-card .what{font-size:16px;font-weight:600;color:var(--ink);margin:0 0 10px;letter-spacing:-.005em;line-height:1.3}
+.receipt-card .ship-tag{display:inline-block;font-family:var(--mono);font-size:10.5px;background:var(--accent-soft);color:var(--accent-dark);padding:3px 10px;border-radius:100px;margin-top:10px;letter-spacing:.04em;font-weight:600}
+
+.not{padding:80px 0 64px;border-top:1px solid var(--rule);background:var(--paper-2)}
+.not h2{text-align:center;margin:0 0 14px;max-width:20ch;margin-left:auto;margin-right:auto}
+.not-sub{text-align:center;color:var(--ink-2);font-size:17px;margin:0 0 40px;max-width:56ch;margin-left:auto;margin-right:auto}
+.not-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:880px;margin:0 auto}
+@media(max-width:720px){.not-grid{grid-template-columns:1fr;gap:16px}}
+.not-col{padding:28px 24px;border-radius:14px}
+.not-col h4{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 18px;font-weight:700;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.not-col ul{list-style:none;padding:0;margin:0}
+.not-col li{padding:9px 0 9px 24px;font-size:15.5px;line-height:1.5;position:relative;color:var(--ink-2)}
+.not-col.no{background:#F8ECEA;border:1.5px solid #E8C0B8}
+.not-col.no h4{color:var(--accent-dark)}
+.not-col.no li::before{content:"✗";position:absolute;left:0;top:9px;color:var(--accent-dark);font-weight:700}
+.not-col.yes{background:#E7F2EA;border:1.5px solid #B4D8BC}
+.not-col.yes h4{color:var(--green)}
+.not-col.yes li::before{content:"✓";position:absolute;left:0;top:9px;color:var(--green);font-weight:700}
+
+.faq{padding:80px 0 64px;border-top:1px solid var(--rule);background:var(--paper-2)}
+.faq h2{text-align:center;margin:0 0 36px}
+.faq-list{max-width:780px;margin:0 auto}
+.faq-list details{border-top:1px solid var(--rule);padding:22px 0}
+.faq-list details:last-of-type{border-bottom:1px solid var(--rule)}
+.faq-list summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:18px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";font-family:var(--serif);color:var(--accent);font-size:1.6rem;line-height:1;transition:transform .15s}
+.faq-list details[open] summary::after{transform:rotate(45deg)}
+.faq-list p{margin:14px 0 0;color:var(--ink-2);font-size:16px;line-height:1.6}
+
+.final{padding:96px 0;background:var(--ink);color:var(--paper);text-align:center;position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;top:-30%;left:-10%;width:60%;height:160%;background:radial-gradient(circle,rgba(229,85,47,.25) 0%,transparent 60%);pointer-events:none}
+.final::after{content:"";position:absolute;bottom:-20%;right:-10%;width:50%;height:140%;background:radial-gradient(circle,rgba(244,208,63,.18) 0%,transparent 60%);pointer-events:none}
+.final .wrap{position:relative;z-index:1}
+.final-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,246,242,.55);margin:0 0 22px;font-weight:500}
+.final h2{font-size:clamp(36px,5.5vw,60px);line-height:1.05;letter-spacing:-.03em;color:var(--paper);margin:0 0 28px;max-width:18ch;margin-left:auto;margin-right:auto;font-weight:800}
+.final h2 .hl{background:linear-gradient(180deg,transparent 0%,transparent 60%,var(--shout) 60%,var(--shout) 92%,transparent 92%);color:var(--ink);font-style:italic}
+.final p{color:rgba(250,246,242,.75);font-size:18px;margin:0 0 36px;max-width:48ch;margin-left:auto;margin-right:auto;line-height:1.55}
+.final .gate{margin:0 auto;background:rgba(250,246,242,.06);border:1.5px solid rgba(250,246,242,.18);text-align:left}
+.final .gate-form .gate-input{background:rgba(250,246,242,.05);border-color:rgba(250,246,242,.25)}
+.final-meta-text{font-family:var(--mono);font-size:12px;color:rgba(250,246,242,.45);margin:32px 0 0;letter-spacing:.04em}
+
+.foot{padding:36px 0;border-top:1px solid var(--rule);color:var(--warm-gray);font-size:13px}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
+.foot a{color:var(--ink-2);margin-left:20px;transition:color .15s;font-weight:500}
+.foot a:hover{color:var(--accent)}
+.foot .copy{font-family:var(--mono);font-size:11px;letter-spacing:.04em}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body>
+
+<div class="top-strip">
+  <div class="ts-l"><strong>The Closer Method</strong></div>
+  <div class="ts-c">AI Builder Lounge · <span class="seats">$47/mo founding · 50 spots only · locked for life</span></div>
+  <div class="ts-r"><a href="https://www.skool.com/ai-builders-lounge-4555" target="_blank" rel="noopener" class="ts-cta" data-join="lounge">Join on Skool →</a></div>
+</div>
+
+<main id="main">
+
+<!-- HERO · current product · weekly cadence · $47/mo founding -->
+<header class="hero">
+  <div class="wrap">
+    <p class="hero-eyebrow">For creators building their content system on Claude</p>
+    <h1>Build the content system <span class="line2"><span class="serif">that runs without you.</span></span></h1>
+    <p class="hero-sub">Every week I build one piece of it live, on Claude, using the skills. You keep all 27 the day you join, get a new one every month, and your own work rewritten until it ships. <strong>$47/mo founding rate · locked for life · 50 spots.</strong></p>
+
+    <div class="gate">
+      <p class="gate-pos"><b>● founding · open</b>$47/mo · locked for life · 50 spots · payment + community on Skool</p>
+      <h3>Join the founding 50. Your rate locks at $47/mo for as long as you stay.</h3>
+      <a href="https://www.skool.com/ai-builders-lounge-4555" target="_blank" rel="noopener" class="gate-submit" data-join="lounge" style="display:block;text-align:center;text-decoration:none;width:100%">Join the Lounge on Skool →</a>
+      <p class="gate-meta">You land inside the second you join · this week's live build and the latest skill drop are already there. Want to look first? <a href="#prompt" style="color:rgba(250,246,242,.85);text-decoration:underline">Grab the free prompt.</a></p>
+    </div>
+  </div>
+</header>
+
+<section class="live-band">
+  <div class="wrap live-band-inner">
+    <div class="item"><b>$47</b>founding rate · locked for life</div>
+    <div class="item"><b>50</b>spots only</div>
+    <div class="item"><b>1×</b>live build a week</div>
+    <div class="item"><b>1×</b>new skill a month</div>
+    <div class="item"><b>3×</b>builds critiqued a month</div>
+    <div class="item"><b>0</b>Discord channels</div>
+  </div>
+</section>
+
+<!-- THE WEEKLY RHYTHM · 4 cards · what membership actually does -->
+<section class="rhythm">
+  <div class="wrap">
+    <p class="rhythm-eyebrow">001 · the weekly rhythm</p>
+    <h2>Not another course you abandon. <span class="serif">A rhythm you keep.</span></h2>
+    <p class="rhythm-sub">Built for builders exhausted by AI-course-bro pipelines. Weekly live builds · new skills · direct feedback. No graduation date. No Discord, one calm Skool space.</p>
+
+    <div class="rhythm-grid">
+      <div class="r-card">
+        <p class="day">Each month</p>
+        <h3>One new Claude skill drops</h3>
+        <p>One members-only Claude skill every month. Production-tested. Ready to paste into Claude, ChatGPT, Cursor, Gemini, or Perplexity. Each one ships with the WHY and a real before/after example.</p>
+        <span class="meta">Inbox + Skool archive</span>
+      </div>
+      <div class="r-card">
+        <p class="day">Every week</p>
+        <h3>Live "build with me" session</h3>
+        <p>I pick one member-submitted business. I rebuild their stack live with Claude Skills. Recording archived in Skool for members who can't make it. 90 minutes. Q&amp;A after. Replay-able forever.</p>
+        <span class="meta">11am PT · 1× per week · async if you miss it</span>
+      </div>
+      <div class="r-card">
+        <p class="day">Each month</p>
+        <h3>Your builds critiqued, by me directly</h3>
+        <p>Each month I critique member-submitted builds. Submit a prompt or a page that's not working. I rewrite it and show you why. In Skool, not behind a 200-channel Discord. Response within 48 hours.</p>
+        <span class="meta">Async · 48-hour turnaround</span>
+      </div>
+      <div class="r-card">
+        <p class="day">Forever</p>
+        <h3>Founding rate locked for life</h3>
+        <p>$47/mo locked for life if you join in the founding 50. After 50, the next cohort opens at $97/mo standard. Founding members keep their rate forever, even after standard goes up.</p>
+        <span class="meta">Founding · 50 spots · price locked</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER STORY -->
+<section class="founder">
+  <div class="wrap founder-grid">
+    <div class="founder-photo">
+      <img src="https://closermethod.com/img/eli-hitz.jpg" alt="Eli Hitz, founder of The Closer Method" width="280" height="280">
+      <p class="founder-photo-meta">Eli Hitz<br>founder · @closermethod<br>NY</p>
+    </div>
+    <div>
+      <h2>I'm not running an AI course. <span class="serif">I'm running a build studio you can sit in.</span></h2>
+      <p>I spent 10 years selling enterprise software. <strong>$1.2M+ at Deel</strong>. 268% of Q3 quota. 167% at Criteo. HBO, Bloomberg, McCann, Y&amp;R, Autodesk. Then I quit and started prompting Claude with the same frameworks.</p>
+      <p>Now I run a live build every week, ship new Claude skills, and critique member work directly. <strong>That's the whole offer.</strong> Quiet operator energy for people who ship in silence.</p>
+      <div class="founder-creds">
+        <span>Deel</span>
+        <span>Criteo</span>
+        <span>HBO</span>
+        <span>Bloomberg</span>
+        <span>McCann</span>
+        <span>Y&amp;R</span>
+        <span>Autodesk</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECEIPTS · not testimonials -->
+<section class="receipts">
+  <div class="wrap">
+    <h2>You're early. <span class="serif">Be the first receipt.</span></h2>
+    <p class="receipts-sub">The founding cohort just opened, so there are no member quotes yet. Here's exactly what happens in a live build, so you know what you're walking into.</p>
+
+    <div class="receipt-grid">
+      <div class="receipt-card">
+        <p class="who">Step 1</p>
+        <p class="what">You submit your business</p>
+        <p>Drop your offer and the one thing you're stuck on. Each week I pick one member build to do live in front of the room.</p>
+        <span class="ship-tag">your turn next</span>
+      </div>
+      <div class="receipt-card">
+        <p class="who">Step 2</p>
+        <p class="what">I build it live with Claude Skills</p>
+        <p>You watch the real prompts run · the website-creator skill, the cold-dm framework, the pitch-deck builder. Not slideware. The actual build.</p>
+        <span class="ship-tag">real prompts · no theory</span>
+      </div>
+      <div class="receipt-card">
+        <p class="who">Step 3</p>
+        <p class="what">You leave with the artifact</p>
+        <p>The file ships in the session. The replay lands in the Skool archive. Then you submit yours, and the next build is for you.</p>
+        <span class="ship-tag">file + replay archived</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT THIS ISN'T · anti-positioning -->
+<section class="not">
+  <div class="wrap">
+    <h2>What this <span class="serif">isn't.</span></h2>
+    <p class="not-sub">Listing this clearly because most "AI communities" sell the opposite. If you came expecting these things, this lounge isn't for you.</p>
+
+    <div class="not-grid">
+      <div class="not-col no">
+        <h4>What the lounge ISN'T</h4>
+        <ul>
+          <li>Not a discord · no daily noise</li>
+          <li>Not a course · no modules or lessons</li>
+          <li>Not a cohort · no "graduation date"</li>
+          <li>Not an accountability group</li>
+          <li>Not AI gurus selling AI to AI gurus</li>
+          <li>Not a feed you have to check every day</li>
+          <li>Not a mastermind · no breakouts</li>
+        </ul>
+      </div>
+      <div class="not-col yes">
+        <h4>What the lounge IS</h4>
+        <ul>
+          <li>1 live "build with me" every week</li>
+          <li>1 new Claude skill every month</li>
+          <li>Direct feedback from Eli within 48 hours</li>
+          <li>Founding rate $47/mo locked for life · 50 spots</li>
+          <li>One calm Skool space · zero daily notifications</li>
+          <li>Lifetime access to the skill archive</li>
+          <li>Quiet operator energy · for people who ship in silence</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ · current-product specific objections -->
+<section class="faq">
+  <div class="wrap">
+    <h2>The 5 questions founding members ask most</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Are founding seats open now?</summary>
+        <p>Yes. The first 50 founders join at $47/mo, locked for life. Once 50 are in, the next cohort opens at $97/mo standard. Founding members keep $47/mo for as long as they stay, even after standard goes up. You join, pay, and land inside on Skool in one step.</p>
+      </details>
+      <details>
+        <summary>Do I need the $147 AI Builder Toolkit to join?</summary>
+        <p>No. The lounge is a separate product. But · all 27 skills from the AI Builder Toolkit are included in the lounge archive at no extra cost. Already bought the toolkit? You keep those files and get every new skill on top.</p>
+      </details>
+      <details>
+        <summary>How is this different from the AI Builder Toolkit?</summary>
+        <p>Toolkit is the static product (27 .md files, paid once, used forever). Lounge is the live + recurring layer (weekly live builds + new skill drops + direct feedback). Toolkit is "what to install." Lounge is "watch me build every week, get new skills, ask me anything."</p>
+      </details>
+      <details>
+        <summary>Why Skool and not Discord?</summary>
+        <p>Because Discord is where good intentions go to die. I tried it. Members lurked. Active threads got noisy. The 5% of voices drowned out the rest. The lounge lives in one calm Skool space · the weekly live build replay, the skill drops, and the archive in one place. No real-time noise. Less is more.</p>
+      </details>
+      <details>
+        <summary>What if a skill from a build doesn't fit my business?</summary>
+        <p>DM @closermethod with what's not landing. I rewrite the skill for your specific business and send it back, as many times as it takes. That's the made-to-work guarantee · the only one I make.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA · repeated gate -->
+<section class="final" id="prompt">
+  <div class="wrap">
+    <p class="final-eyebrow">▲ Not ready to join? Start with the free prompt</p>
+    <h2>Grab the free prompt. <span class="hl">First.</span></h2>
+    <p>One live build every week. New Claude skills. Direct feedback within 48 hours. That's the whole offer. The free prompt shows you the voice before you join.</p>
+
+    <div class="gate">
+      <p class="gate-pos"><b>● free</b>the prompt that started the Lounge · yours in one email</p>
+      <h3>Send me the free prompt.</h3>
+      <form class="gate-form" id="lounge-form-final" data-action="lounge-waitlist-final">
+        <input type="email" class="gate-input" placeholder="your email" required aria-label="Email address">
+        <button type="submit" class="gate-submit">Send me the free prompt →</button>
+      </form>
+      <p class="gate-meta">Free prompt lands in your inbox. When you're ready, <a href="https://www.skool.com/ai-builders-lounge-4555" target="_blank" rel="noopener" data-join="lounge" style="color:rgba(250,246,242,.85);text-decoration:underline">join the founding 50 on Skool →</a></p>
+    </div>
+
+    <p class="final-meta-text">questions? DM @closermethod</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="copy">© 2026 The Closer Method</div>
+    <div>
+      <a href="https://instagram.com/closermethod" target="_blank" rel="noopener">@closermethod</a>
+      <a href="/build/">$147 toolkit</a>
+      <a href="/starter/">free starter</a>
+      <a href="/ugc/">for creators</a>
+      <a href="/">home</a>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<!-- GA4 + Meta Pixel · deferred via requestIdleCallback -->
+<script>
+(function(){
+  function load3P(){
+    var gt=document.createElement('script');gt.async=true;gt.src='https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD';document.head.appendChild(gt);
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag;gtag('js',new Date());gtag('config','G-Q2458LX0VD',{send_page_view:true,page_path:'/lounge'});
+    gtag('event','view_item',{content_name:'lounge_waitlist',content_category:'community',value:47,currency:'USD'});
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','35298849146380570');
+    fbq('track','PageView');
+    fbq('track','ViewContent',{content_name:'lounge_waitlist',content_category:'community',value:47,currency:'USD'});
+  }
+  if(window.requestIdleCallback){window.requestIdleCallback(load3P,{timeout:3000});}
+  else{window.addEventListener('load',function(){setTimeout(load3P,1500);});}
+})();
+</script>
+
+<!-- Lounge waitlist form wire · POSTs to /api/subscribe with source=lounge_waitlist · tags 19255029 + aud_builder + stage_lead -->
+<script>
+(function(){
+  function wire(form){
+    if(!form) return;
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var input = form.querySelector('.gate-input');
+      var btn = form.querySelector('.gate-submit');
+      var email = (input && input.value || '').trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        if(input){input.style.borderColor='#E5552F';input.focus();}
+        return;
+      }
+      var originalBtn = btn ? btn.textContent : '';
+      if(btn){btn.disabled = true; btn.textContent = 'sending...';}
+      try{
+        var res = await fetch('/api/subscribe', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({email: email, source: 'lounge_waitlist'})
+        });
+        var data = await res.json();
+        if(res.ok && data.subscriber_id){
+          if(btn){btn.textContent = "you're in"; btn.style.background = '#1E7E5E';}
+          if(input){input.value = ''; input.placeholder = 'your free prompt is on the way';}
+          if(typeof gtag !== 'undefined') gtag('event', 'lounge_waitlist_subscribe', {transport_type:'beacon', form_id: form.id});
+          if(typeof fbq !== 'undefined') fbq('track', 'Lead', {content_name:'lounge_waitlist', form_id: form.id});
+        } else {
+          if(btn){btn.disabled = false; btn.textContent = originalBtn;}
+          if(input){input.style.borderColor = '#E5552F';}
+        }
+      } catch(err){
+        if(btn){btn.disabled = false; btn.textContent = originalBtn;}
+        if(input){input.style.borderColor = '#E5552F'; input.placeholder = 'something broke · DM @closermethod';}
+      }
+    });
+  }
+  wire(document.getElementById('lounge-form'));
+  wire(document.getElementById('lounge-form-final'));
+
+  // Skool join is off-site · fire intent events on click so we keep attribution
+  document.querySelectorAll('[data-join="lounge"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      if(typeof gtag !== 'undefined') gtag('event','begin_checkout',{content_name:'lounge_founding',value:47,currency:'USD'});
+      if(typeof fbq !== 'undefined') fbq('track','InitiateCheckout',{content_name:'lounge_founding',value:47,currency:'USD'});
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Blueprint Is Ready | The Closer Method</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Meta Pixel + GA4 + Purchase events (2026-05-21 tracking fix · was missing GA4 entirely) -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '35298849146380570');
+  fbq('track', 'PageView');
+  fbq('trackCustom', 'BlueprintDownload', {content_name: 'closer-brain-blueprint'});
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"/></noscript>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q2458LX0VD', { page_path: '/blueprint/thank-you' });
+
+  /* Purchase event · Stripe session_id dedupe · Blueprint is $19 per Stripe link cNi5kxe5rd3g3qq8tl5Ne04 */
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var sessionId = params.get('session_id') || '';
+    var validSession = /^cs_(live|test)_[a-zA-Z0-9]{20,}$/.test(sessionId);
+    var purchaseKey = validSession ? 'blueprint_purchase_' + sessionId : null;
+    var alreadyFired = purchaseKey ? localStorage.getItem(purchaseKey) === '1' : false;
+    if (!alreadyFired) {
+      fbq('track', 'Purchase', { content_name: 'Blueprint', content_ids: ['closer-brain-blueprint'], value: 19, currency: 'USD', content_type: 'product' });
+      gtag('event', 'purchase', {
+        transaction_id: sessionId || 'blueprint-' + Date.now(),
+        value: 19, currency: 'USD',
+        items: [{ item_id: 'closer-brain-blueprint', item_name: 'Closer Brain Blueprint', price: 19, quantity: 1 }]
+      });
+      if (purchaseKey) { try { localStorage.setItem(purchaseKey, '1'); } catch(e){} }
+    }
+  })();
+  </script>
+
+  <style>
+    :root{--cream:#FEF7F5;--blush:#FDF3EF;--white:#fff;--teal:#13B38B;--teal-hover:#0F9A77;--charcoal:#2C2825;--deep:#1A1714;--warm-gray:#8A8279;--stone:#D4CEC4;--terracotta:#C4704B;--terracotta-dark:#A85A38}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--charcoal);-webkit-font-smoothing:antialiased;font-size:.95rem;line-height:1.7}
+    h1,h2,h3{font-family:'Cormorant Garamond',serif;color:var(--deep);font-weight:600}
+    .nav{text-align:center;padding:24px 20px;border-bottom:1px solid var(--stone)}
+    .nav span{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--deep);letter-spacing:.02em}
+    .wrap{max-width:920px;margin:0 auto;padding:40px 20px 60px}
+    .card{background:var(--white);border:1px solid var(--stone);border-radius:12px;padding:48px 40px;box-shadow:0 4px 24px rgba(0,0,0,.04)}
+    .eyebrow{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--teal);margin-bottom:12px}
+    h1{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin-bottom:16px}
+    .hero-p{font-size:.95rem;color:var(--warm-gray);margin-bottom:8px;line-height:1.75}
+    .hero-p strong{color:var(--charcoal)}
+
+    /* DOWNLOAD */
+    .download-box{background:var(--blush);border:2px solid var(--teal);border-radius:10px;padding:28px;text-align:center;margin:28px 0}
+    .download-box p{font-size:.9rem;color:var(--warm-gray);margin-bottom:16px}
+    .btn-download{display:inline-block;padding:1.1rem 2.5rem;background:var(--teal);color:var(--white);font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:700;border-radius:4px;text-decoration:none;transition:background .2s;letter-spacing:.02em}
+    .btn-download:hover{background:var(--teal-hover)}
+
+    /* OFFERS */
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;margin-top:28px}
+    .offer{border:1px solid var(--stone);border-radius:8px;padding:32px 28px;background:var(--white)}
+    .offer.primary{border:2px solid var(--teal);background:var(--cream)}
+    .offer h2{font-size:1.4rem;margin-bottom:10px}
+    .offer p{font-size:.88rem;color:var(--warm-gray);margin-bottom:14px;line-height:1.7}
+    .offer p strong{color:var(--charcoal)}
+    .offer ul{list-style:none;padding:0;margin-bottom:18px}
+    .offer ul li{position:relative;padding-left:20px;font-size:.85rem;color:var(--charcoal);line-height:2}
+    .offer ul li::before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;border-radius:50%;background:rgba(19,179,139,.7)}
+    .price-tag{font-size:.85rem;color:var(--terracotta);font-weight:600;margin-bottom:16px}
+    .btn{display:inline-block;padding:1rem 2rem;border-radius:4px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.88rem;transition:all .2s}
+    .btn-primary{background:var(--teal);color:var(--white)}
+    .btn-primary:hover{background:var(--teal-hover)}
+    .btn-secondary{background:var(--charcoal);color:var(--white)}
+    .btn-secondary:hover{background:#3d3832}
+    .micro{font-size:.72rem;color:var(--stone);margin-top:10px}
+
+    /* STEPS */
+    .steps{margin-top:32px;padding:28px;background:var(--blush);border-radius:8px}
+    .steps h3{font-size:1.2rem;margin-bottom:14px}
+    .steps ol{padding-left:22px}
+    .steps ol li{font-size:.88rem;color:var(--warm-gray);line-height:2}
+
+    .bottom{margin-top:28px;text-align:center;padding:8px 0}
+    .bottom p{font-size:.9rem;color:var(--warm-gray);line-height:1.7}
+    .bottom strong{color:var(--charcoal)}
+
+    footer{text-align:center;padding:40px 20px;font-size:.72rem;color:var(--stone)}
+
+    @media(max-width:768px){
+      .card{padding:28px 22px}
+      .grid{grid-template-columns:1fr}
+      .offer{padding:24px 20px}
+      .download-box{padding:22px 18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="nav"><span>The Closer Method</span></div>
+  <div class="wrap">
+    <div class="card">
+      <div class="eyebrow">You're In</div>
+      <h1>Your Blueprint Is Ready</h1>
+      <p class="hero-p">Download <strong>The Closer Brain Blueprint</strong> below. Inside, you will learn how to structure your offer, positioning, objections, and messaging so AI can help you sell more strategically.</p>
+
+      <div class="download-box">
+        <p>Your free blueprint. 10 pages. The system behind better AI outputs.</p>
+        <a class="btn-download" href="/blueprint/UGC-Closer-Brain-Blueprint-V3.pdf" download>Download The Blueprint (PDF)</a>
+      </div>
+
+      <div class="grid">
+        <div class="offer primary">
+          <h2>Ready To Apply This?</h2>
+          <p><strong>CloserAI</strong> takes everything in the blueprint and turns it into a complete AI-powered closing system. Paste a brand message, get the exact reply. Calculate your rate, send a pricing menu, handle every objection.</p>
+          <ul>
+            <li>CloserAI system prompt (Claude + ChatGPT)</li>
+            <li>Knowledge files pack (scripts, rate benchmarks, templates)</li>
+            <li>15+ objection handlers with psychology breakdowns</li>
+            <li>Usage rights pricing matrix</li>
+            <li>7 cold pitch templates with follow-up sequences</li>
+            <li>Contract and scope review framework</li>
+            <li>Lifetime access to CloserAI web tools</li>
+            <li>All future updates included</li>
+          </ul>
+          <div class="price-tag">Founding Member: $297 (increases to $497 after 50 sales)</div>
+          <a class="btn btn-primary" href="https://buy.stripe.com/cNi5kxe5rd3g3qq8tl5Ne04" onclick="if(typeof fbq!=='undefined'){fbq('track','InitiateCheckout',{value:297,currency:'USD',content_name:'closerai-from-blueprint'});}">Start Closing $800+ Deals</a>
+          <p class="micro">One payment. Lifetime access. Founding pricing will not last.</p>
+        </div>
+
+        <div class="offer">
+          <h2>Start With The Free Tools</h2>
+          <p>Not ready for the full system? Try the <strong>AI Toolkit</strong> first. Free rate calculator, AI reply generator, and objection scripts you can use right now.</p>
+          <ul>
+            <li>Rate calculator (100% free)</li>
+            <li>AI reply generator</li>
+            <li>3-option pricing menu builder</li>
+            <li>Follow-up script generator</li>
+            <li>12 objection handler scripts</li>
+          </ul>
+          <a class="btn btn-secondary" href="https://closermethod.com/app/">Try The Free AI Tools</a>
+          <p class="micro">Free to start. Closing tools unlock for $47.</p>
+        </div>
+      </div>
+
+      <div class="steps">
+        <h3>What happens next</h3>
+        <ol>
+          <li>Download and read the Blueprint</li>
+          <li>Identify your weakest closer brain layer</li>
+          <li>Try the free AI tools to see the system in action</li>
+          <li>When you are ready for the full system, get CloserAI</li>
+        </ol>
+      </div>
+
+      <div class="bottom">
+        <p><strong>The blueprint gives you the system. The AI tools let you test it. CloserAI gives you the full implementation.</strong></p>
+        <p>That is the right order for most people.</p>
+      </div>
+    </div>
+  </div>
+  <footer>The Closer Method &copy; 2026 | Built by Elisabeth</footer>
+</body>
+</html>

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inbox (55) - you@cmail.com - cmail</title>
+
+<!-- SEO + Social -->
+<meta name="description" content="You are logged in as a brand marketing manager. 50 creator pitches. 47 archived. 3 got a reply. See exactly why, backed by research.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://closermethod.com/inbox">
+<meta property="og:title" content="cmail - the inbox a brand manager actually sees">
+<meta property="og:description" content="50 creator pitches. 47 archived. 3 got a reply. Tap any row to see why.">
+<meta property="og:image" content="https://closermethod.com/inbox-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://closermethod.com/inbox-og.png">
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '35298849146380570');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"/></noscript>
+
+<!-- GA4 · added Apr 28 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q2458LX0VD',{page_path:'/inbox'});gtag('event','view_item',{content_name:'inbox_simulator',content_category:'interactive_demo'});</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"></noscript>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link rel="icon" href="/favicon.svg">
+<style>
+:root{
+  --text:#202124;
+  --text-sec:#5f6368;
+  --text-ter:#80868b;
+  --bg:#ffffff;
+  --bg-alt:#f6f8fc;
+  --hover:#f1f3f4;
+  --divider:#e8eaed;
+  --divider-lt:#f0f0f0;
+  --blue:#1a73e8;
+  --blue-light:#e8f0fe;
+  --blue-bg:#d3e3fd;
+  --red:#d93025;
+  --green:#188038;
+  --star:#f4b400;
+  --cm-accent:#5a3825;
+  --cm-cream:#f4efe8;
+  --sidebar-w:256px;
+  --topbar-h:64px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow-x:hidden}
+body{font-family:'Roboto',Arial,sans-serif;color:var(--text);background:var(--bg);font-size:14px;line-height:1.4;-webkit-font-smoothing:antialiased}
+.material-icons-outlined{font-family:'Material Icons Outlined';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-smoothing:antialiased}
+button{font-family:inherit;background:none;border:none;cursor:pointer;color:inherit}
+a{color:inherit;text-decoration:none}
+
+/* ================ TOP BAR ================ */
+.topbar{position:sticky;top:0;z-index:100;height:var(--topbar-h);background:var(--bg);border-bottom:1px solid var(--divider);display:flex;align-items:center;padding:0 16px;gap:16px}
+.tb-burger{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-sec)}
+.tb-burger:hover{background:var(--hover)}
+.tb-logo{display:flex;align-items:baseline;gap:8px;padding:0 8px}
+.tb-logo-mark{font-family:'Lora',Georgia,serif;font-style:italic;font-size:26px;font-weight:500;color:var(--cm-accent);letter-spacing:-.5px}
+.tb-logo-by{font-family:'Roboto',sans-serif;font-size:10px;font-weight:400;color:var(--text-ter);letter-spacing:1px;text-transform:uppercase;padding-bottom:4px}
+.tb-search{flex:1;max-width:720px;height:48px;background:#eaf1fb;border-radius:8px;display:flex;align-items:center;padding:0 16px;gap:16px;transition:background .15s}
+.tb-search:focus-within{background:var(--bg);box-shadow:0 1px 1px 0 rgba(65,69,73,.3),0 1px 3px 1px rgba(65,69,73,.15)}
+.tb-search .material-icons-outlined{font-size:22px;color:var(--text-sec)}
+.tb-search input{flex:1;background:none;border:none;outline:none;font-size:16px;font-family:inherit;color:var(--text)}
+.tb-right{display:flex;align-items:center;gap:4px;margin-left:auto}
+.tb-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-sec);position:relative}
+.tb-icon:hover{background:var(--hover)}
+.tb-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#1a73e8,#188038);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:14px;margin-left:8px}
+
+/* ================ APP LAYOUT ================ */
+.app{display:flex;min-height:calc(100vh - var(--topbar-h))}
+
+/* sidebar */
+.side{width:var(--sidebar-w);flex-shrink:0;padding:16px 8px;background:var(--bg);border-right:1px solid var(--divider-lt);position:sticky;top:var(--topbar-h);height:calc(100vh - var(--topbar-h));overflow-y:auto}
+.compose{display:flex;align-items:center;gap:16px;height:56px;padding:0 24px 0 16px;border-radius:16px;background:#c2e7ff;color:#001d35;font-weight:500;font-size:14px;box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15);margin:0 8px 16px;transition:all .15s}
+.compose:hover{box-shadow:0 1px 3px 0 rgba(60,64,67,.3),0 4px 8px 3px rgba(60,64,67,.15);background:#b6e0fb}
+.compose .material-icons-outlined{font-size:22px}
+
+.side-nav{display:flex;flex-direction:column;gap:0}
+.side-item{display:flex;align-items:center;gap:20px;height:32px;padding:0 12px 0 26px;border-radius:0 16px 16px 0;color:var(--text);font-size:14px;font-weight:400;cursor:pointer;transition:background .1s;user-select:none}
+.side-item:hover{background:var(--hover)}
+.side-item.active{background:var(--blue-bg);font-weight:700}
+.side-item .material-icons-outlined{font-size:20px;color:var(--text-sec)}
+.side-item.active .material-icons-outlined{color:var(--text)}
+.side-item span.label{flex:1}
+.side-item .count{font-size:12px;color:var(--text-sec);font-weight:400}
+.side-item.active .count{font-weight:700;color:var(--text)}
+
+.side-section{margin-top:12px;padding:8px 26px 4px;font-size:12px;font-weight:500;color:var(--text-sec);letter-spacing:.2px;display:flex;align-items:center;gap:6px;user-select:none}
+.side-section .material-icons-outlined{font-size:18px}
+
+.side-attribution{padding:16px 26px 8px;font-family:'Lora',Georgia,serif;font-style:italic;font-size:11px;color:var(--text-ter);line-height:1.5;border-top:1px solid var(--divider-lt);margin-top:20px}
+.side-attribution a{color:var(--blue);font-style:normal}
+
+/* main */
+.main{flex:1;min-width:0;padding:0;display:flex;flex-direction:column}
+
+/* banner */
+.banner{margin:10px 16px 0;padding:14px 18px;background:var(--blue-light);border:1px solid #aecbfa;border-radius:8px;font-size:13px;color:#174ea6;line-height:1.55;display:flex;align-items:flex-start;gap:12px}
+.banner .material-icons-outlined{font-size:20px;color:var(--blue);flex-shrink:0;margin-top:1px}
+.banner strong{color:#174ea6;font-weight:500}
+.banner .banner-dismiss{margin-left:auto;cursor:pointer;color:var(--text-sec);width:24px;height:24px;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.banner .banner-dismiss:hover{background:rgba(26,115,232,.1)}
+.banner .banner-dismiss .material-icons-outlined{font-size:16px}
+
+/* inbox toolbar */
+.ibx-tools{display:flex;align-items:center;gap:2px;padding:4px 16px;border-bottom:1px solid var(--divider-lt)}
+.tool-chk,.tool-btn{width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:var(--text-sec);border-radius:50%;cursor:pointer}
+.tool-chk:hover,.tool-btn:hover{background:var(--hover)}
+.tool-divider{width:1px;height:24px;background:var(--divider);margin:0 4px}
+.tool-count{margin-left:auto;font-size:12px;color:var(--text-sec);padding-right:8px}
+.tool-nav{display:flex;align-items:center;gap:2px}
+
+/* tabs */
+.tabs{display:flex;border-bottom:1px solid var(--divider-lt);padding:0 16px}
+.tab{padding:14px 28px 12px;display:flex;align-items:center;gap:10px;color:var(--text-sec);font-size:14px;font-weight:500;border-bottom:3px solid transparent;cursor:pointer;position:relative;top:1px;user-select:none}
+.tab.active{color:var(--blue);border-bottom-color:var(--blue)}
+.tab .material-icons-outlined{font-size:18px}
+
+/* mail list */
+.mail-list{flex:1;background:var(--bg)}
+.row{display:grid;grid-template-columns:48px 40px 200px 1fr 100px;align-items:center;padding:0 16px;min-height:44px;border-bottom:1px solid var(--divider-lt);cursor:pointer;font-size:14px;position:relative;transition:box-shadow .1s}
+.row:hover{box-shadow:inset 1px 0 0 #dadce0,inset -1px 0 0 #dadce0,0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15);z-index:1;background:var(--bg)}
+.row.open{background:var(--bg);border-bottom:1px solid var(--divider)}
+.row.hidden{display:none}
+.row-chk{width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:var(--text-ter)}
+.row-chk .material-icons-outlined{font-size:20px}
+.row-star{width:32px;height:32px;display:flex;align-items:center;justify-content:center;color:#dadce0}
+.row-star .material-icons-outlined{font-size:20px}
+.row.star-on .row-star{color:var(--star)}
+.row-sender{font-weight:400;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-right:12px;display:flex;align-items:center;gap:8px}
+.row.unread .row-sender{font-weight:700}
+.row-body{display:flex;gap:8px;min-width:0;overflow:hidden}
+.row-subj{font-weight:400;color:var(--text);white-space:nowrap}
+.row.unread .row-subj{font-weight:700}
+.row-snip{color:var(--text-sec);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:400}
+.row-snip::before{content:' · ';color:var(--text-sec)}
+.row-time{color:var(--text-sec);font-size:12px;text-align:right;padding-left:8px}
+.row.unread .row-time{font-weight:700;color:var(--text)}
+
+/* starred (creator replied) rows */
+.row.star-on{background:#fefaef}
+.row.star-on:hover{background:#fcf5df}
+
+/* system email rows (tool notifications) */
+.row.sys{background:#fbf9f6}
+.row.sys:hover{background:#f6f2eb}
+.row.sys .row-sender{color:var(--cm-accent);font-weight:500}
+.row.sys .row-sender .sys-badge{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:3px;background:var(--cm-accent);color:#fff;font-size:10px;font-weight:700;flex-shrink:0}
+
+/* kit synthesis (last row) */
+.row.kit{background:#fef7e0}
+.row.kit:hover{background:#fef2c7}
+.row.kit .row-sender{color:#8b5a00;font-weight:700}
+.row.kit .row-sender .sys-badge{background:var(--star);color:#5f4300}
+.row.kit .row-star{color:var(--star)}
+
+/* opened mail panel */
+.panel{grid-column:1/-1;padding:24px 80px 32px 88px;background:var(--bg);border-top:1px solid var(--divider-lt);border-bottom:1px solid var(--divider-lt);display:none;animation:fin .2s ease}
+.row.open .panel{display:block}
+@keyframes fin{from{opacity:0}to{opacity:1}}
+.panel-subj{font-size:22px;font-weight:400;color:var(--text);margin-bottom:20px;line-height:1.3}
+.panel-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--divider-lt)}
+.panel-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#5f6368,#9aa0a6);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:16px;flex-shrink:0}
+.row.star-on .panel-av{background:linear-gradient(135deg,#f4b400,#fbbc04)}
+.row.sys .panel-av{background:linear-gradient(135deg,var(--cm-accent),#8b5a3d);font-family:'Lora',Georgia,serif;font-style:italic}
+.row.kit .panel-av{background:linear-gradient(135deg,#f4b400,#e37400);color:#fff}
+.panel-meta-info{flex:1;min-width:0}
+.panel-meta-from{font-size:14px;font-weight:500;color:var(--text)}
+.panel-meta-to{font-size:12px;color:var(--text-sec)}
+.panel-meta-time{font-size:12px;color:var(--text-sec)}
+.panel-body{font-size:14px;line-height:1.7;color:var(--text);white-space:pre-wrap;margin-bottom:20px;font-family:'Roboto',Arial,sans-serif}
+.panel-body em{font-family:'Lora',Georgia,serif;font-style:italic;color:var(--cm-accent)}
+.panel-body .data-row{display:flex;justify-content:space-between;padding:4px 0;font-family:'Roboto',monospace;font-variant-numeric:tabular-nums}
+.panel-body .data-row .k{color:var(--text-sec)}
+.panel-body .data-row .v{color:var(--text);font-weight:500}
+.panel-cta{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:10px 24px;border-radius:4px;font-weight:500;font-size:14px;font-family:'Roboto',sans-serif;transition:background .15s;margin-top:4px}
+.panel-cta:hover{background:#1557b0}
+.panel-cta .material-icons-outlined{font-size:18px}
+.row.sys .panel-cta{background:var(--cm-accent)}
+.row.sys .panel-cta:hover{background:#3d2819}
+.row.kit .panel-cta{background:#e37400}
+.row.kit .panel-cta:hover{background:#b85a00}
+
+/* verdict box on creator DMs */
+.verdict{border-radius:8px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start;margin-top:18px}
+.verdict.archived{background:#fce8e6;border:1px solid #f2b8b5}
+.verdict.replied{background:#e6f4ea;border:1px solid #b8dabc}
+.verdict .material-icons-outlined{font-size:20px;flex-shrink:0;margin-top:1px}
+.verdict.archived .material-icons-outlined{color:var(--red)}
+.verdict.replied .material-icons-outlined{color:var(--green)}
+.verdict-body{flex:1}
+.verdict-label{font-size:11px;letter-spacing:1.2px;font-weight:500;text-transform:uppercase;margin-bottom:6px}
+.verdict.archived .verdict-label{color:var(--red)}
+.verdict.replied .verdict-label{color:var(--green)}
+.verdict-text{font-size:13.5px;line-height:1.55;color:var(--text)}
+.verdict-cite{display:block;font-size:11.5px;color:var(--text-sec);margin-top:8px;font-style:italic}
+.verdict-cite a{color:var(--blue);text-decoration:none}
+
+/* mail bottom stats */
+.mail-bot{padding:24px 24px 16px;font-size:12px;color:var(--text-sec);text-align:center;background:var(--bg-alt);border-top:1px solid var(--divider-lt)}
+.mail-bot strong{color:var(--text);font-weight:500}
+.mail-bot a{color:var(--blue);text-decoration:none}
+.mail-bot a:hover{text-decoration:underline}
+
+/* mobile drawer */
+.side-backdrop{display:none;position:fixed;inset:0;background:rgba(32,33,36,.5);z-index:200}
+.side-backdrop.open{display:block}
+
+/* ================ RESPONSIVE ================ */
+@media(max-width:900px){
+  :root{--sidebar-w:0px}
+  .side{position:fixed;left:-280px;top:var(--topbar-h);width:280px;height:calc(100vh - var(--topbar-h));z-index:201;transition:left .25s;box-shadow:2px 0 8px rgba(0,0,0,.15);background:var(--bg)}
+  .side.open{left:0}
+  .tb-search{max-width:none}
+  .row{grid-template-columns:36px 32px 1fr 60px;grid-template-rows:auto auto;min-height:auto;padding:10px 12px;gap:6px}
+  .row-chk{grid-row:1 / 3;grid-column:1;align-self:center}
+  .row-star{grid-row:1 / 3;grid-column:2;align-self:center}
+  .row-sender{grid-column:3;grid-row:1;font-size:13px;padding-right:0;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .row-body{grid-column:3;grid-row:2;font-size:12.5px}
+  .row-body .row-subj{font-size:12.5px}
+  .row-time{grid-column:4;grid-row:1 / 3;align-self:center;font-size:11px}
+  .panel{grid-column:1 / -1;grid-row:3;padding:20px 12px 24px}
+  .panel-subj{font-size:17px}
+  .panel-body{font-size:13.5px}
+  .tabs .tab{padding:12px 14px 10px;font-size:13px}
+  .banner{margin:8px 12px 0;padding:12px 14px;font-size:12.5px}
+  .topbar{padding:0 8px;gap:8px}
+  .tb-logo-mark{font-size:22px}
+  .tb-logo-by{display:none}
+  .tb-icon:not(:last-child){display:none}
+}
+@media(max-width:600px){
+  .tb-search{height:40px;font-size:14px}
+  .tb-search input{font-size:14px}
+  .share-btn{padding:6px 12px;font-size:12px}
+  .share-btn .label-full{display:none}
+  .sticky-cta{padding:12px 16px;font-size:13px}
+  .sticky-cta .full{display:none}
+}
+
+/* disabled sidebar items + tabs */
+.side-item.disabled{opacity:.45;cursor:default;pointer-events:none}
+.side-item.disabled:hover{background:transparent}
+.tab.disabled{opacity:.4;cursor:default;pointer-events:none}
+
+/* share on X button in top bar */
+.share-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:100px;background:var(--cm-accent);color:#fff;font-family:'Roboto',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;margin-right:8px;border:none;white-space:nowrap}
+.share-btn:hover{background:#3d2819;transform:translateY(-1px);box-shadow:0 2px 6px rgba(90,56,37,.3)}
+.share-btn svg{width:14px;height:14px;fill:currentColor}
+
+/* sticky bottom CTA bar (appears on scroll) */
+.sticky-cta{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--text);color:#fff;padding:14px 24px;border-radius:100px;box-shadow:0 8px 24px rgba(0,0,0,.25);font-family:'Roboto',sans-serif;font-size:14px;font-weight:500;display:flex;align-items:center;gap:14px;cursor:pointer;opacity:0;transition:opacity .3s ease,transform .3s ease;z-index:99;max-width:calc(100vw - 32px)}
+.sticky-cta.visible{opacity:1;transform:translateX(-50%) translateY(0)}
+.sticky-cta:hover{background:#000}
+.sticky-cta .material-icons-outlined{font-size:18px;color:var(--star)}
+.sticky-cta-text{flex:1;line-height:1.3}
+.sticky-cta-arrow{display:inline-flex;align-items:center;gap:4px;font-weight:700;color:var(--star)}
+
+/* loading state on CTA click */
+.panel-cta.loading{pointer-events:none;opacity:.7;position:relative}
+.panel-cta.loading::after{content:'';position:absolute;top:50%;right:16px;width:12px;height:12px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;margin-top:-6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<!-- ================ TOP BAR ================ -->
+<header class="topbar">
+  <button class="tb-burger" id="burger" aria-label="Menu"><span class="material-icons-outlined">menu</span></button>
+  <div class="tb-logo">
+    <span class="tb-logo-mark">cmail</span>
+    <span class="tb-logo-by">by The Closer Method</span>
+  </div>
+  <div class="tb-search">
+    <span class="material-icons-outlined">search</span>
+    <input placeholder="Search mail" aria-label="Search mail">
+  </div>
+  <div class="tb-right">
+    <button class="share-btn" id="shareBtn" aria-label="Share this inbox on X">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      <span class="label-full">Share on X</span>
+    </button>
+    <button class="tb-icon" aria-label="Help"><span class="material-icons-outlined">help_outline</span></button>
+    <button class="tb-icon" aria-label="Settings"><span class="material-icons-outlined">settings</span></button>
+    <div class="tb-av">Y</div>
+  </div>
+</header>
+
+<div class="side-backdrop" id="sideBackdrop"></div>
+
+<!-- ================ APP ================ -->
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="side" id="sidebar">
+    <button class="compose" id="composeBtn"><span class="material-icons-outlined">edit</span>Compose</button>
+    <nav class="side-nav" id="navPrimary">
+      <div class="side-item active" data-filter="all"><span class="material-icons-outlined">inbox</span><span class="label">Inbox</span><span class="count">55</span></div>
+      <div class="side-item" data-filter="starred"><span class="material-icons-outlined">star_border</span><span class="label">Starred</span><span class="count">3</span></div>
+      <div class="side-item disabled"><span class="material-icons-outlined">schedule</span><span class="label">Snoozed</span></div>
+      <div class="side-item disabled"><span class="material-icons-outlined">send</span><span class="label">Sent</span></div>
+      <div class="side-item disabled"><span class="material-icons-outlined">insert_drive_file</span><span class="label">Drafts</span></div>
+      <div class="side-item" data-filter="system"><span class="material-icons-outlined">auto_awesome</span><span class="label">From your tools</span><span class="count">5</span></div>
+    </nav>
+    <div class="side-section"><span class="material-icons-outlined">arrow_drop_down</span>Patterns</div>
+    <nav class="side-nav" id="navPatterns">
+      <div class="side-item" data-filter="flattery"><span class="material-icons-outlined">favorite_border</span><span class="label">Flattery</span><span class="count">11</span></div>
+      <div class="side-item" data-filter="rate-first"><span class="material-icons-outlined">attach_money</span><span class="label">Rate-First</span><span class="count">8</span></div>
+      <div class="side-item" data-filter="template"><span class="material-icons-outlined">content_copy</span><span class="label">Template Tells</span><span class="count">5</span></div>
+      <div class="side-item" data-filter="self"><span class="material-icons-outlined">person</span><span class="label">Self-Focused</span><span class="count">12</span></div>
+      <div class="side-item" data-filter="vague"><span class="material-icons-outlined">help_outline</span><span class="label">Vague &amp; Passive</span><span class="count">11</span></div>
+      <div class="side-item" data-filter="starred"><span class="material-icons-outlined">emoji_events</span><span class="label">The 3 That Replied</span><span class="count">3</span></div>
+    </nav>
+    <div class="side-attribution">
+      A simulation by <a href="https://closermethod.com" target="_blank">The Closer Method</a>.<br>
+      Not affiliated with Google.<br>
+      Data from 20M+ real cold outreach emails.
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="banner">
+      <span class="material-icons-outlined">info</span>
+      <div><strong>You are logged in as a brand marketing manager at a mid-market D2C brand.</strong> These are 50 creator pitches that hit your inbox in the last 48 hours, plus 5 digest emails from the tools you use to manage creator partnerships. 47 pitches were archived within 10 seconds. 3 got a reply. Tap any row to see why. Every verdict cites real outreach research &mdash; the full source list is in the footer.</div>
+    </div>
+
+    <div class="ibx-tools">
+      <div class="tool-chk"><span class="material-icons-outlined">check_box_outline_blank</span></div>
+      <div class="tool-chk"><span class="material-icons-outlined">arrow_drop_down</span></div>
+      <div class="tool-btn"><span class="material-icons-outlined">refresh</span></div>
+      <div class="tool-btn"><span class="material-icons-outlined">more_vert</span></div>
+      <div class="tool-count" id="toolCount">1&ndash;55 of 55</div>
+      <div class="tool-nav">
+        <div class="tool-btn"><span class="material-icons-outlined">chevron_left</span></div>
+        <div class="tool-btn"><span class="material-icons-outlined">chevron_right</span></div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab active"><span class="material-icons-outlined">inbox</span>Primary</div>
+      <div class="tab disabled"><span class="material-icons-outlined">local_offer</span>Promotions</div>
+      <div class="tab disabled"><span class="material-icons-outlined">people</span>Social</div>
+    </div>
+
+    <div class="mail-list" id="tiles"></div>
+
+    <div class="mail-bot">
+      <strong>3 of 50 pitches replied &middot; 6% reply rate.</strong> Aligns with industry benchmark of 3-5% for well-personalized cold outreach.<br>
+      <span style="font-size:13px;color:var(--text-sec);display:inline-block;margin-top:8px">Not sure what to charge if they reply? <a href="/rate" style="color:var(--blue);font-weight:500;text-decoration:none">Calculate your rate →</a></span><br>
+      <span style="font-size:11px;color:var(--text-ter)">Sources: <a href="https://influencermarketinghub.com/pitching-brands-via-email/" target="_blank">Influencer Marketing Hub 2025</a> (92% ignore rate) &middot; <a href="https://woodpecker.co/blog/cold-email-statistics/" target="_blank">Woodpecker (20M cold emails)</a> (+142% personalization lift) &middot; <a href="https://www.saleshandy.com/blog/cold-email-statistics/" target="_blank">Saleshandy (100M cold emails)</a> (3-5% personalized benchmark) &middot; Backlinko body-personalization +32.7% &middot; <a href="https://kalakaaar.com/blog/creator-pitch-deck/" target="_blank">Kalakaaar creator pitch research</a></span>
+    </div>
+  </main>
+</div>
+
+<!-- ================ STICKY BOTTOM CTA (appears on engagement) ================ -->
+<div class="sticky-cta" id="stickyCta" role="button" tabindex="0" aria-label="Jump to the Closer Kit">
+  <span class="material-icons-outlined">star</span>
+  <span class="sticky-cta-text"><span class="full">You've seen the pattern. </span>See the system</span>
+  <span class="sticky-cta-arrow">→</span>
+</div>
+
+<script>
+/* =============== DATA =============== */
+/* 55 rows: 50 creator DMs + 5 system emails from Closer Method tools.
+   Creator DMs are tagged with pattern categories for sidebar filtering.
+   System rows have type:'sys' and route to live tool URLs.
+   Kit synthesis (final row) has type:'kit'. */
+
+const ROWS = [
+  // ---- Row 1: Welcome email ----
+  {type:'sys',s:"The Closer Method",badge:"C",t:"Mon 7:02 AM",subj:"Monday digest: 50 new pitches plus this week's tool activity",body:"Good morning.\n\nYou've been using Closer Method tools to manage creator partnerships this month. Here's your Monday digest: 50 new creator pitches are in your inbox below, plus 4 summary emails from the tools you run in the left rail.\n\nTap any pitch to see why it was archived or replied. Tap any tool summary to open the tool.\n\nThe tools stay available in the left rail any time.",cta:"Open Closer Method",ctaUrl:"https://closermethod.com",cat:"system"},
+
+  // ---- Creator DMs: rows 2-12 (11 garbage before first standout) ----
+  {type:'dm',s:"@jess.creates",t:"10:42 AM",subj:"collab?",prev:"hi!! obsessed with your brand 🥺 would love to work together. my rate is $300!",body:"hi!! obsessed with your brand 🥺 would love to work together. my rate is $300! let me know!",v:"Flattery without any reference to a product, post, or campaign. Rate stated before value. This exact pattern accounts for the bulk of the 92% archive rate documented by Influencer Marketing Hub.",cite:"IMH 2025: 92% of cold creator pitches get ignored.",cat:"flattery"},
+  {type:'dm',s:"@jake.ugc",t:"10:41 AM",subj:"UGC creator inquiry",prev:"Hi team, I'm a UGC creator with 45K followers. Portfolio attached.",body:"Hi team, I'm a UGC creator with 45K followers. Portfolio attached. Rates: $250/video, $400/reel, $800/campaign bundle. Let me know if there's a fit.",v:"Vendor voice, no brand research, rate card in the first message. Reads like a mass-send. Woodpecker's 20M-email dataset shows generic messages reply at 1-3% while personalized reach +142%.",cite:"Woodpecker: personalization lifts reply rate up to 142%.",cat:"rate-first"},
+  {type:'dm',s:"@lex.content",t:"10:39 AM",subj:"Hi there",prev:"hey!! your brand is everything 💕 i'd love to collab!",body:"hey!! your brand is everything 💕 i'd love to collab! i'm open to PR in exchange for content!",v:"Worship language, no specifics. Asks for free product before offering anything concrete. Brand manager archive decision time on non-relevant messages: under 10 seconds.",cite:"Brand manager scan time research: under 10 seconds on irrelevant pitches.",cat:"flattery"},
+  {type:'dm',s:"@marcus.media",t:"10:37 AM",subj:"partnership opportunity",prev:"Hello team, I am reaching out to propose a partnership opportunity.",body:"Hello team, I am reaching out to propose a partnership opportunity. I create high-quality content for brands. Please let me know if you're interested and I can send my portfolio.",v:"Corporate template tone. Zero specifics. 'Interested?' is a yes/no close that makes the brand do all the thinking. Backlinko research: yes/no opens in first outreach underperform proposal-first pitches significantly.",cite:"Backlinko: proposal-first openings reply at 2-3x the rate of yes/no opens.",cat:"vague"},
+  {type:'dm',s:"@alicia.maee",t:"10:34 AM",subj:"🥺🥺🥺",prev:"hi i've been a fan for years please please can i work with you",body:"hi i've been a fan for years please please can i work with you 🥺🥺🥺 i'll do it for free just want exposure!!",v:"Emoji-only subject. Underprices to zero, which signals low-value work AND trains the brand to never pay. Pricing research: offers priced at zero are consumed at a 50% lower satisfaction rate.",cite:"Behavioral pricing: zero-priced offers undervalued 50% vs. paid.",cat:"self"},
+  {type:'dm',s:"@nora.creates",t:"10:31 AM",subj:"Quick question",prev:"Hi! Do you work with creators?",body:"Hi! Do you work with creators? If yes I'd love to send my rates. Let me know!",v:"Yes-or-no opener that asks the brand to do the work. No value delivered in the message itself. Creates friction: the brand has to respond before the creator shares anything.",cite:"Backlinko cold email research: discovery-question opens reply below baseline.",cat:"vague"},
+  {type:'dm',s:"@riley.creates",t:"10:28 AM",subj:"Rates below",prev:"Reels: $350. Posts: $250. Story set: $150. Let me know 💕",body:"Reels: $350. Posts: $250. Story set: $150. Stories/UGC/TikTok available. Let me know 💕",v:"Rate card with no framing, no research, no value. B2B sales research: leading with price before establishing value reduces close rate by up to 60%.",cite:"B2B pricing research: price-first reduces close rate up to 60%.",cat:"rate-first"},
+  {type:'dm',s:"@morning.media",t:"10:25 AM",subj:"We should work together",prev:"I think we'd be a great fit, let me know if you want to see my work.",body:"I think we'd be a great fit, let me know if you want to see my work. I can send a portfolio. Open to UGC, reels, full campaigns.",v:"Presumptuous open with no basis. 'I think we'd be a great fit' without a single specific reason reads as filler. Backlinko: unsupported-claim openers reply below baseline.",cite:"Backlinko: unsupported-claim openers underperform specific-evidence openers significantly.",cat:"vague"},
+  {type:'dm',s:"@claire.ugc",t:"10:23 AM",subj:"Creator here!",prev:"Hi, creator here! I make content for brands. DM me back!",body:"Hi, creator here! I make content for brands. DM me back! Can send samples.",v:"Self-identifier opener. The brand doesn't care who you are yet. They care what you bring. Woodpecker: openings that describe the sender rather than the recipient reply at ~1%.",cite:"Woodpecker 20M-email dataset: sender-focused openers reply at ~1%.",cat:"self"},
+  {type:'dm',s:"@rae.creates",t:"10:19 AM",subj:"Hi [Brand Name]",prev:"Hi [Brand Name], I'd love to work with you on your next launch...",body:"Hi [Brand Name], I'd love to work with you on your next launch. I create UGC for brands in your space and would love to chat rates.",v:"Template tell. The merge field never got replaced. This is copy-paste outreach in its purest form. Template-tell errors destroy sender credibility and often route to spam filters.",cite:"Cold email research: merge-field errors reduce reply rate to effectively zero.",cat:"template"},
+  {type:'dm',s:"@lana.media",t:"10:17 AM",subj:"interested in ugc?",prev:"hey are you interested in ugc content? dm back if yes",body:"hey are you interested in ugc content? dm back if yes. i have rates ready",v:"Fully lowercase, no punctuation, no brand name. The brand has no reason to say yes to a vague yes/no with no specifics. IMH 2025: pitches with zero research are the single largest category of archived messages.",cite:"IMH 2025: zero-research is the #1 archive trigger.",cat:"vague"},
+
+  // ---- Row 13: Standout #1 ----
+  {type:'dm',star:true,s:"@mateo.content",t:"10:14 AM",subj:"Your April 3 carousel + a format angle I'd test for May",prev:"Saw the April 3 carousel. The educational format pulled harder on saves than your usual product posts, which tracks with what's working across your category in Q2...",body:"Saw the April 3 carousel. The educational format pulled harder on saves than your usual product posts, which tracks with what's working across your category in Q2.\n\nThree 30-second clips testing that same format structure, shot to match your current feed tone. I film in your top-engaging demo segment so the comment signal stays consistent with your existing audience.\n\nOpen for a rate conversation this week. Thursday or Friday if you have 15 minutes.",v:"References a specific post with a specific metric direction. Proposes a content angle tied to what's already working. Names demo overlap in one line. Asks for a short, specific call window, not 'whenever works.' This got a reply in 11 hours.\n\nThis is what Woodpecker's +142% personalization lift looks like in practice: personalization requires referencing something specific the recipient recognizes about themselves.",cite:"Woodpecker (20M emails): specific-reference personalization increases reply rates up to +142%.",cat:"star"},
+
+  // ---- Row 14: Rate Calculator system email (fires right after standout 1) ----
+  {type:'sys',s:"Rate Calculator",badge:"R",t:"10:10 AM",subj:"3 creators in this week's inbox are quoting under market",body:"Based on the rate-attached pitches in your inbox this week, 3 creators quoted significantly below market rate for their tier:",data:[{k:"@jess.creates quoted",v:"$300"},{k:"Market range for her tier",v:"$850 – $1,400"},{k:"@riley.creates quoted",v:"$350"},{k:"Market range",v:"$900 – $1,600"},{k:"@alicia.maee offered",v:"free"},{k:"Market range",v:"$650 – $900"}],dataAfter:"Aggregate gap to market across these 3 pitches: $1,650 – $3,700.\n\nThey don't know. The Rate Calculator tells creators their number before they reply.",cta:"Open Rate Calculator",ctaUrl:"https://ugc-closer-suite.netlify.app/#rate-calculator",cat:"system"},
+
+  // ---- Creator DMs: rows 15-27 (13 garbage before standout 2) ----
+  {type:'dm',s:"@cait.creates",t:"10:08 AM",subj:"Open to content creators?",prev:"Hi are you guys open to content creators? I'd love to work together.",body:"Hi are you guys open to content creators? I'd love to work together. My following is small but engaged. Rates on request.",v:"Permission-asking open. Brand has to answer a gating question before any value is exchanged. 'Rates on request' adds friction that reduces reply rates 30-40%.",cite:"Backlinko: friction-adding closes reduce reply rates 30-40%.",cat:"vague"},
+  {type:'dm',s:"@natasha.media",t:"10:05 AM",subj:"Proposal attached",prev:"Please see attached proposal.",body:"Please see attached proposal. Looking forward to your response.",v:"Attachment dump. Brand has no reason to open the attachment because the message gave zero context. Cold outreach research: attachment-only messages opened at 5% of in-body pitch rate.",cite:"Cold email research: attachment-first opened at 5% of normal rate.",cat:"self"},
+  {type:'dm',s:"@tyler.media",t:"10:01 AM",subj:"Hey hey hey!",prev:"Hey hey hey team 💖 can't wait to try your stuff! let's do a collab!",body:"Hey hey hey team 💖 can't wait to try your stuff! let's do a collab! i'll post to my 12k followers!!!",v:"Casual overcompensation. 'Can't wait to try your stuff' reveals he hasn't used the product. Follower count as the only credential. Revealing non-familiarity in the first message breaks credibility for the rest of the conversation.",cite:"Sales research: demonstrating non-familiarity in outreach destroys credibility before any value is exchanged.",cat:"self"},
+  {type:'dm',s:"@mia.creates",t:"9:58 AM",subj:"UGC Content for You",prev:"We offer UGC content services at competitive rates.",body:"We offer UGC content services at competitive rates. Starting at $200 per video. Please let us know if interested.",v:"Vendor pronoun. 'We offer' positions the creator as a commodity service, not a partner. B2B positioning research: vendor-voice pitches convert at a fraction of peer-voice pitches at the same price point.",cite:"B2B positioning research: vendor-voice converts at a fraction of peer-voice.",cat:"rate-first"},
+  {type:'dm',s:"@ryan.media",t:"9:55 AM",subj:"i'm your target demo!",prev:"hi! i'm 28, i live in LA, i'm deep in your audience segment.",body:"hi! i'm 28, i live in LA, i'm deep in your audience segment. i think i'd be perfect for your brand! rates attached.",v:"Demographic match without a content plan. Matching the demo is necessary but not sufficient. The brand still needs a reason to hire him over everyone else who also matches.",cite:"IMH 2025: 'I'm your target demo' is the archetype of a first-message with no proposal attached.",cat:"self"},
+  {type:'dm',s:"@vi.creates",t:"9:52 AM",subj:"Hi!",prev:"Hi! Content creator here!",body:"Hi! Content creator here! Please check my profile. Let me know if you want to collab!",v:"Three lines, zero substance. This is the minimum-effort pitch and it's extremely common. Kalakaaar's creator pitch research confirms brands receive hundreds of variants of this pattern per week.",cite:"Kalakaaar: hundreds of minimum-effort variants per week in mid-market inboxes.",cat:"flattery"},
+  {type:'dm',s:"@april.duggan",t:"9:49 AM",subj:"Would love to collab",prev:"Would love to collab! I think my content style matches your brand aesthetic.",body:"Would love to collab! I think my content style matches your brand aesthetic. My rates are flexible. Let me know!",v:"'My content style matches' without examples or a specific post reference. 'Flexible rates' signals the creator has no pricing framework, which downstream leads to deal-by-deal underpricing.",cite:"Woodpecker: unsupported claims reduce reply rate 30-50%.",cat:"flattery"},
+  {type:'dm',s:"@kennedy.co",t:"9:46 AM",subj:"following up",prev:"hi just following up on my previous DM!",body:"hi just following up on my previous DM! wanted to see if you got it. let me know 💕",v:"Following up on a message the brand never responded to because it wasn't worth responding to. Woodpecker: follow-ups boost replies ~40% only when the original message had substance to generate interest.",cite:"Woodpecker: follow-ups lift replies ~40% only when original had substance.",cat:"flattery"},
+  {type:'dm',s:"@drew.creates",t:"9:43 AM",subj:"Partnership inquiry",prev:"Hi, I'm Drew. I'm a content creator specializing in lifestyle and product-forward content.",body:"Hi, I'm Drew. I'm a content creator specializing in lifestyle and product-forward content. I'd love to explore a partnership with your brand. Please see my portfolio linked in my bio.",v:"Introduction-heavy, value-light. 'I'd love to explore a partnership' is a hedge, not a proposal. 'Linked-in-bio' adds a click most brand managers won't make: sales research shows navigate-away CTAs have 50-70% lower engagement than in-message value.",cite:"Sales research: navigate-away CTAs underperform in-message value 50-70%.",cat:"self"},
+  {type:'dm',s:"@aurora.co",t:"9:40 AM",subj:"Hi girl!!",prev:"Hi girl!! I've been watching your brand grow and I'm obsessed!!! let's link up!",body:"Hi girl!! I've been watching your brand grow and I'm obsessed!!! let's link up! i'll send my PR address once we lock it in 💕",v:"Worshipful tone. Presumes a 'we' relationship that doesn't exist. Asks for the brand's PR shipment before offering anything. Presumed-familiarity openers reduce credibility below neutral baseline.",cite:"Sales research: presumed-familiarity with strangers reduces credibility below neutral.",cat:"flattery"},
+  {type:'dm',s:"@sam.content",t:"9:37 AM",subj:"I'll make you go viral",prev:"Hi, I have a proven system to make brands go viral on TikTok.",body:"Hi, I have a proven system to make brands go viral on TikTok. Let's hop on a quick call and I can walk you through it.",v:"Overpromise ('go viral') with no evidence. Immediately asks for a call before earning the brand's time. Promising specific outcomes (viral, 10x, guaranteed) without case-study proof triggers brand manager skepticism filters.",cite:"B2B sales research: unsupported outcome promises trigger skepticism filters.",cat:"self"},
+  {type:'dm',s:"@ana.creates",t:"9:33 AM",subj:"Bonjour!",prev:"Bonjour, je suis une créatrice de contenu et je voudrais collaborer avec vous...",body:"Bonjour, je suis une créatrice de contenu et je voudrais collaborer avec vous! Mes tarifs sont disponibles sur demande.",v:"Language mismatch with brand audience. Demonstrates the creator didn't check the brand's primary market. IMH 2025: basic research failure is the #1 self-inflicted reason for immediate archive.",cite:"IMH 2025: research failure = #1 self-inflicted archive trigger.",cat:"template"},
+  {type:'dm',s:"@kai.media",t:"9:30 AM",subj:"Creator rates 2026",prev:"Please find my rate card attached. Happy to adjust based on deliverables.",body:"Please find my rate card attached. Happy to adjust based on deliverables. Looking forward to hearing from you.",v:"Rate card as a first message. No framing, no brand-specific proposal, no reason for the brand to open the attachment. Attachment-first pitches reply at a fraction of in-body value proposals.",cite:"Cold email research: attachment-first replies at fraction of in-body value rate.",cat:"rate-first"},
+  {type:'dm',s:"@ema.content",t:"9:27 AM",subj:"Your brand is everything",prev:"Literally your brand is EVERYTHING. I need to work with you.",body:"Literally your brand is EVERYTHING. I need to work with you. Please consider me for your next campaign.",v:"All-caps flattery. 'I need' centers the creator's want, not the brand's need. Kalakaaar: flattery-heavy openers are the single most common pattern in the 'Hi, I'd love to collab' archetype that accounts for the dominant share of ignored messages.",cite:"Kalakaaar: flattery-heavy openers dominate the archive pile.",cat:"flattery"},
+
+  // ---- Row 28: Standout #2 ----
+  {type:'dm',star:true,s:"@sofia.media",t:"9:24 AM",subj:"Your last launch went all-polished. No creator content in the mix.",prev:"Your last product launch leaned fully polished, no creator content in the mix. Two of your closest category comps ran 60% UGC against their Q1 launches and saved roughly 4x on production vs. studio...",body:"Your last product launch leaned fully polished, no creator content in the mix. Two of your closest category comps ran 60% UGC against their Q1 launches and saved roughly 4x on production vs. studio shoots.\n\nThree raw-style clips: one before/after, one routine format, one quick demo. 40-second cut for feed, 15 for reels. I'd propose a usage-capped flat fee so the creative risk stays on my side.\n\nHappy to send a 20-second audition clip first so you can vet production before we talk rate.",v:"Identifies a specific campaign gap the brand actually has. Brings competitor context as framing, not boasting. Structures the ask as test-first, risk-reversed. Offers a free audition so the ask feels safe. Frames the rate conversation behind proof.\n\nBacklinko's research isolates body-personalization alone at +32.7% reply rate. Layered with enterprise risk-reversal framing, this is an enterprise-grade B2B pitch translated into a DM.",cite:"Backlinko: personalized body content alone +32.7% reply rate. Enterprise B2B: risk-reversal offers 2-3x prospect engagement.",cat:"star"},
+
+  // ---- Row 29: Closer AI system email (fires right after standout 2) ----
+  {type:'sys',s:"Closer AI",badge:"✦",t:"9:20 AM",subj:"2 counter-offers drafted for today's low quotes",body:"You're about to archive @marcus.media and @kai.media. Their rates are low but their production samples pass your quality bar.\n\nCounter drafts saved to your replies folder:",data:[{k:"@marcus.media",v:"accept at market, test-first"},{k:"@kai.media",v:"counter scope reduction, hold rate"},{k:"Value preserved this week",v:"$980"}],dataAfter:"Closer AI uses enterprise B2B objection-handling frameworks. Built from 10+ years of Fortune 500 sales negotiations at Criteo, Deel, HBO, and Bloomberg. Every counter-offer is generated in under 10 seconds.",cta:"Open Closer AI",ctaUrl:"https://closerai-app.netlify.app",cat:"system"},
+
+  // ---- Creator DMs: rows 30-43 (13 garbage before standout 3) ----
+  {type:'dm',s:"@sel.content",t:"9:17 AM",subj:"collaboration",prev:"hi, i'd like to propose a collaboration. please see attached media kit.",body:"hi, i'd like to propose a collaboration. please see attached media kit. rates included.",v:"Generic subject, attachment-first, all lowercase passive tone. Nothing in the body tells the brand why this collaboration instead of someone else's. Saleshandy 100M-email dataset confirms lowercase unpunctuated openings correlate with below-benchmark reply rates.",cite:"Saleshandy (100M emails): lowercase unpunctuated openers below benchmark.",cat:"template"},
+  {type:'dm',s:"@emma.creates",t:"9:14 AM",subj:"Will work for free!!",prev:"Hi! I'm new to UGC and I'll work for free!! Just want exposure and to build my portfolio!",body:"Hi! I'm new to UGC and I'll work for free!! Just want exposure and to build my portfolio! Please consider me!",v:"Disclaimer opener. Announcing inexperience and offering free work lowers perceived quality. Behavioral pricing research: offers priced at zero are consumed at a 50% lower satisfaction rate than paid offers of equal objective value.",cite:"Behavioral pricing: zero-priced offers consumed with 50% lower satisfaction.",cat:"self"},
+  {type:'dm',s:"@margo.creates",t:"9:11 AM",subj:"Dear Sir/Madam",prev:"Dear Sir/Madam, I am writing to inquire about potential UGC opportunities with your brand.",body:"Dear Sir/Madam, I am writing to inquire about potential UGC opportunities with your brand. Please find my rates and portfolio below.",v:"Formality mismatch. A modern D2C brand in 2026 is not addressed as 'Dear Sir/Madam'. Signals template use without basic adjustment. Register-mismatch pitches are archived within the first 3 seconds of scan.",cite:"IMH 2025: register-mismatch archived within 3 seconds.",cat:"template"},
+  {type:'dm',s:"@isla.media",t:"9:08 AM",subj:"big fan small ask",prev:"Hi! Big fan! Small ask: would you consider sending me product to review?",body:"Hi! Big fan! Small ask: would you consider sending me product to review? I'd love to post about it to my 8k followers!",v:"Hedge-and-ask. 'Small ask' tries to minimize the ask but the ask IS the creator's benefit, not the brand's. No content plan attached. Hedge-language openers reduce reply rates by signaling low confidence.",cite:"Sales research: hedge-language openers signal low confidence and underperform.",cat:"self"},
+  {type:'dm',s:"@bella.creates",t:"9:05 AM",subj:"Hi there",prev:"Hi there, let's work together!",body:"Hi there, let's work together! My style would be amazing for your brand. DM back for rates.",v:"Three sentences. No specifics. Asks the brand to DM for rates, adding friction. Backlinko: three-sentence pitches with zero specific references reply at baseline (1-3%).",cite:"Backlinko: zero-specificity pitches reply at 1-3% baseline.",cat:"vague"},
+  {type:'dm',s:"@zoey.creates",t:"9:02 AM",subj:"Can I get free product?",prev:"Hi! Can you send me free product so I can post about it?",body:"Hi! Can you send me free product so I can post about it? I'd love to feature you on my page!",v:"Ask-first pitch. The creator takes before the brand gets a reason to give. 'I'd love to feature you' positions the brand as lucky to receive the creator's content, which brands don't react to well. Triggers loss-aversion instead of value-exchange psychology.",cite:"Behavioral sales research: ask-first outreach triggers loss-aversion response.",cat:"self"},
+  {type:'dm',s:"@chloe.media",t:"8:59 AM",subj:"🥺🥺",prev:"plsss work with me 🥺🥺 ill do anything",body:"plsss work with me 🥺🥺 ill do anything. i'm obsessed with your brand pls.",v:"Emoji-only subject. Desperation signal. 'I'll do anything' removes all pricing power and destroys any future negotiation. Pricing research: signaling desperation reduces win rate AND final price point by double-digit percentages.",cite:"Pricing research: desperation signaling cuts win rate AND price by double digits.",cat:"flattery"},
+  {type:'dm',s:"@nikki.creates",t:"8:56 AM",subj:"Let's link up",prev:"Hi! Let's link up! I make content. DM me.",body:"Hi! Let's link up! I make content. DM me.",v:"Casual directive with no reason attached. The brand is being told what to do with zero value exchange. Cold email research: directive-opener first messages to strangers reply at ~0.5%.",cite:"Cold email research: directive-opener reply rate ~0.5%.",cat:"vague"},
+  {type:'dm',s:"@alex.media",t:"8:52 AM",subj:"I think we'd vibe",prev:"hi! i think we'd vibe! your aesthetic is my aesthetic. dm when u can!",body:"hi! i think we'd vibe! your aesthetic is my aesthetic. dm when u can!",v:"'Vibe' is not a content strategy. No deliverable proposed. No rate. No research. IMH 2025: 'vibe' and 'aesthetic match' as sole pitch justification account for a large share of the 92% ignored bucket.",cite:"IMH 2025: 'vibe/aesthetic' as sole justification dominates the ignored pile.",cat:"flattery"},
+  {type:'dm',s:"@emerald.media",t:"8:49 AM",subj:"Hi! UGC content available",prev:"Hi! I have UGC content available for brands. Starting at $150/video.",body:"Hi! I have UGC content available for brands. Starting at $150/video. Available for immediate booking.",v:"Commodity positioning. Price-first. 'Available' reads like ad copy from a service listing, not a proposal. Commodity-voice pitches are interchangeable with every other commodity-voice pitch in the inbox.",cite:"B2B positioning research: commodity-voice pitches are interchangeable.",cat:"rate-first"},
+  {type:'dm',s:"@sara.creates",t:"8:46 AM",subj:"collab",prev:"hi collab?",body:"hi collab?",v:"Three-word DM. Archive in under 2 seconds. Brand manager scan-time research: sub-5-word messages with no subject context average under 3 seconds of attention.",cite:"Brand manager scan-time: sub-5-word messages get <3 seconds.",cat:"vague"},
+  {type:'dm',s:"@peachtree.co",t:"8:42 AM",subj:"Content proposal",prev:"Hi, I'd like to propose content for your latest product. 3 videos, $300 total.",body:"Hi, I'd like to propose content for your latest product. 3 videos, $300 total. Turnaround 7 days. Portfolio: [link]",v:"Closer than most, but still zero research context for why THIS product over others. Flat rate with no structure signals a commodity service, not a strategic partner. Enterprise B2B: price-only proposals without value framing reply at half the rate of value-framed proposals at the same price point.",cite:"Enterprise B2B: value-framed proposals reply 2x vs. price-only at same price.",cat:"rate-first"},
+  {type:'dm',s:"@lumen.media",t:"8:38 AM",subj:"Media kit attached",prev:"Hello. Media kit attached for your review.",body:"Hello. Media kit attached for your review. Happy to discuss opportunities.",v:"Corporate tone, attachment dump, zero body value. 'Happy to discuss opportunities' is a closing line on a message that didn't open anything. Outsourcing all value to an attachment replies at ~5% of in-body pitches.",cite:"Cold email research: attachment-outsourced value replies at 5% of in-body.",cat:"template"},
+  {type:'dm',s:"@daisy.creates",t:"8:34 AM",subj:"love your vibe!",prev:"omg love your vibe!! would love to shoot content for you!",body:"omg love your vibe!! would love to shoot content for you! i'll send examples if interested 💕",v:"Two sentences of compliment and one conditional offer. Brand has to respond before the creator shares work. Conditional-share offers ('if interested') underperform upfront-share by 40%+.",cite:"Woodpecker: conditional-share ('if interested') -40% vs upfront-share.",cat:"flattery"},
+  {type:'dm',s:"@rose.creates",t:"8:31 AM",subj:"Circle back?",prev:"Hi! Just wanted to circle back on a potential collab. Does Q2 work?",body:"Hi! Just wanted to circle back on a potential collab. Does Q2 work? Open to various structures.",v:"Corporate-speak in creator context. 'Various structures' is a non-proposal. Vague timing ('at some point', 'down the line', 'Q2') correlates with stalled threads at 3x baseline.",cite:"Backlinko: vague timing correlates with stalled threads 3x baseline.",cat:"vague"},
+
+  // ---- Row 44: Standout #3 ----
+  {type:'dm',star:true,s:"@jordan.creates",t:"8:28 AM",subj:"Shot UGC for 3 brands in your category this year. Want to pitch you.",prev:"Quick intro: I've shot UGC for three brands in your category this year (names available on request), all repeat bookings, averaging 2.1M organic views per campaign...",body:"Quick intro: I've shot UGC for three brands in your category this year (names available on request), all repeat bookings, averaging 2.1M organic views per campaign.\n\nYour product profile matches theirs. Your content calendar shows a gap around routine-format content, which is my highest-performing category.\n\nProposing a 3-video test at $650/video with one revision round and 90-day usage rights. Turnaround: 5 business days brief to first cut. Happy to start with one paid test before committing to the full batch.",v:"Leads with specific credentials, backed with specific metrics. Names category match. Identifies a specific content gap. Proposes clear rate + deliverables + usage rights. Offers test structure to de-risk. Enterprise-grade sales posture translated into a DM.\n\nThis pitch stacks every research-backed mechanic: specificity (+142%), body personalization (+32.7%), test-first risk reversal (2-3x engagement), and clear scope + usage + turnaround which Enterprise B2B research shows shortens sales cycles 40%+.",cite:"Woodpecker +142% specificity, Backlinko +32.7% body-personalization, Enterprise B2B: clear scope + usage in first message shortens sales cycles 40%+.",cat:"star"},
+
+  // ---- Row 45: Negotiation Simulator system email ----
+  {type:'sys',s:"Negotiation Simulator",badge:"S",t:"8:24 AM",subj:'New scenario this week: "we only have budget for $200"',body:"You've handled this exact objection 4 times this month in real deals. Average outcome:",data:[{k:"Walked away",v:"3 of 4 times"},{k:"Accepted lowball",v:"1 of 4 times"},{k:"Value lost per walk-away",v:"~$380"},{k:"Potential recovered",v:"$1,140"}],dataAfter:"New training scenario added to the simulator: brand opens at \"$200 is all we can do\" and escalates pressure if pushed. Practice before Monday.\n\nThe simulator uses Claude API with brand-manager personas trained on 10+ years of enterprise negotiation transcripts.",cta:"Open Simulator",ctaUrl:"https://closer-method-simulator.netlify.app",cat:"system"},
+
+  // ---- Creator DMs: rows 46-54 (9 more garbage) ----
+  {type:'dm',s:"@petal.media",t:"8:20 AM",subj:"Collab rates",prev:"Hi! Attached are my collab rates for 2026. Let me know!",body:"Hi! Attached are my collab rates for 2026. Let me know!",v:"Rate-card drop with a 'let me know' close. No proposal, no research, no reason for the brand to engage. Rate-card-first messages are archived at near-100% rate on mid-market inboxes.",cite:"Cold email research: rate-card-first archived at near-100%.",cat:"rate-first"},
+  {type:'dm',s:"@bluestar.co",t:"8:16 AM",subj:"pls pls pls",prev:"pls pls pls let me work with you i'll post 3 reels for free",body:"pls pls pls let me work with you i'll post 3 reels for free just send product 🥺",v:"Pleading tone. Free offer. The brand takes zero risk and also gives the creator zero perceived value. Pleading openers reduce perceived sender value below neutral baseline.",cite:"Sales research: pleading openers reduce perceived value below neutral.",cat:"self"},
+  {type:'dm',s:"@marigold.co",t:"8:12 AM",subj:"Hi there!",prev:"Hi! Quick note: I run a TikTok with 62K followers in your space.",body:"Hi! Quick note: I run a TikTok with 62K followers in your space. Would love to discuss a partnership at some point. Let me know!",v:"Improved over some others. Niche overlap stated. But 'at some point' and 'let me know' drain all urgency and specificity. No deliverable proposed. Stalls at 3x baseline.",cite:"Backlinko: vague timing correlates with stalled threads at 3x baseline.",cat:"vague"},
+  {type:'dm',s:"@april.media",t:"8:08 AM",subj:"I make 10-sec edits",prev:"Hi! I make fast 10-second product edits that convert on TikTok. Can I send examples?",body:"Hi! I make fast 10-second product edits that convert on TikTok. Can I send examples?",v:"Specific format claim ('10-second edits that convert') is good. But 'can I send examples?' puts the burden on the brand to ask. Examples should have been in the first message. Sales research: asking permission to share value delays the share and reduces conversion.",cite:"Sales research: permission-asking delays value share and reduces conversion.",cat:"vague"},
+  {type:'dm',s:"@bloom.media",t:"8:04 AM",subj:"Would love to be considered",prev:"Hi! I'd love to be considered for any upcoming campaigns. I'm a content creator.",body:"Hi! I'd love to be considered for any upcoming campaigns. I'm a content creator. Rates flexible.",v:"'Considered' frames the creator as a candidate waiting for selection. 'Flexible rates' signals the creator will take whatever is offered. Positioning research: supplicant-voice pitches price-anchor below peer-voice for the same deliverable.",cite:"Positioning research: supplicant-voice anchors below peer-voice at same deliverable.",cat:"self"},
+  {type:'dm',s:"@jess.elaine",t:"8:00 AM",subj:"Hey!!",prev:"Hey!! Love your brand. Let's collab! DM me back for rates.",body:"Hey!! Love your brand. Let's collab! DM me back for rates.",v:"The archetype. Flattery, collab request, rate-behind-DM. Kalakaaar: this exact message structure lands in mid-market brand inboxes dozens of times per week and accounts for the dominant share of the 92% ignore rate.",cite:"Kalakaaar: this archetype dominates mid-market brand inbox volume.",cat:"flattery"},
+  {type:'dm',s:"@oak.media",t:"7:56 AM",subj:"Content services",prev:"Hi, we provide UGC content services at competitive rates.",body:"Hi, we provide UGC content services at competitive rates. DM us for pricing.",v:"Agency voice. 'Competitive rates' is a non-statement. 'DM us' reverses the responsibility. Agency-tone openers in creator-to-brand contexts underperform peer-voice by 60%+.",cite:"B2B outreach research: agency-tone in creator-to-brand underperforms 60%+.",cat:"rate-first"},
+
+  // ---- Row 55: Kit synthesis (final row, the conversion CTA) ----
+  {type:'kit',s:"The Closer Kit",badge:"★",t:"Sun 8:04 PM",subj:"The system behind the 3 that replied this week",body:"50 creator pitches hit this inbox over 48 hours. 47 were archived within 10 seconds. 3 got a reply.\n\nThe 3 followed a pattern. The pattern is teachable. It's the Closer Kit:",data:[{k:"Rate Calculator",v:"never quote $150 again"},{k:"175-Brand Database",v:"verified brands actively hiring UGC"},{k:"Closer AI",v:"counter every lowball"},{k:"Negotiation Simulator",v:"practice before you reply"},{k:"Pitch Scorer",v:"audit your pitch before you send"}],dataAfter:"Built from 10+ years selling to Fortune 500 brands at Criteo, Deel, Autodesk, HBO, and Bloomberg. Adapted for creator DMs.\n\n$247 one-time. made-to-work guarantee. Tax-deductible business expense.",cta:"Get the Closer Kit · $247",ctaUrl:"https://closermethod.com/kit",cat:"system"}
+];
+
+/* =============== RENDER =============== */
+function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+function initials(handle){
+  const n = handle.replace(/^@/,'').replace(/^The /,'').split(/[._ ]/);
+  return ((n[0]||'')[0] + (n[1]?n[1][0]:'')).toUpperCase();
+}
+function tileHtml(d,i){
+  const type = d.type || 'dm';
+  const classes = ['row','unread'];
+  if(d.star) classes.push('star-on');
+  if(type==='sys') classes.push('sys');
+  if(type==='kit') classes.push('kit');
+  const cat = d.cat || '';
+  const senderHtml = (type==='sys'||type==='kit')
+    ? `<span class="sys-badge">${esc(d.badge||'C')}</span><span>${esc(d.s)}</span>`
+    : `<span>${esc(d.s)}</span>`;
+  const starIcon = d.star ? 'star' : (type==='kit' ? 'star' : 'star_border');
+  const prevText = d.prev || (d.body ? d.body.slice(0,120) : '');
+
+  // panel content
+  let panelBody = '';
+  if(type==='sys' || type==='kit'){
+    let dataHtml = '';
+    if(d.data && d.data.length){
+      dataHtml = '<div style="background:var(--bg-alt);padding:14px 18px;border-radius:6px;margin:14px 0;">' +
+        d.data.map(r=>`<div class="data-row"><span class="k">${esc(r.k)}</span><span class="v">${esc(r.v)}</span></div>`).join('') +
+        '</div>';
+    }
+    panelBody = `<div class="panel-body">${esc(d.body).replace(/\n/g,'<br>')}</div>${dataHtml}${d.dataAfter?`<div class="panel-body" style="margin-top:-8px">${esc(d.dataAfter).replace(/\n/g,'<br>')}</div>`:''}<a class="panel-cta" href="${esc(withUtm(d.ctaUrl, d.cta, d.s))}" target="_blank" rel="noopener" onclick="handleCtaClick(event, this, '${esc(d.cta)}','${esc(d.ctaUrl)}','${esc(d.s)}')">${esc(d.cta)}<span class="material-icons-outlined">arrow_forward</span></a>`;
+  } else {
+    panelBody = `<div class="panel-body">${esc(d.body).replace(/\n/g,'<br><br>')}</div>
+      <div class="verdict ${d.star?'replied':'archived'}">
+        <span class="material-icons-outlined">${d.star?'check_circle':'archive'}</span>
+        <div class="verdict-body">
+          <div class="verdict-label">${d.star?'Replied within 11 hours':'Archived within 10 seconds'}</div>
+          <div class="verdict-text">${esc(d.v).replace(/\n\n/g,'<br><br>').replace(/\n/g,'<br>')}<span class="verdict-cite">${esc(d.cite)}</span></div>
+        </div>
+      </div>`;
+  }
+
+  return `
+    <div class="${classes.join(' ')}" data-i="${i}" data-cat="${cat}" data-type="${type}">
+      <div class="row-chk"><span class="material-icons-outlined">check_box_outline_blank</span></div>
+      <div class="row-star"><span class="material-icons-outlined">${starIcon}</span></div>
+      <div class="row-sender">${senderHtml}</div>
+      <div class="row-body"><span class="row-subj">${esc(d.subj)}</span><span class="row-snip">${esc(prevText)}</span></div>
+      <div class="row-time">${esc(d.t)}</div>
+      <div class="panel">
+        <div class="panel-subj">${esc(d.subj)}</div>
+        <div class="panel-meta">
+          <div class="panel-av">${initials(d.s)}</div>
+          <div class="panel-meta-info">
+            <div class="panel-meta-from">${esc(d.s)}${type==='sys'||type==='kit'?' <span style="color:var(--text-ter);font-weight:400">&lt;'+ (type==='kit'?'kit':(d.s||'').toLowerCase().replace(/[^a-z]/g,'')) +'@closermethod.com&gt;</span>':''}</div>
+            <div class="panel-meta-to">to you@cmail.com</div>
+          </div>
+          <div class="panel-meta-time">${esc(d.t)}</div>
+        </div>
+        ${panelBody}
+      </div>
+    </div>
+  `;
+}
+
+function render(filter='all'){
+  const tiles = document.getElementById('tiles');
+  tiles.innerHTML = ROWS.map((d,i)=>tileHtml(d,i)).join('');
+  applyFilter(filter);
+  bindTileClicks();
+}
+
+function applyFilter(filter){
+  const rows = document.querySelectorAll('.row');
+  let visible = 0;
+  rows.forEach(r => {
+    const cat = r.dataset.cat;
+    const type = r.dataset.type;
+    let show = true;
+    if(filter === 'all') show = true;
+    else if(filter === 'starred') show = (type==='dm' && r.classList.contains('star-on'));
+    else if(filter === 'system') show = (type==='sys' || type==='kit');
+    else show = (cat === filter);
+    r.classList.toggle('hidden', !show);
+    if(show) visible++;
+  });
+  document.getElementById('toolCount').textContent = `1–${visible} of ${visible}`;
+  document.querySelectorAll('.side-item[data-filter]').forEach(el=>{
+    el.classList.toggle('active', el.dataset.filter === filter);
+  });
+  trackEvent('Filter', {filter, visible});
+}
+
+let rowsOpenedCount = 0;
+function bindTileClicks(){
+  document.getElementById('tiles').addEventListener('click', e => {
+    if(e.target.closest('a')) return;
+    const r = e.target.closest('.row');
+    if(!r) return;
+    const willOpen = !r.classList.contains('open');
+    r.classList.toggle('open');
+    r.classList.remove('unread');
+    if(typeof updateUnreadCount === 'function') updateUnreadCount();
+    if(willOpen){
+      rowsOpenedCount++;
+      trackEvent('RowOpen', {
+        sender: r.querySelector('.row-sender')?.textContent?.trim(),
+        type: r.dataset.type,
+        starred: r.classList.contains('star-on'),
+        rowsOpenedTotal: rowsOpenedCount
+      });
+    }
+  });
+}
+
+// ==== sidebar filter clicks ====
+document.querySelectorAll('.side-item[data-filter]').forEach(el => {
+  el.addEventListener('click', () => {
+    applyFilter(el.dataset.filter);
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('sideBackdrop').classList.remove('open');
+    window.scrollTo({top: document.querySelector('.banner').offsetTop, behavior:'smooth'});
+  });
+});
+
+// ==== mobile burger ====
+document.getElementById('burger').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sideBackdrop').classList.toggle('open');
+});
+document.getElementById('sideBackdrop').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sideBackdrop').classList.remove('open');
+});
+
+// ==== compose button: jump to kit ====
+document.getElementById('composeBtn').addEventListener('click', () => {
+  const kitRow = document.querySelector('.row.kit');
+  if(kitRow){
+    kitRow.scrollIntoView({behavior:'smooth', block:'center'});
+    if(!kitRow.classList.contains('open')){
+      setTimeout(()=>{
+        kitRow.classList.add('open');
+        kitRow.classList.remove('unread');
+      }, 400);
+    }
+    trackEvent('ComposeJump', {});
+  }
+});
+
+// ==== search bar: live filter by subject/sender/snippet ====
+const searchInput = document.querySelector('.tb-search input');
+if(searchInput){
+  let searchTimer;
+  searchInput.addEventListener('input', e => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+      const q = e.target.value.toLowerCase().trim();
+      const rows = document.querySelectorAll('.row');
+      let visible = 0;
+      rows.forEach(r => {
+        if(!q){
+          r.classList.remove('hidden');
+          visible++;
+          return;
+        }
+        const text = [
+          r.querySelector('.row-sender')?.textContent,
+          r.querySelector('.row-subj')?.textContent,
+          r.querySelector('.row-snip')?.textContent
+        ].join(' ').toLowerCase();
+        const match = text.includes(q);
+        r.classList.toggle('hidden', !match);
+        if(match) visible++;
+      });
+      document.getElementById('toolCount').textContent = `1–${visible} of ${visible}`;
+      if(q.length >= 3) trackEvent('Search', {q, visible});
+    }, 180);
+  });
+}
+
+// ==== share on X ====
+document.getElementById('shareBtn').addEventListener('click', () => {
+  const tweetText = 'i just saw what a brand manager actually sees when creators pitch them. 50 pitches, 47 archived, 3 got a reply. the 3 have a pattern.';
+  const url = 'https://closermethod.com/inbox';
+  const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(url)}`;
+  window.open(shareUrl, '_blank', 'noopener,width=600,height=420');
+  trackEvent('ShareX', {});
+});
+
+// ==== sticky bottom CTA: appear after user has engaged, hide when Kit in viewport ====
+const stickyCta = document.getElementById('stickyCta');
+let stickyShown = false;
+function kitInViewport(){
+  const kit = document.querySelector('.row.kit');
+  if(!kit) return false;
+  const r = kit.getBoundingClientRect();
+  return r.top < window.innerHeight * 0.85 && r.bottom > 0;
+}
+function updateSticky(){
+  const shouldShow = !kitInViewport() && (window.scrollY > 800 || rowsOpenedCount >= 2);
+  if(shouldShow && !stickyShown){
+    stickyCta.classList.add('visible');
+    stickyShown = true;
+    trackEvent('StickyShown', {trigger: window.scrollY > 800 ? 'scroll' : 'rows'});
+  } else if(!shouldShow && stickyShown && kitInViewport()){
+    stickyCta.classList.remove('visible');
+    stickyShown = false;
+  }
+}
+window.addEventListener('scroll', updateSticky, {passive:true});
+stickyCta.addEventListener('click', () => {
+  const kitRow = document.querySelector('.row.kit');
+  if(kitRow){
+    kitRow.scrollIntoView({behavior:'smooth', block:'center'});
+    setTimeout(()=>{
+      kitRow.classList.add('open');
+      kitRow.classList.remove('unread');
+    }, 400);
+    trackEvent('StickyClick', {});
+  }
+});
+// keyboard support: Enter on sticky
+stickyCta.addEventListener('keydown', e => {
+  if(e.key === 'Enter' || e.key === ' '){
+    e.preventDefault();
+    stickyCta.click();
+  }
+});
+
+// ==== Escape key closes any expanded row ====
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape'){
+    document.querySelectorAll('.row.open').forEach(r => r.classList.remove('open'));
+  }
+});
+
+// ==== unread count decrement on row open ====
+function updateUnreadCount(){
+  const unreadCount = document.querySelectorAll('.row.unread').length;
+  const inboxItem = document.querySelector('.side-item[data-filter="all"] .count');
+  if(inboxItem){
+    inboxItem.textContent = unreadCount > 0 ? unreadCount : '';
+  }
+}
+
+// ==== scroll depth tracking ====
+const scrollMilestones = {25:false, 50:false, 75:false, 100:false};
+window.addEventListener('scroll', () => {
+  const doc = document.documentElement;
+  const scrolled = window.scrollY + window.innerHeight;
+  const total = doc.scrollHeight;
+  const pct = Math.round((scrolled / total) * 100);
+  [25,50,75,100].forEach(m => {
+    if(!scrollMilestones[m] && pct >= m){
+      scrollMilestones[m] = true;
+      trackEvent('ScrollDepth', {pct: m});
+    }
+  });
+}, {passive:true});
+
+// ==== UTM + tracking helpers ====
+const _utm = (() => {
+  const p = new URLSearchParams(location.search);
+  return {
+    utm_source: p.get('utm_source') || '',
+    utm_medium: p.get('utm_medium') || '',
+    utm_campaign: p.get('utm_campaign') || '',
+    utm_content: p.get('utm_content') || '',
+    referrer: document.referrer || ''
+  };
+})();
+
+function withUtm(url, campaignLabel, senderLabel){
+  if(!url) return '#';
+  try {
+    const u = new URL(url);
+    u.searchParams.set('utm_source', 'cmail');
+    u.searchParams.set('utm_medium', 'inbox_sim');
+    const camp = (senderLabel || campaignLabel || 'tool').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_|_$/g,'');
+    u.searchParams.set('utm_campaign', camp);
+    // propagate incoming utm_campaign as utm_content so attribution chains
+    if(_utm.utm_campaign) u.searchParams.set('utm_content', _utm.utm_campaign);
+    return u.toString();
+  } catch(e) { return url; }
+}
+
+function handleCtaClick(event, el, label, url, sender){
+  // loading state
+  el.classList.add('loading');
+  setTimeout(()=>el.classList.remove('loading'), 1500);
+  // tracking
+  if(typeof fbq==='function'){
+    fbq('track','InitiateCheckout',{content_name: label, destination: url, sender, source:'cmail'});
+  }
+  if(url && url.includes('ugc-closer-suite')){
+    if(typeof fbq==='function'){
+      fbq('track','Lead',{content_name:'Kit Synthesis Click', source:'cmail'});
+    }
+  }
+  trackEvent('CtaClick', {label, destination: url, sender});
+}
+
+function trackEvent(name, data){
+  if(typeof fbq==='function'){
+    try { fbq('trackCustom', name, data || {}); } catch(e){}
+  }
+}
+
+// ==== initial render ====
+render('all');
+trackEvent('InboxLoaded', {
+  utm_source: _utm.utm_source,
+  utm_medium: _utm.utm_medium,
+  utm_campaign: _utm.utm_campaign,
+  referrer: _utm.referrer,
+  viewport: window.innerWidth + 'x' + window.innerHeight
+});
+</script>
+</body>
+</html>

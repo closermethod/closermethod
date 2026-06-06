@@ -1,0 +1,438 @@
+# closermethod.com (apex) · proxy redirects to unify the tool ecosystem under one domain.
+#
+# Architecture decision (May 2026): all tools previously living on Netlify subdomains
+# are now proxied through closermethod.com/[path]. SEO equity compounds onto the apex.
+# Original subdomains still respond as fallbacks.
+#
+# All redirects below use status=200 force=true = TRUE PROXY (not 301).
+# User sees closermethod.com/X · content served from origin Netlify site.
+
+[build]
+  publish = "."
+
+# ─────── HEADERS · security + caching ───────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# ─────── TOOLS · the AI products ───────
+
+# The Retainer Skill (free pitch generator) — canonical at /retainer
+[[redirects]]
+  from = "/retainer"
+  to = "https://retainer-skill.netlify.app"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/retainer/*"
+  to = "https://retainer-skill.netlify.app/:splat"
+  status = 200
+  force = true
+
+# /skill (singular) is FREED UP — no rule. Do not re-add. /skills (plural) below is AI Builder Toolkit.
+
+# Pitch Brain / Pitch Skill (the setup-before-any-AI-pitch tool) — canonical at /pitch
+# Per Eli 2026-05-21: /pitch = pitch-brain content (NOT closermethod-free-pitch which she calls garbage, NOT LaunchStack)
+[[redirects]]
+  from = "/pitch"
+  to = "https://closermethod-pitch-setup.netlify.app"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/pitch/*"
+  to = "https://closermethod-pitch-setup.netlify.app/:splat"
+  status = 200
+  force = true
+
+# LaunchStack AI (was incorrectly living at /pitch via closermethod-pitch-engine)
+[[redirects]]
+  from = "/launchstack"
+  to = "https://launchstack-ai.netlify.app"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/launchstack/*"
+  to = "https://launchstack-ai.netlify.app/:splat"
+  status = 200
+  force = true
+
+# Brand Reply Generator
+[[redirects]]
+  from = "/reply"
+  to = "https://closermethod-brand-reply.netlify.app"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/reply/*"
+  to = "https://closermethod-brand-reply.netlify.app/:splat"
+  status = 200
+  force = true
+
+# Objection Handler (lives under brand-reply site)
+[[redirects]]
+  from = "/objection"
+  to = "https://closermethod-brand-reply.netlify.app/objection-handler"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/objection/*"
+  to = "https://closermethod-brand-reply.netlify.app/objection-handler/:splat"
+  status = 200
+  force = true
+
+# The Toolkit (main landing + pricing)
+[[redirects]]
+  from = "/toolkit"
+  to = "https://retainer-engine-launch.netlify.app"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/toolkit/*"
+  to = "https://retainer-engine-launch.netlify.app/:splat"
+  status = 200
+  force = true
+
+# MCP server docs (Pro/DFY tier)
+[[redirects]]
+  from = "/mcp"
+  to = "https://closermethod-mcp.netlify.app"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/mcp/*"
+  to = "https://closermethod-mcp.netlify.app/:splat"
+  status = 200
+  force = true
+
+# ─────── BUYER PORTAL · post-purchase pages ───────
+
+[[redirects]]
+  from = "/access/founding"
+  to = "https://closer-kit-launch.netlify.app/thanks-retainer/"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/access/pro"
+  to = "https://closer-kit-launch.netlify.app/thanks-pro/"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/access/dfy"
+  to = "https://closer-kit-launch.netlify.app/thanks-dfy/"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/access/kit"
+  to = "https://closer-kit-launch.netlify.app/thanks-uck/"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/access/bundle"
+  to = "https://closer-kit-launch.netlify.app/thanks-bundle/"
+  status = 200
+  force = true
+
+# ─────── SHORT PURCHASE LINKS · clean URLs for ads/DMs ───────
+
+[[redirects]]
+  from = "/buy"
+  to = "https://buy.stripe.com/5kQ3cp6CZ7IWgdc6ld5Ne0E?prefilled_promo_code=LAUNCH25"
+  status = 302
+  force = true
+[[redirects]]
+  from = "/buy/founding"
+  to = "https://buy.stripe.com/5kQ3cp6CZ7IWgdc6ld5Ne0E?prefilled_promo_code=LAUNCH25"
+  status = 302
+  force = true
+[[redirects]]
+  from = "/buy/pro"
+  to = "https://buy.stripe.com/aFaeV7aTffbo7GG5h95Ne0A?prefilled_promo_code=PRO25"
+  status = 302
+  force = true
+[[redirects]]
+  from = "/buy/dfy"
+  to = "https://buy.stripe.com/fZueV76CZd3g3qq9xp5Ne0z?prefilled_promo_code=DFY10"
+  status = 302
+  force = true
+[[redirects]]
+  from = "/buy/kit"
+  to = "https://buy.stripe.com/28E8wJ5yV8N00eedNF5Ne0t"
+  status = 302
+  force = true
+
+# ─────── EXISTING FREE TOOLS · already mapped at closermethod.com ───────
+# /rate · Rate Calculator Pro (the AI-powered one)
+[[redirects]]
+  from = "/rate"
+  to = "https://rate-calculator-pro.netlify.app"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/rate/*"
+  to = "https://rate-calculator-pro.netlify.app/:splat"
+  status = 200
+  force = true
+
+# Pitch Roaster
+[[redirects]]
+  from = "/pitch-roast"
+  to = "https://closermethod-roast.netlify.app"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/pitch-roast/*"
+  to = "https://closermethod-roast.netlify.app/:splat"
+  status = 200
+  force = true
+
+# ─────── ECOSYSTEM PROXIES · fix nav 404s ───────
+
+# /closerai, /brain, /artifacts are RESTORED LOCAL FILES from May 13 deploy.
+# Do not add bare-path redirects — they would override the local files.
+# Splat sub-paths only, for API forwarding if needed.
+
+# ─────── LEGACY PATHS · restored May 17 (were 404 after the May 16 rearchitecture) ───────
+# Inbound traffic source: pre-rearchitecture DMs, Instagram bio, screenshots, shared links.
+# All three subdomains have their own GA4 (G-Q2458LX0VD), Meta Pixel (35298849146380570),
+# Stripe links, Kit /api/subscribe wired — proxy is transparent, all tracking continues to fire.
+
+# /brain-builder · now a RESTORED LOCAL FILE (2026-06-06 · fixed output generator + on-voice copy).
+# Proxy DISABLED so the local apex file (brain-builder/index.html) serves. The external site
+# closermethod-brain-builder.netlify.app stays live + untouched (it owns the stripe-webhook fn for
+# the $147 OTO). netlify.toml [[redirects]] are processed BEFORE _redirects, so this is the real gate.
+
+# /app, /ai are RESTORED LOCAL FILES from May 13 deploy (CloserAI sales pages, each unique).
+# No bare-path redirects.
+
+# /skills/thank-you alias → /skills-thank-you.html (Stripe success_url belt-and-suspenders)
+[[redirects]]
+  from = "/skills/thank-you"
+  to = "/skills-thank-you.html"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/skills/thank-you/*"
+  to = "/skills-thank-you.html"
+  status = 200
+  force = true
+
+# /skills/spotter/success → /skills-thank-you.html (Spotter Skill $97 Stripe redirect fix 2026-05-17)
+# MUST precede the /skills/* catch-all below or it gets eaten.
+[[redirects]]
+  from = "/skills/spotter/success"
+  to = "/skills-thank-you.html"
+  status = 200
+  force = true
+
+# /skills · plural alias for the skills site (AI Builder Toolkit reskin)
+[[redirects]]
+  from = "/skills"
+  to = "https://closermethod-skills.netlify.app"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/skills/*"
+  to = "https://closermethod-skills.netlify.app/:splat"
+  status = 200
+  force = true
+
+# /vault · workflow vault (lead magnet)
+[[redirects]]
+  from = "/vault"
+  to = "https://closermethod-vault.netlify.app"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/vault/*"
+  to = "https://closermethod-vault.netlify.app/:splat"
+  status = 200
+  force = true
+
+# /kit · UGC Closer Kit sales page
+[[redirects]]
+  from = "/kit"
+  to = "https://closer-kit-launch.netlify.app"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/kit/*"
+  to = "https://closer-kit-launch.netlify.app/:splat"
+  status = 200
+  force = true
+
+# /score · prompt scorer (free tool)
+[[redirects]]
+  from = "/score"
+  to = "https://closermethod-rate-prompt.netlify.app"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/score/*"
+  to = "https://closermethod-rate-prompt.netlify.app/:splat"
+  status = 200
+  force = true
+
+# /pitch-brain · pitch brain setup (off-white funnel)
+[[redirects]]
+  from = "/pitch-brain"
+  to = "https://closermethod-pitch-setup.netlify.app"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/pitch-brain/*"
+  to = "https://closermethod-pitch-setup.netlify.app/:splat"
+  status = 200
+  force = true
+
+# /roast · root alias for pitch-roast (same destination)
+[[redirects]]
+  from = "/roast"
+  to = "https://closermethod-roast.netlify.app"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/roast/*"
+  to = "https://closermethod-roast.netlify.app/:splat"
+  status = 200
+  force = true
+
+# /builder · now served from local /builder/index.html (new AI Builder Toolkit lead-magnet · 2026-05-18)
+# /brain-builder still proxies directly above · this alias is retired in favor of the new sales page
+# (no [[redirects]] rule here · Netlify serves the local /builder/index.html when no redirect matches)
+
+# Case-insensitive variants · normalize uppercase URLs from screenshots/shares
+[[redirects]]
+  from = "/APP"
+  to = "/app"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/AI"
+  to = "/ai"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/BRAIN-BUILDER"
+  to = "/brain-builder"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/Brain-Builder"
+  to = "/brain-builder"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/VAULT"
+  to = "/vault"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/KIT"
+  to = "/kit"
+  status = 301
+  force = true
+
+# ─────── COMPAT ALIASES · catch legacy URL formats so no link 404s ───────
+
+# Old path /objection-handler still works (alias to new /objection)
+[[redirects]]
+  from = "/objection-handler"
+  to = "https://closermethod-brand-reply.netlify.app/objection-handler"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/objection-handler/*"
+  to = "https://closermethod-brand-reply.netlify.app/objection-handler/:splat"
+  status = 200
+  force = true
+
+# Buyer-portal download assets (.skill zip, future PDFs) · proxy to closer-kit-launch
+[[redirects]]
+  from = "/downloads/*"
+  to = "https://closer-kit-launch.netlify.app/downloads/:splat"
+  status = 200
+  force = true
+
+# ─────── FAVICON FALLBACK · legacy /favicon.ico probes (Google, social embedders) ───────
+# Apex has /favicon.svg as a real file. Legacy /favicon.ico probes get rewritten to it.
+# status=200 force=true = serve favicon.svg content under /favicon.ico path (not a 301).
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/favicon.svg"
+  status = 200
+  force = true
+
+
+# Closer Method Dashboard (password-gated subdomain — returns 401 by design)
+[[redirects]]
+  from = "/dashboard"
+  to = "https://closer-method-dashboard.netlify.app"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/dashboard/*"
+  to = "https://closer-method-dashboard.netlify.app/:splat"
+  status = 200
+  force = true
+
+
+# /pricing → /toolkit#pricing (canonical pricing lives at /toolkit, avoid SEO dilution)
+[[redirects]]
+  from = "/pricing"
+  to = "/toolkit#pricing"
+  status = 301
+  force = true
+
+# ─────── POST-PURCHASE FIXES (2026-05-17) ───────
+# 5 Stripe Payment Links were pointing to URLs that 404'd. Stripe API can't update
+# the links (Zapier OAuth only updates links it created). Fixed via apex redirects:
+# every previously-broken thank-you path now proxies to a working /access/* page.
+# MUST stay above any generic /skills/* or /closerai/* catch-all to take precedence.
+
+# CloserAI buyers: $297 + $497 Founding links → CloserAI-branded thank-you (added v2 2026-05-18)
+[[redirects]]
+  from = "/closerai/thank-you"
+  to = "/access/closerai"
+  status = 301
+  force = true
+
+# CloserAI Pro $997 buyer → CloserAI-branded thank-you
+[[redirects]]
+  from = "/closerai/thank-you-pro"
+  to = "/access/closerai"
+  status = 301
+  force = true
+
+# CloserAI Pro Rate Calculator $67 buyer → CloserAI-branded thank-you
+[[redirects]]
+  from = "/closerai/thank-you-calculator"
+  to = "/access/closerai"
+  status = 301
+  force = true
+
+# CloserAI Lite $97 buyer (the /lite/?purchased=true redirect) → CloserAI-branded thank-you
+[[redirects]]
+  from = "/lite"
+  to = "/access/closerai"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/lite/*"
+  to = "/access/closerai"
+  status = 301
+  force = true
+
+# Spotter Skill $97 buyer (was /skills/spotter/success — must precede /skills/* catch-all)
+# This rule sits below /skills/thank-you (line ~204) and ABOVE /skills/* (line ~222) by file order.
+[[redirects]]
+  from = "/skills/spotter/success"
+  to = "/skills-thank-you.html"
+  status = 301
+  force = true
+
+# ─────── 404 fallback ───────
+# Future: serve a branded 404 page. For now, default Netlify 404.

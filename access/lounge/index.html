@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>You're in · AI Builder Lounge</title>
+<meta name="description" content="Your AI Builder Lounge access. Join the Skool space, post your intro, grab this month's Claude skill. Your founding rate is locked for life. Bookmark this page."/>
+
+<link rel="canonical" href="https://closermethod.com/access/lounge"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://closermethod.com/access/lounge"/>
+<meta property="og:title" content="You're in · AI Builder Lounge"/>
+<meta property="og:description" content="Your AI Builder Lounge access. Bookmark this page."/>
+<meta property="og:image" content="https://closermethod.com/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="You're in · AI Builder Lounge"/>
+<meta name="twitter:description" content="Your AI Builder Lounge access. Bookmark this page."/>
+<meta name="twitter:image" content="https://closermethod.com/og-image.png"/>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Member Portal · AI Builder Lounge","description":"Your AI Builder Lounge access. Bookmark this page.","url":"https://closermethod.com/access/lounge","author":{"@type":"Person","name":"Eli Hitz","url":"https://closermethod.com"}}
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='28' fill='%231A1A1A'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%23C9A961' font-style='italic'%3EC%3C/text%3E%3C/svg%3E"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+
+<!-- Pixel + GA4 with Stripe session_id dedupe · subscription value -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','35298849146380570'); fbq('track','PageView');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-Q2458LX0VD',{page_path:'/access/lounge'});
+
+/* Subscription purchase event · Stripe session_id dedupe · tier-aware value
+   Founding $47/mo default. ?tier=standard hint = $97/mo. */
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var sessionId = params.get('session_id') || '';
+  var validSession = /^cs_(live|test)_[a-zA-Z0-9]{20,}$/.test(sessionId);
+  var purchaseKey = validSession ? 'lounge_sub_' + sessionId : null;
+  var alreadyFired = purchaseKey ? localStorage.getItem(purchaseKey) === '1' : false;
+
+  var tierParam = (params.get('tier') || '').toLowerCase();
+  var value = 47; var tierLabel = 'lounge-founding';
+  if (tierParam === 'standard') { value = 97; tierLabel = 'lounge-standard'; }
+  else if (tierParam === 'annual') { value = 470; tierLabel = 'lounge-founding-annual'; }
+
+  if (!alreadyFired) {
+    fbq('track','Subscribe',{content_name:'AI Builder Lounge',content_ids:[tierLabel],value:value,currency:'USD',predicted_ltv:value*12});
+    gtag('event','purchase',{
+      transaction_id: sessionId || 'lounge-' + Date.now(),
+      value: value, currency: 'USD',
+      items: [{item_id: tierLabel, item_name: 'AI Builder Lounge', price: value, quantity: 1}]
+    });
+    if (purchaseKey) { try { localStorage.setItem(purchaseKey,'1'); } catch(e){} }
+  }
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=35298849146380570&ev=Subscribe&noscript=1"/></noscript>
+
+<style>
+  :root { --paper:#F7F4ED; --paper-warm:#EFE9DC; --ink:#1A1A1A; --gray:#6B6557; --line:#E5DFD0; --accent:#B33B15; --gold:#C9A961; --success:#4A7C59; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:80px}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(900px 600px at 85% -10%, rgba(179,59,21,.05), transparent 70%),radial-gradient(800px 500px at 5% 105%, rgba(201,169,97,.06), transparent 70%);}
+  .container{max-width:720px;margin:0 auto;padding:60px 28px}
+  h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(40px,6vw,68px);font-weight:400;line-height:1.05;letter-spacing:-0.02em;margin-bottom:18px}
+  h1 em{font-style:italic;color:var(--accent)}
+  h2{font-family:'Instrument Serif',Georgia,serif;font-size:30px;font-weight:400;line-height:1.1;letter-spacing:-0.015em;margin:48px 0 14px}
+  h2 em{font-style:italic;color:var(--accent)}
+  p{margin-bottom:14px;color:#2D2A26}
+  p.lede{font-size:18px;line-height:1.55;margin-bottom:24px;color:#2D2A26;max-width:580px}
+  .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:var(--paper-warm);border:1px solid var(--line);border-radius:100px;font-size:11.5px;letter-spacing:0.16em;color:var(--gray);text-transform:uppercase;font-weight:600;margin-bottom:24px}
+  .badge .dot{display:inline-block;width:6px;height:6px;background:var(--success);border-radius:50%}
+  code{font-family:'JetBrains Mono',monospace;font-size:13px;background:var(--paper-warm);padding:2px 6px;border-radius:3px;word-break:break-all}
+  ul{margin-bottom:14px}
+  li{padding:5px 0 5px 22px;position:relative;list-style:none;line-height:1.5}
+  li::before{content:"\2192";position:absolute;left:0;color:var(--accent);font-weight:700}
+  a{color:var(--ink);text-decoration-color:var(--accent);text-underline-offset:3px}
+  a:hover{color:var(--accent)}
+  .access-card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:28px 30px;margin:24px 0}
+  .access-card h3{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;margin-bottom:8px}
+  .access-card h3 em{font-style:italic}
+  .access-card .meta{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px}
+  .btn{display:inline-block;padding:13px 22px;background:var(--ink);color:var(--paper);border-radius:100px;font-size:13.5px;font-weight:600;text-decoration:none;transition:background .15s;margin-top:6px}
+  .btn:hover{background:var(--accent)}
+  .step-num{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:20px;color:var(--accent);margin-right:6px}
+  .quickstart-callout{background:var(--paper-warm);border-left:3px solid var(--accent);padding:16px 22px;border-radius:0 6px 6px 0;margin:24px 0;font-size:15px;line-height:1.55;}
+  .quickstart-callout strong{color:var(--ink);font-weight:700;display:block;margin-bottom:4px;}
+  .rate-lock{background:linear-gradient(135deg,var(--paper-warm),rgba(201,169,97,.15));border:1px solid var(--gold);border-radius:6px;padding:22px 26px;margin:24px 0;}
+  .rate-lock .meta{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px}
+  .rate-lock h3{font-family:'Instrument Serif',Georgia,serif;font-size:23px;font-weight:400;margin-bottom:8px}
+  .rate-lock h3 em{font-style:italic;color:var(--accent)}
+  .month-grid{display:grid;grid-template-columns:1fr;gap:0;margin:14px 0}
+  .month-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:11px 0;border-bottom:1px solid var(--line)}
+  .month-row:last-child{border-bottom:none}
+  .month-row .k{font-weight:600;color:var(--ink)}
+  .month-row .v{color:var(--gray);text-align:right}
+  .by-eli{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:22px;color:var(--ink);text-align:center;margin:50px 0 30px}
+  footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--gray);text-align:center}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="badge"><span class="dot"></span>YOU'RE IN · AI BUILDER LOUNGE</div>
+  <h1>Welcome to the <em>Lounge.</em></h1>
+  <p class="lede">Bookmark this page. Everything starts in the Skool space below. You also got a receipt from Stripe and a welcome note from me. Check promo if you don't see it.</p>
+
+  <div class="quickstart-callout">
+    <strong>Next 5 minutes:</strong> join the Skool space (step 1), post a one-line intro in the welcome thread, then open this month's Claude skill in the skill drop. That's the whole onboarding.
+  </div>
+
+  <h2><span class="step-num">01</span>Join the Skool space</h2>
+  <div class="access-card">
+    <div class="meta">ONE CALM SPACE · NO DAILY NOISE</div>
+    <h3>This is where the Lounge lives</h3>
+    <p>The monthly skill drop, the live build replays, and the full archive all live in one Skool space. Use the same email you paid with so I can match your seat.</p>
+    <a class="btn" href="https://www.skool.com/ai-builders-lounge-4555" target="_blank" rel="noopener" data-cta="lounge-join-skool">Open the Skool space, join with your buyer email</a>
+  </div>
+
+  <h2><span class="step-num">02</span>What lands every month</h2>
+  <div class="access-card">
+    <div class="meta">YOUR FOUNDING SEAT INCLUDES</div>
+    <h3>One skill, three critiques, one live build</h3>
+    <div class="month-grid">
+      <div class="month-row"><span class="k">A new Claude skill</span><span class="v">built and shipped, in your voice, every month</span></div>
+      <div class="month-row"><span class="k">3 build critiques</span><span class="v">post your build, get it taken apart and fixed</span></div>
+      <div class="month-row"><span class="k">1 live build-with-me session</span><span class="v">90 minutes, Q&amp;A after, replay-able forever</span></div>
+      <div class="month-row"><span class="k">The full archive</span><span class="v">every past skill and replay, yours while you're in</span></div>
+    </div>
+    <p>It runs on a monthly rhythm so nothing piles up. Less is more.</p>
+  </div>
+
+  <h2><span class="step-num">03</span>Your founding rate is locked</h2>
+  <div class="rate-lock">
+    <div class="meta">★ FOUNDING SEAT · 1 OF 50</div>
+    <h3>You hold <em>$47/mo for as long as you stay.</em></h3>
+    <p style="margin-bottom:0">Standard rate goes to $97/mo once the founding 50 are full. Your rate does not move while your seat stays active. That is the founding deal, and it is yours.</p>
+  </div>
+
+  <h2><span class="step-num">04</span>Save the door</h2>
+  <div class="access-card">
+    <div class="meta">SO YOU CAN GET BACK IN FROM ANYWHERE</div>
+    <h3>Forward this page to yourself</h3>
+    <p>The Skool space works on web and mobile. Send yourself this link so you always have the way back: <code>https://www.skool.com/ai-builders-lounge-4555</code></p>
+  </div>
+
+  <h2><span class="step-num">05</span>Want it built for you?</h2>
+  <div class="rate-lock">
+    <div class="meta">★ THE STUDIO · DONE-FOR-YOU SEAT</div>
+    <h3>You brief it, <em>I build it.</em></h3>
+    <p>The Lounge is where you build. The Studio is where I build for you: one custom Claude skill in your voice every month, to your brief, priority queue, async review in writing. Everything in the Lounge is included. Capacity-limited and fully async.</p>
+    <a class="btn" href="https://buy.stripe.com/28E4gtf9v4wK4uu9xp5Ne0P" target="_blank" rel="noopener" data-cta="lounge-upgrade-studio">See the Studio · $297/mo</a>
+  </div>
+
+  <h2>Need help?</h2>
+  <p>DM <a href="https://instagram.com/closermethod" target="_blank" rel="noopener">@closermethod</a> on Instagram or reply to your welcome email. 24-hour reply window.</p>
+
+  <p style="margin-top:24px"><strong>Made to work for the way you build:</strong> if a month's skill doesn't fit your workflow, DM <a href="https://instagram.com/closermethod" target="_blank" rel="noopener">@closermethod</a> and I rewrite it for your setup, free, as many times as it takes. That is the guarantee.</p>
+
+  <p class="by-eli">welcome in. eli.</p>
+
+  <footer>
+    Built by Eli Hitz. <a href="https://closermethod.com">closermethod.com</a>
+  </footer>
+
+</div>
+
+<script>
+document.querySelectorAll('a[data-cta]').forEach(function(a){
+  a.addEventListener('click', function(){
+    var cta = a.getAttribute('data-cta');
+    if (typeof fbq !== 'undefined') fbq('trackCustom','LoungeActivation',{cta:cta});
+    if (typeof gtag !== 'undefined') gtag('event','lounge_activation',{event_label:cta});
+    if (cta === 'lounge-upgrade-studio') {
+      if (typeof fbq !== 'undefined') fbq('track','InitiateCheckout',{content_name:'Studio-upgrade-from-Lounge',value:297,currency:'USD'});
+      if (typeof gtag !== 'undefined') gtag('event','begin_checkout',{value:297,currency:'USD',items:[{item_id:'studio-monthly',item_name:'AI Builder Studio',price:297}]});
+    }
+  });
+});
+</script>
+</body>
+</html>

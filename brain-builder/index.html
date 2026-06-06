@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Build Your AI Brain in 2 Minutes | The Closer Method</title>
+<meta name="description" content="4 taps. 2 minutes. AI finally knows who you are. No more blank box. No more generic output. Free.">
+<meta property="og:title" content="Build Your AI Brain | The Closer Method">
+<meta property="og:description" content="The reason AI gives you garbage is it doesn't know who you are. Fix it in 2 minutes. Free.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://closermethod.com/brain-builder">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@closermethod">
+<link rel="canonical" href="https://closermethod.com/brain-builder">
+
+<!-- JSON-LD WebApplication schema (free interactive tool) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"AI Brain Builder","url":"https://closermethod.com/brain-builder","applicationCategory":"ProductivityApplication","operatingSystem":"Any","description":"Free interactive 4-tap tool. Generates a personal AI brain document instantly that you paste into Claude Projects custom instructions. Solves the 'AI gives generic output' problem with a paste-once context layer.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"creator":{"@type":"Person","name":"Elisabeth Hitz"}}
+</script>
+
+<!-- JSON-LD Person schema -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Elisabeth Hitz","alternateName":"Elisabeth Bierschenk Hitz","url":"https://closermethod.com","sameAs":["https://x.com/closermethod","https://instagram.com/closermethod"],"jobTitle":"Founder, The Closer Method","alumniOf":{"@type":"CollegeOrUniversity","name":"New York University"},"description":"Founder of The Closer Method. 10+ years enterprise sales at Deel, Criteo, HBO, Bloomberg, McCann, Y&R. 268% of quota in one quarter at Deel. NYU graduate."}
+</script>
+
+<!-- JSON-LD HowTo schema (the 4-step brain doc flow) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to build an AI brain doc that gives Claude full context","description":"4 taps, 2 minutes. The brain doc you paste into Claude Projects so every conversation starts with full context instead of a blank box.","totalTime":"PT2M","estimatedCost":{"@type":"MonetaryAmount","currency":"USD","value":"0"},"step":[{"@type":"HowToStep","name":"Identify yourself","text":"Tell Claude who you are in one sentence. The only typing step in the flow."},{"@type":"HowToStep","name":"Pick your voice descriptors","text":"Tap 2-3 chips that describe how you sound (direct, warm, casual, professional, funny, etc.)."},{"@type":"HowToStep","name":"Pick what AI should never do","text":"Tap every behavior that annoys you (corporate jargon, emojis, exclamation marks, filler phrases, AI clichés like 'leverage' or 'unlock')."},{"@type":"HowToStep","name":"Pick your biggest time waster","text":"Tap the one task that drains you most (writing emails, planning content, building landing pages, etc.). Your personalized brain doc generates instantly."}]}
+</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','35298849146380570');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"/></noscript>
+<!-- GA4 — added Apr 28 (pulled-live-then-edited safe pattern) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q2458LX0VD',{page_path:'/brain-builder'});gtag('event','view_item',{content_name:'ai_brain_builder_personal',content_category:'lead_magnet'});</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FEF7F5;--card:#fff;--s1:#FDF3EF;--bdr:#D4CEC4;--dk:#1A1714;--text:#2C2825;--t2:#5C5650;--t3:#8A8279;--acc:#13B38B;--acc2:#0F9A77;--accbg:#EFFCFA;--purple:#7C5CFC;--purplebg:#F3F0FF;--pink:#E05297;--pinkbg:#FEF0F6;--w:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
+::selection{background:var(--acc);color:var(--w)}
+.c{max-width:560px;margin:0 auto;padding:0 24px}
+
+.hero{padding:60px 0 32px;text-align:center}
+.badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--acc);border:1px solid rgba(19,179,139,.2);background:var(--accbg);padding:6px 16px;border-radius:16px;margin-bottom:24px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,5.5vw,38px);font-weight:600;line-height:1.2;color:var(--dk);margin-bottom:14px}
+.hero h1 em{font-style:italic;color:var(--t3)}
+.hero p{font-size:14px;color:var(--t2);line-height:1.7;max-width:420px;margin:0 auto}
+
+
+.progress{display:flex;gap:6px;justify-content:center;margin:0 0 32px}
+.pip{height:3px;flex:1;max-width:80px;background:var(--bdr);border-radius:2px;transition:background .3s}
+.pip.done{background:var(--acc2)}
+.pip.active{background:var(--acc)}
+
+.step{display:none;animation:fi .3s ease}
+.step.active{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.step-q{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--dk);margin-bottom:6px}
+.step-hint{font-size:13px;color:var(--t3);margin-bottom:20px;line-height:1.5}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{padding:10px 18px;background:var(--card);border:1px solid var(--bdr);border-radius:20px;font-size:14px;color:var(--t2);cursor:pointer;transition:all .15s;user-select:none;-webkit-tap-highlight-color:transparent}
+.chip:hover{border-color:var(--acc)}
+.chip.selected{background:var(--acc);color:var(--w);border-color:var(--acc);font-weight:600}
+
+.id-input{width:100%;background:var(--card);border:1px solid var(--bdr);border-radius:6px;padding:14px;font-size:15px;font-family:'Montserrat',sans-serif;color:var(--text);outline:none;resize:none;min-height:48px;transition:border-color .2s;margin-bottom:20px}
+.id-input:focus{border-color:var(--acc)}
+.id-input::placeholder{color:var(--t3)}
+
+.nav-row{display:flex;gap:8px;margin-top:8px}
+.btn{flex:1;padding:14px;border:none;border-radius:6px;font-size:14px;font-weight:600;font-family:'Montserrat',sans-serif;cursor:pointer;transition:all .15s;letter-spacing:0.3px}
+.btn-next{background:var(--acc);color:var(--w)}
+.btn-next:hover{background:var(--acc2)}
+.btn-next:disabled{opacity:.3;cursor:not-allowed}
+.btn-back{background:transparent;color:var(--t3);border:1px solid var(--bdr)}
+.btn-back:hover{border-color:var(--acc);color:var(--acc)}
+
+.loading{display:none;text-align:center;padding:60px 0}
+.loading.show{display:block}
+.loading h2{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--dk);margin-bottom:12px}
+.loading p{font-size:13px;color:var(--t2);transition:opacity .3s}
+.loader{width:200px;height:3px;background:var(--bdr);border-radius:2px;margin:20px auto 0;overflow:hidden}
+.loader-bar{height:100%;width:0%;background:var(--acc);border-radius:2px;animation:ld 8s ease-out forwards}
+@keyframes ld{0%{width:0}60%{width:70%}90%{width:88%}100%{width:95%}}
+
+.result{display:none;padding:40px 0 60px}
+.result.show{display:block;animation:fi .4s ease}
+.result h2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--dk);text-align:center;margin-bottom:6px}
+.result .sub{font-size:13px;color:var(--t2);text-align:center;margin-bottom:20px}
+.brain-box{display:none;background:var(--card);border:1px solid var(--bdr);border-radius:8px;padding:20px;font-size:13px;color:var(--text);line-height:1.7;white-space:pre-wrap;word-wrap:break-word;max-height:500px;overflow-y:auto;position:relative;margin-top:20px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+.brain-box.show{display:block;animation:fi .4s ease}
+.brain-actions{display:flex;gap:8px;margin-bottom:14px;position:sticky;top:0;background:var(--card);padding-bottom:8px;z-index:2}
+.brain-actions button{flex:1;padding:8px 12px;background:var(--acc);color:var(--w);border:none;border-radius:5px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;letter-spacing:0.5px;text-transform:uppercase}
+.brain-actions button:hover{background:var(--acc2)}
+.brain-actions button.dl-btn{background:transparent;color:var(--acc);border:1px solid var(--acc)}
+.brain-actions button.dl-btn:hover{background:var(--acc);color:var(--w)}
+
+.email-gate{margin-top:24px;padding:24px;background:var(--card);border:1px solid var(--bdr);border-radius:8px;text-align:center}
+.email-gate h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--dk);margin-bottom:6px}
+.email-gate p{font-size:13px;color:var(--t2);margin-bottom:14px;line-height:1.5}
+.email-input{width:100%;background:var(--bg);border:1px solid var(--bdr);border-radius:6px;padding:12px;font-size:14px;font-family:'Montserrat',sans-serif;color:var(--text);outline:none;text-align:center}
+.email-input:focus{border-color:var(--acc)}
+.email-btn{display:block;width:100%;margin:10px auto 0;padding:12px;background:var(--acc);color:var(--w);border:none;border-radius:6px;font-size:13px;font-weight:600;font-family:'Montserrat',sans-serif;cursor:pointer;letter-spacing:0.3px}
+.email-btn:hover{background:var(--acc2)}
+.email-fine{font-size:11px;color:var(--t3);margin-top:8px}
+
+/* Gate section: shown after step 4, before build */
+.gate-section{display:none;padding:30px 0 20px;animation:fi .3s ease}
+.gate-section.show{display:block}
+
+/* OTO inline (kept as fallback below the brain doc) */
+.oto{display:none;margin-top:30px;padding:30px 24px;border:2px solid var(--acc);border-radius:10px;background:var(--accbg);text-align:center}
+.oto.show{display:block;animation:fi .5s ease}
+.oto-outcome{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--dk);line-height:1.3;margin-bottom:18px}
+.oto-outcome em{font-style:italic;color:var(--acc);font-weight:700}
+.oto-plus{color:var(--acc);font-weight:700}
+.oto-btn{display:inline-block;padding:16px 36px;background:var(--acc);color:var(--w);border:none;border-radius:8px;font-size:14px;font-weight:700;font-family:'Montserrat',sans-serif;cursor:pointer;text-decoration:none;letter-spacing:0.5px;text-transform:uppercase;transition:background .15s}
+.oto-btn:hover{background:var(--acc2)}
+
+/* OTO full-screen modal (fires immediately after brain doc generates) */
+.oto-modal{display:none;position:fixed;inset:0;background:rgba(26,23,20,.82);z-index:9999;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.oto-modal.show{display:flex;animation:fi .35s ease}
+.oto-card{background:var(--card);max-width:520px;width:100%;border-radius:14px;padding:40px 32px 32px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.3);max-height:92vh;overflow-y:auto}
+.oto-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--acc);background:var(--accbg);padding:6px 14px;border-radius:16px;margin-bottom:16px}
+.oto-headline{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--dk);line-height:1.2;margin-bottom:14px;letter-spacing:-.01em}
+.oto-headline em{font-style:italic;color:var(--acc)}
+.oto-sub{font-size:14px;color:var(--t2);line-height:1.6;margin-bottom:20px}
+.oto-stack{background:var(--bg);border-radius:8px;padding:16px 18px;margin-bottom:20px;border:1px solid var(--bdr)}
+.oto-stack-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--text);padding:6px 0;border-bottom:1px solid rgba(212,206,196,.4)}
+.oto-stack-row:last-child{border-bottom:none}
+.oto-stack-row span:first-child{color:var(--t2)}
+.oto-stack-row span:last-child{color:var(--dk);font-weight:600}
+.oto-price-row{display:flex;align-items:baseline;justify-content:space-between;padding:14px 0;border-top:1.5px solid var(--bdr);margin-top:6px}
+.oto-price-label{font-size:13px;color:var(--t2)}
+.oto-price-amount{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--dk);line-height:1}
+.oto-price-amount .currency{font-size:20px;vertical-align:super;color:var(--t3)}
+.oto-cta-modal{display:block;width:100%;padding:18px;background:var(--acc);color:var(--w);border:none;border-radius:8px;font-size:15px;font-weight:700;font-family:'Montserrat',sans-serif;cursor:pointer;text-decoration:none;letter-spacing:0.4px;text-align:center;text-transform:uppercase;transition:background .15s,transform .1s}
+.oto-cta-modal:hover{background:var(--acc2)}
+.oto-cta-modal:active{transform:translateY(1px)}
+.oto-meta{text-align:center;font-size:11px;color:var(--t3);margin-top:10px;line-height:1.6}
+.oto-refund{margin-top:14px;padding:12px 14px;background:rgba(19,179,139,.06);border-left:3px solid var(--acc);border-radius:0 6px 6px 0;font-size:12px;color:var(--text);line-height:1.5}
+.oto-refund strong{color:var(--dk);font-weight:700}
+.oto-decline{display:block;text-align:center;margin-top:18px;font-size:12px;color:var(--t3);background:none;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;text-decoration:underline;text-underline-offset:2px;width:100%}
+.oto-decline:hover{color:var(--text)}
+.oto-close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:22px;color:var(--t3);cursor:pointer;line-height:1;padding:4px 8px}
+.oto-close:hover{color:var(--text)}
+@media(max-width:520px){.oto-card{padding:32px 22px 24px}.oto-headline{font-size:24px}.oto-price-amount{font-size:30px}}
+
+.ft{padding:40px 0;text-align:center;font-size:12px;color:var(--t3);border-top:1px solid var(--bdr);margin-top:40px}
+.ft a{color:var(--acc);text-decoration:underline;text-underline-offset:2px}
+</style>
+</head>
+<body>
+
+<div class="c">
+
+<div class="hero">
+<div class="badge">free tool</div>
+<h1>AI gives you garbage because<br><em>it doesn't know who you are.</em></h1>
+<p>4 taps. 2 minutes. you'll have a personal AI brain document you paste into Claude once. every conversation after that starts with context instead of a blank box.</p>
+</div>
+
+<div class="progress">
+<div class="pip active" id="p1"></div>
+<div class="pip" id="p2"></div>
+<div class="pip" id="p3"></div>
+<div class="pip" id="p4"></div>
+</div>
+
+<div class="step active" id="s1">
+<div class="step-q">who are you, in one sentence?</div>
+<div class="step-hint">this is the one thing you type. everything else is taps.</div>
+<input type="text" class="id-input" id="identityInput" placeholder="i'm a content creator / founder / coach / building my first product / ..." maxlength="150">
+<div class="nav-row">
+<button class="btn btn-next" onclick="goStep(2)">next</button>
+</div>
+</div>
+
+<div class="step" id="s2">
+<div class="step-q">how do you sound?</div>
+<div class="step-hint">pick 2-3 that match your vibe.</div>
+<div class="chips" id="voiceChips">
+<div class="chip" onclick="toggle(this)">direct</div>
+<div class="chip" onclick="toggle(this)">warm</div>
+<div class="chip" onclick="toggle(this)">casual</div>
+<div class="chip" onclick="toggle(this)">professional</div>
+<div class="chip" onclick="toggle(this)">funny</div>
+<div class="chip" onclick="toggle(this)">no-nonsense</div>
+<div class="chip" onclick="toggle(this)">encouraging</div>
+<div class="chip" onclick="toggle(this)">blunt</div>
+<div class="chip" onclick="toggle(this)">thoughtful</div>
+<div class="chip" onclick="toggle(this)">energetic</div>
+</div>
+<div class="nav-row">
+<button class="btn btn-back" onclick="goStep(1)">back</button>
+<button class="btn btn-next" onclick="goStep(3)">next</button>
+</div>
+</div>
+
+<div class="step" id="s3">
+<div class="step-q">what should AI never do for you?</div>
+<div class="step-hint">tap everything that annoys you.</div>
+<div class="chips" id="avoidChips">
+<div class="chip" onclick="toggle(this)">corporate jargon</div>
+<div class="chip" onclick="toggle(this)">emojis</div>
+<div class="chip" onclick="toggle(this)">exclamation marks</div>
+<div class="chip" onclick="toggle(this)">bullet points</div>
+<div class="chip" onclick="toggle(this)">filler phrases</div>
+<div class="chip" onclick="toggle(this)">being too formal</div>
+<div class="chip" onclick="toggle(this)">being too casual</div>
+<div class="chip" onclick="toggle(this)">adding disclaimers</div>
+<div class="chip" onclick="toggle(this)">being wordy</div>
+<div class="chip" onclick="toggle(this)">sounding like a robot</div>
+<div class="chip" onclick="toggle(this)">using "leverage" or "unlock"</div>
+<div class="chip" onclick="toggle(this)">starting with "great question"</div>
+</div>
+<div class="nav-row">
+<button class="btn btn-back" onclick="goStep(2)">back</button>
+<button class="btn btn-next" onclick="goStep(4)">next</button>
+</div>
+</div>
+
+<div class="step" id="s4">
+<div class="step-q">what do you waste the most time on every week?</div>
+<div class="step-hint">pick the one that drains you.</div>
+<div class="chips" id="timeChips">
+<div class="chip" onclick="toggleSingle(this,'timeChips')">writing emails</div>
+<div class="chip" onclick="toggleSingle(this,'timeChips')">planning content</div>
+<div class="chip" onclick="toggleSingle(this,'timeChips')">following up with people</div>
+<div class="chip" onclick="toggleSingle(this,'timeChips')">organizing my week</div>
+<div class="chip" onclick="toggleSingle(this,'timeChips')">writing proposals or reports</div>
+<div class="chip" onclick="toggleSingle(this,'timeChips')">social media</div>
+<div class="chip" onclick="toggleSingle(this,'timeChips')">building landing pages</div>
+<div class="chip" onclick="toggleSingle(this,'timeChips')">creating digital products</div>
+<div class="chip" onclick="toggleSingle(this,'timeChips')">writing sales copy</div>
+<div class="chip" onclick="toggleSingle(this,'timeChips')">client communication</div>
+</div>
+<div class="nav-row">
+<button class="btn btn-back" onclick="goStep(3)">back</button>
+<button class="btn btn-next" onclick="showGate()">show my AI brain</button>
+</div>
+</div>
+
+<div class="gate-section" id="gateSection">
+<div class="step-q" style="text-align:center">your AI brain is ready to build.</div>
+<div class="step-hint" style="text-align:center;margin-bottom:18px">drop your email and we'll generate it now. arrives right below in seconds. yours forever.</div>
+
+<div class="email-gate" id="emailGate">
+<input type="email" class="email-input" id="emailInput" placeholder="your email">
+<button class="email-btn" onclick="captureEmail()">build my AI brain</button>
+<div class="email-fine">generates below instantly · a copy lands in your inbox too · yours to keep forever</div>
+</div>
+</div>
+
+<div class="loading" id="loadingSection">
+<h2>building your AI brain...</h2>
+<div style="max-width:420px;margin:20px auto 0">
+<div id="demoContainer" style="transition:opacity .4s">
+<p style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--acc);font-weight:600;margin-bottom:8px">while you wait... here's what one prompt from the toolkit does:</p>
+<p style="font-size:10px;color:var(--t3);margin-bottom:6px" id="demoLabel">PROMPT 1 OF 24: WEBSITE</p>
+<div style="background:var(--card);border:1px solid var(--bdr);border-radius:8px;padding:14px;font-size:12px;color:var(--t2);line-height:1.6;text-align:left" id="demoText">"i run a [TYPE OF BUSINESS] called [NAME]. rebuild my website from scratch. make it modern, professional, and designed to turn visitors into paying customers..."</div>
+<p style="font-size:11px;color:var(--acc);margin-top:8px;font-weight:600;text-align:center" id="demoNote">agency cost: $3,000-$7,000. yours in 4 minutes.</p>
+</div>
+</div>
+<div class="loader" style="margin-top:20px"><div class="loader-bar"></div></div>
+</div>
+
+<div class="result" id="resultSection">
+<h2>your AI brain is ready.</h2>
+<p class="sub">copy or download below. paste into Claude Projects custom instructions. yours forever.</p>
+
+<div class="brain-box" id="brainOutput"></div>
+
+<div class="oto" id="otoSection">
+<p class="oto-outcome">you have your context. now get the <em>24 prompts that build with it.</em></p>
+<p style="font-size:13px;color:var(--t2);margin:-10px 0 18px;line-height:1.5">website + sales page + email funnel + 21 more. ships from your AI brain doc. <strong style="color:var(--dk)">$97 founders price · first 100 buyers</strong>.</p>
+<a href="https://buy.stripe.com/fZu7sFaTf3sGaSS10T5Ne0g?utm_source=brain_builder&utm_medium=upsell&utm_campaign=founders100" class="oto-btn" onclick="(function(){try{var em=localStorage.getItem('cm_lead_email');if(em){this.href=this.href+(this.href.indexOf('?')>0?'&':'?')+'prefilled_email='+encodeURIComponent(em);}}catch(e){}}).call(this);if(typeof fbq!=='undefined')fbq('track','InitiateCheckout',{value:97,currency:'USD',content_name:'AI Builder Toolkit from Brain Builder'})">get the toolkit · $97 →</a>
+</div>
+</div>
+
+<div class="ft">
+<p>built by <a href="https://x.com/closermethod" target="_blank">elisabeth hitz</a> | <a href="https://closermethod.com" target="_blank">the closer method</a></p>
+<p style="margin-top:6px">i teach everyone and their mom to build with AI. literally.</p>
+</div>
+
+</div>
+
+<!-- ───── OTO modal: fires immediately after brain doc delivers ───── -->
+<div class="oto-modal" id="otoModal" role="dialog" aria-modal="true" aria-labelledby="otoHeadline">
+  <div class="oto-card">
+    <button class="oto-close" id="otoClose" aria-label="close">×</button>
+    <span class="oto-badge">your toolkit · founders cohort</span>
+    <h2 class="oto-headline" id="otoHeadline">your AI brain is ready. now <em>build with it.</em></h2>
+    <p class="oto-sub">you have the context layer. the AI Builder Toolkit gives you 24 prompts that turn your brain doc into deployable artifacts: websites, sales pages, calculators, quizzes, lead magnets, pricing pages, full launch plans.</p>
+
+    <div class="oto-stack">
+      <div class="oto-stack-row"><span>24 engineered prompts</span><span>$50K-$120K agency value</span></div>
+      <div class="oto-stack-row"><span>7-step deploy guide</span><span>included</span></div>
+      <div class="oto-stack-row"><span>builder's playbook</span><span>included</span></div>
+      <div class="oto-stack-row"><span>all future updates</span><span>yours forever</span></div>
+      <div class="oto-price-row">
+        <div>
+          <div class="oto-price-label">founders price · first 100 buyers</div>
+        </div>
+        <div class="oto-price-amount"><span class="currency">$</span>97</div>
+      </div>
+    </div>
+
+    <a href="https://buy.stripe.com/fZu7sFaTf3sGaSS10T5Ne0g?utm_source=brain_builder&utm_medium=oto_modal&utm_campaign=founders100" class="oto-cta-modal" id="otoCta">claim your toolkit · $97 →</a>
+    <p class="oto-meta">card · apple pay · google pay · instant delivery</p>
+
+    <div class="oto-refund"><strong>made to work.</strong> if a prompt doesn't land for your build, DM <a href="https://instagram.com/closermethod" target="_blank" style="color:var(--acc)">@closermethod</a> and i rewrite it with you until it does.</div>
+
+    <button class="oto-decline" id="otoDecline">no thanks, just give me my brain doc</button>
+  </div>
+</div>
+
+<script>
+// Loading screen - preview actual toolkit prompts
+(function(){
+  const prompts=[
+    {label:'PROMPT 1 OF 24: WEBSITE',text:'"i run a [TYPE OF BUSINESS] called [NAME]. rebuild my website from scratch. make it modern, professional, and designed to turn visitors into paying customers..."',note:'agency cost: $3,000-$7,000. yours in 4 minutes.'},
+    {label:'PROMPT 11 OF 24: 30-DAY CONTENT CALENDAR',text:'"create a 30-day social media content calendar for my [TYPE OF BUSINESS]. organize by week with a theme per week. for each day: content type, specific hook, 2-sentence description, best time to post..."',note:'agency cost: $2,000-$4,000/month. yours in 4 minutes.'},
+    {label:'PROMPT 6 OF 24: PRICING STRATEGY',text:'"help me create a 3-tier pricing structure for my [TYPE OF BUSINESS]. design a good/better/best structure where the middle option is the obvious choice. explain the anchoring psychology..."',note:'agency cost: $2,000-$4,000. yours in 4 minutes.'},
+    {label:'PROMPT 14 OF 24: LAUNCH PLAN',text:'"design a complete 4-week launch plan for my [NEW PRODUCT]. week 1: build anticipation. week 2: educate. week 3: open cart with exact copy. week 4: close cart with urgency that feels authentic..."',note:'agency cost: $5,000-$10,000. yours in 4 minutes.'},
+    {label:'PROMPT 4 OF 24: EMAIL FUNNEL',text:'"write me a 4-email welcome sequence for new subscribers. email 1: quick win. email 2: my story. email 3: proof. email 4: the offer. make them sound like me talking to a friend, not a marketer..."',note:'agency cost: $1,500-$3,000. yours in 4 minutes.'}
+  ];
+  let i=0;
+  setInterval(function(){
+    const c=document.getElementById('demoContainer');
+    if(!c)return;
+    i=(i+1)%prompts.length;
+    c.style.opacity=0;
+    setTimeout(function(){
+      document.getElementById('demoLabel').textContent=prompts[i].label;
+      document.getElementById('demoText').textContent=prompts[i].text;
+      document.getElementById('demoNote').textContent=prompts[i].note;
+      c.style.opacity=1;
+    },400);
+  },2500);
+})();
+
+function toggle(el){el.classList.toggle('selected')}
+function toggleSingle(el,groupId){
+  document.querySelectorAll(`#${groupId} .chip`).forEach(c=>c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+function getSelected(groupId){
+  return [...document.querySelectorAll(`#${groupId} .chip.selected`)].map(c=>c.textContent);
+}
+function goStep(n){
+  if(n===2){
+    const id=document.getElementById('identityInput').value.trim();
+    if(!id){document.getElementById('identityInput').style.borderColor='var(--acc)';document.getElementById('identityInput').focus();return}
+  }
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  document.getElementById(`s${n}`).classList.add('active');
+  for(let i=1;i<=4;i++){
+    const p=document.getElementById(`p${i}`);
+    p.className='pip';
+    if(i<n)p.classList.add('done');
+    if(i===n)p.classList.add('active');
+  }
+  if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:`Brain Step ${n}`});
+}
+// State: we collect 4-tap answers, store them, then trigger API only after email submit.
+let pendingAnswers=null;
+
+function showGate(){
+  const identity=document.getElementById('identityInput').value.trim();
+  const voice=getSelected('voiceChips');
+  const avoid=getSelected('avoidChips');
+  const timeWaster=getSelected('timeChips')[0]||'general tasks';
+  if(!identity){alert('add a sentence about who you are');return}
+  if(voice.length===0){alert('pick at least one voice style');return}
+  pendingAnswers={identity,voice,avoid,timeWaster};
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  document.querySelector('.progress').style.display='none';
+  document.getElementById('gateSection').classList.add('show');
+  document.getElementById('emailInput').focus();
+  if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'Brain Email Gate'});
+}
+
+function buildBrainAfterEmail(){
+  document.getElementById('gateSection').classList.remove('show');
+  document.getElementById('loadingSection').classList.add('show');
+  // Built from your 4 answers, right here, instantly. No round-trip that can fail or time out.
+  var brain=generateBrain(pendingAnswers||{});
+  setTimeout(function(){
+    var ld=document.getElementById('loadingSection');
+    if(ld)ld.classList.remove('show');
+    document.getElementById('resultSection').classList.add('show');
+    document.getElementById('brainOutput').setAttribute('data-raw',brain);
+    renderBrain();
+    renderUpsell();
+    document.getElementById('resultSection').scrollIntoView({behavior:'smooth',block:'start'});
+    if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:'Brain Built'});
+  },2600);
+}
+
+function generateBrain(a){
+  var id=(a.identity||'').trim();
+  var voice=Array.isArray(a.voice)?a.voice:[];
+  var avoid=Array.isArray(a.avoid)?a.avoid:[];
+  var tw=(a.timeWaster||'general tasks').trim();
+  var voiceStr=voice.length?voice.join(', '):'direct, clear, human';
+
+  var avoidMap={
+    'corporate jargon':'no corporate jargon. say it the way a real person would.',
+    'emojis':'no emojis.',
+    'exclamation marks':'no exclamation marks.',
+    'bullet points':"don't default to bullet points. write in real sentences unless i ask for a list.",
+    'filler phrases':'no filler phrases. every line earns its place.',
+    'being too formal':"don't be stiff. write like we're actually talking.",
+    'being too casual':"don't get sloppy. keep it sharp and intentional.",
+    'adding disclaimers':'no disclaimers, no hedging, no "i\'m just an AI."',
+    'being wordy':'cut the word count in half, then cut it again.',
+    'sounding like a robot':"don't sound like a robot. sound like me.",
+    'using "leverage" or "unlock"':'never use "leverage," "unlock," or any of that recycled AI-copy vocabulary.',
+    'starting with "great question"':'never open with "great question" or any warm-up. start with the answer.'
+  };
+  var avoidLines=avoid.length
+    ? avoid.map(function(x){return '- '+(avoidMap[x]||('no '+x+'.'));})
+    : ['- no corporate jargon. say it the way a real person would.','- no filler. every line earns its place.'];
+
+  var taskMap={
+    'writing emails':'when i ask for an email: subject line first, then the body. one idea per email. write it like i\'m talking to one person, not a list. end with one clear ask.',
+    'planning content':'when i ask for content: give me hooks first, angles second. tie every idea back to who i help and what they\'re stuck on. skip the generic "5 tips" filler.',
+    'following up with people':'when i ask for a follow-up: short, warm, specific to the last thing we talked about. one nudge, one ask, no guilt-trip.',
+    'organizing my week':'when i ask to plan my week: start from my 2-3 highest-impact outcomes, then build everything else around them. protect the deep-work blocks. call out the busywork so i can cut it.',
+    'writing proposals or reports':'when i ask for a proposal or report: lead with the outcome and the number. structure it so a busy person gets the point in 30 seconds and can go deeper if they want.',
+    'social media':'when i ask for social: the first line is the whole game. one idea per post. sound like me in a voice note, not a brand account.',
+    'building landing pages':'when i ask for a page: one promise, one audience, one action. the headline carries the weight. cut every line that doesn\'t move them toward the button.',
+    'creating digital products':'when i ask about a product: start from the transformation, not the feature list. name the before and the after. price on the value, not the effort.',
+    'writing sales copy':'when i ask for copy: lead with the outcome they want, not the feature. one idea per line. specific beats clever. write to one person, not a crowd.',
+    'client communication':'when i ask for client comms: clear, calm, in control. set the expectation, give the next step, keep my authority intact.'
+  };
+  var taskGuide=taskMap[tw]||('when i bring you '+tw+': skip the warm-up, give me the actual work, keep it in my voice.');
+
+  var identityLine=id||"i'm building something of my own, and i want AI that sounds like me instead of like everyone else.";
+
+  var doc=
+'# my AI brain\n'+
+'\n'+
+'paste this into Claude (Projects, then your project, then "custom instructions"), or drop it at the top of any chat. from here on, every conversation starts already knowing who i am, how i sound, and what i need. no more starting from a blank box.\n'+
+'\n'+
+'## who i am\n'+
+identityLine+'\n'+
+'\n'+
+'## how i sound\n'+
+'write everything as me. my voice is '+voiceStr+'.\n'+
+'match it on every reply: the word choice, the rhythm, the attitude. read it back before you give it to me. if it doesn\'t sound like something i\'d actually say out loud, rewrite it until it does.\n'+
+'\n'+
+'## hard rules\n'+
+avoidLines.join('\n')+'\n'+
+'- no preamble. start with the thing i asked for.\n'+
+'- one strong answer beats five hedged options. pick the best one and tell me why.\n'+
+'- short over long. specific over vague. mine over generic.\n'+
+'\n'+
+'## what i mostly need help with\n'+
+'my biggest time-drain every week is '+tw+'.\n'+
+taskGuide+'\n'+
+'\n'+
+'## how to work with me\n'+
+'- if one fact would make your answer ten times better, ask me one sharp question. otherwise make your best call and go.\n'+
+'- when i say "more," push harder in the same direction. when i say "again," start clean.\n'+
+'- never summarize what i just said back to me. never end on a disclaimer.\n'+
+'- you have full context now. act like it.\n'+
+'\n'+
+'---\n'+
+'built free with the AI brain builder at closermethod.com/brain-builder\n';
+
+  return doc;
+}
+
+function renderUpsell(){
+  document.getElementById('otoSection').classList.add('show');
+  // Fire OTO modal after brain doc delivers (peak desire moment)
+  setTimeout(showOtoModal, 1200);
+}
+
+function showOtoModal(){
+  var modal=document.getElementById('otoModal');
+  if(!modal)return;
+  // Prefill email on the Stripe link from localStorage
+  try{
+    var em=localStorage.getItem('cm_lead_email');
+    var cta=document.getElementById('otoCta');
+    if(em&&cta){
+      var u=new URL(cta.href);
+      u.searchParams.set('prefilled_email',em);
+      cta.href=u.toString();
+    }
+  }catch(e){}
+  modal.classList.add('show');
+  document.body.style.overflow='hidden';
+  if(typeof fbq!=='undefined')fbq('trackCustom','OtoModalShown',{value:97,currency:'USD'});
+}
+
+function hideOtoModal(){
+  var modal=document.getElementById('otoModal');
+  if(!modal)return;
+  modal.classList.remove('show');
+  document.body.style.overflow='';
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  var closeBtn=document.getElementById('otoClose');
+  var declineBtn=document.getElementById('otoDecline');
+  var modal=document.getElementById('otoModal');
+  var cta=document.getElementById('otoCta');
+  if(closeBtn)closeBtn.addEventListener('click',hideOtoModal);
+  if(declineBtn)declineBtn.addEventListener('click',function(){
+    hideOtoModal();
+    if(typeof fbq!=='undefined')fbq('trackCustom','OtoModalDeclined');
+  });
+  if(modal)modal.addEventListener('click',function(e){if(e.target===modal)hideOtoModal();});
+  if(cta)cta.addEventListener('click',function(){
+    if(typeof fbq!=='undefined')fbq('track','InitiateCheckout',{value:97,currency:'USD',content_name:'AI Builder Toolkit · OTO Modal'});
+  });
+});
+
+function copyBrain(){
+  const raw=document.getElementById('brainOutput').getAttribute('data-raw');
+  navigator.clipboard.writeText(raw).then(()=>{
+    const btn=document.querySelector('.copy-btn');
+    if(btn){btn.textContent='copied!';setTimeout(()=>{btn.textContent='copy .md'},2000)}
+  });
+}
+function downloadBrain(){
+  const raw=document.getElementById('brainOutput').getAttribute('data-raw')||'';
+  const blob=new Blob([raw],{type:'text/markdown'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='my-ai-brain.md';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  const btn=document.querySelector('.dl-btn');
+  if(btn){btn.textContent='downloaded!';setTimeout(()=>{btn.textContent='download .md'},2000)}
+}
+function renderBrain(){
+  const raw=document.getElementById('brainOutput').getAttribute('data-raw')||'';
+  const escape=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const body=escape(raw).replace(/\n/g,'<br>');
+  document.getElementById('brainOutput').innerHTML=
+    '<div class="brain-actions">'+
+      '<button class="copy-btn" onclick="copyBrain()">copy .md</button>'+
+      '<button class="dl-btn" onclick="downloadBrain()">download .md</button>'+
+    '</div>'+body;
+  document.getElementById('brainOutput').classList.add('show');
+}
+function captureEmail(){
+  const email=document.getElementById('emailInput').value.trim();
+  if(!email||!email.includes('@')){document.getElementById('emailInput').style.borderColor='var(--acc)';return}
+  try{localStorage.setItem('cm_lead_email',email)}catch(e){}
+  // Fire and forget — server-side subscribe via /api/subscribe (form-direct POSTs were silently failing)
+  try{
+    fetch('https://closer-kit-launch.netlify.app/api/subscribe',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        email:email,
+        tag_ids:['19280771','19280785','19315103','19315093','19315104']  // brain-builder, ai-builder, aud_builder, src_brain, stage_lead
+      })
+    }).catch(()=>{});
+  }catch(e){}
+  if(typeof fbq!=='undefined')fbq('track','CompleteRegistration',{content_name:'Brain Builder Email'});
+  // Now trigger the actual API call — this is the real gate
+  buildBrainAfterEmail();
+}
+</script>
+
+
+<!-- Back-to-/artifacts breadcrumb -->
+<script>
+(function(){
+  if (document.referrer && document.referrer.includes('/artifacts')) {
+    var bc = document.createElement('div');
+    bc.style.cssText = 'position:fixed;top:14px;left:14px;z-index:9998;background:rgba(255,255,255,0.96);padding:8px 14px;border-radius:100px;border:1px solid rgba(0,0,0,0.08);font-family:-apple-system,system-ui,sans-serif;font-size:12px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 10px rgba(0,0,0,0.06);';
+    bc.innerHTML = '<a href="https://closermethod.com/artifacts" style="color:#5C7A4F;text-decoration:none;font-weight:600;">← back to the toolkit</a>';
+    document.body.insertBefore(bc, document.body.firstChild);
+  }
+})();
+</script>
+</body>
+</html>
