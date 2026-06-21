@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>what ai actually knows, and where the gaps are | The Closer Method</title>
+  <meta name="description" content="an AI model knows what it read during training and only that, frozen at a cutoff. how to tell where it's well-stocked versus thin, and when to bring the knowledge yourself."/>
+  <link rel="canonical" href="https://closermethod.com/blog/what-ai-actually-knows/"/>
+  <!-- Open Graph + Twitter (SEO/social) -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="The Closer Method"/>
+  <meta property="og:title" content="what ai actually knows, and where the gaps are | The Closer Method"/>
+  <meta property="og:description" content="an AI model knows what it read during training and only that, frozen at a cutoff. how to tell where it's well-stocked versus thin, and when to bring the knowledge yourself."/>
+  <meta property="og:url" content="https://closermethod.com/blog/what-ai-actually-knows/"/>
+  <meta property="og:image" content="https://closermethod.com/og/og-operator.png"/>
+  <meta property="og:image:width" content="2400"/>
+  <meta property="og:image:height" content="1260"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="what ai actually knows, and where the gaps are | The Closer Method"/>
+  <meta name="twitter:description" content="an AI model knows what it read during training and only that, frozen at a cutoff. how to tell where it's well-stocked versus thin, and when to bring the knowledge yourself."/>
+  <meta name="twitter:image" content="https://closermethod.com/og/og-operator.png"/>
+  <meta name="keywords" content="claude, ai for small business, the closer method, what ai actually knows"/>
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231A1714'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%2313B38B' font-style='italic'%3Em%3C/text%3E%3C/svg%3E"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','35298849146380570');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"/></noscript>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2458LX0VD', { page_path: '/blog/what-ai-actually-knows/' });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "articleSection": "Field Notes",
+    "headline": "what ai actually knows, and where the gaps are",
+    "description": "an AI model knows what it read during training and only that, frozen at a cutoff. how to tell where it's well-stocked versus thin, and when to bring the knowledge yourself.",
+    "author": { "@type": "Person", "name": "Eli Hitz", "url": "https://closermethod.com/", "sameAs": ["https://instagram.com/closermethod","https://x.com/closermethod","https://www.tiktok.com/@closermethod","https://elisabethhitz.com"] },
+    "publisher": { "@type": "Organization", "name": "The Closer Method", "url": "https://closermethod.com", "logo": { "@type": "ImageObject", "url": "https://closermethod.com/og/og-closer.png" } },
+    "datePublished": "2026-06-18",
+    "dateModified": "2026-06-18",
+    "mainEntityOfPage": "https://closermethod.com/blog/what-ai-actually-knows/"
+  }
+  </script>
+
+  <style>
+    :root{--bg:#FBF5F0;--paper:#fff;--ink:#0A0A0A;--orange:#FF3B00;--muted:#555;--line:3px solid #0A0A0A;--shadow:6px 6px 0 #0A0A0A}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Archivo',system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:1rem;line-height:1.6}
+    h1,h2{font-family:'Archivo Black',system-ui,sans-serif;text-transform:lowercase;letter-spacing:-.02em;line-height:1.05;color:var(--ink);font-weight:400}
+    a{color:var(--orange);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .topnav{padding:13px 20px;border-bottom:var(--line);background:var(--paper);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .topnav .brand{font-family:'Archivo Black';font-size:1rem;text-transform:lowercase;letter-spacing:0;color:var(--ink);text-decoration:none}.topnav .navlinks{display:flex;gap:16px;flex-wrap:wrap;align-items:center}.topnav .navlinks a{font-family:'JetBrains Mono',monospace;font-size:.76rem;text-transform:lowercase;letter-spacing:.03em;color:var(--ink);text-decoration:none}.topnav .navlinks a:hover{color:var(--orange);text-decoration:none}
+    .wrap{max-width:720px;margin:0 auto;padding:48px 22px 72px}
+    .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.14em;color:var(--orange);margin-bottom:14px}
+    h1{font-size:clamp(2rem,5.5vw,3rem);margin-bottom:16px}
+    .lead{font-size:1.05rem;color:#333;margin-bottom:38px;max-width:56ch}
+    footer{padding:30px 20px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.74rem;color:#777;border-top:var(--line);background:var(--paper)}
+    footer a{color:var(--orange)}
+
+    .card{background:var(--paper);border:var(--line);box-shadow:var(--shadow);padding:40px 36px}
+    .meta{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:#777;margin-bottom:28px;text-transform:uppercase;letter-spacing:.06em}
+    .eyebrow a{color:var(--orange)}
+    article h2{font-family:'Archivo Black';text-transform:lowercase;font-size:1.5rem;margin:36px 0 12px;letter-spacing:-.01em}
+    article p{margin:0 0 16px;font-size:1rem;line-height:1.72}
+    article ul,article ol{margin:0 0 16px 22px}
+    article li{margin-bottom:8px}
+    blockquote{border-left:4px solid var(--orange);margin:22px 0;padding:6px 0 6px 18px;color:#333;font-style:normal;font-weight:500}
+    article a{color:var(--orange);text-decoration:underline}
+    .btn,.cta a{display:inline-block;background:var(--orange);color:var(--ink);font-family:'JetBrains Mono';font-weight:700;text-transform:lowercase;text-decoration:none;padding:14px 26px;border:var(--line);box-shadow:var(--shadow)}
+    .btn:hover,.cta a:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink);text-decoration:none}
+    .sources{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#999;margin-top:30px;line-height:1.5}
+    @media(max-width:560px){.card{padding:28px 20px}}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="brand" href="https://closermethod.com">the closer method</a>
+  <span class="navlinks">
+    <a href="/blog/">field notes</a>
+    <a href="/build/">the toolkit</a>
+    <a href="/hire/">work with me</a>
+  </span>
+</nav>
+
+<main class="wrap">
+  <div class="card">
+    <div class="eyebrow"><a href="/blog/">field notes</a></div>
+    <article>
+      <h1>what ai actually knows, and where the gaps are.</h1>
+      <p class="meta">elisabeth hitz · june 18, 2026 · 6 min read</p>
+
+      <p>a model knows what it read during training, and only that. no live browsing by default, no lived experience, and a hard stop at the knowledge cutoff. so the useful question is not "does the AI know this." it is "how well-represented was this in what it read." that reframe tells you when to lean on it and when to bring the knowledge yourself.</p>
+
+      <h2>well-stocked versus thin</h2>
+
+      <p><strong>the capability zone</strong> is anything that showed up frequently, recently within training, and consistently: mainstream topics, popular tools, common questions. here the model is genuinely deep and broad, and you can mostly trust it with a spot-check.</p>
+
+      <p><strong>the limitation zone</strong> is rare, post-cutoff, niche, local, or contested. your industry's specific jargon. a regulation that changed last quarter. the regional rule nobody writes about. here it gets thin fast, and the danger is that it does not always tell you.</p>
+
+      <h2>the five ways knowledge fails</h2>
+
+      <ul>
+        <li><strong>the cutoff.</strong> nothing that happened after training ended exists for it, full stop.</li>
+        <li><strong>staleness.</strong> something true at training time may not be true now, and it will state the old version with full confidence.</li>
+        <li><strong>uneven coverage.</strong> niche and local knowledge is thin, because there was less of it to read.</li>
+        <li><strong>inherited bias.</strong> what it treats as "default" or "normal" reflects whatever was common in the training data, which may not match your reality.</li>
+        <li><strong>source amnesia.</strong> "i read this somewhere" is not a citation. it usually cannot tell you where a fact came from.</li>
+      </ul>
+
+      <h2>map your own domain in five minutes</h2>
+
+      <p>take one task and write down two topics in your field that are mainstream and stable, two that are niche or recent or fast-moving, and one default assumption outsiders get wrong, who the typical customer really is, what a standard case actually looks like, which tool people use versus the one that gets the press.</p>
+
+      <p>then probe. ask about a mainstream topic and a niche one and compare the depth, and watch whether it signals uncertainty differently or wraps both in the same confident tone. ask about something you know changed recently and see if it admits the cutoff or serves you stale information as current. and ask the question that would reveal whether it defaults to the outsider's view of your field. where it went thin or stale or generic is exactly where you cannot lean on it.</p>
+
+      <h2>the operator's move: bring the knowledge</h2>
+
+      <p>the fixes are not "hope it knows." they hand the model information it was never trained on:</p>
+
+      <ul>
+        <li><strong>web search</strong> works around the cutoff for anything time-sensitive.</li>
+        <li><strong>retrieval and connectors</strong> let it draw on your documents and your real data, material that was never in the training set. this is the whole point of <a href="/blog/connect-claude-to-your-tools/">connecting your tools</a>.</li>
+        <li><strong>tool use</strong> lets it call out to a real calculator, a database, an API, instead of guessing a number.</li>
+      </ul>
+
+      <p>so the build question for every task becomes simple: can i lean on the model's own knowledge, or do i need to supply it via context, documents, or search? the thin spots are not a reason to avoid AI. they are a map of exactly where to wire in your own sources. and they pair with the verification habit from <a href="/blog/why-ai-makes-things-up/">why ai makes things up</a>: thin knowledge plus precise claims is where you check hardest.</p>
+
+      <div class="cta">
+        <h2>want your knowledge gaps mapped and wired?</h2>
+        <p>the systems diagnostic is $500, the price is on the page. you get a map of where the model can carry your work and where you need to feed it your own data, with the plan to wire those sources in. you decide on your own schedule.</p>
+        <a class="btn" href="https://closermethod.com/hire?utm_source=blog&utm_medium=article&utm_campaign=knowledge">get the $500 diagnostic</a>
+      </div>
+    </article>
+
+    <p class="sources">knowledge-cutoff, coverage, and retrieval framework: anthropic academy (AI capabilities and limitations, knowledge lesson), building on the AI fluency framework (Dakan, Feller), CC BY-NC-SA 4.0.</p>
+  </div>
+</main>
+
+<footer>
+  Built by <a href="https://closermethod.com">The Closer Method</a>. If something looks off, reply to any email and I will see it.
+</footer>
+
+</body>
+</html>

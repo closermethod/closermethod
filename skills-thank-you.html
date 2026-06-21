@@ -31,18 +31,22 @@ const SKILLS_PRODUCTS = {
 
 (function () {
   const qs = new URLSearchParams(location.search);
-  const isPaid = qs.get('paid') === 'true' || qs.get('paid') === '1' || qs.get('session_id') || qs.get('unlocked') === 'true';
-  if (!isPaid) return;
-
   const productKey = (qs.get('product') || 'toolkit').toLowerCase();
   const product = SKILLS_PRODUCTS[productKey] || SKILLS_PRODUCTS.toolkit;
-  const sessionId = qs.get('session_id') || ('skills_' + productKey + '_' + Date.now());
 
-  // Always reflect the purchased tier in the visible label (independent of event dedupe)
+  // Always reflect the purchased tier in the visible label (independent of the event).
   window.__skillsProduct = product;
 
-  // localStorage dedupe · only the purchase EVENT fires once
-  const dedupeKey = 'cm_ga_purchase_skills_' + productKey;
+  // Purchase event fires ONLY on a real Stripe session_id. Using the session id as
+  // transaction_id matches the server-side webhook's fire, so GA4 dedupes to exactly one
+  // count. No valid session = no client fire (the webhook is the authoritative counter).
+  // The old `?paid=true || ?unlocked=true` gate + `Date.now()` fallback minted a fresh
+  // phantom purchase on every non-buyer page load. Tightened 2026-06-07.
+  const sessionId = qs.get('session_id') || '';
+  const validSession = /^cs_(live|test)_[a-zA-Z0-9]{20,}$/.test(sessionId);
+  if (!validSession) return;
+
+  const dedupeKey = 'cm_ga_purchase_skills_' + sessionId;
   try { if (localStorage.getItem(dedupeKey)) return; } catch (e) {}
 
   gtag('event', 'purchase', {
@@ -71,12 +75,15 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','35298849146380570'); fbq('track','PageView');
 (function(){
   const qs = new URLSearchParams(location.search);
-  const isPaid = qs.get('paid') === 'true' || qs.get('paid') === '1' || qs.get('session_id') || qs.get('unlocked') === 'true';
-  if (!isPaid) return;
+  // Fire Meta Purchase ONLY on a real Stripe session_id — firing it for ?paid/?unlocked
+  // non-buyers polluted Meta's optimisation with phantom conversions. Tightened 2026-06-07.
+  const sessionId = qs.get('session_id') || '';
+  const validSession = /^cs_(live|test)_[a-zA-Z0-9]{20,}$/.test(sessionId);
+  if (!validSession) return;
   const productKey = (qs.get('product') || 'toolkit').toLowerCase();
   const PRICES = { toolkit:147, operator:297, custom:497, drops:47 };
   const NAMES  = { toolkit:'AI Builder Toolkit', operator:'Operator Pack', custom:'Custom Skill', drops:'Skill Drops Monthly' };
-  const dedupeKey = 'cm_fb_purchase_skills_' + productKey;
+  const dedupeKey = 'cm_fb_purchase_skills_' + sessionId;
   try { if (localStorage.getItem(dedupeKey)) return; } catch (e) {}
   fbq('track', 'Purchase', {
     value: PRICES[productKey] || 147,
@@ -304,13 +311,21 @@ h1 em { color: var(--accent); font-style: normal; }
 
   <div class="deliver">
     <div class="deliver-label">your files · download now · don't wait for email</div>
+    <div id="vault-unlock" style="margin:0 0 14px;background:var(--surface-2);border:1px solid var(--border-strong);border-radius:12px;padding:15px 16px">
+      <form id="vault-form" onsubmit="return false" style="display:flex;flex-wrap:wrap;gap:9px;align-items:center">
+        <label for="vault-email" style="font-family:var(--t-mono);font-size:.74rem;color:var(--text2);flex:1 1 100%;margin:0 0 2px">already bought? enter the email from your receipt to unlock your downloads.</label>
+        <input id="vault-email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" style="flex:1 1 220px;min-width:0;padding:11px 13px;background:var(--bg);border:1px solid var(--border-strong);border-radius:8px;color:var(--text);font-family:var(--t-sans);font-size:.92rem">
+        <button id="vault-go" type="button" style="flex:0 0 auto;padding:12px 18px;background:var(--accent);color:#0A0A0B;border:1px solid var(--accent);border-radius:8px;font-family:var(--t-sans);font-size:.9rem;font-weight:600;cursor:pointer">unlock my downloads</button>
+      </form>
+      <p id="vault-status" style="margin:9px 0 0;font-family:var(--t-mono);font-size:.74rem;color:var(--text2);line-height:1.5"></p>
+    </div>
     <a class="deliver-primary" href="/access/toolkit/">
       open your full install page →
       <span>27 skills · brain doc · 3 install paths · troubleshooting · all on one page</span>
     </a>
     <div class="deliver-grid">
-      <a href="https://ai-builder-setup.netlify.app/ai-builder-setup-v2.zip">↓ full toolkit<br>.zip · 27 skills</a>
-      <a href="https://ai-builder-setup.netlify.app/ai-builder-skills-individual-zips.zip">↓ skills one-by-one<br>.zip · pick + choose</a>
+      <a href="#vault-unlock" data-vault-file="ai-builder-setup-v2.zip">↓ full toolkit<br>.zip · 27 skills</a>
+      <a href="#vault-unlock" data-vault-file="ai-builder-skills-individual-zips.zip">↓ skills one-by-one<br>.zip · pick + choose</a>
       <a href="https://ai-builder-setup.netlify.app/brain-doc-template.md">↓ brain doc<br>.md · your voice</a>
     </div>
     <p class="deliver-note">files download straight from this page. the install page above has the 1-minute walkthrough · 4 screenshots, works in Claude desktop, web, or any AI that takes a system prompt.</p>
@@ -356,6 +371,135 @@ h1 em { color: var(--accent); font-style: normal; }
     'drops_monthly':       'monthly skill drops'
   };
   name.textContent = phrases[product.item_id] || 'your skills';
+})();
+</script>
+
+<script>
+// ── credentialed delivery · route every paid download through the buyer-only vault ──
+// fresh buyer lands with ?session_id=cs_… (Stripe) → links carry it · past buyer enters
+// the receipt email → POST mints a 7-day token → links carry that. no creds = no file.
+(function(){
+  var VAULT = '/.netlify/functions/toolkit-vault';
+  var CDN   = 'https://ai-builder-setup.netlify.app/';
+  var params = new URLSearchParams(location.search);
+  var sid = params.get('session_id');
+  var token = null;
+
+  function credential(){
+    if (sid)   return 'session_id=' + encodeURIComponent(sid);
+    if (token) return 'token=' + encodeURIComponent(token);
+    return null;
+  }
+
+  function vaultLinks(){
+    return Array.prototype.slice.call(
+      document.querySelectorAll('a[href^="' + CDN + '"], a[data-vault-file]')
+    );
+  }
+
+  function rewire(){
+    var c = credential();
+    vaultLinks().forEach(function(a){
+      var file = a.getAttribute('data-vault-file');
+      if (!file){
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf(CDN) === 0){
+          file = h.slice(CDN.length).split('?')[0].split('#')[0];
+          a.setAttribute('data-vault-file', file);
+        }
+      }
+      if (!file) return;
+      if (c){
+        a.setAttribute('href', VAULT + '?file=' + encodeURIComponent(file) + '&' + c);
+        a.removeAttribute('data-locked');
+      } else {
+        // no credential yet: point at the vault (which 403s with a clear message) and
+        // intercept the click to send them to the unlock box instead.
+        a.setAttribute('href', VAULT + '?file=' + encodeURIComponent(file));
+        a.setAttribute('data-locked', '1');
+      }
+    });
+  }
+
+  function setStatus(msg, kind){
+    var el = document.getElementById('vault-status');
+    if (!el) return;
+    el.textContent = msg;
+    el.style.color = kind === 'ok'  ? 'var(--success)'
+                   : kind === 'err' ? '#FF6B6B'
+                   : kind === 'warn'? 'var(--accent)'
+                   : 'var(--text2)';
+  }
+
+  function setUnlockedUI(){
+    var form = document.getElementById('vault-form');
+    if (form) form.style.display = 'none';
+    var box = document.getElementById('vault-unlock');
+    if (box) box.style.borderColor = 'var(--success)';
+    setStatus('✓ unlocked · your downloads are live below. bookmark this page — these links are yours forever.', 'ok');
+  }
+
+  function recover(){
+    var inp = document.getElementById('vault-email');
+    var btn = document.getElementById('vault-go');
+    var email = ((inp && inp.value) || '').trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+      setStatus('that does not look like an email · use the exact address from your receipt.', 'err');
+      if (inp) inp.focus();
+      return;
+    }
+    if (btn){ btn.disabled = true; btn.textContent = 'checking…'; }
+    setStatus('checking your purchase…', 'muted');
+    fetch(VAULT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    })
+    .then(function(r){ return r.json().then(function(j){ return { status: r.status, body: j }; }); })
+    .then(function(res){
+      if (btn){ btn.disabled = false; btn.textContent = 'unlock my downloads'; }
+      var j = res.body || {};
+      if (j.ok && j.token){
+        token = j.token;
+        rewire();
+        setUnlockedUI();
+        try { if (window.gtag) gtag('event','vault_unlock',{ method:'email', page:'/skills-thank-you' }); } catch(e){}
+      } else if (res.status === 503){
+        setStatus(j.message || 'download is temporarily unavailable. DM @closermethod and i will get your files to you right away.', 'warn');
+      } else {
+        setStatus(j.message || 'i could not find a toolkit purchase under that email. use the exact email from your receipt, or DM @closermethod.', 'err');
+      }
+    })
+    .catch(function(){
+      if (btn){ btn.disabled = false; btn.textContent = 'unlock my downloads'; }
+      setStatus('something glitched on my end. try again, or DM @closermethod and i will send your files.', 'err');
+    });
+  }
+
+  // delegated: a locked download click sends the buyer to the unlock box
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[data-locked="1"]') : null;
+    if (!a) return;
+    e.preventDefault();
+    var box = document.getElementById('vault-unlock');
+    if (box) box.scrollIntoView({ behavior:'smooth', block:'center' });
+    var inp = document.getElementById('vault-email');
+    if (inp) inp.focus();
+    setStatus('enter the email from your receipt above to unlock your downloads.', 'warn');
+  });
+
+  function init(){
+    rewire();
+    var btn = document.getElementById('vault-go');
+    var inp = document.getElementById('vault-email');
+    if (btn) btn.addEventListener('click', recover);
+    if (inp) inp.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); recover(); }});
+    if (sid){ setUnlockedUI(); }
+    else { setStatus('', 'muted'); }
+  }
+
+  if (document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', init); }
+  else { init(); }
 })();
 </script>
 

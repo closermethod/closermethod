@@ -56,10 +56,10 @@ gtag('config','G-Q2458LX0VD',{page_path:'/access/lounge'});
   if (tierParam === 'standard') { value = 97; tierLabel = 'lounge-standard'; }
   else if (tierParam === 'annual') { value = 470; tierLabel = 'lounge-founding-annual'; }
 
-  if (!alreadyFired) {
+  if (validSession && !alreadyFired) {
     fbq('track','Subscribe',{content_name:'AI Builder Lounge',content_ids:[tierLabel],value:value,currency:'USD',predicted_ltv:value*12});
     gtag('event','purchase',{
-      transaction_id: sessionId || 'lounge-' + Date.now(),
+      transaction_id: sessionId,
       value: value, currency: 'USD',
       items: [{item_id: tierLabel, item_name: 'AI Builder Lounge', price: value, quantity: 1}]
     });

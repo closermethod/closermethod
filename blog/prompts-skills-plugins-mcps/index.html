@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>prompts vs skills vs plugins vs mcps: the plain-english framework | The Closer Method</title>
+  <meta name="description" content="prompts, skills, plugins, and MCPs are not the same thing. a plain-english comparison: what each one is, what it gives the AI, who builds it, and when to use which."/>
+  <link rel="canonical" href="https://closermethod.com/blog/prompts-skills-plugins-mcps/"/>
+  <!-- Open Graph + Twitter (SEO/social) -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="The Closer Method"/>
+  <meta property="og:title" content="prompts vs skills vs plugins vs mcps: the plain-english framework | The Closer Method"/>
+  <meta property="og:description" content="prompts, skills, plugins, and MCPs are not the same thing. a plain-english comparison of what each is, what it gives the AI, and when to use which."/>
+  <meta property="og:url" content="https://closermethod.com/blog/prompts-skills-plugins-mcps/"/>
+  <meta property="og:image" content="https://closermethod.com/og/og-operator.png"/>
+  <meta property="og:image:width" content="2400"/>
+  <meta property="og:image:height" content="1260"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="prompts vs skills vs plugins vs mcps: the plain-english framework"/>
+  <meta name="twitter:description" content="what each one is, what it gives the AI, who builds it, and when to use which."/>
+  <meta name="twitter:image" content="https://closermethod.com/og/og-operator.png"/>
+  <meta name="keywords" content="prompts vs skills vs plugins vs mcps, what is mcp, skill vs plugin, model context protocol, claude, the closer method"/>
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231A1714'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%2313B38B' font-style='italic'%3Em%3C/text%3E%3C/svg%3E"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','35298849146380570');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"/></noscript>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2458LX0VD', { page_path: '/blog/prompts-skills-plugins-mcps/' });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "articleSection": "Field Notes",
+    "headline": "prompts vs skills vs plugins vs mcps: the plain-english framework",
+    "description": "prompts, skills, plugins, and MCPs are not the same thing. a plain-english comparison: what each one is, what it gives the AI, who builds it, and when to use which.",
+    "author": { "@type": "Person", "name": "Eli Hitz", "url": "https://closermethod.com/", "sameAs": ["https://instagram.com/closermethod","https://x.com/closermethod","https://www.tiktok.com/@closermethod","https://elisabethhitz.com"] },
+    "publisher": { "@type": "Organization", "name": "The Closer Method", "url": "https://closermethod.com", "logo": { "@type": "ImageObject", "url": "https://closermethod.com/og/og-closer.png" }, "sameAs": ["https://www.tiktok.com/@closermethod","https://x.com/closermethod","https://instagram.com/closermethod"] },
+    "datePublished": "2026-06-18",
+    "dateModified": "2026-06-18",
+    "mainEntityOfPage": "https://closermethod.com/blog/prompts-skills-plugins-mcps/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What is the difference between a skill and a plugin?","acceptedAnswer":{"@type":"Answer","text":"A skill is one packaged playbook the AI loads for a matching task. A plugin is a bundle of several skills plus the connectors and subagents they depend on, packaged around a whole job and installable or shareable. One skill, many skills."}},
+      {"@type":"Question","name":"Is an MCP the same as a plugin?","acceptedAnswer":{"@type":"Answer","text":"No. MCP (the Model Context Protocol) is the open standard that connects an AI to external tools and data, like a universal plug. A plugin is a bundle of instructions (skills). Skills and plugins tell the AI how to do the work; MCP and connectors give it access to your real tools and data."}},
+      {"@type":"Question","name":"What is MCP (Model Context Protocol)?","acceptedAnswer":{"@type":"Answer","text":"MCP is an open standard, often described as USB-C for AI: one consistent way to connect an AI assistant to the apps and data where your work lives. Connectors run on MCP, so the AI can read and act in tools like Notion, Stripe, email, and your analytics."}},
+      {"@type":"Question","name":"Do I need all four?","acceptedAnswer":{"@type":"Answer","text":"No. You start with prompts, promote the ones you repeat into skills, bundle related skills into a plugin when a workflow is worth sharing, and wire MCP connectors so any of it can reach your real data. Most people use prompts and skills first; plugins and MCP come as the work scales."}}
+    ]
+  }
+  </script>
+
+  <style>
+    :root{--bg:#FBF5F0;--paper:#fff;--ink:#0A0A0A;--orange:#FF3B00;--muted:#555;--line:3px solid #0A0A0A;--shadow:6px 6px 0 #0A0A0A}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Archivo',system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:1rem;line-height:1.6}
+    h1,h2{font-family:'Archivo Black',system-ui,sans-serif;text-transform:lowercase;letter-spacing:-.02em;line-height:1.05;color:var(--ink);font-weight:400}
+    a{color:var(--orange);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .topnav{padding:13px 20px;border-bottom:var(--line);background:var(--paper);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .topnav .brand{font-family:'Archivo Black';font-size:1rem;text-transform:lowercase;letter-spacing:0;color:var(--ink);text-decoration:none}.topnav .navlinks{display:flex;gap:16px;flex-wrap:wrap;align-items:center}.topnav .navlinks a{font-family:'JetBrains Mono',monospace;font-size:.76rem;text-transform:lowercase;letter-spacing:.03em;color:var(--ink);text-decoration:none}.topnav .navlinks a:hover{color:var(--orange);text-decoration:none}
+    .wrap{max-width:720px;margin:0 auto;padding:48px 22px 72px}
+    .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.14em;color:var(--orange);margin-bottom:14px}
+    h1{font-size:clamp(2rem,5.5vw,3rem);margin-bottom:16px}
+    .lead{font-size:1.05rem;color:#333;margin-bottom:38px;max-width:56ch}
+    footer{padding:30px 20px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.74rem;color:#777;border-top:var(--line);background:var(--paper)}
+    footer a{color:var(--orange)}
+
+    .card{background:var(--paper);border:var(--line);box-shadow:var(--shadow);padding:40px 36px}
+    .meta{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:#777;margin-bottom:28px;text-transform:uppercase;letter-spacing:.06em}
+    .eyebrow a{color:var(--orange)}
+    article h2{font-family:'Archivo Black';text-transform:lowercase;font-size:1.5rem;margin:36px 0 12px;letter-spacing:-.01em}
+    article p{margin:0 0 16px;font-size:1rem;line-height:1.72}
+    article ul,article ol{margin:0 0 16px 22px}
+    article li{margin-bottom:8px}
+    blockquote{border-left:4px solid var(--orange);margin:22px 0;padding:6px 0 6px 18px;color:#333;font-style:normal;font-weight:500}
+    article a{color:var(--orange);text-decoration:underline}
+    .tbl{overflow-x:auto;margin:22px 0}
+    table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:560px}
+    th,td{border:2px solid var(--ink);padding:10px 12px;text-align:left;vertical-align:top}
+    th{font-family:'JetBrains Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;background:var(--ink);color:var(--bg)}
+    td:first-child{font-weight:700}
+    tbody tr:nth-child(even){background:#f7efe7}
+    .btn,.cta a{display:inline-block;background:var(--orange);color:var(--ink);font-family:'JetBrains Mono';font-weight:700;text-transform:lowercase;text-decoration:none;padding:14px 26px;border:var(--line);box-shadow:var(--shadow)}
+    .btn:hover,.cta a:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink);text-decoration:none}
+    .sources{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#999;margin-top:30px;line-height:1.5}
+    @media(max-width:560px){.card{padding:28px 20px}}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="brand" href="https://closermethod.com">the closer method</a>
+  <span class="navlinks">
+    <a href="/blog/">field notes</a>
+    <a href="/build/">the toolkit</a>
+    <a href="/hire/">work with me</a>
+  </span>
+</nav>
+
+<main class="wrap">
+  <div class="card">
+    <div class="eyebrow"><a href="/blog/">field notes</a></div>
+    <article>
+      <h1>prompts vs skills vs plugins vs mcps.</h1>
+      <p class="meta">elisabeth hitz · june 18, 2026 · 7 min read</p>
+
+      <p>four words get thrown around like they mean the same thing: prompt, skill, plugin, mcp. they do not. and the difference is not trivia. it is the difference between collecting AI tricks and building a system that runs your work. here is the whole framework in plain english, with a table you can keep.</p>
+
+      <p>the fastest way to hold it: three of these are about <strong>how</strong> the AI does the work, getting more packaged as you go (prompt, then skill, then plugin). the fourth, mcp, is about <strong>access</strong>, how the AI reaches your real tools and data. instructions on one side, wiring on the other.</p>
+
+      <h2>the comparison, at a glance</h2>
+      <div class="tbl">
+      <table>
+        <thead>
+          <tr><th>&nbsp;</th><th>what it is</th><th>lifespan</th><th>what it gives the AI</th><th>when to use it</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>prompt</td><td>a single instruction you type in the moment</td><td>one-off, disposable</td><td>direction for this one answer</td><td>thinking, exploring, a task you do once</td></tr>
+          <tr><td>skill</td><td>a folder of instructions (plus optional examples, assets, scripts) the AI loads on its own</td><td>build once, reused automatically</td><td>a repeatable method, done your way</td><td>a task you redo and want the same quality every time</td></tr>
+          <tr><td>plugin</td><td>a bundle of several skills plus the connectors and subagents they need</td><td>installed, shareable</td><td>a whole workflow as one package</td><td>a multi-step job you want to run, or hand to a team</td></tr>
+          <tr><td>mcp</td><td>the open standard that connects the AI to external tools and data</td><td>a live connection</td><td>access to your real apps and data</td><td>any time the AI needs to read or act in your actual tools</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2>prompt: the instruction</h2>
+      <p>a prompt is one instruction you type and retype. powerful, but it lives in your clipboard and resets every time you open a new chat. it is the rawest unit, and it is where everyone starts. <a href="/blog/prompts-vs-skills/">a prompt is not a skill</a> goes deeper on why the next step up matters.</p>
+
+      <h2>skill: the reusable instruction</h2>
+      <p>a skill is a folder the AI loads automatically when a task matches it. inside: a SKILL.md instruction file, and optionally reference examples, brand assets, and small scripts for the parts that must run the same way every time. you build it once and it keeps working, so quality stops depending on how well you phrased the prompt that day. more in <a href="/blog/claude-skills-explained/">claude skills, explained</a>.</p>
+
+      <h2>plugin: the bundle</h2>
+      <p>a plugin packages several skills, plus the connectors and subagents they depend on, around one job. a monthly-close plugin might hold a skill for pulling the actuals, one for the variance table, one for the board memo. install it and you get the whole process the way your team does it. more in <a href="/blog/claude-plugins-explained/">claude plugins, explained</a>.</p>
+
+      <h2>mcp: the access layer</h2>
+      <p>mcp, the model context protocol, is the odd one out, and the one people conflate the most. it is not an instruction. it is the open standard that lets the AI plug into your real tools and data, often described as usb-c for AI: one consistent connection, and any tool that speaks it works. connectors run on mcp. it is how the AI reads your stripe, your notion, your inbox, instead of guessing. more in <a href="/blog/connect-claude-to-your-tools/">connect claude to your tools</a>.</p>
+
+      <h2>the mental model that makes it click</h2>
+      <p>skills and plugins are the <strong>playbook</strong>: how the work should be done. mcp and connectors are the <strong>wiring</strong>: what the work can reach. a brilliant playbook with no wiring still guesses, because it cannot see your real data. great wiring with no playbook has access but no method. a system that actually runs your work needs both, and that is the whole point: <a href="/blog/more-context-isnt-better/">good instructions</a> plus real access beat a clever prompt every time.</p>
+
+      <h2>the ladder for a small business</h2>
+      <p>you do not adopt all four on day one. you climb:</p>
+      <ol>
+        <li>start with a <strong>prompt</strong> for whatever is in front of you.</li>
+        <li>the prompt you keep retyping becomes a <strong>skill</strong>.</li>
+        <li>a few skills that serve one workflow become a <strong>plugin</strong>.</li>
+        <li>wire <strong>mcp</strong> connectors so any of it can touch your real data.</li>
+      </ol>
+      <p>that is the path from typing instructions into a box to owning a system that does the work. if you would rather have that path mapped and built for your business, that is what the diagnostic is for.</p>
+
+      <div class="cta">
+        <h2>want this built into your business?</h2>
+        <p>the systems diagnostic is $500, the price is on the page. you get a map of which prompts to promote into skills, which to bundle, and which tools to wire in, with the plan to build it. you decide on your own schedule.</p>
+        <a class="btn" href="https://closermethod.com/hire?utm_source=blog&utm_medium=article&utm_campaign=prompts-skills-plugins-mcps">get the $500 diagnostic</a>
+      </div>
+    </article>
+
+    <p class="sources">definitions of skills, plugins, and MCP (the Model Context Protocol): anthropic claude documentation and the claude cowork course. MCP is an open standard for connecting AI assistants to external tools and data.</p>
+  </div>
+</main>
+
+<footer>
+  Built by <a href="https://closermethod.com">The Closer Method</a>. If something looks off, reply to any email and I will see it.
+</footer>
+
+</body>
+</html>

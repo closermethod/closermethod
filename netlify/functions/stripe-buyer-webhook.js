@@ -28,6 +28,10 @@ const PRODUCT_MAP = {
   // AI Builder Toolkit (apply: product tag + stage_buyer_toolkit + aud_builder + claude-skills-buyer)
   // 2026-05-23: added 19759226 claude-skills-buyer for /skills + /artifacts buyer attribution (enrolls in skills-buyer sequence).
   // Operator Install rung — 2026-05-24. plink_1TaWVZ8nfWJMJe0DYDDKHe0k. Tags install-buyer (19762783).
+  // 2026-06-14: $17 "the first skill" tripwire (first-skill-checkout.js, price_1TiH2L8). Tags into aud_builder so $17 buyers
+  // are attributed + targetable for the $17→$147 ascension. TODO (Kit UI, API create is admin-restricted): dedicated
+  // "first-skill-buyer" tag + a short ascension sequence driving to the $147 system within the 14-day credit window.
+  1700:  { name: 'the first skill ($17 tripwire)',          tag_ids: [19315103] /* aud_builder */ },
   3700:  { name: 'Operator Install ($37 tripwire)',         tag_ids: [19762783, 19315103] /* install-buyer, aud_builder */ },
   4700:  { name: 'AI Builder Toolkit ($47)',                tag_ids: [18879433, 19315105, 19315103, 19759226] /* toolkit-buyer, stage_buyer_toolkit, aud_builder, claude-skills-buyer */ },
   9700:  { name: 'AI Builder Toolkit ($97 founder rate)',   tag_ids: [18879433, 19315105, 19315103, 19759226] },
@@ -66,6 +70,17 @@ const SUBSCRIPTION_MAP = {
 // CloserAI Day 1 AND Stack Installer). Stripe sends session.payment_link with the plink ID.
 // If payment_link matches here, this map takes precedence over PRODUCT_MAP[amount].
 const PAYMENT_LINK_MAP = {
+  // 2026-06-15: Reliable AI Cohort 01 — mapped by link ID so $197/$247/$297 don't collide with UGC Kit / CloserAI amounts.
+  'plink_1TiVPp8nfWJMJe0DDXv2LchJ': { name: 'Reliable AI Cohort 01 ($197)', tag_ids: [20371809, 19315103] /* cohort-01-buyer, aud_builder */ },
+  'plink_1TieeQ8nfWJMJe0DzFhCkw3Q': { name: 'Reliable AI Cohort 01 ($247)', tag_ids: [20371809, 19315103] /* cohort-01-buyer, aud_builder */ },
+  'plink_1TiefM8nfWJMJe0DSIfZ8TEW': { name: 'Reliable AI Cohort 01 ($297)', tag_ids: [20371809, 19315103] /* cohort-01-buyer, aud_builder */ },
+  // 2026-06-16: Cohort 01 + $47 personal build-review ORDER BUMP (tier-matched: 244/294/344). Adds cohort-01-buildreview (20385654)
+  // so Eli can filter who bought the add-on and deliver the private walkthrough. Same buyer+audience tags as base cohort.
+  'plink_1TitTa8nfWJMJe0DJwdBTcwV': { name: 'Reliable AI Cohort 01 + build review ($244)', tag_ids: [20371809, 19315103, 20385654] /* cohort-01-buyer, aud_builder, cohort-01-buildreview */ },
+  'plink_1TitTw8nfWJMJe0D1sPGtsKR': { name: 'Reliable AI Cohort 01 + build review ($294)', tag_ids: [20371809, 19315103, 20385654] },
+  'plink_1TitUF8nfWJMJe0DBR1g3n12': { name: 'Reliable AI Cohort 01 + build review ($344)', tag_ids: [20371809, 19315103, 20385654] },
+  // 2026-06-18: AI Adoption Studio Cohort 01 — $497 founding. NEW link, redirects to /access/cohort (no client-side purchase event there, so this webhook is the ONLY GA4 attribution). cohort-01-buyer + aud_builder.
+  'plink_1TjTNO8nfWJMJe0DUUhe6Duv': { name: 'AI Adoption Cohort 01 ($497 founding)', tag_ids: [20371809, 19315103] /* cohort-01-buyer, aud_builder */ },
   'plink_1TWEQ98nfWJMJe0DjU5hOOFX': { name: 'Stack Installer ($297)',     tag_ids: [19677019, 19315103] /* stack-buyer, aud_builder */ },
   'plink_1TaWVZ8nfWJMJe0DYDDKHe0k': { name: 'Install Walkthrough ($37 legacy)', tag_ids: [19762783, 19315103] /* install-buyer, aud_builder · LEGACY: deactivated 2026-05-24 but kept in map for any in-flight webhooks */ },
   // 2026-05-24: clean-name link. line_item.description snapshots "Install Walkthrough" (product renamed before this link was created). Replaces plink_1TaWVZ which still showed "Operator Install" in checkout due to frozen-at-creation rule.
@@ -83,7 +98,17 @@ const PAYMENT_LINK_MAP = {
   'plink_1Ta3Gv8nfWJMJe0DIXFNR8cj': { name: 'UGC Closer Method Toolkit · Founding', tag_ids: [19588347, 19315108, 19315100] /* retainer-engine-buyer, stage_buyer_ugc, aud_creator */ },
   'plink_1TXTwp8nfWJMJe0Dum8DK6k0': { name: 'UGC Closer Method Toolkit · Pro',      tag_ids: [19612150, 19315108, 19315100] /* toolkit-pro-buyer, stage_buyer_ugc, aud_creator */ },
   'plink_1TXT888nfWJMJe0DVyMZJGEP': { name: 'UGC Closer Method Toolkit · DFY',      tag_ids: [19612151, 19315108, 19315100] /* toolkit-dfy-buyer, stage_buyer_ugc, aud_creator */ },
-  'plink_1TX5E18nfWJMJe0DLaJR2Tht': { name: 'UGC Closer Kit standalone ($247)',     tag_ids: [17445194, 19315108, 19315100] /* purchased-closer-kit, stage_buyer_ugc, aud_creator */ }
+  'plink_1TX5E18nfWJMJe0DLaJR2Tht': { name: 'UGC Closer Kit standalone ($247)',     tag_ids: [17445194, 19315108, 19315100] /* purchased-closer-kit, stage_buyer_ugc, aud_creator */ },
+  // 2026-06-15: Missed-Call Money Workshop ($497, B2B). CRITICAL: $497 (49700) in PRODUCT_MAP routes to
+  // "CloserAI Public ($497)" — a UGC creator product. Without this payment_link entry, a B2B workshop buyer
+  // would be mis-tagged into CloserAI's UGC nurture. This entry pins the workshop link so amount-routing never
+  // fires for it. tag_ids is EMPTY on purpose: Kit tag/sequence CREATE is admin-restricted via API, so the
+  // dedicated "workshop-buyer" tag + delivery sequence must be made by Eli in the Kit UI. Until then the buyer
+  // still gets the generic buyer tag (18168606) + default form, and the FULL product is delivered on the
+  // /workshop/thanks page (interactive ROI calculator + roadmap + checklist), so nothing is undelivered.
+  // TODO (Eli, Kit UI): create tag "workshop-buyer" + a short delivery/onboarding sequence (join link + date +
+  // template links), then drop the tag id here and add it to TAG_TO_SEQUENCE below.
+  'plink_1TiWxf8nfWJMJe0DCQAv8oXK': { name: 'Missed-Call Money Workshop ($497)', tag_ids: [] }
 };
 
 // Default form for all buyers (so they're always subscribed even if tag fails)
@@ -268,6 +293,7 @@ exports.handler = async (event) => {
     19677019: 2767906,  // stack-buyer         → /stack Buyer Onboarding · Stack Installer
     18879433: 2735984,  // toolkit-buyer       → AI Builder Toolkit - Buyer Onboarding (existing)
     19762783: 2768152,  // install-buyer       → Operator Install · Buyer Delivery (2026-05-24, has 1 draft email)
+    20371809: 2795647,  // cohort-01-buyer     → Cohort 01 Buyer Onboarding (2026-06-16, B1 "you're in" fires immediately; B2-B5 are dated broadcasts)
   };
   const enrolledSequences = new Set();
   const sequenceResults = [];
@@ -285,6 +311,23 @@ exports.handler = async (event) => {
       } catch (e) {
         sequenceResults.push({ sequence_id: seqId, trigger_tag: tagId, status: 'error' });
       }
+    }
+  }
+
+  // 2026-06-14: $17 "the first skill" tripwire → enroll directly into the ascension sequence
+  // "first skill buyer ascension ($17 to $147)" (seq 2794378). Keyed by amount, not a tag, because
+  // the $17 buyer's only tag (aud_builder) is shared with toolkit buyers who must NOT get this nudge.
+  if (amount === 1700 && !enrolledSequences.has(2794378)) {
+    enrolledSequences.add(2794378);
+    try {
+      const r = await fetch('https://api.convertkit.com/v3/sequences/2794378/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ api_secret: apiSecret, email })
+      });
+      sequenceResults.push({ sequence_id: 2794378, trigger_tag: 'amount_1700', status: r.status });
+    } catch (e) {
+      sequenceResults.push({ sequence_id: 2794378, trigger_tag: 'amount_1700', status: 'error' });
     }
   }
 

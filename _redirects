@@ -27,6 +27,9 @@
 # /ugc → new home for the Closer Method Toolkit ($147 founding) sales page (moved from /toolkit 2026-05-18)
 /ugc            https://retainer-engine-launch.netlify.app                                      200!
 /ugc/*          https://retainer-engine-launch.netlify.app/:splat                               200!
+# /mcp/mcp was a self-referential duplicate (the /mcp/* proxy forwarded it to the subdomain's /mcp).
+# 301 to canonical /mcp so Google consolidates it (was "Crawled - currently not indexed"). MUST stay above /mcp/*.
+/mcp/mcp        /mcp                                                                            301!
 /mcp            https://closermethod-mcp.netlify.app                                            200!
 /mcp/*          https://closermethod-mcp.netlify.app/:splat                                     200!
 
@@ -168,6 +171,8 @@
 /api/deliver-closerai  /.netlify/functions/deliver-closerai   200!
 /api/register-masterclass /.netlify/functions/register-masterclass 200!
 /api/create-build-checkout /.netlify/functions/create-build-checkout 200!
+/api/first-skill-checkout  /.netlify/functions/first-skill-checkout  200!
+/api/first-skill-vault     /.netlify/functions/first-skill-vault     200!
 
 # ─── FAVICON FALLBACK ───
 /favicon.ico    /favicon.svg                                                                    200!
@@ -242,3 +247,22 @@
 /ai-tool-sprint                /build/   301!
 /ai-tool-sprint/               /build/   301!
 /ai-tool-sprint/*              /build/   301!
+
+# ─────── Claude Systems for Businesses (B2B offer) → consolidated into /hire (2026-06-13) ───────
+# /systems was a capture-only clone with NO Stripe checkout; it split the one $500 B2B offer across
+# two near-identical pages. /hire is canonical (it has the working $500 checkout + the same systems-lead
+# capture). 301 so any nurture/email/social link to /systems lands on the page that can actually take money.
+# Reversible: restore the two 200! proxy lines (closermethod-systems-offer.netlify.app stays live + untouched).
+/systems        /hire    301!
+/systems/*      /hire    301!
+
+# ─────── /hire → B2B Claude install offer page (added 2026-06-11, was 404) ───────
+/hire           https://magnificent-madeleine-6cbf67.netlify.app          200!
+/hire/*         https://magnificent-madeleine-6cbf67.netlify.app/:splat   200!
+
+# /closer was a dead 404 door; send home (added 2026-06-11)
+/closer         /    301!
+/closer/        /    301!
+/closer/*       /    301!
+
+/challenge   /cohort   301!

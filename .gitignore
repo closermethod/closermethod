@@ -13,6 +13,10 @@ node_modules/
 dist/
 .cache/
 
+# ── paid product vault (never commit to public repo) ──
+_vault/
+*.zip
+
 # ── OS / editor cruft ──
 .DS_Store
 Thumbs.db

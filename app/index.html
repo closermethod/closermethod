@@ -1528,6 +1528,27 @@ let pendingTab = null;
 // Check URL params for Stripe success redirect
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.get('unlocked') === 'true') {
+  // Clean URL right away (cosmetic; does not affect verification below)
+  window.history.replaceState({}, '', '/app');
+
+  // Fire the Meta Purchase ONLY when we believe this is a real $97 buyer -- i.e.
+  // Stripe verified the email, or (rare) the verify call hit a network error and we
+  // trust the post-checkout redirect. NEVER fire on a bare ?unlocked=true with no
+  // email or an unverified response: the old code fired here unconditionally on
+  // every load (bookmarks, bots, URL hacks), minting phantom Purchases that poison
+  // Meta's optimiser. Meta has no server-side webhook backup, so this client fire is
+  // the only Purchase signal -- it must fire for real buyers and only real buyers.
+  // localStorage dedupe stops a bookmark revisit from re-firing. Fixed 2026-06-07.
+  function fireMetaPurchase() {
+    if (typeof fbq === 'undefined') return;
+    if (localStorage.getItem('cm_fb_purchase_app') === '1') return;
+    localStorage.setItem('cm_fb_purchase_app', '1');
+    var purchaseData = { value: 97, currency: 'USD', content_name: 'closer-tools' };
+    var utm = sessionStorage.getItem('closerUtm');
+    if (utm) { try { var u = JSON.parse(utm); purchaseData.utm_source = u.utm_source || ''; purchaseData.utm_campaign = u.utm_campaign || ''; } catch(e){} }
+    fbq('track', 'Purchase', purchaseData);
+  }
+
   // Server-side verify: check Stripe for a real $97 purchase before unlocking
   var storedEmail = window._closerEmail || localStorage.getItem('closerAppGateEmail') || '';
   if (storedEmail) {
@@ -1543,7 +1564,9 @@ if (urlParams.get('unlocked') === 'true') {
         unlockAllTools();
         var banner = document.getElementById('successBanner');
         if (banner) { banner.classList.add('show'); launchConfetti(); }
+        fireMetaPurchase();
       }
+      // data.verified === false -> URL hack or unverified email: unlock nothing, fire nothing.
     }).catch(function() {
       // On network error, trust the redirect (don't punish paying customers)
       isPurchased = true;
@@ -1551,19 +1574,12 @@ if (urlParams.get('unlocked') === 'true') {
       unlockAllTools();
       var banner = document.getElementById('successBanner');
       if (banner) { banner.classList.add('show'); launchConfetti(); }
+      fireMetaPurchase();
     });
   } else {
     // No email stored -- could be a real buyer whose session cleared, or a URL hack.
-    // Don't auto-unlock. Show the verify form so they can prove purchase with their email.
-    // The "Already purchased?" link on the gate handles this.
-  }
-  // Clean URL
-  window.history.replaceState({}, '', '/app');
-  if (typeof fbq !== 'undefined') {
-    var purchaseData = { value: 97, currency: 'USD', content_name: 'closer-tools' };
-    var utm = sessionStorage.getItem('closerUtm');
-    if (utm) { try { var u = JSON.parse(utm); purchaseData.utm_source = u.utm_source || ''; purchaseData.utm_campaign = u.utm_campaign || ''; } catch(e){} }
-    fbq('track', 'Purchase', purchaseData);
+    // Don't auto-unlock and don't fire Purchase. The "Already purchased?" verify
+    // form lets a real buyer prove purchase with their email.
   }
   // Note: unlockAllTools() handles the success banner + confetti + personalization
 }

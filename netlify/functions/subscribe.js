@@ -102,6 +102,14 @@ exports.handler = async (event) => {
     return { statusCode: 429, body: JSON.stringify({ error: 'Too many requests, slow down.' }) };
   }
 
+  // Bot-wave geo gate (GA4 audit 2026-06-11: 50% of generate_lead = IR bots; RU/Moscow wave before that).
+  // Fail-open: only acts when Netlify provides a country header. Silent-discard so bots learn nothing.
+  const geoCountry = (event.headers['x-country'] || (event.headers['x-nf-geo'] ? (() => { try { return JSON.parse(Buffer.from(event.headers['x-nf-geo'], 'base64').toString()).country?.code; } catch (e) { try { return JSON.parse(event.headers['x-nf-geo']).country?.code; } catch (e2) { return null; } } })() : null) || '').toUpperCase();
+  if (geoCountry === 'IR' || geoCountry === 'RU') {
+    console.log('[subscribe] geo-gate silent discard', { geoCountry, ip });
+    return { statusCode: 200, body: JSON.stringify({ success: true, subscriber_id: 0, state: 'active' }) };
+  }
+
   let body;
   try { body = JSON.parse(event.body || '{}'); }
   catch (e) { return { statusCode: 400, body: JSON.stringify({ error: 'Invalid JSON' }) }; }
@@ -185,6 +193,9 @@ exports.handler = async (event) => {
       await applyTagV3(19743216, email, apiSecret);
       await applyTagV3(19315103, email, apiSecret);
     }
+    if (source === 'systems-diagnostic') {
+      await applyTagV3(20221947, email, apiSecret); // systems-lead (B2B /hire offer page)
+    }
     if (source === 'harness') {
       await applyTagV3(19743298, email, apiSecret);
       await applyTagV3(19315103, email, apiSecret);
@@ -205,6 +216,66 @@ exports.handler = async (event) => {
     if (source === 'retainer-skill') {
       await applyTagV3(19634429, email, apiSecret);
       await enrollSequenceV3(2777429, email, apiSecret);
+    }
+
+    // AI Adoption Studio sources — self-create Kit tags on first use (Kit v3 POST /tags is idempotent).
+    // workmap-lead: free Work Map at /finder
+    if (source === 'workmap-lead') {
+      try {
+        const tagRes = await fetch(`${KIT_V3_BASE}/tags`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ api_secret: apiSecret, tag: [{ name: 'workmap-lead' }] }),
+        });
+        const tagData = await tagRes.json();
+        const tagId = tagData[0]?.id;
+        if (tagId) await applyTagV3(tagId, email, apiSecret);
+      } catch (e) { console.error('[subscribe] workmap-lead tag error:', e.message); }
+      // Cohort 01 launch: scorecard leads also get cohort-01-lead for scheduled launch emails.
+      await applyTagV3(20372872, email, apiSecret);
+      await applyTagV3(19315103, email, apiSecret);
+    }
+
+    // b2b-fit-call: adoptionstudio.com booking form → B2B lead
+    if (source === 'b2b-fit-call') {
+      try {
+        const tagRes = await fetch(`${KIT_V3_BASE}/tags`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ api_secret: apiSecret, tag: [{ name: 'b2b-fit-call' }] }),
+        });
+        const tagData = await tagRes.json();
+        const tagId = tagData[0]?.id;
+        if (tagId) await applyTagV3(tagId, email, apiSecret);
+      } catch (e) { console.error('[subscribe] b2b-fit-call tag error:', e.message); }
+    }
+
+    // adoption-cohort-waitlist: /cohort page opt-in
+    if (source === 'adoption-cohort-waitlist') {
+      try {
+        const tagRes = await fetch(`${KIT_V3_BASE}/tags`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ api_secret: apiSecret, tag: [{ name: 'adoption-cohort-waitlist' }] }),
+        });
+        const tagData = await tagRes.json();
+        const tagId = tagData[0]?.id;
+        if (tagId) await applyTagV3(tagId, email, apiSecret);
+      } catch (e) { console.error('[subscribe] adoption-cohort-waitlist tag error:', e.message); }
+    }
+
+    // cohort-buyer: /access/cohort post-purchase intake (paid Cohort 01 member)
+    if (source === 'cohort-buyer') {
+      try {
+        const tagRes = await fetch(`${KIT_V3_BASE}/tags`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ api_secret: apiSecret, tag: [{ name: 'cohort-01-buyer' }] }),
+        });
+        const tagData = await tagRes.json();
+        const tagId = tagData[0]?.id;
+        if (tagId) await applyTagV3(tagId, email, apiSecret);
+      } catch (e) { console.error('[subscribe] cohort-buyer tag error:', e.message); }
     }
 
     // 4. Body-supplied tag_ids array (fixes /calc /os /voice-suite which had been silently ignored).

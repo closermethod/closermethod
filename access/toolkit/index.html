@@ -91,6 +91,16 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
     <p class="lead">27 production-tested skills, a brain doc template, and a master skill file that configures any AI to ship deployable files. 3 install paths below · path A (Claude Project) works on every plan including the free one and is the fastest way to get started.</p>
 
     <h2 class="sr-only">your 3 download files</h2>
+
+    <div id="vault-unlock" style="margin:20px 0 0;background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--radius-lg);padding:16px 18px">
+      <form id="vault-form" onsubmit="return false" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+        <label for="vault-email" style="font-family:var(--t-mono);font-size:.8rem;color:var(--text-2);flex:1 1 100%;margin:0 0 2px">already bought? enter the email from your receipt to unlock your downloads.</label>
+        <input id="vault-email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" style="flex:1 1 240px;min-width:0;padding:11px 13px;background:var(--bg);border:1px solid var(--border-strong);border-radius:var(--radius);color:var(--text);font-family:var(--t-sans);font-size:.95rem">
+        <button id="vault-go" type="button" class="dl-btn" style="flex:0 0 auto">unlock my downloads</button>
+      </form>
+      <p id="vault-status" style="margin:10px 0 0;font-family:var(--t-mono);font-size:.78rem;color:var(--text-2);line-height:1.5"></p>
+    </div>
+
     <div class="downloads">
       <div class="dl-card" style="border:1px solid var(--accent)">
         <span class="label" style="color:var(--accent)">file 1 · for the Project path (works on free plan) · v2 (recommended)</span>
@@ -98,7 +108,7 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
           <h3>ai-builder-setup-v2.zip</h3>
           <p>the bundle: 27 skill folders, each with a SKILL.md that has a worked-example section. use this if you're following <b>path A</b> below (Claude Project · works on every plan including free) or <b>path C</b> (Claude Code, terminal).</p>
         </div>
-        <a class="dl-btn" href="https://ai-builder-setup.netlify.app/ai-builder-setup-v2.zip" download data-event="toolkit_download_zip_v2">download bundle .zip<span class="size">~88 KB</span></a>
+        <a class="dl-btn" href="#vault-unlock" data-vault-file="ai-builder-setup-v2.zip" download data-event="toolkit_download_zip_v2">download bundle .zip<span class="size">~88 KB</span></a>
       </div>
       <div class="dl-card">
         <span class="label" style="color:var(--accent)">file 2 · for the Skills path (Pro+ only)</span>
@@ -106,7 +116,7 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
           <h3>ai-builder-skills-individual-zips.zip</h3>
           <p>27 separately-zipped skills + install guide. claude.ai's Skills upload requires one zip per skill (the bundle won't work for this path · you'd get a "must start with YAML" error). use this if you're following <b>path B</b> below (Claude Skills upload · Pro, Max, Team, or Enterprise only).</p>
         </div>
-        <a class="dl-btn" href="https://ai-builder-setup.netlify.app/ai-builder-skills-individual-zips.zip" download data-event="toolkit_download_individual_zips">download 27 zips<span class="size">~90 KB</span></a>
+        <a class="dl-btn" href="#vault-unlock" data-vault-file="ai-builder-skills-individual-zips.zip" download data-event="toolkit_download_individual_zips">download 27 zips<span class="size">~90 KB</span></a>
       </div>
       <div class="dl-card">
         <span class="label">file 3 · the brain doc</span>
@@ -126,7 +136,7 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
         <span><b style="color:var(--accent)">🎁 see what each skill ships (before you install)</b><br><span style="color:var(--text-2);font-size:.85rem;font-family:var(--t-mono)">real sample output gallery · all 27 skills · 1-page browse</span></span>
         <span style="color:var(--accent);font-family:var(--t-mono);font-size:.85rem">→</span>
       </a>
-      <a href="https://ai-builder-setup.netlify.app/brain-doc-example-closermethod.md" download style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--radius);text-decoration:none;color:var(--text)">
+      <a href="#vault-unlock" data-vault-file="brain-doc-example-closermethod.md" download style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--radius);text-decoration:none;color:var(--text)">
         <span><b>📝 see a filled-in brain doc (eli's, anonymized)</b><br><span style="color:var(--text-2);font-size:.85rem;font-family:var(--t-mono)">example of what "good answers" look like before you write your own</span></span>
         <span style="color:var(--accent);font-family:var(--t-mono);font-size:.85rem">↓ .md</span>
       </a>
@@ -207,36 +217,36 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
         <p style="margin:10px 0 0;color:var(--accent);font-size:.85rem"><b>start with ai-builder-start-here.zip ↓ (the orchestrator · install first)</b></p>
 
         <div style="margin:12px 0 0;display:grid;grid-template-columns:1fr;gap:6px">
-          <a class="dl-btn" href="https://ai-builder-setup.netlify.app/skills/ai-builder-start-here.zip" download style="background:var(--accent);color:#0A0A0B;border:1px solid var(--accent);font-size:.78rem;padding:10px 14px">1. ai-builder-start-here.zip<span class="size">install first</span></a>
+          <a class="dl-btn" href="#vault-unlock" data-vault-file="skills/ai-builder-start-here.zip" download style="background:var(--accent);color:#0A0A0B;border:1px solid var(--accent);font-size:.78rem;padding:10px 14px">1. ai-builder-start-here.zip<span class="size">install first</span></a>
         </div>
         <p style="margin:10px 0 6px;color:var(--text-3);font-size:.78rem">then these 24 in any order:</p>
         <div style="margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:4px;font-size:.72rem">
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-website.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">2. ai-builder-website.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-marketing-strategy.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">3. ai-builder-marketing-strategy.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-interactive-quiz.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">4. ai-builder-interactive-quiz.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-email-funnel.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">5. ai-builder-email-funnel.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-client-onboarding.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">6. ai-builder-client-onboarding.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-pricing-strategy.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">7. ai-builder-pricing-strategy.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-competitor-analysis.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">8. ai-builder-competitor-analysis.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-business-plan.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">9. ai-builder-business-plan.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-booking-page.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">10. ai-builder-booking-page.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-testimonial-collector.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">11. ai-builder-testimonial-collector.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-social-calendar.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">12. ai-builder-social-calendar.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-brand-voice.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">13. ai-builder-brand-voice.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-lead-magnet.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">14. ai-builder-lead-magnet.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-launch-plan.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">15. ai-builder-launch-plan.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-course-outline.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">16. ai-builder-course-outline.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-partnership-proposal.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">17. ai-builder-partnership-proposal.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-referral-program.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">18. ai-builder-referral-program.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-event-marketing.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">19. ai-builder-event-marketing.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-pricing-calculator.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">20. ai-builder-pricing-calculator.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-resource-library.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">21. ai-builder-resource-library.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-pitch-deck.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">22. ai-builder-pitch-deck.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-faq-page.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">23. ai-builder-faq-page.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-welcome-packet.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">24. ai-builder-welcome-packet.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-annual-review.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">25. ai-builder-annual-review.zip</a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-go-to-market.zip" download style="color:var(--text);background:var(--accent-soft);border:1px solid var(--accent);padding:7px 9px;border-radius:6px;text-decoration:none;display:block"><b>26.</b> ai-builder-go-to-market.zip <span style="color:var(--accent);font-size:.62rem">· NEW</span></a>
-          <a href="https://ai-builder-setup.netlify.app/skills/ai-builder-positioning.zip" download style="color:var(--text);background:var(--accent-soft);border:1px solid var(--accent);padding:7px 9px;border-radius:6px;text-decoration:none;display:block"><b>27.</b> ai-builder-positioning.zip <span style="color:var(--accent);font-size:.62rem">· NEW</span></a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-website.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">2. ai-builder-website.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-marketing-strategy.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">3. ai-builder-marketing-strategy.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-interactive-quiz.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">4. ai-builder-interactive-quiz.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-email-funnel.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">5. ai-builder-email-funnel.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-client-onboarding.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">6. ai-builder-client-onboarding.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-pricing-strategy.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">7. ai-builder-pricing-strategy.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-competitor-analysis.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">8. ai-builder-competitor-analysis.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-business-plan.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">9. ai-builder-business-plan.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-booking-page.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">10. ai-builder-booking-page.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-testimonial-collector.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">11. ai-builder-testimonial-collector.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-social-calendar.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">12. ai-builder-social-calendar.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-brand-voice.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">13. ai-builder-brand-voice.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-lead-magnet.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">14. ai-builder-lead-magnet.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-launch-plan.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">15. ai-builder-launch-plan.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-course-outline.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">16. ai-builder-course-outline.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-partnership-proposal.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">17. ai-builder-partnership-proposal.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-referral-program.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">18. ai-builder-referral-program.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-event-marketing.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">19. ai-builder-event-marketing.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-pricing-calculator.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">20. ai-builder-pricing-calculator.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-resource-library.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">21. ai-builder-resource-library.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-pitch-deck.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">22. ai-builder-pitch-deck.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-faq-page.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">23. ai-builder-faq-page.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-welcome-packet.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">24. ai-builder-welcome-packet.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-annual-review.zip" download style="color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);padding:7px 9px;border-radius:6px;text-decoration:none;display:block">25. ai-builder-annual-review.zip</a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-go-to-market.zip" download style="color:var(--text);background:var(--accent-soft);border:1px solid var(--accent);padding:7px 9px;border-radius:6px;text-decoration:none;display:block"><b>26.</b> ai-builder-go-to-market.zip <span style="color:var(--accent);font-size:.62rem">· NEW</span></a>
+          <a href="#vault-unlock" data-vault-file="skills/ai-builder-positioning.zip" download style="color:var(--text);background:var(--accent-soft);border:1px solid var(--accent);padding:7px 9px;border-radius:6px;text-decoration:none;display:block"><b>27.</b> ai-builder-positioning.zip <span style="color:var(--accent);font-size:.62rem">· NEW</span></a>
         </div>
 
         <p style="margin-top:18px;color:var(--text);font-size:.9rem"><b>step 3 · try it</b></p>
@@ -475,6 +485,135 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
   }
   if(window.requestIdleCallback){window.requestIdleCallback(load3P,{timeout:3000});}
   else{window.addEventListener('load',function(){setTimeout(load3P,1500);});}
+})();
+</script>
+
+<script>
+// ── credentialed delivery · route every paid download through the buyer-only vault ──
+// fresh buyer lands with ?session_id=cs_… (Stripe) → links carry it · past buyer enters
+// the receipt email → POST mints a 7-day token → links carry that. no creds = no file.
+(function(){
+  var VAULT = '/.netlify/functions/toolkit-vault';
+  var CDN   = 'https://ai-builder-setup.netlify.app/';
+  var params = new URLSearchParams(location.search);
+  var sid = params.get('session_id');
+  var token = null;
+
+  function credential(){
+    if (sid)   return 'session_id=' + encodeURIComponent(sid);
+    if (token) return 'token=' + encodeURIComponent(token);
+    return null;
+  }
+
+  function vaultLinks(){
+    return Array.prototype.slice.call(
+      document.querySelectorAll('a[href^="' + CDN + '"], a[data-vault-file]')
+    );
+  }
+
+  function rewire(){
+    var c = credential();
+    vaultLinks().forEach(function(a){
+      var file = a.getAttribute('data-vault-file');
+      if (!file){
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf(CDN) === 0){
+          file = h.slice(CDN.length).split('?')[0].split('#')[0];
+          a.setAttribute('data-vault-file', file);
+        }
+      }
+      if (!file) return;
+      if (c){
+        a.setAttribute('href', VAULT + '?file=' + encodeURIComponent(file) + '&' + c);
+        a.removeAttribute('data-locked');
+      } else {
+        // no credential yet: point at the vault (which 403s with a clear message) and
+        // intercept the click to send them to the unlock box instead.
+        a.setAttribute('href', VAULT + '?file=' + encodeURIComponent(file));
+        a.setAttribute('data-locked', '1');
+      }
+    });
+  }
+
+  function setStatus(msg, kind){
+    var el = document.getElementById('vault-status');
+    if (!el) return;
+    el.textContent = msg;
+    el.style.color = kind === 'ok'  ? 'var(--pos)'
+                   : kind === 'err' ? '#FF6B6B'
+                   : kind === 'warn'? 'var(--accent)'
+                   : 'var(--text-2)';
+  }
+
+  function setUnlockedUI(){
+    var form = document.getElementById('vault-form');
+    if (form) form.style.display = 'none';
+    var box = document.getElementById('vault-unlock');
+    if (box) box.style.borderColor = 'var(--pos)';
+    setStatus('✓ unlocked · your downloads are live below. bookmark this page — these links are yours forever.', 'ok');
+  }
+
+  function recover(){
+    var inp = document.getElementById('vault-email');
+    var btn = document.getElementById('vault-go');
+    var email = ((inp && inp.value) || '').trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+      setStatus('that does not look like an email · use the exact address from your receipt.', 'err');
+      if (inp) inp.focus();
+      return;
+    }
+    if (btn){ btn.disabled = true; btn.textContent = 'checking…'; }
+    setStatus('checking your purchase…', 'muted');
+    fetch(VAULT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    })
+    .then(function(r){ return r.json().then(function(j){ return { status: r.status, body: j }; }); })
+    .then(function(res){
+      if (btn){ btn.disabled = false; btn.textContent = 'unlock my downloads'; }
+      var j = res.body || {};
+      if (j.ok && j.token){
+        token = j.token;
+        rewire();
+        setUnlockedUI();
+        try { if (window.gtag) gtag('event','vault_unlock',{ method:'email', page:'/access/toolkit' }); } catch(e){}
+      } else if (res.status === 503){
+        setStatus(j.message || 'download is temporarily unavailable. DM @closermethod and i will get your files to you right away.', 'warn');
+      } else {
+        setStatus(j.message || 'i could not find a toolkit purchase under that email. use the exact email from your receipt, or DM @closermethod.', 'err');
+      }
+    })
+    .catch(function(){
+      if (btn){ btn.disabled = false; btn.textContent = 'unlock my downloads'; }
+      setStatus('something glitched on my end. try again, or DM @closermethod and i will send your files.', 'err');
+    });
+  }
+
+  // delegated: a locked download click sends the buyer to the unlock box
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[data-locked="1"]') : null;
+    if (!a) return;
+    e.preventDefault();
+    var box = document.getElementById('vault-unlock');
+    if (box) box.scrollIntoView({ behavior:'smooth', block:'center' });
+    var inp = document.getElementById('vault-email');
+    if (inp) inp.focus();
+    setStatus('enter the email from your receipt above to unlock your downloads.', 'warn');
+  });
+
+  function init(){
+    rewire();
+    var btn = document.getElementById('vault-go');
+    var inp = document.getElementById('vault-email');
+    if (btn) btn.addEventListener('click', recover);
+    if (inp) inp.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); recover(); }});
+    if (sid){ setUnlockedUI(); }
+    else { setStatus('', 'muted'); }
+  }
+
+  if (document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', init); }
+  else { init(); }
 })();
 </script>
 </body>

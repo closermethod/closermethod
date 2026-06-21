@@ -32,6 +32,14 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
 .h1{font-size:clamp(2rem,4.6vw,2.8rem);line-height:1.05;letter-spacing:-.025em;font-weight:600;margin:0 0 16px}
 .h1 i{font-style:normal;color:var(--accent)}
 .lead{font-size:1.1rem;line-height:1.55;color:var(--text-2);margin:0 0 24px;max-width:620px}
+/* ===== above-the-fold offer hook · surface the offer + reason-why at peak intent ===== */
+.offer-hook{margin:22px 0 8px;padding:18px 18px 20px;border:1px solid rgba(255,107,53,.42);background:linear-gradient(180deg,rgba(255,107,53,.12),transparent);border-radius:var(--radius-lg)}
+.oh-line{margin:0 0 14px;font-size:.99rem;line-height:1.55;color:var(--text)}
+.oh-line s{color:var(--text-3)}.oh-line b.accent{color:var(--accent)}
+.oh-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:16px 22px;font-family:var(--t-sans);font-weight:600;font-size:1.04rem;line-height:1;color:#0A0A0B;text-decoration:none;border-radius:12px;background:linear-gradient(180deg,var(--accent-hover),var(--accent));box-shadow:0 10px 30px -8px rgba(255,107,53,.6);transition:transform .08s ease}
+.oh-cta:hover{color:#0A0A0B;transform:translateY(-1px)}
+.oh-proof{margin:12px 0 0;text-align:center;font-size:.8rem;line-height:1.45;color:var(--text-2)}
+.oh-alt{margin:10px 0 0;text-align:center;font-family:var(--t-mono);font-size:.78rem;color:var(--text-3)}
 .steps{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;margin:24px 0 0;min-height:300px}
 .steps h2{font-size:1.05rem;font-weight:600;margin:0 0 14px}
 .steps ol{margin:0;padding:0 0 0 20px;color:var(--text-2);line-height:1.7;font-size:.94rem}
@@ -95,14 +103,22 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
     <h1 class="h1">your 21-day ship plan is <i>ready</i>.</h1>
     <p class="lead">your 4 day-1 files are below. download them now. i also sent them to your inbox, and days 2-21 unfold there over the next two weeks.</p>
 
+    <!-- above-the-fold offer hook · surface the offer + reason-why at peak intent (CRO fix) -->
+    <div class="offer-hook">
+      <p class="oh-line"><b>skip the 21-day wait.</b> the plan walks you through it one skill at a time. the toolkit hands you all 27 skills already built and wired to your voice, homepage, cold DM, pitch, offer, launch and 22 more, each shipping a <b>finished file</b>. you ship in days, not weeks of doing it by hand. an agency builds this for <s>$13,400+</s>. <b class="accent">$147 once, yours forever.</b></p>
+      <a class="oh-cta" href="https://buy.stripe.com/dRm6oB8L70gu5yy8tl5Ne0I" data-event="thanks_ship_hero_buy_click" rel="noopener">install all 27 skills now · $147 once →</a>
+      <p class="oh-proof">built by eli hitz · 10 years closing enterprise deals (Deel 268%, Criteo 167%) · made-to-work guarantee</p>
+      <p class="oh-alt">grab your free day-1 files first ↓</p>
+    </div>
+
     <div class="files">
       <h2>day 1 · download now</h2>
       <p class="sub">install SKILL.md first, then fill the brain doc. that's day 1 done.</p>
       <div class="dl-grid">
-        <a class="dl" href="https://ai-builder-setup.netlify.app/starter/SKILL.md" download data-event="thanks_ship_dl_skill"><span class="nm">SKILL.md<span class="desc">the master skill · install this first</span></span><span class="go">download →</span></a>
-        <a class="dl" href="https://ai-builder-setup.netlify.app/brain-doc-template.md" download data-event="thanks_ship_dl_brain"><span class="nm">brain-doc-template.md<span class="desc">5 questions · ~5 min to fill</span></span><span class="go">download →</span></a>
-        <a class="dl" href="https://ai-builder-setup.netlify.app/starter/01-website.md" download data-event="thanks_ship_dl_website"><span class="nm">01-website.md<span class="desc">ship a homepage in your voice</span></span><span class="go">download →</span></a>
-        <a class="dl" href="https://ai-builder-setup.netlify.app/starter/INSTALL.md" download data-event="thanks_ship_dl_install"><span class="nm">INSTALL.md<span class="desc">60-second setup walkthrough</span></span><span class="go">download →</span></a>
+        <a class="dl" href="/starter/SKILL.md" download data-event="thanks_ship_dl_skill"><span class="nm">SKILL.md<span class="desc">the master skill · install this first</span></span><span class="go">download →</span></a>
+        <a class="dl" href="/starter/brain-doc-template.md" download data-event="thanks_ship_dl_brain"><span class="nm">brain-doc-template.md<span class="desc">5 questions · ~5 min to fill</span></span><span class="go">download →</span></a>
+        <a class="dl" href="/starter/01-website.md" download data-event="thanks_ship_dl_website"><span class="nm">01-website.md<span class="desc">ship a homepage in your voice</span></span><span class="go">download →</span></a>
+        <a class="dl" href="/starter/INSTALL.md" download data-event="thanks_ship_dl_install"><span class="nm">INSTALL.md<span class="desc">the step-by-step setup walkthrough</span></span><span class="go">download →</span></a>
       </div>
     </div>
 
@@ -129,7 +145,7 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
       <p style="color:var(--text-3);font-size:.85rem;margin:14px 0 0">$37 one-time. instant access. install buyers step up to the full $147 toolkit at $127, code applies at checkout for 14 days.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="/install/" data-event="thanks_ship_install_cta">get the install walkthrough <span class="price">· $37</span></a>
-        <a class="btn btn-secondary" href="/ship/" data-event="thanks_ship_toolkit_cta">or grab the full 21-day toolkit · $147</a>
+        <a class="btn btn-secondary" href="https://buy.stripe.com/dRm6oB8L70gu5yy8tl5Ne0I" data-event="thanks_ship_toolkit_buy_click" rel="noopener">or install all 27 skills now · $147</a>
       </div>
     </div>
   </div>
@@ -148,7 +164,7 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
       <p class="xi-lead">the install walkthrough takes you from "i have the files" to one skill installed and shipping real output from your business, tonight. 4 steps, a which-skill-first decision tree, and the brain doc that makes claude know your business.</p>
       <a class="btn-oto" href="/install/" data-event="xi_ship_install_cta">get the install walkthrough <span class="price">· $37</span></a>
       <div class="xi-guar"><b>made-to-work guarantee.</b> tell me what's not landing and i rewrite the skill for you, free, until it ships in your voice. DM @closermethod.</div>
-      <p class="xi-alt">ready for all 21 days? <a href="/ship/" data-event="xi_ship_toolkit_cta">grab the full toolkit · $147</a></p>
+      <p class="xi-alt">ready for all 21 days? <a href="https://buy.stripe.com/dRm6oB8L70gu5yy8tl5Ne0I" data-event="xi_ship_toolkit_buy_click" rel="noopener">install all 27 skills · $147</a></p>
     </div>
   </div>
 </div>
@@ -159,7 +175,10 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','G-Q2458LX0VD',{send_page_view:true,page_path:'/thanks/ship'});
 gtag('event','generate_lead',{source:'ship',value:0,page:'/thanks/ship'});
-document.querySelectorAll('[data-event]').forEach(function(el){el.addEventListener('click',function(){gtag('event','cta_click',{cta:el.getAttribute('data-event'),page:'/thanks/ship'})})});
+/* carry attribution + utm onto the Stripe checkout so toolkit purchases tie back to this lead */
+(function(){try{var qs=new URLSearchParams(location.search);var ref=(qs.get('email')||qs.get('cid')||('ts_'+Date.now().toString(36)));document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(a){var u=new URL(a.href);u.searchParams.set('client_reference_id',ref);['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(qs.get(k))u.searchParams.set(k,qs.get(k));});a.href=u.toString();});}catch(e){}})();
+/* cta_click on every CTA · begin_checkout + InitiateCheckout on toolkit buy clicks (was missing — ship checkouts were invisible) */
+document.querySelectorAll('[data-event]').forEach(function(el){el.addEventListener('click',function(){var ev=el.getAttribute('data-event');gtag('event','cta_click',{cta:ev,page:'/thanks/ship'});if(ev==='thanks_ship_hero_buy_click'||ev==='thanks_ship_toolkit_buy_click'||ev==='xi_ship_toolkit_buy_click'){gtag('event','begin_checkout',{currency:'USD',value:147,items:[{item_name:'AI Builder Toolkit',price:147}],page:'/thanks/ship'});if(window.fbq)fbq('track','InitiateCheckout',{content_name:'ai-builder-toolkit',value:147,currency:'USD'});}});});
 /* exit-intent re-engagement · page-cro · catches the bounce, fires once per session */
 (function(){
   var scrim=document.getElementById('xiScrim');if(!scrim)return;

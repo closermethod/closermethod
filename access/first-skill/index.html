@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0B">
+<title>the first skill is yours · closer method</title>
+<meta name="description" content="your first skill is ready. install it, then ascend to the full 27-skill toolkit.">
+<link rel="canonical" href="https://closermethod.com/access/first-skill/">
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://buy.stripe.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#0A0A0B;--surface:#131316;--surface-2:#1C1C20;--border:#27272A;--border-strong:#3F3F46;--text:#FAFAFA;--text-2:#D4D4D8;--text-3:#B4B4BE;--accent:#FF6B35;--accent-hover:#FF8556;--accent-soft:rgba(255,107,53,.12);--pos:#4ADE80;--pos-soft:rgba(74,222,128,.1);--radius:10px;--radius-lg:14px;--maxw:780px;--pad:20px;--t-sans:'Geist',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--t-mono:'Geist Mono',ui-monospace,'SF Mono',Menlo,monospace}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--t-sans);font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--text);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--border-strong)}
+a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.hero{padding:64px 0 24px}
+@media(min-width:768px){.hero{padding:88px 0 32px}}
+.eyebrow{font-family:var(--t-mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--pos);margin:0 0 12px;display:inline-flex;align-items:center;gap:8px}
+.check{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--pos-soft);border:1px solid rgba(74,222,128,.4);margin:0 0 18px}
+.check svg{width:22px;height:22px}
+.h1{font-size:clamp(1.9rem,4.4vw,2.6rem);line-height:1.07;letter-spacing:-.025em;font-weight:600;margin:0 0 14px}
+.h1 i{font-style:normal;color:var(--accent)}
+.lead{font-size:1.06rem;line-height:1.55;color:var(--text-2);margin:0 0 8px;max-width:620px}
+h2.sec{font-size:1.05rem;font-weight:600;margin:30px 0 4px}
+.sub{color:var(--text-2);font-size:.9rem;margin:0 0 14px}
+#vault-unlock{margin:14px 0 0;background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--radius-lg);padding:16px 18px}
+#vault-form{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+#vault-email{flex:1 1 220px;background:var(--surface-2);border:1px solid var(--border-strong);border-radius:var(--radius);padding:12px 14px;color:var(--text);font-family:var(--t-sans);font-size:.95rem}
+#vault-status{flex:1 1 100%;font-family:var(--t-mono);font-size:.8rem;margin:6px 0 0;min-height:1em}
+.downloads{display:grid;grid-template-columns:1fr;gap:12px;margin:16px 0 0}
+@media(min-width:640px){.downloads{grid-template-columns:1fr 1fr}}
+.dl-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 16px;display:flex;flex-direction:column;gap:10px}
+.dl-card .nm{font-family:var(--t-mono);font-size:.86rem;color:var(--text)}
+.dl-card .ds{font-size:.78rem;color:var(--text-3);line-height:1.45}
+.dl-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 16px;border-radius:var(--radius);font-family:var(--t-sans);font-size:.9rem;font-weight:600;line-height:1;color:#0A0A0B;text-decoration:none;background:linear-gradient(180deg,var(--accent-hover),var(--accent));cursor:pointer;border:none}
+.dl-btn:hover{color:#0A0A0B}
+.dl-btn .size{font-family:var(--t-mono);font-size:.74rem;opacity:.7;margin-left:6px}
+.steps{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;margin:18px 0 0}
+.steps ol{margin:0;padding:0 0 0 20px;color:var(--text-2);line-height:1.7;font-size:.92rem}
+.steps li{margin:0 0 7px}.steps b{color:var(--text);font-weight:500}
+/* ascension OTO */
+.oto{position:relative;border-radius:18px;padding:2px;margin:34px 0 10px;background:linear-gradient(130deg,var(--accent),#ff9a6b,#ff5a2c,var(--accent))}
+.oto-inner{background:radial-gradient(120% 140% at 50% 0%,#1a1410 0%,#121013 46%,var(--surface) 100%);border-radius:16px;padding:28px 22px}
+@media(min-width:768px){.oto-inner{padding:36px 34px}}
+.oto-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--t-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border:1px solid rgba(255,107,53,.35);border-radius:999px;padding:6px 12px;margin:0 0 14px}
+.oto h3{font-size:clamp(1.4rem,3.4vw,1.9rem);font-weight:600;letter-spacing:-.02em;line-height:1.12;margin:0 0 12px}
+.oto h3 .hl{color:var(--accent)}
+.oto p{color:var(--text-2);font-size:.97rem;line-height:1.6;margin:0 0 16px}
+.anchor{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;margin:0 0 18px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.anchor .now{font-size:1.6rem;font-weight:700}.anchor .now .cur{color:var(--accent)}
+.anchor .term{font-family:var(--t-mono);font-size:.8rem;color:var(--text-2)}
+.btn-oto{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:17px 24px;font-family:var(--t-sans);font-size:1.05rem;font-weight:600;border-radius:12px;border:none;cursor:pointer;text-decoration:none;color:#0A0A0B;background:linear-gradient(180deg,var(--accent-hover),var(--accent));box-shadow:0 10px 30px -8px rgba(255,107,53,.6)}
+.btn-oto:hover{color:#0A0A0B}
+.btn-oto .price{font-family:var(--t-mono);font-size:.9rem;opacity:.78}
+.credit{margin:12px 0 0;font-size:.84rem;color:var(--text-2);line-height:1.5}
+.guarantee{margin:18px 0 0;padding:14px 16px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);font-size:.86rem;color:var(--text-2);line-height:1.55}
+.guarantee b{color:var(--text);font-weight:600}
+.foot{border-top:1px solid var(--border);padding:24px 0;color:var(--text-3);font-size:.82rem;text-align:center;margin-top:40px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body>
+<main id="main">
+<header class="hero">
+  <div class="wrap">
+    <span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+    <p class="eyebrow">payment confirmed · the first skill is yours</p>
+    <h1 class="h1">you're in. install it and Claude starts sounding like <i>you</i>.</h1>
+    <p class="lead">your 5 files are below. start with the brain doc, then the homepage skill. 10 minutes to your first finished asset. a copy is in your inbox too, yours to keep forever.</p>
+
+    <h2 class="sec">your downloads</h2>
+    <p class="sub">these are buyer-only. they unlock automatically from your purchase. bookmark this page · these links are yours forever.</p>
+    <div id="vault-unlock">
+      <div id="vault-form">
+        <label for="vault-email" style="font-family:var(--t-mono);font-size:.8rem;color:var(--text-2);flex:1 1 100%;margin:0 0 2px">already bought and the files are locked? enter the email from your receipt to unlock.</label>
+        <input id="vault-email" type="email" placeholder="email from your receipt" autocomplete="email">
+        <button id="vault-go" type="button" class="dl-btn" style="flex:0 0 auto">unlock my downloads</button>
+      </div>
+      <p id="vault-status"></p>
+    </div>
+
+    <div class="downloads">
+      <div class="dl-card">
+        <div><span class="nm">brain-doc-template.md</span><div class="ds">the 5-question voice doc · fill this first (~5 min)</div></div>
+        <a class="dl-btn" data-vault-file="brain-doc-template.md" download data-event="fs_dl_brain">download<span class="size">.md</span></a>
+      </div>
+      <div class="dl-card">
+        <div><span class="nm">first-skill-quickstart.md</span><div class="ds">the 10-minute install + first-win walkthrough</div></div>
+        <a class="dl-btn" data-vault-file="first-skill-quickstart.md" download data-event="fs_dl_quickstart">download<span class="size">.md</span></a>
+      </div>
+      <div class="dl-card">
+        <div><span class="nm">homepage skill</span><div class="ds">ai-builder-website.zip · ships a homepage in your voice</div></div>
+        <a class="dl-btn" data-vault-file="skills/ai-builder-website.zip" download data-event="fs_dl_website">download<span class="size">.zip</span></a>
+      </div>
+      <div class="dl-card">
+        <div><span class="nm">brand-voice skill</span><div class="ds">ai-builder-brand-voice.zip · locks how you sound everywhere</div></div>
+        <a class="dl-btn" data-vault-file="skills/ai-builder-brand-voice.zip" download data-event="fs_dl_voice">download<span class="size">.zip</span></a>
+      </div>
+      <div class="dl-card">
+        <div><span class="nm">offer / positioning skill</span><div class="ds">ai-builder-positioning.zip · turns what you do into a sharp offer</div></div>
+        <a class="dl-btn" data-vault-file="skills/ai-builder-positioning.zip" download data-event="fs_dl_positioning">download<span class="size">.zip</span></a>
+      </div>
+    </div>
+
+    <div class="steps">
+      <ol>
+        <li><b>fill the brain doc</b> (~5 min). answer the 5 questions, be specific not polished. drag it into a Claude project as knowledge.</li>
+        <li><b>install the homepage skill</b>. unzip ai-builder-website, drag its SKILL file into the same project.</li>
+        <li><b>run it.</b> new chat → "build me a homepage." it ships a finished file in your voice. that's the proof.</li>
+        <li><b>repeat</b> for brand-voice + positioning. same drag-in motion. you now own the loop.</li>
+      </ol>
+    </div>
+  </div>
+</header>
+
+<!-- ascension · the first skill → the full 27 -->
+<section class="wrap">
+  <div class="oto">
+    <div class="oto-inner">
+      <span class="oto-badge"><span>you own the install motion now</span></span>
+      <h3>3 skills fixed 3 things. your business runs on <span class="hl">27</span>.</h3>
+      <p>you just installed a skill yourself and shipped a finished file. every other part of your business, the cold DM, the pitch deck, the launch plan, the email funnel, the pricing page, 22 more, currently starts the same way: you, re-explaining your voice to a blank chat from scratch. the toolkit is all 27 skills, already wired to the brain doc you just filled. drag in, done, the exact way you just did.</p>
+      <div class="anchor">
+        <span class="now"><span class="cur">$147</span></span>
+        <span class="term">once · yours forever · an agency builds this for $13,400+</span>
+      </div>
+      <a class="btn-oto" href="https://buy.stripe.com/dRm6oB8L70gu5yy8tl5Ne0I?utm_source=first_skill&utm_medium=ascension&utm_campaign=tripwire_upgrade" data-event="fs_upgrade_buy_click" rel="noopener">install all 27 skills <span class="price">· $147 once</span></a>
+      <p class="credit">you already paid $17 toward this. DM <a href="https://instagram.com/closermethod" target="_blank" rel="noopener">@closermethod</a> the word <b>"upgrade"</b> within 14 days and i send your $17-credit link, so the toolkit is $130.</p>
+      <div class="guarantee"><b>made-to-work.</b> tell me what isn't landing for your business and i rewrite the skill for you, free, until it ships in your voice. DM @closermethod.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">© 2026 closer method · <a href="https://instagram.com/closermethod" target="_blank" rel="noopener" style="color:var(--text-2)">@closermethod</a></div>
+</footer>
+</main>
+
+<script>
+// ── credentialed delivery · route every paid download through the buyer-only first-skill vault ──
+(function(){
+  var VAULT = '/.netlify/functions/first-skill-vault';
+  var params = new URLSearchParams(location.search);
+  var sid = params.get('session_id');
+  var token = null;
+  function credential(){ if (sid) return 'session_id=' + encodeURIComponent(sid); if (token) return 'token=' + encodeURIComponent(token); return null; }
+  function vaultLinks(){ return Array.prototype.slice.call(document.querySelectorAll('a[data-vault-file]')); }
+  function rewire(){
+    var c = credential();
+    vaultLinks().forEach(function(a){
+      var file = a.getAttribute('data-vault-file'); if (!file) return;
+      if (c){ a.setAttribute('href', VAULT + '?file=' + encodeURIComponent(file) + '&' + c); a.removeAttribute('data-locked'); }
+      else { a.setAttribute('href', VAULT + '?file=' + encodeURIComponent(file)); a.setAttribute('data-locked','1'); }
+    });
+  }
+  function setStatus(msg, kind){ var el=document.getElementById('vault-status'); if(!el)return; el.textContent=msg; el.style.color = kind==='ok'?'var(--pos)':kind==='err'?'#FF6B6B':kind==='warn'?'var(--accent)':'var(--text-2)'; }
+  function setUnlockedUI(){ var f=document.getElementById('vault-form'); if(f)f.style.display='none'; var b=document.getElementById('vault-unlock'); if(b)b.style.borderColor='var(--pos)'; setStatus('✓ unlocked · your downloads are live below. bookmark this page.', 'ok'); }
+  function recover(){
+    var inp=document.getElementById('vault-email'); var btn=document.getElementById('vault-go');
+    var email=((inp&&inp.value)||'').trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ setStatus('that does not look like an email · use the address from your receipt.', 'err'); if(inp)inp.focus(); return; }
+    if(btn){btn.disabled=true;btn.textContent='checking…';}
+    setStatus('checking your purchase…','muted');
+    fetch(VAULT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+    .then(function(r){return r.json().then(function(j){return {status:r.status,body:j};});})
+    .then(function(res){
+      if(btn){btn.disabled=false;btn.textContent='unlock my downloads';}
+      var j=res.body||{};
+      if(j.ok&&j.token){ token=j.token; rewire(); setUnlockedUI(); try{if(window.gtag)gtag('event','vault_unlock',{method:'email',page:'/access/first-skill'});}catch(e){} }
+      else if(res.status===503){ setStatus(j.message||'download is temporarily unavailable. DM @closermethod.', 'warn'); }
+      else { setStatus(j.message||'i could not find a purchase under that email. use the receipt email, or DM @closermethod.', 'err'); }
+    })
+    .catch(function(){ if(btn){btn.disabled=false;btn.textContent='unlock my downloads';} setStatus('something glitched. try again, or DM @closermethod.', 'err'); });
+  }
+  document.addEventListener('click', function(e){
+    var a=e.target.closest?e.target.closest('a[data-locked="1"]'):null; if(!a)return;
+    e.preventDefault();
+    var box=document.getElementById('vault-unlock'); if(box)box.scrollIntoView({behavior:'smooth',block:'center'});
+    var inp=document.getElementById('vault-email'); if(inp)inp.focus();
+    setStatus('enter the email from your receipt above to unlock your downloads.', 'warn');
+  });
+  function init(){ rewire(); var btn=document.getElementById('vault-go'); var inp=document.getElementById('vault-email'); if(btn)btn.addEventListener('click',recover); if(inp)inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();recover();}}); if(sid){setUnlockedUI();} else {setStatus('','muted');} }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);} else {init();}
+})();
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q2458LX0VD',{send_page_view:true,page_path:'/access/first-skill'});
+/* GA4 purchase event · fires ONLY on a real Stripe session_id, deduped (phantom-safe pattern) so $17 sales are measurable */
+(function(){try{var p=new URLSearchParams(location.search);var sid=p.get('session_id')||'';var valid=/^cs_(live|test)_[a-zA-Z0-9]{20,}$/.test(sid);var key=valid?'fs_purchase_ga_'+sid:null;var fired=key?localStorage.getItem(key)==='1':false;if(valid&&!fired){gtag('event','purchase',{transaction_id:sid,value:17,currency:'USD',items:[{item_id:'the-first-skill',item_name:'the first skill',price:17,quantity:1}]});if(window.fbq)fbq('track','Purchase',{content_name:'the first skill',content_ids:['the-first-skill'],value:17,currency:'USD'});if(key){localStorage.setItem(key,'1');}}}catch(e){}})();</script>
+</body>
+</html>

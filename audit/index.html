@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>the ai use audit · free tool · the closer method</title>
+<meta name="description" content="a free 5-minute audit: list the work you give AI, flag what needs rework, and get a build order for what to systematize first, what to keep hands-on, and where to wire in context."/>
+<link rel="canonical" href="https://closermethod.com/audit/"/>
+  <!-- Open Graph + Twitter (SEO/social) -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="The Closer Method"/>
+  <meta property="og:title" content="the ai use audit · free tool · the closer method"/>
+  <meta property="og:description" content="a free 5-minute audit: list the work you give AI, flag what needs rework, and get a build order for what to systematize first, what to keep hands-on, and where to wire in context."/>
+  <meta property="og:url" content="https://closermethod.com/audit/"/>
+  <meta property="og:image" content="https://closermethod.com/og/og-operator.png"/>
+  <meta property="og:image:width" content="2400"/>
+  <meta property="og:image:height" content="1260"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="the ai use audit · free tool · the closer method"/>
+  <meta name="twitter:description" content="a free 5-minute audit: list the work you give AI, flag what needs rework, and get a build order for what to systematize first, what to keep hands-on, and where to wire in context."/>
+  <meta name="twitter:image" content="https://closermethod.com/og/og-operator.png"/>
+  <meta name="keywords" content="ai use audit, free ai tool, the closer method, claude"/>
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231A1714'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%2313B38B' font-style='italic'%3Em%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"/>
+
+<!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','35298849146380570');fbq('track','PageView');</script>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q2458LX0VD',{page_path:'/audit/'});</script>
+
+<style>
+  :root{--bg:#FBF5F0;--paper:#fff;--ink:#0A0A0A;--orange:#FF3B00;--muted:#555;--line:3px solid #0A0A0A;--shadow:6px 6px 0 #0A0A0A}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Archivo',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2{font-family:'Archivo Black',system-ui,sans-serif;text-transform:lowercase;letter-spacing:-.02em;line-height:1.05;font-weight:400}
+  a{color:var(--orange)}
+  .topnav{padding:13px 20px;border-bottom:var(--line);background:var(--paper);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .topnav .brand{font-family:'Archivo Black';font-size:1rem;text-transform:lowercase;letter-spacing:0;color:var(--ink);text-decoration:none}.topnav .navlinks{display:flex;gap:16px;flex-wrap:wrap;align-items:center}.topnav .navlinks a{font-family:'JetBrains Mono',monospace;font-size:.76rem;text-transform:lowercase;letter-spacing:.03em;color:var(--ink);text-decoration:none}.topnav .navlinks a:hover{color:var(--orange);text-decoration:none}
+  .wrap{max-width:720px;margin:0 auto;padding:46px 22px 80px}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--orange);margin-bottom:14px}
+  h1{font-size:clamp(2.1rem,5.6vw,3rem);margin-bottom:14px}
+  .sub{font-size:1.06rem;color:#333;max-width:54ch;margin-bottom:32px}
+  .step-label{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--orange);margin:0 0 10px}
+  .panel{background:var(--paper);border:var(--line);box-shadow:var(--shadow);padding:26px 24px;margin-bottom:26px}
+  .row{display:grid;grid-template-columns:1fr;gap:10px;padding:14px 0;border-bottom:1px solid #eadfd5}
+  .row:last-child{border-bottom:none}
+  .row input[type=text]{width:100%;font-family:inherit;font-size:1rem;padding:11px 13px;border:2px solid #0A0A0A;border-radius:0;background:#fff;color:var(--ink)}
+  .row input[type=text]::placeholder{color:#aaa}
+  .toggles{display:flex;flex-wrap:wrap;gap:8px}
+  .seg{display:inline-flex;border:2px solid #0A0A0A}
+  .seg button{font-family:'JetBrains Mono',monospace;font-size:.74rem;text-transform:lowercase;padding:7px 12px;background:#fff;border:none;cursor:pointer;color:var(--ink);border-right:2px solid #0A0A0A}
+  .seg button:last-child{border-right:none}
+  .seg button.on{background:var(--orange);color:#fff;font-weight:700}
+  .addbtn{font-family:'JetBrains Mono',monospace;font-size:.8rem;text-transform:lowercase;background:none;border:2px dashed #0A0A0A;padding:10px 16px;cursor:pointer;width:100%;margin-top:14px;color:var(--ink)}
+  .addbtn:disabled{opacity:.4;cursor:default}
+  .go,.gate button{display:inline-block;background:var(--orange);color:#0A0A0A;font-family:'JetBrains Mono';font-weight:700;text-transform:lowercase;border:var(--line);box-shadow:var(--shadow);padding:14px 26px;cursor:pointer;font-size:1rem}
+  .go:hover,.gate button:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+  .go:disabled{opacity:.45;cursor:default;box-shadow:var(--shadow);transform:none}
+  .gate{display:none;background:#0A0A0A;color:var(--bg);padding:26px 24px;margin-bottom:26px;border-radius:2px}
+  .gate.show{display:block}
+  .gate h2{color:var(--bg);font-size:1.5rem;margin-bottom:8px}
+  .gate p{font-size:.96rem;color:#cfc7bd;margin-bottom:16px;max-width:48ch}
+  .gate input{width:100%;max-width:340px;font-family:inherit;font-size:1rem;padding:12px 13px;border:2px solid var(--orange);background:#fff;color:var(--ink);margin-bottom:14px;display:block}
+  .gate .err{color:#ffb3a1;font-size:.82rem;margin-top:-8px;margin-bottom:12px;display:none}
+  .result{display:none}
+  .result.show{display:block}
+  .bucket{background:var(--paper);border:var(--line);box-shadow:var(--shadow);padding:22px 22px;margin-bottom:18px}
+  .bucket h2{font-size:1.35rem;margin-bottom:4px}
+  .bucket .why{font-size:.92rem;color:var(--muted);margin-bottom:12px}
+  .bucket ul{margin:0 0 0 20px}
+  .bucket li{margin-bottom:6px;font-size:.98rem}
+  .bucket .empty{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:#999;font-style:normal}
+  .tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:8px}
+  .cta{background:var(--paper);border:var(--line);box-shadow:var(--shadow);padding:28px 24px;margin-top:8px}
+  .cta h2{font-size:1.4rem;margin-bottom:10px}
+  .cta p{font-size:1rem;margin-bottom:14px}
+  .cta a{display:inline-block;background:var(--orange);color:#0A0A0A;font-family:'JetBrains Mono';font-weight:700;text-transform:lowercase;text-decoration:none;padding:14px 26px;border:var(--line);box-shadow:var(--shadow)}
+  .cta a:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+  .foot{margin-top:34px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#999;line-height:1.6}
+  footer{padding:28px 20px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#777;border-top:var(--line);background:var(--paper)}
+  @media(min-width:560px){.row{grid-template-columns:1fr auto;align-items:center}.toggles{justify-content:flex-end}}
+</style>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"The AI Use Audit","url":"https://closermethod.com/audit/","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"creator":{"@type":"Person","name":"Elisabeth Hitz","url":"https://elisabethhitz.com"},"description":"A free interactive audit that maps which of your AI tasks are safe to automate, which to keep hands-on, and where to add context."}</script>
+</head>
+<body>
+<nav class="topnav">
+  <a class="brand" href="https://closermethod.com">the closer method</a>
+  <span class="navlinks">
+    <a href="/blog/">field notes</a>
+    <a href="/build/">the toolkit</a>
+    <a href="/hire/">work with me</a>
+  </span>
+</nav>
+
+<main class="wrap">
+  <div class="eyebrow">free tool · 5 minutes</div>
+  <h1>the ai use audit.</h1>
+  <p class="sub">list the work you already hand to AI, flag what needed reworking, and get a build order: what to systematize first, what to keep hands-on, and where to wire in context.</p>
+
+  <div class="panel">
+    <p class="step-label">your tasks</p>
+    <div id="rows"></div>
+    <button class="addbtn" id="add">+ add a task</button>
+  </div>
+
+  <button class="go" id="go" disabled>see my build order</button>
+
+  <div class="gate" id="gate">
+    <h2>where should i send it?</h2>
+    <p>your build order is ready. drop your email and it appears below, plus i'll send the operator stack guide that shows how to fix each one.</p>
+    <input type="email" id="email" placeholder="you@work.com" autocomplete="email"/>
+    <div class="err" id="err">enter a valid email so the build order can reach you.</div>
+    <button id="reveal">show my build order</button>
+  </div>
+
+  <div class="result" id="result">
+    <div class="bucket">
+      <span class="tag">do this first</span>
+      <h2>systematize.</h2>
+      <p class="why">low-stakes and already landing on the first try. safe to turn into a repeatable setup that runs without you.</p>
+      <ul id="b-sys"></ul>
+    </div>
+    <div class="bucket">
+      <span class="tag">do this next</span>
+      <h2>wire in context.</h2>
+      <p class="why">needed reworking. rework is the model guessing because it was missing context, not a bad model. give it the real files and the rules and the rework empties out.</p>
+      <ul id="b-ctx"></ul>
+    </div>
+    <div class="bucket">
+      <span class="tag">keep hands-on</span>
+      <h2>draft and approve.</h2>
+      <p class="why">high-stakes, where a wrong answer is expensive or hard to undo. the AI prepares, you ship. never automate the send.</p>
+      <ul id="b-risk"></ul>
+    </div>
+
+    <div class="cta">
+      <h2>want this run on your actual business?</h2>
+      <p>the systems diagnostic is $500, the price is on the page. you get this build order written for your real processes, with the plan to build the safe ones. you decide on your own schedule.</p>
+      <a href="https://closermethod.com/hire?utm_source=tool&utm_medium=audit&utm_campaign=ai-use-audit">get the $500 diagnostic</a>
+    </div>
+  </div>
+
+  <p class="foot">the closer method · closermethod.com · framework adapted from the AI fluency mapping exercise</p>
+</main>
+
+<footer>Built by <a href="https://closermethod.com" style="color:var(--orange);text-decoration:none">The Closer Method</a>. Reply to any email and I will see it.</footer>
+
+<script>
+(function(){
+  var rows=document.getElementById('rows');
+  var addBtn=document.getElementById('add');
+  var go=document.getElementById('go');
+  var gate=document.getElementById('gate');
+  var result=document.getElementById('result');
+  var MAX=6, count=0;
+
+  function makeRow(){
+    if(count>=MAX) return;
+    count++;
+    var r=document.createElement('div');
+    r.className='row';
+    r.innerHTML=''
+      +'<input type="text" placeholder="e.g. drafted a client email explaining a delay" data-task>'
+      +'<div class="toggles">'
+      +'  <span class="seg" data-group="work"><button type="button" data-v="landed">landed</button><button type="button" data-v="rework">needed rework</button></span>'
+      +'  <span class="seg" data-group="stake"><button type="button" data-v="low">low stakes</button><button type="button" data-v="high">high stakes</button></span>'
+      +'</div>';
+    rows.appendChild(r);
+    addBtn.disabled = count>=MAX;
+    refresh();
+  }
+
+  rows.addEventListener('click',function(e){
+    var b=e.target.closest('.seg button'); if(!b) return;
+    var seg=b.parentElement;
+    Array.prototype.forEach.call(seg.querySelectorAll('button'),function(x){x.classList.toggle('on',x===b);});
+    refresh();
+  });
+  rows.addEventListener('input',refresh);
+  addBtn.addEventListener('click',makeRow);
+
+  function readRows(){
+    return Array.prototype.map.call(rows.querySelectorAll('.row'),function(r){
+      var name=(r.querySelector('[data-task]').value||'').trim();
+      var work=r.querySelector('[data-group=work] button.on');
+      var stake=r.querySelector('[data-group=stake] button.on');
+      return {name:name, work:work?work.dataset.v:null, stake:stake?stake.dataset.v:null};
+    }).filter(function(t){return t.name;});
+  }
+
+  function refresh(){
+    var done=readRows().filter(function(t){return t.work&&t.stake;});
+    go.disabled = done.length<1;
+  }
+
+  go.addEventListener('click',function(){
+    if(go.disabled) return;
+    gate.classList.add('show');
+    gate.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+
+  function classify(t){
+    // priority: high stakes -> draft/approve; else rework -> context; else systematize
+    if(t.stake==='high') return 'risk';
+    if(t.work==='rework') return 'ctx';
+    return 'sys';
+  }
+
+  function render(){
+    var buckets={sys:[],ctx:[],risk:[]};
+    readRows().forEach(function(t){ if(t.work&&t.stake) buckets[classify(t)].push(t.name); });
+    [['sys','b-sys'],['ctx','b-ctx'],['risk','b-risk']].forEach(function(p){
+      var ul=document.getElementById(p[1]); ul.innerHTML='';
+      if(!buckets[p[0]].length){ ul.innerHTML='<li class="empty">nothing here yet, and that is fine.</li>'; return; }
+      buckets[p[0]].forEach(function(n){ var li=document.createElement('li'); li.textContent=n; ul.appendChild(li); });
+    });
+    result.classList.add('show');
+    result.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  document.getElementById('reveal').addEventListener('click',function(){
+    var email=(document.getElementById('email').value||'').trim();
+    var err=document.getElementById('err');
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.style.display='block'; return; }
+    err.style.display='none';
+    try{ if(window.fbq) fbq('track','Lead',{content_name:'ai-use-audit'}); }catch(e){}
+    try{ if(window.gtag) gtag('event','generate_lead',{source:'ai-use-audit'}); }catch(e){}
+    // Fire-and-forget capture to the Kit subscribe endpoint. Reveal regardless (fail-open).
+    try{
+      fetch('https://closermethod.com/api/subscribe',{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({email:email,source:'ai-use-audit'})
+      }).catch(function(){});
+    }catch(e){}
+    render();
+  });
+
+  makeRow(); makeRow(); makeRow();
+})();
+</script>
+</body>
+</html>

@@ -1,310 +1,407 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Tool Library | The Closer Method</title>
-<meta name="description" content="Every AI tool I've built for content creators and AI builders. Rate calculators, prompt scorers, pitch tools. Each does one job, pick what you need.">
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://closermethod.com/tools/"/>
-<meta property="og:title" content="The Tool Library | The Closer Method"/>
-<meta property="og:description" content="Every AI tool I've built for content creators and AI builders. Each does one job. Pick what you need."/>
-<meta property="og:image" content="https://closermethod.com/og-image.png"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:site" content="@closermethod"/>
-<meta name="twitter:title" content="The Tool Library | The Closer Method"/>
-<meta name="twitter:description" content="Every AI tool I've built. Each does one job. Pick what you need."/>
-<meta name="twitter:image" content="https://closermethod.com/og-image.png"/>
-<link rel="canonical" href="https://closermethod.com/tools/"/>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231A1714'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%2313B38B' font-style='italic'%3Em%3C/text%3E%3C/svg%3E">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0B">
+<title>The Tool Library · The Closer Method</title>
+<meta name="description" content="Free tools and systems that get Claude actually doing the work — for running a business or closing brand deals. The gap is never the model, it's adoption. Start with a free one.">
+<link rel="canonical" href="https://closermethod.com/tools/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230A0A0B'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%23FF6B35' font-style='italic'%3Em%3C/text%3E%3C/svg%3E">
 
-<!-- Meta Pixel -->
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','35298849146380570');fbq('track','PageView');fbq('track','ViewContent',{content_name:'tool_library',content_category:'hub'});</script>
+<!-- OG + Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://closermethod.com/tools/">
+<meta property="og:title" content="The Tool Library · The Closer Method">
+<meta property="og:description" content="The gap is never the model, it's adoption. Free tools and systems that get Claude actually doing the work.">
+<meta property="og:image" content="https://closermethod.com/og/og-home.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@closermethod">
+<meta name="twitter:title" content="The Tool Library · The Closer Method">
+<meta name="twitter:description" content="Free tools that get Claude actually doing the work — for business or brand deals.">
+<meta name="twitter:image" content="https://closermethod.com/og/og-home.png">
 
-<!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q2458LX0VD',{page_path:'/tools'});gtag('event','view_item_list',{item_list_name:'tool_library'});</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all';this.onload=null">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
-
+<!-- LCP boost · self-hosted Geist (matches apex) -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/geist-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/geist-mono-latin.woff2" crossorigin>
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+@font-face{font-family:'Geist';font-style:normal;font-weight:100 900;font-display:swap;src:url('/fonts/geist-latin.woff2') format('woff2-variations')}
+@font-face{font-family:'Geist Mono';font-style:normal;font-weight:100 900;font-display:swap;src:url('/fonts/geist-mono-latin.woff2') format('woff2-variations')}
 :root{
-  --cream:#FEF7F5;
-  --warm-white:#FFFFFF;
-  --blush:#FDF3EF;
-  --soft-teal:#EFFCFA;
-  --teal-cta:#13B38B;
-  --teal-hover:#0F9A77;
-  --teal-shadow:rgba(19,179,139,0.18);
-  --charcoal:#2C2825;
-  --deep-black:#1A1714;
-  --warm-gray:#8A8279;
-  --gray-soft:#6B665F;
-  --stone:#D4CEC4;
-  --stone-light:#E8E2D8;
+  --bg:#0A0A0B;--surface:#131316;--surface-2:#1C1C20;
+  --border:#27272A;--border-strong:#3F3F46;
+  --text:#FAFAFA;--text-2:#A1A1AA;--text-3:#9999A3;
+  --accent:#FF6B35;--accent-hover:#FF8556;--accent-soft:rgba(255,107,53,.12);
+  --pos:#4ADE80;
+  --radius:10px;--radius-lg:14px;--maxw:1140px;--pad:20px;
+  --t-sans:'Geist',system-ui,-apple-system,sans-serif;
+  --t-mono:'Geist Mono',ui-monospace,'SF Mono',Menlo,monospace;
 }
-html{font-size:16px;scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-body{font-family:'Montserrat',-apple-system,sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.7;overflow-x:hidden;}
-a{color:inherit;text-decoration:none;}
-*:focus-visible{outline:2px solid var(--teal-cta);outline-offset:3px;border-radius:6px;}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--t-sans);font-weight:400;line-height:1.5;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+a{color:var(--text);text-decoration:none}
+a:hover{color:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-family:var(--t-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);margin:0 0 14px;font-weight:500}
 
-/* BACKLINK */
-.backlink{position:absolute;top:1.4rem;left:2rem;font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--gray-soft);text-decoration:none;font-style:italic;transition:color .15s;z-index:5;}
-.backlink:hover{color:var(--teal-cta);}
-.backlink em{font-style:italic;color:var(--deep-black);}
-@media(max-width:640px){.backlink{top:0.9rem;left:1.1rem;font-size:0.95rem;}}
-
-/* STICKY AUDIENCE NAV */
-.audnav{position:sticky;top:0;z-index:40;background:rgba(254,247,245,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--stone-light);padding:0.85rem 1rem;display:flex;gap:0.6rem;justify-content:center;align-items:center;flex-wrap:wrap;}
-.audnav a{font-size:0.75rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--gray-soft);padding:0.5rem 1.1rem;border:1px solid var(--stone);border-radius:100px;background:var(--warm-white);transition:all .18s;}
-.audnav a:hover{border-color:var(--teal-cta);color:var(--teal-cta);transform:translateY(-1px);}
-.audnav a.active{border-color:var(--teal-cta);color:var(--teal-cta);background:var(--soft-teal);}
+/* NAV */
+.nav{position:sticky;top:0;z-index:40;padding:16px 0;border-bottom:1px solid var(--border);background:rgba(10,10,11,.92);backdrop-filter:saturate(140%) blur(8px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo{font-family:var(--t-sans);font-weight:600;font-size:1.05rem;color:var(--text);letter-spacing:-.01em}
+.nav-logo em{font-style:italic;color:var(--accent);font-weight:400}
+.nav-right{display:flex;align-items:center;gap:20px;font-size:.9rem}
+.nav-right a{color:var(--text-2);transition:color .15s}
+.nav-right a:hover{color:var(--text)}
+.nav-cta{padding:9px 16px;border:1px solid var(--border-strong);border-radius:100px;font-family:var(--t-mono);font-size:.78rem;letter-spacing:.02em;color:var(--text);transition:all .15s}
+.nav-cta:hover{background:var(--accent);color:#0A0A0B;border-color:var(--accent)}
+@media(max-width:680px){.nav-right .nav-link-hide{display:none}}
 
 /* HERO */
-.hero{max-width:780px;margin:0 auto;padding:5rem 2rem 2.5rem;text-align:center;}
-.hero-eyebrow{display:inline-block;font-size:0.7rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal-cta);padding:0.35rem 0.95rem;border:1px solid var(--teal-cta);border-radius:100px;margin-bottom:1.4rem;}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5.5vw,3.6rem);font-weight:300;line-height:1.12;color:var(--deep-black);margin-bottom:1.2rem;letter-spacing:-0.01em;}
-.hero h1 em{font-style:italic;color:var(--teal-cta);font-weight:400;}
-.hero-sub{font-size:1rem;font-weight:400;color:var(--gray-soft);max-width:540px;margin:0 auto;line-height:1.7;}
+.hero{padding:64px 0 40px;position:relative;overflow:hidden;text-align:center}
+@media(min-width:880px){.hero{padding:88px 0 52px}}
+.hero::before{content:"";position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:70%;height:140%;background:radial-gradient(circle,rgba(255,107,53,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+.hero-in{position:relative;z-index:1;max-width:760px;margin:0 auto}
+.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.05;letter-spacing:-.03em;font-weight:600;margin:0 0 20px}
+.hero h1 .accent{color:var(--accent);font-style:italic;font-weight:500}
+.hero-sub{font-size:clamp(1.05rem,2.2vw,1.2rem);line-height:1.55;color:var(--text-2);max-width:600px;margin:0 auto 8px}
+.hero-sub strong{color:var(--text);font-weight:500}
+
+/* JUMP NAV */
+.jump{position:sticky;top:65px;z-index:30;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:14px var(--pad);background:rgba(10,10,11,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.jump a{font-family:var(--t-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-3);padding:7px 14px;border:1px solid var(--border);border-radius:100px;background:var(--surface);transition:all .15s}
+.jump a:hover{border-color:var(--accent);color:var(--accent)}
 
 /* SECTION */
-.section{max-width:1080px;margin:0 auto;padding:3rem 2rem 1.5rem;}
-.section + .section{padding-top:2rem;}
-.section-head{text-align:center;margin-bottom:1rem;}
-.section-eyebrow{display:inline-block;font-size:0.7rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal-cta);padding:0.35rem 0.95rem;border:1px solid var(--teal-cta);border-radius:100px;margin-bottom:1.2rem;}
-.section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,4vw,2.6rem);font-weight:300;line-height:1.15;color:var(--deep-black);margin-bottom:0.6rem;letter-spacing:-0.01em;}
-.section h2 em{font-style:italic;color:var(--teal-cta);font-weight:400;}
-.section-sub{font-size:0.92rem;color:var(--gray-soft);max-width:520px;margin:0 auto 0;line-height:1.65;}
-
-/* START HERE */
-.start-here{max-width:680px;margin:0 auto 2rem;padding:1.1rem 1.4rem;background:var(--soft-teal);border:1px solid rgba(19,179,139,0.22);border-radius:14px;display:flex;gap:0.8rem;align-items:flex-start;}
-.start-here-label{font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal-cta);background:var(--warm-white);padding:0.3rem 0.65rem;border-radius:100px;border:1px solid rgba(19,179,139,0.25);flex-shrink:0;white-space:nowrap;margin-top:0.1rem;}
-.start-here-text{font-size:0.92rem;color:var(--charcoal);line-height:1.6;font-weight:400;}
-.start-here-text a{color:var(--teal-cta);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(19,179,139,0.4);transition:border-color .15s;}
-.start-here-text a:hover{border-bottom-color:var(--teal-cta);}
+.section{padding:48px 0 8px}
+.section-head{max-width:680px;margin:0 0 24px}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.section h2{font-size:clamp(1.6rem,3.4vw,2.2rem);line-height:1.1;letter-spacing:-.02em;font-weight:600;margin:0 0 8px}
+.section h2 em{font-style:italic;color:var(--accent);font-weight:500}
+.section-sub{color:var(--text-2);font-size:1rem;line-height:1.55;margin:0}
 
 /* GRID */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1rem;margin-top:0.5rem;}
-.tool{display:flex;flex-direction:column;background:var(--warm-white);border:1px solid var(--stone-light);border-radius:14px;padding:1.45rem 1.45rem 1.2rem;transition:all .2s ease;position:relative;min-height:170px;}
-.tool:hover{border-color:var(--teal-cta);transform:translateY(-3px);box-shadow:0 10px 30px rgba(19,179,139,0.08);}
-.tool:hover .tool-cta{color:var(--teal-cta);}
-.tool:hover .tool-cta-arrow{transform:translateX(4px);}
-.tool-name{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:500;color:var(--deep-black);margin-bottom:0.35rem;letter-spacing:-0.005em;line-height:1.18;}
-.tool-name em{font-style:italic;color:var(--teal-cta);font-weight:400;}
-.tool-desc{font-size:0.85rem;color:var(--charcoal);line-height:1.6;margin-bottom:0.95rem;flex-grow:1;font-weight:400;}
-.tool-cta{display:inline-flex;align-items:center;gap:0.35rem;font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray-soft);transition:color .18s;align-self:flex-start;}
-.tool-cta-arrow{display:inline-block;font-weight:600;transition:transform .18s ease;font-size:0.85rem;line-height:1;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:4px}
+.tool{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px 22px 18px;transition:border-color .2s,transform .15s;position:relative;min-height:150px}
+.tool:hover{border-color:var(--accent);transform:translateY(-3px)}
+.tool:hover .tool-cta{color:var(--accent)}
+.tool:hover .arw{transform:translateX(4px)}
+.tool-tag{font-family:var(--t-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:var(--pos);border:1px solid var(--pos);border-radius:3px;padding:1px 6px;align-self:flex-start;margin:0 0 12px;font-weight:500}
+.tool-name{font-size:1.18rem;font-weight:600;color:var(--text);margin:0 0 8px;letter-spacing:-.01em;line-height:1.2}
+.tool-name em{font-style:italic;color:var(--accent);font-weight:500}
+.tool-desc{font-size:.88rem;color:var(--text-2);line-height:1.55;margin:0 0 16px;flex-grow:1}
+.tool-cta{display:inline-flex;align-items:center;gap:6px;font-family:var(--t-mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);transition:color .18s;align-self:flex-start}
+.arw{display:inline-block;transition:transform .18s ease}
+
+/* MORE TOOLS · compact list */
+.more-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:4px}
+.more{padding:16px 18px;background:var(--surface);transition:background .15s}
+.more:hover{background:var(--surface-2)}
+.more:hover .arw{transform:translateX(4px)}
+.more-name{font-size:.95rem;font-weight:500;color:var(--text);letter-spacing:-.005em}
+.more-name em{font-style:italic;color:var(--accent);font-weight:500}
+.more-desc{font-size:.8rem;color:var(--text-3);line-height:1.45;margin-top:4px}
 
 /* CLOSE */
-.close{max-width:680px;margin:3.5rem auto 5rem;padding:0 2rem;text-align:center;}
-.close p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--gray-soft);line-height:1.6;}
-.close p em{color:var(--teal-cta);font-style:italic;}
-.close p a{color:var(--teal-cta);font-style:italic;border-bottom:1px solid rgba(19,179,139,0.3);}
+.close{padding:64px 0 88px;text-align:center}
+.close p{font-family:var(--t-mono);font-size:.82rem;color:var(--text-3);letter-spacing:.02em}
+.close a{color:var(--accent)}
 
-@media(max-width:640px){
-  .backlink{top:0.85rem;left:1.1rem;}
-  .hero{padding:3.8rem 1.5rem 1.8rem;}
-  .section{padding:2rem 1.5rem 1rem;}
-  .section + .section{padding-top:1.5rem;}
-  .grid{grid-template-columns:1fr;gap:0.85rem;}
-  .tool{min-height:auto;padding:1.3rem 1.3rem 1.1rem;}
-  .audnav{padding:0.7rem 0.9rem;}
-  .audnav a{font-size:0.68rem;padding:0.45rem 0.95rem;}
-  .start-here{margin-bottom:1.5rem;padding:1rem 1.15rem;flex-direction:column;gap:0.55rem;}
-  .start-here-label{align-self:flex-start;}
-}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+@media(max-width:640px){.grid{grid-template-columns:1fr}.section{padding:40px 0 4px}}
 </style>
+
+<!-- GA4 + Meta Pixel · deferred so they don't block LCP -->
+<script>
+(function(){
+  function load3P(){
+    var gt=document.createElement('script');gt.async=true;gt.src='https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD';document.head.appendChild(gt);
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag;gtag('js',new Date());gtag('config','G-Q2458LX0VD',{page_path:'/tools'});
+    gtag('event','view_item_list',{item_list_name:'tool_library'});
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','35298849146380570');fbq('track','PageView');fbq('track','ViewContent',{content_name:'tool_library',content_category:'hub'});
+  }
+  if(window.requestIdleCallback){window.requestIdleCallback(load3P,{timeout:3000});}
+  else{window.addEventListener('load',function(){setTimeout(load3P,1500);});}
+})();
+</script>
 </head>
 <body>
 
-<a class="backlink" href="/" data-cta="tools-backlink">&larr; the closer <em>method</em></a>
-
-<section class="hero">
-  <span class="hero-eyebrow">The Tool Library</span>
-  <h1>Every tool I've built. <em>Each one its own thing.</em></h1>
-  <p class="hero-sub">No bundles. No umbrellas. Pick what you need and use it.</p>
-</section>
-
-<nav class="audnav" aria-label="Jump to audience">
-  <a href="#content-creators" data-cta="audnav-creators">For Content Creators</a>
-  <a href="#ai-builders" data-cta="audnav-builders">For AI Builders</a>
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-logo">the closer <em>method</em></a>
+    <div class="nav-right">
+      <a href="/blog/" class="nav-link-hide">field notes</a>
+      <a href="/audit/" class="nav-link-hide">free audit</a>
+      <a href="/build/" class="nav-cta">install →</a>
+    </div>
+  </div>
 </nav>
 
-<section class="section" id="content-creators">
-  <div class="section-head">
-    <span class="section-eyebrow">For Content Creators</span>
-    <h2>Pitch brands. Charge right. <em>Land the retainer.</em></h2>
-    <p class="section-sub">For UGC creators, content creators, and solopreneurs negotiating brand deals.</p>
-  </div>
-  <div class="start-here">
-    <span class="start-here-label">Start here</span>
-    <div class="start-here-text">If you're cold-pitching a brand right now, open <a href="/retainer" data-cta="start-creators-retainer">The Retainer Skill</a>. Type the brand, get a sendable DM in 30 seconds. If a brand replied and you don't know what to charge, hit <a href="/rate" data-cta="start-creators-rate">Rate Calculator Pro</a> first.</div>
-  </div>
-  <div class="grid">
-    <a class="tool" href="/retainer" data-cta="tools-retainer">
-      <div class="tool-name">The Retainer <em>Skill</em></div>
-      <div class="tool-desc">Type the brand. Get a sendable retainer pitch DM in 30 seconds. Built on the framework that closed $1.2M+ at Deel, Criteo, HBO.</div>
-      <span class="tool-cta">Write the DM <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/rate" data-cta="tools-rate">
-      <div class="tool-name">Rate Calculator <em>Pro</em></div>
-      <div class="tool-desc">35 niches, 2026 market data, your real rate in 30 seconds. Stop undercharging.</div>
-      <span class="tool-cta">Calculate <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/reply" data-cta="tools-reply">
-      <div class="tool-name">Brand Reply <em>Generator</em></div>
-      <div class="tool-desc">Three strategic replies to any brand DM. Pick the tone, paste, send.</div>
-      <span class="tool-cta">Write the reply <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/scripts/" data-cta="tools-scripts">
-      <div class="tool-name">12 Retainer <em>Pitch Scripts</em></div>
-      <div class="tool-desc">Word-for-word scripts to convert one-off deals into monthly retainers. Performance, time, deliverables, hybrid. Cmd+P saves as PDF.</div>
-      <span class="tool-cta">Open the scripts <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/objection" data-cta="tools-objection">
-      <div class="tool-name">Objection <em>Handler</em></div>
-      <div class="tool-desc">When brands push back on price. The exact words that recover the deal.</div>
-      <span class="tool-cta">Handle it <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/pitch" data-cta="tools-pitch">
-      <div class="tool-name">Pitch <em>Brain</em></div>
-      <div class="tool-desc">Set up your pitch context once. Use it across every brand outreach forever.</div>
-      <span class="tool-cta">Set it up <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/pitch-roast" data-cta="tools-roast">
-      <div class="tool-name">Pitch <em>Roaster</em></div>
-      <div class="tool-desc">Paste your pitch. Claude scores it across 5 dimensions. Finds the weakness brands stopped reading at.</div>
-      <span class="tool-cta">Roast my pitch <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/kit" data-cta="tools-kit">
-      <div class="tool-name">The UGC Closer <em>Kit</em></div>
-      <div class="tool-desc">Close your first $1,000 deal. 175 brands, 60 scripts, the CRM, the math.</div>
-      <span class="tool-cta">See the kit <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
+<section class="hero">
+  <div class="wrap hero-in">
+    <p class="eyebrow">the tool library</p>
+    <h1>you're paying for AI. <span class="accent">it's not doing the work yet.</span></h1>
+    <p class="hero-sub">the gap is almost never the model, it's adoption. these are the free tools and systems that get Claude actually producing, whether you run a business or close brand deals. <strong>start with a free one.</strong></p>
   </div>
 </section>
 
-<section class="section" id="ai-builders">
-  <div class="section-head">
-    <span class="section-eyebrow">For AI Builders</span>
-    <h2>Build with Claude. <em>Ship something real.</em></h2>
-    <p class="section-sub">For solopreneurs and operators using AI to build, sell, and run lean.</p>
+<nav class="jump" aria-label="Jump to a section">
+  <a href="#start-free">start free</a>
+  <a href="#build">build with claude</a>
+  <a href="#create">close brand deals</a>
+  <a href="#deeper">go deeper</a>
+</nav>
+
+<!-- ============ WATCH · adoption-gap explainer (apex-brand Remotion) ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">90 seconds · why this matters</p>
+      <h2>The gap isn't the model. <em>It's adoption.</em></h2>
+      <p class="section-sub">MIT found 95% of AI projects return nothing. Here's the gap — and how a structured system closes it.</p>
+    </div>
+    <div style="max-width:760px;margin:18px auto 0;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface)">
+      <video controls preload="metadata" playsinline style="width:100%;display:block" aria-label="Explainer: the AI adoption gap and how a structured system closes it">
+        <source src="/assets/video/adoption-gap.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
-  <div class="start-here">
-    <span class="start-here-label">Start here</span>
-    <div class="start-here-text">New to the AI Builder Toolkit? Open <a href="/build" data-cta="start-builders-build">/build</a> · $147 once, yours forever. Want to try free first? Grab the <a href="/starter" data-cta="start-builders-starter">free 4-file starter</a>. Need just the install walkthrough? <a href="/install" data-cta="start-builders-install">/install · $37</a>.</div>
+</section>
+
+<!-- ============ START FREE · the lead magnets, led with on purpose ============ -->
+<section class="section" id="start-free">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">free tools · start with one</p>
+      <h2>Find what to hand Claude <em>first.</em></h2>
+      <p class="section-sub">Six free tools, each does one job. They draw the line between what's safe to automate and what to keep your hands on, then get Claude producing in your voice.</p>
+    </div>
+    <div class="grid">
+      <a class="tool" href="/40-test/" data-cta="tools-40test">
+        <span class="tool-tag">free · 2 min</span>
+        <div class="tool-name">The 40% <em>Test</em></div>
+        <div class="tool-desc">Gartner says 40% of AI projects get killed by 2027. Six questions tell you which side of that line you're on, and the one move that flips it.</div>
+        <span class="tool-cta">Take the test <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/hype-detector/" data-cta="tools-hype">
+        <span class="tool-tag">free · 90 sec</span>
+        <div class="tool-name">The AI Hype <em>Detector</em></div>
+        <div class="tool-desc">How much of your AI is real work vs theater? Score your stack honestly and find the one move that makes it actually pay.</div>
+        <span class="tool-cta">Get my hype score <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/autopsy/" data-cta="tools-autopsy">
+        <span class="tool-tag">free · paste &amp; diagnose</span>
+        <div class="tool-name">The AI Setup <em>Autopsy</em></div>
+        <div class="tool-desc">Paste anything your AI wrote. In one second it finds the dead giveaways that make it read generic, and the one setup fix.</div>
+        <span class="tool-cta">Run the autopsy <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/silent-check/" data-cta="tools-silentcheck">
+        <span class="tool-tag">free · 90 sec</span>
+        <div class="tool-name">The Silent-Failure <em>Check</em></div>
+        <div class="tool-desc">Is your AI quietly making things up? See how exposed you are to confident wrong answers, and how to catch them before they cost you.</div>
+        <span class="tool-cta">Check my exposure <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/which-ai/" data-cta="tools-whichai">
+        <span class="tool-tag">free · no affiliate links</span>
+        <div class="tool-name">Which AI Is <em>Worth Paying For?</em></div>
+        <div class="tool-desc">No brands pushed, no kickbacks. The one AI move worth your money in your situation, even when the answer is "stop paying for more."</div>
+        <span class="tool-cta">Get the honest answer <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/audit/" data-cta="tools-audit">
+        <span class="tool-tag">free</span>
+        <div class="tool-name">The AI <em>Use Audit</em></div>
+        <div class="tool-desc">Five minutes maps the work you already give AI, and shows the line between what's safe to automate and what to keep your hands on.</div>
+        <span class="tool-cta">Run the audit <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/roi-map/" data-cta="tools-roimap">
+        <span class="tool-tag">free</span>
+        <div class="tool-name">The 90-Second <em>ROI Map</em></div>
+        <div class="tool-desc">Answer a few questions and see the one process in your business worth handing to Claude before anything else.</div>
+        <span class="tool-cta">Map it <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/brain-builder/" data-cta="tools-brainbuilder">
+        <span class="tool-tag">free</span>
+        <div class="tool-name">The AI <em>Brain Builder</em></div>
+        <div class="tool-desc">Give Claude a brain that knows who you serve and how you sound, so the output stops reading like generic AI.</div>
+        <span class="tool-cta">Build the brain <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/score/" data-cta="tools-score">
+        <span class="tool-tag">free</span>
+        <div class="tool-name">The Prompt <em>Scorer</em></div>
+        <div class="tool-desc">Paste any prompt. Claude scores it across five dimensions and tells you exactly what to fix.</div>
+        <span class="tool-cta">Score my prompt <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/rate/" data-cta="tools-rate">
+        <span class="tool-tag">free · creators</span>
+        <div class="tool-name">Rate Calculator <em>Pro</em></div>
+        <div class="tool-desc">Your real brand-deal rate across 35 niches, on current market data, in thirty seconds. Stop undercharging.</div>
+        <span class="tool-cta">Calculate <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/starter/" data-cta="tools-starter">
+        <span class="tool-tag">free · builders</span>
+        <div class="tool-name">The Free <em>Starter</em></div>
+        <div class="tool-desc">Four files, free. Drop them into Claude and build a homepage in your own voice today.</div>
+        <span class="tool-cta">Get the 4 files <span class="arw">→</span></span>
+      </a>
+    </div>
   </div>
-  <div class="grid">
-    <a class="tool" href="/build" data-cta="tools-build">
-      <div class="tool-name">AI Builder <em>Toolkit</em></div>
-      <div class="tool-desc">27 production-tested Claude Skills + brain doc + 60-second install. $147 once · lifetime updates. Made-to-work guarantee.</div>
-      <span class="tool-cta">Install the toolkit · $147 <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/ship" data-cta="tools-ship">
-      <div class="tool-name">Ship in 21 <em>Days</em></div>
-      <div class="tool-desc">Day-by-day calendar that maps all 27 Claude Skills to shipping your first paying client. Same product as /build, different angle.</div>
-      <span class="tool-cta">See the calendar · $147 <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/install" data-cta="tools-install">
-      <div class="tool-name">Install <em>Walkthrough</em></div>
-      <div class="tool-desc">Just want the 4-step Claude Skills install? $37 written walkthrough. Step up to the $147 toolkit at $127 within 14 days.</div>
-      <span class="tool-cta">Get the walkthrough · $37 <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/starter" data-cta="tools-starter">
-      <div class="tool-name">Free <em>Starter</em></div>
-      <div class="tool-desc">4 files free · SKILL.md + 01-website.md + INSTALL.md + brain-doc-template. Drop into Claude and build a homepage in your voice today.</div>
-      <span class="tool-cta">Get the 4 files · free <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/lounge" data-cta="tools-lounge">
-      <div class="tool-name">AI Builder <em>Lounge</em></div>
-      <div class="tool-desc">Weekly community for builders shipping with AI. Live Wednesday builds. Weekly prompt drops. Direct feedback from Eli. $47/mo founding · 50 spots.</div>
-      <span class="tool-cta">Join the waitlist <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/brain" data-cta="tools-brain">
-      <div class="tool-name">AI Business <em>Builder</em></div>
-      <div class="tool-desc">One sentence about your business. AI ships a real website, strategy, sequence, or pitch deck in 60 seconds.</div>
-      <span class="tool-cta">Build my business <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/brain-builder" data-cta="tools-brain-builder">
-      <div class="tool-name">Brain <em>Builder</em></div>
-      <div class="tool-desc">Give Claude a brain that remembers who you serve, what you sell, and how you sound. Every output reads like you.</div>
-      <span class="tool-cta">Build the brain <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/vault" data-cta="tools-vault">
-      <div class="tool-name">The Workflow <em>Vault</em></div>
-      <div class="tool-desc">Drop your business in. Stop burning tokens. Start shipping. Claude with your full context, on tap.</div>
-      <span class="tool-cta">Open the vault <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/score" data-cta="tools-score">
-      <div class="tool-name">Prompt <em>Scorer</em></div>
-      <div class="tool-desc">Paste any AI prompt. Claude scores it across 5 dimensions and tells you what to fix.</div>
-      <span class="tool-cta">Score my prompt <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/stack" data-cta="tools-stack">
-      <div class="tool-name">The Stack <em>Installer</em></div>
-      <div class="tool-desc">The 4-layer Claude stack: projects, skills, artifacts, deploy. Installed in your workspace in 7 days.</div>
-      <span class="tool-cta">See the stack <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/skills" data-cta="tools-skills">
-      <div class="tool-name">Claude Skill <em>Library</em></div>
-      <div class="tool-desc">27 Claude Skills. Engineered prompts that ship real artifacts. Drop one in, get a deliverable out.</div>
-      <span class="tool-cta">See the library <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/mcp" data-cta="tools-mcp">
-      <div class="tool-name">MCP <em>Server</em></div>
-      <div class="tool-desc">Your Sales OS, agent-callable. Claude, ChatGPT, or any MCP-aware tool reads it like a brain.</div>
-      <span class="tool-cta">See the server <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/closerai" data-cta="tools-closerai">
-      <div class="tool-name">Closer<em>AI</em></div>
-      <div class="tool-desc">Claude as your personal sales coach. Talks like Eli. Trained on the framework that closed $1.2M+.</div>
-      <span class="tool-cta">See CloserAI <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
-    <a class="tool" href="/artifacts" data-cta="tools-artifacts">
-      <div class="tool-name"><em>Artifacts</em></div>
-      <div class="tool-desc">Engineered prompts that ship real things. Each one yields a deliverable you can send today.</div>
-      <span class="tool-cta">See artifacts <span class="tool-cta-arrow">&rarr;</span></span>
-    </a>
+</section>
+
+<!-- ============ BUILD WITH CLAUDE · the business / builder door ============ -->
+<section class="section" id="build">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">for your business</p>
+      <h2>Build with Claude. <em>Ship something real.</em></h2>
+      <p class="section-sub">For founders and operators who pay for AI and want it producing real assets, not just answers.</p>
+    </div>
+    <div class="grid">
+      <a class="tool" href="/build/" data-cta="tools-build">
+        <div class="tool-name">AI Builder <em>Toolkit</em></div>
+        <div class="tool-desc">27 production-tested Claude Skills, a brain doc, and a sixty-second install. Ask for the build, get a deployable asset back. Made to work for your business.</div>
+        <span class="tool-cta">Install the toolkit <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/ship/" data-cta="tools-ship">
+        <div class="tool-name">Ship in 21 <em>Days</em></div>
+        <div class="tool-desc">A day-by-day calendar that walks the skills from install to your first paying client, one step at a time.</div>
+        <span class="tool-cta">See the calendar <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/brain/" data-cta="tools-brain">
+        <div class="tool-name">AI Business <em>Builder</em></div>
+        <div class="tool-desc">One sentence about your business. Claude ships a real website, sequence, or pitch deck in sixty seconds.</div>
+        <span class="tool-cta">Build my business <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/install/" data-cta="tools-install">
+        <div class="tool-name">Install <em>Walkthrough</em></div>
+        <div class="tool-desc">Just want it running? The four-step written walkthrough that gets the Claude Skills working in your workspace.</div>
+        <span class="tool-cta">Get the walkthrough <span class="arw">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSE BRAND DEALS · the creator door ============ -->
+<section class="section" id="create">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">for content creators</p>
+      <h2>Pitch brands. Charge right. <em>Land the retainer.</em></h2>
+      <p class="section-sub">The same structured-thinking system, pointed at one job: landing and growing brand deals as a creator.</p>
+    </div>
+    <div class="grid">
+      <a class="tool" href="/retainer/" data-cta="tools-retainer">
+        <div class="tool-name">The Retainer <em>Skill</em></div>
+        <div class="tool-desc">Type the brand. Get a sendable retainer pitch in thirty seconds, built on the framework that closed $1.2M in enterprise deals.</div>
+        <span class="tool-cta">Write the DM <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/reply/" data-cta="tools-reply">
+        <div class="tool-name">Brand Reply <em>Generator</em></div>
+        <div class="tool-desc">Three strategic replies to any brand DM. Pick the tone, paste, send.</div>
+        <span class="tool-cta">Write the reply <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/objection/" data-cta="tools-objection">
+        <div class="tool-name">Objection <em>Handler</em></div>
+        <div class="tool-desc">When a brand pushes back on price, the exact words that recover the deal.</div>
+        <span class="tool-cta">Handle it <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/pitch/" data-cta="tools-pitch">
+        <div class="tool-name">Pitch <em>Brain</em></div>
+        <div class="tool-desc">Set your pitch context once. Claude reuses it across every brand outreach.</div>
+        <span class="tool-cta">Set it up <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/pitch-roast/" data-cta="tools-roast">
+        <div class="tool-name">Pitch <em>Roaster</em></div>
+        <div class="tool-desc">Paste your pitch. Claude scores it and finds the line brands stopped reading at.</div>
+        <span class="tool-cta">Roast my pitch <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/scripts/" data-cta="tools-scripts">
+        <div class="tool-name">Retainer Pitch <em>Scripts</em></div>
+        <div class="tool-desc">Word-for-word scripts that turn one-off deals into monthly retainers. Cmd+P saves as PDF.</div>
+        <span class="tool-cta">Open the scripts <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/kit/" data-cta="tools-kit">
+        <div class="tool-name">The UGC Closer <em>Kit</em></div>
+        <div class="tool-desc">Everything to close your first thousand-dollar deal: the brands, the scripts, the CRM, the math.</div>
+        <span class="tool-cta">See the kit <span class="arw">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GO DEEPER · community + done-with-you ============ -->
+<section class="section" id="deeper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">when you want a hand</p>
+      <h2>Go <em>deeper.</em></h2>
+      <p class="section-sub">A weekly room of people shipping with AI, or a written plan for the one thing worth automating first.</p>
+    </div>
+    <div class="grid">
+      <a class="tool" href="/lounge/" data-cta="tools-lounge">
+        <div class="tool-name">The AI Builder <em>Lounge</em></div>
+        <div class="tool-desc">A live build every week, new skill drops, and direct feedback. One calm space on Skool, not another Discord.</div>
+        <span class="tool-cta">See what's inside <span class="arw">→</span></span>
+      </a>
+      <a class="tool" href="/hire/" data-cta="tools-hire">
+        <div class="tool-name">The Systems <em>Diagnostic</em></div>
+        <div class="tool-desc">A written map of the one process worth automating first, plus the plan to build it. The fastest way to know where AI pays you back.</div>
+        <span class="tool-cta">See the diagnostic <span class="arw">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MORE TOOLS · the long tail, demoted not deleted ============ -->
+<section class="section" id="more">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">more in the library</p>
+      <h2>Everything else I've built.</h2>
+      <p class="section-sub">Specialized tools for when you know exactly what you need.</p>
+    </div>
+    <div class="more-grid">
+      <a class="more" href="/stack/" data-cta="tools-stack">
+        <div class="more-name">The Stack <em>Installer</em></div>
+        <div class="more-desc">The four-layer Claude stack — projects, skills, artifacts, deploy — installed in your workspace.</div>
+      </a>
+      <a class="more" href="/vault/" data-cta="tools-vault">
+        <div class="more-name">The Workflow <em>Vault</em></div>
+        <div class="more-desc">Drop your business context in once. Claude works with your full picture instead of starting cold.</div>
+      </a>
+      <a class="more" href="/skills/" data-cta="tools-skills">
+        <div class="more-name">Claude Skill <em>Library</em></div>
+        <div class="more-desc">The skills on their own. Drop one in, get a finished deliverable out.</div>
+      </a>
+      <a class="more" href="/mcp/" data-cta="tools-mcp">
+        <div class="more-name">MCP <em>Server</em></div>
+        <div class="more-desc">Your sales context, agent-callable. Any MCP-aware tool reads it like a brain.</div>
+      </a>
+      <a class="more" href="/closerai/" data-cta="tools-closerai">
+        <div class="more-name">Closer<em>AI</em></div>
+        <div class="more-desc">Claude as a sales coach, trained on the framework that closed $1.2M.</div>
+      </a>
+      <a class="more" href="/artifacts/" data-cta="tools-artifacts">
+        <div class="more-name"><em>Artifacts</em></div>
+        <div class="more-desc">Engineered prompts that ship real things you can send today.</div>
+      </a>
+    </div>
   </div>
 </section>
 
 <section class="close">
-  <p>built by <em>Elisabeth</em> &middot; NYC + Barcelona &middot; <a href="mailto:elisabeth@closermethod.com">elisabeth@closermethod.com</a></p>
+  <p>built by <em>Elisabeth</em> · NYC + Barcelona · <a href="mailto:elisabeth@closermethod.com">elisabeth@closermethod.com</a></p>
 </section>
 
 <script>
-// Audience nav: highlight active section on scroll
-(function(){
-  const links = document.querySelectorAll('.audnav a');
-  const sections = [
-    {id:'content-creators', link: document.querySelector('.audnav a[href="#content-creators"]')},
-    {id:'ai-builders', link: document.querySelector('.audnav a[href="#ai-builders"]')}
-  ];
-  function onScroll(){
-    let activeId = null;
-    for (const s of sections) {
-      const el = document.getElementById(s.id);
-      if (!el) continue;
-      const r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight * 0.5 && r.bottom > window.innerHeight * 0.3) activeId = s.id;
-    }
-    links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + activeId));
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-  // Track audience nav clicks
-  links.forEach(l => l.addEventListener('click', () => {
-    if (typeof gtag !== 'undefined') gtag('event','audnav_click',{section: l.getAttribute('href').slice(1)});
-  }));
-})();
+// Track tool clicks (after 3P loads via idle callback)
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[data-cta]');
+  if(!a) return;
+  if(window.gtag) gtag('event','tool_click',{cta:a.getAttribute('data-cta'),destination:a.getAttribute('href')});
+});
 </script>
-
 </body>
 </html>

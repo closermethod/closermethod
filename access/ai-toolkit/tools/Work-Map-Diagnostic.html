@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Adoption Studio · Work Map Diagnostic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0e1116;--ink2:#1b212b;--paper:#f7f5f1;--card:#ffffff;--accent:#ff5a3c;--accent2:#1f6feb;--muted:#6b7480;--line:#e7e3da;--good:#1f9d63;--warn:#d99a1c;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.12;letter-spacing:-.01em}
+  .accent{color:var(--accent)}
+  nav{border-bottom:1px solid var(--line);background:rgba(247,245,241,.9)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .logo{font-family:'Fraunces';font-weight:900;font-size:16px;letter-spacing:-.02em}
+  .logo span{color:var(--accent)}
+  .navmeta{font-size:12px;color:var(--muted)}
+  .stage{padding:44px 0 70px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  h1{font-size:clamp(28px,5vw,42px);font-weight:900;margin:14px 0 0}
+  .sub{font-size:16.5px;color:var(--ink2);max-width:600px;margin:16px 0 0}
+  .progress{height:6px;background:var(--line);border-radius:999px;margin:26px 0 0;overflow:hidden}
+  .progress .bar{height:100%;background:var(--accent);width:0;transition:width .3s}
+  .step{display:none}
+  .step.on{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .qcount{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin-top:30px}
+  .qtask{font-family:'Fraunces';font-size:clamp(22px,3.4vw,30px);font-weight:600;margin:8px 0 4px}
+  .qhint{font-size:14.5px;color:var(--muted);margin-bottom:22px}
+  .opts{display:grid;gap:10px}
+  .opt{display:flex;align-items:center;gap:14px;border:1.5px solid var(--line);border-radius:12px;padding:15px 18px;background:#fff;cursor:pointer;transition:border-color .15s,background .15s;font-size:15.5px;font-weight:500}
+  .opt:hover{border-color:var(--accent)}
+  .opt.sel{border-color:var(--accent);background:#fff7f5}
+  .opt .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--line);flex:0 0 auto}
+  .opt.sel .dot{border-color:var(--accent);background:var(--accent);box-shadow:inset 0 0 0 3px #fff}
+  .opt .h{font-size:12.5px;color:var(--muted);font-weight:500;margin-left:auto}
+  .navbtns{display:flex;justify-content:space-between;margin-top:30px;gap:12px}
+  .btn{font-weight:600;font-size:15px;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;font-family:inherit}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.primary:hover{background:#e8472b}
+  .btn.primary:disabled{background:#f1c3b8;cursor:not-allowed}
+  .btn.ghost{background:transparent;color:var(--muted);border:1.5px solid var(--line)}
+  .btn.ghost:hover{color:var(--ink)}
+  /* intro */
+  .startcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;margin-top:26px}
+  .startcard ul{list-style:none;margin-top:6px}
+  .startcard li{padding:9px 0 9px 26px;position:relative;font-size:15px;color:var(--ink2);border-bottom:1px solid var(--line)}
+  .startcard li:last-child{border-bottom:none}
+  .startcard li::before{content:"";position:absolute;left:3px;top:17px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  /* results */
+  .scorehead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-top:6px}
+  .matrix{position:relative;margin:30px 0 10px;border:1px solid var(--line);border-radius:14px;background:#fff;padding:48px 18px 18px 48px;aspect-ratio:1/.74}
+  .matrix .ylab,.matrix .xlab{position:absolute;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .matrix .ylab{left:14px;top:50%;transform:rotate(-90deg) translateX(50%);transform-origin:left}
+  .matrix .xlab{bottom:14px;left:50%;transform:translateX(-30%)}
+  .grid2{position:relative;width:100%;height:100%;background:
+    linear-gradient(to right,var(--line) 1px,transparent 1px) 50% 0/50% 100%,
+    linear-gradient(to bottom,var(--line) 1px,transparent 1px) 0 50%/100% 50%}
+  .quad{position:absolute;font-size:10.5px;font-weight:700;color:#bdb8ad;text-transform:uppercase;letter-spacing:.06em}
+  .q-tl{top:6px;left:6px}.q-tr{top:6px;right:6px;color:var(--good)}.q-bl{bottom:6px;left:6px}.q-br{bottom:6px;right:6px}
+  .pin{position:absolute;transform:translate(-50%,50%);background:var(--ink);color:#fff;font-size:11px;font-weight:600;padding:3px 8px;border-radius:999px;white-space:nowrap}
+  .pin.win{background:var(--good)}
+  .pin.human{background:var(--accent)}
+  .reslist{margin-top:8px}
+  .rcard{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin-top:12px}
+  .rcard.win{border-left:4px solid var(--good)}
+  .rcard.human{border-left:4px solid var(--accent)}
+  .rcard .rank{font-family:'Fraunces';font-weight:900;font-size:13px;color:#fff;background:var(--good);border-radius:7px;padding:3px 9px;margin-right:8px}
+  .rcard.human .rank{background:var(--accent)}
+  .rcard h3{font-family:'Fraunces';font-size:18px;font-weight:600;display:inline}
+  .rcard p{font-size:14.5px;color:var(--ink2);margin-top:9px}
+  .rcard .tag{display:inline-block;font-size:11.5px;font-weight:700;color:var(--accent2);background:#eaf1fe;border-radius:999px;padding:3px 10px;margin-top:11px}
+  .section-h{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin:34px 0 2px}
+  .lead{background:#fff7f5;border:1px solid #ffd9cf;border-radius:16px;padding:24px;margin-top:30px}
+  .lead h3{font-size:21px;font-weight:600}
+  .lead p{font-size:14.5px;color:var(--ink2);margin-top:8px}
+  .leadform{margin-top:16px;display:grid;gap:10px}
+  .leadform input{width:100%;border:1.5px solid var(--line);border-radius:9px;height:46px;padding:0 14px;font-size:14.5px;font-family:inherit;background:#fff}
+  .leadform input:focus{outline:none;border-color:var(--accent)}
+  .leadform button{height:48px;border:none;border-radius:9px;background:var(--accent);color:#fff;font-weight:600;font-size:15px;cursor:pointer;font-family:inherit}
+  .leadform button:hover{background:#e8472b}
+  .thanks{background:#eafaf0;border:1px solid #bce9cf;border-radius:10px;padding:16px;font-size:14.5px;color:var(--good);font-weight:600}
+  .restart{margin-top:22px;text-align:center}
+  .restart a{font-size:13.5px;color:var(--muted);text-decoration:underline;cursor:pointer}
+  .miniref{font-size:11.5px;color:var(--muted);margin-top:26px;border-top:1px solid var(--line);padding-top:14px}
+  @media print{nav,.leadform,.restart,.navbtns{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">AI Adoption<span> Studio</span></div>
+  <div class="navmeta">Work Map Diagnostic · ~2 minutes</div>
+</div></nav>
+
+<div class="stage"><div class="wrap">
+
+  <!-- INTRO -->
+  <div class="step on" id="s-intro">
+    <div class="eyebrow">Free, no signup to start</div>
+    <h1>Where should AI actually go to work in <span class="accent">your</span> week?</h1>
+    <p class="sub">Nine recurring tasks. Tell us how much of your week each one eats. We score every task on the two things that matter, how much time it would buy back, and how safe it is to hand off, and hand you a ranked Work Map of what to automate first and what to keep human.</p>
+    <div class="startcard">
+      <ul>
+        <li>Takes about two minutes, nine quick taps.</li>
+        <li>You get a scored Work Map and your top three "build first" workflows.</li>
+        <li>Plus the tasks to keep a human on, so you never automate the wrong thing.</li>
+      </ul>
+    </div>
+    <div class="navbtns"><span></span><button class="btn primary" onclick="start()">Start the diagnostic &rarr;</button></div>
+    <p class="miniref">Built on the same leverage-and-safety method the Studio runs in its workshops. Context: MIT found 95% of AI spend showed no measurable return, almost always because the tool never fit the real work. This finds where it fits first.</p>
+  </div>
+
+  <!-- QUESTIONS -->
+  <div class="step" id="s-q">
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <div class="qcount" id="qcount">Task 1 of 9</div>
+    <div class="qtask" id="qtask">Task</div>
+    <div class="qhint" id="qhint">hint</div>
+    <div class="opts" id="opts"></div>
+    <div class="navbtns">
+      <button class="btn ghost" id="backbtn" onclick="back()">&larr; Back</button>
+      <button class="btn primary" id="nextbtn" onclick="next()" disabled>Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="step" id="s-res">
+    <div class="eyebrow">Your Work Map</div>
+    <div class="scorehead">
+      <h1 id="reslede">Here is where to start.</h1>
+    </div>
+    <p class="sub" id="ressub"></p>
+
+    <div class="matrix">
+      <div class="ylab">Time it buys back &rarr;</div>
+      <div class="xlab">Safe to hand off &rarr;</div>
+      <div class="grid2" id="grid2">
+        <span class="quad q-tl">High time · keep human</span>
+        <span class="quad q-tr">Build first</span>
+        <span class="quad q-bl">Low priority</span>
+        <span class="quad q-br">Easy, low payoff</span>
+      </div>
+    </div>
+
+    <div class="section-h">Build these first</div>
+    <div class="reslist" id="wins"></div>
+
+    <div class="section-h">Keep a human on these</div>
+    <div class="reslist" id="humans"></div>
+
+    <div class="lead">
+      <h3>Want the full Work Map, with the exact workflow for your top three?</h3>
+      <p>We will send the complete map plus the matching build steps for each priority, and you can bring it to a 20-minute fit call where we pressure-test your top three and show you what we would stand up first.</p>
+      <form class="leadform" name="diagnostic-result" method="POST" data-netlify="true" netlify-honeypot="company-website" action="?submitted=true">
+        <input type="hidden" name="form-name" value="diagnostic-result">
+        <input type="hidden" name="top-workflows" id="hidden-top">
+        <p style="display:none"><label>Leave blank: <input name="company-website"></label></p>
+        <input name="first-name" type="text" placeholder="First name" required>
+        <input name="email" type="email" placeholder="you@business.com" required>
+        <button type="submit">Send me my full Work Map</button>
+      </form>
+    </div>
+    <div class="restart"><a onclick="restart()">Start over</a></div>
+    <p class="miniref">Diagnostic by AI Adoption Studio. Your answers stay in your browser until you choose to send them.</p>
+  </div>
+
+</div></div>
+
+<script>
+// Each task: label, hint, and a safety preset (3 = safe to hand off, 2 = needs a check, 1 = keep human).
+var TASKS = [
+  {k:'proposals', t:'Writing proposals & pitches', h:'New-business docs, scopes, pitch decks.', safety:2,
+     win:'Draft from a template and your past winners, then you edit. A first draft in minutes, not an afternoon.',
+     human:'It wins the client, so a person still owns the final voice and the numbers.'},
+  {k:'reports', t:'Recurring client reports & status updates', h:'The weekly or monthly update you rebuild every time.', safety:3,
+     win:'Pull the numbers and write the recurring report on a fixed structure. The clearest first win there is.',
+     human:''},
+  {k:'meetings', t:'Meeting notes into action items', h:'Turning a messy call into a clean follow-up.', safety:3,
+     win:'Transcript in, summary and owned action items out, in two minutes.', human:''},
+  {k:'repurpose', t:'Repurposing content', h:'Long into short, one format into five.', safety:3,
+     win:'One asset becomes the thread, the post, the email, and the caption set automatically.', human:''},
+  {k:'questions', t:'Answering repeat client questions', h:'The same FAQs and email replies, over and over.', safety:2,
+     win:'A drafted reply from your own past answers. You approve and send.', human:'A person still reads anything that touches the relationship before it goes out.'},
+  {k:'admin', t:'Invoicing, admin & data entry', h:'Moving the same data between tools by hand.', safety:3,
+     win:'The repetitive entry and formatting runs itself on a rule you set once.', human:''},
+  {k:'research', t:'Research & competitive scans', h:'Background reading, market and competitor checks.', safety:3,
+     win:'A structured brief from many sources in minutes, so you start from a summary, not a blank page.', human:''},
+  {k:'onboarding', t:'Onboarding docs & SOWs', h:'Welcome packs, scopes, kickoff paperwork.', safety:2,
+     win:'Generated from a master template and the deal details, ready for your review.', human:'It is contractual, so a person signs off before it reaches the client.'},
+  {k:'creative', t:'Final client-facing creative', h:'The actual deliverable the client pays for.', safety:1,
+     win:'', human:'This is the craft they hired you for. AI can assist drafts, but a human owns and ships it.'}
+];
+var HOURS = [
+  {v:0,label:'I do not do this',h:''},
+  {v:1,label:'A little, about an hour a week',h:'~1h'},
+  {v:2,label:'A few hours a week',h:'2-3h'},
+  {v:3,label:'A lot, half a day or more',h:'4h+'}
+];
+var answers = new Array(TASKS.length).fill(null);
+var idx = 0;
+
+function start(){ show('s-q'); render(); }
+function show(id){ document.querySelectorAll('.step').forEach(function(s){s.classList.remove('on')}); document.getElementById(id).classList.add('on'); window.scrollTo(0,0); }
+function render(){
+  var task = TASKS[idx];
+  document.getElementById('qcount').textContent = 'Task '+(idx+1)+' of '+TASKS.length;
+  document.getElementById('qtask').textContent = task.t;
+  document.getElementById('qhint').textContent = task.h;
+  document.getElementById('bar').style.width = ((idx)/(TASKS.length)*100)+'%';
+  var box = document.getElementById('opts'); box.innerHTML='';
+  HOURS.forEach(function(opt){
+    var el = document.createElement('div');
+    el.className = 'opt'+(answers[idx]===opt.v?' sel':'');
+    el.innerHTML = '<span class="dot"></span><span>'+opt.label+'</span>'+(opt.h?'<span class="h">'+opt.h+'</span>':'');
+    el.onclick = function(){ answers[idx]=opt.v; render(); };
+    box.appendChild(el);
+  });
+  document.getElementById('backbtn').style.visibility = idx===0?'hidden':'visible';
+  document.getElementById('nextbtn').disabled = answers[idx]===null;
+  document.getElementById('nextbtn').textContent = idx===TASKS.length-1 ? 'See my Work Map →' : 'Next →';
+}
+function next(){ if(answers[idx]===null) return; if(idx<TASKS.length-1){ idx++; render(); } else { results(); } }
+function back(){ if(idx>0){ idx--; render(); } }
+
+function results(){
+  show('s-res');
+  document.getElementById('bar').style.width='100%';
+  // score each done task
+  var scored = [];
+  TASKS.forEach(function(t,i){
+    var hrs = answers[i];
+    if(hrs===0 || hrs===null) return;
+    scored.push({task:t, hours:hrs, safety:t.safety, priority: hrs * t.safety});
+  });
+  // wins: safety >=2, sorted by priority then hours; humans: safety==1 OR (selected & has human note & high time low safety)
+  var wins = scored.filter(function(s){return s.safety>=2}).sort(function(a,b){return b.priority-a.priority || b.hours-a.hours});
+  var humans = scored.filter(function(s){return s.safety===1 || (s.safety===2 && s.hours>=2)});
+  var topWins = wins.slice(0,3);
+
+  // sub copy
+  var totalH = scored.reduce(function(a,s){return a+s.hours},0);
+  var ressub = document.getElementById('ressub');
+  if(scored.length===0){ ressub.textContent = 'You did not flag any recurring tasks. If your week really has no repeat work, AI will not buy you much time, and that is a useful thing to know.'; }
+  else { ressub.textContent = 'You flagged '+scored.length+' recurring task'+(scored.length>1?'s':'')+'. Here is the order to tackle them, scored on time saved and how safe each is to hand off.'; }
+
+  // plot matrix
+  plot(scored);
+
+  // wins
+  var w = document.getElementById('wins'); w.innerHTML='';
+  if(topWins.length===0){ w.innerHTML = '<div class="rcard"><p>Nothing scored as a clear safe-and-high-leverage win yet. That usually means the heavy work is client-facing, which is exactly the conversation a fit call is for.</p></div>'; }
+  topWins.forEach(function(s,r){
+    var el=document.createElement('div'); el.className='rcard win';
+    el.innerHTML='<span class="rank">'+(r+1)+'</span><h3>'+s.task.t+'</h3><p>'+s.task.win+'</p><span class="tag">Buys back the most time, safely</span>';
+    w.appendChild(el);
+  });
+  // humans
+  var hb=document.getElementById('humans'); hb.innerHTML='';
+  var humanSet = humans.length?humans:scored.filter(function(s){return s.safety===1});
+  if(humanSet.length===0){ hb.innerHTML='<div class="rcard human"><p>None of your flagged tasks are high-risk. Still, keep a person on anything a client sees before it ships.</p></div>'; }
+  humanSet.forEach(function(s){
+    var el=document.createElement('div'); el.className='rcard human';
+    el.innerHTML='<h3>'+s.task.t+'</h3><p>'+(s.task.human||'Keep a human in the loop on anything client-facing.')+'</p>';
+    hb.appendChild(el);
+  });
+
+  // hidden field for the form
+  document.getElementById('hidden-top').value = topWins.map(function(s){return s.task.t}).join(' | ') || 'none flagged';
+}
+
+function plot(scored){
+  var grid = document.getElementById('grid2');
+  grid.querySelectorAll('.pin').forEach(function(p){p.remove()});
+  // x = safety (1..3) -> 12%..88% ; y = hours (1..3) -> bottom..top
+  scored.forEach(function(s){
+    var x = ((s.safety-1)/2)*0.76 + 0.12;
+    var y = ((s.hours-1)/2)*0.72 + 0.12;
+    var pin=document.createElement('span');
+    var cls = (s.safety>=2 && s.hours>=2)?'win':(s.safety===1?'human':'');
+    pin.className='pin '+cls;
+    var short = s.task.t.split(' ')[0];
+    pin.textContent = short;
+    pin.style.left=(x*100)+'%';
+    pin.style.bottom=(y*100)+'%';
+    grid.appendChild(pin);
+  });
+}
+
+function restart(){ answers = new Array(TASKS.length).fill(null); idx=0; show('s-intro'); }
+
+// thank-you after Netlify round-trip
+if(new URLSearchParams(window.location.search).get('submitted')==='true'){
+  window.addEventListener('DOMContentLoaded',function(){
+    show('s-res');
+    var res=document.getElementById('s-res');
+    res.innerHTML='<div class="eyebrow">Done</div>'+
+      '<h1>Thanks, it is on its way.</h1>'+
+      '<p class="sub">Your full Work Map and the build steps for your top three are heading to your inbox. Give it a minute or two.</p>'+
+      '<div class="thanks" style="margin-top:24px">Want to skip the wait? Book a 20-minute fit call and we will walk your top three together.</div>'+
+      '<div class="restart" style="margin-top:22px"><a onclick="restart()">Run the diagnostic again</a></div>';
+  });
+}
+</script>
+</body>
+</html>

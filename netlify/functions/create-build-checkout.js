@@ -33,8 +33,13 @@ const PRICE_TOOLKIT = 'price_1TaeKZ8nfWJMJe0DHfXOat2w'; // $147 AI Builder Toolk
 const PRICE_BUMP    = 'price_1TaWTv8nfWJMJe0DFOwQQN9S'; // $37 Install Walkthrough
 
 const ORIGIN = 'https://closermethod.com';
-const SUCCESS_TOOLKIT_ONLY = `${ORIGIN}/access/toolkit/`;      // off-limits page, existing delivery; we only redirect to it
-const SUCCESS_WITH_BUMP    = `${ORIGIN}/access/build-plus/`;   // new combined-delivery page (this PR)
+// Append Stripe's session-id placeholder so the delivery page can auto-unlock the vault with a
+// live session_id (no email step for fresh buyers). Stripe substitutes {CHECKOUT_SESSION_ID} at
+// redirect. The vault widget reads ?session_id=, verifies the purchase server-side, and streams
+// the files. Past buyers (and any link that lands here without the param) still get the
+// always-visible email-recovery path, so this only ADDS a fast path — it never strands anyone.
+const SUCCESS_TOOLKIT_ONLY = `${ORIGIN}/access/toolkit/?session_id={CHECKOUT_SESSION_ID}`;      // off-limits page, existing delivery; we only redirect to it
+const SUCCESS_WITH_BUMP    = `${ORIGIN}/access/build-plus/?session_id={CHECKOUT_SESSION_ID}`;   // new combined-delivery page (this PR)
 const CANCEL_URL           = `${ORIGIN}/build/?checkout=cancelled`;
 
 // Allowed UTM keys we forward into session metadata (for attribution in Stripe + downstream).

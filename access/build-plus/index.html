@@ -102,6 +102,16 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
     <p class="lead">you grabbed the bundle, so you own the whole thing: all 27 production-tested skills (the paid v2 bundle, not the public one) plus the step-by-step install walkthrough that gets one of them running on your real business tonight. download below, then follow the 4 steps. bookmark this URL · it's your install hub forever.</p>
 
     <h2 class="eyebrow" style="color:var(--accent);margin:28px 0 0">your download files</h2>
+
+    <div id="vault-unlock" style="margin:14px 0 0;background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--radius-lg);padding:16px 18px">
+      <form id="vault-form" onsubmit="return false" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+        <label for="vault-email" style="font-family:var(--t-mono);font-size:.8rem;color:var(--text-2);flex:1 1 100%;margin:0 0 2px">already bought? enter the email from your receipt to unlock your downloads.</label>
+        <input id="vault-email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" style="flex:1 1 240px;min-width:0;padding:11px 13px;background:var(--bg);border:1px solid var(--border-strong);border-radius:var(--radius);color:var(--text);font-family:var(--t-sans);font-size:.95rem">
+        <button id="vault-go" type="button" class="dl-btn" style="flex:0 0 auto">unlock my downloads</button>
+      </form>
+      <p id="vault-status" style="margin:10px 0 0;font-family:var(--t-mono);font-size:.78rem;color:var(--text-2);line-height:1.5"></p>
+    </div>
+
     <div class="downloads">
       <div class="dl-card lead-card">
         <span class="label">file 1 · the toolkit bundle · v2 (recommended)</span>
@@ -109,7 +119,7 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
           <h3>ai-builder-setup-v2.zip</h3>
           <p>27 skill folders, each with a worked-example section. use this for <b style="color:var(--text)">path A</b> (Claude Project · works on every plan including free) or <b style="color:var(--text)">path C</b> (Claude Code). this is the paid bundle · sharper than the public one.</p>
         </div>
-        <a class="dl-btn" href="https://ai-builder-setup.netlify.app/ai-builder-setup-v2.zip" download data-event="buildplus_download_zip_v2">download bundle .zip<span class="size">~88 KB</span></a>
+        <a class="dl-btn" href="#vault-unlock" data-vault-file="ai-builder-setup-v2.zip" download data-event="buildplus_download_zip_v2">download bundle .zip<span class="size">~88 KB</span></a>
       </div>
       <div class="dl-card">
         <span class="label">file 2 · for the Skills path (Pro+ only)</span>
@@ -117,7 +127,7 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
           <h3>ai-builder-skills-individual-zips.zip</h3>
           <p>27 separately-zipped skills + install guide. claude.ai's Skills upload needs one zip per skill (the bundle gives a "must start with YAML" error there). use this for <b style="color:var(--text)">path B</b> · Pro, Max, Team, or Enterprise.</p>
         </div>
-        <a class="dl-btn" href="https://ai-builder-setup.netlify.app/ai-builder-skills-individual-zips.zip" download data-event="buildplus_download_individual_zips">download 27 zips<span class="size">~90 KB</span></a>
+        <a class="dl-btn" href="#vault-unlock" data-vault-file="ai-builder-skills-individual-zips.zip" download data-event="buildplus_download_individual_zips">download 27 zips<span class="size">~90 KB</span></a>
       </div>
     </div>
 
@@ -126,7 +136,7 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
         <span><b style="color:var(--accent)">⬇ the brain doc · brain-doc-template.md</b><br><span style="color:var(--text-2);font-size:.85rem;font-family:var(--t-mono)">5 questions · fill once · attach to any project · every output gets 10x sharper</span></span>
         <span class="arr">↓ ~6 KB</span>
       </a>
-      <a href="https://ai-builder-setup.netlify.app/brain-doc-example-closermethod.md" download data-event="buildplus_download_brain_example">
+      <a href="#vault-unlock" data-vault-file="brain-doc-example-closermethod.md" download data-event="buildplus_download_brain_example">
         <span><b>📝 see a filled-in brain doc (eli's, anonymized)</b><br><span style="color:var(--text-2);font-size:.85rem;font-family:var(--t-mono)">what "good answers" look like before you write your own</span></span>
         <span class="arr">↓ .md</span>
       </a>
@@ -233,6 +243,132 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
   }
   if(window.requestIdleCallback){window.requestIdleCallback(load3P,{timeout:3000});}
   else{window.addEventListener('load',function(){setTimeout(load3P,1500);});}
+})();
+</script>
+
+<script>
+// ── credentialed delivery · route every paid download through the buyer-only vault ──
+// fresh buyer lands with ?session_id=cs_… (Stripe) → links carry it · past buyer enters
+// the receipt email → POST mints a 7-day token → links carry that. no creds = no file.
+(function(){
+  var VAULT = '/.netlify/functions/toolkit-vault';
+  var CDN   = 'https://ai-builder-setup.netlify.app/';
+  var params = new URLSearchParams(location.search);
+  var sid = params.get('session_id');
+  var token = null;
+
+  function credential(){
+    if (sid)   return 'session_id=' + encodeURIComponent(sid);
+    if (token) return 'token=' + encodeURIComponent(token);
+    return null;
+  }
+
+  function vaultLinks(){
+    return Array.prototype.slice.call(
+      document.querySelectorAll('a[href^="' + CDN + '"], a[data-vault-file]')
+    );
+  }
+
+  function rewire(){
+    var c = credential();
+    vaultLinks().forEach(function(a){
+      var file = a.getAttribute('data-vault-file');
+      if (!file){
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf(CDN) === 0){
+          file = h.slice(CDN.length).split('?')[0].split('#')[0];
+          a.setAttribute('data-vault-file', file);
+        }
+      }
+      if (!file) return;
+      if (c){
+        a.setAttribute('href', VAULT + '?file=' + encodeURIComponent(file) + '&' + c);
+        a.removeAttribute('data-locked');
+      } else {
+        a.setAttribute('href', VAULT + '?file=' + encodeURIComponent(file));
+        a.setAttribute('data-locked', '1');
+      }
+    });
+  }
+
+  function setStatus(msg, kind){
+    var el = document.getElementById('vault-status');
+    if (!el) return;
+    el.textContent = msg;
+    el.style.color = kind === 'ok'  ? 'var(--pos)'
+                   : kind === 'err' ? '#FF6B6B'
+                   : kind === 'warn'? 'var(--accent)'
+                   : 'var(--text-2)';
+  }
+
+  function setUnlockedUI(){
+    var form = document.getElementById('vault-form');
+    if (form) form.style.display = 'none';
+    var box = document.getElementById('vault-unlock');
+    if (box) box.style.borderColor = 'var(--pos)';
+    setStatus('✓ unlocked · your downloads are live below. bookmark this page — these links are yours forever.', 'ok');
+  }
+
+  function recover(){
+    var inp = document.getElementById('vault-email');
+    var btn = document.getElementById('vault-go');
+    var email = ((inp && inp.value) || '').trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+      setStatus('that does not look like an email · use the exact address from your receipt.', 'err');
+      if (inp) inp.focus();
+      return;
+    }
+    if (btn){ btn.disabled = true; btn.textContent = 'checking…'; }
+    setStatus('checking your purchase…', 'muted');
+    fetch(VAULT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    })
+    .then(function(r){ return r.json().then(function(j){ return { status: r.status, body: j }; }); })
+    .then(function(res){
+      if (btn){ btn.disabled = false; btn.textContent = 'unlock my downloads'; }
+      var j = res.body || {};
+      if (j.ok && j.token){
+        token = j.token;
+        rewire();
+        setUnlockedUI();
+        try { if (window.gtag) gtag('event','vault_unlock',{ method:'email', page:'/access/build-plus' }); } catch(e){}
+      } else if (res.status === 503){
+        setStatus(j.message || 'download is temporarily unavailable. DM @closermethod and i will get your files to you right away.', 'warn');
+      } else {
+        setStatus(j.message || 'i could not find a toolkit purchase under that email. use the exact email from your receipt, or DM @closermethod.', 'err');
+      }
+    })
+    .catch(function(){
+      if (btn){ btn.disabled = false; btn.textContent = 'unlock my downloads'; }
+      setStatus('something glitched on my end. try again, or DM @closermethod and i will send your files.', 'err');
+    });
+  }
+
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[data-locked="1"]') : null;
+    if (!a) return;
+    e.preventDefault();
+    var box = document.getElementById('vault-unlock');
+    if (box) box.scrollIntoView({ behavior:'smooth', block:'center' });
+    var inp = document.getElementById('vault-email');
+    if (inp) inp.focus();
+    setStatus('enter the email from your receipt above to unlock your downloads.', 'warn');
+  });
+
+  function init(){
+    rewire();
+    var btn = document.getElementById('vault-go');
+    var inp = document.getElementById('vault-email');
+    if (btn) btn.addEventListener('click', recover);
+    if (inp) inp.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); recover(); }});
+    if (sid){ setUnlockedUI(); }
+    else { setStatus('', 'muted'); }
+  }
+
+  if (document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', init); }
+  else { init(); }
 })();
 </script>
 </body>

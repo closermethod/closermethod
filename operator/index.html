@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Operator · hire the AI that runs the boring half of your business · closer method</title>
+<meta name="description" content="A complete AI operator you install into the Claude you already pay for. It repurposes your content, drafts your outreach, and runs your ops on a cadence you set. No code, no new subscription. Founding access." />
+<link rel="canonical" href="https://closermethod.com/operator" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230A0A0B'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%23FF6B35' font-style='italic'%3Em%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://closermethod.com/operator" />
+<meta property="og:title" content="hire the operator that runs the boring half of your business" />
+<meta property="og:description" content="install a complete AI operator into the Claude you already pay for. it repurposes content, drafts outreach, runs ops on a cadence. no code." />
+<meta property="og:image" content="https://closermethod.com/og/og-operator.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="hire the operator that runs the boring half of your business" />
+<meta name="twitter:description" content="a configured AI operator that installs into your Claude. content, outreach, ops, on a cadence you set. no code." />
+<meta name="twitter:image" content="https://closermethod.com/og/og-operator.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0A0A0B;
+    --surface:#141416;
+    --surface-2:#1A1A1D;
+    --line:rgba(255,255,255,0.08);
+    --line-2:rgba(255,255,255,0.14);
+    --fg:#FAFAFA;
+    --muted:#A1A1AA;
+    --muted-2:#71717A;
+    --accent:#FF6B35;
+    --accent-2:#FF8C42;
+    --glow:rgba(255,107,53,0.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--fg);
+    font-family:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .mono{font-family:'Geist Mono',ui-monospace,monospace}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  a{color:inherit;text-decoration:none}
+  .accent{color:var(--accent)}
+  .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+  /* top bar */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,10,11,0.82);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-weight:700;letter-spacing:-0.02em;font-size:15px}
+  .brand .dot{color:var(--accent)}
+  .scar{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px}
+  .scar .pip{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--glow)}
+  @media(max-width:560px){.scar{display:none}}
+
+  /* hero */
+  .hero{position:relative;padding:84px 0 64px;text-align:center}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:
+      radial-gradient(680px 360px at 50% -8%,rgba(255,107,53,0.16),transparent 70%),
+      radial-gradient(900px 500px at 80% 20%,rgba(255,140,66,0.05),transparent 60%);
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12.5px;letter-spacing:0.04em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;
+    border:1px solid var(--line-2);border-radius:100px;
+    padding:7px 14px;margin-bottom:26px;background:var(--surface)
+  }
+  h1{
+    font-size:clamp(34px,6.4vw,62px);
+    line-height:1.04;letter-spacing:-0.035em;font-weight:800;
+    max-width:14ch;margin:0 auto 22px;
+  }
+  h1 .grad{
+    background:linear-gradient(120deg,var(--accent),var(--accent-2));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .sub{font-size:clamp(16px,2.2vw,20px);color:var(--muted);max-width:60ch;margin:0 auto 36px}
+
+  /* capture */
+  .capture{display:flex;gap:10px;max-width:480px;margin:0 auto 10px}
+  .capture input[type=email]{
+    flex:1;background:var(--surface);border:1px solid var(--line-2);
+    border-radius:12px;padding:15px 16px;color:var(--fg);font-size:15px;
+    font-family:inherit;outline:none;transition:border .15s
+  }
+  .capture input[type=email]:focus{border-color:var(--accent)}
+  .btn{
+    background:linear-gradient(120deg,var(--accent),var(--accent-2));
+    color:#0A0A0B;font-weight:700;font-size:15px;font-family:inherit;
+    border:none;border-radius:12px;padding:15px 22px;cursor:pointer;
+    white-space:nowrap;transition:transform .12s,box-shadow .2s;
+    box-shadow:0 8px 24px -8px var(--glow)
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 14px 32px -10px var(--glow)}
+  .btn:disabled{opacity:.65;cursor:default;transform:none}
+  .btn-soft{display:inline-block;text-align:center;background:var(--surface);color:var(--fg);
+    border:1px solid var(--line-2);border-radius:12px;padding:14px 24px;font-weight:600;font-size:15px;
+    font-family:inherit;cursor:pointer;transition:border-color .15s,transform .12s}
+  .btn-soft:hover{border-color:var(--accent);transform:translateY(-1px)}
+  /* lounge ascension band (secondary, post-value) */
+  .lounge-band{border-top:1px solid var(--line);background:linear-gradient(180deg,var(--surface),var(--bg));padding:56px 0}
+  .lounge-in{max-width:640px;margin:0 auto;text-align:center}
+  .lounge-in .kicker{margin-bottom:12px}
+  .lounge-in h2{font-size:clamp(22px,3.4vw,30px);margin-bottom:12px}
+  .lounge-in p{color:var(--muted);font-size:16px;max-width:52ch;margin:0 auto 10px}
+  .lounge-meta{font-family:'Geist Mono',monospace;font-size:12.5px;color:var(--muted-2);margin:0 auto 22px}
+  .lounge-meta b{color:var(--accent);font-weight:600}
+  .gate-msg{min-height:18px;font-size:13.5px;font-family:'Geist Mono',monospace;margin:0 auto 6px;max-width:480px}
+  .gate-msg.err{color:#ff7a6b}
+  .gate-msg.ok{color:#28c840}
+  .undercta{font-size:13.5px;color:var(--muted-2);font-family:'Geist Mono',monospace;margin-top:8px}
+  .undercta b{color:var(--fg);font-weight:600}
+  @media(max-width:480px){.capture{flex-direction:column}}
+
+  /* section frame */
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  .kicker{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h2{font-size:clamp(26px,4vw,40px);letter-spacing:-0.03em;font-weight:800;line-height:1.1;margin-bottom:16px}
+  .lead{color:var(--muted);font-size:17px;max-width:62ch}
+
+  /* problem */
+  .pain{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+  .pcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .pcard .n{font-family:'Geist Mono',monospace;color:var(--muted-2);font-size:13px;margin-bottom:12px}
+  .pcard h3{font-size:17px;font-weight:600;margin-bottom:8px;letter-spacing:-0.01em}
+  .pcard p{color:var(--muted);font-size:14.5px}
+  @media(max-width:760px){.pain{grid-template-columns:1fr}}
+
+  /* calculator */
+  .calc{background:linear-gradient(180deg,var(--surface-2),var(--surface));
+    border:1px solid var(--line-2);border-radius:24px;padding:36px;margin-top:34px;
+    display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .calc-controls label{display:block;font-size:13px;color:var(--muted);margin:0 0 8px;font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:0.04em}
+  .calc-row{margin-bottom:26px}
+  .calc-row .val{color:var(--accent);font-weight:700}
+  input[type=range]{width:100%;-webkit-appearance:none;height:6px;border-radius:6px;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));outline:none;margin-top:6px}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;
+    background:#fff;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.5);border:3px solid var(--accent)}
+  .calc-num{display:flex;align-items:center;gap:10px}
+  .calc-num span{color:var(--muted-2)}
+  .calc-num input{width:110px;background:var(--bg);border:1px solid var(--line-2);border-radius:10px;
+    padding:10px 12px;color:var(--fg);font-size:15px;font-family:'Geist Mono',monospace;outline:none}
+  .calc-num input:focus{border-color:var(--accent)}
+  .calc-out{text-align:left}
+  .calc-out .big{font-size:clamp(34px,6vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1;
+    background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .calc-out .biglabel{color:var(--muted);font-size:14px;margin:10px 0 24px}
+  .compare{border-top:1px solid var(--line);padding-top:18px}
+  .compare div{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0;font-size:15px}
+  .compare .lbl{color:var(--muted)}
+  .compare .amt{font-family:'Geist Mono',monospace;font-weight:600}
+  .compare .win .amt{color:var(--accent)}
+  .calc-fine{font-family:'Geist Mono',monospace;font-size:11.5px;color:var(--muted-2);margin-top:14px}
+  @media(max-width:760px){.calc{grid-template-columns:1fr;gap:30px;padding:26px}}
+
+  /* what it is */
+  .isgrid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:start;margin-top:30px}
+  .isgrid .body p{color:var(--muted);font-size:16.5px;margin-bottom:16px}
+  .isgrid .body b{color:var(--fg)}
+  .chipline{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .chip{font-family:'Geist Mono',monospace;font-size:12.5px;color:var(--fg);
+    background:var(--surface);border:1px solid var(--line-2);border-radius:8px;padding:7px 11px}
+  .terminal{background:#08080a;border:1px solid var(--line-2);border-radius:16px;overflow:hidden;font-family:'Geist Mono',monospace}
+  .tbar{display:flex;gap:7px;padding:13px 15px;border-bottom:1px solid var(--line);background:#0d0d0f}
+  .tbar i{width:11px;height:11px;border-radius:50%;display:block}
+  .tbar i:nth-child(1){background:#ff5f57}.tbar i:nth-child(2){background:#febc2e}.tbar i:nth-child(3){background:#28c840}
+  .tbody{padding:18px 16px;font-size:13.5px;line-height:1.9}
+  .tbody .c{color:var(--muted-2)}.tbody .g{color:#28c840}.tbody .o{color:var(--accent)}
+  @media(max-width:760px){.isgrid{grid-template-columns:1fr}}
+
+  /* job description */
+  .jobs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px}
+  .job{display:flex;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .job .ic{flex:none;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
+    background:var(--glow);color:var(--accent);font-size:18px}
+  .job h3{font-size:15.5px;font-weight:600;margin-bottom:4px;letter-spacing:-0.01em}
+  .job p{font-size:13.5px;color:var(--muted)}
+  @media(max-width:680px){.jobs{grid-template-columns:1fr}}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px;counter-reset:s}
+  .step{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px 22px}
+  .step::before{counter-increment:s;content:"0" counter(s);font-family:'Geist Mono',monospace;
+    font-size:13px;color:var(--accent);font-weight:600}
+  .step h3{font-size:17px;margin:10px 0 8px;letter-spacing:-0.01em}
+  .step p{color:var(--muted);font-size:14px}
+  @media(max-width:760px){.steps{grid-template-columns:1fr}}
+
+  /* faq honesty */
+  .faq{margin-top:26px;border:1px solid var(--line-2);border-radius:18px;overflow:hidden;background:var(--surface)}
+  .qa{padding:24px 26px;border-bottom:1px solid var(--line)}
+  .qa:last-child{border-bottom:none}
+  .qa h3{font-size:17px;margin-bottom:10px;letter-spacing:-0.01em}
+  .qa p{color:var(--muted);font-size:15px}
+  .qa .tag{font-family:'Geist Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em}
+
+  /* pricing */
+  .price-sec{text-align:center}
+  .pcardbig{max-width:440px;margin:34px auto 0;background:linear-gradient(180deg,var(--surface-2),var(--surface));
+    border:1px solid var(--accent);border-radius:24px;padding:38px 32px;position:relative;
+    box-shadow:0 30px 80px -40px var(--glow)}
+  .pcardbig .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:linear-gradient(120deg,var(--accent),var(--accent-2));color:#0A0A0B;
+    font-size:12px;font-weight:700;padding:6px 16px;border-radius:100px;font-family:'Geist Mono',monospace}
+  .pcardbig .name{font-family:'Geist Mono',monospace;color:var(--muted);font-size:13px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:14px}
+  .pcardbig .amount{font-size:64px;font-weight:800;letter-spacing:-0.04em;line-height:1}
+  .pcardbig .amount sup{font-size:26px;font-weight:600;top:-26px;color:var(--muted)}
+  .pcardbig .was{color:var(--muted-2);font-size:14px;margin-top:8px}
+  .pcardbig .was s{color:var(--muted-2)}
+  .plist{text-align:left;margin:26px 0;display:grid;gap:11px}
+  .plist li{list-style:none;display:flex;gap:11px;font-size:14.5px;color:var(--fg)}
+  .plist li .ck{color:var(--accent);flex:none}
+  .pcardbig .btn{width:100%;font-size:16px;padding:16px;display:block;text-align:center}
+  /* capture form lives inside the pricing card so a convinced reader acts at the decision point, not after a scroll */
+  .pcardbig .capture{flex-direction:column;max-width:none;margin:0 0 4px}
+  .pcardbig .capture input[type=email]{width:100%}
+  .pcardbig .gate-msg{max-width:none;text-align:center}
+  .guarantee{margin-top:14px;font-size:13px;color:var(--muted);max-width:46ch;margin-left:auto;margin-right:auto}
+
+  /* final */
+  .final{text-align:center;padding:80px 0;border-top:1px solid var(--line)}
+  .final h2{max-width:18ch;margin:0 auto 20px}
+  footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--muted-2);font-size:13px}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <div class="brand">closer<span class="dot">.</span>method</div>
+    <div class="scar"><span class="pip"></span> founding rate · 50 seats · lowest it will ever be</div>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="hire">
+  <div class="wrap">
+    <span class="eyebrow">for creators who already pay for ai</span>
+    <h1>hire the <span class="grad">operator</span> that runs the boring half of your business</h1>
+    <p class="sub">a complete ai operator you install into the claude you already pay for. it repurposes your content, drafts your outreach, and runs your ops on a schedule you set. you stop doing the busywork. it does.</p>
+    <form class="capture" data-gate novalidate>
+      <label for="heroEmail" class="sr">your email address</label>
+      <input type="email" id="heroEmail" name="email" placeholder="your best email" autocomplete="email" required />
+      <div class="hp" aria-hidden="true"><label>leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+      <button class="btn" type="submit" data-event="hero_operator_submit">send me the operator →</button>
+    </form>
+    <p class="gate-msg" data-gate-msg aria-live="polite"></p>
+    <p class="undercta">founding access <b>$147</b> · goes to $197 · install in an afternoon, <b>no code</b></p>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section>
+  <div class="wrap">
+    <div class="kicker">the gap</div>
+    <h2>you subscribed to the ai. now it just sits there.</h2>
+    <p class="lead">you can write a good prompt. that was never the problem. the problem is that nothing runs unless you sit down and run it. the ai is a tool on the shelf, not a teammate doing the work.</p>
+    <div class="pain">
+      <div class="pcard"><div class="n">// 01</div><h3>everything still goes through you</h3><p>repurposing, replies, follow-ups, the weekly tidy-up. the ai helps for ten minutes, then you're back to doing it by hand.</p></div>
+      <div class="pcard"><div class="n">// 02</div><h3>no system, just sessions</h3><p>every task starts from a blank chat. nothing remembers your business, your voice, or what you did last week.</p></div>
+      <div class="pcard"><div class="n">// 03</div><h3>you wanted leverage, you got a chatbot</h3><p>a real hire takes work off your plate. right now the ai adds a step instead of removing one.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section>
+  <div class="wrap">
+    <div class="kicker">the math</div>
+    <h2>what is the busywork actually costing you?</h2>
+    <p class="lead">move the sliders. this is the work the operator takes off your plate, priced honestly against what you'd pay a human to do it.</p>
+    <div class="calc">
+      <div class="calc-controls">
+        <div class="calc-row">
+          <label for="hrs">hours/week on ops + content busywork: <span class="val" id="hrsv">12</span> hrs</label>
+          <input type="range" id="hrs" min="2" max="40" value="12" />
+        </div>
+        <div class="calc-row">
+          <label for="rate">what your hour is worth</label>
+          <div class="calc-num"><span>$</span><input type="number" id="rate" value="75" min="10" max="1000" /><span>/hr</span></div>
+        </div>
+        <p style="font-size:13px;color:var(--muted-2);font-family:'Geist Mono',monospace">numbers update live ↓</p>
+      </div>
+      <div class="calc-out">
+        <div class="big" id="annual">$46,800</div>
+        <div class="biglabel">per year doing the operator's job yourself</div>
+        <div class="compare">
+          <div><span class="lbl">a human ops hire</span><span class="amt">~$65,000/yr</span></div>
+          <div><span class="lbl">a VA, part-time</span><span class="amt">~$18,000/yr</span></div>
+          <div class="win"><span class="lbl">the operator</span><span class="amt">$147 once</span></div>
+        </div>
+        <p class="calc-fine">estimate only, for illustration. your time-cost depends on your own rate and hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IT IS (honest) -->
+<section>
+  <div class="wrap">
+    <div class="kicker">what it actually is</div>
+    <h2>not another app. a role you install.</h2>
+    <div class="isgrid">
+      <div class="body">
+        <p>the operator is <b>not</b> a new tool to log into, a new subscription, or a bot you have to babysit. it installs into the claude you already pay for.</p>
+        <p>under the hood it's a set of <b>skills</b> (the things it knows how to do), a <b>project</b> that holds your business context, voice and offers, and a <b>runbook</b> that tells it what to do and when. drop them in once and your ai stops being a blank chat and starts being a teammate that knows your business.</p>
+        <p>honest version: this is a <b>configured claude</b>, not a sci-fi robot running while you sleep. it does the work when you kick off a cadence. the magic isn't autonomy. it's that the setup, the skills, and the runbook are already built, so it works the first time instead of after three weeks of fiddling.</p>
+        <div class="chipline">
+          <span class="chip">runs on your claude</span>
+          <span class="chip">no api keys</span>
+          <span class="chip">no code</span>
+          <span class="chip">no monthly fee</span>
+        </div>
+      </div>
+      <div class="terminal" aria-hidden="true">
+        <div class="tbar"><i></i><i></i><i></i></div>
+        <div class="tbody">
+          <div class="c"># you, on a tuesday morning</div>
+          <div><span class="o">you ›</span> run the monday cadence</div>
+          <div class="g">operator › pulling last week's posts...</div>
+          <div class="g">operator › 6 shorts cut from your long video</div>
+          <div class="g">operator › 4 outreach drafts in your voice</div>
+          <div class="g">operator › inbox triaged, 3 need you</div>
+          <div class="g">operator › weekly ops review ready ✓</div>
+          <div class="c"># elapsed: the time it took to make coffee</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOB DESCRIPTION -->
+<section>
+  <div class="wrap">
+    <div class="kicker">the job description</div>
+    <h2>everything you'd put on the hire's first-week checklist</h2>
+    <div class="jobs">
+      <div class="job"><div class="ic">◆</div><div><h3>content repurposing</h3><p>turns one long piece into a week of shorts, posts and captions in your voice.</p></div></div>
+      <div class="job"><div class="ic">◆</div><div><h3>outreach drafts</h3><p>writes first-touch and follow-ups using your framework, ready for you to send.</p></div></div>
+      <div class="job"><div class="ic">◆</div><div><h3>inbox triage</h3><p>sorts what matters, drafts the easy replies, flags the few that need you.</p></div></div>
+      <div class="job"><div class="ic">◆</div><div><h3>weekly ops review</h3><p>tells you what moved, what stalled, and the three things to do next.</p></div></div>
+      <div class="job"><div class="ic">◆</div><div><h3>offer + lead notes</h3><p>keeps your offers, prices and positioning straight so nothing goes off-message.</p></div></div>
+      <div class="job"><div class="ic">◆</div><div><h3>your custom cadence</h3><p>swap any task in or out. it's your hire. you write the job description.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTALL -->
+<section>
+  <div class="wrap">
+    <div class="kicker">how you install it</div>
+    <h2>three steps. an afternoon. no developer.</h2>
+    <div class="steps">
+      <div class="step"><h3>open claude</h3><p>the one you already pay for. nothing new to buy, nothing to connect.</p></div>
+      <div class="step"><h3>drop in the operator</h3><p>add the skills + project, paste your business context where the guide tells you. ~15 minutes, fully walked through.</p></div>
+      <div class="step"><h3>run your first cadence</h3><p>kick off the monday runbook. it goes to work. you tweak it once and it's yours for good.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HONEST FAQ -->
+<section>
+  <div class="wrap">
+    <div class="kicker">straight answers</div>
+    <h2>before you ask</h2>
+    <div class="faq">
+      <div class="qa"><span class="tag">is it an agent?</span><h3>kind of. and i'll be honest about which kind.</h3><p>it's not a fully autonomous agent humming away 24/7 on its own servers. it's a configured claude: it acts when you give it a turn. what you're buying is the configuration, the skills and the runbook that make it actually useful from day one, instead of a blank chat you have to teach from scratch.</p></div>
+      <div class="qa"><span class="tag">do i need to code?</span><h3>no. if you can paste, you can install it.</h3><p>no api keys, no terminal, no integrations to wire up. the whole thing runs inside the claude interface you already know.</p></div>
+      <div class="qa"><span class="tag">another subscription?</span><h3>no. one time. runs on the ai you already pay for.</h3><p>you're not adding a monthly bill. you pay once for the operator, and it lives on top of your existing claude plan.</p></div>
+      <div class="qa"><span class="tag">what if it doesn't fit my business?</span><h3>then i rewrite it until it does.</h3><p>if a skill doesn't work for how you actually run things, dm <b class="accent">@closermethod</b> and i rewrite it for you, free, as many times as it takes. made to work, not made to sit in a folder.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="price-sec">
+  <div class="wrap">
+    <div class="kicker">founding access</div>
+    <h2>hire the operator for less than a day of your own time</h2>
+    <div class="pcardbig">
+      <div class="badge">50 FOUNDING SEATS</div>
+      <div class="name">the operator</div>
+      <div class="amount"><sup>$</sup>147</div>
+      <div class="was"><s>$197</s> founding rate, locked for life</div>
+      <ul class="plist">
+        <li><span class="ck">✓</span> the full operator: skills + project + runbook</li>
+        <li><span class="ck">✓</span> guided 15-minute install (no code)</li>
+        <li><span class="ck">✓</span> your custom weekly cadence template</li>
+        <li><span class="ck">✓</span> made-to-work rewrites, free</li>
+        <li><span class="ck">✓</span> every future update to the operator</li>
+      </ul>
+      <form class="capture" data-gate novalidate>
+        <label for="priceEmail" class="sr">your email address</label>
+        <input type="email" id="priceEmail" name="email" placeholder="your best email" autocomplete="email" required />
+        <div class="hp" aria-hidden="true"><label>leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+        <button class="btn" type="submit" data-event="price_operator_submit">claim a founding seat →</button>
+      </form>
+      <p class="gate-msg" data-gate-msg aria-live="polite"></p>
+      <p class="guarantee">if a skill doesn't work for your business, dm @closermethod and i rewrite it free, as many times as it takes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<div class="final">
+  <div class="wrap">
+    <h2>you already hired the ai. now put it to work.</h2>
+    <p class="sub" style="margin-bottom:28px">install the operator this afternoon and let it run the half of the business you keep putting off.</p>
+    <form class="capture" data-gate novalidate>
+      <label for="finalEmail" class="sr">your email address</label>
+      <input type="email" id="finalEmail" name="email" placeholder="your best email" autocomplete="email" required />
+      <div class="hp" aria-hidden="true"><label>leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+      <button class="btn" type="submit" data-event="final_operator_submit">send me the operator →</button>
+    </form>
+    <p class="gate-msg" data-gate-msg aria-live="polite"></p>
+    <p class="undercta">founding access <b>$147</b> · goes to $197 · install in an afternoon, <b>no code</b></p>
+  </div>
+</div>
+
+<!-- LOUNGE ASCENSION · post-value · secondary path for the not-yet-ready -->
+<section class="lounge-band">
+  <div class="wrap">
+    <div class="lounge-in">
+      <div class="kicker">not ready to install the whole role?</div>
+      <h2>watch me build it live first.</h2>
+      <p>the operator is built from the same skills i build live every week inside the lounge. come watch one get made on claude, keep every skill the day you join, and bring your own work to get rewritten until it ships.</p>
+      <p class="lounge-meta"><b>$47/mo founding</b> · locked for life · 50 seats · on skool, not discord</p>
+      <a class="btn-soft" href="/lounge" data-event="operator_to_lounge">see the lounge →</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 closer<span class="accent">.</span>method · built for creators who already pay for ai · <a href="https://instagram.com/closermethod" target="_blank" rel="noopener">@closermethod</a></footer>
+
+<script>
+(function(){
+  // ── UTM capture (sticky across the session, appended to the thanks redirect) ──
+  var url = new URL(window.location.href);
+  var utm = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){
+    var v = url.searchParams.get(k);
+    if(v){ utm[k]=v; try{ sessionStorage.setItem(k,v); }catch(e){} }
+    else { try{ var s=sessionStorage.getItem(k); if(s) utm[k]=s; }catch(e){} }
+  });
+
+  function ga(name, params){
+    try{ if(window.gtag) window.gtag('event', name, params||{}); }catch(e){}
+    try{ if(window.fbq) window.fbq('trackCustom', name, params||{}); }catch(e){}
+  }
+
+  document.querySelectorAll('[data-event]').forEach(function(el){
+    el.addEventListener('click', function(){
+      ga('cta_click', { cta: el.getAttribute('data-event'), page: '/operator' });
+    });
+  });
+
+  // ── Live cost calculator (the anchor mechanic) ──
+  var hrs = document.getElementById('hrs');
+  var rate = document.getElementById('rate');
+  var hrsv = document.getElementById('hrsv');
+  var annual = document.getElementById('annual');
+  function fmt(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+  function recompute(){
+    var h = parseFloat(hrs.value) || 0;
+    var r = parseFloat(rate.value) || 0;
+    hrsv.textContent = h;
+    annual.textContent = fmt(h * r * 52);
+  }
+  hrs.addEventListener('input', recompute);
+  rate.addEventListener('input', recompute);
+  recompute();
+
+  // ── Lead capture (hero + final). Same proven wiring as /build: POST /api/subscribe,
+  // honeypot 'website' forwarded so the server bot filter can reject page-rendering bots,
+  // verify data.success, fire generate_lead + Meta Lead, redirect to the delivery page. ──
+  document.querySelectorAll('form[data-gate]').forEach(function(form){
+    var msg = form.parentElement.querySelector('[data-gate-msg]');
+    var btn = form.querySelector('button[type="submit"]');
+    var efocus = form.querySelector('input[type="email"]');
+    if(efocus){ efocus.addEventListener('focus', function(){ ga('form_start', { source: 'operator' }); }, { once: true }); }
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      if(msg){ msg.className = 'gate-msg'; msg.textContent = ''; }
+      var emailEl = form.querySelector('input[type="email"]');
+      var email = ((emailEl && emailEl.value) || '').trim().toLowerCase();
+      var hpEl = form.querySelector('input[name="website"]');
+      var hp = (hpEl && hpEl.value) || '';
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        if(msg){ msg.className = 'gate-msg err'; msg.textContent = 'drop a real email so it lands in your inbox.'; }
+        return;
+      }
+      var orig = btn ? btn.textContent : '';
+      if(btn){ btn.disabled = true; btn.textContent = 'sending...'; }
+      try{
+        var res = await fetch("/api/subscribe", {
+          method: 'POST', headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({
+            email: email, source: 'operator', tag_ids: [19762195],
+            website: hp,
+            fields: Object.assign({source_page:'operator'}, utm)
+          })
+        });
+        var data = await res.json();
+        if(data && data.success){
+          if(msg){ msg.className = 'gate-msg ok'; msg.textContent = 'sent. redirecting...'; }
+          if(!data.filtered){
+            ga('generate_lead', { source: 'operator', value: 0 });
+            try{ if(window.fbq) window.fbq('track','Lead',{content_name:'operator'}); }catch(e){}
+          }
+          var thanksUrl = '/thanks/build/';
+          var qs = Object.keys(utm).filter(function(k){return utm[k];}).map(function(k){return k+'='+encodeURIComponent(utm[k]);}).join('&');
+          window.location.href = qs ? thanksUrl + '?' + qs : thanksUrl;
+          return;
+        } else {
+          if(msg){ msg.className = 'gate-msg err'; msg.textContent = (data && data.error) || 'kit hiccup. try again in 30s.'; }
+        }
+      } catch(err){
+        if(msg){ msg.className = 'gate-msg err'; msg.textContent = 'network blip. try again in 30s.'; }
+      } finally {
+        if(btn){ btn.disabled = false; btn.textContent = orig; }
+      }
+    });
+  });
+})();
+</script>
+
+<script>
+// Defer 3P analytics until the page is interactive (same perf pattern as /build).
+(function(){
+  function load3P(){
+    var gt=document.createElement('script');gt.async=true;gt.src='https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD';document.head.appendChild(gt);
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag;gtag('js',new Date());gtag('config','G-Q2458LX0VD',{send_page_view:true,page_path:'/operator'});
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','35298849146380570');fbq('track','PageView');fbq('trackCustom','OperatorPageView');
+  }
+  if(window.requestIdleCallback){window.requestIdleCallback(load3P,{timeout:3000});}
+  else{window.addEventListener('load',function(){setTimeout(load3P,1500);});}
+})();
+</script>
+</body>
+</html>

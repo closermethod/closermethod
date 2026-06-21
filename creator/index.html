@@ -540,7 +540,7 @@ document.getElementById('gate-form').addEventListener('submit', async (e) => {
     await fetch('https://closer-kit-launch.netlify.app/api/subscribe', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({email, source:'creator-5dms', tag_label:'creator-5dms-lead', tag_id: 19315100, sequence_id: 2757803})
+      body: JSON.stringify({email, source:'creator-5dms', tag_label:'creator-5dms-lead', tag_id: 19315100})
     });
     document.getElementById('gate-success').classList.add('show');
     if (window.gtag) gtag('event','generate_lead',{event_label:'creator-5dms'});

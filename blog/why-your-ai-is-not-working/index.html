@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>why your ai is not working | The Closer Method</title>
+  <meta name="description" content="Most AI initiatives miss expectations, and the cause is not the model. You bought a tool and skipped the system. Here is the research and the fix."/>
+  <link rel="canonical" href="https://closermethod.com/blog/why-your-ai-is-not-working/"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231A1714'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%2313B38B' font-style='italic'%3Em%3C/text%3E%3C/svg%3E"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','35298849146380570');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"/></noscript>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2458LX0VD', { page_path: '/blog/why-your-ai-is-not-working/' });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "why your ai is not working",
+    "description": "Most AI initiatives miss expectations, and the cause is not the model. You bought a tool and skipped the system. Here is the research and the fix.",
+    "author": { "@type": "Person", "name": "Eli Hitz", "url": "https://closermethod.com/", "sameAs": ["https://instagram.com/closermethod","https://x.com/closermethod","https://www.tiktok.com/@closermethod","https://elisabethhitz.com"] },
+    "publisher": { "@type": "Organization", "name": "The Closer Method", "url": "https://closermethod.com" },
+    "datePublished": "2026-06-11",
+    "dateModified": "2026-06-11",
+    "mainEntityOfPage": "https://closermethod.com/blog/why-your-ai-is-not-working/"
+  }
+  </script>
+
+  <style>
+    :root{--bg:#FBF5F0;--paper:#fff;--ink:#0A0A0A;--orange:#FF3B00;--muted:#555;--line:3px solid #0A0A0A;--shadow:6px 6px 0 #0A0A0A}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Archivo',system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:1rem;line-height:1.6}
+    h1,h2{font-family:'Archivo Black',system-ui,sans-serif;text-transform:lowercase;letter-spacing:-.02em;line-height:1.05;color:var(--ink);font-weight:400}
+    a{color:var(--orange);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .topnav{padding:13px 20px;border-bottom:var(--line);background:var(--paper);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .topnav .brand{font-family:'Archivo Black';font-size:1rem;text-transform:lowercase;letter-spacing:0;color:var(--ink);text-decoration:none}.topnav .navlinks{display:flex;gap:16px;flex-wrap:wrap;align-items:center}.topnav .navlinks a{font-family:'JetBrains Mono',monospace;font-size:.76rem;text-transform:lowercase;letter-spacing:.03em;color:var(--ink);text-decoration:none}.topnav .navlinks a:hover{color:var(--orange);text-decoration:none}
+    .wrap{max-width:720px;margin:0 auto;padding:48px 22px 72px}
+    .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.14em;color:var(--orange);margin-bottom:14px}
+    h1{font-size:clamp(2rem,5.5vw,3rem);margin-bottom:16px}
+    .lead{font-size:1.05rem;color:#333;margin-bottom:38px;max-width:56ch}
+    footer{padding:30px 20px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.74rem;color:#777;border-top:var(--line);background:var(--paper)}
+    footer a{color:var(--orange)}
+
+    .card{background:var(--paper);border:var(--line);box-shadow:var(--shadow);padding:40px 36px}
+    .meta{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:#777;margin-bottom:28px;text-transform:uppercase;letter-spacing:.06em}
+    .eyebrow a{color:var(--orange)}
+    article h2{font-family:'Archivo Black';text-transform:lowercase;font-size:1.5rem;margin:36px 0 12px;letter-spacing:-.01em}
+    article p{margin:0 0 16px;font-size:1rem;line-height:1.72}
+    article ul,article ol{margin:0 0 16px 22px}
+    article li{margin-bottom:8px}
+    blockquote{border-left:4px solid var(--orange);margin:22px 0;padding:6px 0 6px 18px;color:#333;font-style:normal;font-weight:500}
+    article a{color:var(--orange);text-decoration:underline}
+    .btn,.cta a{display:inline-block;background:var(--orange);color:var(--ink);font-family:'JetBrains Mono';font-weight:700;text-transform:lowercase;text-decoration:none;padding:14px 26px;border:var(--line);box-shadow:var(--shadow)}
+    .btn:hover,.cta a:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink);text-decoration:none}
+    @media(max-width:560px){.card{padding:28px 20px}}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="brand" href="https://closermethod.com">the closer method</a>
+  <span class="navlinks">
+    <a href="/blog/">field notes</a>
+    <a href="/build/">the toolkit</a>
+    <a href="/hire/">work with me</a>
+  </span>
+</nav>
+
+<main class="wrap">
+  <div class="card">
+    <div class="eyebrow"><a href="/blog/">field notes</a></div>
+    <article>
+      <h1>why your ai is not working.</h1>
+      <p class="meta">elisabeth hitz · june 11, 2026 · 6 min read</p>
+
+      <p>you pay for an AI subscription. you have pasted prompts into it. it has written you some emails that sounded almost right. and the honest accounting is that it has saved you maybe an hour, total, while costing you money every month.</p>
+
+      <p>if that is you, you are not behind. you are the statistical norm. MIT's 2025 research found 95 percent of generative AI pilots show no measurable return, and RAND puts the broader AI failure rate above 80 percent. in 2025, 42 percent of companies abandoned most of their AI initiatives, up from 17 percent in 2024. only 7 percent of organizations have AI fully deployed and integrated into how they work.</p>
+
+      <p>read those numbers again, because they carry good news. when the overwhelming majority fails at something, the cause is almost never that everyone is stupid. the cause is a missing piece that almost nobody was told about.</p>
+
+      <h2>the missing piece, named</h2>
+
+      <p>across all of that research, the most-cited finding is this: <strong>the redesign of the workflow, not the AI tool itself, decides whether anyone sees a result.</strong></p>
+
+      <p>the model was never your problem. claude can already write, read, sort, summarize, and draft at a level that covers most of what a small operation needs. what fails is the connection between the model and your actual work. people buy a subscription, paste a few prompts on a motivated tuesday, get a mediocre result because the AI knows nothing about their business, and quietly go back to doing the work by hand.</p>
+
+      <p>they bought a tool and skipped the system.</p>
+
+      <p>a tool is something you pick up when you remember to. a system is the task showing up already drafted, the same way, every week, because the instructions for doing it are written down somewhere the AI reads every time. nobody runs a business on remembering to prompt well.</p>
+
+      <h2>the barriers, in order</h2>
+
+      <p>the research is specific about what stops people, and every item points the same direction:</p>
+
+      <ul>
+        <li><strong>the skills gap is the single biggest barrier,</strong> named by 50 percent of businesses. people do not know what to build or how. not "how to use AI" in the abstract. literally: what do i build first.</li>
+        <li><strong>no plan.</strong> 43 percent point to leadership with no strategy. and the gap is brutal: companies without a formal AI plan report 37 percent success. with a plan, 80 percent.</li>
+        <li><strong>data and integration mess.</strong> 67 percent cite data quality, 64 percent integration complexity. the tools do not talk to each other, so the work stays manual.</li>
+        <li><strong>trust.</strong> about half of workers worry about AI, and teams that cannot see what the AI is doing end up checking every output, which means doing the work twice.</li>
+      </ul>
+
+      <p>notice what is absent from that list: model quality. nobody fails because the AI was not smart enough. they fail because nothing connected the AI to the work, no one wrote the plan, and no one could see inside the box.</p>
+
+      <h2>what the fix actually looks like</h2>
+
+      <p>the fix is unglamorous, which is why nobody sells it on a stage. you take one task you do the same way every week. high volume, repetitive, low risk, where a mistake costs you a shrug. you write down exactly how you do it: the steps, the tone, the rules, the things you always check. then you save that as an instruction file the AI reads every single time it does the task.</p>
+
+      <p>that is the whole move. the file is the system. once it exists, the quality stops depending on how well you prompted today, because the prompt is no longer in your head. it is on disk, versioned, fixable. when the output is wrong you edit the file once and it is right forever after. this file-based approach has a name in the claude world, and i wrote a plain-english explainer on it: <a href="/blog/claude-skills-explained/">claude skills, explained</a>.</p>
+
+      <p>that single move is what the failed projects skipped. and it is also the honest answer to the plan problem: your "formal AI plan" does not need a consultant deck. for a small business it is one page that says which three tasks get systematized this quarter, in what order, and how you will know each one is working (hours saved, replies sent, money recovered).</p>
+
+      <h2>where to start today, free</h2>
+
+      <p>the first file every system needs is the one that teaches the AI who you are: your voice, your offer, your audience, your rules. without it, everything the AI drafts sounds like a robot wearing your name tag. with it, the drafts start sounding like you on a good day.</p>
+
+      <p>i built a free tool that walks you through creating that file in your browser: the <a href="https://closermethod.com/brain-builder?utm_source=blog&utm_medium=article&utm_campaign=why-ai-not-working">brain builder</a>. it costs nothing and takes a few minutes, and it is the same first step i use in paid setups, including the <a href="/blog/set-up-claude-for-a-small-business/">small-business installs</a>.</p>
+
+      <p>start there. then, when the brain file exists and you want the rest of the system instead of building each file yourself, that is what the toolkit is for.</p>
+
+      <div class="cta">
+        <h2>the system, installed in one sitting.</h2>
+        <p>the AI builder toolkit is every skill file i use on camera: the brain, the content system, the pitch system, installed in one sitting. $147 one time, the files are yours, and they run on the claude plan you already pay for. the free starter version is on the same page.</p>
+        <a class="btn" href="https://closermethod.com/build?utm_source=blog&utm_medium=article&utm_campaign=why-ai-not-working">install the toolkit · $147</a>
+      </div>
+    </article>
+
+    <p class="sources">stats: MIT NANDA "State of AI in Business 2025", RAND, Statista AI-adoption barrier data (2025), HBR "Overcoming the Organizational Barriers to AI Adoption" (nov 2025), Chronus enterprise-barriers research.</p>
+  </div>
+</main>
+
+<footer>
+  Built by <a href="https://closermethod.com">The Closer Method</a>. If something looks off, reply to any email and I will see it.
+</footer>
+
+</body>
+</html>

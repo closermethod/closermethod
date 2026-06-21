@@ -30,23 +30,11 @@
   gtag('js', new Date());
   gtag('config', 'G-Q2458LX0VD', { page_path: '/blueprint/thank-you' });
 
-  /* Purchase event · Stripe session_id dedupe · Blueprint is $19 per Stripe link cNi5kxe5rd3g3qq8tl5Ne04 */
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var sessionId = params.get('session_id') || '';
-    var validSession = /^cs_(live|test)_[a-zA-Z0-9]{20,}$/.test(sessionId);
-    var purchaseKey = validSession ? 'blueprint_purchase_' + sessionId : null;
-    var alreadyFired = purchaseKey ? localStorage.getItem(purchaseKey) === '1' : false;
-    if (!alreadyFired) {
-      fbq('track', 'Purchase', { content_name: 'Blueprint', content_ids: ['closer-brain-blueprint'], value: 19, currency: 'USD', content_type: 'product' });
-      gtag('event', 'purchase', {
-        transaction_id: sessionId || 'blueprint-' + Date.now(),
-        value: 19, currency: 'USD',
-        items: [{ item_id: 'closer-brain-blueprint', item_name: 'Closer Brain Blueprint', price: 19, quantity: 1 }]
-      });
-      if (purchaseKey) { try { localStorage.setItem(purchaseKey, '1'); } catch(e){} }
-    }
-  })();
+  /* No purchase event here. /blueprint is a FREE lead magnet: the form posts straight to this
+     page with no Stripe checkout and no session_id, so the old code fired a $19 "purchase" on
+     EVERY free download — inflating GA4 revenue and teaching Meta to optimise for free-downloaders
+     as if they were $19 buyers. The real conversion is the Lead event fired on the form page
+     (generate_lead + fbq Lead). Purchase fire removed 2026-06-07. */
   </script>
 
   <style>

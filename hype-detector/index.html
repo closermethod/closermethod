@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The AI Hype Detector · Is your AI actually working, or are you being sold theater?</title>
+<meta name="description" content="Most AI stacks are mostly theater. This 90-second check scores how much of your AI is real work vs hype, and the one move that makes it actually pay.">
+<link rel="canonical" href="https://closermethod.com/hype-detector/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://closermethod.com/hype-detector/">
+<meta property="og:title" content="The AI Hype Detector · how much of your AI is theater?">
+<meta property="og:description" content="Score your AI stack: real work vs hype. 90 seconds, honest answers only.">
+<meta property="og:image" content="https://closermethod.com/og/og-hype.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The AI Hype Detector">
+<meta name="twitter:description" content="How much of your AI is real work vs theater? Find out in 90 seconds.">
+<meta name="twitter:image" content="https://closermethod.com/og/og-hype.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231A1410'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%23B5482E' font-style='italic'%3Em%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+
+<style>
+:root{
+  --bg:#F4EDE4;--bg2:#EFE6DA;--paper:#FFFDFB;--ink:#1A1410;--ink2:#5C534A;--ink3:#8A8076;
+  --clay:#B5482E;--clay-soft:#EFE0D6;--hair:#E0D6C8;--line:#1A1410;--pos:#3F6B4A;
+  --shadow:5px 5px 0 #1A1410;--radius:8px;--maxw:680px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Archivo',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")}
+.serif{font-family:'Fraunces',Georgia,serif}
+.mono{font-family:'JetBrains Mono',monospace}
+a{color:var(--clay);text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.nav{border-bottom:2px solid var(--line);background:rgba(244,237,228,.94);backdrop-filter:blur(8px);position:sticky;top:0;z-index:20}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:12px 22px;display:flex;justify-content:space-between;align-items:center}
+.nav-brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem}
+.nav-brand em{font-style:italic;color:var(--clay)}
+.nav-in a.back{font-family:'JetBrains Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink2)}
+.hero{padding:48px 0 24px;text-align:center}
+.kicker{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;color:var(--clay);border:1.5px solid var(--clay);border-radius:100px;padding:6px 14px;margin-bottom:20px}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.1rem,6vw,3.2rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:16px}
+.hero h1 em{font-style:italic;color:var(--clay)}
+.hero p{font-size:1.05rem;color:var(--ink2);max-width:54ch;margin:0 auto}
+.hero .stat{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--ink3);margin-top:16px;letter-spacing:.02em}
+.quiz{padding:14px 0 40px}
+.prog{height:6px;background:var(--bg2);border:1.5px solid var(--line);border-radius:100px;overflow:hidden;margin:0 0 28px}
+.prog i{display:block;height:100%;width:0;background:var(--clay);transition:width .3s}
+.card{background:var(--paper);border:2px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:26px 24px;margin-bottom:18px}
+.qnum{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--ink3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.qtext{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600;line-height:1.2;margin-bottom:18px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;align-items:center;gap:12px;padding:13px 16px;border:1.5px solid var(--hair);border-radius:var(--radius);background:var(--bg);cursor:pointer;font-size:.95rem;transition:all .12s;text-align:left}
+.opt:hover{border-color:var(--clay)}
+.opt.sel{border-color:var(--clay);background:var(--clay-soft);box-shadow:inset 0 0 0 1px var(--clay)}
+.opt .dot{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--ink3);flex-shrink:0}
+.opt.sel .dot{border-color:var(--clay);background:var(--clay);box-shadow:inset 0 0 0 3px var(--paper)}
+.nav-btns{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.btn{font-family:'JetBrains Mono',monospace;font-size:.8rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;padding:12px 22px;border:2px solid var(--line);border-radius:var(--radius);background:var(--paper);cursor:pointer;transition:all .12s}
+.btn:hover{background:var(--bg2)}
+.btn-go{background:var(--ink);color:var(--bg)}
+.btn-go:hover{background:var(--clay);color:#fff}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.result{display:none}
+.verdict{text-align:center;padding:8px 0 4px}
+.verdict .band{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;padding:7px 16px;border-radius:100px;margin-bottom:16px;font-weight:500}
+.verdict .score{font-family:'Fraunces',serif;font-size:3.4rem;font-weight:600;line-height:1;margin:6px 0 2px}
+.verdict .scorelbl{font-family:'JetBrains Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ink3);margin-bottom:12px}
+.verdict h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.08;margin-bottom:12px}
+.verdict p{color:var(--ink2);max-width:50ch;margin:0 auto 8px}
+.gate{background:var(--paper);border:2px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:26px 24px;margin-top:24px}
+.gate h3{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:600;margin-bottom:6px}
+.gate p{font-size:.92rem;color:var(--ink2);margin-bottom:16px}
+.gate form{display:flex;gap:10px;flex-wrap:wrap}
+.gate input{flex:1;min-width:200px;padding:13px 15px;border:2px solid var(--line);border-radius:var(--radius);font-family:'Archivo',sans-serif;font-size:.95rem;background:var(--bg)}
+.gate input:focus{outline:none;border-color:var(--clay)}
+.gate button{padding:13px 22px;background:var(--ink);color:var(--bg);border:2px solid var(--line);border-radius:var(--radius);font-family:'JetBrains Mono',monospace;font-size:.78rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;cursor:pointer}
+.gate button:hover{background:var(--clay);color:#fff}
+.gate .meta{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--ink3);margin-top:10px}
+.reveal{display:none;margin-top:20px}
+.reveal .fix{background:var(--clay-soft);border:2px solid var(--clay);border-radius:var(--radius);padding:22px;margin-bottom:14px}
+.reveal .fix h4{font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:6px}
+.reveal .fix p{font-size:.92rem;color:var(--ink2)}
+.cta{display:block;text-align:center;background:var(--ink);color:var(--bg);padding:16px;border:2px solid var(--line);border-radius:var(--radius);font-family:'JetBrains Mono',monospace;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;box-shadow:var(--shadow)}
+.cta:hover{background:var(--clay);color:#fff}
+footer{border-top:2px solid var(--line);background:var(--paper);padding:28px 0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink3);margin-top:30px}
+footer a{color:var(--ink2)}
+:focus-visible{outline:2px solid var(--clay);outline-offset:2px}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-in">
+  <a class="nav-brand" href="https://closermethod.com">the closer <em>method</em></a>
+  <a class="back" href="/">← home</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">the ai hype detector · 90 seconds</span>
+  <h1 class="serif">How much of your AI is <em>actually working</em> — and how much is theater?</h1>
+  <p>Most AI stacks are mostly performance. Subscriptions you forgot, answers nobody checks, "strategy" that's all talk. Six honest questions and you'll know your hype score — and the one move that makes it pay.</p>
+  <p class="stat">no judgment · honest answers only · your score in 90 seconds</p>
+</div></header>
+
+<main class="quiz"><div class="wrap">
+  <div class="prog"><i id="prog"></i></div>
+  <div id="quizArea"></div>
+  <div class="nav-btns" id="navBtns">
+    <button class="btn" id="backBtn" disabled>← back</button>
+    <button class="btn btn-go" id="nextBtn" disabled>next →</button>
+  </div>
+
+  <div class="result" id="result">
+    <div class="verdict">
+      <span class="band" id="band"></span>
+      <div class="score mono" id="scoreNum"></div>
+      <div class="scorelbl">hype score</div>
+      <h2 class="serif" id="verdictH"></h2>
+      <p id="verdictP"></p>
+    </div>
+    <div class="gate">
+      <h3 class="serif">Get the line-by-line breakdown + the one fix</h3>
+      <p>Exactly where the theater is hiding in your stack, and the single move that turns the most hype into real, billable work. Straight to your inbox.</p>
+      <form id="gateForm">
+        <input type="email" id="email" placeholder="your best email" aria-label="Email" autocomplete="email" required>
+        <button type="submit">Send my breakdown</button>
+      </form>
+      <div class="meta" id="gateMeta">the breakdown, the fix, and how to make AI actually earn its subscription</div>
+    </div>
+    <div class="reveal" id="reveal">
+      <div class="fix">
+        <h4 class="serif">Your highest-leverage move</h4>
+        <p id="fixText"></p>
+      </div>
+      <a class="cta" id="resultCta" href="/cohort/">Turn the theater into real work →</a>
+    </div>
+  </div>
+</div></main>
+
+<footer><div class="wrap">
+  built by the closer method · <a href="https://closermethod.com">closermethod.com</a> · real work beats a good demo
+</div></footer>
+
+<script>
+(function(){function l(){var g=document.createElement('script');g.async=1;g.src='https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD';document.head.appendChild(g);window.dataLayer=window.dataLayer||[];function t(){dataLayer.push(arguments)}window.gtag=t;t('js',new Date());t('config','G-Q2458LX0VD',{page_path:'/hype-detector'});t('event','view_item',{content_name:'hype_detector'});
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','35298849146380570');fbq('track','PageView');}
+if(window.requestIdleCallback){requestIdleCallback(l,{timeout:3000})}else{addEventListener('load',function(){setTimeout(l,1500)})}})();
+</script>
+
+<script>
+(function(){
+  // each answer: hype points (higher = more theater)
+  var Q=[
+    {q:"Of the AI tools you pay for, how many do you actually open every week?",a:[["I'm not even sure what I'm subscribed to",3],["One or two, out of several",2],["Most of them",1],["All of them earn their keep",0]]},
+    {q:"When AI hands you an answer, do you check it before you use it?",a:[["No, I just trust it",3],["Only when it feels off",2],["Usually",1],["Always, there's a step for it",0]]},
+    {q:"Can you point to real time or money AI has saved you?",a:[["Honestly, no",3],["I assume it has",2],["Roughly, yes",1],["Yes, I can name the number",0]]},
+    {q:"Your AI output, could a stranger instantly tell it was AI?",a:[["Yep, it's obviously generic",3],["Probably",2],["Not easily",1],["No, it sounds like me",0]]},
+    {q:"How much of your 'AI strategy' is doing vs. talking about it?",a:[["Mostly talking, posting, planning",3],["A bit of both",2],["Mostly doing",1],["It quietly runs real work",0]]},
+    {q:"Be honest, why did you buy your last AI tool?",a:[["A demo or a thread hyped me up",3],["Everyone else had it",2],["It looked useful",1],["A specific job I needed done",0]]}
+  ];
+  var MAX=18,i=0,ans=Array(Q.length).fill(null);
+  var area=document.getElementById('quizArea'),prog=document.getElementById('prog'),
+      backBtn=document.getElementById('backBtn'),nextBtn=document.getElementById('nextBtn');
+  function render(){
+    var item=Q[i];
+    var h='<div class="card"><div class="qnum">question '+(i+1)+' of '+Q.length+'</div><div class="qtext serif">'+item.q+'</div><div class="opts">';
+    item.a.forEach(function(o,idx){h+='<button class="opt'+(ans[i]===idx?' sel':'')+'" data-idx="'+idx+'"><span class="dot"></span><span>'+o[0]+'</span></button>'});
+    h+='</div></div>';area.innerHTML=h;
+    prog.style.width=Math.round((i/Q.length)*100)+'%';
+    backBtn.disabled=i===0;nextBtn.disabled=ans[i]===null;
+    nextBtn.textContent=i===Q.length-1?'see my hype score →':'next →';
+    Array.prototype.forEach.call(area.querySelectorAll('.opt'),function(b){b.onclick=function(){ans[i]=+b.dataset.idx;render()}});
+  }
+  backBtn.onclick=function(){if(i>0){i--;render()}};
+  nextBtn.onclick=function(){if(ans[i]===null)return;if(i<Q.length-1){i++;render()}else{finish()}};
+  function finish(){
+    var raw=0;ans.forEach(function(a,qi){raw+=Q[qi].a[a][1]});
+    var pct=Math.round(raw/MAX*100); // higher = more hype
+    document.querySelector('.quiz .prog').style.display='none';
+    area.style.display='none';document.getElementById('navBtns').style.display='none';
+    var band=document.getElementById('band'),sc=document.getElementById('scoreNum'),
+        vh=document.getElementById('verdictH'),vp=document.getElementById('verdictP'),
+        fix=document.getElementById('fixText'),cta=document.getElementById('resultCta');
+    sc.textContent=pct+'%';var bucket;
+    if(pct>=60){bucket='theater';band.textContent='mostly theater';band.style.background='#F3DCD5';band.style.color='#7A2E1B';
+      vh.textContent="Right now, it's mostly theater.";
+      vp.textContent="You're paying for AI, posting about AI, planning with AI, and almost none of it is doing real work you could bill for. That's not a you problem, it's a setup problem, and it's the single most common reason AI gets quietly abandoned. It's also the most fixable.";
+      fix.textContent="Kill the subscriptions you don't open. Take the ONE job you do most and wire it for real: a brain doc so it sounds like you, a check before it ships, and a way to see it ran. One real workflow beats five you talk about.";
+      cta.href='/cohort/';
+    } else if(pct>=30){bucket='mixed';band.textContent='half real, half show';band.style.background='#EFE0D6';band.style.color='#8A4A2E';
+      vh.textContent="Half of it is real. Half is show.";
+      vp.textContent="There's genuine work happening, but a chunk of your stack is still performance, tools you don't use, output you can't trust, effort that goes into talking about AI more than shipping with it. The good news: you're close.";
+      fix.textContent="Audit the show half. Drop what you don't open, and pick the single highest-value task that's still 'almost working' and make it bulletproof, context, approval, visibility, before adding anything new.";
+      cta.href='/build/';
+    } else {bucket='real';band.textContent='it actually works';band.style.background='#DCE8DE';band.style.color='#2E5238';
+      vh.textContent="It actually works. Rare.";
+      vp.textContent="Your AI does real, checkable, in-your-voice work, and you can point to what it saves you. You're in the small minority. The move now isn't more tools, it's more leverage from the ones that already earn their keep.";
+      fix.textContent="Templatize what works. Take your one reliable workflow and clone its setup across the next two or three jobs, so the real work compounds instead of resetting every time.";
+      cta.href='/build/';
+    }
+    document.getElementById('result').style.display='block';
+    try{gtag('event','hype_detector_complete',{score:pct,bucket:bucket})}catch(e){}
+    try{fbq('trackCustom','HypeDetectorComplete',{score:pct,bucket:bucket})}catch(e){}
+    window.__bucket=bucket;window.__pct=pct;
+  }
+  document.getElementById('gateForm').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var inp=document.getElementById('email'),btn=this.querySelector('button'),meta=document.getElementById('gateMeta');
+    var email=(inp.value||'').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){inp.style.borderColor='#B5482E';inp.focus();return}
+    var orig=btn.textContent;btn.disabled=true;btn.textContent='sending…';
+    try{
+      var res=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({email:email,source:'hype-detector',fields:{hype_score:window.__pct,bucket:window.__bucket}})});
+      var data=await res.json();
+      if(res.ok&&data.subscriber_id){
+        document.getElementById('reveal').style.display='block';this.style.display='none';
+        meta.textContent="you're in — breakdown on its way";
+        document.getElementById('reveal').scrollIntoView({behavior:'smooth',block:'center'});
+        try{gtag('event','generate_lead',{source:'hype-detector'})}catch(e){}
+        try{fbq('track','Lead',{content_name:'hype_detector'})}catch(e){}
+      }else{btn.disabled=false;btn.textContent=orig;inp.style.borderColor='#B5482E'}
+    }catch(err){btn.disabled=false;btn.textContent=orig;inp.style.borderColor='#B5482E'}
+  });
+  render();
+})();
+</script>
+</body>
+</html>

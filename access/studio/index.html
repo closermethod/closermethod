@@ -49,10 +49,10 @@ gtag('config','G-Q2458LX0VD',{page_path:'/access/studio'});
   var purchaseKey = validSession ? 'studio_sub_' + sessionId : null;
   var alreadyFired = purchaseKey ? localStorage.getItem(purchaseKey) === '1' : false;
   var value = 297; var tierLabel = 'studio-monthly';
-  if (!alreadyFired) {
+  if (validSession && !alreadyFired) {
     fbq('track','Subscribe',{content_name:'AI Builder Studio',content_ids:[tierLabel],value:value,currency:'USD',predicted_ltv:value*12});
     gtag('event','purchase',{
-      transaction_id: sessionId || 'studio-' + Date.now(),
+      transaction_id: sessionId,
       value: value, currency: 'USD',
       items: [{item_id: tierLabel, item_name: 'AI Builder Studio', price: value, quantity: 1}]
     });

@@ -46,6 +46,15 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
 .h1{font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.06;letter-spacing:-.025em;font-weight:600;margin:0 0 14px}
 .h1 i{font-style:normal;color:var(--accent)}
 .lead{font-size:1.08rem;line-height:1.55;color:var(--text-2);margin:0 0 24px;max-width:620px}
+/* ===== above-the-fold offer hook · the lead MUST see the offer + reason-why at peak intent (was buried 3 sections down) ===== */
+.offer-hook{margin:22px 0 8px;padding:18px 18px 20px;border:1px solid rgba(255,107,53,.42);background:linear-gradient(180deg,var(--accent-soft),transparent);border-radius:var(--radius-lg)}
+.oh-line{margin:0 0 14px;font-size:.99rem;line-height:1.55;color:var(--text)}
+.oh-line s{color:var(--text-3)}
+.oh-line b.accent{color:var(--accent)}
+.oh-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:16px 22px;font-family:var(--t-sans);font-weight:600;font-size:1.04rem;line-height:1;color:#0A0A0B;text-decoration:none;border-radius:12px;background:linear-gradient(180deg,var(--accent-hover),var(--accent));box-shadow:0 10px 30px -8px rgba(255,107,53,.6);transition:transform .08s ease}
+.oh-cta:hover{color:#0A0A0B;transform:translateY(-1px)}
+.oh-proof{margin:12px 0 0;text-align:center;font-size:.8rem;line-height:1.45;color:var(--text-2)}
+.oh-alt{margin:10px 0 0;text-align:center;font-family:var(--t-mono);font-size:.78rem;color:var(--text-3)}
 .files{margin:22px 0 0}
 .files h2{font-size:1.02rem;font-weight:600;margin:0 0 4px}
 .files .sub{color:var(--text-2);font-size:.9rem;margin:0 0 16px}
@@ -206,8 +215,16 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
   <div class="wrap">
     <span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
     <p class="eyebrow">email confirmed · your skill is ready</p>
-    <h1 class="h1">your free skill is yours. install it and Claude stops sounding <i>generic</i>.</h1>
-    <p class="lead">this is the single skill that makes Claude write in your voice instead of everyone's. answer five quick questions once (about five minutes), then every output ships in your voice. a finished file, not another chat thread you have to fix.</p>
+    <h1 class="h1">your skill's in your inbox. now make Claude run your <i>whole business</i> in your voice.</h1>
+    <p class="lead">the free skill fixes one thing: your homepage stops sounding generic. but you'll hit the wall the moment you open Claude for the next thing, the cold DM, the pitch, the offer, the launch email, and you're back to re-explaining your voice to a blank chat from scratch. every single time. the toolkit ends that for good.</p>
+
+    <!-- above-the-fold offer hook · surfaces the offer + reason-why at peak intent (the page-cro fix for the 380→22 leak) -->
+    <div class="offer-hook">
+      <p class="oh-line"><b>the toolkit:</b> 27 done-for-you skills, homepage, cold DM, pitch, offer, launch plan and 22 more, every one pre-wired to the full version of the voice doc you just started. Claude knows your voice before you type a word, and each skill ships a <b>finished file</b>, not a prompt. an agency builds this for <s>$13,400+</s> over weeks. <b class="accent">$147 once, yours forever.</b></p>
+      <a class="oh-cta" href="https://buy.stripe.com/dRm6oB8L70gu5yy8tl5Ne0I" data-event="thanks_build_hero_buy_click" rel="noopener">install all 27 skills now · $147 once →</a>
+      <p class="oh-proof">built by eli hitz · 10 years closing enterprise deals (Deel 268%, Criteo 167%) · made-to-work guarantee</p>
+      <p class="oh-alt">grab your free files first ↓</p>
+    </div>
 
     <!-- voice-transform demo · the wow · same prompt, two Claudes (page-cro #1) -->
     <div class="vt reveal" id="vt" aria-label="demo: the same prompt in generic Claude versus Claude running your voice skill">
@@ -232,10 +249,10 @@ a:hover{color:var(--accent);text-decoration-color:var(--accent)}
       <h2>download your four files</h2>
       <p class="sub">one skill, one voice doc, one finished output. start with SKILL.md.</p>
       <div class="dl-grid">
-        <a class="dl" href="https://ai-builder-setup.netlify.app/starter/SKILL.md" download data-event="thanks_build_dl_skill"><span class="nm">SKILL.md<span class="desc">the master skill · install this first</span></span><span class="go">download →</span></a>
-        <a class="dl" href="https://ai-builder-setup.netlify.app/brain-doc-template.md" download data-event="thanks_build_dl_brain"><span class="nm">brain-doc-template.md<span class="desc">5 questions · ~5 min to fill</span></span><span class="go">download →</span></a>
-        <a class="dl" href="https://ai-builder-setup.netlify.app/starter/01-website.md" download data-event="thanks_build_dl_website"><span class="nm">01-website.md<span class="desc">ship a homepage in your voice</span></span><span class="go">download →</span></a>
-        <a class="dl" href="https://ai-builder-setup.netlify.app/starter/INSTALL.md" download data-event="thanks_build_dl_install"><span class="nm">INSTALL.md<span class="desc">the step-by-step setup walkthrough</span></span><span class="go">download →</span></a>
+        <a class="dl" href="/starter/SKILL.md" download data-event="thanks_build_dl_skill"><span class="nm">SKILL.md<span class="desc">the master skill · install this first</span></span><span class="go">download →</span></a>
+        <a class="dl" href="/starter/brain-doc-template.md" download data-event="thanks_build_dl_brain"><span class="nm">brain-doc-template.md<span class="desc">5 questions · ~5 min to fill</span></span><span class="go">download →</span></a>
+        <a class="dl" href="/starter/01-website.md" download data-event="thanks_build_dl_website"><span class="nm">01-website.md<span class="desc">ship a homepage in your voice</span></span><span class="go">download →</span></a>
+        <a class="dl" href="/starter/INSTALL.md" download data-event="thanks_build_dl_install"><span class="nm">INSTALL.md<span class="desc">the step-by-step setup walkthrough</span></span><span class="go">download →</span></a>
       </div>
     </div>
 
@@ -404,7 +421,7 @@ document.querySelectorAll('[data-event]').forEach(function(el){
   el.addEventListener('click',function(){
     var ev=el.getAttribute('data-event');
     gtag('event','cta_click',{cta:ev,page:'/thanks/build'});
-    if(ev==='thanks_build_oto_buy_click'||ev==='xi_oto_buy_click'||ev==='thanks_build_sticky_buy_click'){
+    if(ev==='thanks_build_oto_buy_click'||ev==='xi_oto_buy_click'||ev==='thanks_build_sticky_buy_click'||ev==='thanks_build_hero_buy_click'){
       gtag('event','begin_checkout',{currency:'USD',value:147,items:[{item_name:'AI Builder Toolkit',price:147}],page:'/thanks/build'});
       if(window.fbq)fbq('track','InitiateCheckout',{content_name:'ai-builder-toolkit',value:147,currency:'USD'});
     }

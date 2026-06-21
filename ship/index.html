@@ -182,10 +182,10 @@ a:hover{color:var(--accent)}
 .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Product","name":"AI Builder Toolkit · 21-day Ship Plan","description":"day-by-day 21-day plan to ship your first paying client, plus 27 production-tested Claude skills, brain doc, and made-to-work guarantee. Free 4-file starter pack available.","brand":{"@type":"Brand","name":"Closer Method"},"offers":{"@type":"Offer","price":"97","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://closermethod.com/ship","priceValidUntil":"2026-05-31"},"image":"https://closermethod.com/og/og-ship.png","author":{"@type":"Person","name":"Eli Hitz","jobTitle":"Founder, Closer Method","sameAs":["https://instagram.com/closermethod"]}}
+{"@context":"https://schema.org","@type":"Product","name":"AI Builder Toolkit · 21-day Ship Plan","description":"day-by-day 21-day plan to ship your first paying client, plus 27 production-tested Claude skills, brain doc, and made-to-work guarantee. Free 4-file starter pack available.","brand":{"@type":"Brand","name":"Closer Method"},"offers":{"@type":"Offer","price":"147","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://closermethod.com/ship","priceValidUntil":"2027-12-31"},"image":"https://closermethod.com/og/og-ship.png","author":{"@type":"Person","name":"Eli Hitz","jobTitle":"Founder, Closer Method","sameAs":["https://instagram.com/closermethod"]}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HowTo","name":"How to ship your first paying client in 21 days using Claude","description":"Day-by-day plan using 27 production-tested Claude skills to ship your homepage, build your funnel, design your GTM, and close your first paying client in 21 days.","totalTime":"P21D","estimatedCost":{"@type":"MonetaryAmount","currency":"USD","value":"97"},"step":[
+{"@context":"https://schema.org","@type":"HowTo","name":"How to ship your first paying client in 21 days using Claude","description":"Day-by-day plan using 27 production-tested Claude skills to ship your homepage, build your funnel, design your GTM, and close your first paying client in 21 days.","totalTime":"P21D","estimatedCost":{"@type":"MonetaryAmount","currency":"USD","value":"147"},"step":[
 {"@type":"HowToStep","position":1,"name":"Day 1 · Install + brain doc","text":"Install the 27-skill toolkit. Fill the brain doc template (5 questions about your business). Run the ai-builder-start-here orchestrator."},
 {"@type":"HowToStep","position":2,"name":"Day 2 · Design the offer","text":"Use the ai-builder-pricing-strategy skill to design your 3-tier pricing structure with anchoring psychology."},
 {"@type":"HowToStep","position":3,"name":"Day 3 · Ship the homepage","text":"Use the ai-builder-website skill to ship a single deployable HTML homepage in your voice."},
@@ -560,44 +560,9 @@ a:hover{color:var(--accent)}
     });
   });
 
-  var END = new Date('2020-01-01T00:00:00-07:00').getTime(); // founder window closed · evergreen $147 (flipped 2026-05-31)
-  // AUTO-FLIP (2026-05-29): once the founder deadline passes, swap buy-CTA links + price $97 → $147
-  // automatically · no manual deploy. Surgical (only $97 buy links). Graceful (JS fail = $97 still works).
-  var EVERGREEN_LINK = 'https://buy.stripe.com/dRm6oB8L70gu5yy8tl5Ne0I';
-  var _flipped = false;
-  function autoFlipPrice(){
-    if(_flipped || Date.now() < END) return;
-    _flipped = true;
-    document.querySelectorAll('a[href*="dRm6oB8L70gu5yy8tl5Ne0I"]').forEach(function(a){
-      a.setAttribute('href', EVERGREEN_LINK);
-      a.innerHTML = a.innerHTML.replace(/\$97\b/g, '$147');
-    });
-  }
-  autoFlipPrice();
-  var cdTimer = null;
-  function pad(n){ return n<10 ? '0'+n : ''+n; }
-  function tick(){
-    var ms = END - Date.now();
-    var el1 = document.getElementById('cd');
-    var el2 = document.getElementById('cd2');
-    if(ms <= 0){
-      if(cdTimer) clearInterval(cdTimer);
-      if(el1) el1.textContent = '$147 now live';
-      if(el2) el2.textContent = 'now';
-      autoFlipPrice();
-      return;
-    }
-    var d = Math.floor(ms/86400000);
-    var h = Math.floor((ms%86400000)/3600000);
-    var m = Math.floor((ms%3600000)/60000);
-    var s = Math.floor((ms%60000)/1000);
-    var label;
-    if(ms > 172800000){ label = '$97 ends in ' + d + 'd ' + h + 'h'; }
-    else { label = '$97 ends in ' + (d>0 ? (d+'d ') : '') + pad(h)+':'+pad(m)+':'+pad(s); }
-    if(el1) el1.textContent = label;
-    if(el2) el2.textContent = (d>0 ? (d+' days') : (h+' hours'));
-  }
-  tick(); cdTimer = setInterval(tick, 1000);
+  // Price is evergreen $147 (visible copy, buy links, JSON-LD, and begin_checkout all $147).
+  // Legacy founder-countdown + auto-flip removed 2026-06-06. The deadline (2020) had long passed
+  // and the timer targeted #cd/#cd2 elements that no longer exist (dead code carrying a stale price).
 
   function ga(name, params){
     try{ if(window.gtag) window.gtag('event', name, params||{}); }catch(e){}

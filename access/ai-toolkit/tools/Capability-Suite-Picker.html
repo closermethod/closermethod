@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Adoption Studio · Capability Suite Picker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0e1116;--ink2:#1b212b;--paper:#f7f5f1;--card:#ffffff;--accent:#ff5a3c;--accent2:#1f6feb;--muted:#6b7480;--line:#e7e3da;--good:#1f9d63;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.12;letter-spacing:-.01em}
+  .accent{color:var(--accent)}
+  nav{border-bottom:1px solid var(--line);background:rgba(247,245,241,.9)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .logo{font-family:'Fraunces';font-weight:900;font-size:16px;letter-spacing:-.02em}
+  .logo span{color:var(--accent)}
+  .navmeta{font-size:12px;color:var(--muted)}
+  .stage{padding:44px 0 70px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  h1{font-size:clamp(28px,5vw,42px);font-weight:900;margin:14px 0 0}
+  .sub{font-size:16.5px;color:var(--ink2);max-width:600px;margin:16px 0 0}
+  .progress{height:6px;background:var(--line);border-radius:999px;margin:26px 0 0;overflow:hidden}
+  .progress .bar{height:100%;background:var(--accent);width:0;transition:width .3s}
+  .step{display:none}
+  .step.on{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .qcount{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin-top:30px}
+  .qtask{font-family:'Fraunces';font-size:clamp(22px,3.4vw,30px);font-weight:600;margin:8px 0 4px}
+  .qhint{font-size:14.5px;color:var(--muted);margin-bottom:22px}
+  .opts{display:grid;gap:10px}
+  .opt{display:flex;align-items:center;gap:14px;border:1.5px solid var(--line);border-radius:12px;padding:15px 18px;background:#fff;cursor:pointer;transition:border-color .15s,background .15s;font-size:15.5px;font-weight:500}
+  .opt:hover{border-color:var(--accent)}
+  .opt.sel{border-color:var(--accent);background:#fff7f5}
+  .opt .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--line);flex:0 0 auto}
+  .opt.sel .dot{border-color:var(--accent);background:var(--accent);box-shadow:inset 0 0 0 3px #fff}
+  .opt .box{width:18px;height:18px;border-radius:5px;border:2px solid var(--line);flex:0 0 auto;display:flex;align-items:center;justify-content:center}
+  .opt.sel .box{border-color:var(--accent);background:var(--accent)}
+  .opt.sel .box::after{content:"";width:9px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg);margin-top:-2px}
+  .opt .h{font-size:12.5px;color:var(--muted);font-weight:500;margin-left:auto}
+  .navbtns{display:flex;justify-content:space-between;margin-top:30px;gap:12px}
+  .btn{font-weight:600;font-size:15px;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;font-family:inherit}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.primary:hover{background:#e8472b}
+  .btn.primary:disabled{background:#f1c3b8;cursor:not-allowed}
+  .btn.ghost{background:transparent;color:var(--muted);border:1.5px solid var(--line)}
+  .btn.ghost:hover{color:var(--ink)}
+  /* intro */
+  .startcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;margin-top:26px}
+  .startcard ul{list-style:none;margin-top:6px}
+  .startcard li{padding:9px 0 9px 26px;position:relative;font-size:15px;color:var(--ink2);border-bottom:1px solid var(--line)}
+  .startcard li:last-child{border-bottom:none}
+  .startcard li::before{content:"";position:absolute;left:3px;top:17px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  /* results */
+  .scorehead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-top:6px}
+  .section-h{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin:34px 0 2px}
+  .reslist{margin-top:8px}
+  .rcard{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin-top:12px;border-left:4px solid var(--accent2)}
+  .rcard .job{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2)}
+  .rcard h3{font-family:'Fraunces';font-size:18px;font-weight:600;margin:4px 0 2px}
+  .rcard .picks{font-size:14px;font-weight:600;color:var(--ink);margin-top:2px}
+  .rcard p{font-size:14.5px;color:var(--ink2);margin-top:9px}
+  .rcard .tag{display:inline-block;font-size:11.5px;font-weight:700;color:var(--accent2);background:#eaf1fe;border-radius:999px;padding:3px 10px;margin-top:11px}
+  .one-note{background:#fff7f5;border:1px solid #ffd9cf;border-radius:16px;padding:24px;margin-top:30px}
+  .one-note h3{font-size:21px;font-weight:600}
+  .one-note p{font-size:14.5px;color:var(--ink2);margin-top:8px}
+  .one-note .pickone{font-weight:700;color:var(--accent);font-size:16px;margin-top:12px}
+  .guard{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-top:14px;font-size:13.5px;color:var(--ink2)}
+  .guard b{color:var(--accent)}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  .restart{margin-top:22px;text-align:center}
+  .restart a{font-size:13.5px;color:var(--muted);text-decoration:underline;cursor:pointer}
+  .miniref{font-size:11.5px;color:var(--muted);margin-top:26px;border-top:1px solid var(--line);padding-top:14px}
+  @media print{
+    nav,.restart,.navbtns,.actions{display:none}
+    body{background:#fff}
+    .stage{padding:10px 0}
+    .rcard,.one-note,.guard,.startcard{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">AI Adoption<span> Studio</span></div>
+  <div class="navmeta">Capability Suite Picker · ~1 minute</div>
+</div></nav>
+
+<div class="stage"><div class="wrap">
+
+  <!-- INTRO -->
+  <div class="step on" id="s-intro">
+    <div class="eyebrow">Free, no signup to start</div>
+    <h1>You do not need fifty tools. You need a <span class="accent">few</span> you actually use.</h1>
+    <p class="sub">Most people drown in AI apps and use none of them. This builds the opposite: a small, curated starter suite (4 to 6 tools, no more) chosen for the way you actually work, each with one clear job. Less is the whole point.</p>
+    <div class="startcard">
+      <ul>
+        <li>Three quick questions about your work and where your time goes.</li>
+        <li>You get a short, named tool set, not an overwhelming list of apps.</li>
+        <li>Plus the one tool to start with first, so you actually adopt it.</li>
+      </ul>
+    </div>
+    <div class="navbtns"><span></span><button class="btn primary" onclick="start()">Build my suite &rarr;</button></div>
+    <p class="miniref">Built on the same restraint the Studio uses in its workshops: a small curated tool set you will use beats a giant stack you will not. Tool categories are general and well known. Pick what fits, ignore the rest.</p>
+  </div>
+
+  <!-- QUESTIONS -->
+  <div class="step" id="s-q">
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <div class="qcount" id="qcount">Question 1 of 3</div>
+    <div class="qtask" id="qtask">Task</div>
+    <div class="qhint" id="qhint">hint</div>
+    <div class="opts" id="opts"></div>
+    <div class="navbtns">
+      <button class="btn ghost" id="backbtn" onclick="back()">&larr; Back</button>
+      <button class="btn primary" id="nextbtn" onclick="next()" disabled>Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="step" id="s-res">
+    <div class="eyebrow">Your starter AI Capability Suite</div>
+    <div class="scorehead">
+      <h1 id="reslede">Your starter suite</h1>
+    </div>
+    <p class="sub" id="ressub"></p>
+
+    <div class="section-h">The short list</div>
+    <div class="reslist" id="suite"></div>
+
+    <div class="one-note">
+      <h3>Start with just ONE.</h3>
+      <p>The fastest way to fail at this is to install everything at once. Pick a single tool, use it on real work for a couple of weeks until it is a habit, then add the next. A small suite you actually use beats a big stack you do not.</p>
+      <div class="pickone" id="pickone">Start with: a general assistant.</div>
+    </div>
+
+    <div class="guard"><b>One guardrail:</b> keep a human on anything a client sees before it ships. AI drafts and speeds things up, a person owns the final word.</div>
+
+    <div class="actions">
+      <button class="btn primary" onclick="window.print()">Print / Save as PDF</button>
+      <button class="btn ghost" onclick="restart()">Start over</button>
+    </div>
+    <p class="miniref">Capability Suite Picker by AI Adoption Studio. Your answers stay in your browser. Tool names are well-known examples in their category, not endorsements or a complete list. Availability noted for North America and the UK.</p>
+  </div>
+
+</div></div>
+
+<script>
+// Three questions. q0 = single choice, q1 = multi-select, q2 = single choice.
+var QUESTIONS = [
+  {k:'work', multi:false, count:'Question 1 of 3', t:'What is your main work?', h:'Pick the closest fit. It shapes the shape of your suite.',
+   opts:[
+     {v:'agency', label:'Agency or creative studio'},
+     {v:'consulting', label:'Consulting or professional services'},
+     {v:'ecommerce', label:'E-commerce or retail'},
+     {v:'coaching', label:'Coaching or solo operator'},
+     {v:'other', label:'Something else'}
+   ]},
+  {k:'time', multi:true, count:'Question 2 of 3', t:'What eats most of your time?', h:'Choose all that apply. This is what we will hand to AI first.',
+   opts:[
+     {v:'writing', label:'Writing and content'},
+     {v:'reports', label:'Client reports and data'},
+     {v:'meetings', label:'Meetings and notes'},
+     {v:'research', label:'Research'},
+     {v:'admin', label:'Admin and scheduling'},
+     {v:'design', label:'Design and visuals'}
+   ]},
+  {k:'comfort', multi:false, count:'Question 3 of 3', t:'How comfortable are you with new tools?', h:'Honest answer. Beginners get simpler picks, power users get automation.',
+   opts:[
+     {v:'beginner', label:'Beginner', h:'New to this'},
+     {v:'comfortable', label:'Comfortable', h:'I get by'},
+     {v:'power', label:'Power user', h:'Bring on the automation'}
+   ]}
+];
+
+// answers: work = string, time = array, comfort = string
+var answers = {work:null, time:[], comfort:null};
+var idx = 0;
+
+function start(){ show('s-q'); render(); }
+function show(id){ document.querySelectorAll('.step').forEach(function(s){s.classList.remove('on')}); document.getElementById(id).classList.add('on'); window.scrollTo(0,0); }
+
+function isAnswered(i){
+  var q = QUESTIONS[i];
+  if(q.multi) return answers[q.k].length > 0;
+  return answers[q.k] !== null;
+}
+
+function render(){
+  var q = QUESTIONS[idx];
+  document.getElementById('qcount').textContent = q.count;
+  document.getElementById('qtask').textContent = q.t;
+  document.getElementById('qhint').textContent = q.h;
+  document.getElementById('bar').style.width = (idx/QUESTIONS.length*100)+'%';
+  var box = document.getElementById('opts'); box.innerHTML='';
+  q.opts.forEach(function(opt){
+    var selected;
+    if(q.multi){ selected = answers[q.k].indexOf(opt.v) >= 0; }
+    else { selected = answers[q.k] === opt.v; }
+    var el = document.createElement('div');
+    el.className = 'opt'+(selected?' sel':'');
+    var marker = q.multi ? '<span class="box"></span>' : '<span class="dot"></span>';
+    el.innerHTML = marker+'<span>'+opt.label+'</span>'+(opt.h?'<span class="h">'+opt.h+'</span>':'');
+    el.onclick = function(){
+      if(q.multi){
+        var arr = answers[q.k];
+        var at = arr.indexOf(opt.v);
+        if(at>=0){ arr.splice(at,1); } else { arr.push(opt.v); }
+      } else {
+        answers[q.k] = opt.v;
+      }
+      render();
+    };
+    box.appendChild(el);
+  });
+  document.getElementById('backbtn').style.visibility = idx===0?'hidden':'visible';
+  document.getElementById('nextbtn').disabled = !isAnswered(idx);
+  document.getElementById('nextbtn').textContent = idx===QUESTIONS.length-1 ? 'See my suite →' : 'Next →';
+}
+function next(){ if(!isAnswered(idx)) return; if(idx<QUESTIONS.length-1){ idx++; render(); } else { results(); } }
+function back(){ if(idx>0){ idx--; render(); } }
+
+// Build the curated suite. Each entry has a stable id so we never duplicate a job.
+function buildSuite(){
+  var work = answers.work;
+  var time = answers.time;
+  var comfort = answers.comfort;
+  var has = function(t){ return time.indexOf(t) >= 0; };
+
+  var suite = [];
+  var seen = {};
+  function add(card){
+    if(seen[card.id]) return;
+    if(suite.length >= 6) return;
+    seen[card.id] = true;
+    suite.push(card);
+  }
+
+  // 1. Always: a general assistant. This is the spine of any suite.
+  var assistantWhy = 'The one tool that does the most jobs. But "use ChatGPT" is not the advice, setup is. The difference between generic output and genuinely useful is this: build a custom GPT (ChatGPT) or a Project (Claude) and load your voice samples, FAQs, and offers into it once. Now every answer starts from your business, not a blank slate. That single move is what almost no one does, and it is the whole game.';
+  if(comfort === 'beginner'){
+    assistantWhy = 'Start here. A single chat assistant covers most everyday work (drafting, rewriting, summarising) without any setup. Learn this one well before adding anything else.';
+  }
+  add({id:'assistant', job:'General assistant', picks:'ChatGPT (as a custom GPT) or Claude (as a Project), set up with your context', tag:'The spine of your suite', why:assistantWhy});
+
+  // 2. Time-driven jobs, ordered by what they picked.
+  if(has('meetings')){
+    add({id:'meetings', job:'Meeting notes', picks:'Otter or Fathom',
+      tag:'Because you flagged meetings', why:'Records and transcribes calls, then turns them into a clean summary and action items. It hands you back the time you spend writing notes after every meeting.'});
+  }
+  if(has('research')){
+    add({id:'research', job:'Research', picks:'Perplexity',
+      tag:'Because you flagged research', why:'An answer engine that searches the live web and cites its sources, so you start from a structured summary instead of a blank page. Always spot-check the cited sources before you repeat a claim.'});
+  }
+  if(has('design')){
+    add({id:'design', job:'Design and visuals', picks:'Canva',
+      tag:'Because you flagged design', why:'Templates and simple AI image and layout tools for social posts, decks, and simple graphics without a designer. Good enough for fast internal and social work.'});
+  }
+  if(has('writing')){
+    // Beginners get a grammar aid; everyone else leans on the assistant they already have.
+    if(comfort === 'beginner'){
+      add({id:'writing', job:'Writing polish', picks:'Grammarly',
+        tag:'Because you flagged writing', why:'A grammar and tone checker that sits in your browser and cleans up everything you type. A gentle, low-effort second pair of eyes on client-facing writing.'});
+    } else {
+      add({id:'writing', job:'Writing and editing', picks:'Your assistant (ChatGPT or Claude) plus Grammarly for a final pass',
+        tag:'Because you flagged writing', why:'For drafts and rewrites, lean on the assistant you already have rather than buying another writing app. Add a light grammar checker only for the final polish on anything a client reads.'});
+    }
+  }
+
+  // 3. Automation, only for the people who can run it.
+  var wantsAutomation = (comfort === 'power') || (comfort === 'comfortable' && has('admin'));
+  if(wantsAutomation && (has('admin') || has('reports') || work === 'ecommerce')){
+    add({id:'automation', job:'Automation', picks:'Zapier or Make',
+      tag:'Because you can run it', why:'Connects your tools so repetitive steps (moving data, sending the same update, filing things) run on a rule you set once. Worth it only when you have a repeat task that is truly identical every time.'});
+  }
+
+  // 4. Reports and data: a lightweight pick if not already covered by automation.
+  if(has('reports') && !seen['automation']){
+    add({id:'reports', job:'Reports and data', picks:'Your assistant (ChatGPT or Claude) with your exported numbers',
+      tag:'Because you flagged reports', why:'Paste last period\'s report as the template and this period\'s figures, and it rebuilds the recurring report in your structure. Never let it invent a number, give it the real export.'});
+  }
+
+  // 5. E-commerce nuance: a content angle if they have room and have not got writing.
+  if(work === 'ecommerce' && !seen['writing'] && !has('writing') && suite.length < 5){
+    add({id:'writing', job:'Product and marketing copy', picks:'Your assistant (ChatGPT or Claude)',
+      tag:'Useful for retail', why:'Use the assistant you already have to draft product descriptions, listing copy, and promo emails from your own examples. No extra tool needed, just a saved prompt.'});
+  }
+
+  // Floor: make sure we always hand back at least 4 tools with clear jobs.
+  if(suite.length < 4){
+    add({id:'meetings', job:'Meeting notes', picks:'Otter or Fathom',
+      tag:'A common first win', why:'Even if meetings are not your biggest drain, turning calls into summaries and action items is one of the easiest, lowest-risk wins in any small team.'});
+  }
+  if(suite.length < 4){
+    add({id:'research', job:'Research', picks:'Perplexity',
+      tag:'A handy add', why:'A cited answer engine for the background reading and quick checks every business does. Low effort to start, useful most weeks.'});
+  }
+
+  return suite.slice(0,6);
+}
+
+function results(){
+  show('s-res');
+  document.getElementById('bar').style.width = '100%';
+  var suite = buildSuite();
+
+  var WORK_LABEL = {agency:'an agency or creative studio', consulting:'a consulting or services business', ecommerce:'an e-commerce or retail business', coaching:'a coaching or solo operation', other:'your business'};
+  var comfortLabel = answers.comfort === 'beginner' ? 'kept simple, since you are getting started' : (answers.comfort === 'power' ? 'with automation in the mix, since you are a power user' : 'balanced for someone comfortable with tools');
+
+  document.getElementById('ressub').textContent = 'For '+(WORK_LABEL[answers.work]||'your business')+', here is a starter suite of '+suite.length+' tool'+(suite.length>1?'s':'')+', '+comfortLabel+'. That is the whole list, on purpose. A few you use beats fifty you do not.';
+
+  var box = document.getElementById('suite'); box.innerHTML='';
+  suite.forEach(function(c){
+    var el = document.createElement('div'); el.className = 'rcard';
+    el.innerHTML = '<div class="job">'+c.job+'</div>'+
+      '<h3>'+c.picks+'</h3>'+
+      '<p>'+c.why+'</p>'+
+      '<span class="tag">'+c.tag+'</span>';
+    box.appendChild(el);
+  });
+
+  // Start-with-one: the assistant if present, otherwise the first card.
+  var first = suite[0];
+  for(var i=0;i<suite.length;i++){ if(suite[i].id==='assistant'){ first = suite[i]; break; } }
+  document.getElementById('pickone').textContent = 'Start with: '+first.picks+' (your '+first.job.toLowerCase()+'). Get that into your daily habit first, then add the next.';
+}
+
+function restart(){ answers = {work:null, time:[], comfort:null}; idx=0; show('s-intro'); }
+</script>
+</body>
+</html>

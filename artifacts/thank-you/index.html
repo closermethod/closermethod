@@ -17,12 +17,17 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);
 gtag('js',new Date());
 gtag('config','G-Q2458LX0VD',{page_path:'/artifacts/thank-you'});
 (function(){
-  var KEY='cm_ga_purchase_toolkit';
-  try{if(localStorage.getItem(KEY))return;}catch(e){}
+  // This page is force-301'd to /access/toolkit/ today, but keep it leak-safe if ever revived:
+  // fire ONLY on a real Stripe session_id (never ?paid/?unlocked, which minted phantom $97
+  // purchases) and use the session id as transaction_id so it dedupes against the server
+  // stripe-buyer-webhook fire instead of minting a fresh id each load. Tightened 2026-06-07.
   var qs=new URLSearchParams(window.location.search);
-  if(!(qs.get('paid')==='true'||qs.get('session_id')||qs.get('unlocked')==='true'))return;
+  var sessionId=qs.get('session_id')||'';
+  if(!/^cs_(live|test)_[a-zA-Z0-9]{20,}$/.test(sessionId))return;
+  var KEY='cm_ga_purchase_toolkit_'+sessionId;
+  try{if(localStorage.getItem(KEY))return;}catch(e){}
   gtag('event','purchase',{
-    transaction_id: 'toolkit_'+Date.now(),
+    transaction_id: sessionId,
     value: 97,
     currency: 'USD',
     items: [{item_id:'ai_builder_toolkit',item_name:'AI Builder Toolkit',price:97,quantity:1}]
@@ -44,10 +49,12 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '35298849146380570');
 fbq('track', 'PageView');
 (function(){
-  var KEY='cm_fb_purchase_toolkit';
-  try{if(localStorage.getItem(KEY))return;}catch(e){}
+  // Same leak-safe gate as the GA4 block above: real Stripe session_id only, never ?paid/?unlocked.
   var qs=new URLSearchParams(window.location.search);
-  if(!(qs.get('paid')==='true'||qs.get('session_id')||qs.get('unlocked')==='true'))return;
+  var sessionId=qs.get('session_id')||'';
+  if(!/^cs_(live|test)_[a-zA-Z0-9]{20,}$/.test(sessionId))return;
+  var KEY='cm_fb_purchase_toolkit_'+sessionId;
+  try{if(localStorage.getItem(KEY))return;}catch(e){}
   fbq('track', 'Purchase', { value: 97.00, currency: 'USD', content_name: 'AI Builder Toolkit' });
   try{localStorage.setItem(KEY,'1');}catch(e){}
 })();

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Department You Own · closermethod</title>
+<meta name="description" content="Claude, set up in your accounts to run the jobs that leak money. You approve everything it sends. Built for you, in writing, and you own every file.">
+<link rel="canonical" href="https://closermethod.com/ai-department/">
+<meta property="og:title" content="The AI Department You Own">
+<meta property="og:description" content="It drafts. You approve. It sends. Set up for you, in your accounts, in writing.">
+<meta property="og:url" content="https://closermethod.com/ai-department/">
+<meta property="og:image" content="https://closermethod.com/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F4EE; --card:#FFFFFF; --ink:#14181B; --ink-soft:#454D53;
+  --ledger:#176446; --ledger-soft:#E7F0EB; --approve:#B7791F; --approve-soft:#FAF3E6;
+  --line:#E2DDD2; --mono:ui-monospace,'SF Mono',Menlo,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',-apple-system,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+.serif{font-family:'Fraunces',Georgia,serif}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ledger);font-weight:600;padding-top:36px}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:650;font-size:clamp(34px,8vw,52px);line-height:1.08;margin:14px 0 18px;letter-spacing:-.01em}
+.sub{font-size:18px;color:var(--ink-soft);max-width:560px}
+.sub strong{color:var(--ink);font-weight:600}
+section{margin-top:64px}
+h2{font-family:'Fraunces',Georgia,serif;font-weight:650;font-size:clamp(24px,5.4vw,32px);line-height:1.18;margin-bottom:10px}
+.lede{color:var(--ink-soft);margin-bottom:24px}
+/* demo panel */
+.demo{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:34px;box-shadow:0 1px 2px rgba(20,24,27,.04),0 12px 32px -16px rgba(20,24,27,.12)}
+.demo-head{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);background:#FBFAF7}
+.demo-head .dot{width:9px;height:9px;border-radius:50%;background:var(--ledger);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.demo-head span{font-family:var(--mono);font-size:12px;color:var(--ink-soft)}
+.feed{padding:18px 16px 22px;display:flex;flex-direction:column;gap:14px;min-height:330px}
+.evt{opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s}
+.evt.show{opacity:1;transform:none}
+.stamp{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);margin-bottom:5px}
+.bubble{border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14.5px;background:#FBFAF7}
+.bubble.lead{border-left:3px solid var(--ink)}
+.bubble.draft{border-left:3px solid var(--approve);background:var(--approve-soft)}
+.bubble .who{font-weight:600;font-size:12.5px;margin-bottom:3px}
+.gate{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.gate .hold{font-family:var(--mono);font-size:12px;color:var(--approve);font-weight:600}
+.approve-btn{font-family:'Inter',sans-serif;font-weight:600;font-size:14px;background:var(--ink);color:#fff;border:0;border-radius:9px;padding:10px 18px;cursor:pointer;transition:transform .15s}
+.approve-btn:active{transform:scale(.97)}
+.ledger-line{font-family:var(--mono);font-size:13px;color:var(--ledger);background:var(--ledger-soft);border-radius:9px;padding:10px 13px;font-weight:600}
+.demo-cap{font-size:14px;color:var(--ink-soft);padding:0 16px 18px}
+.demo-cap strong{color:var(--ink)}
+/* desks */
+.desk{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:12px}
+.desk h3{font-size:16.5px;font-weight:600;margin-bottom:4px}
+.desk p{font-size:14.5px;color:var(--ink-soft)}
+.desk .ret{display:inline-block;margin-top:9px;font-family:var(--mono);font-size:12px;color:var(--ledger);background:var(--ledger-soft);border-radius:6px;padding:3px 9px;font-weight:600}
+/* math strip */
+.math{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;display:flex;flex-direction:column;gap:18px}
+.fact .n{font-family:var(--mono);font-weight:600;font-size:22px;color:var(--ledger)}
+.fact .d{font-size:14px;color:var(--ink-soft);max-width:520px}
+.fact .d em{font-style:normal;color:var(--ink);font-weight:600}
+.src{font-size:12px;color:#8A857A}
+/* steps */
+.step{display:flex;gap:14px;margin-bottom:22px}
+.step .num{font-family:var(--mono);font-weight:600;color:var(--ledger);font-size:14px;border:1px solid var(--line);background:var(--card);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step h3{font-size:17px;font-weight:600;margin-bottom:3px}
+.step p{font-size:14.5px;color:var(--ink-soft)}
+/* price + cta */
+.price-card{background:var(--ink);color:#F4F1E9;border-radius:18px;padding:30px 22px;margin-top:30px}
+.price-card .serif{font-size:clamp(22px,5vw,28px);font-weight:650;line-height:1.2}
+.price-card .own{font-family:var(--mono);font-size:13px;color:#B9C9BF;margin:14px 0 22px}
+.cta{display:block;text-align:center;background:#F4C752;color:#14181B;font-weight:600;font-size:16.5px;border-radius:12px;padding:16px 18px;text-decoration:none;margin-bottom:12px;transition:transform .15s}
+.cta:active{transform:scale(.98)}
+.cta.ghost{background:transparent;border:1px solid #4A524E;color:#F4F1E9;font-weight:500}
+/* form */
+.writein{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 20px;margin-top:16px}
+.writein label{font-size:13.5px;font-weight:600;display:block;margin-bottom:6px}
+.writein input[type=email],.writein textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:13px 14px;font-family:'Inter',sans-serif;font-size:15px;background:#FBFAF7;margin-bottom:14px}
+.writein textarea{resize:vertical;min-height:64px}
+.writein input:focus,.writein textarea:focus{outline:2px solid var(--ledger);border-color:transparent}
+.send-btn{width:100%;background:var(--ledger);color:#fff;border:0;border-radius:11px;padding:15px;font-size:16px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif}
+.form-note{font-size:12.5px;color:var(--ink-soft);margin-top:10px;text-align:center}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+.ok-msg{display:none;background:var(--ledger-soft);color:var(--ledger);border-radius:11px;padding:16px;font-weight:600;font-size:15px;text-align:center}
+/* faq */
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{font-weight:600;font-size:15.5px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::after{content:'+';font-family:var(--mono);color:var(--ledger);font-size:18px}
+details[open] summary::after{content:'·'}
+details p{font-size:14.5px;color:var(--ink-soft);margin-top:9px}
+/* who */
+.who-block{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.who-block p{font-size:14.5px;color:var(--ink-soft)}
+.who-block strong{color:var(--ink)}
+footer{margin:72px 0 44px;border-top:1px solid var(--line);padding-top:22px;font-size:13px;color:#8A857A}
+footer a{color:var(--ledger);text-decoration:none}
+@media(min-width:760px){
+  .desks-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .desk{margin-bottom:0}
+  .math{flex-direction:row;justify-content:space-between;gap:26px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<p class="eyebrow">closermethod · systems for owners</p>
+<h1>your business just hired an AI&nbsp;department.</h1>
+<p class="sub">claude, set up <strong>in your accounts</strong> to run the jobs that leak money, and <strong>you approve everything</strong> before a customer sees a word. i set it up for you, the whole thing runs in writing, and you own every file when i leave.</p>
+
+<!-- LIVE DEMO -->
+<div class="demo" id="demo">
+  <div class="demo-head"><span class="dot"></span><span>follow-up desk · live view · what it's doing right now</span></div>
+  <div class="feed" id="feed">
+    <div class="evt" id="e1">
+      <div class="stamp">11:38 pm · friday · new inquiry</div>
+      <div class="bubble lead"><div class="who">website form · jamie r.</div>"hey, do you do water heater replacements? ours died tonight, need someone this week."</div>
+    </div>
+    <div class="evt" id="e2">
+      <div class="stamp">11:39 pm · drafted in your voice · nothing sent yet</div>
+      <div class="bubble draft"><div class="who">draft reply</div><span id="typer"></span></div>
+    </div>
+    <div class="evt" id="e3">
+      <div class="gate"><span class="hold">⏸ waiting on your approval</span><button class="approve-btn" id="approveBtn" type="button">approve &amp; send</button></div>
+    </div>
+    <div class="evt" id="e4">
+      <div class="ledger-line">✓ sent 11:42 pm · 4 minutes after the lead landed · day-2 and day-5 follow-ups queued, also waiting on you</div>
+    </div>
+    <div class="evt" id="e5">
+      <div class="ledger-line" style="background:#FAF3E6;color:#8A5B12">ledger · one recovered job like this: $2,000–4,000. it used to sit till monday.</div>
+    </div>
+  </div>
+  <p class="demo-cap"><strong>that's the whole trick.</strong> it drafts, you approve, it sends. you can read every word before a customer ever sees it. no black box, and nothing moves without you.</p>
+</div>
+
+<!-- DESKS -->
+<section>
+  <h2>the desks, and what each one returns</h2>
+  <p class="lede">every desk is claude set up around one job your week already contains. built in your accounts. plain files you can open and read.</p>
+  <div class="desks-grid">
+    <div class="desk"><h3>the follow-up desk</h3><p>every inquiry gets a drafted reply and a 3-touch follow-up within minutes, waiting on your approval. the friday-night lead stops dying over the weekend.</p><span class="ret">returns: the jobs you never saw leak</span></div>
+    <div class="desk"><h3>the inbox desk</h3><p>your inbox triaged every morning: what needs you, what's drafted and ready to approve, what's noise. you read summaries, not threads.</p><span class="ret">returns: ~5 hrs/week</span></div>
+    <div class="desk"><h3>the meeting desk</h3><p>messy notes or transcripts in, a clean checkable list out: decisions, owners, deadlines, what's still open. nothing agreed on a call evaporates by thursday.</p><span class="ret">returns: the dropped balls</span></div>
+    <div class="desk"><h3>the content desk</h3><p>one idea you actually believe becomes a week of posts in your voice. you approve the keepers, you publish. visibility without the blank page.</p><span class="ret">returns: ~4 hrs/week</span></div>
+  </div>
+</section>
+
+<!-- MATH -->
+<section>
+  <h2>the 90-second math</h2>
+  <div class="math">
+    <div class="fact"><div class="n">$2,000–4,000</div><div class="d"><em>one recovered job</em> for a service business. the follow-up desk exists to catch exactly these.</div></div>
+    <div class="fact"><div class="n">$3.70 : $1</div><div class="d">what IDC and Microsoft measured back <em>per dollar</em> businesses put into generative AI, over about 13 months. a follow-up build touches revenue on day one.</div></div>
+    <div class="fact"><div class="n">95%</div><div class="d">of generative AI pilots show <em>no measurable return</em> (MIT, 2025). almost never because of the tool. nobody redesigned the workflow around it. <em>that's the part i do.</em></div></div>
+  </div>
+  <p class="src" style="margin-top:10px">sources: IDC/Microsoft 2024 GenAI business value study · MIT NANDA 2025</p>
+</section>
+
+<!-- HOW -->
+<section>
+  <h2>how it runs · all of it in writing</h2>
+  <div class="step"><div class="num">1</div><div><h3>the $500 diagnostic</h3><p>i map your business: every recurring task, scored by hours and risk. you get the map either way, and it names the one build worth doing first. some things aren't worth automating. i'll tell you that too.</p></div></div>
+  <div class="step"><div class="num">2</div><div><h3>i build your first desk</h3><p>in your accounts, on your real work, approval gates on everything. nothing touches a customer or a dollar without your sign-off. you watch it run on your actual leads before we're done.</p></div></div>
+  <div class="step"><div class="num">3</div><div><h3>you own it</h3><p>plain files in your account, readable in english, yours forever. made to work, or i keep working until it does.</p></div></div>
+</section>
+
+<!-- PRICE / CTA -->
+<section id="start">
+  <div class="price-card">
+    <div class="serif">the diagnostic · $500, one-time</div>
+    <div class="own">one-time. yours. lives in your accounts, not on my server.</div>
+    <a class="cta" id="buyBtn" href="https://buy.stripe.com/8x2eV76CZaV81ii24X5Ne0R">start with the diagnostic · $500</a>
+    <a class="cta ghost" href="#writein">or start in writing · tell me what eats your week</a>
+    <p style="font-family:var(--mono);font-size:12.5px;color:#B9C9BF;text-align:center;margin-top:16px">rather install desk #1 yourself first? <a href="https://buy.stripe.com/fZuaERe5re7kgdc4d55Ne0S" style="color:#F4C752;text-decoration:none;font-weight:600">the follow-up desk · $47</a> · it counts toward the diagnostic for 30 days</p>
+  </div>
+  <div class="writein" id="writein">
+    <form id="leadForm" autocomplete="on">
+      <label for="biz">what eats your week? (one line is plenty)</label>
+      <textarea id="biz" name="biz" maxlength="280" placeholder="e.g. quoting jobs, chasing invoices, the inbox..."></textarea>
+      <label for="email">where should i reply?</label>
+      <input type="email" id="email" name="email" required placeholder="you@yourbusiness.com">
+      <div class="hp"><label>website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button class="send-btn" type="submit">send it · i reply in writing</button>
+      <p class="form-note">i read every note myself and answer with an honest take on whether your thing is worth automating.</p>
+    </form>
+    <div class="ok-msg" id="okMsg">got it. check your inbox. first note from me is already on the way.</div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section>
+  <h2>who builds it</h2>
+  <div class="who-block"><p><strong>elisabeth hitz.</strong> 10+ years of enterprise sales in new york, deals closed at Deel, Criteo, HBO, Bloomberg, now building owner-side claude systems and showing the builds in public. the same follow-up desk above runs my own pipeline. <strong>everything ships with the made-to-work guarantee:</strong> if a build doesn't run for your business, i rewrite it with you until it does.</p></div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <h2>asked every week</h2>
+  <details><summary>do i need to be technical?</summary><p>no. if you can approve an email, you can run your department. the building, wiring, and testing is my job; reading drafts and clicking approve is yours.</p></details>
+  <details><summary>what if it sends something wrong?</summary><p>it can't. sending is yours. every desk drafts and then stops at an approval gate. you'll always know why it wrote what it wrote, and nothing reaches a customer until you've read it.</p></details>
+  <details><summary>what does it cost to run after you leave?</summary><p>your claude plan (most owners run the $20–100/month tier they already have). the desks are built so your tokens last the month: short, scoped jobs, not always-on agents burning in the background.</p></details>
+  <details><summary>how fast is the diagnostic?</summary><p>it runs in writing over a few days. you answer questions about your actual week, i come back with the map and the first build named. the first desk is typically running the same week you approve it.</p></details>
+  <details><summary>what if my business is too weird for this?</summary><p>then the diagnostic will say so, and you'll still own the map. when something isn't worth automating i say that in writing. and what i do build is made to work, rewritten with you until it runs.</p></details>
+</section>
+
+<footer>
+  <p>want the numbers first? the free map is at <a href="/roi-map">closermethod.com/roi-map</a> · the diagnostic also lives at <a href="/hire">/hire</a></p>
+  <p style="margin-top:8px">© 2026 the closer method · barcelona &amp; new york · <a href="https://instagram.com/closermethod">@closermethod</a></p>
+</footer>
+</div>
+
+<!-- GA4 + Meta · lead events only, never purchase -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-Q2458LX0VD');
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','35298849146380570');fbq('track','PageView');
+</script>
+<script>
+(function(){
+  // demo sequence
+  var draft = "hi jamie, sorry about the water heater, that's a rough friday. yes, we replace them, and we can be out this week. two quick things so i can quote you straight: is it gas or electric, and roughly how old? if you're not sure, a photo of the unit works. earliest slot right now is tuesday 8am. -mike";
+  var typer = document.getElementById('typer');
+  function show(id,delay){ setTimeout(function(){ document.getElementById(id).classList.add('show'); }, delay); }
+  var typed = false;
+  function typeDraft(){
+    if (typed) return; typed = true;
+    var i = 0;
+    var t = setInterval(function(){
+      typer.textContent = draft.slice(0, i);
+      i += 3;
+      if (i > draft.length + 2) { clearInterval(t); typer.textContent = draft; show('e3', 250); }
+    }, 18);
+  }
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(en){ if(en.isIntersecting){ show('e1',200); setTimeout(function(){ document.getElementById('e2').classList.add('show'); typeDraft(); },1100); io.disconnect(); } });
+  },{threshold:.35});
+  io.observe(document.getElementById('demo'));
+  document.getElementById('approveBtn').addEventListener('click', function(){
+    this.textContent = '✓ approved'; this.style.background = '#176446'; this.disabled = true;
+    show('e4',300); show('e5',1100);
+    try{ gtag('event','demo_approve',{source:'ai-department'}); }catch(e){}
+  });
+
+  // UTM passthrough to Stripe
+  try{
+    var qs = new URLSearchParams(location.search);
+    var keep = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    var pass = keep.filter(function(k){return qs.get(k);}).map(function(k){return k+'='+encodeURIComponent(qs.get(k));}).join('&');
+    if (pass) { var b = document.getElementById('buyBtn'); b.href += (b.href.indexOf('?')>-1?'&':'?') + pass; }
+  }catch(e){}
+
+  // capture form → /api/subscribe · tag 20221947 systems-lead · enrolls Diagnostic Runway nurture
+  var form = document.getElementById('leadForm');
+  var efocus = document.getElementById('email');
+  if (efocus){ efocus.addEventListener('focus', function(){ try{ gtag('event','form_start',{source:'ai-department'}); }catch(e){} }, { once:true }); }
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var email = document.getElementById('email').value.trim();
+    var biz = document.getElementById('biz').value.trim();
+    var hp = form.querySelector('input[name=website]').value;
+    if (!email) return;
+    var btn = form.querySelector('.send-btn'); btn.disabled = true; btn.textContent = 'sending...';
+    fetch('/api/subscribe', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ email: email, source: 'ai-department', tag_ids: [20221947], fields: biz ? { business: biz.slice(0,280) } : undefined, website: hp })
+    }).then(function(r){ return r.json(); }).then(function(d){
+      if (d && (d.success || d.ok)) {
+        form.style.display='none';
+        document.getElementById('okMsg').style.display='block';
+        try{ gtag('event','generate_lead',{value:500,currency:'USD',lead_source:'ai-department'}); }catch(e){}
+        try{ fbq('track','Lead',{content_name:'ai-department'}); }catch(e){}
+      } else { btn.disabled=false; btn.textContent='send it · i reply in writing'; alert('hmm, that did not go through, mind trying once more?'); }
+    }).catch(function(){ btn.disabled=false; btn.textContent='send it · i reply in writing'; alert('hmm, that did not go through, mind trying once more?'); });
+  });
+})();
+</script>
+</body>
+</html>

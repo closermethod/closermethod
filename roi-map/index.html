@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The 90-Second ROI Map | The Closer Method</title>
+  <meta name="description" content="Answer 5 questions. See which 2 jobs Claude should take over first in your business, what they save in hours, and what that is worth in dollars."/>
+  <link rel="canonical" href="https://closermethod.com/roi-map"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231A1714'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%2313B38B' font-style='italic'%3Em%3C/text%3E%3C/svg%3E"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','35298849146380570');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"/></noscript>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2458LX0VD', { page_path: '/roi-map' });
+  </script>
+
+  <style>
+    :root{--cream:#FEF7F5;--blush:#FDF3EF;--white:#fff;--teal:#13B38B;--teal-hover:#0F9A77;--charcoal:#2C2825;--deep:#1A1714;--warm-gray:#6B635D;--stone:#E9DDD8}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--charcoal);-webkit-font-smoothing:antialiased;font-size:.95rem;line-height:1.7}
+    h1,h2,h3{font-family:'Cormorant Garamond',serif;color:var(--deep);font-weight:500;line-height:1.15}
+    a{color:var(--teal);text-decoration:none}
+    a:hover{color:var(--teal-hover);text-decoration:underline}
+    .topnav{text-align:center;padding:22px 20px;border-bottom:1px solid var(--stone)}
+    .topnav a{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--deep);letter-spacing:.02em;text-decoration:none}
+    .wrap{max-width:680px;margin:0 auto;padding:48px 22px 64px}
+    .card{background:var(--white);border:1px solid var(--stone);border-radius:14px;padding:48px 40px;box-shadow:0 8px 28px rgba(0,0,0,.04);margin-bottom:24px}
+    .eyebrow{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--teal);margin-bottom:14px}
+    h1{font-size:clamp(1.9rem,4.6vw,2.6rem);margin-bottom:14px}
+    .lead{font-size:1.05rem;color:var(--charcoal);margin-bottom:10px}
+    .lead strong{color:var(--deep)}
+    p.note{font-size:.92rem;color:var(--warm-gray);margin-bottom:8px}
+    .btn{display:inline-block;width:100%;text-align:center;padding:15px 24px;background:var(--teal);color:#fff;border:0;border-radius:7px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;margin-top:14px;cursor:pointer;transition:background .15s}
+    .btn:hover{background:var(--teal-hover);text-decoration:none;color:#fff}
+    .q{margin:26px 0 0}
+    .q label.qlabel{display:block;font-weight:600;color:var(--deep);font-size:.95rem;margin-bottom:10px}
+    .q .qnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--teal);color:#fff;font-size:.72rem;font-weight:700;margin-right:8px;vertical-align:middle}
+    .opts{display:flex;flex-direction:column;gap:8px}
+    .opt{display:block;width:100%;text-align:left;padding:12px 16px;background:var(--blush);border:1.5px solid var(--stone);border-radius:8px;font-family:'Montserrat',sans-serif;font-size:.9rem;color:var(--charcoal);cursor:pointer;transition:border-color .12s,background .12s}
+    .opt:hover{border-color:var(--teal)}
+    .opt.sel{border-color:var(--teal);background:#EAF8F3;color:var(--deep);font-weight:600}
+    .numwrap{display:flex;align-items:center;gap:10px}
+    .numwrap .dollar{font-weight:700;color:var(--deep);font-size:1.05rem}
+    input[type=number],input[type=email],input[type=text]{width:100%;padding:13px 14px;border:1.5px solid var(--stone);border-radius:8px;background:var(--white);font-family:'Montserrat',sans-serif;font-size:1rem;color:var(--deep)}
+    input:focus{outline:none;border-color:var(--teal)}
+    .assume{margin-top:28px;padding:16px 18px;background:var(--blush);border:1px solid var(--stone);border-radius:10px;font-size:.84rem;color:var(--warm-gray);line-height:1.65}
+    .assume strong{color:var(--charcoal)}
+    /* teaser */
+    .bignum{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,8vw,3.6rem);font-weight:600;color:var(--deep);line-height:1.05;margin:6px 0 2px}
+    .bignum .per{font-size:1.1rem;font-family:'Montserrat',sans-serif;font-weight:500;color:var(--warm-gray)}
+    .hoursline{font-size:1rem;color:var(--charcoal);margin-bottom:18px}
+    .locked{position:relative;margin-top:24px;border-top:1px solid var(--stone);padding-top:20px}
+    .locked .blurred{filter:blur(6px);user-select:none;pointer-events:none}
+    .lockcopy{margin-top:18px}
+    .lockcopy h2{font-size:1.35rem;margin-bottom:8px}
+    .gate label{display:block;font-size:.8rem;font-weight:600;color:var(--charcoal);margin:14px 0 6px}
+    /* full map */
+    .wf{margin:18px 0;padding:18px 20px;background:var(--blush);border:1px solid var(--stone);border-radius:10px}
+    .wf h3{font-size:1.25rem;margin-bottom:6px}
+    .wf .wftag{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--teal);margin-bottom:8px}
+    .wf p{font-size:.9rem;color:var(--charcoal)}
+    .mathrows{margin:14px 0 4px;border-top:1px solid var(--stone)}
+    .mathrows .row{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--stone);font-size:.9rem}
+    .mathrows .row span:last-child{font-weight:700;color:var(--deep);white-space:nowrap}
+    .mathrows .row.total span{font-weight:700;color:var(--deep);font-size:1rem}
+    .next{margin-top:28px;padding-top:24px;border-top:1px solid var(--stone)}
+    .next h2{font-size:1.3rem;margin-bottom:10px}
+    .hidden{display:none}
+    .hp{position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;overflow:hidden}
+    footer{padding:28px 20px;text-align:center;font-size:.82rem;color:var(--warm-gray)}
+    @media(max-width:560px){.card{padding:36px 24px}}
+  </style>
+</head>
+<body>
+
+<nav class="topnav"><a href="https://closermethod.com">the closer method</a></nav>
+
+<main class="wrap">
+
+  <!-- STEP 1: questions -->
+  <div class="card" id="quizCard">
+    <div class="eyebrow">Free · 90 seconds</div>
+    <h1>The 90-second ROI map.</h1>
+    <p class="lead">Businesses pay <strong>$2,000 to $8,000</strong> for an audit that answers one question: which work should the AI take over first, and what is that worth? Answer 5 questions and get the same map, mapped to your numbers, right here on this page.</p>
+    <p class="note">Claude drafts, you approve. Everything below assumes a human stays in the loop.</p>
+
+    <div class="q">
+      <label class="qlabel"><span class="qnum">1</span>What kind of business do you run?</label>
+      <div class="opts" id="qBiz">
+        <button type="button" class="opt" data-v="service">Service business (clients, jobs, appointments)</button>
+        <button type="button" class="opt" data-v="store">Online store or products</button>
+        <button type="button" class="opt" data-v="coach">Coaching or consulting</button>
+        <button type="button" class="opt" data-v="creator">Content or creator business</button>
+        <button type="button" class="opt" data-v="agency">Agency</button>
+        <button type="button" class="opt" data-v="other">Something else</button>
+      </div>
+    </div>
+
+    <div class="q">
+      <label class="qlabel"><span class="qnum">2</span>Hours per week you (or your team) spend on repetitive admin? <span style="font-weight:400;color:var(--warm-gray)">Follow-ups, invoices, inbox, scheduling, notes. 20 to 30 is common.</span></label>
+      <div class="opts" id="qHours">
+        <button type="button" class="opt" data-v="4">Under 5</button>
+        <button type="button" class="opt" data-v="7">5 to 10</button>
+        <button type="button" class="opt" data-v="15">10 to 20</button>
+        <button type="button" class="opt" data-v="25">20 to 30</button>
+        <button type="button" class="opt" data-v="32">More than 30</button>
+      </div>
+    </div>
+
+    <div class="q">
+      <label class="qlabel" for="qValue"><span class="qnum">3</span>What is an average customer worth to you, in dollars?</label>
+      <div class="numwrap"><span class="dollar">$</span><input type="number" id="qValue" min="1" max="1000000" step="1" inputmode="numeric" placeholder="e.g. 1200"/></div>
+    </div>
+
+    <div class="q">
+      <label class="qlabel"><span class="qnum">4</span>How often does an inquiry, lead, or DM go cold before anyone replies?</label>
+      <div class="opts" id="qMissed">
+        <button type="button" class="opt" data-v="0">Almost never</button>
+        <button type="button" class="opt" data-v="1">A few times a month</button>
+        <button type="button" class="opt" data-v="2">Every week</button>
+        <button type="button" class="opt" data-v="2" data-k="daily">Honestly, every day</button>
+      </div>
+    </div>
+
+    <div class="q">
+      <label class="qlabel"><span class="qnum">5</span>How many people work in the business?</label>
+      <div class="opts" id="qTeam">
+        <button type="button" class="opt" data-v="1">Just me</button>
+        <button type="button" class="opt" data-v="3">2 to 5</button>
+        <button type="button" class="opt" data-v="10">6 to 15</button>
+        <button type="button" class="opt" data-v="20">More than 15</button>
+      </div>
+    </div>
+
+    <button type="button" class="btn" id="calcBtn">Show my ROI map</button>
+    <p class="note" id="quizErr" style="color:#B3471D;display:none;margin-top:10px"></p>
+
+    <div class="assume">
+      <strong>The math stays conservative on purpose.</strong> Your hours are valued at $35/hr unless your own numbers say otherwise. We assume Claude takes over about a third of the admin hours you named, with you approving everything before it sends. Missed-lead recovery counts only 1 to 2 recovered inquiries a month, at your own average customer value. Nothing here is a projection of revenue; it is the floor of what the time and the leaks are already costing.
+    </div>
+  </div>
+
+  <!-- STEP 2: teaser + gate -->
+  <div class="card hidden" id="teaserCard">
+    <div class="eyebrow">Your number</div>
+    <p class="note">At your inputs, the two workflows below are worth roughly</p>
+    <div class="bignum">$<span id="tMonthly">0</span> <span class="per">back per month</span></div>
+    <p class="hoursline"><strong id="tHours">0</strong> hours a week handed to Claude, with you approving every send.</p>
+
+    <div class="locked">
+      <div class="blurred" aria-hidden="true">
+        <div class="wf"><div class="wftag">Workflow 1</div><h3>The one that touches revenue</h3><p>The full description, the setup order, and the exact dollar math line by line are in your map.</p></div>
+        <div class="wf"><div class="wftag">Workflow 2</div><h3>The one that buys back your week</h3><p>Hours, dollars, and what to hand over first.</p></div>
+      </div>
+      <div class="lockcopy">
+        <h2>Your full map is ready.</h2>
+        <p class="note">Enter your email and it opens right here on this page: your 2 workflows, the line-by-line math, and the first step to get them running.</p>
+        <form class="gate" id="gateForm" novalidate>
+          <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"/></label></div>
+          <label for="gName">First name</label>
+          <input type="text" id="gName" autocomplete="given-name" placeholder="Your first name"/>
+          <label for="gEmail">Email</label>
+          <input type="email" id="gEmail" autocomplete="email" required placeholder="you@yourbusiness.com"/>
+          <button type="submit" class="btn">Open my full map</button>
+          <p class="note" id="gateErr" style="color:#B3471D;display:none;margin-top:10px"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3: full map -->
+  <div class="card hidden" id="mapCard">
+    <div class="eyebrow">Your ROI map</div>
+    <h1 style="font-size:clamp(1.7rem,4vw,2.2rem)">Start with these two.</h1>
+    <p class="note" id="mapIntro"></p>
+
+    <div id="wfList"></div>
+
+    <h2 style="font-size:1.3rem;margin-top:26px">The math, line by line.</h2>
+    <div class="mathrows" id="mathRows"></div>
+    <p class="note" id="assumeLine" style="margin-top:10px"></p>
+
+    <div class="next">
+      <h2>Want this map built into a working system?</h2>
+      <p class="lead">Start with the <strong>$500 diagnostic</strong>. I take this map, sit inside your real workflows, and hand you the build plan for your exact business. Then I set it up for you, in your accounts, with approval gates on everything that sends. The files are yours.</p>
+      <a class="btn" id="hireBtn" href="https://closermethod.com/hire?utm_source=roi-map&utm_medium=bridge&utm_campaign=b2b-lead">Start with the $500 diagnostic</a>
+      <p class="note" style="margin-top:12px">Your map is also on its way to your inbox, so you keep a copy.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Built by <a href="https://closermethod.com">The Closer Method</a>. The benchmarks on this page come from published AI adoption research; your numbers come from you.
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var HOURLY = 35;           // stated on page
+  var TAKEOVER = 0.33;       // claude takes over about a third of named admin hours
+  var WEEKS_PER_MONTH = 4.3;
+
+  var state = { biz:null, bizLabel:'', hours:null, value:null, missed:null, team:null };
+
+  // option group wiring
+  function wireGroup(id, key){
+    var g = document.getElementById(id);
+    g.addEventListener('click', function(ev){
+      var b = ev.target.closest('.opt'); if(!b) return;
+      g.querySelectorAll('.opt').forEach(function(o){o.classList.remove('sel');});
+      b.classList.add('sel');
+      state[key] = parseFloat(b.getAttribute('data-v'));
+      if(key==='biz'){ state.biz = b.getAttribute('data-v'); state.bizLabel = b.textContent.trim(); }
+    });
+  }
+  wireGroup('qBiz','biz'); wireGroup('qHours','hours'); wireGroup('qMissed','missed'); wireGroup('qTeam','team');
+
+  // workflow catalog (their words: outcomes, approval gates, hours and dollars)
+  var WORKFLOWS = {
+    followup: {
+      name: 'The never-miss-a-lead follow-up',
+      desc: 'Every inquiry, form fill, and DM gets a drafted reply in your voice within minutes, plus a short follow-up sequence so nothing goes cold. You approve, it sends. This is the one that touches revenue first, because the money most businesses lose is sitting in slow or missing follow-up.'
+    },
+    inbox: {
+      name: 'Inbox and message triage',
+      desc: 'Claude sorts the inbox overnight, flags what needs you, and drafts the replies that matter, each one waiting for your approval in the morning. The repetitive reading and first-draft writing stops being your job.'
+    },
+    invoices: {
+      name: 'The invoice chaser',
+      desc: 'The moment an invoice goes past due, the reminder is drafted and queued, polite, in your voice, escalating on a schedule you set. You approve each send. Document and invoice work is consistently where businesses measure their highest automation ROI.'
+    },
+    meetings: {
+      name: 'Meeting notes to action items',
+      desc: 'Every call becomes a same-day summary with action items and owners, drafted for your approval before it goes to the team. The follow-through stops depending on memory.'
+    },
+    content: {
+      name: 'One idea into a week of content',
+      desc: 'One idea goes in, a week of posts in your voice comes out, drafted for you to approve and schedule. The staring-at-a-blank-page hours come back.'
+    },
+    support: {
+      name: 'Customer question triage',
+      desc: 'The questions customers ask over and over get drafted answers in your voice, queued for approval. 90% of customer-experience teams using AI here report positive ROI.'
+    }
+  };
+
+  function pickWorkflows(){
+    var s = {followup:2, inbox:0, invoices:0, meetings:0, content:0, support:0};
+    s.followup += (state.missed||0) * 2;
+    s.inbox += state.hours >= 15 ? 3 : 1;
+    if(state.biz === 'service' || state.biz === 'agency') s.invoices += 2;
+    if(state.hours >= 15) s.invoices += 1;
+    if(state.biz === 'creator' || state.biz === 'coach') s.content += 3;
+    if(state.biz === 'store') s.support += 4;
+    if(state.team >= 3) s.meetings += 2;
+    if(state.team >= 10) s.meetings += 1;
+    var order = ['followup','inbox','invoices','content','support','meetings'];
+    var ranked = order.slice().sort(function(a,b){ return s[b]-s[a] || order.indexOf(a)-order.indexOf(b); });
+    return [ranked[0], ranked[1]];
+  }
+
+  var result = null;
+
+  function compute(){
+    var hoursSaved = Math.round(state.hours * TAKEOVER * 10) / 10;
+    var hoursDollars = Math.round(hoursSaved * WEEKS_PER_MONTH * HOURLY);
+    var recovered = Math.min(state.missed||0, 2); // 1 to 2 per month, never more
+    var recoveryDollars = Math.round(recovered * state.value);
+    var monthly = hoursDollars + recoveryDollars;
+    var picks = pickWorkflows();
+    return {
+      hoursSaved: hoursSaved, hoursDollars: hoursDollars,
+      recovered: recovered, recoveryDollars: recoveryDollars,
+      monthly: monthly, picks: picks
+    };
+  }
+
+  function fmt(n){ return n.toLocaleString('en-US'); }
+
+  document.getElementById('calcBtn').addEventListener('click', function(){
+    var err = document.getElementById('quizErr');
+    var missing = [];
+    if(!state.biz) missing.push('question 1');
+    if(state.hours==null) missing.push('question 2');
+    var v = parseFloat(document.getElementById('qValue').value);
+    if(!(v > 0)) missing.push('question 3');
+    if(state.missed==null) missing.push('question 4');
+    if(state.team==null) missing.push('question 5');
+    if(missing.length){
+      err.textContent = 'Almost there. Please answer ' + missing.join(', ') + '.';
+      err.style.display = 'block';
+      return;
+    }
+    err.style.display = 'none';
+    state.value = Math.min(v, 1000000);
+    result = compute();
+
+    document.getElementById('tMonthly').textContent = fmt(result.monthly);
+    document.getElementById('tHours').textContent = result.hoursSaved;
+    document.getElementById('quizCard').classList.add('hidden');
+    var t = document.getElementById('teaserCard');
+    t.classList.remove('hidden');
+    try{ t.scrollIntoView({behavior:'smooth', block:'start'}); }catch(e){}
+    try{ gtag('event','roi_map_calculated',{value: result.monthly, currency:'USD', business: state.biz}); }catch(e){}
+  });
+
+  function utmFields(f){
+    try{
+      var q = new URLSearchParams(window.location.search);
+      ['utm_source','utm_medium','utm_campaign'].forEach(function(k){ var v = q.get(k); if(v) f[k] = String(v).slice(0,60); });
+    }catch(e){}
+    return f;
+  }
+
+  document.getElementById('gateForm').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var email = (document.getElementById('gEmail').value||'').trim();
+    var name = (document.getElementById('gName').value||'').trim();
+    var hp = (this.querySelector('input[name=website]')||{value:''}).value||'';
+    var gerr = document.getElementById('gateErr');
+    if(!email || email.indexOf('@') < 1){
+      gerr.textContent = 'That email looks incomplete. One more look?';
+      gerr.style.display = 'block';
+      document.getElementById('gEmail').focus();
+      return;
+    }
+    gerr.style.display = 'none';
+
+    var topWorkflow = WORKFLOWS[result.picks[0]].name;
+    var payload = { email: email, first_name: name, source: 'roi-map', website: hp,
+      tag_ids: [20221947],
+      fields: utmFields({ business: state.bizLabel, source_page: '/roi-map', entry_point: topWorkflow }) };
+    try{ fetch('https://closermethod.com/api/subscribe',{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)}); }catch(e){}
+
+    // lead events, deduped against refresh
+    var dedupeKey = 'cm_lead_roi-map_' + email;
+    var fired = false;
+    try{ fired = localStorage.getItem(dedupeKey) === '1'; }catch(e){}
+    if(!fired){
+      try{ gtag('event','generate_lead',{value:500, currency:'USD', lead_source:'roi-map'}); }catch(e){}
+      try{ fbq('track','Lead',{content_name:'roi-map', lead_source:'roi-map'}); }catch(e){}
+      try{ localStorage.setItem(dedupeKey,'1'); }catch(e){}
+    }
+
+    renderFullMap(name);
+    document.getElementById('teaserCard').classList.add('hidden');
+    var m = document.getElementById('mapCard');
+    m.classList.remove('hidden');
+    try{ m.scrollIntoView({behavior:'smooth', block:'start'}); }catch(e){}
+  });
+
+  function esc(s){ return String(s).replace(/[<>&"]/g, function(c){ return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]; }); }
+
+  function renderFullMap(name){
+    var r = result;
+    var intro = (name ? esc(name) + ', here' : 'Here') + ' is the order that pays back fastest for a ' +
+      esc(state.bizLabel.toLowerCase()) + ' spending about ' + state.hours + ' hours a week on repetitive admin.';
+    document.getElementById('mapIntro').textContent = intro;
+
+    var list = document.getElementById('wfList');
+    list.innerHTML = '';
+    r.picks.forEach(function(key, i){
+      var w = WORKFLOWS[key];
+      var div = document.createElement('div');
+      div.className = 'wf';
+      div.innerHTML = '<div class="wftag">Workflow ' + (i+1) + (i===0 ? ' · build this first' : '') + '</div><h3>' + esc(w.name) + '</h3><p>' + esc(w.desc) + '</p>';
+      list.appendChild(div);
+    });
+
+    var rows = document.getElementById('mathRows');
+    var html = '';
+    html += '<div class="row"><span>Admin hours handed to Claude (a third of your ' + state.hours + ' hrs/week, you approve everything)</span><span>' + r.hoursSaved + ' hrs/wk</span></div>';
+    html += '<div class="row"><span>Those hours valued at $' + HOURLY + '/hr, ' + WEEKS_PER_MONTH + ' weeks a month</span><span>$' + fmt(r.hoursDollars) + '/mo</span></div>';
+    if(r.recovered > 0){
+      html += '<div class="row"><span>Leads recovered by faster follow-up (' + r.recovered + '/month, counted at your $' + fmt(state.value) + ' average customer)</span><span>$' + fmt(r.recoveryDollars) + '/mo</span></div>';
+    } else {
+      html += '<div class="row"><span>Missed-lead recovery (you said inquiries almost never go cold, so we count zero)</span><span>$0/mo</span></div>';
+    }
+    html += '<div class="row total"><span>Conservative monthly floor</span><span>$' + fmt(r.monthly) + '/mo</span></div>';
+    html += '<div class="row total"><span>Over a year</span><span>$' + fmt(r.monthly * 12) + '</span></div>';
+    rows.innerHTML = html;
+
+    document.getElementById('assumeLine').textContent =
+      'For context: small businesses commonly report 20 to 30 hours a week saved once workflows like these are running, and pay $2,000 to $8,000 for the audit that maps them. This map used the deliberately low end of everything: $' + HOURLY + '/hr for your time, a third of your stated hours, and at most 2 recovered leads a month.';
+  }
+})();
+</script>
+
+</body>
+</html>

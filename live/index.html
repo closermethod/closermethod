@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0B">
+<title>your business, live by Sunday · closer method</title>
+<meta name="description" content="ship a real, live business this weekend — a site, an offer, a pitch that sound like you. no agency, no team, no code. start free.">
+<link rel="canonical" href="https://closermethod.com/live/">
+<meta name="robots" content="noindex,follow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://closermethod.com/live/">
+<meta property="og:title" content="your business, live by Sunday">
+<meta property="og:description" content="a real site, offer, and pitch that sound like you. no agency, no code. start free.">
+<meta property="og:image" content="https://closermethod.com/og/og-build.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://buy.stripe.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#0A0A0B;--surface:#131316;--surface-2:#1C1C20;--border:#27272A;--border-strong:#3F3F46;--text:#FAFAFA;--text-2:#D4D4D8;--text-3:#B4B4BE;--accent:#FF6B35;--accent-hover:#FF8556;--accent-soft:rgba(255,107,53,.12);--pos:#4ADE80;--radius:10px;--radius-lg:14px;--maxw:780px;--pad:20px;--t-sans:'Geist',system-ui,-apple-system,sans-serif;--t-mono:'Geist Mono',ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--t-sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--text)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-family:var(--t-mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin:0 0 12px}
+.hero{padding:60px 0 28px}@media(min-width:768px){.hero{padding:84px 0 40px}}
+.h1{font-size:clamp(2.1rem,5.2vw,3.1rem);line-height:1.04;letter-spacing:-.03em;font-weight:600;margin:0 0 16px}.h1 i{font-style:normal;color:var(--accent)}
+.lead{font-size:1.12rem;line-height:1.55;color:var(--text-2);margin:0 0 18px;max-width:620px}
+.bust{display:flex;flex-wrap:wrap;gap:8px 10px;margin:0 0 24px;font-family:var(--t-mono);font-size:.8rem}
+.bust span{background:var(--surface);border:1px solid var(--border-strong);border-radius:999px;padding:6px 12px;color:var(--text-2)}
+.bust b{color:var(--accent);font-weight:500}
+.gate{background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--radius-lg);padding:20px 18px;margin:0 0 14px}
+.gate h2{font-size:1.05rem;margin:0 0 10px;font-weight:600}
+.gate-form{display:flex;flex-wrap:wrap;gap:10px}
+.gate-input{flex:1 1 220px;background:var(--surface-2);border:1px solid var(--border-strong);border-radius:var(--radius);padding:14px 15px;color:var(--text);font-family:var(--t-sans);font-size:1rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;font-family:var(--t-sans);font-size:1rem;font-weight:600;border-radius:var(--radius);border:none;cursor:pointer;text-decoration:none;line-height:1;color:#0A0A0B;background:linear-gradient(180deg,var(--accent-hover),var(--accent));box-shadow:0 10px 30px -10px rgba(255,107,53,.6)}
+.btn:hover{color:#0A0A0B;transform:translateY(-1px)}
+.gate-msg{font-family:var(--t-mono);font-size:.8rem;margin:8px 0 0;flex:1 1 100%;min-height:1em}
+.sec{padding:44px 0}.sec h2{font-size:clamp(1.5rem,3.6vw,2rem);font-weight:600;letter-spacing:-.02em;line-height:1.14;margin:0 0 14px}
+.sec h2 .hl{color:var(--accent)}
+.sec p{color:var(--text-2);font-size:1.02rem;margin:0 0 14px;max-width:640px}
+.steps{display:grid;gap:12px;margin:18px 0 0}@media(min-width:680px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px}
+.step .n{font-family:var(--t-mono);color:var(--accent);font-size:.8rem;margin:0 0 6px}
+.step h3{font-size:1rem;margin:0 0 6px}.step p{font-size:.9rem;margin:0;color:var(--text-3)}
+/* ladder */
+.ladder{display:grid;gap:14px;margin:22px 0 0}@media(min-width:680px){.ladder{grid-template-columns:repeat(3,1fr);align-items:stretch}}
+.tier{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px 20px;display:flex;flex-direction:column}
+.tier.feat{border-color:var(--accent);box-shadow:0 0 0 1px rgba(255,107,53,.3),0 20px 50px -24px rgba(255,107,53,.4)}
+.tier .px{font-size:1.7rem;font-weight:700;letter-spacing:-.02em;margin:0 0 2px}.tier .px .c{color:var(--accent)}
+.tier .nm{font-family:var(--t-mono);font-size:.8rem;color:var(--text-3);margin:0 0 12px;text-transform:uppercase;letter-spacing:.06em}
+.tier ul{list-style:none;margin:0 0 16px;padding:0;flex:1}.tier li{font-size:.9rem;color:var(--text-2);margin:0 0 7px;padding-left:20px;position:relative}
+.tier li::before{content:"✓";position:absolute;left:0;color:var(--pos)}
+.tier .btn{width:100%}
+.tier .badge{font-family:var(--t-mono);font-size:.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin:0 0 8px}
+.proof{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin:24px 0 0;display:flex;gap:13px;align-items:center}
+.proof .av{flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:linear-gradient(180deg,var(--accent-hover),var(--accent));color:#0A0A0B;display:flex;align-items:center;justify-content:center;font-family:var(--t-mono);font-weight:600}
+.proof p{margin:0;font-size:.85rem;color:var(--text-3);line-height:1.5}.proof b{color:var(--text-2)}
+.faq{margin:18px 0 0}.faq details{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:500;font-size:.96rem}.faq p{margin:10px 0 0;font-size:.9rem;color:var(--text-2)}
+.guar{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin:22px 0 0;font-size:.9rem;color:var(--text-2)}.guar b{color:var(--text)}
+.foot{border-top:1px solid var(--border);padding:24px 0;color:var(--text-3);font-size:.82rem;text-align:center;margin-top:40px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body>
+<main id="main">
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">for everyone who subscribed Claude and got... a generic blob</p>
+  <h1 class="h1">your Claude sounds like <i>everyone's</i> Claude. make it sound like you, and ship real work today.</h1>
+  <p class="lead">"it doesn't sound like me" is the #1 thing people say about AI. so you get a generic blob, rewrite it for an hour, and still have nothing real to show for it. this fixes that at the root: teach Claude your voice once, then it ships finished pieces, your site, your offer, your pitch, that actually sound like <i>you</i> and are ready to put in front of people. you steer, it does the work you keep avoiding. no agency, no code, no 40-tool rabbit hole.</p>
+  <div class="bust"><span><b>no</b> agency</span><span><b>no</b> team</span><span><b>no</b> code</span><span><b>no</b> $13,400 invoice</span><span><b>no</b> generic AI slop</span></div>
+
+  <div class="gate">
+    <h2>start free: ship your first live asset today →</h2>
+    <form class="gate-form" id="gateForm" novalidate>
+      <label for="email" style="position:absolute;left:-9999px">your email</label>
+      <input class="gate-input" type="email" name="email" id="email" placeholder="your best email" autocomplete="email" required>
+      <div style="position:absolute;left:-9999px" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+      <button class="btn" type="submit" data-event="live_gate_submit">send me the free starter →</button>
+      <p class="gate-msg" id="gateMsg" aria-live="polite"></p>
+    </form>
+  </div>
+  <div class="proof">
+    <div class="av" aria-hidden="true">EH</div>
+    <p><b>built by eli hitz</b> · 10 years closing enterprise deals (Deel 268% in Q3, Criteo 167% to quota) · brand work for HBO, Bloomberg, McCann, Y&amp;R, Autodesk. she wired the system that does this.</p>
+  </div>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <h2>you didn't need <span class="hl">another prompt pack.</span> you needed it <span class="hl">done</span> — in your voice.</h2>
+  <p>you subscribed Claude. you asked it to build your homepage. it handed back a generic wall of text you spent an hour rewriting, and it still didn't sound like you. the #1 thing people say about AI? <i>"it doesn't sound like me."</i> the fix isn't 300 more prompts. it's a <b>system</b>: Claude that actually knows your voice, your offer, your edge, plus workflows that ship <b>finished, deployable work</b>, not drafts. you steer it, it does the part you hate.</p>
+  <p>and not a pretty page nobody sees. the whole point is a business that <b>actually works</b> — that sounds like you, ships fast, and gets you in front of people. execution, not another tutorial you'll never finish.</p>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <h2>how you ship something <span class="hl">live</span> today</h2>
+  <div class="steps">
+    <div class="step"><p class="n">01</p><h3>teach Claude you</h3><p>answer 5 questions once. now Claude knows your voice, your business, your edge, before you type a word.</p></div>
+    <div class="step"><p class="n">02</p><h3>run one skill</h3><p>"build my homepage." the skill ships a finished file in your voice, not a blob you rewrite.</p></div>
+    <div class="step"><p class="n">03</p><h3>put it live</h3><p>real URL, real page, today. then do it again for your offer, your pitch, your content.</p></div>
+  </div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <h2>pick where you <span class="hl">start</span></h2>
+  <p>most people start with the first skill, ship one live thing today, then come back for the rest. you decide the pace.</p>
+  <div class="ladder">
+    <div class="tier">
+      <p class="badge">free</p>
+      <div class="px">$0</div><p class="nm">the starter skill</p>
+      <ul><li>the voice skill + brain doc</li><li>ship one real asset today</li><li>yours to keep forever</li></ul>
+      <a class="btn" href="#gateForm" data-event="live_tier_free" style="background:var(--surface-2);color:var(--text);box-shadow:none;border:1px solid var(--border-strong)">grab it free ↑</a>
+    </div>
+    <div class="tier feat">
+      <p class="badge">most start here</p>
+      <div class="px"><span class="c">$17</span></div><p class="nm">the first skill</p>
+      <ul><li>full 5-question brain doc</li><li>3 done-for-you skills: site, voice, offer</li><li>ship your first <b>live</b> page today</li><li>$17 credits toward the full build</li></ul>
+      <a class="btn" href="/api/first-skill-checkout" data-event="live_tier_17" data-checkout="first-skill">ship my first page · $17 →</a>
+    </div>
+    <div class="tier">
+      <p class="badge">go all-in</p>
+      <div class="px"><span class="c">$147</span></div><p class="nm">the whole business</p>
+      <ul><li>all 27 skills, wired to your voice</li><li>site, offer, pitch, launch, content + 22 more</li><li>build your whole business this weekend</li><li>one payment, yours forever</li></ul>
+      <a class="btn" href="https://buy.stripe.com/dRm6oB8L70gu5yy8tl5Ne0I?utm_source=live&utm_medium=ladder&utm_campaign=whole_business" data-event="live_tier_147" rel="noopener">build it all · $147 →</a>
+    </div>
+  </div>
+  <div class="guar"><b>made-to-work guarantee.</b> tell me what isn't landing for your business and i rewrite the skill for you, free, until it ships in your voice. DM @closermethod.</div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <h2>questions you're <span class="hl">actually</span> asking</h2>
+  <div class="faq">
+    <details><summary>"I'm not technical. can I really do this?"</summary><p>yes. there's no code. you drag one file into Claude, answer 5 questions, and ask it to build. if you can subscribe to Claude, you can do this. the free starter proves it in 10 minutes.</p></details>
+    <details><summary>"how is this different from the 300-skill packs everywhere?"</summary><p>those hand you a folder of generic prompts you still have to figure out. this teaches Claude <i>your</i> voice and ships <i>finished, live</i> work. you don't need 300 prompts. you need 3 that sound like you and put something real online.</p></details>
+    <details><summary>"why $17? what's the catch?"</summary><p>no catch. it's the fastest way to prove this works for you, ship one live thing today, and your $17 credits toward the full build if you want everything. start small, decide later.</p></details>
+    <details><summary>"what if it doesn't work for my business?"</summary><p>DM @closermethod what isn't landing and I rewrite the skill for you, free, until it ships in your voice. that's the whole guarantee.</p></details>
+  </div>
+</div></section>
+
+<footer class="foot"><div class="wrap">© 2026 closer method · <a href="https://instagram.com/closermethod" target="_blank" rel="noopener" style="color:var(--text-2)">@closermethod</a></div></footer>
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-Q2458LX0VD',{send_page_view:true,page_path:'/live'});
+// utm capture
+var utm={};(function(){var p=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(p.get(k))utm[k]=p.get(k);});})();
+// carry utm onto the $147 stripe link
+(function(){try{document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(a){var u=new URL(a.href);Object.keys(utm).forEach(function(k){u.searchParams.set(k,utm[k]);});a.href=u.toString();});}catch(e){}})();
+// $17 tier → mint checkout session (fail-soft: if it errors, do nothing rather than charge wrong)
+document.querySelectorAll('a[data-checkout="first-skill"]').forEach(function(a){a.addEventListener('click',function(e){
+  e.preventDefault();gtag('event','begin_checkout',{currency:'USD',value:17,items:[{item_name:'the first skill',price:17}],page:'/live'});
+  fetch('/api/first-skill-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({source:'live',utm:utm})})
+   .then(function(r){return r.json();}).then(function(j){if(j&&j.url)location.href=j.url;else alert('checkout is warming up — DM @closermethod and I will send your link.');})
+   .catch(function(){alert('checkout is warming up — DM @closermethod and I will send your link.');});
+});});
+// cta + begin_checkout tracking for $147
+document.querySelectorAll('[data-event]').forEach(function(el){el.addEventListener('click',function(){var ev=el.getAttribute('data-event');gtag('event','cta_click',{cta:ev,page:'/live'});if(ev==='live_tier_147'){gtag('event','begin_checkout',{currency:'USD',value:147,items:[{item_name:'AI Builder Toolkit',price:147}],page:'/live'});}});});
+// free email capture
+(function(){var f=document.getElementById('gateForm');if(!f)return;var msg=document.getElementById('gateMsg');var btn=f.querySelector('button');
+f.addEventListener('submit',async function(e){e.preventDefault();var em=(f.querySelector('input[type=email]').value||'').trim().toLowerCase();var hp=(f.querySelector('input[name=website]').value||'');
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){msg.textContent='drop a real email so it lands in your inbox.';msg.style.color='#FF6B6B';return;}
+var o=btn.textContent;btn.disabled=true;btn.textContent='sending...';
+try{var res=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em,source:'live',tag_ids:[19762195],website:hp,fields:Object.assign({source_page:'live'},utm)})});var d=await res.json();
+if(d&&d.success){msg.style.color='var(--pos)';msg.textContent='sent. taking you to your next step...';gtag('event','generate_lead',{source:'live'});if(window.fbq)fbq('track','Lead',{content_name:'live-starter'});var qs=Object.keys(utm).filter(function(k){return utm[k];}).map(function(k){return k+'='+encodeURIComponent(utm[k]);}).join('&');location.href='/thanks/live/'+(qs?'?'+qs:'');return;}
+else{msg.style.color='#FF6B6B';msg.textContent=(d&&d.error)||'kit hiccup. try again in 30s.';}}catch(err){msg.style.color='#FF6B6B';msg.textContent='network blip. try again in 30s.';}
+finally{btn.disabled=false;btn.textContent=o;}});})();
+</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','35298849146380570');fbq('track','PageView');</script>
+</body>
+</html>

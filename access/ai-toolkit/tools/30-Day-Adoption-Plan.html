@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Adoption Studio · 30-Day Adoption Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0e1116;--ink2:#1b212b;--paper:#f7f5f1;--card:#ffffff;--accent:#ff5a3c;--accent2:#1f6feb;--muted:#6b7480;--line:#e7e3da;--good:#1f9d63;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.12;letter-spacing:-.01em}
+  .accent{color:var(--accent)}
+  nav{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(247,245,241,.92);backdrop-filter:blur(10px)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .logo{font-family:'Fraunces';font-weight:900;font-size:16px;letter-spacing:-.02em}
+  .logo span{color:var(--accent)}
+  .navmeta{font-size:12px;color:var(--muted)}
+  .stage{padding:44px 0 70px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  h1{font-size:clamp(28px,5vw,42px);font-weight:900;margin:14px 0 0}
+  .sub{font-size:16.5px;color:var(--ink2);max-width:620px;margin:16px 0 0}
+  .step{display:none}
+  .step.on{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .btn{font-weight:600;font-size:15px;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;font-family:inherit}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.primary:hover{background:#e8472b}
+  .btn.primary:disabled{background:#f1c3b8;cursor:not-allowed}
+  .btn.ghost{background:transparent;color:var(--muted);border:1.5px solid var(--line)}
+  .btn.ghost:hover{color:var(--ink)}
+  .navbtns{display:flex;justify-content:space-between;margin-top:30px;gap:12px}
+  /* intro */
+  .startcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;margin-top:26px}
+  .startcard ul{list-style:none;margin-top:6px}
+  .startcard li{padding:9px 0 9px 26px;position:relative;font-size:15px;color:var(--ink2);border-bottom:1px solid var(--line)}
+  .startcard li:last-child{border-bottom:none}
+  .startcard li::before{content:"";position:absolute;left:3px;top:17px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  .miniref{font-size:11.5px;color:var(--muted);margin-top:26px;border-top:1px solid var(--line);padding-top:14px}
+  /* builder */
+  .blab{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin:30px 0 8px}
+  .bhint{font-size:14px;color:var(--muted);margin:-2px 0 14px}
+  .wfrow{display:flex;gap:10px;align-items:center;margin-top:10px}
+  .wfrow input{flex:1;border:1.5px solid var(--line);border-radius:10px;height:48px;padding:0 16px;font-size:15px;font-family:inherit;background:#fff}
+  .wfrow input:focus{outline:none;border-color:var(--accent)}
+  .wfrow .rm{flex:0 0 auto;width:44px;height:48px;border:1.5px solid var(--line);background:#fff;border-radius:10px;color:var(--muted);font-size:20px;cursor:pointer;line-height:1}
+  .wfrow .rm:hover{border-color:var(--accent);color:var(--accent)}
+  .addrow{margin-top:12px;font-size:13.5px;font-weight:600;color:var(--accent2);background:none;border:none;cursor:pointer;font-family:inherit;padding:0}
+  .addrow:disabled{color:var(--muted);cursor:not-allowed}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .chip{font-size:13px;font-weight:600;border:1.5px solid var(--line);background:#fff;color:var(--ink2);border-radius:999px;padding:8px 14px;cursor:pointer;font-family:inherit}
+  .chip:hover{border-color:var(--accent)}
+  .chip:disabled{opacity:.4;cursor:not-allowed}
+  .fieldgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+  @media(max-width:560px){.fieldgrid{grid-template-columns:1fr}}
+  .field label{display:block;font-size:13px;font-weight:600;color:var(--ink2);margin-bottom:7px}
+  .field input{width:100%;border:1.5px solid var(--line);border-radius:10px;height:48px;padding:0 14px;font-size:15px;font-family:inherit;background:#fff}
+  .field input:focus{outline:none;border-color:var(--accent)}
+  .teamval{font-family:'Fraunces';font-weight:900;color:var(--accent);font-size:16px;margin-left:6px}
+  /* plan / results */
+  .planhead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-top:6px}
+  .meta-line{font-size:14px;color:var(--muted);margin-top:12px}
+  .meta-line b{color:var(--ink2);font-weight:600}
+  .progress{height:8px;background:var(--line);border-radius:999px;margin:18px 0 6px;overflow:hidden}
+  .progress .bar{height:100%;background:var(--good);width:0;transition:width .35s}
+  .progress-label{font-size:13px;font-weight:600;color:var(--good)}
+  .week{background:#fff;border:1px solid var(--line);border-radius:14px;margin-top:18px;overflow:hidden}
+  .week .whead{padding:18px 20px 16px;border-bottom:1px solid var(--line)}
+  .week .wtag{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent2);border-radius:999px;padding:4px 11px}
+  .week .wdates{font-size:12.5px;color:var(--muted);margin-left:auto}
+  .whead .toprow{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+  .week h3{font-family:'Fraunces';font-size:21px;font-weight:600;margin:11px 0 4px}
+  .week .wgoal{font-size:14px;color:var(--ink2)}
+  .week .wbody{padding:6px 20px 16px}
+  .task{display:flex;align-items:flex-start;gap:13px;padding:13px 0;border-bottom:1px solid var(--line);cursor:pointer}
+  .task:last-child{border-bottom:none}
+  .task .box{flex:0 0 auto;width:22px;height:22px;border:2px solid var(--line);border-radius:6px;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:border-color .15s,background .15s}
+  .task.done .box{border-color:var(--good);background:var(--good)}
+  .task .box svg{width:13px;height:13px;opacity:0;transition:opacity .15s}
+  .task.done .box svg{opacity:1}
+  .task .tx{font-size:14.5px;color:var(--ink2)}
+  .task.done .tx{color:var(--muted);text-decoration:line-through}
+  .measure{background:#fff7f5;border:1px solid #ffd9cf;border-radius:16px;padding:24px;margin-top:30px}
+  .measure h3{font-size:20px;font-weight:600}
+  .measure p{font-size:14.5px;color:var(--ink2);margin-top:8px}
+  .measure ul{list-style:none;margin-top:14px}
+  .measure li{padding:9px 0 9px 26px;position:relative;font-size:14.5px;color:var(--ink2);border-bottom:1px solid #ffd9cf}
+  .measure li:last-child{border-bottom:none}
+  .measure li::before{content:"";position:absolute;left:3px;top:17px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+  .restart{margin-top:22px;text-align:center}
+  .restart a{font-size:13.5px;color:var(--muted);text-decoration:underline;cursor:pointer}
+  @media print{
+    nav,.navbtns,.actions,.restart,.addrow,.chip,.printhide{display:none!important}
+    body{background:#fff}
+    .week,.measure{break-inside:avoid;box-shadow:none}
+    .stage{padding:0}
+    .task{cursor:default}
+    .printonly{display:block!important}
+  }
+  .printonly{display:none}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">AI Adoption<span> Studio</span></div>
+  <div class="navmeta">30-Day Adoption Plan</div>
+</div></nav>
+
+<div class="stage"><div class="wrap">
+
+  <!-- INTRO -->
+  <div class="step on" id="s-intro">
+    <div class="eyebrow">Your make-it-stick deliverable</div>
+    <h1>The 30 days that turn a <span class="accent">tried-once</span> workflow into the default.</h1>
+    <p class="sub">You just picked the AI workflows worth adopting. Most teams try a new one, see it work, then quietly drift back to the old way by week two. This builds you a concrete, week-by-week plan so the new way actually sticks: model it, document it, hand it off, and make it the default.</p>
+    <div class="startcard">
+      <ul>
+        <li>Enter the 1 to 3 workflows you chose, plus your team size and a start date.</li>
+        <li>Get a real four-week plan with checkable tasks tailored to what you picked.</li>
+        <li>Your progress saves in this browser, so you can track it across the full 30 days.</li>
+        <li>Print or save it as a PDF to pin up or share with the team.</li>
+      </ul>
+    </div>
+    <div class="navbtns"><span></span><button class="btn primary" onclick="show('s-build')">Build my plan &rarr;</button></div>
+    <p class="miniref">The four-week shape (model it, document it, delegate it, default it) is the same adoption sequence the Studio runs in its workshops. A workflow does not stick because one person liked it once. It sticks when it is written down and becomes how the team works by default.</p>
+  </div>
+
+  <!-- BUILDER -->
+  <div class="step" id="s-build">
+    <div class="eyebrow">Set it up</div>
+    <h1>What are we making stick?</h1>
+    <p class="sub">Add the workflows you decided to adopt. Type your own, or tap a starter to add it. Up to three, so the team is not trying to change everything at once.</p>
+
+    <div class="blab">Your workflows (1 to 3)</div>
+    <div class="bhint">These are the recurring tasks you are moving over to the new AI-assisted way.</div>
+    <div id="wfrows"></div>
+    <button class="addrow" id="addbtn" onclick="addRow('')">+ Add another workflow</button>
+
+    <div class="bhint" style="margin-top:18px">Or tap a starter to add it:</div>
+    <div class="chips" id="starters"></div>
+
+    <div class="blab">The team</div>
+    <div class="bhint">How many other people, besides you, will end up using these workflows?</div>
+    <div class="fieldgrid">
+      <div class="field">
+        <label>Teammates (not counting you) <span class="teamval" id="teamval">2</span></label>
+        <input type="range" id="team" min="1" max="10" value="2" oninput="document.getElementById('teamval').textContent=this.value">
+      </div>
+      <div class="field">
+        <label>Start date</label>
+        <input type="date" id="startdate">
+      </div>
+    </div>
+
+    <div class="navbtns">
+      <button class="btn ghost" onclick="show('s-intro')">&larr; Back</button>
+      <button class="btn primary" id="genbtn" onclick="generate()">Generate my 30-day plan &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PLAN -->
+  <div class="step" id="s-plan">
+    <div class="eyebrow">Your 30-day adoption plan</div>
+    <div class="planhead"><h1 id="planlede">Make it stick.</h1></div>
+    <p class="meta-line" id="planmeta"></p>
+
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <div class="progress-label" id="progresslabel">0 of 0 tasks done</div>
+
+    <div id="weeks"></div>
+
+    <div class="measure">
+      <h3>Make the call at day 30</h3>
+      <p>Adoption is a decision, not a vibe. At the end of the 30 days, get the team in a room (or on a call) and answer three questions honestly. If the answers are yes, the workflow is now how you work. If not, you have learned exactly where it broke.</p>
+      <ul id="measurelist"></ul>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" onclick="window.print()">Print / Save as PDF</button>
+      <button class="btn ghost" onclick="resetProgress()">Reset my checkboxes</button>
+    </div>
+    <div class="restart"><a onclick="editPlan()">Edit workflows or dates</a></div>
+    <p class="miniref">Plan by AI Adoption Studio. Keep a human on anything a client sees before it ships. Your plan and progress stay in this browser.</p>
+  </div>
+
+</div></div>
+
+<script>
+// ---- starter workflows the user can tap to add ----
+var STARTERS = [
+  'Recurring client report',
+  'Proposal first draft',
+  'Meeting notes to action items',
+  'Repurposing content',
+  'Repeat client questions',
+  'Research brief',
+  'Inbox triage'
+];
+
+// ---- per-workflow extra detail used to make tasks concrete. matched loosely by keyword. ----
+var WF_DETAIL = [
+  {match:['report'], doc:'the data source it pulls from and the section order', deliver:'the report'},
+  {match:['proposal','pitch'], doc:'which past winner is the template and where the numbers come from', deliver:'the proposal draft'},
+  {match:['meeting','notes','action'], doc:'where the transcript comes from and where action items get pasted', deliver:'the summary and action items'},
+  {match:['repurpos','content'], doc:'the source piece and the exact list of output formats', deliver:'the repurposed set'},
+  {match:['question','faq','repeat'], doc:'the approved-answers doc it draws from', deliver:'the drafted reply'},
+  {match:['research','brief','scan'], doc:'the question template and the sources to check', deliver:'the research brief'},
+  {match:['inbox','triage','email'], doc:'the triage categories and the never-auto-send rule', deliver:'the sorted inbox and drafts'}
+];
+function detailFor(name){
+  var low=(name||'').toLowerCase();
+  for(var i=0;i<WF_DETAIL.length;i++){
+    var d=WF_DETAIL[i];
+    for(var j=0;j<d.match.length;j++){ if(low.indexOf(d.match[j])>=0) return d; }
+  }
+  return {doc:'the exact steps, inputs, and where the output goes', deliver:'the output'};
+}
+
+var STORE_KEY='aias_adoption_plan_v1';
+var plan=null; // {workflows:[], team:int, start:'YYYY-MM-DD', checks:{}}
+
+// ---- builder UI ----
+function addRow(val){
+  var box=document.getElementById('wfrows');
+  if(box.children.length>=3) return;
+  var row=document.createElement('div'); row.className='wfrow';
+  var inp=document.createElement('input');
+  inp.type='text'; inp.placeholder='e.g. Recurring client report'; inp.value=val||'';
+  inp.maxLength=70;
+  var rm=document.createElement('button'); rm.className='rm'; rm.type='button'; rm.textContent='×';
+  rm.onclick=function(){ row.remove(); syncBuilder(); };
+  row.appendChild(inp); row.appendChild(rm);
+  box.appendChild(row);
+  syncBuilder();
+}
+function currentWorkflows(){
+  var out=[];
+  document.querySelectorAll('#wfrows input').forEach(function(i){
+    var v=i.value.trim(); if(v) out.push(v);
+  });
+  return out;
+}
+function syncBuilder(){
+  var box=document.getElementById('wfrows');
+  document.getElementById('addbtn').disabled = box.children.length>=3;
+  // starters: disable a starter already added, and all if full
+  var existing=currentWorkflows().map(function(s){return s.toLowerCase()});
+  document.querySelectorAll('#starters .chip').forEach(function(c){
+    var taken=existing.indexOf(c.textContent.toLowerCase())>=0;
+    c.disabled = (box.children.length>=3 && !taken) || taken;
+  });
+}
+function renderStarters(){
+  var c=document.getElementById('starters'); c.innerHTML='';
+  STARTERS.forEach(function(s){
+    var el=document.createElement('button'); el.type='button'; el.className='chip'; el.textContent=s;
+    el.onclick=function(){
+      if(document.getElementById('wfrows').children.length>=3) return;
+      // fill an empty row if one exists, else add
+      var empty=null;
+      document.querySelectorAll('#wfrows input').forEach(function(i){ if(!i.value.trim() && !empty) empty=i; });
+      if(empty){ empty.value=s; syncBuilder(); } else { addRow(s); }
+    };
+    c.appendChild(el);
+  });
+}
+
+function show(id){
+  document.querySelectorAll('.step').forEach(function(s){s.classList.remove('on')});
+  document.getElementById(id).classList.add('on');
+  window.scrollTo(0,0);
+}
+
+// ---- plan generation ----
+function fmtDate(d){
+  var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return months[d.getMonth()]+' '+d.getDate();
+}
+function addDays(base,n){ var d=new Date(base.getTime()); d.setDate(d.getDate()+n); return d; }
+
+function buildWeeks(wfs, team){
+  var list = wfs.map(function(w){ return '"'+w+'"'; });
+  var joined = humanList(wfs);
+  var first = wfs[0];
+  var d0 = detailFor(first);
+  var teamWord = team===1 ? 'your one teammate' : (team+' teammates');
+  var oneTeammate = team===1 ? 'your teammate' : 'one teammate';
+
+  var weeks = [
+    {
+      tag:'Week 1', title:'You do it. Watch the time.',
+      goal:'Run '+joined+' yourself, the new way, for real client work. The only goal this week is proof that it is faster and good enough.',
+      tasks:[
+        'Use the new workflow for '+joined+' on at least one real, live piece of work (not a test run).',
+        'Time the old way once from memory, and time the new way once. Write both numbers down somewhere you will keep.',
+        'Keep a person on the final output before it reaches a client. The point is speed to a good draft, not removing the human check.',
+        (wfs.length>1 ? 'Do the same for each of your '+wfs.length+' workflows so you have a real reading on each.' : 'Run it a second time so the first-go awkwardness is not the number you remember.')
+      ]
+    },
+    {
+      tag:'Week 2', title:'Write it down so it repeats.',
+      goal:'A workflow only sticks if it survives you being busy or away. Turn what you did into a short, repeatable doc anyone could follow.',
+      tasks:[
+        'Write a one-page Standard Operating Procedure for '+(wfs.length>1?'each workflow':'the workflow')+': the steps, the inputs, the prompt you paste, and where the output goes.',
+        'For '+first+', note '+d0.doc+' specifically, so a teammate is not guessing.',
+        'Add the guardrail line to the doc: what a human must always check before it ships.',
+        'Save the doc where the team already looks (your wiki, shared drive, or task tool), not in your personal notes.'
+      ]
+    },
+    {
+      tag:'Week 3', title:'Hand it to '+oneTeammate+'. They shadow, then try.',
+      goal: team===0
+        ? 'Pressure-test the doc by following it cold yourself, as if you had never done it.'
+        : 'Move it off your desk. '+cap(oneTeammate)+' watches you run it once, then runs it themselves from the doc while you only answer questions.',
+      tasks:[
+        (team===1?'Pick your teammate':'Pick one teammate')+' to be the first owner of '+joined+'. One person, not the whole team yet.',
+        'They watch you run '+(wfs.length>1?'one of the workflows':'it')+' once, start to finish, following the doc.',
+        'Then they run it themselves on real work from the doc alone. You only answer questions, you do not take the keyboard.',
+        'Fix anything in the doc that tripped them up. If they needed to ask, the doc was missing a step.'
+      ]
+    },
+    {
+      tag:'Week 4', title:'Make it the default. Measure the hours.',
+      goal:'Adoption means the old way stops. Set the new workflow as how '+joined+' gets done from now on, and add up what it bought back.',
+      tasks:[
+        'Agree out loud with the team: from now on, '+joined+' is done the new way by default. Name who owns each one.',
+        'Add up the time saved per run from your Week 1 numbers, times how often each workflow runs in a month. That is your monthly hours bought back.',
+        (team>1 ? 'Spread it to the rest of the team ('+teamWord+') using the same doc, now that one person has proven it.' : 'Book the bought-back time into something that grows the business, not just more inbox.'),
+        'Retire the old way. Delete the old template or move it out of reach so no one quietly slips back.'
+      ]
+    }
+  ];
+  return weeks;
+}
+
+function humanList(arr){
+  if(arr.length===1) return arr[0];
+  if(arr.length===2) return arr[0]+' and '+arr[1];
+  return arr.slice(0,-1).join(', ')+', and '+arr[arr.length-1];
+}
+function cap(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
+
+function measurePoints(wfs){
+  return [
+    'Did '+humanList(wfs)+' actually get done the new way this week, by more than one person, without you driving it?',
+    'Is the doc good enough that someone new could pick it up cold and run it?',
+    'Do we have a real hours-saved number we believe, and somewhere better to spend that time?'
+  ];
+}
+
+function generate(){
+  var wfs=currentWorkflows();
+  if(wfs.length===0){ alert('Add at least one workflow to build a plan.'); return; }
+  var team=parseInt(document.getElementById('team').value,10);
+  var sd=document.getElementById('startdate').value;
+  var checks = (plan && plan.checks) ? plan.checks : {};
+  plan={workflows:wfs, team:team, start:sd, checks:checks};
+  save();
+  renderPlan();
+  show('s-plan');
+}
+
+function renderPlan(){
+  var wfs=plan.workflows, team=plan.team;
+  document.getElementById('planlede').innerHTML='Make '+ (wfs.length>1?'them':'it') +' stick over '+'<span class="accent">30 days.</span>';
+
+  // meta line
+  var start = plan.start ? parseLocalDate(plan.start) : null;
+  var metaParts=[];
+  metaParts.push('<b>'+wfs.length+'</b> workflow'+(wfs.length>1?'s':'')+': '+escapeHTML(humanList(wfs)));
+  metaParts.push('<b>'+team+'</b> teammate'+(team>1?'s':'')+' besides you');
+  if(start){ var end=addDays(start,27); metaParts.push('<b>'+fmtDate(start)+'</b> to <b>'+fmtDate(end)+'</b>'); }
+  document.getElementById('planmeta').innerHTML=metaParts.join(' &nbsp;·&nbsp; ');
+
+  var weeks=buildWeeks(wfs, team);
+  var box=document.getElementById('weeks'); box.innerHTML='';
+  weeks.forEach(function(wk, wi){
+    var dates='';
+    if(start){ var ws=addDays(start, wi*7); var we=addDays(start, wi*7+6); dates='<span class="wdates">'+fmtDate(ws)+' &ndash; '+fmtDate(we)+'</span>'; }
+    var tasksH='';
+    wk.tasks.forEach(function(t, ti){
+      var key='w'+wi+'t'+ti;
+      var done=plan.checks[key]?' done':'';
+      tasksH+='<div class="task'+done+'" data-k="'+key+'" onclick="toggleTask(this)">'+
+        '<span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></span>'+
+        '<span class="tx">'+escapeHTML(t)+'</span></div>';
+    });
+    box.insertAdjacentHTML('beforeend',
+      '<div class="week">'+
+        '<div class="whead"><div class="toprow"><span class="wtag">'+wk.tag+'</span>'+dates+'</div>'+
+          '<h3>'+escapeHTML(wk.title)+'</h3><div class="wgoal">'+escapeHTML(wk.goal)+'</div></div>'+
+        '<div class="wbody">'+tasksH+'</div>'+
+      '</div>');
+  });
+
+  var ml=document.getElementById('measurelist'); ml.innerHTML='';
+  measurePoints(wfs).forEach(function(p){ ml.insertAdjacentHTML('beforeend','<li>'+escapeHTML(p)+'</li>'); });
+
+  updateProgress();
+}
+
+function toggleTask(el){
+  var k=el.getAttribute('data-k');
+  el.classList.toggle('done');
+  plan.checks[k]=el.classList.contains('done');
+  save();
+  updateProgress();
+}
+function updateProgress(){
+  var all=document.querySelectorAll('#weeks .task');
+  var done=document.querySelectorAll('#weeks .task.done');
+  var total=all.length, n=done.length;
+  var pct= total? Math.round(n/total*100):0;
+  document.getElementById('bar').style.width=pct+'%';
+  var label=document.getElementById('progresslabel');
+  if(total>0 && n===total){ label.textContent='All '+total+' tasks done. The workflow is now the default.'; }
+  else { label.textContent=n+' of '+total+' tasks done ('+pct+'%)'; }
+}
+function resetProgress(){
+  if(!plan) return;
+  plan.checks={}; save();
+  document.querySelectorAll('#weeks .task.done').forEach(function(t){t.classList.remove('done')});
+  updateProgress();
+}
+function editPlan(){
+  // repopulate builder from current plan
+  var box=document.getElementById('wfrows'); box.innerHTML='';
+  (plan.workflows||[]).forEach(function(w){ addRow(w); });
+  if(box.children.length===0) addRow('');
+  document.getElementById('team').value=plan.team||2;
+  document.getElementById('teamval').textContent=plan.team||2;
+  if(plan.start) document.getElementById('startdate').value=plan.start;
+  syncBuilder();
+  show('s-build');
+}
+
+// ---- persistence ----
+function save(){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(plan)); }catch(e){} }
+function load(){ try{ var raw=localStorage.getItem(STORE_KEY); return raw?JSON.parse(raw):null; }catch(e){ return null; } }
+
+// ---- helpers ----
+function escapeHTML(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function parseLocalDate(s){ var p=s.split('-'); return new Date(parseInt(p[0],10), parseInt(p[1],10)-1, parseInt(p[2],10)); }
+function todayISO(){ var d=new Date(); var m=('0'+(d.getMonth()+1)).slice(-2); var day=('0'+d.getDate()).slice(-2); return d.getFullYear()+'-'+m+'-'+day; }
+
+// ---- init ----
+(function init(){
+  renderStarters();
+  var saved=load();
+  if(saved && saved.workflows && saved.workflows.length){
+    plan=saved;
+    if(!plan.checks) plan.checks={};
+    // prefill builder too, in case they hit edit
+    saved.workflows.forEach(function(w){ addRow(w); });
+    document.getElementById('team').value=saved.team||2;
+    document.getElementById('teamval').textContent=saved.team||2;
+    document.getElementById('startdate').value=saved.start||todayISO();
+    renderPlan();
+    show('s-plan');
+  } else {
+    addRow('');
+    document.getElementById('startdate').value=todayISO();
+  }
+  syncBuilder();
+})();
+</script>
+</body>
+</html>

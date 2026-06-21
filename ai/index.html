@@ -1408,13 +1408,14 @@
 <div class="exit-overlay" id="exitOverlay">
   <div class="exit-box">
     <button class="exit-close" onclick="closeExit()">&times;</button>
-    <h3>Not ready yet?</h3>
-    <p>Get the <strong>free UGC Rate Calculator</strong> and find out if you're undercharging.</p>
+    <h3>Before you go</h3>
+    <p>Want the <strong>free pitch framework</strong> instead? The 3-part pitch structure I used to close $800 deals at McCann. Free. Instant. No CloserAI required.</p>
     <div class="exit-form">
-      <input type="email" placeholder="Your email" id="exitEmail">
-      <button onclick="submitExit()">SEND IT</button>
+      <input type="email" placeholder="your@email.com" id="exitEmail" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false">
+      <button onclick="submitExit()">Send me the framework</button>
     </div>
-    <p style="font-size:11px; color:#999; margin-top:12px; margin-bottom:0;">In your inbox in ~30 seconds.</p>
+    <p id="exitStatus" aria-live="polite" style="font-size:13px; min-height:16px; margin-top:10px; margin-bottom:0; color:#2f7d5b; font-weight:500;"></p>
+    <p style="font-size:11px; color:#999; margin-top:8px; margin-bottom:0;">the framework arrives in your inbox in ~30 seconds</p>
   </div>
 </div>
 
@@ -1456,14 +1457,40 @@
     document.getElementById('exitOverlay').classList.remove('show');
   }
   function submitExit() {
-    const email = document.getElementById('exitEmail').value;
-    if (email && email.includes('@')) {
-      // TODO: Connect to Kit (ConvertKit) API or form action
-      document.querySelector('.exit-box').innerHTML =
-        '<h3 style="margin-bottom:12px;">You\'re in!</h3>' +
-        '<p>Check your inbox for the Rate Calculator.</p>';
-      setTimeout(closeExit, 3000);
+    const input = document.getElementById('exitEmail');
+    const status = document.getElementById('exitStatus');
+    const btn = document.querySelector('.exit-form button');
+    const email = (input && input.value || '').trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      if (status) { status.style.color = '#b4472b'; status.textContent = 'check that email and try again'; }
+      return;
     }
+    if (btn) { btn.disabled = true; btn.textContent = 'sending...'; }
+    // Same wire + source as /closerai exit-intent: subscribe.js maps this source to
+    // the CloserAI tags + nurture that actually delivers the pitch framework.
+    fetch('https://closermethod.com/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, source: 'closerai_exit_intent' })
+    }).then(function() {
+      if (typeof gtag !== 'undefined') gtag('event', 'exit_intent_subscribe', { transport_type: 'beacon' });
+      if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'closerai_exit_intent' });
+      const box = document.querySelector('.exit-box');
+      if (box) {
+        while (box.firstChild) box.removeChild(box.firstChild);
+        const h = document.createElement('h3');
+        h.style.marginBottom = '12px';
+        h.textContent = "You're in.";
+        const p = document.createElement('p');
+        p.textContent = 'Check your inbox — the pitch framework is on its way.';
+        box.appendChild(h);
+        box.appendChild(p);
+      }
+      setTimeout(closeExit, 3000);
+    }).catch(function() {
+      if (status) { status.style.color = '#b4472b'; status.textContent = 'something broke, try again or DM @closermethod'; }
+      if (btn) { btn.disabled = false; btn.textContent = 'Send me the framework'; }
+    });
   }
 
   // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====

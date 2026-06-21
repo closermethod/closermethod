@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You're in · The Missed-Call Money Workshop</title>
+  <meta name="robots" content="noindex"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231A1714'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%2313B38B' font-style='italic'%3Em%3C/text%3E%3C/svg%3E"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','35298849146380570');fbq('track','PageView');</script>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2458LX0VD', { page_path: '/workshop/thanks' });
+  </script>
+
+  <style>
+    :root{--cream:#FEF7F5;--blush:#FDF3EF;--white:#fff;--teal:#13B38B;--teal-hover:#0F9A77;--charcoal:#2C2825;--deep:#1A1714;--warm-gray:#6B635D;--stone:#E9DDD8}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--charcoal);-webkit-font-smoothing:antialiased;font-size:.95rem;line-height:1.7}
+    h1,h2,h3{font-family:'Cormorant Garamond',serif;color:var(--deep);font-weight:500;line-height:1.15}
+    a{color:var(--teal)}
+    .topnav{text-align:center;padding:22px 20px;border-bottom:1px solid var(--stone)}
+    .topnav a{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--deep);text-decoration:none}
+    .wrap{max-width:680px;margin:0 auto;padding:48px 22px 64px}
+    .card{background:var(--white);border:1px solid var(--stone);border-radius:14px;padding:40px 36px;box-shadow:0 8px 28px rgba(0,0,0,.04);margin-bottom:22px}
+    .eyebrow{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--teal);margin-bottom:12px}
+    h1{font-size:clamp(1.9rem,4.6vw,2.5rem);margin-bottom:14px}
+    h2{font-size:1.55rem;margin:0 0 12px}
+    h3{font-size:1.05rem;font-family:'Montserrat',sans-serif;font-weight:700;color:var(--deep);margin:18px 0 8px}
+    p{margin-bottom:14px}
+    ol.steps{margin:6px 0 6px 2px;padding-left:18px}
+    ol.steps li{margin-bottom:12px}
+    ul.dl{list-style:none;margin:6px 0}
+    ul.dl li{position:relative;padding-left:28px;margin-bottom:10px}
+    ul.dl li:before{content:"";position:absolute;left:2px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--teal)}
+    .note{font-size:.88rem;color:var(--warm-gray)}
+    .btn{display:inline-block;padding:14px 22px;background:var(--teal);color:#fff;border-radius:7px;font-weight:600;text-decoration:none;margin-top:8px}
+    .btn:hover{background:var(--teal-hover);color:#fff}
+    /* calculator */
+    .calc label{display:block;font-size:.82rem;font-weight:600;color:var(--charcoal);margin:14px 0 6px}
+    .calc input{width:100%;padding:12px 14px;border:1.5px solid var(--stone);border-radius:8px;background:var(--white);font-family:'Montserrat',sans-serif;font-size:1rem;color:var(--deep)}
+    .calc input:focus{outline:none;border-color:var(--teal)}
+    .result{margin-top:22px;padding:22px;background:#EAF8F3;border:1px solid var(--teal);border-radius:12px;text-align:center}
+    .result .big{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,7vw,3rem);font-weight:600;color:var(--deep);line-height:1.05}
+    .result .sub{font-size:.9rem;color:var(--charcoal);margin-top:6px}
+    .result .rec{font-size:.85rem;color:var(--warm-gray);margin-top:10px}
+    .phase{background:var(--blush);border:1px solid var(--stone);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+    .phase b{color:var(--deep)}
+    .check{list-style:none;margin:6px 0}
+    .check li{position:relative;padding-left:30px;margin-bottom:10px}
+    .check li:before{content:"\2610";position:absolute;left:2px;top:-2px;font-size:1.1rem;color:var(--teal)}
+  </style>
+</head>
+<body>
+  <nav class="topnav"><a href="https://closermethod.com/">The Closer Method</a></nav>
+  <div class="wrap">
+    <div class="card">
+      <div class="eyebrow">Payment confirmed</div>
+      <h1>You're in. Your seat is saved.</h1>
+      <p>Welcome to The Missed-Call Money Workshop. A receipt is on its way to the email you used at checkout. Your full toolkit is right here on this page, so you can start the moment you read this. Bookmark it.</p>
+    </div>
+
+    <div class="card">
+      <h2>The live session</h2>
+      <ol class="steps">
+        <li><strong>Watch your inbox.</strong> The live session date and join link come to the email you used at checkout. Seats are small on purpose so we work every owner's numbers live.</li>
+        <li><strong>Bring your numbers.</strong> Run the calculator below first, so you arrive knowing your leak.</li>
+        <li><strong>Can't make it live?</strong> The recording comes to you afterward, yours to keep.</li>
+      </ol>
+      <p class="note">If the date email has not arrived in a few minutes, check spam, then reply to your receipt and I will send it directly.</p>
+    </div>
+
+    <div class="card calc">
+      <h2>1 · Your Missed-Call ROI calculator</h2>
+      <p>Plug in your real numbers. This is the same model we use live.</p>
+      <label for="calls">Inbound calls per week</label>
+      <input id="calls" type="number" inputmode="numeric" placeholder="e.g. 60" value="60"/>
+      <label for="missed">Percent missed, voicemail, or after-hours (%)</label>
+      <input id="missed" type="number" inputmode="numeric" placeholder="e.g. 25" value="25"/>
+      <label for="job">Average job or matter value ($)</label>
+      <input id="job" type="number" inputmode="numeric" placeholder="e.g. 600" value="600"/>
+      <label for="close">Close rate on answered new-lead calls (%)</label>
+      <input id="close" type="number" inputmode="numeric" placeholder="e.g. 40" value="40"/>
+      <div class="result">
+        <div class="big" id="lost">$0</div>
+        <div class="sub">estimated revenue lost to missed calls per year</div>
+        <div class="rec" id="rec"></div>
+      </div>
+      <p class="note" style="margin-top:14px">Conservative by design: assumes an AI receptionist recovers about half of currently-missed calls. Your real recovery is often higher. Numbers are estimates based on what you enter.</p>
+    </div>
+
+    <div class="card">
+      <h2>2 · Your 90-Day Automation Roadmap</h2>
+      <div class="phase"><b>Phase 1 · Weeks 1-2 · Stop the bleeding.</b><br>AI receptionist on your main line: answers every call 24/7, books or routes, texts you a summary. This is the fix for the number above.</div>
+      <div class="phase"><b>Phase 2 · Weeks 3-6 · Capture and follow up.</b><br>Missed-call-to-text auto-response. After-hours booking flow. A simple speed-to-lead rule so no new lead waits more than 5 minutes.</div>
+      <div class="phase"><b>Phase 3 · Weeks 7-12 · Compound.</b><br>Review-request automation after completed jobs. Reactivation texts to old leads. Monthly reporting so you can see what the system recovers.</div>
+    </div>
+
+    <div class="card">
+      <h2>3 · Receptionist setup checklist</h2>
+      <ul class="check">
+        <li>List your top 10 caller questions and the exact answers (hours, pricing rules, service area).</li>
+        <li>Decide what the receptionist should do: book, qualify, or route to you.</li>
+        <li>Set your urgent-call rule (what gets forwarded to a human, and when).</li>
+        <li>Connect your calendar or booking tool.</li>
+        <li>Write the call summary text you want after every call.</li>
+        <li>Test with 10 real-world call scenarios before going live.</li>
+        <li>Put the number on your site, Google profile, and ads.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Want it done for you?</h2>
+      <p>If you would rather skip the DIY and have the receptionist installed for you, the next step is a done-for-you <a href="https://closermethod.com/hire">AI Opportunity Audit</a>. No pressure. Everything above stands on its own.</p>
+      <a class="btn" href="https://closermethod.com/hire">See the done-for-you path</a>
+    </div>
+  </div>
+
+  <script>
+    // ROI calculator (mirrors the missed-call-roi-model: conservative, transparent)
+    (function(){
+      var ids=['calls','missed','job','close'];
+      function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+      function calc(){
+        var c=+document.getElementById('calls').value||0;
+        var m=(+document.getElementById('missed').value||0)/100;
+        var j=+document.getElementById('job').value||0;
+        var cl=(+document.getElementById('close').value||0)/100;
+        var missedYr=c*52*m;
+        var lostJobs=missedYr*cl;
+        var lost=lostJobs*j;
+        document.getElementById('lost').textContent=fmt(lost);
+        var recoverable=lost*0.5; // conservative
+        var rec=document.getElementById('rec');
+        if(lost>0){
+          rec.textContent='A receptionist recovering about half of that is roughly '+fmt(recoverable)+'/year back. The install pays for itself in '+Math.max(1,Math.round((2997+497*12)/(recoverable/12)))+' month(s) or less at this rate.';
+        } else { rec.textContent=''; }
+      }
+      ids.forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
+      calc();
+    })();
+    // Guarded purchase event: once per browser session
+    try {
+      if(!sessionStorage.getItem('cm_ws_purchase_fired')){
+        gtag('event','purchase',{transaction_id:'ws-'+Date.now(),value:497,currency:'USD',items:[{item_name:'Missed-Call Money Workshop',price:497}]});
+        if(window.fbq){fbq('track','Purchase',{value:497,currency:'USD'});}
+        sessionStorage.setItem('cm_ws_purchase_fired','1');
+      }
+    } catch(e){}
+  </script>
+</body>
+</html>

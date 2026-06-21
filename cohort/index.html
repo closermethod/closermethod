@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cohort 01 · AI Adoption Studio × The Closer Method</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q2458LX0VD');
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','3529884914638057');fbq('track','PageView');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0e1116;--ink2:#1b212b;--paper:#f7f5f1;--card:#fff;--accent:#ff5a3c;--accent2:#1f6feb;--muted:#6b7480;--line:#e7e3da;--good:#1f9d63}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.08;letter-spacing:-.01em}
+  .accent{color:var(--accent)}
+  nav{position:sticky;top:0;z-index:50;background:rgba(247,245,241,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-family:'Fraunces';font-weight:900;font-size:16px;letter-spacing:-.02em}
+  .logo span.s{color:var(--accent)}
+  .navcta{font-size:13px;font-weight:600;color:#fff;background:var(--ink);padding:9px 16px;border-radius:999px;text-decoration:none}
+  .hero{padding:84px 0 64px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .hero h1{font-size:clamp(36px,5.6vw,64px);font-weight:900;margin:16px 0 0;max-width:920px}
+  .hero .sub{font-size:clamp(17px,2.2vw,21px);color:var(--ink2);max-width:760px;margin:24px 0 0}
+  .btn{font-size:15px;font-weight:600;color:#fff;background:var(--accent);padding:15px 30px;border-radius:999px;text-decoration:none;display:inline-block}
+  .btn:hover{background:#e8492c}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .hero .cta-row{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .hero .seats{font-size:13.5px;color:var(--muted);margin-top:18px}
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  .kicker{font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px}
+  h2{font-size:clamp(26px,3.8vw,42px);font-weight:600;max-width:840px}
+  .lede{font-size:18px;color:var(--ink2);max-width:780px;margin-top:16px}
+  .stat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+  @media(max-width:720px){.stat{grid-template-columns:1fr}}
+  .stat .s{border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--card)}
+  .stat .s .big{font-family:'Fraunces';font-weight:900;font-size:38px;color:var(--accent)}
+  .stat .s p{font-size:14px;color:var(--ink2);margin-top:6px}
+  .stat .s cite{font-size:12px;color:var(--muted);font-style:normal}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+  @media(max-width:760px){.grid3{grid-template-columns:1fr}}
+  .card{border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--card)}
+  .card h3{font-family:'Fraunces';font-size:18px;font-weight:600;margin-bottom:8px}
+  .card p{font-size:14.5px;color:var(--ink2)}
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:14px 40px;margin-top:30px}
+  @media(max-width:640px){.why{grid-template-columns:1fr}}
+  .why .w b{font-weight:600}.why .w span{font-size:14.5px;color:var(--ink2)}
+  .why .w{border-top:2px solid var(--accent);padding-top:12px}
+  .shift{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+  @media(max-width:720px){.shift{grid-template-columns:1fr}}
+  .col{border:1px solid var(--line);border-radius:16px;padding:26px;background:var(--card)}
+  .col.after{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .col .lab{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .col.after .lab{color:var(--accent)}
+  .col h3{font-family:'Fraunces';font-size:20px;font-weight:600;margin:8px 0 12px}.col.after h3{color:#fff}
+  .col p{font-size:14.5px;color:var(--ink2)}.col.after p{color:#dfe3ea}
+  .days{margin-top:32px;display:grid;gap:2px}
+  .day{display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}.day:last-child{border-bottom:none}
+  .day .n{font-family:'Fraunces';font-weight:900;font-size:22px;color:var(--accent);min-width:30px}
+  .day h3{font-family:'Inter';font-weight:600;font-size:15.5px;margin-bottom:2px}
+  .day p{font-size:14px;color:var(--muted)}
+  .stack{border:1px solid var(--line);border-radius:18px;background:var(--card);margin-top:30px;overflow:hidden}
+  .stack .row{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:18px 24px;border-bottom:1px solid var(--line)}
+  .stack .row:last-child{border-bottom:none}
+  .stack .row .l b{font-weight:600;font-size:15.5px}
+  .stack .row .l small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+  .stack .row .v{font-size:14px;color:var(--good);font-weight:600;white-space:nowrap}
+  .stack .row.free{background:#f0f6f1}
+  .stack .total{display:flex;justify-content:space-between;padding:18px 24px;background:var(--ink);color:#fff}
+  .stack .total b{font-family:'Fraunces';font-weight:600;font-size:17px}.stack .total .v{color:#fff;font-weight:600}
+  .guarantee{background:var(--ink);color:#fff;border-radius:20px;padding:42px 38px}
+  .guarantee .kicker{color:var(--accent)}.guarantee h2{color:#fff;font-size:clamp(24px,3.2vw,34px)}
+  .guarantee p{color:#cfd5de;font-size:17px;margin-top:14px;max-width:740px}
+  .fit{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+  @media(max-width:640px){.fit{grid-template-columns:1fr}}
+  .fit .b{border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--card)}
+  .fit .b h3{font-family:'Inter';font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
+  .fit .b.no h3{color:var(--muted)}.fit .b.yes h3{color:var(--good)}
+  .fit .b div{font-size:14.5px;color:var(--ink2);padding:5px 0}
+  .pricecard{max-width:600px;border:1px solid var(--line);border-radius:18px;padding:34px;background:var(--card)}
+  .pricecard .amt{font-family:'Fraunces';font-weight:900;font-size:50px}
+  .pricecard .amt small{font-family:'Inter';font-weight:500;font-size:14px;color:var(--muted)}
+  .pricecard ul{list-style:none;margin:20px 0 0}
+  .pricecard li{font-size:14.5px;padding:5px 0;color:var(--ink2)}
+  .pricecard li::before{content:"\2713";color:var(--good);font-weight:700;margin-right:9px}
+  .faq{margin-top:26px;max-width:780px}
+  .faq .q{font-weight:600;font-size:15.5px;margin-top:18px}.faq .a{font-size:14.5px;color:var(--ink2);margin-top:4px}
+  footer{padding:40px 0;text-align:center;font-size:13px;color:var(--muted)}
+  .final{text-align:center}.final h2{margin:0 auto}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="logo">AI Adoption <span class="s">Studio</span> <span style="color:var(--muted);font-weight:400">&times;</span> The Closer Method</div>
+  <a href="#join" class="navcta">Join Cohort 01</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Cohort 01 · starts July 7</div>
+  <h1>Get your hours back. <span class="accent">Automate one real thing</span> you actually do at work.</h1>
+  <p class="sub">You have the tools. They still haven't taken anything off your plate. In one focused week, we take the task bleeding the most time from your week and build it into a working system with you. You leave with it running, and the method to do it again with the next one.</p>
+  <p style="font-size:15px;color:var(--ink2);margin-top:22px;max-width:640px;border-left:3px solid var(--accent);padding-left:15px">76% of small businesses now use AI. Only 14% have actually built it into how they work. This week, you join the 14%.<span style="display:block;font-size:12px;color:var(--muted);margin-top:4px">Goldman Sachs 10,000 Small Businesses, 2026</span></p>
+  <div class="cta-row">
+    <a href="#join" class="btn">Join Cohort 01 &rarr;</a>
+    <a href="#how" class="btn ghost">See how the week works</a>
+  </div>
+  <p class="seats">The founding group. Limited seats so feedback stays personal.</p>
+</div></header>
+
+<section><div class="wrap">
+  <div class="kicker">The gap no one sells you a fix for</div>
+  <h2>Owning AI is not the same as using it. The hours are sitting right there.</h2>
+  <p class="lede">An MIT report found 95% of company AI delivers no measurable return, and the reason is never the model. It is that the tools never got built into how people actually work. Close that gap on one real task and the time comes back fast.</p>
+  <div class="stat">
+    <div class="s"><div class="big">5–7 hrs</div><p>a week reclaimed by people who actually build AI into their workflow, and more for operators and managers.</p><cite>Industry workplace surveys, 2025</cite></div>
+    <div class="s"><div class="big">95%</div><p>of company AI spend shows no measurable return, because it never got adopted into the work.</p><cite>MIT report, 2025</cite></div>
+    <div class="s"><div class="big">1 task</div><p>is all it takes to feel it. One system, running, is worth more than fifty tabs you never open.</p><cite>The whole point of this week</cite></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kicker">Why it hasn't worked yet</div>
+  <h2>The problem was never the tool. It's that you never built it in.</h2>
+  <p class="lede">And leaving it there has a cost. Gartner expects <strong>over 40% of AI projects to be scrapped by the end of 2027</strong> — not for lack of tools, for lack of adoption. This week is how you land in the other 60%.<span style="display:block;font-size:12px;color:var(--muted);margin-top:4px">Gartner, 2025</span></p>
+  <div class="grid3">
+    <div class="card"><h3>You rewrite half its output</h3><p>So the time you "saved" goes straight back into fixing it. A 2026 Workday study found roughly 40% of the hours AI saves get eaten by rework. Net zero.</p></div>
+    <div class="card"><h3>It sounds like everyone else</h3><p>Generic and off-brand, not something you would put your name on.</p></div>
+    <div class="card"><h3>So you go back to by hand</h3><p>The tool sits there impressive and unused, and the busywork never left your plate.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kicker">Why this is not just "ask ChatGPT"</div>
+  <h2>AI tells you what is possible. It will not tell you what is wise for your business.</h2>
+  <p class="lede">It will not set it up inside your tools, or stop you automating the one thing that quietly damages a customer. That judgment is the work, and it is the whole point of this week.</p>
+  <div class="why">
+    <div class="w"><b>Judgment, not hype.</b> <span>We start from what is safe and high-leverage for you, so you never automate the thing that costs you a customer.</span></div>
+    <div class="w"><b>Curated, not overwhelming.</b> <span>A small set of tools chosen for your work, not a zoo of fifty apps.</span></div>
+    <div class="w"><b>Built, not described.</b> <span>You leave with a system running on your real work, not a folder of notes.</span></div>
+    <div class="w"><b>Responsible by design.</b> <span>Clear guardrails for accuracy, your data, and the customer trust your business runs on.</span></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kicker">The shift</div>
+  <h2>From "the day runs me" to "AI handles the busywork, I do the work that matters."</h2>
+  <div class="shift">
+    <div class="col"><div class="lab">Now</div><h3>The day runs you.</h3><p>Email you can't keep up with. Proposals from scratch. The same questions answered again and again. Admin eating the hours you meant to spend growing.</p></div>
+    <div class="col after"><div class="lab">After the week</div><h3>You get your hours back.</h3><p>One real task runs itself, in your voice. Customers feel better served, not processed. More capacity without hiring, and the method to do it again with the next task.</p></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="kicker">How the week works · map, sort, match, build, adopt</div>
+  <h2>The same five moves a $7,500 room gets. Run on your real work.</h2>
+  <div class="days">
+    <div class="day"><div class="n">1</div><div><h3>Map the work, find your biggest time-sink</h3><p>Lay out your week, score by time saved and risk, choose the highest-leverage, lowest-risk win to start.</p></div></div>
+    <div class="day"><div class="n">2</div><div><h3>Make it sound like you</h3><p>Build a voice system so the output is something you would actually send, not rewrite.</p></div></div>
+    <div class="day"><div class="n">3</div><div><h3>Make it do the whole job</h3><p>Chain it so it handles the task end to end. Inputs in, finished work out.</p></div></div>
+    <div class="day"><div class="n">4</div><div><h3>Make it run on its own</h3><p>Add a self-check and lock the inputs so it gives the same result every time, and you can step away.</p></div></div>
+    <div class="day"><div class="n">5</div><div><h3>Set the guardrails</h3><p>What to automate, what to keep human, how to protect your data and your customers' trust.</p></div></div>
+    <div class="day"><div class="n">6</div><div><h3>Pressure-test it</h3><p>Throw your messiest real work at it, find the cracks, patch them. I review your build directly.</p></div></div>
+    <div class="day"><div class="n">7</div><div><h3>Deploy it, then make it stick</h3><p>Put it to work for real, plus a 30-day plan so it lives instead of dying at "we tried it once."</p></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kicker">Everything you get</div>
+  <h2>One working system, plus the entire AI Capability Suite, included.</h2>
+  <p class="lede">The Capability Suite sells on its own for $147. Inside the cohort, it's free, alongside the build itself and direct feedback on your work.</p>
+  <div class="stack">
+    <div class="row"><div class="l"><b>A working AI system</b><small>Built with me on your real work, doing a real job in your business</small></div><div class="v">the outcome</div></div>
+    <div class="row"><div class="l"><b>My direct feedback on your build</b><small>Real eyes on your actual system, so it genuinely runs</small></div><div class="v">included</div></div>
+    <div class="row free"><div class="l"><b>The Work Map tool</b><small>Score every task by time saved and risk</small></div><div class="v">free inside</div></div>
+    <div class="row free"><div class="l"><b>The Capability Suite Picker</b><small>Your curated AI stack, not fifty apps</small></div><div class="v">free inside</div></div>
+    <div class="row free"><div class="l"><b>The Responsible-Use Guardrail</b><small>Your one-page house rules for safe AI</small></div><div class="v">free inside</div></div>
+    <div class="row free"><div class="l"><b>The 30-Day Adoption Plan</b><small>So it sticks and your team comes along</small></div><div class="v">free inside</div></div>
+    <div class="row free"><div class="l"><b>The AI Workflow Library</b><small>Vetted plays plus copy-paste prompts, updated over time</small></div><div class="v">free inside</div></div>
+    <div class="row"><div class="l"><b>The founding cohort room + lifetime access</b><small>Build alongside the group, keep everything</small></div><div class="v">included</div></div>
+    <div class="total"><b>The $147 Capability Suite, free inside Cohort 01</b><span class="v">one price, below</span></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="guarantee">
+    <div class="kicker">Made to work</div>
+    <h2>You leave with a working system, or I keep going until you do.</h2>
+    <p>Do the build with me. If your system isn't running by the end of the week, you don't get left with notes and a shrug. I keep working with you, directly, until it runs. That is the only guarantee I make, and it is the only one that matters.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kicker">Honest fit</div>
+  <h2>Who this is for, and who it isn't.</h2>
+  <div class="fit">
+    <div class="b yes"><h3>Join if</h3>
+      <div>&#10003; You use AI and it still hasn't taken anything off your plate</div>
+      <div>&#10003; You run a business or do work with one repetitive task eating your week</div>
+      <div>&#10003; You'd rather own one working system than collect a hundred prompts</div>
+      <div>&#10003; You'll bring one real task of your own to build on</div>
+    </div>
+    <div class="b no"><h3>Skip if</h3>
+      <div>&times; You want a magic prompt and zero work</div>
+      <div>&times; You're after theory and a certificate, not a working build</div>
+      <div>&times; You want hot takes about AI replacing everyone</div>
+      <div>&times; You won't put one real hour a day into it</div>
+    </div>
+  </div>
+</div></section>
+
+<section id="join"><div class="wrap">
+  <div class="kicker">Claim your founding seat</div>
+  <h2>Cohort 01 · the founding group.</h2>
+
+  <div style="max-width:600px;margin-top:18px;border:1px solid #cfe6d6;border-radius:16px;background:#f0f6f1;padding:22px 24px">
+    <div style="font-weight:600;font-size:15.5px;margin-bottom:6px">The math, plainly.</div>
+    <p style="font-size:14.5px;color:var(--ink2)">Automate one task you do three times a week and you buy back roughly <b>50 hours a year</b>, every year. If your time is worth even $50 an hour, that's <b>$2,500+ a year in time, forever</b>. The same done-with-you build sells in a room for <b>$7,500</b>. Cohort 01 is <b>$497</b>, once. It pays for itself in the first week.</p>
+  </div>
+
+  <div class="pricecard" style="margin-top:18px">
+    <div style="color:var(--muted);font-size:15.5px;margin-bottom:2px"><span style="text-decoration:line-through">$997 from Cohort 02</span> &nbsp;&middot;&nbsp; founding price for Cohort 01</div>
+    <div class="amt">$497 <small>founding rate</small></div>
+    <ul>
+      <li>Your first working AI system, built with me on your real work</li>
+      <li>My direct feedback on your actual build</li>
+      <li>The entire AI Capability Suite (5 tools) included free, a $147 value</li>
+      <li>Work Map, Capability Suite, Responsible-Use guardrail, 30-day plan, Workflow Library</li>
+      <li>Founding cohort room + lifetime access, all in Skool</li>
+      <li>The made-to-work promise: it runs, or I keep going until it does</li>
+    </ul>
+    <div style="margin-top:24px">
+      <a href="https://buy.stripe.com/bJe00d7H39R44uudNF5Ne11" id="enrollBtn" class="btn" style="display:block;text-align:center" onclick="if(typeof gtag==='function')gtag('event','begin_checkout',{event_category:'cohort',value:497,currency:'USD'});if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'cohort-01',value:497,currency:'USD'});">Enroll in Cohort 01 &middot; $497 &rarr;</a>
+      <p style="font-size:13px;color:var(--muted);margin-top:14px;text-align:center">Secure checkout &middot; you get your Skool invite the moment you join &middot; starts July 7</p>
+      <p style="font-size:13.5px;margin-top:12px;text-align:center"><a href="/finder" style="color:var(--accent2);text-decoration:none">Not ready? Map your week free first &rarr;</a></p>
+    </div>
+    <p style="font-size:13px;color:var(--muted);margin-top:14px">Founding price for Cohort 01 only. It moves to $997 for Cohort 02. You build with the group in Skool, and you keep everything.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kicker">Straight answers</div>
+  <div class="faq">
+    <div class="q">Do I need to be technical?</div><div class="a">No. If you can hold a conversation with a chat AI, you can do this. Day 1 starts at the task, not the tech, and you don't build alone.</div>
+    <div class="q">What if I've barely started with AI?</div><div class="a">Perfect. We start from one real task and build from there. Beginners often finish faster because they don't have bad habits to unlearn.</div>
+    <div class="q">What exactly do I walk away with?</div><div class="a">One working AI system doing a real task in your business, the full AI Capability Suite, and the method to point it at your next task yourself.</div>
+    <div class="q">What if my system isn't running by the end?</div><div class="a">Then I keep working with you directly until it runs. That is the made-to-work promise.</div>
+  </div>
+</div></section>
+
+<section><div class="wrap final">
+  <h2>Stop doing the work your AI should be doing.</h2>
+  <div style="margin-top:24px"><a href="#join" class="btn">Join Cohort 01 &rarr;</a></div>
+  <p style="font-size:13px;color:var(--muted);margin-top:14px">Cohort 01 · starts July 7 · made to work</p>
+</div></section>
+
+<footer>AI Adoption Studio &times; The Closer Method · Cohort 01</footer>
+
+</body>
+</html>

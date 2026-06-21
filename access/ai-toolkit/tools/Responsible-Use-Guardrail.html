@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Adoption Studio · Responsible-Use Guardrail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0e1116;--ink2:#1b212b;--paper:#f7f5f1;--card:#ffffff;--accent:#ff5a3c;--accent2:#1f6feb;--muted:#6b7480;--line:#e7e3da;--good:#1f9d63;--warn:#d99a1c;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:780px;margin:0 auto;padding:0 24px}
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;line-height:1.12;letter-spacing:-.01em}
+  .accent{color:var(--accent)}
+  nav{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(247,245,241,.92);backdrop-filter:blur(10px)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .logo{font-family:'Fraunces';font-weight:900;font-size:16px;letter-spacing:-.02em}
+  .logo span{color:var(--accent)}
+  .navmeta{font-size:12px;color:var(--muted)}
+  .stage{padding:44px 0 70px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  h1{font-size:clamp(28px,5vw,42px);font-weight:900;margin:14px 0 0}
+  .sub{font-size:16.5px;color:var(--ink2);max-width:620px;margin:16px 0 0}
+  .step{display:none}
+  .step.on{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  /* intro */
+  .startcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;margin-top:26px}
+  .startcard ul{list-style:none;margin-top:6px}
+  .startcard li{padding:9px 0 9px 26px;position:relative;font-size:15px;color:var(--ink2);border-bottom:1px solid var(--line)}
+  .startcard li:last-child{border-bottom:none}
+  .startcard li::before{content:"";position:absolute;left:3px;top:17px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  .navbtns{display:flex;justify-content:space-between;margin-top:30px;gap:12px;flex-wrap:wrap}
+  .btn{font-weight:600;font-size:15px;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;font-family:inherit}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.primary:hover{background:#e8472b}
+  .btn.ghost{background:transparent;color:var(--muted);border:1.5px solid var(--line)}
+  .btn.ghost:hover{color:var(--ink)}
+  .miniref{font-size:11.5px;color:var(--muted);margin-top:26px;border-top:1px solid var(--line);padding-top:14px}
+  /* questions */
+  .qhead{margin-top:6px}
+  .qintro{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px}
+  .field{margin-top:22px}
+  .field .q{font-family:'Fraunces';font-size:clamp(18px,2.6vw,21px);font-weight:600;margin-bottom:3px}
+  .field .qh{font-size:13.5px;color:var(--muted);margin-bottom:12px}
+  /* yes/no toggle */
+  .toggle{display:flex;gap:10px}
+  .toggle .t{flex:1;border:1.5px solid var(--line);border-radius:11px;padding:12px 16px;background:#fff;cursor:pointer;font-size:15px;font-weight:600;text-align:center;color:var(--ink2);transition:border-color .15s,background .15s,color .15s}
+  .toggle .t:hover{border-color:var(--accent)}
+  .toggle .t.sel{border-color:var(--accent);background:#fff7f5;color:var(--ink)}
+  /* checkboxes */
+  .opts{display:grid;gap:10px}
+  .opt{display:flex;align-items:center;gap:14px;border:1.5px solid var(--line);border-radius:12px;padding:14px 18px;background:#fff;cursor:pointer;transition:border-color .15s,background .15s;font-size:15px;font-weight:500}
+  .opt:hover{border-color:var(--accent)}
+  .opt.sel{border-color:var(--accent);background:#fff7f5}
+  .opt .box{width:18px;height:18px;border-radius:5px;border:2px solid var(--line);flex:0 0 auto;display:flex;align-items:center;justify-content:center}
+  .opt.sel .box{border-color:var(--accent);background:var(--accent)}
+  .opt.sel .box::after{content:"";width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+  /* text input */
+  .tin{width:100%;border:1.5px solid var(--line);border-radius:10px;height:46px;padding:0 14px;font-size:15px;font-family:inherit;background:#fff;margin-top:4px}
+  .tin:focus{outline:none;border-color:var(--accent)}
+  /* the generated sheet */
+  .sheet{background:#fff;border:1px solid var(--line);border-radius:16px;padding:34px 36px 30px;margin-top:24px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+  .sheet .shead{border-bottom:2px solid var(--ink);padding-bottom:16px;margin-bottom:6px}
+  .sheet .skick{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .sheet h2{font-size:clamp(22px,3.2vw,28px);font-weight:900;margin:6px 0 0}
+  .sheet .smeta{font-size:12.5px;color:var(--muted);margin-top:8px}
+  .block{margin-top:22px}
+  .block .blab{display:flex;align-items:center;gap:9px;font-family:'Fraunces';font-size:17px;font-weight:600;margin-bottom:9px}
+  .block .pill{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:3px 9px;color:#fff}
+  .pill.ok{background:var(--good)}
+  .pill.no{background:var(--accent)}
+  .pill.eye{background:var(--accent2)}
+  .pill.own{background:var(--ink2)}
+  ul.rules{list-style:none}
+  ul.rules li{position:relative;padding:7px 0 7px 26px;font-size:14.5px;color:var(--ink2);border-bottom:1px solid var(--line)}
+  ul.rules li:last-child{border-bottom:none}
+  ul.rules li::before{content:"";position:absolute;left:4px;top:15px;width:7px;height:7px;border-radius:50%;background:var(--good)}
+  ul.rules.bad li::before{background:var(--accent);border-radius:2px}
+  .doubt{background:#fff7f5;border:1px solid #ffd9cf;border-radius:12px;padding:16px 18px;margin-top:24px}
+  .doubt b{color:var(--accent)}
+  .doubt p{font-size:14px;color:var(--ink2);margin-top:4px}
+  .sigrow{display:flex;gap:30px;margin-top:26px;flex-wrap:wrap}
+  .sigrow .sig{flex:1;min-width:180px;border-top:1px solid var(--line);padding-top:7px;font-size:12px;color:var(--muted)}
+  .sfoot{margin-top:24px;border-top:1px solid var(--line);padding-top:12px;font-size:11.5px;color:var(--muted)}
+  .actions{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+  .restart{margin-top:22px;text-align:center}
+  .restart a{font-size:13.5px;color:var(--muted);text-decoration:underline;cursor:pointer}
+  @media print{
+    nav,.stage{padding:0}
+    nav,.actions,.restart,.miniref,.navbtns{display:none !important}
+    body{background:#fff}
+    .wrap{max-width:none;padding:0}
+    .sheet{border:none;border-radius:0;box-shadow:none;padding:0;margin:0}
+    .step .eyebrow,.step>h1,.step>.sub{display:none}
+    .doubt{background:#fff;border:1px solid #ccc}
+  }
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">AI Adoption<span> Studio</span></div>
+  <div class="navmeta">Responsible-Use Guardrail · ~2 minutes</div>
+</div></nav>
+
+<div class="stage"><div class="wrap">
+
+  <!-- INTRO -->
+  <div class="step on" id="s-intro">
+    <div class="eyebrow">Pillar 3 · Responsible use, made simple</div>
+    <h1>Your team's <span class="accent">house rules</span> for using AI safely.</h1>
+    <p class="sub">A tiny team does not need a 40-page policy. It needs one page on the wall: what is safe to put into a chatbot, what never goes in, and who checks the output before a client ever sees it. Answer a few quick questions and we generate that one page, tailored to your business, ready to print and pin up.</p>
+    <div class="startcard">
+      <ul>
+        <li>Takes about two minutes, a handful of quick taps.</li>
+        <li>You get a clean, one-page guardrail sheet written for your context.</li>
+        <li>Print it, pin it up, or send it to everyone who touches AI.</li>
+      </ul>
+    </div>
+    <div class="navbtns"><span></span><button class="btn primary" onclick="start()">Build my guardrail sheet &rarr;</button></div>
+    <p class="miniref">The reason this matters: most AI mishaps in small teams are not exotic. Someone pastes a client contract into a free chatbot, or sends raw AI output to a client without a human read. Simple, visible rules prevent almost all of it.</p>
+  </div>
+
+  <!-- QUESTIONS -->
+  <div class="step" id="s-q">
+    <div class="eyebrow">Tell us about your work</div>
+    <h1 style="font-size:clamp(24px,4vw,32px)">A few quick questions.</h1>
+    <p class="sub">No right answers. Each one just shapes a rule on your sheet.</p>
+
+    <div class="field">
+      <div class="q">What should we call your team on the sheet?</div>
+      <div class="qh">Your business or team name. This is the only thing we type for you.</div>
+      <input class="tin" id="q-name" type="text" placeholder="e.g. Northside Creative" oninput="sync()">
+    </div>
+
+    <div class="field" data-key="clientdata">
+      <div class="q">Do you handle client data, files, or contracts?</div>
+      <div class="qh">Names, emails, account details, signed agreements, anything a client gave you in confidence.</div>
+      <div class="toggle" id="t-clientdata"></div>
+    </div>
+
+    <div class="field" data-key="regulated">
+      <div class="q">Do you work in a regulated field?</div>
+      <div class="qh">Legal, health, finance, or anything with formal compliance rules in North America or the UK.</div>
+      <div class="toggle" id="t-regulated"></div>
+    </div>
+
+    <div class="field" data-key="clientfacing">
+      <div class="q">Does AI output ever go straight to a client?</div>
+      <div class="qh">Drafts, replies, reports, or deliverables that AI helped write and a client will read.</div>
+      <div class="toggle" id="t-clientfacing"></div>
+    </div>
+
+    <div class="field" data-key="team">
+      <div class="q">Do you have employees or contractors using AI too?</div>
+      <div class="qh">Anyone besides you, including freelancers and part-timers.</div>
+      <div class="toggle" id="t-team"></div>
+    </div>
+
+    <div class="field">
+      <div class="q">Which AI tools does your team use?</div>
+      <div class="qh">Pick all that apply. We will name them on the sheet so the rules feel concrete.</div>
+      <div class="opts" id="t-tools"></div>
+    </div>
+
+    <div class="navbtns">
+      <button class="btn ghost" onclick="restart()">&larr; Back to start</button>
+      <button class="btn primary" id="genbtn" onclick="generate()" disabled>Generate my sheet &rarr;</button>
+    </div>
+    <p class="miniref" id="qnote">Add your team name to continue. Everything stays in your browser.</p>
+  </div>
+
+  <!-- RESULT -->
+  <div class="step" id="s-res">
+    <div class="eyebrow">Your one-page guardrail</div>
+    <h1>Print it. Pin it up. <span class="accent">Done.</span></h1>
+    <p class="sub">This sheet reflects the answers you gave. Read it once, then save it as a PDF or print it for the wall. Update it whenever your tools or work change.</p>
+
+    <div class="sheet" id="sheet"></div>
+
+    <div class="actions">
+      <button class="btn primary" onclick="window.print()">Print / Save as PDF</button>
+      <button class="btn ghost" onclick="show('s-q')">&larr; Change my answers</button>
+    </div>
+    <div class="restart"><a onclick="restart()">Start over</a></div>
+    <p class="miniref">Guardrail by AI Adoption Studio. This is a plain-language starting point, not legal advice. If you are in a regulated field, have your own counsel confirm the specifics for your jurisdiction.</p>
+  </div>
+
+</div></div>
+
+<script>
+// State. Yes/no answers start null so we never assume. Tools is a set of selected keys.
+var state = { name:'', clientdata:null, regulated:null, clientfacing:null, team:null, tools:[] };
+
+var TOOLS = [
+  {k:'chatgpt', label:'ChatGPT (OpenAI)'},
+  {k:'claude', label:'Claude (Anthropic)'},
+  {k:'gemini', label:'Gemini (Google)'},
+  {k:'copilot', label:'Microsoft Copilot'},
+  {k:'other', label:'Something else'}
+];
+
+function start(){ show('s-q'); buildQ(); }
+function show(id){
+  document.querySelectorAll('.step').forEach(function(s){s.classList.remove('on')});
+  document.getElementById(id).classList.add('on');
+  window.scrollTo(0,0);
+}
+
+// Build the yes/no toggles and the tool checkboxes once.
+function buildQ(){
+  ['clientdata','regulated','clientfacing','team'].forEach(function(key){
+    var box = document.getElementById('t-'+key);
+    if(box.childElementCount) return; // already built
+    [['yes','Yes'],['no','No']].forEach(function(pair){
+      var el = document.createElement('div');
+      el.className = 't';
+      el.textContent = pair[1];
+      el.onclick = function(){
+        state[key] = (pair[0]==='yes');
+        box.querySelectorAll('.t').forEach(function(t){t.classList.remove('sel')});
+        el.classList.add('sel');
+        sync();
+      };
+      box.appendChild(el);
+    });
+  });
+  var tbox = document.getElementById('t-tools');
+  if(!tbox.childElementCount){
+    TOOLS.forEach(function(tool){
+      var el = document.createElement('div');
+      el.className = 'opt';
+      el.innerHTML = '<span class="box"></span><span>'+tool.label+'</span>';
+      el.onclick = function(){
+        var i = state.tools.indexOf(tool.k);
+        if(i>=0){ state.tools.splice(i,1); el.classList.remove('sel'); }
+        else { state.tools.push(tool.k); el.classList.add('sel'); }
+        sync();
+      };
+      tbox.appendChild(el);
+    });
+  }
+  sync();
+}
+
+// Enable Generate only once a name is typed. The toggles are optional but recommended.
+function sync(){
+  state.name = document.getElementById('q-name').value.trim();
+  var ready = state.name.length > 0;
+  document.getElementById('genbtn').disabled = !ready;
+  var unanswered = ['clientdata','regulated','clientfacing','team'].filter(function(k){return state[k]===null;}).length;
+  var note = document.getElementById('qnote');
+  if(!ready){ note.textContent = 'Add your team name to continue. Everything stays in your browser.'; }
+  else if(unanswered>0){ note.textContent = 'You can generate now. Answering the remaining '+unanswered+' question'+(unanswered>1?'s':'')+' makes the rules more specific to you.'; }
+  else { note.textContent = 'Looks complete. Generate your sheet whenever you are ready.'; }
+}
+
+function toolNames(){
+  var names = state.tools.map(function(k){
+    var t = TOOLS.find(function(x){return x.k===k;});
+    return t ? t.label.split(' (')[0] : k;
+  });
+  if(names.length===0) return 'the AI tools you use';
+  if(names.length===1) return names[0];
+  if(names.length===2) return names[0]+' and '+names[1];
+  return names.slice(0,-1).join(', ')+', and '+names[names.length-1];
+}
+
+function li(items){
+  return '<ul class="rules">'+items.map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul>';
+}
+function liBad(items){
+  return '<ul class="rules bad">'+items.map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul>';
+}
+
+function generate(){
+  show('s-res');
+  var name = state.name || 'Our team';
+  var tools = toolNames();
+
+  // SAFE TO PUT IN
+  var safe = [
+    'Public information, and anything already published on your own website or socials.',
+    'Your own draft writing, ideas, and rough notes that contain no client secrets.',
+    'Made-up or placeholder examples used to test a prompt.',
+    'Anonymised content with names, account numbers, and identifying details removed first.'
+  ];
+
+  // NEVER GOES IN (reacts to answers)
+  var never = [
+    'Passwords, API keys, or login details of any kind.'
+  ];
+  if(state.clientdata){
+    never.push('Client personal data (names tied to emails, phone numbers, addresses, account details).');
+    never.push('Signed contracts, NDAs, or any document a client shared in confidence.');
+  } else {
+    never.push('Anyone\'s personal data unless you have removed the identifying details first.');
+  }
+  if(state.regulated){
+    never.push('Regulated records (health, legal, or financial files) into any general consumer chatbot.');
+    never.push('Anything covered by a confidentiality or compliance obligation, even partially.');
+  }
+  if(state.clientfacing){
+    never.push('A whole client deliverable for the model to "finish and send" with no human read.');
+  }
+  if(state.team){
+    never.push('Internal HR, payroll, or co-worker personal details.');
+  }
+  never.push('Unreleased plans, pricing, or anything that would hurt you if it leaked.');
+
+  // HUMAN IN THE LOOP (reacts to answers)
+  var loop = [
+    'A named person reads anything a client will see before it goes out. The model drafts, a human decides.'
+  ];
+  if(state.clientfacing){
+    loop.push('No AI output goes straight to a client. It is always reviewed and edited by a person first.');
+  }
+  if(state.regulated){
+    loop.push('For regulated work, a second qualified person checks AI-assisted output against the source facts before it is used.');
+    loop.push('Treat every AI answer as a draft to verify, never as a citation or a final ruling.');
+  } else {
+    loop.push('Check any number, name, or factual claim the model produced against a trusted source before you repeat it to a client.');
+  }
+  if(state.team){
+    loop.push('Everyone using AI knows these rules. If you are unsure whether something is safe, you ask before you paste.');
+  }
+
+  // WHO OWNS THE OUTPUT
+  var owner = [];
+  if(state.team){
+    owner.push('The person who sends the work to the client owns it, AI assisted or not. "The tool wrote it" is never an excuse.');
+    owner.push('A named lead (you decide who) keeps this sheet current and answers the "is this safe?" questions.');
+  } else {
+    owner.push('You own every piece of work that leaves your hands, AI assisted or not. The output carries your name, so it carries your judgement.');
+  }
+  owner.push('AI is a drafting assistant inside '+name+'. The thinking, the relationship, and the final sign-off stay human.');
+
+  // tools line
+  var toolLine = '';
+  if(state.tools.length){
+    toolLine = 'These rules apply to '+tools+', and any other AI tool anyone here uses.';
+  } else {
+    toolLine = 'These rules apply to every AI tool anyone here uses.';
+  }
+
+  // doubt line (reacts)
+  var doubtLine = state.regulated
+    ? 'Pause and ask the named lead before you paste it. In a regulated field, "I was not sure" is the moment to stop, not to guess.'
+    : 'Do not paste it. Ask a colleague, or strip out the sensitive parts first. Two minutes of caution beats a leak you cannot undo.';
+
+  // date
+  var d = new Date();
+  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var dateStr = months[d.getMonth()]+' '+d.getFullYear();
+
+  // context tags
+  var tags = [];
+  if(state.clientdata) tags.push('handles client data');
+  if(state.regulated) tags.push('regulated field');
+  if(state.clientfacing) tags.push('client-facing AI output');
+  if(state.team) tags.push('shared team');
+  var tagLine = tags.length ? 'Tailored for: '+tags.join(' · ') : 'A simple, general-purpose starting point.';
+
+  var html =
+    '<div class="shead">'+
+      '<div class="skick">Responsible-Use Guardrail</div>'+
+      '<h2>'+escapeHtml(name)+'</h2>'+
+      '<div class="smeta">'+toolLine+'<br>'+tagLine+' · Last reviewed '+dateStr+'</div>'+
+    '</div>'+
+
+    '<div class="block">'+
+      '<div class="blab"><span class="pill ok">Green</span> What is safe to put into AI</div>'+
+      li(safe)+
+    '</div>'+
+
+    '<div class="block">'+
+      '<div class="blab"><span class="pill no">Red</span> What never goes in</div>'+
+      liBad(never)+
+    '</div>'+
+
+    '<div class="block">'+
+      '<div class="blab"><span class="pill eye">Check</span> The human-in-the-loop rule</div>'+
+      li(loop)+
+    '</div>'+
+
+    '<div class="block">'+
+      '<div class="blab"><span class="pill own">Owns</span> Who owns the final output</div>'+
+      li(owner)+
+    '</div>'+
+
+    '<div class="doubt">'+
+      '<b>If in doubt, ask.</b>'+
+      '<p>'+doubtLine+'</p>'+
+    '</div>'+
+
+    '<div class="sigrow">'+
+      '<div class="sig">Owner of this sheet</div>'+
+      '<div class="sig">Date reviewed</div>'+
+      '<div class="sig">Next review</div>'+
+    '</div>'+
+
+    '<div class="sfoot">Guardrail generated with AI Adoption Studio. Keep this where the team can see it. Review it whenever your tools, clients, or rules change.</div>';
+
+  document.getElementById('sheet').innerHTML = html;
+}
+
+function escapeHtml(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function restart(){
+  state = { name:'', clientdata:null, regulated:null, clientfacing:null, team:null, tools:[] };
+  var nameEl = document.getElementById('q-name');
+  if(nameEl) nameEl.value = '';
+  ['clientdata','regulated','clientfacing','team'].forEach(function(key){
+    var box = document.getElementById('t-'+key);
+    if(box) box.querySelectorAll('.t').forEach(function(t){t.classList.remove('sel')});
+  });
+  var tbox = document.getElementById('t-tools');
+  if(tbox) tbox.querySelectorAll('.opt').forEach(function(o){o.classList.remove('sel')});
+  var gb = document.getElementById('genbtn');
+  if(gb) gb.disabled = true;
+  show('s-intro');
+}
+</script>
+</body>
+</html>

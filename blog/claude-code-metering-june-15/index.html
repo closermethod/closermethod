@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>what the june 15 claude metering change means for you | The Closer Method</title>
+  <meta name="description" content="On June 15, 2026 Anthropic moves programmatic Claude usage to metered credits. Who gets a bill, who stays on their flat subscription, and how to build on the unmetered side."/>
+  <link rel="canonical" href="https://closermethod.com/blog/claude-code-metering-june-15/"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231A1714'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%2313B38B' font-style='italic'%3Em%3C/text%3E%3C/svg%3E"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','35298849146380570');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"/></noscript>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2458LX0VD', { page_path: '/blog/claude-code-metering-june-15/' });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "what the june 15 claude metering change means for you",
+    "description": "On June 15, 2026 Anthropic moves programmatic Claude usage to metered credits. Who gets a bill, who stays on their flat subscription, and how to build on the unmetered side.",
+    "author": { "@type": "Person", "name": "Eli Hitz", "url": "https://closermethod.com/", "sameAs": ["https://instagram.com/closermethod","https://x.com/closermethod","https://www.tiktok.com/@closermethod","https://elisabethhitz.com"] },
+    "publisher": { "@type": "Organization", "name": "The Closer Method", "url": "https://closermethod.com" },
+    "datePublished": "2026-06-11",
+    "dateModified": "2026-06-11",
+    "mainEntityOfPage": "https://closermethod.com/blog/claude-code-metering-june-15/"
+  }
+  </script>
+
+  <style>
+    :root{--bg:#FBF5F0;--paper:#fff;--ink:#0A0A0A;--orange:#FF3B00;--muted:#555;--line:3px solid #0A0A0A;--shadow:6px 6px 0 #0A0A0A}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Archivo',system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:1rem;line-height:1.6}
+    h1,h2{font-family:'Archivo Black',system-ui,sans-serif;text-transform:lowercase;letter-spacing:-.02em;line-height:1.05;color:var(--ink);font-weight:400}
+    a{color:var(--orange);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .topnav{padding:13px 20px;border-bottom:var(--line);background:var(--paper);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .topnav .brand{font-family:'Archivo Black';font-size:1rem;text-transform:lowercase;letter-spacing:0;color:var(--ink);text-decoration:none}.topnav .navlinks{display:flex;gap:16px;flex-wrap:wrap;align-items:center}.topnav .navlinks a{font-family:'JetBrains Mono',monospace;font-size:.76rem;text-transform:lowercase;letter-spacing:.03em;color:var(--ink);text-decoration:none}.topnav .navlinks a:hover{color:var(--orange);text-decoration:none}
+    .wrap{max-width:720px;margin:0 auto;padding:48px 22px 72px}
+    .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.14em;color:var(--orange);margin-bottom:14px}
+    h1{font-size:clamp(2rem,5.5vw,3rem);margin-bottom:16px}
+    .lead{font-size:1.05rem;color:#333;margin-bottom:38px;max-width:56ch}
+    footer{padding:30px 20px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.74rem;color:#777;border-top:var(--line);background:var(--paper)}
+    footer a{color:var(--orange)}
+
+    .card{background:var(--paper);border:var(--line);box-shadow:var(--shadow);padding:40px 36px}
+    .meta{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:#777;margin-bottom:28px;text-transform:uppercase;letter-spacing:.06em}
+    .eyebrow a{color:var(--orange)}
+    article h2{font-family:'Archivo Black';text-transform:lowercase;font-size:1.5rem;margin:36px 0 12px;letter-spacing:-.01em}
+    article p{margin:0 0 16px;font-size:1rem;line-height:1.72}
+    article ul,article ol{margin:0 0 16px 22px}
+    article li{margin-bottom:8px}
+    blockquote{border-left:4px solid var(--orange);margin:22px 0;padding:6px 0 6px 18px;color:#333;font-style:normal;font-weight:500}
+    article a{color:var(--orange);text-decoration:underline}
+    .btn,.cta a{display:inline-block;background:var(--orange);color:var(--ink);font-family:'JetBrains Mono';font-weight:700;text-transform:lowercase;text-decoration:none;padding:14px 26px;border:var(--line);box-shadow:var(--shadow)}
+    .btn:hover,.cta a:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink);text-decoration:none}
+    @media(max-width:560px){.card{padding:28px 20px}}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="brand" href="https://closermethod.com">the closer method</a>
+  <span class="navlinks">
+    <a href="/blog/">field notes</a>
+    <a href="/build/">the toolkit</a>
+    <a href="/hire/">work with me</a>
+  </span>
+</nav>
+
+<main class="wrap">
+  <div class="card">
+    <div class="eyebrow"><a href="/blog/">field notes</a></div>
+    <article>
+      <h1>what the june 15 claude metering change means for you.</h1>
+      <p class="meta">elisabeth hitz · june 11, 2026 · 5 min read</p>
+
+      <p>i am writing this on june 11, 2026, four days before the change takes effect, because the coverage so far has been written for developers and almost nobody is translating it for the rest of us. if you build with claude but you do not think of yourself as a coder, this one is for you.</p>
+
+      <h2>what changes on june 15</h2>
+
+      <p>anthropic announced the change on may 14, 2026. starting june 15, programmatic claude usage stops drawing from your subscription's usage pool. that covers the claude agent sdk, headless claude code (the <code>claude -p</code> mode that runs without you watching), claude code github actions, and third-party agent apps built on claude.</p>
+
+      <p>instead, that usage draws from a separate monthly credit, billed at standard API rates: $20 of credit on pro, $100 on max 5x, $200 on max 20x. per the coverage, the credit is per user, it does not roll over month to month, and you have to opt in once. when the credit runs out, those programmatic requests stop working unless you explicitly turn on additional usage-based billing.</p>
+
+      <p>one honesty note, because i hold my own content to the receipts standard: the mechanics above are consistent across more than eight independent outlets (InfoWorld, The New Stack, VentureBeat, and others), but you should confirm the fine print against anthropic's own billing pages before you change anything. dates and dollar figures here are as reported on june 11.</p>
+
+      <h2>who actually gets a bill</h2>
+
+      <p>you are affected if claude does work for you while you are not there. concretely:</p>
+
+      <ul>
+        <li>you run scripts or scheduled jobs that call claude in the background</li>
+        <li>you use claude code github actions in a repo</li>
+        <li>you built or bought always-on agents that watch, post, reply, or process around the clock</li>
+        <li>you use third-party agent apps that run on your claude subscription</li>
+      </ul>
+
+      <p>the developer reaction has been blunt. one senior data scientist, quoted in InfoWorld: "the monthly limit you are providing won't even last a day of serious work." an SRE put the structural problem plainly: "the moment your agents become useful enough to run often, you are on metered billing whether you like it or not." if your setup looks like the list above, do the audit this week: find every script and background job that calls claude, log what each one consumes, and decide per workflow whether it earns its meter.</p>
+
+      <h2>who stays on the flat subscription</h2>
+
+      <p>here is the asymmetry the headlines keep burying: <strong>interactive use is unaffected.</strong> chat, claude code in the terminal with you at the keyboard, and claude cowork all stay on the subscription pool you already pay for.</p>
+
+      <p>that line, interactive versus programmatic, is now the most important architectural decision in any claude setup. the same task can live on either side. a follow-up system can be an always-on agent that watches your inbox (metered after june 15), or it can be a skill file you run when you open claude in the morning: it drafts every reply, you review and send (flat rate, and you saw every word before it went out).</p>
+
+      <p>i was already on the interactive side before this change, for a different reason: the approve-everything model. a system where you are present when it runs is a system you can check. the metering change just made the trustworthy architecture also the cheaper one.</p>
+
+      <h2>build in the lane that stays flat</h2>
+
+      <p>everything i build and sell is file-based and interactive: plain-text skill files that live in your account and run when you are working with claude directly. that architecture sits entirely on the unmetered side of the june 15 line. nothing in the toolkit becomes a surprise bill, because nothing in it runs headless. if you are new to how those files work, start with <a href="/blog/claude-skills-explained/">claude skills, explained in plain english</a>.</p>
+
+      <p>this is also the week to be skeptical of anyone selling you agents that run around the clock unattended. after june 15, an always-on agent is a metered liability with a monthly invoice attached, and the person selling it should be able to tell you, in dollars, what it will cost to run. most cannot. if you are a business owner weighing a setup, the cost question goes on the list in <a href="/blog/hire-someone-to-set-up-claude/">the buyer's guide</a>, and the interactive-first approach is the backbone of <a href="/blog/set-up-claude-for-a-small-business/">how i set up claude for small businesses</a>.</p>
+
+      <h2>the three moves to make before monday</h2>
+
+      <ol>
+        <li><strong>audit your programmatic usage.</strong> list every script, scheduled job, github action, and third-party agent app touching your claude account. if the list is empty, you can stop worrying.</li>
+        <li><strong>move what can move.</strong> any background job whose output you review anyway is a candidate to become an interactive skill: same result, flat rate, and you see it run.</li>
+        <li><strong>set the meter consciously.</strong> for anything that truly must run headless, opt in deliberately, watch the first month's consumption, and cap it. do not discover your usage in the first bill.</li>
+      </ol>
+
+      <p>the people who get hurt by changes like this are the ones who never knew which side of the line they were building on. now you know.</p>
+
+      <div class="cta">
+        <h2>build on the side that stays flat.</h2>
+        <p>the AI builder toolkit is the interactive, file-based system: every skill installs in one sitting, runs on the claude plan you already pay for, and the files are yours. $147 one time, free starter version on the same page.</p>
+        <a class="btn" href="https://closermethod.com/build?utm_source=blog&utm_medium=article&utm_campaign=metering-june-15">install the toolkit · $147</a>
+      </div>
+    </article>
+
+    <p class="sources">sources: InfoWorld "Anthropic puts Claude agents on a meter", The New Stack on Agent SDK credits, VentureBeat on third-party agent usage, TechTimes and CoderSera billing-change coverage. mechanics reported consistently across 8+ outlets as of june 11, 2026; confirm final terms on anthropic's own billing documentation.</p>
+  </div>
+</main>
+
+<footer>
+  Built by <a href="https://closermethod.com">The Closer Method</a>. If something looks off, reply to any email and I will see it.
+</footer>
+
+</body>
+</html>

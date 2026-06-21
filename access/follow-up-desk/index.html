@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're in · The Follow-Up Desk</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F7F4EE;--card:#fff;--ink:#14181B;--ink-soft:#454D53;--ledger:#176446;--ledger-soft:#E7F0EB;--line:#E2DDD2;--gold:#F4C752;--mono:ui-monospace,'SF Mono',Menlo,monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',-apple-system,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:620px;margin:0 auto;padding:36px 20px 60px}
+.badge{display:inline-block;font-family:var(--mono);font-size:12px;color:var(--ledger);background:var(--ledger-soft);border-radius:999px;padding:5px 14px;font-weight:600}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:650;font-size:clamp(30px,7vw,42px);line-height:1.1;margin:16px 0 10px}
+.sub{color:var(--ink-soft);font-size:16.5px}
+#session-line{font-family:var(--mono);font-size:12px;color:var(--ink-soft);margin-top:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 20px;margin-top:26px}
+.card h2{font-family:'Fraunces',Georgia,serif;font-size:20px;font-weight:650;margin-bottom:8px}
+.dl{display:block;text-align:center;background:var(--gold);color:var(--ink);font-weight:600;font-size:16.5px;border-radius:12px;padding:16px;text-decoration:none;margin:16px 0 8px}
+.dl-note{font-size:13px;color:var(--ink-soft);text-align:center}
+ol{padding-left:22px;font-size:14.5px;color:var(--ink-soft)}
+ol li{margin-bottom:9px}
+ol b{color:var(--ink)}
+.recover{display:none;border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:14px;background:#FBFAF7}
+.recover label{font-size:13px;font-weight:600;display:block;margin-bottom:6px}
+.recover input{width:100%;border:1px solid var(--line);border-radius:9px;padding:11px 12px;font-size:15px;font-family:'Inter',sans-serif;margin-bottom:10px}
+.recover button{width:100%;background:var(--ink);color:#fff;border:0;border-radius:9px;padding:12px;font-weight:600;font-size:15px;cursor:pointer;font-family:'Inter',sans-serif}
+.recover .msg{font-size:13px;color:var(--ink-soft);margin-top:8px;text-align:center;min-height:18px}
+.order{font-family:var(--mono);font-size:13px;color:var(--ink-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px 0;margin:22px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.order b{color:var(--ink)}
+.next{background:var(--ink);color:#F4F1E9;border-radius:16px;padding:24px 20px;margin-top:26px}
+.next h2{font-family:'Fraunces',Georgia,serif;font-size:20px;font-weight:650;margin-bottom:8px}
+.next p{font-size:14.5px;color:#C9CFC9}
+.next a{display:block;text-align:center;border:1px solid #4A524E;color:#F4F1E9;border-radius:11px;padding:14px;text-decoration:none;font-weight:600;font-size:15px;margin-top:14px}
+footer{margin-top:40px;font-size:13px;color:#8A857A}
+footer a{color:var(--ledger);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="badge">✓ access live · bookmark this page</span>
+  <h1>your follow-up desk is staffed.</h1>
+  <p class="sub">five files, fifteen minutes, and the friday-night lead stops dying over the weekend. it drafts, you approve, it sends.</p>
+  <p id="session-line"></p>
+
+  <div class="card">
+    <h2>1 · download the desk</h2>
+    <a class="dl" data-vault-file="follow-up-desk.zip" href="#kit-recover">download follow-up-desk.zip</a>
+    <p class="dl-note">5 files · the skill, the brain doc template, the approval checklist, the install guide, the first-week worksheet</p>
+    <div class="recover" id="kit-recover">
+      <label for="kit-recover-email">arrived without your checkout link? enter your purchase email and i'll unlock it:</label>
+      <input type="email" id="kit-recover-email" placeholder="you@yourbusiness.com">
+      <button id="kit-recover-btn" type="button">unlock my download</button>
+      <p class="msg" id="kit-recover-msg"></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>2 · the install, in order</h2>
+    <ol>
+      <li>open <b>START-HERE.md</b>. it walks the whole thing.</li>
+      <li>on claude.ai, create a project named <b>Lead Follow-up</b>.</li>
+      <li>fill <b>brain-doc-template.md</b> (5 questions, plain sentences) and drag it into project knowledge.</li>
+      <li>paste <b>follow-up-desk-SKILL.md</b> into the project's instructions, fill the two brackets.</li>
+      <li>new chat, paste one real inquiry from your inbox, read the drafts it returns.</li>
+    </ol>
+  </div>
+
+  <div class="order"><span>order · the follow-up desk</span><span><b>$47.00</b> one-time · yours forever</span></div>
+
+  <div class="next">
+    <h2>want the whole department installed for you?</h2>
+    <p>this desk is the first of four. the $500 diagnostic maps your entire week, names what to build next, and i build it in your accounts with approval gates on everything. your $47 counts toward it for 30 days, just reply to your receipt email and say "diagnostic".</p>
+    <a href="/ai-department/">see the ai department →</a>
+  </div>
+
+  <footer>
+    <p>stuck anywhere? dm <a href="https://instagram.com/closermethod">@closermethod</a> and i'll get you running. made to work: if this desk does not run for your business, i rewrite it with you until it does.</p>
+    <p style="margin-top:8px">© 2026 the closer method</p>
+  </footer>
+</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-Q2458LX0VD');
+// purchase fires ONLY with a valid stripe session id, once per session id (no phantom events)
+(function(){var p=new URLSearchParams(location.search);var sid=p.get('session_id')||'';var valid=/^cs_(live|test)_[a-zA-Z0-9]{20,}$/.test(sid);if(!valid)return;var key='fud_purchase_'+sid;try{if(localStorage.getItem(key)==='1')return;}catch(e){}
+gtag('event','purchase',{transaction_id:sid,value:47,currency:'USD',items:[{item_id:'follow-up-desk',item_name:'The Follow-Up Desk',price:47,quantity:1}]});
+try{localStorage.setItem(key,'1');}catch(e){}})();
+</script>
+<script>(function(){var VAULT="https://closermethod.com/.netlify/functions/kit-vault";var p=new URLSearchParams(location.search);var sid=(p.get("session_id")||"").trim();var validSid=/^cs_(live|test)_[a-zA-Z0-9]{20,}$/.test(sid);
+if(validSid){var line=document.getElementById("session-line");if(line){line.textContent="order id: "+sid.slice(0,16)+"... · payment received";}}
+function wire(token){document.querySelectorAll("a[data-vault-file]").forEach(function(a){var f=a.getAttribute("data-vault-file");var u=VAULT+"?file="+encodeURIComponent(f);if(validSid){u+="&session_id="+encodeURIComponent(sid);}else if(token){u+="&token="+encodeURIComponent(token);}else{a.setAttribute("href","#kit-recover");return;}a.setAttribute("href",u);});}
+wire(null);
+if(!validSid){var box=document.getElementById("kit-recover");if(box){box.style.display="block";}var btn=document.getElementById("kit-recover-btn");if(btn){btn.addEventListener("click",function(){var em=(document.getElementById("kit-recover-email")||{}).value||"";var msg=document.getElementById("kit-recover-msg");if(msg){msg.textContent="checking...";}fetch(VAULT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:em})}).then(function(r){return r.json();}).then(function(d){if(d&&d.ok&&d.token){wire(d.token);if(msg){msg.textContent="unlocked. your download is ready above.";}}else if(msg){msg.textContent=(d&&d.message)||"could not verify. DM @closermethod.";}}).catch(function(){if(msg){msg.textContent="network error. try again or DM @closermethod.";}});});}}})();</script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>connect claude to your tools | The Closer Method</title>
+  <meta name="description" content="what connectors and MCP actually are, how research mode works, and why giving claude access to your real tools beats writing a better prompt."/>
+  <link rel="canonical" href="https://closermethod.com/blog/connect-claude-to-your-tools/"/>
+  <!-- Open Graph + Twitter (SEO/social) -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="The Closer Method"/>
+  <meta property="og:title" content="connect claude to your tools | The Closer Method"/>
+  <meta property="og:description" content="what connectors and MCP actually are, how research mode works, and why giving claude access to your real tools beats writing a better prompt."/>
+  <meta property="og:url" content="https://closermethod.com/blog/connect-claude-to-your-tools/"/>
+  <meta property="og:image" content="https://closermethod.com/og/og-operator.png"/>
+  <meta property="og:image:width" content="2400"/>
+  <meta property="og:image:height" content="1260"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="connect claude to your tools | The Closer Method"/>
+  <meta name="twitter:description" content="what connectors and MCP actually are, how research mode works, and why giving claude access to your real tools beats writing a better prompt."/>
+  <meta name="twitter:image" content="https://closermethod.com/og/og-operator.png"/>
+  <meta name="keywords" content="claude, ai for small business, the closer method, connect claude to your tools"/>
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231A1714'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%2313B38B' font-style='italic'%3Em%3C/text%3E%3C/svg%3E"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','35298849146380570');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=35298849146380570&ev=PageView&noscript=1"/></noscript>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2458LX0VD', { page_path: '/blog/connect-claude-to-your-tools/' });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "articleSection": "Field Notes",
+    "headline": "connect claude to your tools",
+    "description": "what connectors and MCP actually are, how research mode works, and why giving claude access to your real tools beats writing a better prompt.",
+    "author": { "@type": "Person", "name": "Eli Hitz", "url": "https://closermethod.com/", "sameAs": ["https://instagram.com/closermethod","https://x.com/closermethod","https://www.tiktok.com/@closermethod","https://elisabethhitz.com"] },
+    "publisher": { "@type": "Organization", "name": "The Closer Method", "url": "https://closermethod.com", "logo": { "@type": "ImageObject", "url": "https://closermethod.com/og/og-closer.png" } },
+    "datePublished": "2026-06-18",
+    "dateModified": "2026-06-18",
+    "mainEntityOfPage": "https://closermethod.com/blog/connect-claude-to-your-tools/"
+  }
+  </script>
+
+  <style>
+    :root{--bg:#FBF5F0;--paper:#fff;--ink:#0A0A0A;--orange:#FF3B00;--muted:#555;--line:3px solid #0A0A0A;--shadow:6px 6px 0 #0A0A0A}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Archivo',system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:1rem;line-height:1.6}
+    h1,h2{font-family:'Archivo Black',system-ui,sans-serif;text-transform:lowercase;letter-spacing:-.02em;line-height:1.05;color:var(--ink);font-weight:400}
+    a{color:var(--orange);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .topnav{padding:13px 20px;border-bottom:var(--line);background:var(--paper);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .topnav .brand{font-family:'Archivo Black';font-size:1rem;text-transform:lowercase;letter-spacing:0;color:var(--ink);text-decoration:none}.topnav .navlinks{display:flex;gap:16px;flex-wrap:wrap;align-items:center}.topnav .navlinks a{font-family:'JetBrains Mono',monospace;font-size:.76rem;text-transform:lowercase;letter-spacing:.03em;color:var(--ink);text-decoration:none}.topnav .navlinks a:hover{color:var(--orange);text-decoration:none}
+    .wrap{max-width:720px;margin:0 auto;padding:48px 22px 72px}
+    .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.14em;color:var(--orange);margin-bottom:14px}
+    h1{font-size:clamp(2rem,5.5vw,3rem);margin-bottom:16px}
+    .lead{font-size:1.05rem;color:#333;margin-bottom:38px;max-width:56ch}
+    footer{padding:30px 20px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.74rem;color:#777;border-top:var(--line);background:var(--paper)}
+    footer a{color:var(--orange)}
+
+    .card{background:var(--paper);border:var(--line);box-shadow:var(--shadow);padding:40px 36px}
+    .meta{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:#777;margin-bottom:28px;text-transform:uppercase;letter-spacing:.06em}
+    .eyebrow a{color:var(--orange)}
+    article h2{font-family:'Archivo Black';text-transform:lowercase;font-size:1.5rem;margin:36px 0 12px;letter-spacing:-.01em}
+    article p{margin:0 0 16px;font-size:1rem;line-height:1.72}
+    article ul,article ol{margin:0 0 16px 22px}
+    article li{margin-bottom:8px}
+    blockquote{border-left:4px solid var(--orange);margin:22px 0;padding:6px 0 6px 18px;color:#333;font-style:normal;font-weight:500}
+    article a{color:var(--orange);text-decoration:underline}
+    .btn,.cta a{display:inline-block;background:var(--orange);color:var(--ink);font-family:'JetBrains Mono';font-weight:700;text-transform:lowercase;text-decoration:none;padding:14px 26px;border:var(--line);box-shadow:var(--shadow)}
+    .btn:hover,.cta a:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink);text-decoration:none}
+    .sources{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#999;margin-top:30px;line-height:1.5}
+    @media(max-width:560px){.card{padding:28px 20px}}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="brand" href="https://closermethod.com">the closer method</a>
+  <span class="navlinks">
+    <a href="/blog/">field notes</a>
+    <a href="/build/">the toolkit</a>
+    <a href="/hire/">work with me</a>
+  </span>
+</nav>
+
+<main class="wrap">
+  <div class="card">
+    <div class="eyebrow"><a href="/blog/">field notes</a></div>
+    <article>
+      <h1>connect claude to your tools.</h1>
+      <p class="meta">elisabeth hitz · june 18, 2026 · 6 min read</p>
+
+      <p>most people use claude like a smarter search box. ask a question, copy the answer, paste it somewhere else, and do the same dance tomorrow. the bottleneck was never claude. it was the copy and paste.</p>
+
+      <p>there is a version of claude that works inside the tools your business already lives in. your notion, your stripe, your inbox, your analytics. it reads what you read and acts where you work. the piece that makes that possible is called a connector.</p>
+
+      <h2>what a connector actually is</h2>
+
+      <p>a connector links claude to a tool you already use. once it is connected, claude can search your files, pull a document, read your data, and in some cases take an action, all inside the conversation. no exporting. no pasting.</p>
+
+      <p>underneath, connectors run on mcp, the model context protocol. the simplest way to picture it: mcp is usb-c for AI. one standard plug, and any tool that speaks it works with claude. that is why the list of what you can connect keeps growing. anyone can build a connector, and it works.</p>
+
+      <p>there are two kinds. web connectors link claude to cloud tools like notion, gmail, slack, stripe, and asana. desktop extensions run on your own machine through the claude desktop app, so claude can reach local files and native apps. you pick what to connect and grant only the permissions you want.</p>
+
+      <h2>what this looks like when it is real</h2>
+
+      <p>i run closermethod with claude connected to the tools the business actually lives in. docs and projects in notion. payments in stripe. audience in my email platform. traffic and funnel data in analytics. when i ask what happened this week, claude does not guess. it reads the real numbers from the real accounts and tells me.</p>
+
+      <p>that is the whole difference. an assistant gives you a good guess. a connected assistant gives you your own data. a few things this makes trivial:</p>
+
+      <ul>
+        <li>ask what you actually sold this week and get it from stripe, not from memory.</li>
+        <li>ask claude to find the thread where you decided the launch date and get the exact message.</li>
+        <li>ask it to pull your brand notes before it writes, so the output sounds like you and not like a generic bot.</li>
+      </ul>
+
+      <h2>the second gear, research mode</h2>
+
+      <p>once your tools are connected, there is another level. research mode.</p>
+
+      <p>normal search runs one query and answers. research is different. claude plans an approach, runs many searches that build on each other, decides what to chase next based on what it finds, then writes one organized report with a citation on every claim. most finish in five to fifteen minutes. a heavy one can run up to forty five. that is work that used to eat an afternoon.</p>
+
+      <p>the part most people miss: research can pull from your connected tools too, not only the web. so you can ask it to summarize what your audience responded to across your own analytics, then compare that to what is working publicly right now. your data and the outside world, in one report you can verify line by line.</p>
+
+      <h2>the part owners worry about</h2>
+
+      <p>connecting a tool means granting access, so the rules matter. permissions are scoped to what the connector needs, and you toggle them on and off. claude only ever sees what you already see: connecting your inbox does not hand it your ceo's inbox, only yours. and you can disconnect any service at any time. it is the same legible, in-your-control model i wrote about for skill files in <a href="/blog/claude-skills-explained/">claude skills, explained</a>.</p>
+
+      <h2>where to start</h2>
+
+      <p>you do not need to wire up everything. start with one tool, the one you copy and paste out of the most. connect it, grant the minimum permissions, and ask claude one real question against it. then notice how many of your tasks were really just moving information from one window to another.</p>
+
+      <p>this is the second layer of a claude setup. the first is the instruction files claude follows. this is the live access that makes those instructions act on your real work. if you are still deciding what to automate first, start with <a href="/blog/set-up-claude-for-a-small-business/">how to set up claude for a small business</a>.</p>
+
+      <div class="cta">
+        <h2>want it mapped for your business?</h2>
+        <p>the systems diagnostic is $500, the price is on the page, and you get a written map of which tools to connect and which process to automate first, with the build plan to do it. you decide on your own schedule.</p>
+        <a class="btn" href="https://closermethod.com/hire?utm_source=blog&utm_medium=article&utm_campaign=connect-tools">get the $500 diagnostic</a>
+      </div>
+    </article>
+
+    <p class="sources">connector, MCP, and research details: anthropic.com (claude connectors and research). MCP is the open model context protocol standard.</p>
+  </div>
+</main>
+
+<footer>
+  Built by <a href="https://closermethod.com">The Closer Method</a>. If something looks off, reply to any email and I will see it.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#0a0a0f"/>
+<title>CloserAI — Kit Buyers Only | The Closer Method</title>
+<meta name="description" content="CloserAI: the AI layer on top of the Closer Kit. Writes your brand DMs, coaches your negotiations, and prices your deals. Founding access for Kit buyers."/>
+<meta name="robots" content="noindex"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23f4c752'/%3E%3Ctext x='50' y='72' font-size='66' text-anchor='middle' font-family='system-ui' font-weight='900' fill='%23111'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E"/>
+
+<script>
+  window.CLOSER_CONFIG = {
+    // CloserAI Founding (Kit-buyer) = $297 live link (plink_1TIYby), wired 2026-06-19
+    STRIPE_LINK: "https://buy.stripe.com/cNi5kxe5rd3g3qq8tl5Ne04",
+    STRIPE_LINK_FULL_PRICE: "https://buy.stripe.com/cNi5kxe5rd3g3qq8tl5Ne04",
+    META_PIXEL_ID: "35298849146380570",
+    // 15 min countdown for OTO urgency
+    COUNTDOWN_MINUTES: 15,
+  };
+  (function(){
+    var id = window.CLOSER_CONFIG.META_PIXEL_ID;
+    if (!id || id.indexOf("PLACEHOLDER") > -1) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', id); fbq('track','PageView');
+  })();
+</script>
+
+<style>
+  :root{
+    --bg:#0a0a0f;--ink:#f7f5ef;--muted:#8e8a82;
+    --gold:#f4c752;--gold-2:#f2a93a;--acc:#ff5b3a;
+    --green:#2fd27b;--red:#dc4840;
+    --card:#12121a;--line:rgba(255,255,255,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:radial-gradient(1200px 800px at 50% -10%,rgba(244,199,82,.1),transparent 60%),#0a0a0f;color:var(--ink);font:17px/1.55 ui-sans-serif,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
+  .container{max-width:520px;width:100%}
+
+  /* countdown bar */
+  .urgency-bar{background:linear-gradient(90deg,var(--acc),var(--gold-2));color:#111;text-align:center;padding:12px 16px;border-radius:14px;font-weight:800;font-size:14px;margin-bottom:28px;display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .urgency-bar .timer{background:#111;color:var(--gold);padding:4px 12px;border-radius:8px;font-family:ui-monospace,Menlo,monospace;font-weight:800;letter-spacing:.05em}
+
+  /* main card */
+  .checkout-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:36px 28px;text-align:center}
+  @media(max-width:480px){.checkout-card{padding:28px 20px}}
+  .badge{display:inline-block;background:rgba(47,210,123,.1);border:1px solid rgba(47,210,123,.3);color:var(--green);font-size:12px;font-weight:800;padding:6px 14px;border-radius:999px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:18px}
+  .checkout-card h1{font-size:clamp(28px,5vw,40px);font-weight:800;line-height:1.1;margin-bottom:12px;letter-spacing:-.01em}
+  .checkout-card h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold),var(--acc));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .checkout-card .desc{color:#cbc6bc;font-size:16px;margin-bottom:28px;line-height:1.55}
+
+  /* price */
+  .price-block{display:flex;gap:14px;align-items:baseline;justify-content:center;margin-bottom:24px}
+  .price-block .old{font-size:22px;color:var(--muted);text-decoration:line-through;font-weight:600}
+  .price-block .new{font-size:42px;font-weight:800;color:var(--gold)}
+  .price-block .save{background:rgba(47,210,123,.1);border:1px solid rgba(47,210,123,.3);color:var(--green);font-size:13px;font-weight:700;padding:4px 10px;border-radius:8px}
+
+  /* value stack */
+  .value-stack{text-align:left;margin:24px 0;background:#0e0e16;border:1px solid var(--line);border-radius:16px;padding:20px}
+  .value-stack h3{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:14px}
+  .vs-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+  .vs-item:last-child{border-bottom:none}
+  .vs-item .name{font-size:15px;font-weight:600}
+  .vs-item .name small{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:2px}
+  .vs-item .val{color:var(--gold);font-weight:700;font-size:14px;white-space:nowrap}
+  .vs-total{display:flex;justify-content:space-between;padding:14px 0 0;border-top:2px solid var(--gold);margin-top:8px;font-weight:800;font-size:18px}
+  .vs-total .val{color:var(--green);font-size:20px}
+
+  /* CTA */
+  .cta-btn{display:block;width:100%;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#111;padding:18px 24px;border-radius:14px;font-weight:800;font-size:18px;text-align:center;text-decoration:none;box-shadow:0 8px 28px rgba(244,199,82,.3);transition:transform .15s,box-shadow .15s;margin-top:24px;border:none;cursor:pointer}
+  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(244,199,82,.4)}
+
+  .skip{display:block;text-align:center;margin-top:16px;color:var(--muted);font-size:14px;text-decoration:underline;cursor:pointer}
+  .skip:hover{color:var(--ink)}
+
+  /* guarantee */
+  .guarantee{margin-top:24px;padding:16px;background:rgba(47,210,123,.05);border:1px solid rgba(47,210,123,.2);border-radius:14px;text-align:center;font-size:14px;color:#a8a49c}
+  .guarantee b{color:var(--green)}
+
+  /* trust */
+  .trust-icons{display:flex;gap:20px;justify-content:center;margin-top:20px;font-size:12px;color:var(--muted)}
+  .trust-icons span{display:flex;align-items:center;gap:4px}
+
+  /* expired state */
+  .expired .urgency-bar{background:var(--muted);opacity:.6}
+  .expired .cta-btn{background:var(--muted);box-shadow:none}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="main">
+
+  <!-- KIT-BUYER EXCLUSIVE BAR -->
+  <div class="urgency-bar">
+    <span>&#9889; Founding access &middot; Kit buyers only</span>
+  </div>
+
+  <!-- CHECKOUT CARD -->
+  <div class="checkout-card">
+    <span class="badge">&#10003; Kit Buyer Exclusive</span>
+    <h1>Add <em>CloserAI</em> to your Kit</h1>
+    <p class="desc">The AI layer that writes your brand DMs, coaches your negotiations, and prices your deals &mdash; using the 60 scripts you just bought.</p>
+
+    <!-- VALUE STACK -->
+    <div class="value-stack">
+      <h3>What you're getting</h3>
+      <div class="vs-item">
+        <div class="name">AI Negotiation Coach<small>vs $250/hr sales coach &times; 2 hrs/mo</small></div>
+        <div class="val">$497</div>
+      </div>
+      <div class="vs-item">
+        <div class="name">AI Pitch Writer &mdash; 10 templates<small>vs $25/pitch on Upwork &times; 12</small></div>
+        <div class="val">$297</div>
+      </div>
+      <div class="vs-item">
+        <div class="name">AI Prompt Bible &mdash; 25 prompts<small>vs $10/prompt &times; 25 on PromptBase</small></div>
+        <div class="val">$247</div>
+      </div>
+      <div class="vs-item">
+        <div class="name">AI Rate Calculator Pro<small>vs hiring a pricing consultant for 1 session</small></div>
+        <div class="val">$200</div>
+      </div>
+      <div class="vs-item">
+        <div class="name">AI Deal Analyzer<small>vs reviewing 10 contracts with a lawyer</small></div>
+        <div class="val">$500</div>
+      </div>
+      <div class="vs-item">
+        <div class="name">Lifetime Updates<small>Every new AI feature, free forever</small></div>
+        <div class="val">$720</div>
+      </div>
+      <div class="vs-total">
+        <span>Total value</span>
+        <span class="val">$2,461</span>
+      </div>
+    </div>
+
+    <!-- FOUNDING PRICE · shown after the value is stacked -->
+    <div class="price-block">
+      <span class="new">$297</span>
+      <span class="save">founding rate</span>
+    </div>
+
+    <!-- CTA BUTTON -->
+    <a href="#" class="cta-btn" id="buy-btn">Add CloserAI &mdash; $297 &rarr;</a>
+
+    <a class="skip" id="skip-btn" href="#">No thanks, I'll negotiate without AI</a>
+
+    <!-- GUARANTEE · made-to-work -->
+    <div class="guarantee">
+      <b>&#10003; Made to work.</b> If CloserAI doesn't fit how you pitch, reply to your receipt and I'll tune it to your brand and your rates until it does.
+    </div>
+
+    <div class="trust-icons">
+      <span>&#128274; Secure checkout</span>
+      <span>&#9889; Instant access</span>
+      <span>&#8734; Lifetime updates</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var cfg = window.CLOSER_CONFIG;
+
+  // --- BUY BUTTON ---
+  var buyBtn = document.getElementById('buy-btn');
+  buyBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    // Fire Meta Pixel
+    if (typeof fbq === 'function') {
+      fbq('track', 'InitiateCheckout', {
+        content_name: 'closer-ai-oto',
+        value: 297,
+        currency: 'USD'
+      });
+    }
+    // Fire CAPI if available
+    if (typeof trackEvent === 'function') {
+      trackEvent('InitiateCheckout', {
+        content_name: 'closer-ai-oto',
+        value: 297,
+        currency: 'USD'
+      });
+    }
+    // Redirect to Stripe
+    window.location.href = cfg.STRIPE_LINK;
+  });
+
+  // --- SKIP ---
+  var skipBtn = document.getElementById('skip-btn');
+  skipBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    // Could redirect to a "are you sure?" interstitial or straight to thank-you
+    if (typeof fbq === 'function') {
+      fbq('trackCustom', 'OTODeclined');
+    }
+    window.location.href = '/thanks.html';
+  });
+})();
+</script>
+
+</body>
+</html>

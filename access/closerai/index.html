@@ -63,10 +63,10 @@ gtag('config','G-Q2458LX0VD',{page_path:'/access/closerai'});
   else if (tierParam === 'calc' || ref.indexOf('thank-you-calculator') >= 0) { value = 67; tierLabel = 'closerai-rate-calc'; }
   else if (tierParam === 'custom') { value = 497; tierLabel = 'closerai-custom'; }
 
-  if (!alreadyFired) {
+  if (validSession && !alreadyFired) {
     fbq('track','Purchase',{content_name:'CloserAI',content_ids:[tierLabel],value:value,currency:'USD',content_type:'product'});
     gtag('event','purchase',{
-      transaction_id: sessionId || 'closerai-' + Date.now(),
+      transaction_id: sessionId,
       value: value, currency: 'USD',
       items: [{item_id: tierLabel, item_name: 'CloserAI', price: value, quantity: 1}]
     });

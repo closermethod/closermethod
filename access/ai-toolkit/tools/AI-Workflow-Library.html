@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Adoption Studio · The Workflow Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0e1116;--ink2:#1b212b;--paper:#f7f5f1;--card:#ffffff;--accent:#ff5a3c;--accent2:#1f6feb;--muted:#6b7480;--line:#e7e3da;--good:#1f9d63;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.12;letter-spacing:-.01em}
+  .accent{color:var(--accent)}
+  nav{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(247,245,241,.92);backdrop-filter:blur(10px)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .logo{font-family:'Fraunces';font-weight:900;font-size:16px;letter-spacing:-.02em}
+  .logo span{color:var(--accent)}
+  .navmeta{font-size:12px;color:var(--muted)}
+  .hero{padding:48px 0 30px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .hero h1{font-size:clamp(28px,4.6vw,42px);font-weight:900;margin:14px 0 0}
+  .hero .sub{font-size:16.5px;color:var(--ink2);max-width:640px;margin:16px 0 0}
+  .pricetag{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:13px;font-weight:600;color:var(--ink2);background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+  .pricetag b{font-family:'Fraunces';color:var(--accent)}
+  .controls{position:sticky;top:58px;z-index:40;background:var(--paper);padding:18px 0 14px;border-bottom:1px solid var(--line)}
+  .search{width:100%;border:1.5px solid var(--line);border-radius:10px;height:46px;padding:0 16px;font-size:15px;font-family:inherit;background:#fff}
+  .search:focus{outline:none;border-color:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .chip{font-size:13px;font-weight:600;border:1.5px solid var(--line);background:#fff;color:var(--ink2);border-radius:999px;padding:7px 14px;cursor:pointer}
+  .chip:hover{border-color:var(--accent)}
+  .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .count{font-size:12.5px;color:var(--muted);margin:16px 0 0}
+  .lib{padding:8px 0 70px}
+  .wf{background:#fff;border:1px solid var(--line);border-radius:14px;margin-top:14px;overflow:hidden}
+  .wf .top{padding:18px 20px;cursor:pointer;display:flex;align-items:flex-start;gap:14px}
+  .wf .top:hover{background:#faf8f4}
+  .wf .meta{flex:1}
+  .wf .job{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2)}
+  .wf h3{font-family:'Fraunces';font-size:19px;font-weight:600;margin:4px 0 4px}
+  .wf .one{font-size:14px;color:var(--ink2)}
+  .wf .tools{font-size:12px;color:var(--muted);margin-top:8px}
+  .wf .chev{font-size:20px;color:var(--muted);transition:transform .2s;flex:0 0 auto;margin-top:4px}
+  .wf.open .chev{transform:rotate(180deg)}
+  .wf .body{display:none;padding:0 20px 22px;border-top:1px solid var(--line)}
+  .wf.open .body{display:block}
+  .blab{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
+  ol.steps{list-style:none;counter-reset:s;margin:0}
+  ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 32px;font-size:14.5px;color:var(--ink2);border-bottom:1px solid var(--line)}
+  ol.steps li:last-child{border-bottom:none}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:8px;width:21px;height:21px;border-radius:50%;background:var(--accent2);color:#fff;font-family:'Fraunces';font-weight:900;font-size:11px;display:flex;align-items:center;justify-content:center}
+  .prompt{position:relative;background:#0e1116;border-radius:11px;padding:18px 18px 16px;margin-top:4px}
+  .prompt pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:#e7e3da;white-space:pre-wrap;line-height:1.55}
+  .copy{position:absolute;top:12px;right:12px;font-size:12px;font-weight:600;background:#1f6feb;color:#fff;border:none;border-radius:7px;padding:6px 12px;cursor:pointer;font-family:inherit}
+  .copy:hover{background:#1a5fd0}
+  .copy.done{background:var(--good)}
+  .guard{background:#fff7f5;border:1px solid #ffd9cf;border-radius:10px;padding:14px 16px;margin-top:6px;font-size:13.5px;color:var(--ink2)}
+  .guard b{color:var(--accent)}
+  .empty{text-align:center;color:var(--muted);padding:50px 0;font-size:15px}
+  footer{padding:40px 0;text-align:center;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">AI Adoption<span> Studio</span></div>
+  <div class="navmeta">The Workflow Library</div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">The Toolkit · vetted workflows by job</div>
+  <h1>The repeat work, already <span class="accent">solved.</span></h1>
+  <p class="sub">Every recurring task an agency or small team grinds through, with the exact workflow to hand it to AI: the steps, the prompt to paste, and the guardrail so you never automate the wrong thing. Copy, run, done. This is the method as a product.</p>
+  <div class="pricetag">Part of <b>The Toolkit</b> · the self-serve tier of the Studio</div>
+</div></header>
+
+<div class="controls"><div class="wrap">
+  <input class="search" id="search" placeholder="Search a task, e.g. report, proposal, meeting..." oninput="apply()">
+  <div class="chips" id="chips"></div>
+  <div class="count" id="count"></div>
+</div></div>
+
+<div class="lib"><div class="wrap" id="lib"></div></div>
+
+<footer><div class="wrap">
+  The Workflow Library · AI Adoption Studio · keep a human on anything a client sees before it ships
+</div></footer>
+
+<script>
+var WF = [
+  {job:'Reporting', t:'The recurring client report, in minutes',
+   one:'Turn this period\'s numbers into the same clean report you rebuild every week or month.',
+   tools:'ChatGPT or Claude · your analytics export (CSV) · your last report as the template',
+   steps:['Paste your last report so the model copies its exact structure and tone.','Paste this period\'s raw numbers underneath.','Run the prompt, then read it once and fix anything off before it goes out.'],
+   prompt:'You are writing our recurring client report. Match the STRUCTURE, section order, and tone of the EXAMPLE report exactly. Use only the NUMBERS provided, never invent figures. For each section: state the result, the change vs last period, and one plain-language sentence on why it moved. Keep it concise and client-ready. End with a short "what we are doing next" list.\n\nEXAMPLE REPORT:\n[paste last report]\n\nTHIS PERIOD\'S NUMBERS:\n[paste data]',
+   guard:'Never let the model invent or estimate a number. If a figure is missing, it should leave a clear [TO CONFIRM] flag, not guess.'},
+
+  {job:'New business', t:'Proposal & pitch first draft',
+   one:'A strong first draft of a proposal from your template and the deal details, so you start at 70%, not zero.',
+   tools:'ChatGPT or Claude · a past winning proposal · the discovery notes',
+   steps:['Give it a proposal you won as the model and voice.','Add the new prospect\'s notes, scope, and goals.','Generate, then you own the final pricing, promises, and voice.'],
+   prompt:'Draft a client proposal in OUR voice, using the WINNING PROPOSAL below as the structure and tone model. Tailor every section to the PROSPECT NOTES. Be specific about outcomes, not generic. Leave pricing as [PRICING] for me to fill. Flag any claim you are unsure we can deliver with [VERIFY].\n\nWINNING PROPOSAL:\n[paste]\n\nPROSPECT NOTES:\n[paste discovery notes, scope, goals]',
+   guard:'This wins or loses the client. A person owns the final numbers, the promises, and the voice before it is sent.'},
+
+  {job:'Operations', t:'Meeting notes into owned action items',
+   one:'A messy call becomes a clean summary with decisions and clearly owned next steps.',
+   tools:'Any transcript (Otter, Fathom, Zoom, or pasted notes) · ChatGPT or Claude',
+   steps:['Drop in the transcript or your rough notes.','Run the prompt.','Paste the action items straight into your task tool.'],
+   prompt:'Turn this meeting transcript into: (1) a 3-sentence summary, (2) a list of DECISIONS made, (3) a table of ACTION ITEMS with owner and due date where stated. If an owner or date is unclear, mark it [UNASSIGNED] rather than guessing. Keep it skimmable.\n\nTRANSCRIPT:\n[paste]',
+   guard:'Skim the action items before sharing. The model can misattribute who agreed to what.'},
+
+  {job:'Marketing', t:'Repurpose one asset into five',
+   one:'A single long piece becomes the thread, the post, the email, and the captions, all in your voice.',
+   tools:'ChatGPT or Claude · the source piece (blog, video transcript, talk)',
+   steps:['Paste the source content.','Tell it the channels you want.','Edit each output for voice before scheduling.'],
+   prompt:'From the SOURCE below, create: (1) a LinkedIn post (hook + 150 words), (2) a 5-tweet thread, (3) a short email (subject + 120 words), (4) three one-line captions. Keep our voice: plain, specific, no hype, no emoji unless the source has them. Do not invent facts or stats not in the source.\n\nSOURCE:\n[paste]',
+   guard:'Repurposing is low risk, but check that no claim got exaggerated in the compression.'},
+
+  {job:'Client comms', t:'Drafted replies to repeat questions',
+   one:'The same FAQs and recurring emails get a drafted answer from your own past replies. You approve and send.',
+   tools:'ChatGPT or Claude · a doc of your best past answers',
+   steps:['Build a reference doc of your 10 best past answers.','Paste it plus the incoming question.','Read the draft, adjust, send from your own account.'],
+   prompt:'Using our APPROVED ANSWERS below as the source of truth for tone and facts, draft a reply to the incoming CLIENT MESSAGE. Match our voice. Do not promise anything not supported by the approved answers; if the question is not covered, say so and flag [NEEDS HUMAN]. Keep it warm and concise.\n\nAPPROVED ANSWERS:\n[paste]\n\nCLIENT MESSAGE:\n[paste]',
+   guard:'Anything touching the relationship gets a human read before it sends. The model drafts, you decide.'},
+
+  {job:'Research', t:'A structured research brief from many sources',
+   one:'Background reading and competitor scans become one structured brief, so you start from a summary, not a blank page.',
+   tools:'A model with web access (ChatGPT, Claude, Perplexity)',
+   steps:['Define the question and the angles you care about.','Run the prompt.','Spot-check the key claims against the cited sources.'],
+   prompt:'Research [TOPIC] and return a brief with: (1) the 5 things I most need to know, (2) a short competitor/landscape table, (3) notable recent changes, (4) open questions. Cite a source for every factual claim. Flag anything you are not confident about. Be concise and skimmable.',
+   guard:'Models can state wrong facts confidently. Verify any number or claim you will repeat to a client against its cited source.'},
+
+  {job:'Operations', t:'Onboarding pack & SOW generator',
+   one:'Welcome docs, scopes, and kickoff paperwork generated from a master template and the deal details.',
+   tools:'ChatGPT or Claude · your master onboarding/SOW template',
+   steps:['Paste your master template.','Add the new client\'s specifics.','A person reviews and signs off before it reaches the client.'],
+   prompt:'Fill out our MASTER TEMPLATE below for a new client using the DETAILS provided. Keep all legal and scope language exactly as written in the template, only filling the blanks. Where a detail is missing, insert [TO CONFIRM]. Do not add new terms or change scope language.\n\nMASTER TEMPLATE:\n[paste]\n\nCLIENT DETAILS:\n[paste]',
+   guard:'It is contractual. A person signs off on scope and terms before it goes out. The model fills blanks, it does not write terms.'},
+
+  {job:'Operations', t:'Inbox triage & first-pass drafts',
+   one:'Your morning inbox gets sorted by what needs you, with drafts ready for the routine ones.',
+   tools:'ChatGPT or Claude · pasted email batch (or a connected assistant)',
+   steps:['Paste the batch of emails or subjects.','Run the prompt to triage.','Use the drafts as starting points, never auto-send.'],
+   prompt:'Triage these emails into: NEEDS ME (judgment or relationship), QUICK DRAFT (routine, draft a reply below), and FYI (no action). For each QUICK DRAFT, write a short reply in our voice. Never schedule, send, or commit to anything; these are drafts for me to approve.\n\nEMAILS:\n[paste]',
+   guard:'Drafts only. Nothing sends without you reading it. Never connect auto-send to this.'},
+
+  {job:'Quality', t:'The pre-send QA pass',
+   one:'A second set of eyes on any deck, doc, or email before it ships: typos, broken logic, wrong names.',
+   tools:'ChatGPT or Claude · the near-final draft',
+   steps:['Paste the near-final piece.','Run the QA prompt.','Fix the flags, then ship.'],
+   prompt:'Proofread the following as a careful editor. Return a list of: typos and grammar, inconsistent names/numbers/dates, unclear or contradictory sentences, and anything that could embarrass us in front of a client. Do NOT rewrite the whole thing; just flag issues with the location. Be thorough.\n\nDRAFT:\n[paste]',
+   guard:'A QA aid, not a sign-off. The human still owns the final read on client work.'}
+];
+
+var jobs = []; WF.forEach(function(w){ if(jobs.indexOf(w.job)<0) jobs.push(w.job); });
+var activeJob = 'All';
+var jobsAll = ['All'].concat(jobs);
+
+function renderChips(){
+  var c=document.getElementById('chips'); c.innerHTML='';
+  jobsAll.forEach(function(j){
+    var el=document.createElement('div'); el.className='chip'+(j===activeJob?' on':'');
+    el.textContent=j; el.onclick=function(){activeJob=j; renderChips(); apply();};
+    c.appendChild(el);
+  });
+}
+function cardHTML(w,i){
+  var stepsH = w.steps.map(function(s){return '<li>'+s+'</li>'}).join('');
+  return '<div class="wf" id="wf'+i+'">'+
+    '<div class="top" onclick="toggle('+i+')">'+
+      '<div class="meta"><div class="job">'+w.job+'</div><h3>'+w.t+'</h3>'+
+      '<div class="one">'+w.one+'</div><div class="tools">Needs: '+w.tools+'</div></div>'+
+      '<div class="chev">&#9662;</div>'+
+    '</div>'+
+    '<div class="body">'+
+      '<div class="blab">The steps</div><ol class="steps">'+stepsH+'</ol>'+
+      '<div class="blab">The prompt to paste</div>'+
+      '<div class="prompt"><button class="copy" onclick="copyP(event,'+i+')">Copy</button><pre id="p'+i+'">'+esc(w.prompt)+'</pre></div>'+
+      '<div class="blab">The guardrail</div>'+
+      '<div class="guard"><b>Keep this rule:</b> '+w.guard+'</div>'+
+    '</div></div>';
+}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function apply(){
+  var q=(document.getElementById('search').value||'').toLowerCase();
+  var lib=document.getElementById('lib'); lib.innerHTML='';
+  var shown=0;
+  WF.forEach(function(w,i){
+    var matchJob = activeJob==='All' || w.job===activeJob;
+    var hay=(w.t+' '+w.one+' '+w.job+' '+w.tools).toLowerCase();
+    var matchQ = !q || hay.indexOf(q)>=0;
+    if(matchJob && matchQ){ lib.insertAdjacentHTML('beforeend', cardHTML(w,i)); shown++; }
+  });
+  if(shown===0){ lib.innerHTML='<div class="empty">No workflow matches that yet. Try a broader word, or clear the filter.</div>'; }
+  document.getElementById('count').textContent = shown+' workflow'+(shown!==1?'s':'')+(activeJob!=='All'?' in '+activeJob:'');
+}
+function toggle(i){ document.getElementById('wf'+i).classList.toggle('open'); }
+function copyP(e,i){ e.stopPropagation();
+  var txt=document.getElementById('p'+i).textContent;
+  navigator.clipboard.writeText(txt).then(function(){
+    var b=e.target; b.textContent='Copied'; b.classList.add('done');
+    setTimeout(function(){b.textContent='Copy'; b.classList.remove('done');},1500);
+  });
+}
+renderChips(); apply();
+</script>
+</body>
+</html>

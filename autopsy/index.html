@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The AI Setup Autopsy · Why does your AI sound so generic?</title>
+<meta name="description" content="Paste anything your AI wrote. This finds the dead giveaways that make it read like a robot, and the one move that makes it sound like you.">
+<link rel="canonical" href="https://closermethod.com/autopsy/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://closermethod.com/autopsy/">
+<meta property="og:title" content="The AI Setup Autopsy · why your AI sounds generic">
+<meta property="og:description" content="Paste your AI's output. See exactly why it reads like a robot, and the fix.">
+<meta property="og:image" content="https://closermethod.com/og/og-autopsy.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The AI Setup Autopsy">
+<meta name="twitter:description" content="Paste your AI output. Watch it get diagnosed.">
+<meta name="twitter:image" content="https://closermethod.com/og/og-autopsy.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231A1410'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%23B5482E' font-style='italic'%3Em%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+<style>
+:root{--bg:#F4EDE4;--bg2:#EFE6DA;--paper:#FFFDFB;--ink:#1A1410;--ink2:#5C534A;--ink3:#8A8076;--clay:#B5482E;--clay-soft:#EFE0D6;--hair:#E0D6C8;--line:#1A1410;--pos:#3F6B4A;--shadow:5px 5px 0 #1A1410;--radius:8px;--maxw:680px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Archivo',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")}
+.serif{font-family:'Fraunces',Georgia,serif}.mono{font-family:'JetBrains Mono',monospace}
+a{color:var(--clay);text-decoration:none}.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.nav{border-bottom:2px solid var(--line);background:rgba(244,237,228,.94);backdrop-filter:blur(8px);position:sticky;top:0;z-index:20}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:12px 22px;display:flex;justify-content:space-between;align-items:center}
+.nav-brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem}.nav-brand em{font-style:italic;color:var(--clay)}
+.nav-in a.back{font-family:'JetBrains Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink2)}
+.hero{padding:48px 0 18px;text-align:center}
+.kicker{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;color:var(--clay);border:1.5px solid var(--clay);border-radius:100px;padding:6px 14px;margin-bottom:20px}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.1rem,6vw,3.2rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:16px}
+.hero h1 em{font-style:italic;color:var(--clay)}
+.hero p{font-size:1.05rem;color:var(--ink2);max-width:54ch;margin:0 auto}
+.tool{padding:14px 0 40px}
+.card{background:var(--paper);border:2px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:24px;margin-bottom:18px}
+textarea{width:100%;min-height:160px;padding:15px;border:2px solid var(--line);border-radius:var(--radius);font-family:'Archivo',sans-serif;font-size:.95rem;background:var(--bg);resize:vertical;line-height:1.55}
+textarea:focus{outline:none;border-color:var(--clay)}
+.runrow{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:12px;flex-wrap:wrap}
+.hint{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--ink3)}
+.btn{font-family:'JetBrains Mono',monospace;font-size:.8rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;padding:13px 24px;border:2px solid var(--line);border-radius:var(--radius);background:var(--ink);color:var(--bg);cursor:pointer;transition:all .12s}
+.btn:hover{background:var(--clay);color:#fff}.btn:disabled{opacity:.4;cursor:not-allowed}
+.result{display:none;margin-top:8px}
+.verdict{text-align:center;padding:6px 0}
+.verdict .band{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;padding:7px 16px;border-radius:100px;margin-bottom:14px;font-weight:500}
+.verdict .score{font-family:'Fraunces',serif;font-size:3.2rem;font-weight:600;line-height:1;margin:4px 0 2px}
+.verdict .scorelbl{font-family:'JetBrains Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ink3);margin-bottom:12px}
+.verdict h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.6rem,4.5vw,2.2rem);line-height:1.1;margin-bottom:10px}
+.verdict p{color:var(--ink2);max-width:52ch;margin:0 auto}
+.tells{display:flex;flex-direction:column;gap:8px;margin:18px 0}
+.tell{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 14px;border:1.5px solid var(--hair);border-radius:var(--radius);background:var(--bg);font-size:.9rem}
+.tell .n{font-family:'JetBrains Mono',monospace;font-size:.78rem;font-weight:500;color:var(--clay);background:var(--clay-soft);padding:2px 9px;border-radius:100px;border:1px solid var(--clay)}
+.tell.clean .n{color:var(--pos);background:#DCE8DE;border-color:var(--pos)}
+.gate{background:var(--paper);border:2px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:24px;margin-top:20px}
+.gate h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;margin-bottom:6px}
+.gate p{font-size:.92rem;color:var(--ink2);margin-bottom:16px}
+.gate form{display:flex;gap:10px;flex-wrap:wrap}
+.gate input{flex:1;min-width:200px;padding:13px 15px;border:2px solid var(--line);border-radius:var(--radius);font-family:'Archivo',sans-serif;font-size:.95rem;background:var(--bg)}
+.gate input:focus{outline:none;border-color:var(--clay)}
+.gate button{padding:13px 22px;background:var(--ink);color:var(--bg);border:2px solid var(--line);border-radius:var(--radius);font-family:'JetBrains Mono',monospace;font-size:.78rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;cursor:pointer}
+.gate button:hover{background:var(--clay);color:#fff}
+.gate .meta{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--ink3);margin-top:10px}
+.reveal{display:none;margin-top:18px}
+.reveal .fix{background:var(--clay-soft);border:2px solid var(--clay);border-radius:var(--radius);padding:20px;margin-bottom:14px}
+.reveal .fix h4{font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:6px}.reveal .fix p{font-size:.92rem;color:var(--ink2)}
+.cta{display:block;text-align:center;background:var(--ink);color:var(--bg);padding:16px;border:2px solid var(--line);border-radius:var(--radius);font-family:'JetBrains Mono',monospace;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;box-shadow:var(--shadow)}
+.cta:hover{background:var(--clay);color:#fff}
+footer{border-top:2px solid var(--line);background:var(--paper);padding:28px 0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink3);margin-top:30px}
+footer a{color:var(--ink2)}:focus-visible{outline:2px solid var(--clay);outline-offset:2px}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-in"><a class="nav-brand" href="https://closermethod.com">the closer <em>method</em></a><a class="back" href="/">← home</a></div></nav>
+<header class="hero"><div class="wrap">
+  <span class="kicker">the ai setup autopsy · paste & diagnose</span>
+  <h1 class="serif">Why does your AI sound <em>so generic?</em></h1>
+  <p>Paste anything your AI wrote, an email, a caption, a page. In one second this finds the dead giveaways that make it read like a robot instead of like you, and tells you the one thing missing from your setup.</p>
+</div></header>
+<main class="tool"><div class="wrap">
+  <div class="card" id="inputCard">
+    <textarea id="src" placeholder="Paste your AI's output here. An email, a bio, a product description, a caption, anything it wrote for you…" aria-label="Paste AI output"></textarea>
+    <div class="runrow">
+      <span class="hint">nothing is stored or sent until you ask for the fix</span>
+      <button class="btn" id="runBtn" disabled>Run the autopsy →</button>
+    </div>
+  </div>
+
+  <div class="result" id="result">
+    <div class="verdict">
+      <span class="band" id="band"></span>
+      <div class="score mono" id="scoreNum"></div>
+      <div class="scorelbl">AI fingerprints found</div>
+      <h2 class="serif" id="verdictH"></h2>
+      <p id="verdictP"></p>
+    </div>
+    <div class="tells" id="tells"></div>
+    <div class="gate">
+      <h3 class="serif">Get the rewrite rules + the one setup fix</h3>
+      <p>The exact tells to strip, the swaps that make it sound like a person, and the single thing to add to your setup so this never happens again. Straight to your inbox.</p>
+      <form id="gateForm">
+        <input type="email" id="email" placeholder="your best email" aria-label="Email" autocomplete="email" required>
+        <button type="submit">Send the fix</button>
+      </form>
+      <div class="meta" id="gateMeta">the rewrite rules, the swaps, and the setup move that fixes the root cause</div>
+    </div>
+    <div class="reveal" id="reveal">
+      <div class="fix"><h4 class="serif">The root cause (and the fix)</h4><p id="fixText"></p></div>
+      <a class="cta" href="/cohort/">Make it sound like you, for good →</a>
+    </div>
+  </div>
+</div></main>
+<footer><div class="wrap">built by the closer method · <a href="https://closermethod.com">closermethod.com</a> · generic is a setup problem, not a you problem</div></footer>
+
+<script>
+(function(){function l(){var g=document.createElement('script');g.async=1;g.src='https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD';document.head.appendChild(g);window.dataLayer=window.dataLayer||[];function t(){dataLayer.push(arguments)}window.gtag=t;t('js',new Date());t('config','G-Q2458LX0VD',{page_path:'/autopsy'});t('event','view_item',{content_name:'autopsy'});
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','35298849146380570');fbq('track','PageView');}
+if(window.requestIdleCallback){requestIdleCallback(l,{timeout:3000})}else{addEventListener('load',function(){setTimeout(l,1500)})}})();
+</script>
+<script>
+(function(){
+  var src=document.getElementById('src'),runBtn=document.getElementById('runBtn');
+  src.addEventListener('input',function(){runBtn.disabled=src.value.trim().length<40});
+  // categories of AI "tells"
+  var TESTS=[
+    {name:"Filler phrases (\"in today's…\", \"ever-evolving\")",re:/in today'?s (world|landscape|fast-paced|digital)|ever-?evolving|fast-paced world|in conclusion|it'?s (important|worth) (to note|noting)|when it comes to|navigating the/gi},
+    {name:"Consultant words (leverage, robust, seamless)",re:/\b(leverage|robust|seamless|streamline|synerg\w+|holistic|cutting-edge|game-?changer|revolutioniz\w+|unlock|elevate|empower|delve|tapestry|realm|underscore|testament)\b/gi},
+    {name:"Hedging & vagueness (typically, generally)",re:/\b(typically|generally|in many cases|various|numerous|a wide range of|plays? a (crucial|vital|key|pivotal) role|it depends|that said)\b/gi},
+    {name:"Robot tells (\"as an AI\", \"I cannot\")",re:/\bas an ai\b|\bi'?m (just )?an ai\b|i cannot|i'?m unable to|i don'?t have (access|the ability)|language model/gi},
+    {name:"Empty enthusiasm (exciting, journey, dive in)",re:/\b(exciting|thrilled|delighted|journey|let'?s dive (in|into)|buckle up|game plan|exciting opportunity|world of)\b/gi},
+    {name:"Em-dash & list-itis overload",re:/—/g}
+  ];
+  function analyze(text){
+    var hits=[],total=0;
+    TESTS.forEach(function(t){
+      var m=text.match(t.re);var c=m?m.length:0;
+      // em-dash only counts as a tell if 3+ in the sample
+      if(t.name.indexOf('Em-dash')===0){c=c>=3?Math.min(c,9):0}
+      hits.push({name:t.name,count:c});total+=c>0?1:0;
+    });
+    var weighted=hits.reduce(function(s,h){return s+h.count},0);
+    return {hits:hits,categories:total,weighted:weighted};
+  }
+  runBtn.addEventListener('click',function(){
+    var text=src.value.trim();if(text.length<40)return;
+    var r=analyze(text);
+    document.getElementById('inputCard').style.display='none';
+    var band=document.getElementById('band'),sc=document.getElementById('scoreNum'),
+        vh=document.getElementById('verdictH'),vp=document.getElementById('verdictP'),
+        tells=document.getElementById('tells'),fix=document.getElementById('fixText');
+    sc.textContent=r.weighted;
+    var bucket;
+    if(r.weighted>=6||r.categories>=4){bucket='robot';band.textContent='reads like a robot';band.style.background='#F3DCD5';band.style.color='#7A2E1B';
+      vh.textContent="This is textbook generic AI.";
+      vp.textContent="It's loaded with the exact phrases every ungrounded model reaches for. A reader clocks it as AI in the first line, and tunes out. None of it is your fault, it's that the AI has no idea who you are or how you talk.";
+      fix.textContent="Two moves. One: strip the tells below and swap them for plain, specific words a human would actually use. Two, the real fix: give the AI a brain doc, who you serve, how you sound, three phrases you'd never say. With context, it stops defaulting to robot.";
+    } else if(r.weighted>=2){bucket='mixed';band.textContent='half human, half tell';band.style.background='#EFE0D6';band.style.color='#8A4A2E';
+      vh.textContent="Close, but the seams show.";
+      vp.textContent="There's a real voice in here, but a few AI tells are leaking through and giving it away. Strip those and feed the AI a little context and it crosses over into sounding genuinely like you.";
+      fix.textContent="Cut the flagged phrases below, they're the giveaways. Then add a short brain doc so the AI starts from your voice instead of the generic default. Small input, big jump in how human it reads.";
+    } else {bucket='human';band.textContent='reads human';band.style.background='#DCE8DE';band.style.color='#2E5238';
+      vh.textContent="Honestly? This reads human.";
+      vp.textContent="Barely a tell in sight. Either you wrote it, or your AI is already well set up with real context. If it's the AI, you're doing the thing almost nobody does, feeding it who you are. Keep going.";
+      fix.textContent="You're past the hard part. Lock it in: save the context that's working as a reusable brain doc so every future output starts from this voice instead of resetting to generic.";
+    }
+    var th='';r.hits.forEach(function(h){th+='<div class="tell'+(h.count===0?' clean':'')+'"><span>'+h.name+'</span><span class="n">'+(h.count===0?'clean':h.count+'×')+'</span></div>'});
+    tells.innerHTML=th;
+    document.getElementById('result').style.display='block';
+    window.scrollTo({top:0,behavior:'smooth'});
+    try{gtag('event','autopsy_complete',{fingerprints:r.weighted,bucket:bucket})}catch(e){}
+    try{fbq('trackCustom','AutopsyComplete',{fingerprints:r.weighted,bucket:bucket})}catch(e){}
+    window.__bucket=bucket;window.__w=r.weighted;
+  });
+  document.getElementById('gateForm').addEventListener('submit',async function(e){
+    e.preventDefault();var inp=document.getElementById('email'),btn=this.querySelector('button'),meta=document.getElementById('gateMeta');
+    var email=(inp.value||'').trim();if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){inp.style.borderColor='#B5482E';inp.focus();return}
+    var orig=btn.textContent;btn.disabled=true;btn.textContent='sending…';
+    try{var res=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'autopsy',fields:{fingerprints:window.__w,bucket:window.__bucket}})});
+      var data=await res.json();
+      if(res.ok&&data.subscriber_id){document.getElementById('reveal').style.display='block';this.style.display='none';meta.textContent="you're in — the fix is on its way";document.getElementById('reveal').scrollIntoView({behavior:'smooth',block:'center'});
+        try{gtag('event','generate_lead',{source:'autopsy'})}catch(e){}try{fbq('track','Lead',{content_name:'autopsy'})}catch(e){}
+      }else{btn.disabled=false;btn.textContent=orig;inp.style.borderColor='#B5482E'}
+    }catch(err){btn.disabled=false;btn.textContent=orig;inp.style.borderColor='#B5482E'}
+  });
+})();
+</script>
+</body>
+</html>

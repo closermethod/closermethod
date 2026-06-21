@@ -14,4 +14,7 @@ Disallow: /buy/
 # Block asset downloads (zips, future PDFs).
 Disallow: /downloads/
 
+# Block serverless API endpoints — machine-only, never pages.
+Disallow: /api/
+
 Sitemap: https://closermethod.com/sitemap.xml

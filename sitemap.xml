@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Homepage · NEW v3 design · dark Geist · founder hero · highest priority -->
   <url>
@@ -91,7 +91,7 @@
 
   <!-- 27 Claude Skills sales page -->
   <url>
-    <loc>https://closermethod.com/artifacts</loc>
+    <loc>https://closermethod.com/artifacts/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -99,7 +99,7 @@
 
   <!-- AI Brain Builder · free 4-tap tool -->
   <url>
-    <loc>https://closermethod.com/brain</loc>
+    <loc>https://closermethod.com/brain/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -163,7 +163,7 @@
 
   <!-- 2026 Cold DM Quality Report -->
   <url>
-    <loc>https://closermethod.com/report</loc>
+    <loc>https://closermethod.com/report/</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -185,4 +185,36 @@
     <priority>0.8</priority>
   </url>
 
+  <url><loc>https://closermethod.com/blog/</loc><lastmod>2026-06-11</lastmod></url>
+  <url><loc>https://closermethod.com/blog/set-up-claude-for-a-small-business/</loc><lastmod>2026-06-11</lastmod></url>
+  <url><loc>https://closermethod.com/blog/why-your-ai-is-not-working/</loc><lastmod>2026-06-11</lastmod></url>
+  <url><loc>https://closermethod.com/blog/claude-skills-explained/</loc><lastmod>2026-06-11</lastmod></url>
+  <url><loc>https://closermethod.com/blog/claude-code-metering-june-15/</loc><lastmod>2026-06-11</lastmod></url>
+  <url><loc>https://closermethod.com/blog/hire-someone-to-set-up-claude/</loc><lastmod>2026-06-11</lastmod></url>
+  <url><loc>https://closermethod.com/blog/connect-claude-to-your-tools/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/what-is-claude-cowork/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/claude-plugins-explained/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/use-claude-cowork-safely/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/test-a-claude-skill-with-evals/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/three-kinds-of-work-to-delegate/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/how-to-brief-claude-cowork/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/ai-use-audit/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/why-ai-agrees-rambles-hedges/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/why-ai-makes-things-up/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/what-ai-actually-knows/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/more-context-isnt-better/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/how-to-steer-ai/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/prompts-vs-skills/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/prompts-skills-plugins-mcps/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/cost-to-set-up-ai-small-business/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/claude-vs-chatgpt-for-small-business/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/blog/ai-agents-for-small-business/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/audit/</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/pricing.md</loc><lastmod>2026-06-18</lastmod></url>
+  <url><loc>https://closermethod.com/roi-map/</loc><lastmod>2026-06-11</lastmod></url>
+  <url><loc>https://closermethod.com/40-test/</loc><lastmod>2026-06-20</lastmod></url>
+  <url><loc>https://closermethod.com/hype-detector/</loc><lastmod>2026-06-20</lastmod></url>
+  <url><loc>https://closermethod.com/autopsy/</loc><lastmod>2026-06-20</lastmod></url>
+  <url><loc>https://closermethod.com/silent-check/</loc><lastmod>2026-06-20</lastmod></url>
+  <url><loc>https://closermethod.com/which-ai/</loc><lastmod>2026-06-20</lastmod></url>
 </urlset>

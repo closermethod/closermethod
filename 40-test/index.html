@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The 40% Test · Will your AI survive, or get killed? · The Closer Method</title>
+<meta name="description" content="Gartner says 40% of AI projects get canceled by 2027. This 2-minute test tells you which side of that line you're on, and the one move that flips it.">
+<link rel="canonical" href="https://closermethod.com/40-test/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://closermethod.com/40-test/">
+<meta property="og:title" content="The 40% Test · Will your AI survive, or get killed?">
+<meta property="og:description" content="Gartner: 40% of AI projects get canceled by 2027. Find out which side you're on in 2 minutes.">
+<meta property="og:image" content="https://closermethod.com/og/og-40test.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The 40% Test">
+<meta name="twitter:description" content="40% of AI projects get killed by 2027. Which side are you on?">
+<meta name="twitter:image" content="https://closermethod.com/og/og-40test.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231A1410'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' font-family='Georgia' font-weight='400' fill='%23B5482E' font-style='italic'%3Em%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+
+<style>
+:root{
+  --bg:#F4EDE4;--bg2:#EFE6DA;--paper:#FFFDFB;--ink:#1A1410;--ink2:#5C534A;--ink3:#8A8076;
+  --clay:#B5482E;--clay-soft:#EFE0D6;--hair:#E0D6C8;--line:#1A1410;
+  --pos:#3F6B4A;--warn:#B5482E;
+  --shadow:5px 5px 0 #1A1410;--radius:8px;--maxw:680px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Archivo',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")}
+.serif{font-family:'Fraunces',Georgia,serif}
+.mono{font-family:'JetBrains Mono',monospace}
+a{color:var(--clay);text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+.nav{border-bottom:2px solid var(--line);background:rgba(244,237,228,.94);backdrop-filter:blur(8px);position:sticky;top:0;z-index:20}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:12px 22px;display:flex;justify-content:space-between;align-items:center}
+.nav-brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem}
+.nav-brand em{font-style:italic;color:var(--clay)}
+.nav-in a.back{font-family:'JetBrains Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink2)}
+
+.hero{padding:48px 0 24px;text-align:center}
+.kicker{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;color:var(--clay);border:1.5px solid var(--clay);border-radius:100px;padding:6px 14px;margin-bottom:20px}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.1rem,6vw,3.2rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:16px}
+.hero h1 em{font-style:italic;color:var(--clay)}
+.hero p{font-size:1.05rem;color:var(--ink2);max-width:54ch;margin:0 auto}
+.hero .stat{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--ink3);margin-top:16px;letter-spacing:.02em}
+
+/* QUIZ */
+.quiz{padding:14px 0 40px}
+.prog{height:6px;background:var(--bg2);border:1.5px solid var(--line);border-radius:100px;overflow:hidden;margin:0 0 28px}
+.prog i{display:block;height:100%;width:0;background:var(--clay);transition:width .3s}
+.card{background:var(--paper);border:2px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:26px 24px;margin-bottom:18px}
+.qnum{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--ink3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.qtext{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600;line-height:1.2;margin-bottom:18px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;align-items:center;gap:12px;padding:13px 16px;border:1.5px solid var(--hair);border-radius:var(--radius);background:var(--bg);cursor:pointer;font-size:.95rem;transition:all .12s;text-align:left}
+.opt:hover{border-color:var(--clay)}
+.opt.sel{border-color:var(--clay);background:var(--clay-soft);box-shadow:inset 0 0 0 1px var(--clay)}
+.opt .dot{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--ink3);flex-shrink:0}
+.opt.sel .dot{border-color:var(--clay);background:var(--clay);box-shadow:inset 0 0 0 3px var(--paper)}
+.nav-btns{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.btn{font-family:'JetBrains Mono',monospace;font-size:.8rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;padding:12px 22px;border:2px solid var(--line);border-radius:var(--radius);background:var(--paper);cursor:pointer;transition:all .12s}
+.btn:hover{background:var(--bg2)}
+.btn-go{background:var(--ink);color:var(--bg)}
+.btn-go:hover{background:var(--clay);color:#fff}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* RESULT */
+.result{display:none}
+.verdict{text-align:center;padding:8px 0 4px}
+.verdict .band{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;padding:7px 16px;border-radius:100px;margin-bottom:16px;font-weight:500}
+.verdict h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.08;margin-bottom:12px}
+.verdict .score{font-family:'Fraunces',serif;font-size:3.4rem;font-weight:600;line-height:1;margin:6px 0 10px}
+.verdict p{color:var(--ink2);max-width:50ch;margin:0 auto 8px}
+.gate{background:var(--paper);border:2px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:26px 24px;margin-top:24px}
+.gate h3{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:600;margin-bottom:6px}
+.gate p{font-size:.92rem;color:var(--ink2);margin-bottom:16px}
+.gate form{display:flex;gap:10px;flex-wrap:wrap}
+.gate input{flex:1;min-width:200px;padding:13px 15px;border:2px solid var(--line);border-radius:var(--radius);font-family:'Archivo',sans-serif;font-size:.95rem;background:var(--bg)}
+.gate input:focus{outline:none;border-color:var(--clay)}
+.gate button{padding:13px 22px;background:var(--ink);color:var(--bg);border:2px solid var(--line);border-radius:var(--radius);font-family:'JetBrains Mono',monospace;font-size:.78rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;cursor:pointer}
+.gate button:hover{background:var(--clay);color:#fff}
+.gate .meta{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--ink3);margin-top:10px}
+.reveal{display:none;margin-top:20px}
+.reveal .fix{background:var(--clay-soft);border:2px solid var(--clay);border-radius:var(--radius);padding:22px;margin-bottom:14px}
+.reveal .fix h4{font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:6px}
+.reveal .fix p{font-size:.92rem;color:var(--ink2)}
+.cta{display:block;text-align:center;background:var(--ink);color:var(--bg);padding:16px;border:2px solid var(--line);border-radius:var(--radius);font-family:'JetBrains Mono',monospace;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;box-shadow:var(--shadow)}
+.cta:hover{background:var(--clay);color:#fff}
+
+footer{border-top:2px solid var(--line);background:var(--paper);padding:28px 0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink3);margin-top:30px}
+footer a{color:var(--ink2)}
+:focus-visible{outline:2px solid var(--clay);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-in">
+  <a class="nav-brand" href="https://closermethod.com">the closer <em>method</em></a>
+  <a class="back" href="/">← home</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">the 40% test · 2 minutes</span>
+  <h1 class="serif">Will your AI survive — <em>or get killed?</em></h1>
+  <p>Gartner says <strong>40% of AI projects get canceled by 2027</strong> — not because the models are bad, because nobody set them up to actually do the work. This tells you which side of that line you're on.</p>
+  <p class="stat">6 questions · honest answers only · your result in 2 minutes</p>
+</div></header>
+
+<main class="quiz"><div class="wrap">
+  <div class="prog"><i id="prog"></i></div>
+
+  <div id="quizArea"></div>
+
+  <div class="nav-btns" id="navBtns">
+    <button class="btn" id="backBtn" disabled>← back</button>
+    <button class="btn btn-go" id="nextBtn" disabled>next →</button>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result" id="result">
+    <div class="verdict">
+      <span class="band" id="band"></span>
+      <div class="score mono" id="scoreNum"></div>
+      <h2 class="serif" id="verdictH"></h2>
+      <p id="verdictP"></p>
+    </div>
+    <div class="gate">
+      <h3 class="serif">Get your full breakdown + the one move that flips it</h3>
+      <p>Where each answer put you, and the single highest-leverage fix to get into the 60% that survives. Sent to your inbox, plus the playbook.</p>
+      <form id="gateForm">
+        <input type="email" id="email" placeholder="your best email" aria-label="Email" autocomplete="email" required>
+        <button type="submit">Send my breakdown</button>
+      </form>
+      <div class="meta" id="gateMeta">no spam — the breakdown, the fix, and how the method works</div>
+    </div>
+    <div class="reveal" id="reveal">
+      <div class="fix">
+        <h4 class="serif">Your highest-leverage move</h4>
+        <p id="fixText"></p>
+      </div>
+      <a class="cta" id="resultCta" href="/cohort/">See the move mapped to your business →</a>
+    </div>
+  </div>
+</div></main>
+
+<footer><div class="wrap">
+  built by the closer method · <a href="https://closermethod.com">closermethod.com</a> · the 60% is a setup, not a tool
+</div></footer>
+
+<!-- GA4 + Meta · deferred -->
+<script>
+(function(){function l(){var g=document.createElement('script');g.async=1;g.src='https://www.googletagmanager.com/gtag/js?id=G-Q2458LX0VD';document.head.appendChild(g);window.dataLayer=window.dataLayer||[];function t(){dataLayer.push(arguments)}window.gtag=t;t('js',new Date());t('config','G-Q2458LX0VD',{page_path:'/40-test'});t('event','view_item',{content_name:'40_test'});
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','35298849146380570');fbq('track','PageView');}
+if(window.requestIdleCallback){requestIdleCallback(l,{timeout:3000})}else{addEventListener('load',function(){setTimeout(l,1500)})}})();
+</script>
+
+<script>
+(function(){
+  var Q=[
+    {q:"When you ask your AI to do real work, what comes back?",a:[["Generic blobs I can't use",0],["Decent, but I rewrite most of it",1],["Usable with light edits",2],["It nails it in my voice",3]]},
+    {q:"Does your AI actually know your business — who you serve, how you sound?",a:[["No, it's generic",0],["A little, if I remember to tell it",1],["Yes, I've written it down somewhere",3]]},
+    {q:"When AI does a task, does anyone check it before it goes out?",a:[["No, whatever it does just happens",0],["Sometimes, when I remember",1],["Always — there's an approval step",3]]},
+    {q:"How many AI 'projects' actually run every week?",a:[["None — I keep starting and stalling",0],["One, barely",1],["A few",2],["It's part of how the work gets done",3]]},
+    {q:"If your AI broke or went weird tomorrow, would you know?",a:[["No idea — it just runs (or doesn't)",0],["Maybe, eventually",1],["Yes, I'd see it fast",3]]},
+    {q:"Be honest — why did you start using AI?",a:[["Everyone said I had to (FOMO)",0],["To look modern",1],["A specific job I needed done",3]]}
+  ];
+  var MAX=18, i=0, ans=Array(Q.length).fill(null);
+  var area=document.getElementById('quizArea'),prog=document.getElementById('prog'),
+      backBtn=document.getElementById('backBtn'),nextBtn=document.getElementById('nextBtn');
+
+  function render(){
+    var item=Q[i];
+    var h='<div class="card"><div class="qnum">question '+(i+1)+' of '+Q.length+'</div><div class="qtext serif">'+item.q+'</div><div class="opts">';
+    item.a.forEach(function(o,idx){h+='<button class="opt'+(ans[i]===idx?' sel':'')+'" data-idx="'+idx+'"><span class="dot"></span><span>'+o[0]+'</span></button>'});
+    h+='</div></div>';
+    area.innerHTML=h;
+    prog.style.width=Math.round(((i)/(Q.length))*100)+'%';
+    backBtn.disabled=i===0;
+    nextBtn.disabled=ans[i]===null;
+    nextBtn.textContent=i===Q.length-1?'see my result →':'next →';
+    Array.prototype.forEach.call(area.querySelectorAll('.opt'),function(b){
+      b.onclick=function(){ans[i]=+b.dataset.idx;render()};
+    });
+  }
+  backBtn.onclick=function(){if(i>0){i--;render()}};
+  nextBtn.onclick=function(){
+    if(ans[i]===null)return;
+    if(i<Q.length-1){i++;render()}else{finish()}
+  };
+
+  function finish(){
+    var score=0;ans.forEach(function(a,qi){score+=Q[qi].a[a][1]});
+    var pct=Math.round(score/MAX*100);
+    document.querySelector('.quiz .prog').style.display='none';
+    area.style.display='none';document.getElementById('navBtns').style.display='none';
+    var band=document.getElementById('band'),sc=document.getElementById('scoreNum'),
+        vh=document.getElementById('verdictH'),vp=document.getElementById('verdictP'),
+        fix=document.getElementById('fixText'),cta=document.getElementById('resultCta');
+    sc.textContent=pct+'%';
+    var bucket;
+    if(score<=7){bucket='killed';band.textContent='at risk · the 40%';band.style.background='#F3DCD5';band.style.color='#7A2E1B';
+      vh.textContent="Right now, you're in the 40%.";
+      vp.textContent="Not because AI can't help you — because it isn't set up to. No context, no approval, nothing that reliably runs. This is exactly the profile Gartner says gets canceled. The good news: it's the most fixable.";
+      fix.textContent="Pick ONE repetitive job and give the AI a brain doc (who you serve, how you sound) plus a human approval step. One job, set up properly, beats ten half-wired experiments. That single move flips most 40% setups into the 60%.";
+      cta.href='/cohort/';
+    } else if(score<=13){bucket='borderline';band.textContent='borderline';band.style.background='#EFE0D6';band.style.color='#8A4A2E';
+      vh.textContent="You're on the line.";
+      vp.textContent="Some of it works, some of it's held together with hope. You're not in the 40% yet — but you're one stalled project or silent failure away. The gap is consistency: context, approval, and knowing when it breaks.";
+      fix.textContent="Tighten the one workflow you rely on most: document the context once, add an approval gate, and a simple way to see when it's off. Make one thing bulletproof before you add the next.";
+      cta.href='/build/';
+    } else {bucket='sixty';band.textContent='the 60% · surviving';band.style.background='#DCE8DE';band.style.color='#2E5238';
+      vh.textContent="You're in the 60%.";
+      vp.textContent="Your AI knows your business, gets checked, and actually runs. You're already on the right side of the line. The move now is leverage — turning what works into more revenue, not just more tasks.";
+      fix.textContent="You've got the hard part. Now systematize it: take your one reliable workflow and template it across the next three jobs, so the setup compounds instead of resetting each time.";
+      cta.href='/build/';
+    }
+    document.getElementById('result').style.display='block';
+    try{gtag('event','40_test_complete',{score:pct,bucket:bucket})}catch(e){}
+    try{fbq('trackCustom','40TestComplete',{score:pct,bucket:bucket})}catch(e){}
+    window.__bucket=bucket;window.__pct=pct;
+  }
+
+  document.getElementById('gateForm').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var inp=document.getElementById('email'),btn=this.querySelector('button'),meta=document.getElementById('gateMeta');
+    var email=(inp.value||'').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){inp.style.borderColor='#B5482E';inp.focus();return}
+    var orig=btn.textContent;btn.disabled=true;btn.textContent='sending…';
+    try{
+      var res=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({email:email,source:'40-test',fields:{score:window.__pct,bucket:window.__bucket}})});
+      var data=await res.json();
+      if(res.ok&&data.subscriber_id){
+        document.getElementById('reveal').style.display='block';
+        this.style.display='none';
+        meta.textContent="you're in — full breakdown on its way";
+        document.getElementById('reveal').scrollIntoView({behavior:'smooth',block:'center'});
+        try{gtag('event','generate_lead',{source:'40-test'})}catch(e){}
+        try{fbq('track','Lead',{content_name:'40_test'})}catch(e){}
+      }else{btn.disabled=false;btn.textContent=orig;inp.style.borderColor='#B5482E'}
+    }catch(err){btn.disabled=false;btn.textContent=orig;inp.style.borderColor='#B5482E'}
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
